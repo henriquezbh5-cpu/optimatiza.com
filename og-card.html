@@ -16,15 +16,15 @@
     src: url('E:/Proyectos/Optimatiza/site/fonts/ibm-plex-mono-400.woff2') format('woff2');
   }
   :root {
-    --paper: #F6F4EE;
-    --navy: #0F2B46;
-    --steel: #2D6A9F;
+    --paper: #0A0F1A;
+    --navy: #EDF3FA;
+    --steel: #5BA8E8;
     --teal: #14B8A6;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: #ffffff;
+    background: #0A0F1A;
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
   }
   .card {
@@ -32,6 +32,11 @@
     width: 1200px;
     height: 630px;
     background: var(--paper);
+    background-image:
+      radial-gradient(circle at 14% 0%, rgba(20,184,166,0.10), transparent 44%),
+      radial-gradient(circle at 88% 8%, rgba(139,92,246,0.09), transparent 46%),
+      radial-gradient(rgba(148,163,184,0.15) 1px, transparent 1.4px);
+    background-size: 100% 100%, 100% 100%, 26px 26px;
     overflow: hidden;
   }
 

@@ -150,39 +150,125 @@
 
                     <p class="hero-chips mono rv" data-i18n="hero-chips">20 UNIDADES · 8 CATEGORÍAS · 15+ SISTEMAS EN PRODUCCIÓN · 10+ AÑOS DE INGENIERÍA</p>
                 </div>
-
-                <!-- THE HOOK — hero shift console (spec §2). agentes.js #16 initHeroConsole()
-                     owns the loop; this static markup is the LCP text + no-JS +
-                     reduced-motion end state (Nova, ES; stamp = Σ duracionMs = 22 s). -->
-                <aside class="hero-console" id="heroConsole" data-units="nova,ledger,aura,insight"
-                       aria-label="Consola de simulación de agentes" data-i18n-aria="hc-aria">
-                    <div class="hc-frame">
-                        <header class="hc-head mono">
-                            <span class="hc-title" data-i18n="hc-title">CONSOLA DE TURNO — EN VIVO</span>
-                            <span class="hc-plate" id="hcPlate">A-01 NOVA · C1 — VENTAS</span>
-                        </header>
-                        <div class="hc-body">
-                            <figure class="hc-bot" id="hcBot" data-bot-state="exito" aria-hidden="true">
-                                <img src="img/crew-mini.svg" alt="" width="120" height="130"><!-- no-JS fallback; JS swaps in the #agRobot rig clone -->
-                            </figure>
-                            <div class="hc-log mono" id="hcLog" aria-hidden="true">
-                                <p class="hc-line" data-actor="trigger">[22:47] Correo entrante → ventas@ | Asunto: "Cotización 40 licencias" | Remitente: maria.fuentes@distribuidoraelroble.com</p>
-                                <p class="hc-line" data-actor="herramienta">Dataverse → lead LD-04512 creado | fuente: web | score: 87 | propietario sugerido: C. Ramírez</p>
-                                <p class="hc-line" data-actor="resultado">✔ Flujo completado en 4 min 12 s | lead calificado, agendado y documentado en CRM</p>
-                            </div>
-                            <div class="hc-stamp mono" id="hcStamp" aria-hidden="true">RESUELTO · 22 s</div>
-                        </div>
-                        <footer class="hc-foot">
-                            <span class="hc-note mono" data-i18n="hc-note">SIMULACIÓN · PATRÓN REAL DE OPERACIÓN</span>
-                            <a class="hc-cta ag-cta-quote mono" id="hcCta" href="#cotizador" data-agent-slug="nova"
-                               data-i18n="hc-cta">Contratar esta unidad →</a>
-                            <div class="hc-tb mono"><span data-i18n="tb-prepared">PROYECTÓ: OPTIMATIZA · ING. RESPONSABLE: H. HENRÍQUEZ</span>
-                                <span class="tb-signature">H. Henríquez</span> · REV 2026.07</div>
-                        </footer>
-                    </div>
-                </aside>
             </div>
 
+            <!-- THE HOOK — live workflow window (Flow Canvas hero).
+                 flow-hero.js owns the loop; this static markup is the no-JS /
+                 reduced-motion end state (scenario 1: Nova resolves a sale). -->
+            <div class="fw rv" id="flowHero" aria-label="Simulación de flujo de agentes en vivo" data-i18n-aria="fw-aria">
+                <header class="fw-titlebar mono">
+                    <span class="fw-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <span class="fw-name" data-i18n="fw-name">FLUJO: ATENCIÓN AL CLIENTE — 24/7</span>
+                    <span class="fw-livechip"><span class="status-dot" aria-hidden="true"></span> <span data-i18n="fw-live">EN VIVO</span></span>
+                </header>
+                <div class="fw-body">
+                    <div class="fw-canvas" id="fwCanvas" aria-hidden="true">
+                        <svg class="fw-edges" id="fwEdges" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"></svg>
+                        <div class="fw-node fw-n-start is-done" data-node="start">
+                            <span class="fw-nico fw-ico-start"><i class="ph ph-play" aria-hidden="true"></i></span>
+                            <span class="fw-ntext"><strong data-i18n="fw-n-start">Inicio</strong><span class="fw-nsub mono" data-i18n="fw-n-start-sub">WhatsApp · Correo · Web</span></span>
+                            <span class="fw-badge" aria-hidden="true"><i class="ph ph-check"></i></span>
+                        </div>
+                        <div class="fw-node fw-n-router is-done" data-node="intent">
+                            <span class="fw-nico fw-ico-router"><i class="ph ph-tree-structure" aria-hidden="true"></i></span>
+                            <span class="fw-ntext"><strong data-i18n="fw-n-intent">Detectar intención</strong><span class="fw-chip mono"><i class="ph ph-sparkle" aria-hidden="true"></i><span data-i18n="fw-chip-ia">IA · clasificación</span></span></span>
+                            <span class="fw-badge" aria-hidden="true"><i class="ph ph-check"></i></span>
+                        </div>
+                        <div class="fw-node fw-n-agent is-done" data-node="ventas" data-edge="teal">
+                            <span class="fw-nico fw-ico-teal"><i class="ph ph-robot" aria-hidden="true"></i></span>
+                            <span class="fw-ntext"><strong data-i18n="fw-n-ventas">Agente Ventas</strong><span class="fw-chip mono"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i><span data-i18n="fw-chip-ventas">WhatsApp + CRM</span></span></span>
+                            <span class="fw-badge" aria-hidden="true"><i class="ph ph-check"></i></span>
+                        </div>
+                        <div class="fw-node fw-n-agent" data-node="cobros" data-edge="blue">
+                            <span class="fw-nico fw-ico-blue"><i class="ph ph-robot" aria-hidden="true"></i></span>
+                            <span class="fw-ntext"><strong data-i18n="fw-n-cobros">Agente Cobros</strong><span class="fw-chip mono"><i class="ph ph-receipt" aria-hidden="true"></i><span data-i18n="fw-chip-cobros">ERP + Recordatorios</span></span></span>
+                            <span class="fw-badge" aria-hidden="true"><i class="ph ph-check"></i></span>
+                        </div>
+                        <div class="fw-node fw-n-agent" data-node="soporte" data-edge="violet">
+                            <span class="fw-nico fw-ico-violet"><i class="ph ph-robot" aria-hidden="true"></i></span>
+                            <span class="fw-ntext"><strong data-i18n="fw-n-soporte">Agente Soporte</strong><span class="fw-chip mono"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span data-i18n="fw-chip-soporte">Correo + Tickets</span></span></span>
+                            <span class="fw-badge" aria-hidden="true"><i class="ph ph-check"></i></span>
+                        </div>
+                    </div>
+                    <aside class="fw-chat">
+                        <header class="fw-chat-head mono">
+                            <span data-i18n="fw-chat-title">CLIENTE ↔ AGENTE</span>
+                            <span class="fw-plate" id="fwPlate">A-01 NOVA · VENTAS</span>
+                        </header>
+                        <div class="fw-chat-log" id="fwChat" aria-hidden="true">
+                            <div class="fwc-msg" data-side="user"><span class="fwc-t mono">02:47</span><p data-i18n="fw-pre-user">Hola, ¿tienen 40 licencias de Microsoft 365? Necesito precio para mañana.</p></div>
+                            <div class="fwc-msg" data-side="bot"><img class="fwc-ava" src="img/logo-badge-48.png" alt="" width="26" height="26" decoding="async"><p data-i18n="fw-pre-bot">Listo — cotización COT-0412 enviada: 40 licencias M365 Business. Agendé una llamada mañana 9:00 a. m. con tu asesor.</p></div>
+                            <div class="fwc-seal mono" data-i18n="fw-pre-seal">RESUELTO · 38 s · SIN INTERVENCIÓN HUMANA</div>
+                        </div>
+                        <div class="fw-trace mono" id="fwTrace" aria-hidden="true">
+                            <span class="fw-trace-row is-ok"><i class="ph ph-check" aria-hidden="true"></i> <span data-i18n="fw-tr-start">Inicio</span></span>
+                            <span class="fw-trace-row is-ok"><i class="ph ph-check" aria-hidden="true"></i> <span data-i18n="fw-tr-intent">Detectar intención</span></span>
+                            <span class="fw-trace-row is-ok" id="fwTraceAgent"><i class="ph ph-check" aria-hidden="true"></i> <span data-i18n="fw-tr-agent">Agente Ventas</span></span>
+                        </div>
+                        <div class="fw-input mono" aria-hidden="true"><span data-i18n="fw-input">El agente responde solo — 24/7</span><i class="ph ph-paper-plane-tilt"></i></div>
+                    </aside>
+                </div>
+                <footer class="fw-foot mono">
+                    <span class="fw-note" data-i18n="fw-note">SIMULACIÓN · PATRÓN REAL DE OPERACIÓN · <span class="tb-signature">H. Henríquez</span> · REV 2026.07</span>
+                    <a class="fw-cta ag-cta-quote" id="fwCta" href="#cotizador" data-agent-slug="nova" data-i18n="fw-cta">Quiero un flujo así en mi negocio →</a>
+                </footer>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- ========== 00 THE PROCESS — end-to-end scroll story ========== -->
+    <section class="section" id="proceso">
+        <div class="container">
+            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-proc">00 — EL PROCESO · DE INICIO A FIN</span><span class="ch-rule rule-x"></span></div>
+            <header class="section-header rv">
+                <h2 class="section-title"><span class="line-mask"><span class="line" data-i18n="proc-title">Un proceso completo, corriendo solo.</span></span></h2>
+                <p class="section-subtitle" data-i18n="proc-sub">Desliza: esto es lo que pasa desde que un cliente escribe hasta que el reporte llega a tu tablero — sin que nadie toque nada.</p>
+            </header>
+        </div>
+        <div class="proc" id="proc">
+            <div class="container proc-wrap">
+                <ol class="proc-rail" role="list">
+                    <li class="proc-node is-on" data-step="0"><span class="proc-dot mono"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i></span><span class="proc-name mono"><b>01</b> <span data-i18n="proc-n1">LLEGA</span></span></li>
+                    <li class="proc-node" data-step="1"><span class="proc-dot mono"><i class="ph ph-brain" aria-hidden="true"></i></span><span class="proc-name mono"><b>02</b> <span data-i18n="proc-n2">ENTIENDE</span></span></li>
+                    <li class="proc-node" data-step="2"><span class="proc-dot mono"><i class="ph ph-gear-six" aria-hidden="true"></i></span><span class="proc-name mono"><b>03</b> <span data-i18n="proc-n3">EJECUTA</span></span></li>
+                    <li class="proc-node" data-step="3"><span class="proc-dot mono"><i class="ph ph-hand-tap" aria-hidden="true"></i></span><span class="proc-name mono"><b>04</b> <span data-i18n="proc-n4">APRUEBA</span></span></li>
+                    <li class="proc-node" data-step="4"><span class="proc-dot mono"><i class="ph ph-chart-line-up" aria-hidden="true"></i></span><span class="proc-name mono"><b>05</b> <span data-i18n="proc-n5">REPORTA</span></span></li>
+                    <span class="proc-line" aria-hidden="true"><span class="proc-fill" id="procFill"></span></span>
+                </ol>
+                <div class="proc-stage" id="procStage">
+                    <article class="proc-card is-on" data-step="0">
+                        <span class="proc-meta mono" data-i18n="proc-c1-meta">T+0 S · WHATSAPP · 2:47 A. M.</span>
+                        <h3 class="proc-h" data-i18n="proc-c1-title">Un cliente escribe de madrugada.</h3>
+                        <p data-i18n="proc-c1-body">Pedido, factura o consulta — entra por WhatsApp, correo o formulario web. No hay nadie en la oficina. No hace falta.</p>
+                    </article>
+                    <article class="proc-card" data-step="1">
+                        <span class="proc-meta mono" data-i18n="proc-c2-meta">T+4 S · IA · CLASIFICACIÓN</span>
+                        <h3 class="proc-h" data-i18n="proc-c2-title">La IA lee, entiende y decide.</h3>
+                        <p data-i18n="proc-c2-body">El agente extrae los datos, detecta la intención y elige la ruta: cotizar, cobrar o resolver. Sin plantillas rígidas.</p>
+                    </article>
+                    <article class="proc-card" data-step="2">
+                        <span class="proc-meta mono" data-i18n="proc-c3-meta">T+40 S · CRM · ERP · CALENDARIO</span>
+                        <h3 class="proc-h" data-i18n="proc-c3-title">Tus sistemas se mueven solos.</h3>
+                        <p data-i18n="proc-c3-body">Se crea el registro, se genera el documento, se agenda la cita. Cero digitación manual, cero copiar y pegar.</p>
+                    </article>
+                    <article class="proc-card" data-step="3">
+                        <span class="proc-meta mono" data-i18n="proc-c4-meta">T+2 MIN · HUMANO EN EL CIRCUITO</span>
+                        <h3 class="proc-h" data-i18n="proc-c4-title">Tú decides solo lo crítico.</h3>
+                        <p data-i18n="proc-c4-body">Cuando el monto o el caso lo amerita, alguien de tu equipo aprueba con un clic. Control sin cuello de botella.</p>
+                    </article>
+                    <article class="proc-card" data-step="4">
+                        <span class="proc-meta mono" data-i18n="proc-c5-meta">T+3 MIN · TABLERO EN VIVO</span>
+                        <h3 class="proc-h" data-i18n="proc-c5-title">Todo queda documentado.</h3>
+                        <p data-i18n="proc-c5-body">El cliente recibe su respuesta, el tablero se actualiza y a la mañana siguiente el trabajo ya está hecho.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <p class="proc-cta rv"><a class="btn-link" href="#cotizador" data-i18n="proc-cta">¿Cuánto de tu operación puede correr así? Cotízalo en 60 segundos →</a></p>
         </div>
     </section>
 
@@ -470,52 +556,52 @@
   </style>
   <defs>
     <pattern id="dH" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
     </pattern>
     <pattern id="dHd" patternUnits="userSpaceOnUse" width="3.5" height="3.5" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="3.5" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="3.5" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
     </pattern>
-    <g id="dBot" stroke="#0F2B46" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g id="dBot" stroke="#C4D1E0" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <rect x="-34" y="-24" width="68" height="24" rx="12" fill="url(#dHd)" stroke-width="1.75"/>
-      <circle cx="-18" cy="-12" r="6.5" fill="#F6F4EE" stroke-width="1"/>
-      <circle cx="0" cy="-12" r="6.5" fill="#F6F4EE" stroke-width="1"/>
-      <circle cx="18" cy="-12" r="6.5" fill="#F6F4EE" stroke-width="1"/>
-      <rect x="-12" y="-34" width="24" height="10" fill="#FFFFFF" stroke-width="1.75"/>
-      <rect x="-36" y="-104" width="72" height="70" rx="12" fill="#FFFFFF" stroke-width="2.5" class="ill-draw"/>
+      <circle cx="-18" cy="-12" r="6.5" fill="#0A0F1A" stroke-width="1"/>
+      <circle cx="0" cy="-12" r="6.5" fill="#0A0F1A" stroke-width="1"/>
+      <circle cx="18" cy="-12" r="6.5" fill="#0A0F1A" stroke-width="1"/>
+      <rect x="-12" y="-34" width="24" height="10" fill="#101828" stroke-width="1.75"/>
+      <rect x="-36" y="-104" width="72" height="70" rx="12" fill="#101828" stroke-width="2.5" class="ill-draw"/>
       <rect x="16" y="-100" width="17" height="62" fill="url(#dH)" stroke="none"/>
-      <path d="M14 -102 V-36" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
-      <path d="M-36 -58 H14" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
+      <path d="M14 -102 V-36" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
+      <path d="M-36 -58 H14" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
       <circle cx="-30" cy="-98" r="1.6" stroke-width="1"/>
       <circle cx="-30" cy="-42" r="1.6" stroke-width="1"/>
       <circle cx="8" cy="-98" r="1.6" stroke-width="1"/>
       <circle cx="8" cy="-42" r="1.6" stroke-width="1"/>
       <circle cx="24" cy="-70" r="1.6" stroke-width="1"/>
-      <rect x="-28" y="-66" width="34" height="15" rx="2" fill="#F6F4EE" stroke-width="1"/>
-      <rect x="-9" y="-114" width="18" height="10" fill="#FFFFFF" stroke-width="1.75"/>
-      <rect x="-29" y="-150" width="58" height="38" rx="9" fill="#FFFFFF" stroke-width="2.5" class="ill-draw"/>
-      <rect x="-21" y="-143" width="42" height="25" rx="4" fill="#F6F4EE" stroke-width="1.75"/>
-      <g fill="#0F2B46" stroke="none">
+      <rect x="-28" y="-66" width="34" height="15" rx="2" fill="#0A0F1A" stroke-width="1"/>
+      <rect x="-9" y="-114" width="18" height="10" fill="#101828" stroke-width="1.75"/>
+      <rect x="-29" y="-150" width="58" height="38" rx="9" fill="#101828" stroke-width="2.5" class="ill-draw"/>
+      <rect x="-21" y="-143" width="42" height="25" rx="4" fill="#0A0F1A" stroke-width="1.75"/>
+      <g fill="#C4D1E0" stroke="none">
         <circle cx="-13" cy="-134" r="1.7"/><circle cx="-8" cy="-134" r="1.7"/>
         <circle cx="-13" cy="-129" r="1.7"/><circle cx="-8" cy="-129" r="1.7"/>
         <circle cx="8" cy="-134" r="1.7"/><circle cx="13" cy="-134" r="1.7"/>
         <circle cx="8" cy="-129" r="1.7"/><circle cx="13" cy="-129" r="1.7"/>
         <circle cx="-4" cy="-123" r="1"/><circle cx="0" cy="-123" r="1"/><circle cx="4" cy="-123" r="1"/>
       </g>
-      <circle cx="-29" cy="-131" r="3" fill="#F6F4EE" stroke-width="1"/>
-      <circle cx="29" cy="-131" r="3" fill="#F6F4EE" stroke-width="1"/>
+      <circle cx="-29" cy="-131" r="3" fill="#0A0F1A" stroke-width="1"/>
+      <circle cx="29" cy="-131" r="3" fill="#0A0F1A" stroke-width="1"/>
       <path d="M0 -150 V-166" stroke-width="1.75"/>
-      <circle cx="0" cy="-170" r="6" stroke="#0F766E" stroke-width="1" class="ill-live"/>
+      <circle cx="0" cy="-170" r="6" stroke="#2DD4BF" stroke-width="1" class="ill-live"/>
       <circle cx="0" cy="-170" r="3.5" fill="#14B8A6" stroke="none" class="ill-live"/>
-      <circle cx="-36" cy="-88" r="5.5" fill="#FFFFFF" stroke-width="1.75"/>
-      <circle cx="36" cy="-88" r="5.5" fill="#FFFFFF" stroke-width="1.75"/>
+      <circle cx="-36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
+      <circle cx="36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
     </g>
   </defs>
 
-  <g stroke="#0F2B46" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="#C4D1E0" fill="none" stroke-linecap="round" stroke-linejoin="round">
     
-    <rect x="16" y="16" width="668" height="488" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
+    <rect x="16" y="16" width="668" height="488" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
     <rect x="24" y="24" width="652" height="472" stroke-width="1"/>
-    <text x="350" y="52" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="4" fill="#0F2B46" stroke="none">FIG. 4 — DR-05</text>
+    <text x="350" y="52" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="4" fill="#C4D1E0" stroke="none">FIG. 4 — DR-05</text>
     <path d="M285 60 H415" stroke-width="1"/>
 
     
@@ -524,30 +610,30 @@
     <ellipse cx="505" cy="472" rx="52" ry="6" fill="url(#dH)" stroke="none"/>
 
     
-    <rect x="75" y="420" width="52" height="8" fill="#FFFFFF" stroke-width="1.75"/>
+    <rect x="75" y="420" width="52" height="8" fill="#101828" stroke-width="1.75"/>
     <path d="M82 428 L76 470 M120 428 L126 470 M84 452 H119" stroke-width="1.75"/>
-    <rect x="92" y="404" width="16" height="16" rx="2" fill="#FFFFFF" stroke-width="1.75"/>
+    <rect x="92" y="404" width="16" height="16" rx="2" fill="#101828" stroke-width="1.75"/>
     <path d="M108 408 a5 4 0 0 1 0 8" stroke-width="1.75"/>
-    <path class="cd-st1" d="M96 398 q3 -6 0 -10" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
-    <path class="cd-st2" d="M103 398 q3 -6 0 -10" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
+    <path class="cd-st1" d="M96 398 q3 -6 0 -10" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
+    <path class="cd-st2" d="M103 398 q3 -6 0 -10" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
 
     
     <path d="M170 336 L150 470 M400 268 L416 470" stroke-width="2.5"/>
-    <path d="M158 430 L410 444" stroke="rgba(15,43,70,.45)" stroke-width="1"/>
+    <path d="M158 430 L410 444" stroke="rgba(196,209,224,.4)" stroke-width="1"/>
     <rect x="142" y="466" width="18" height="5" stroke-width="1"/>
     <rect x="408" y="466" width="18" height="5" stroke-width="1"/>
 
     
-    <path d="M130 312 L408 242 L428 270 L150 340 Z" fill="#FFFFFF" stroke-width="2.5" class="ill-draw"/>
+    <path d="M130 312 L408 242 L428 270 L150 340 Z" fill="#101828" stroke-width="2.5" class="ill-draw"/>
     <path d="M150 340 L152 348 L430 278 L428 270" fill="url(#dH)" stroke-width="1.75"/>
     
-    <path d="M165 305 L380 251 L395 272 L180 326 Z" fill="#FFFFFF" stroke-width="1"/>
-    <rect x="170" y="300" width="8" height="5" fill="#F6F4EE" stroke-width="1" transform="rotate(-14 174 302)"/>
-    <rect x="372" y="249" width="8" height="5" fill="#F6F4EE" stroke-width="1" transform="rotate(-14 376 251)"/>
+    <path d="M165 305 L380 251 L395 272 L180 326 Z" fill="#101828" stroke-width="1"/>
+    <rect x="170" y="300" width="8" height="5" fill="#0A0F1A" stroke-width="1" transform="rotate(-14 174 302)"/>
+    <rect x="372" y="249" width="8" height="5" fill="#0A0F1A" stroke-width="1" transform="rotate(-14 376 251)"/>
     
     <g transform="translate(196,302) rotate(-14)">
-      <path d="M-6 8 H130" stroke="rgba(15,43,70,.45)" stroke-width="1" stroke-dasharray="3 4"/>
-      <path d="M-6 43 H92" stroke="rgba(15,43,70,.45)" stroke-width="1" stroke-dasharray="3 4"/>
+      <path d="M-6 8 H130" stroke="rgba(196,209,224,.4)" stroke-width="1" stroke-dasharray="3 4"/>
+      <path d="M-6 43 H92" stroke="rgba(196,209,224,.4)" stroke-width="1" stroke-dasharray="3 4"/>
       <rect x="0" y="0" width="36" height="16" rx="3" stroke-width="1.75" class="ill-draw"/>
       <path d="M36 8 H50 l-3 -2 M50 8 l-3 2" stroke-width="1.75"/>
       <path d="M62 -2 L74 8 L62 18 L50 8 Z" stroke-width="1.75" class="ill-draw"/>
@@ -555,23 +641,23 @@
       <rect x="88" y="0" width="34" height="16" rx="8" stroke-width="1.75" class="ill-draw"/>
       <path d="M62 18 V32 l-2 -3 M62 32 l2 -3" stroke-width="1.75"/>
       <rect x="44" y="34" width="34" height="14" rx="3" stroke-width="1.75" class="ill-draw"/>
-      <text x="104" y="30" font-family="IBM Plex Mono, monospace" font-size="7" letter-spacing="1" fill="#2D6A9F" stroke="none">REV A</text>
+      <text x="104" y="30" font-family="IBM Plex Mono, monospace" font-size="7" letter-spacing="1" fill="#5BA8E8" stroke="none">REV A</text>
     </g>
     
-    <path d="M378 270 A20 20 0 0 1 398 252" stroke="#2D6A9F" stroke-width="1" stroke-dasharray="3 3"/>
+    <path d="M378 270 A20 20 0 0 1 398 252" stroke="#5BA8E8" stroke-width="1" stroke-dasharray="3 3"/>
 
     
-    <rect x="396" y="240" width="12" height="8" fill="#FFFFFF" stroke-width="1.75" transform="rotate(-14 402 244)"/>
+    <rect x="396" y="240" width="12" height="8" fill="#101828" stroke-width="1.75" transform="rotate(-14 402 244)"/>
     <path d="M402 242 L448 196" stroke-width="1.75"/>
-    <circle cx="448" cy="196" r="3" fill="#FFFFFF" stroke-width="1.75"/>
+    <circle cx="448" cy="196" r="3" fill="#101828" stroke-width="1.75"/>
     <path d="M448 196 L426 158" stroke-width="1.75"/>
-    <path d="M414 148 L440 142 L434 166 L416 164 Z" fill="#FFFFFF" stroke-width="1.75"/>
-    <path class="cd-cone" d="M420 170 L362 240 M428 172 L392 250 M412 166 L332 222" stroke="rgba(15,43,70,.45)" stroke-width="1" stroke-dasharray="2 5"/>
+    <path d="M414 148 L440 142 L434 166 L416 164 Z" fill="#101828" stroke-width="1.75"/>
+    <path class="cd-cone" d="M420 170 L362 240 M428 172 L392 250 M412 166 L332 222" stroke="rgba(196,209,224,.4)" stroke-width="1" stroke-dasharray="2 5"/>
 
     
     <g transform="translate(150,392) rotate(14)">
-      <rect x="12" y="8" width="13" height="66" rx="6.5" fill="#FFFFFF" stroke-width="1.75"/>
-      <rect x="0" y="0" width="14" height="76" rx="7" fill="#FFFFFF" stroke-width="1.75"/>
+      <rect x="12" y="8" width="13" height="66" rx="6.5" fill="#101828" stroke-width="1.75"/>
+      <rect x="0" y="0" width="14" height="76" rx="7" fill="#101828" stroke-width="1.75"/>
       <circle cx="7" cy="7" r="5.5" stroke-width="1"/>
       <path d="M7 7 a2.5 2.5 0 0 1 2.5 2.5" stroke-width="1"/>
       <rect x="0" y="32" width="14" height="8" fill="url(#dH)" stroke-width="1"/>
@@ -579,26 +665,26 @@
 
     
     <use href="#dBot" transform="translate(505,470)"/>
-    <text x="494" y="415" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#0F2B46" stroke="none">R-05</text>
+    <text x="494" y="415" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#C4D1E0" stroke="none">R-05</text>
     
     <path d="M469 382 L420 312" stroke-width="2.5"/>
     <path class="cd-fore" d="M420 312 L400 248" stroke-width="2.5"/>
-    <circle cx="420" cy="312" r="4" fill="#FFFFFF" stroke-width="1.75"/>
-    <circle class="cd-fore" cx="398" cy="240" r="3.5" fill="#FFFFFF" stroke-width="1.75"/>
+    <circle cx="420" cy="312" r="4" fill="#101828" stroke-width="1.75"/>
+    <circle class="cd-fore" cx="398" cy="240" r="3.5" fill="#101828" stroke-width="1.75"/>
     <path class="cd-fore" d="M398 243 L388 264 M398 243 L406 259" stroke-width="1.75"/>
     <path class="cd-fore" d="M394 250 A7 7 0 0 1 401 251" stroke-width="1"/>
     
     <path d="M541 382 L560 344 L552 320" stroke-width="2.5"/>
-    <circle cx="560" cy="344" r="4" fill="#FFFFFF" stroke-width="1.75"/>
-    <path d="M536 318 H576 L536 282 Z" fill="#FFFFFF" stroke-width="1.75"/>
+    <circle cx="560" cy="344" r="4" fill="#101828" stroke-width="1.75"/>
+    <path d="M536 318 H576 L536 282 Z" fill="#101828" stroke-width="1.75"/>
     <path d="M544 310 H560 L544 296 Z" stroke-width="1"/>
 
     
-    <rect x="420" y="474" width="256" height="22" fill="#F6F4EE" stroke-width="1"/>
+    <rect x="420" y="474" width="256" height="22" fill="#0A0F1A" stroke-width="1"/>
     <path d="M500 474 V496 M590 474 V496" stroke-width="1"/>
-    <text x="428" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#0F2B46" stroke="none">DR-05</text>
-    <text x="508" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#0F2B46" stroke="none">SCALE 1:2</text>
-    <text x="598" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#0F2B46" stroke="none">SHT 4/6</text>
+    <text x="428" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#C4D1E0" stroke="none">DR-05</text>
+    <text x="508" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#C4D1E0" stroke="none">SCALE 1:2</text>
+    <text x="598" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#C4D1E0" stroke="none">SHT 4/6</text>
   </g>
 </svg>
                             <p data-i18n="quote-summary-empty">Elige un tipo de unidad para ver tu estimación</p>
@@ -1052,5 +1138,6 @@
     <script defer src="script.js"></script>
     <script defer src="agentes/agentes.js"></script>
     <script defer src="motion.js"></script>
+    <script defer src="flow-hero.js"></script>
 </body>
 </html>
