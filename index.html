@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0A0F1A">
     <link rel="manifest" href="/site.webmanifest">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://quote-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://quote-ai.henriquezbh5.workers.dev https://chat-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Optimatiza &mdash; Agentes de IA y Automatizaci&oacute;n | LATAM &amp; US</title>
     <meta name="description" content="Agentes de IA que atienden leads, cobran facturas y responden clientes. Simulación en vivo, desde $600, entrega en semanas. Míralo trabajar.">
@@ -60,6 +60,19 @@
     },
     { "@type": "WebSite", "@id": "https://optimatiza.com/#website", "url": "https://optimatiza.com/", "name": "Optimatiza", "inLanguage": ["es", "en"], "publisher": { "@id": "https://optimatiza.com/#org" } },
     { "@type": "Service", "@id": "https://optimatiza.com/#service", "serviceType": "Agentes de IA y automatización de procesos", "name": "Agentes de IA y Automatización", "provider": { "@id": "https://optimatiza.com/#org" }, "areaServed": ["El Salvador", "Latin America", "United States"], "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "600", "highPrice": "8000", "offerCount": "20" } }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuánto cuesta un agente de IA?", "acceptedAnswer": { "@type": "Answer", "text": "Publicamos precios de placa: unidad simple $600–1,200, unidad estándar $1,200–3,000 y célula multi-agente $3,000–8,000 USD. Todo incluye diseño, construcción, pruebas, entrega documentada y 30 días de soporte. El número exacto sale de un diagnóstico gratuito de 30 minutos." } },
+    { "@type": "Question", "name": "¿Cuánto tarda la implementación?", "acceptedAnswer": { "@type": "Answer", "text": "Semanas, no meses: una unidad simple toma ~1–2 semanas, una estándar ~2–4 y una célula multi-agente ~4–8 semanas, con pagos por hitos 40/30/30." } },
+    { "@type": "Question", "name": "¿Dónde viven los datos de mi empresa?", "acceptedAnswer": { "@type": "Answer", "text": "En tu propia casa: la arquitectura por defecto corre dentro de tu tenant de Microsoft 365 (SharePoint/Dataverse), con tus permisos y auditoría. La IA se consume vía endpoints empresariales y tus datos no se usan para entrenar modelos públicos." } },
+    { "@type": "Question", "name": "¿Cómo empiezo?", "acceptedAnswer": { "@type": "Answer", "text": "Con un diagnóstico gratuito de 30 minutos con el ingeniero fundador: describes tu proceso, sales con un plan y una banda de precio honesta — lo trabajemos juntos o no. Se agenda en optimatiza.com o por WhatsApp +503 7192 8070." } }
   ]
 }
     </script>
@@ -952,6 +965,7 @@
                     <a href="#cotizador" data-i18n="footer-cotizador">Cotizar</a>
                     <a href="#contacto" data-i18n="footer-contact">Contacto</a>
                     <a href="#bitcoin" data-i18n="footer-bitcoin">Bitcoin</a>
+                    <a href="blog/" data-i18n="footer-blog">Blog</a>
                     <a href="agentes/" data-i18n="footer-catalogo">Catálogo</a>
                     <a href="agentes/#metodo" data-i18n="footer-metodo">Método</a>
                     <a href="agentes/#evidencia" data-i18n="footer-casos">Casos</a>
@@ -1226,5 +1240,6 @@
     <script defer src="agentes/agentes.js"></script>
     <script defer src="motion.js"></script>
     <script defer src="flow-hero.js"></script>
+    <script defer src="chat-agent.js"></script>
 </body>
 </html>
