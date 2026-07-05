@@ -45,6 +45,16 @@
   function ssGet(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
   function ssSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { /* noop */ } }
 
+  /* day-1 instrumentation (storefront spec graft #4) — CSP-safe CustomEvents.
+     On home, script.js listens for 'optz:evt' and counts {name} into the
+     localStorage 'optz-metrics' ledger. Standalone /agentes/ has no listener;
+     dispatching is best-effort and free either way. */
+  function emitEvt(name, slug) {
+    try {
+      doc.dispatchEvent(new CustomEvent('optz:evt', { detail: { name: name, slug: slug || '' } }));
+    } catch (e) { /* CustomEvent unavailable — metrics are best-effort */ }
+  }
+
   /* ------------------------------------------------------------
      1. DATA INDEXES
      ------------------------------------------------------------ */
@@ -206,7 +216,7 @@
       'ag-tar-ref': 'PRECIOS DE REFERENCIA &mdash; EL N&Uacute;MERO REAL SALE DE UN DIAGN&Oacute;STICO DE 30 MINUTOS.',
       'ag-tar-cta': 'Cotiza tu caso exacto en 60 segundos &rarr;',
       /* contact */
-      'ag-contact-index': '04 &mdash; CONTACTO DIRECTO',
+      'ag-contact-index': '50 &mdash; CONTACTO DIRECTO',
       'ag-contact-title': '&iquest;Cu&aacute;l de estos procesos le est&aacute; comiendo horas a tu equipo?',
       'ag-contact-wa': 'Hablemos por WhatsApp',
       'ag-contact-reply': 'RESPUESTA &lt; 24H &middot; GMT-6',
@@ -264,7 +274,183 @@
       'ag-x-open-sim': 'Ver simulaci&oacute;n de {name} &mdash; {rol}',
       'ag-x-form-fail': 'No se pudo enviar el formulario en este momento.',
       'ag-x-form-fail-wa': 'Env&iacute;alo por WhatsApp &rarr;',
-      'ag-x-form-sending': 'Enviando&hellip;'
+      'ag-x-form-sending': 'Enviando&hellip;',
+      /* vitrina pain chips (storefront spec §5.2, graft #1) */
+      'ag-pain-nova': '&iquest;Leads que se enfr&iacute;an?',
+      'ag-pain-ledger': '&iquest;Facturas que nadie cobra?',
+      'ag-pain-aura': '&iquest;Clientes esperando respuesta?',
+      'ag-pain-stock': '&iquest;Inventario a ciegas?',
+      'ag-pain-insight': '&iquest;Informes armados a mano?',
+      'ag-pain-talent': '&iquest;CVs sin filtrar?',
+      /* hero shift console (storefront spec §2) */
+      'ag-hc-stamp': 'RESUELTO &middot; {s} s',
+      /* /agentes/ absorbed-section chrome (storefront spec §3.2) */
+      'ag-nav-metodo': 'M&eacute;todo',
+      'ag-nav-evidencia': 'Evidencia',
+      'ag-nav-taller': 'Taller',
+      'ag-ch-metodo': '20 &mdash; M&Eacute;TODO &middot; L&Iacute;NEA DE PRODUCCI&Oacute;N',
+      'ag-ch-evidencia': '30 &mdash; EVIDENCIA &middot; CASOS EN PRODUCCI&Oacute;N',
+      'ag-ch-taller': '40 &mdash; TALLER A MEDIDA',
+      /* ---- pre-existing page keys that were missing from the dict (froze in ES on toggle) ---- */
+      'ag-nav-logo': 'Optimatiza &mdash; inicio',
+      'ag-tar-o': '<strong>Operaci&oacute;n continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagn&oacute;stico.',
+      'ag-foot-descriptor': 'AGENTES DE IA &amp; AUTOMATIZACI&Oacute;N &middot; INGENIER&Iacute;A DE OPERACIONES',
+      /* ---- moved-section keys adopted from script.js translations (storefront
+         spec §3.3): #metodo + founder table, #evidencia (CASE 02/03 + minis),
+         #taller. Values verbatim; quienes-product-badge img path re-based for
+         /agentes/. label-*, projects-title/subtitle also stay in script.js for
+         the home dossier (shared, per spec). ---- */
+      "method-kicker": "DIAGNOSTICAR → DISEÑAR → OPERAR",
+      "process-title": "De diagnóstico a unidad en servicio, en semanas.",
+      "process-subtitle": "Cinco pasos claros para llevar tu operación de manual a automática.",
+      "step-1-title": "Diagnóstico",
+      "step-1-duration": "1–2 días",
+      "step-1-short": "Mapeamos lo que duele antes de proponer nada.",
+      "step-2-title": "Plano de la unidad",
+      "step-2-duration": "2–3 días",
+      "step-2-short": "Arquitectura, flujos de datos y criterios de éxito.",
+      "step-3-title": "Construcción iterativa",
+      "step-3-duration": "2–8 semanas",
+      "step-3-short": "Entregas funcionando cada 1–2 semanas.",
+      "step-4-title": "Pruebas y entrega",
+      "step-4-duration": "3–5 días",
+      "step-4-short": "Validada con usuarios reales, en contexto real.",
+      "step-5-title": "Operación y soporte",
+      "step-5-duration": "30 días incluidos",
+      "step-5-short": "Producción, documentación y capacitación. Tuyo.",
+      "flow-process-caption": "Sistemas que siguen trabajando solos después de la entrega.",
+      "diff-title": "Lo que no somos — y lo que somos",
+      "diff-1-title": "Un vendedor de dashboards",
+      "diff-1-desc": "Fabricamos el sistema completo que alimenta el dashboard: interfaz + datos + automatización + aprobaciones + reporte.",
+      "diff-2-title": "Un generalista que intenta de todo",
+      "diff-2-desc": "Especialistas certificados en agentes de IA y automatización, sobre la plataforma que tu empresa ya paga.",
+      "diff-3-title": "Entregar y desaparecer",
+      "diff-3-desc": "Documentamos, capacitamos a tu equipo y damos 30 días de soporte. El sistema sigue corriendo sin nosotros.",
+      "diff-4-title": "Un constructor de demos",
+      "diff-4-desc": "Ingeniería de producción: manejo de errores, logging, seguridad por roles y ALM en cada entrega.",
+      "method-fig-cap": "FIG. HND-06 — ENTREGA: EL SISTEMA, DOCUMENTADO, CORRIENDO SOLO.",
+      "about-plate": "PLACA 07 — ING. RESPONSABLE",
+      "quienes-title": "Fundada y dirigida por un ingeniero, no por un pitch deck.",
+      "quienes-legend": "HABLAS DIRECTO CON EL INGENIERO FUNDADOR — SIN CAPA COMERCIAL",
+      "quienes-plate": "Optimatiza fue fundada en 2026 en San Salvador por Humberto Henríquez: ingeniero en sistemas, tres certificaciones Microsoft Power Platform, dos maestrías (Ciencia de Datos y Business Intelligence) y más de diez años construyendo automatización para empresas de LATAM. Los sistemas de la sección Evidencia — RPA, portales, tableros, asistentes con IA — los diseñó y entregó él, y hoy son los patrones que esta fábrica instala. Aquí no hay capa comercial: cada plano lo firma el ingeniero responsable, la misma persona que atiende tu diagnóstico.",
+      "quienes-founder-label": "Fundador y director",
+      "about-education-label": "Educación",
+      "about-education-value": "MSc Ciencia de Datos (UNEATLÁNTICO, 2026) + MSc Inteligencia de Negocios (UNINI, 2023) + Posgrado Blockchain + Ing. en Sistemas Computacionales (UTEC)",
+      "about-certs-label": "Certificaciones",
+      "about-certs-value": "Power Apps · Power Automate · Power BI",
+      "quienes-coverage-label": "Cobertura",
+      "quienes-coverage-value": "LATAM y EE. UU. — 100% remoto",
+      "quienes-hours-label": "Horario",
+      "quienes-hours-value": "Solape completo con horario de EE. UU. (CST)",
+      "quienes-product-label": "Producto publicado",
+      "quienes-product-value": "Bitcoin Academy — PWA educativa en 7 idiomas, en Google Play. Verifícalo tú mismo: instálalo ahora.",
+      "quienes-product-badge": "<img src=\"../img/google-play-badge-es.png\" alt=\"Disponible en Google Play\" width=\"160\" height=\"62\" loading=\"lazy\" decoding=\"async\">",
+      "quienes-profile-link": "Perfil completo del fundador →",
+      "trust-title": "Cómo trabajamos contigo",
+      "trust-1": "Alcance y precio fijos",
+      "trust-2": "Pagos por hitos",
+      "trust-3": "El código y las cuentas son tuyos",
+      "trust-4": "Documentación y capacitación incluidas",
+      "trust-5": "Respuesta &lt;24h",
+      "projects-title": "Sistemas que ya operamos en producción.",
+      "projects-subtitle": "Casos reales, resultados cualitativos verificables — sin porcentajes inventados.",
+      "label-problem": "Situación",
+      "label-solution": "Solución",
+      "label-results": "Resultado",
+      "label-inprod": "EN PRODUCCIÓN",
+      "chip-founder": "ENTREGADO POR NUESTRO FUNDADOR",
+      "case-cta": "¿Tienes un proceso así? → Cotízalo",
+      "arch-three-sources": "3 fuentes de datos",
+      "arch-star-model": "Modelo dimensional",
+      "slab-2-before": "3 PORTALES",
+      "slab-2-after": "1 DASHBOARD",
+      "slab-3-before": "PROCESO MANUAL",
+      "slab-3-after": "CERO INTERVENCIÓN",
+      "proj2-industry": "Service Desk Regional",
+      "proj2-title": "Dashboard Ejecutivo Multi-Fuente",
+      "proj2-tagline": "Unificando datos de 3 service desks en un solo dashboard",
+      "proj2-problem": "Tres fuentes de datos distintas (una herramienta de monitoreo, un sistema de tickets y una base de datos SQL Server) sin vista unificada. Para ver el panorama completo, había que entrar a tres portales diferentes. La gerencia tomaba decisiones con información parcial.",
+      "proj2-solution": "Dashboard ejecutivo en Power BI conectando las tres fuentes. Queries M con paginación dinámica (List.Generate) para APIs, gateway on-premises para SQL Server, modelo dimensional unificado y refresh automático.",
+      "proj2-result-1": "Vista consolidada de toda la operación de soporte",
+      "proj2-result-2": "Eliminó preparación manual de reportes ejecutivos",
+      "proj2-result-3": "Identificó patrones de carga por país y técnico",
+      "proj2-result-4": "Visibilidad en tiempo real para toma de decisiones",
+      "proj2-arch-title": "Flujo de datos",
+      "proj6-industry": "Operaciones Internas — LATAM",
+      "proj6-title": "Automatización RPA para Sistemas Legacy",
+      "proj6-tagline": "Bots que procesan lo que nadie quiere procesar",
+      "proj6-problem": "Procesos manuales repetitivos con archivos Excel: importaciones masivas de casos para múltiples países LATAM, formatos de fecha inconsistentes, archivos bloqueados por OneDrive sync.",
+      "proj6-solution": "Suite de bots en Power Automate Desktop con manejo de OneDrive sync, validación automática de formatos por país, procesamiento batch de 500 registros, orquestación desde cloud flows.",
+      "proj6-result-1": "Horas semanales de trabajo manual eliminadas",
+      "proj6-result-2": "Errores de formato y datos eliminados por completo",
+      "proj6-result-3": "Procesos independientes de personas específicas",
+      "proj6-result-4": "Personal redirigido a actividades de mayor valor",
+      "proj6-arch-title": "Flujo de automatización",
+      "proj7-industry": "Servicios IT Gestionados — Regional LATAM",
+      "proj7-title": "Control Documental Automatizado",
+      "proj7-tagline": "Un listado maestro gobernado en lugar de una hoja mantenida a mano",
+      "proj7-problem": "Los documentos controlados se llevaban en un listado maestro mantenido a mano. Las versiones se desfasaban, las fechas de revisión pasaban inadvertidas y preparar una auditoría implicaba días persiguiendo archivos y cruzando hojas de cálculo.",
+      "proj7-solution": "Un sistema automatizado de control documental sobre SharePoint: listado maestro gobernado con control de versiones, flujos de aprobación para documentos nuevos y actualizados, recordatorios automáticos de fechas de revisión y una vista en vivo del estado de toda la biblioteca.",
+      "proj7-result-1": "El listado maestro se mantiene solo — las auditorías se preparan desde un registro vivo y confiable, no como una misión de rescate.",
+      "proj8-industry": "Operaciones Corporativas — Multipaís",
+      "proj8-title": "Portal de Solicitudes y Aprobaciones",
+      "proj8-tagline": "Solicitudes de viaje con aprobación digital multinivel",
+      "proj8-problem": "Las solicitudes y aprobaciones de viaje corrían por correo. Sin formulario estándar, sin visibilidad de dónde estaba detenida una solicitud, y cada país manejaba el proceso de forma ligeramente distinta.",
+      "proj8-solution": "Un portal digital que reemplazó las aprobaciones por correo con un formulario estandarizado, flujo de aprobación multinivel automático, notificaciones en tiempo real y seguimiento de estado — estandarizado para todos los países de operación.",
+      "proj8-result-1": "Cada solicitud es trazable desde el envío hasta la aprobación, y ya nadie persigue firmas por correo.",
+      "proj12-industry": "Compras — LATAM",
+      "proj12-title": "Ciclo de Compras Automatizado",
+      "proj12-tagline": "De la solicitud a la orden de compra aprobada sin redigitar",
+      "proj12-problem": "Las órdenes de compra se armaban a mano desde correos y hojas de cálculo: datos redigitados, aprobaciones faltantes y ningún registro claro de quién autorizó qué ni cuándo.",
+      "proj12-solution": "Un flujo automatizado de órdenes de compra: captura estandarizada de solicitudes, ruteo de aprobaciones por monto y categoría, generación automática de documentos y una traza de auditoría completa en cada orden.",
+      "proj12-result-1": "Las órdenes avanzan solas de la solicitud a la aprobación, con un registro completo que resiste cualquier auditoría.",
+      "services-title": "¿Tu proceso no está en el catálogo? Lo dibujamos a medida.",
+      "services-subtitle": "Tres líneas de taller con la misma entrega documentada de toda unidad.",
+      "svc-process-automation-badge": "Más solicitado",
+      "svc-process-automation-title": "Automatización de Procesos",
+      "svc-process-automation-desc": "Reemplazo flujos manuales y repetitivos por automatizaciones que se ejecutan solas entre tus herramientas y bandejas de correo. Construidas con Power Automate y n8n, con aprobaciones, manejo de errores y registros claros para que nada se quede sin atender.",
+      "svc-process-automation-b1": "Flujos de aprobación y notificación",
+      "svc-process-automation-b2": "Disparadores programados y por evento",
+      "svc-process-automation-b3": "Manejo de errores con reintentos",
+      "svc-process-automation-b4": "Registros de ejecución y alertas",
+      "svc-process-automation-result": "Horas de trabajo manual eliminadas cada semana, con menos errores.",
+      "svc-process-automation-floor": "Desde $1,500 · 2–6 semanas",
+      "svc-integrations-apis-badge": "Alta demanda",
+      "svc-integrations-apis-title": "Integraciones y APIs",
+      "svc-integrations-apis-desc": "Conecto tu ERP, CRM, herramientas SaaS y bases de datos para que los datos fluyan automáticamente en lugar de copiarse a mano. Construyo la capa de integración con n8n, webhooks y conectores a medida, con mapeo y validación en cada paso.",
+      "svc-integrations-apis-b1": "Conectores ERP, CRM y SaaS",
+      "svc-integrations-apis-b2": "Sincronización por webhooks y eventos",
+      "svc-integrations-apis-b3": "Mapeo y validación de campos",
+      "svc-integrations-apis-b4": "Transferencias idempotentes y con reintentos",
+      "svc-integrations-apis-result": "Tus sistemas se comunican entre sí, eliminando la doble captura y los datos desactualizados.",
+      "svc-integrations-apis-floor": "Desde $1,200 · 2–6 semanas",
+      "svc-dashboards-bi-badge": "Más solicitado",
+      "svc-dashboards-bi-title": "Tableros Interactivos y BI",
+      "svc-dashboards-bi-desc": "Tableros en Power BI que convierten datos dispersos en KPIs, tendencias y alertas claras para decisiones diarias. Construidos sobre un modelo estrella correcto, con actualización programada y alertas cuando los números cruzan tus umbrales.",
+      "svc-dashboards-bi-b1": "Tableros de KPIs y ejecutivos",
+      "svc-dashboards-bi-b2": "Modelo de datos estrella",
+      "svc-dashboards-bi-b3": "Actualización programada y alertas",
+      "svc-dashboards-bi-b4": "Vistas con drill-down y autoservicio",
+      "svc-dashboards-bi-b5": "Pipelines ETL y modelado de datos incluidos",
+      "svc-dashboards-bi-result": "Una única fuente de verdad que la dirección revisa cada mañana.",
+      "svc-dashboards-bi-floor": "Desde $1,800 · 2–8 semanas",
+      "autoflow-1-title": "Disparador",
+      "autoflow-1-desc": "Un evento lo activa",
+      "autoflow-2-title": "Proceso",
+      "autoflow-2-desc": "Hace el trabajo",
+      "autoflow-3-title": "Validación",
+      "autoflow-3-desc": "Reglas y manejo de errores",
+      "autoflow-4-title": "Integración",
+      "autoflow-4-desc": "Los sistemas se conectan",
+      "autoflow-5-title": "Notifica",
+      "autoflow-5-desc": "Avisa a quien corresponde",
+      "autoflow-6-title": "Tablero",
+      "autoflow-6-desc": "Todo visible, en vivo",
+      "autoflow-caption": "Corre programado o bajo demanda, y escala a una persona solo cuando de verdad hace falta.",
+      "autoflow-titleblock": "DWG OPTZ-M01 · LÍNEA DE PRODUCCIÓN · ESCALA: SEMANAS, NO MESES",
+      "cartouche-drawn": "PROYECTÓ: OPTIMATIZA · REV 2026.07",
+      "cartouche-approved": "APROBADO",
+      "svc-stack-line": "FABRICAMOS SOBRE MICROSOFT POWER PLATFORM · N8N · CLAUDE/GEMINI · NEXT.JS · SQL — TÚ ELIGES EL TERRENO."
     },
     en: {
       /* nav */
@@ -341,7 +527,7 @@
       'ag-tar-ref': 'REFERENCE PRICES &mdash; THE REAL NUMBER COMES OUT OF A 30-MINUTE DIAGNOSTIC.',
       'ag-tar-cta': 'Estimate your exact case in 60 seconds &rarr;',
       /* contact */
-      'ag-contact-index': '04 &mdash; DIRECT CONTACT',
+      'ag-contact-index': '50 &mdash; DIRECT CONTACT',
       'ag-contact-title': 'Which of these processes is eating your team&rsquo;s hours?',
       'ag-contact-wa': 'Let&rsquo;s talk on WhatsApp',
       'ag-contact-reply': 'REPLY &lt; 24H &middot; GMT-6',
@@ -399,7 +585,183 @@
       'ag-x-open-sim': 'View the {name} simulation &mdash; {rol}',
       'ag-x-form-fail': 'The form couldn&rsquo;t be sent right now.',
       'ag-x-form-fail-wa': 'Send it by WhatsApp instead &rarr;',
-      'ag-x-form-sending': 'Sending&hellip;'
+      'ag-x-form-sending': 'Sending&hellip;',
+      /* vitrina pain chips (storefront spec §5.2, graft #1) */
+      'ag-pain-nova': 'Leads going cold?',
+      'ag-pain-ledger': 'Invoices nobody collects?',
+      'ag-pain-aura': 'Customers waiting for answers?',
+      'ag-pain-stock': 'Flying blind on inventory?',
+      'ag-pain-insight': 'Reports built by hand?',
+      'ag-pain-talent': 'A pile of unscreened CVs?',
+      /* hero shift console (storefront spec §2) */
+      'ag-hc-stamp': 'RESOLVED &middot; {s} s',
+      /* /agentes/ absorbed-section chrome (storefront spec §3.2) */
+      'ag-nav-metodo': 'Method',
+      'ag-nav-evidencia': 'Evidence',
+      'ag-nav-taller': 'Workshop',
+      'ag-ch-metodo': '20 &mdash; METHOD &middot; PRODUCTION LINE',
+      'ag-ch-evidencia': '30 &mdash; EVIDENCE &middot; CASES IN PRODUCTION',
+      'ag-ch-taller': '40 &mdash; CUSTOM WORKSHOP',
+      /* ---- pre-existing page keys that were missing from the dict (froze in ES on toggle) ---- */
+      'ag-nav-logo': 'Optimatiza &mdash; home',
+      'ag-tar-o': '<strong>Continuous operation.</strong> Monthly monitoring, tuning and improvement of your units. Scope and price defined at the diagnostic.',
+      'ag-foot-descriptor': 'AI AGENTS &amp; AUTOMATION &middot; OPERATIONS ENGINEERING',
+      /* ---- moved-section keys adopted from script.js translations (storefront
+         spec §3.3): #metodo + founder table, #evidencia (CASE 02/03 + minis),
+         #taller. Values verbatim; quienes-product-badge img path re-based for
+         /agentes/. label-*, projects-title/subtitle also stay in script.js for
+         the home dossier (shared, per spec). ---- */
+      "method-kicker": "DIAGNOSE → DESIGN → OPERATE",
+      "process-title": "From diagnostic to unit in service, in weeks.",
+      "process-subtitle": "Five clear steps to take your operation from manual to automatic.",
+      "step-1-title": "Diagnostic",
+      "step-1-duration": "1–2 days",
+      "step-1-short": "We map what hurts before proposing anything.",
+      "step-2-title": "Unit drawing",
+      "step-2-duration": "2–3 days",
+      "step-2-short": "Architecture, data flows and success criteria.",
+      "step-3-title": "Iterative build",
+      "step-3-duration": "2–8 weeks",
+      "step-3-short": "Working deliveries every 1–2 weeks.",
+      "step-4-title": "Testing & handover",
+      "step-4-duration": "3–5 days",
+      "step-4-short": "Validated with real users, in real context.",
+      "step-5-title": "Operation & support",
+      "step-5-duration": "30 days included",
+      "step-5-short": "Production, docs and training. Yours.",
+      "flow-process-caption": "Systems that keep working on their own after handover.",
+      "diff-title": "What we are not — and what we are",
+      "diff-1-title": "A dashboard vendor",
+      "diff-1-desc": "We build the complete system that feeds the dashboard: interface + data + automation + approvals + reporting.",
+      "diff-2-title": "A generalist who tries everything",
+      "diff-2-desc": "Certified specialists in AI agents and automation, on the platform your company already pays for.",
+      "diff-3-title": "Deliver-and-disappear",
+      "diff-3-desc": "We document, train your team and give 30 days of support. The system keeps running without us.",
+      "diff-4-title": "A demo builder",
+      "diff-4-desc": "Production engineering: error handling, logging, role-based security and ALM in every delivery.",
+      "method-fig-cap": "FIG. HND-06 — HANDOVER: THE SYSTEM, DOCUMENTED, RUNNING ON ITS OWN.",
+      "about-plate": "PLATE 07 — ENGINEER OF RECORD",
+      "quienes-title": "Founded and run by an engineer, not a pitch deck.",
+      "quienes-legend": "YOU TALK TO THE FOUNDING ENGINEER — NO SALES LAYER",
+      "quienes-plate": "Optimatiza was founded in 2026 in San Salvador by Humberto Henríquez: a systems engineer with three Microsoft Power Platform certifications, two master's degrees (Data Science and Business Intelligence) and ten-plus years building automation for companies across LATAM. The systems in the Evidence section — RPA, portals, dashboards, AI assistants — were designed and delivered by him, and they are the patterns this factory installs today. There is no sales layer here: every drawing is signed by the engineer of record — the same person who takes your diagnostic call.",
+      "quienes-founder-label": "Founder & director",
+      "about-education-label": "Education",
+      "about-education-value": "MSc Data Science (UNEATLÁNTICO, 2026) + MSc Business Intelligence (UNINI, 2023) + PgD Blockchain + Computer Systems Eng. (UTEC)",
+      "about-certs-label": "Certifications",
+      "about-certs-value": "Power Apps · Power Automate · Power BI",
+      "quienes-coverage-label": "Coverage",
+      "quienes-coverage-value": "LATAM and the US — 100% remote",
+      "quienes-hours-label": "Hours",
+      "quienes-hours-value": "Full overlap with US business hours (CST)",
+      "quienes-product-label": "Shipped product",
+      "quienes-product-value": "Bitcoin Academy — educational PWA in 7 languages, on Google Play. Verify it yourself: install it now.",
+      "quienes-product-badge": "<img src=\"../img/google-play-badge-en.png\" alt=\"Get it on Google Play\" width=\"160\" height=\"62\" loading=\"lazy\" decoding=\"async\">",
+      "quienes-profile-link": "Full founder profile →",
+      "trust-title": "How we work with you",
+      "trust-1": "Fixed scope & price",
+      "trust-2": "Milestone-based payments",
+      "trust-3": "You own the code & accounts",
+      "trust-4": "Docs & training included",
+      "trust-5": "Reply within 24h",
+      "projects-title": "Systems we already run in production.",
+      "projects-subtitle": "Real cases, verifiable qualitative results — no invented percentages.",
+      "label-problem": "Situation",
+      "label-solution": "Solution",
+      "label-results": "Result",
+      "label-inprod": "IN PRODUCTION",
+      "chip-founder": "DELIVERED BY OUR FOUNDER",
+      "case-cta": "Have a process like this? → Estimate it",
+      "arch-three-sources": "3 data sources",
+      "arch-star-model": "Dimensional model",
+      "slab-2-before": "3 PORTALS",
+      "slab-2-after": "1 DASHBOARD",
+      "slab-3-before": "MANUAL PROCESS",
+      "slab-3-after": "ZERO TOUCH",
+      "proj2-industry": "Regional Service Desk",
+      "proj2-title": "Multi-Source Executive Dashboard",
+      "proj2-tagline": "Unifying data from 3 service desks into a single dashboard",
+      "proj2-problem": "Three different data sources (a monitoring tool, a ticketing system and a SQL Server database) with no unified view. To see the complete picture, you had to log into three different portals. Management was making decisions with partial information.",
+      "proj2-solution": "Executive dashboard in Power BI connecting all three sources. M queries with dynamic pagination (List.Generate) for APIs, on-premises gateway for SQL Server, unified dimensional model and automatic refresh.",
+      "proj2-result-1": "Consolidated view of the entire support operation",
+      "proj2-result-2": "Eliminated manual executive report preparation",
+      "proj2-result-3": "Identified workload patterns by country and technician",
+      "proj2-result-4": "Real-time visibility for decision making",
+      "proj2-arch-title": "Data flow",
+      "proj6-industry": "Internal Operations — LATAM",
+      "proj6-title": "RPA Automation for Legacy Systems",
+      "proj6-tagline": "Bots that process what nobody wants to process",
+      "proj6-problem": "Repetitive manual processes with Excel files: massive case-management imports across multiple LATAM countries, inconsistent date formats, files locked by OneDrive sync.",
+      "proj6-solution": "Bot suite in Power Automate Desktop with OneDrive sync handling, automatic format validation by country, batch processing of 500 records, orchestration from cloud flows.",
+      "proj6-result-1": "Weekly hours of manual work eliminated",
+      "proj6-result-2": "Format and data errors completely eliminated",
+      "proj6-result-3": "Processes independent of specific individuals",
+      "proj6-result-4": "Staff redirected to higher-value activities",
+      "proj6-arch-title": "Automation flow",
+      "proj7-industry": "Managed IT Services — LATAM Regional",
+      "proj7-title": "Automated Document Control",
+      "proj7-tagline": "One governed master list instead of a hand-maintained spreadsheet",
+      "proj7-problem": "Controlled documents were tracked in a master list maintained by hand. Versions drifted, review dates slipped by unnoticed, and preparing for an audit meant days of chasing files and cross-checking spreadsheets.",
+      "proj7-solution": "An automated document-control system on SharePoint: a governed master list with version control, approval flows for new and updated documents, automatic review-date reminders and a live status view of the entire library.",
+      "proj7-result-1": "The master list maintains itself — audits are prepared from a live, trustworthy register instead of a rescue mission.",
+      "proj8-industry": "Corporate Operations — Multi-country",
+      "proj8-title": "Request & Approval Portal",
+      "proj8-tagline": "Travel requests with multi-level digital approval",
+      "proj8-problem": "Travel requests and approvals ran over email. No standard form, no visibility of where a request was stuck, and every country handled the process slightly differently.",
+      "proj8-solution": "A digital portal that replaced email-based approvals with a standardized form, automatic multi-level approval flow, real-time notifications and status tracking — standardized across all countries of operation.",
+      "proj8-result-1": "Every request is traceable from submission to approval, and nobody chases signatures by email anymore.",
+      "proj12-industry": "Procurement — LATAM",
+      "proj12-title": "Automated Purchasing Cycle",
+      "proj12-tagline": "From request to approved purchase order without retyping",
+      "proj12-problem": "Purchase orders were assembled by hand from emails and spreadsheets: re-typed data, missing approvals, and no clear record of who authorized what or when.",
+      "proj12-solution": "An automated purchase-order workflow: standardized request capture, approval routing by amount and category, automatic document generation and a complete audit trail on every order.",
+      "proj12-result-1": "Orders move on their own from request to approval, with a full record that stands up to any audit.",
+      "services-title": "Process not in the catalog? We draft it to measure.",
+      "services-subtitle": "Three shop lines, with the same documented delivery as every unit.",
+      "svc-process-automation-badge": "Most requested",
+      "svc-process-automation-title": "Process Automation",
+      "svc-process-automation-desc": "Replace manual, repetitive workflows with automations that run on their own across your tools and inboxes. Built with Power Automate and n8n, with approvals, error handling and clear logs so nothing falls through the cracks.",
+      "svc-process-automation-b1": "Approval and notification flows",
+      "svc-process-automation-b2": "Scheduled and event-based triggers",
+      "svc-process-automation-b3": "Error handling with retries",
+      "svc-process-automation-b4": "Run logs and alerts",
+      "svc-process-automation-result": "Hours of manual work eliminated every week, with fewer errors.",
+      "svc-process-automation-floor": "From $1,500 · 2–6 weeks",
+      "svc-integrations-apis-badge": "High demand",
+      "svc-integrations-apis-title": "System Integrations &amp; APIs",
+      "svc-integrations-apis-desc": "Connect your ERP, CRM, SaaS tools and databases so data flows automatically instead of being copied by hand. I build the integration layer with n8n, webhooks and custom connectors, with mapping and validation at every step.",
+      "svc-integrations-apis-b1": "ERP, CRM and SaaS connectors",
+      "svc-integrations-apis-b2": "Webhook and event syncing",
+      "svc-integrations-apis-b3": "Field mapping and validation",
+      "svc-integrations-apis-b4": "Idempotent, retry-safe transfers",
+      "svc-integrations-apis-result": "Your systems talk to each other, ending double entry and stale data.",
+      "svc-integrations-apis-floor": "From $1,200 · 2–6 weeks",
+      "svc-dashboards-bi-badge": "Most requested",
+      "svc-dashboards-bi-title": "Interactive Dashboards &amp; BI",
+      "svc-dashboards-bi-desc": "Power BI dashboards that turn scattered data into clear KPIs, trends and alerts for daily decisions. Built on a proper star schema with scheduled refresh and alerts when numbers cross your thresholds.",
+      "svc-dashboards-bi-b1": "KPI and executive dashboards",
+      "svc-dashboards-bi-b2": "Star schema data model",
+      "svc-dashboards-bi-b3": "Scheduled refresh and alerts",
+      "svc-dashboards-bi-b4": "Drill-down and self-service views",
+      "svc-dashboards-bi-b5": "ETL pipelines and data modeling included",
+      "svc-dashboards-bi-result": "One source of truth that leadership checks every morning.",
+      "svc-dashboards-bi-floor": "From $1,800 · 2–8 weeks",
+      "autoflow-1-title": "Trigger",
+      "autoflow-1-desc": "An event fires it",
+      "autoflow-2-title": "Process",
+      "autoflow-2-desc": "It does the work",
+      "autoflow-3-title": "Validate",
+      "autoflow-3-desc": "Rules &amp; error handling",
+      "autoflow-4-title": "Integrate",
+      "autoflow-4-desc": "Systems talk to each other",
+      "autoflow-5-title": "Notify",
+      "autoflow-5-desc": "The right people know",
+      "autoflow-6-title": "Dashboard",
+      "autoflow-6-desc": "You see it all, live",
+      "autoflow-caption": "Runs on schedule or on demand &mdash; and escalates to a human only when it truly needs one.",
+      "autoflow-titleblock": "DWG OPTZ-M01 · PRODUCTION LINE · SCALE: WEEKS, NOT MONTHS",
+      "cartouche-drawn": "PREPARED BY: OPTIMATIZA · REV 2026.07",
+      "cartouche-approved": "APPROVED",
+      "svc-stack-line": "WE BUILD ON MICROSOFT POWER PLATFORM · N8N · CLAUDE/GEMINI · NEXT.JS · SQL — YOU PICK THE GROUND."
     }
   };
 
@@ -526,113 +888,156 @@
         AGENT_CATEGORIES order, clone #agCardTemplate per agent
      ------------------------------------------------------------ */
   var cardRefs = [];   /* { agent, article, catTag, alias, resumen, slabAfter, chip, link } */
+  var cardTpl = null;  /* #agCardTemplate, resolved once per render pass */
+
+  /* buildCard — one agent card into `grid` (extracted verbatim from the old
+     renderCards() per-agent body; storefront spec §3.1 mechanical refactor).
+     Returns the appended <article> (the spec's `grid.lastElementChild`),
+     or null when the template yields no .ag-card. */
+  function buildCard(agent, grid) {
+    var frag = cardTpl.content.cloneNode(true);
+    var article = frag.querySelector('.ag-card');
+    if (!article) return null;
+
+    article.setAttribute('data-agent', agent.slug);
+
+    var unitEl = frag.querySelector('.ag-unit');
+    var catEl = frag.querySelector('.ag-cat-tag');
+    var dotEl = frag.querySelector('.ag-live-dot');
+    var idRow = frag.querySelector('.ag-card-id');
+    var icoI = frag.querySelector('.ag-ico i');
+    var nameEl = frag.querySelector('.ag-name');
+    var aliasEl = frag.querySelector('.ag-alias');
+    var resEl = frag.querySelector('.ag-resumen');
+    var stackEl = frag.querySelector('.ag-stack');
+    var slabB = frag.querySelector('.slab-before');
+    var slabAr = frag.querySelector('.slab-arrow');
+    var slabAf = frag.querySelector('.slab-after');
+    var chipEl = frag.querySelector('.ag-card-chip');
+    var linkEl = frag.querySelector('.ag-card-link');
+
+    /* alias template classes to the CSS the stylesheet authored */
+    if (dotEl) dotEl.classList.add('ag-dot');
+    if (idRow) idRow.classList.add('ag-id-row');
+    if (chipEl) chipEl.classList.add('ag-chip');
+
+    if (unitEl) unitEl.textContent = unitOf[agent.slug];
+    if (icoI) { icoI.className = 'ph ' + (CAT_ICON[agent.categoria] || 'ph-robot'); icoI.setAttribute('aria-hidden', 'true'); }
+    if (nameEl) nameEl.textContent = agent.nombre || agent.slug;
+    if (stackEl) stackEl.textContent = (agent.integraciones || []).slice(0, 4).join(' · ');
+    /* data has a single qualitative metric (no before/after pair) —
+       surface it on the teal side of the slab */
+    if (slabB) slabB.hidden = true;
+    if (slabAr) slabAr.hidden = true;
+    if (linkEl) linkEl.setAttribute('href', '#' + agent.slug);
+
+    /* ---- commerce row (§4.4): price · quote CTA · ficha CTA ----
+       The HTML builder may supply these nodes in the template; if any
+       is missing we create it defensively so the row works on both
+       pages. It must sit above .ag-card-link (a full-card overlay at
+       z-index:2), or the CTAs would be unclickable. */
+    var commerceEl = frag.querySelector('.ag-card-commerce');
+    var createdCommerce = false;
+    if (!commerceEl) {
+      commerceEl = doc.createElement('div');
+      commerceEl.className = 'ag-card-commerce mono';
+      createdCommerce = true;
+    }
+    var priceEl = commerceEl.querySelector('.ag-price');
+    if (!priceEl) { priceEl = doc.createElement('span'); priceEl.className = 'ag-price'; commerceEl.appendChild(priceEl); }
+    var quoteEl = commerceEl.querySelector('.ag-cta-quote');
+    if (!quoteEl) { quoteEl = doc.createElement('a'); quoteEl.className = 'ag-cta-quote'; commerceEl.appendChild(quoteEl); }
+    var fichaEl = commerceEl.querySelector('.ag-cta-ficha');
+
+    /* QUOTE: prefill the picked unit, then let the anchor navigate to the
+       cotizador (HOME-relative: '#cotizador' on home, '../#cotizador' on
+       /agentes/). No preventDefault — native nav + middle-click both work. */
+    quoteEl.setAttribute('href', HOME + '#cotizador');
+    /* On the home embed (EMBED), script.js owns set+consume of optz-unit via a
+       device-independent capture handler before native nav; a second write here
+       survives unconsumed on coarse-pointer / no-Lenis devices and spuriously
+       prefills the catalog on the next home load. Standalone /agentes/ still
+       needs it (cross-page ../#cotizador load). */
+    if (!EMBED) {
+      (function (slug) {
+        quoteEl.addEventListener('click', function () {
+          ssSet('optz-unit', slug);
+          emitEvt('prefill', slug);
+        });
+      })(agent.slug);
+    }
+
+    /* FICHA COMPLETA → deep spec sheet, embed (home) only. On standalone
+       /agentes/ the card already links to '#slug', so drop the node. */
+    if (EMBED) {
+      if (!fichaEl) { fichaEl = doc.createElement('a'); fichaEl.className = 'ag-cta-ficha'; commerceEl.appendChild(fichaEl); }
+      fichaEl.setAttribute('href', BASE + '#' + agent.slug);
+    } else if (fichaEl) {
+      if (fichaEl.parentNode) fichaEl.parentNode.removeChild(fichaEl);
+      fichaEl = null;
+    }
+
+    /* keep the row above the overlay link regardless of stylesheet state */
+    commerceEl.style.position = 'relative';
+    commerceEl.style.zIndex = '3';
+
+    if (createdCommerce) {
+      if (linkEl && linkEl.parentNode === article) article.insertBefore(commerceEl, linkEl);
+      else article.appendChild(commerceEl);
+    }
+
+    var ref = {
+      agent: agent, article: article, catTag: catEl, alias: aliasEl,
+      resumen: resEl, slabAfter: slabAf, chip: chipEl, link: linkEl,
+      band: bandOf(agent), price: priceEl, quote: quoteEl, ficha: fichaEl
+    };
+    cardRefs.push(ref);
+    fillCardLang(ref);
+    grid.appendChild(frag);
+    return article;
+  }
 
   function renderCards() {
-    var tpl = $('#agCardTemplate');
-    if (!tpl || !tpl.content) { warn('renderCards', 'template #agCardTemplate missing'); return; }
+    cardTpl = $('#agCardTemplate');
+    if (!cardTpl || !cardTpl.content) { warn('renderCards', 'template #agCardTemplate missing'); return; }
     if (!AGENTS.length) { warn('renderCards', 'window.AGENTS empty'); return; }
 
+    /* CURATED MODE (storefront spec §3.1) — home vitrina only: a single flat
+       grid carrying data-curated="slug,slug,…" renders exactly those agents
+       (no rail, no category groups, no legend), each with a pain chip as the
+       card's first child. Runs before the first applyLang() sweep, so the
+       injected data-i18n="ag-pain-*" spans re-translate on toggle (EMBED
+       i18n scope is #flota). Standalone /agentes/ has no data-curated grid
+       and keeps the full-floor path below, exactly as today. */
+    var curated = EMBED ? $('.ag-grid[data-curated]') : null;
+    if (curated) {
+      curated.getAttribute('data-curated').split(',').forEach(function (s) {
+        var a = bySlug[s.trim()];
+        if (!a) { warn('renderCards', 'curated slug missing: ' + s); return; }
+        var card = buildCard(a, curated);
+        if (!card) return;
+        /* pain chip graft (spec §1.2 / §5.2) */
+        var pain = doc.createElement('span');
+        pain.className = 'ag-pain mono';
+        pain.setAttribute('data-i18n', 'ag-pain-' + a.slug);
+        pain.innerHTML = AG_DICT[currentLang]['ag-pain-' + a.slug] || '';
+        card.insertBefore(pain, card.firstChild);
+      });
+      /* custom-shop tile (spec §1.2): static HTML authored inside the grid;
+         cards are appended after it, so re-append the tile to keep it as the
+         closing (7th) cell. No-op when the tile is absent or already last. */
+      var tile = curated.querySelector('.ag-card-custom');
+      if (tile) curated.appendChild(tile);
+      return;   /* curated replaces category mode on this page */
+    }
+
+    /* FULL FLOOR — 20 units grouped by category (unchanged behavior) */
     CATS.forEach(function (cat) {
       var grid = $('.ag-grid[data-cat="' + cat.id + '"]');
       if (!grid) { warn('renderCards', 'grid for category ' + cat.id + ' missing'); return; }
       AGENTS.forEach(function (agent) {
         if (agent.categoria !== cat.id) return;
-        var frag = tpl.content.cloneNode(true);
-        var article = frag.querySelector('.ag-card');
-        if (!article) return;
-
-        article.setAttribute('data-agent', agent.slug);
-
-        var unitEl = frag.querySelector('.ag-unit');
-        var catEl = frag.querySelector('.ag-cat-tag');
-        var dotEl = frag.querySelector('.ag-live-dot');
-        var idRow = frag.querySelector('.ag-card-id');
-        var icoI = frag.querySelector('.ag-ico i');
-        var nameEl = frag.querySelector('.ag-name');
-        var aliasEl = frag.querySelector('.ag-alias');
-        var resEl = frag.querySelector('.ag-resumen');
-        var stackEl = frag.querySelector('.ag-stack');
-        var slabB = frag.querySelector('.slab-before');
-        var slabAr = frag.querySelector('.slab-arrow');
-        var slabAf = frag.querySelector('.slab-after');
-        var chipEl = frag.querySelector('.ag-card-chip');
-        var linkEl = frag.querySelector('.ag-card-link');
-
-        /* alias template classes to the CSS the stylesheet authored */
-        if (dotEl) dotEl.classList.add('ag-dot');
-        if (idRow) idRow.classList.add('ag-id-row');
-        if (chipEl) chipEl.classList.add('ag-chip');
-
-        if (unitEl) unitEl.textContent = unitOf[agent.slug];
-        if (icoI) { icoI.className = 'ph ' + (CAT_ICON[agent.categoria] || 'ph-robot'); icoI.setAttribute('aria-hidden', 'true'); }
-        if (nameEl) nameEl.textContent = agent.nombre || agent.slug;
-        if (stackEl) stackEl.textContent = (agent.integraciones || []).slice(0, 4).join(' · ');
-        /* data has a single qualitative metric (no before/after pair) —
-           surface it on the teal side of the slab */
-        if (slabB) slabB.hidden = true;
-        if (slabAr) slabAr.hidden = true;
-        if (linkEl) linkEl.setAttribute('href', '#' + agent.slug);
-
-        /* ---- commerce row (§4.4): price · quote CTA · ficha CTA ----
-           The HTML builder may supply these nodes in the template; if any
-           is missing we create it defensively so the row works on both
-           pages. It must sit above .ag-card-link (a full-card overlay at
-           z-index:2), or the CTAs would be unclickable. */
-        var commerceEl = frag.querySelector('.ag-card-commerce');
-        var createdCommerce = false;
-        if (!commerceEl) {
-          commerceEl = doc.createElement('div');
-          commerceEl.className = 'ag-card-commerce mono';
-          createdCommerce = true;
-        }
-        var priceEl = commerceEl.querySelector('.ag-price');
-        if (!priceEl) { priceEl = doc.createElement('span'); priceEl.className = 'ag-price'; commerceEl.appendChild(priceEl); }
-        var quoteEl = commerceEl.querySelector('.ag-cta-quote');
-        if (!quoteEl) { quoteEl = doc.createElement('a'); quoteEl.className = 'ag-cta-quote'; commerceEl.appendChild(quoteEl); }
-        var fichaEl = commerceEl.querySelector('.ag-cta-ficha');
-
-        /* QUOTE: prefill the picked unit, then let the anchor navigate to the
-           cotizador (HOME-relative: '#cotizador' on home, '../#cotizador' on
-           /agentes/). No preventDefault — native nav + middle-click both work. */
-        quoteEl.setAttribute('href', HOME + '#cotizador');
-        /* On the home embed (EMBED), script.js owns set+consume of optz-unit via a
-           device-independent capture handler before native nav; a second write here
-           survives unconsumed on coarse-pointer / no-Lenis devices and spuriously
-           prefills the catalog on the next home load. Standalone /agentes/ still
-           needs it (cross-page ../#cotizador load). */
-        if (!EMBED) {
-          (function (slug) {
-            quoteEl.addEventListener('click', function () { ssSet('optz-unit', slug); });
-          })(agent.slug);
-        }
-
-        /* FICHA COMPLETA → deep spec sheet, embed (home) only. On standalone
-           /agentes/ the card already links to '#slug', so drop the node. */
-        if (EMBED) {
-          if (!fichaEl) { fichaEl = doc.createElement('a'); fichaEl.className = 'ag-cta-ficha'; commerceEl.appendChild(fichaEl); }
-          fichaEl.setAttribute('href', BASE + '#' + agent.slug);
-        } else if (fichaEl) {
-          if (fichaEl.parentNode) fichaEl.parentNode.removeChild(fichaEl);
-          fichaEl = null;
-        }
-
-        /* keep the row above the overlay link regardless of stylesheet state */
-        commerceEl.style.position = 'relative';
-        commerceEl.style.zIndex = '3';
-
-        if (createdCommerce) {
-          if (linkEl && linkEl.parentNode === article) article.insertBefore(commerceEl, linkEl);
-          else article.appendChild(commerceEl);
-        }
-
-        var ref = {
-          agent: agent, article: article, catTag: catEl, alias: aliasEl,
-          resumen: resEl, slabAfter: slabAf, chip: chipEl, link: linkEl,
-          band: bandOf(agent), price: priceEl, quote: quoteEl, ficha: fichaEl
-        };
-        cardRefs.push(ref);
-        fillCardLang(ref);
-        grid.appendChild(frag);
+        buildCard(agent, grid);
       });
     });
   }
@@ -1553,6 +1958,7 @@
 
       pillUpdate();
       scheduleAutoplay(450);
+      emitEvt('sim_open', slug);
     } catch (err) { warn('openStage', err); }
   }
 
@@ -1931,7 +2337,340 @@
   }
 
   /* ------------------------------------------------------------
-     16. INIT
+     16. HERO SHIFT CONSOLE — home embed only (storefront spec §2)
+         Rotates the console through data-units (nova→ledger→aura→
+         insight): per unit it types 3 real log lines (pasos first/
+         middle/last, actor-tagged for color), then stamps an honest
+         "RESUELTO · Ns" seal computed from the sim's own step
+         durations, holds, and crossfades to the next unit.
+         Own single-rAF clock mirroring §8's master-clock pattern
+         (guarded id, cancelled on pause, re-armed on resume — no
+         leak). All phase timing flows through the same clock, so
+         document.hidden / offscreen pauses resume where they left.
+     ------------------------------------------------------------ */
+  function initHeroConsole() {
+    if (!EMBED) return;                    /* standalone /agentes/ never runs this */
+    var root = $('#heroConsole');
+    if (!root) return;
+
+    var plateEl = $('#hcPlate');
+    var logEl = $('#hcLog');
+    var stampEl = $('#hcStamp');
+    var ctaEl = $('#hcCta');
+    var botEl = $('#hcBot');
+    if (!logEl) return;
+
+    var roster = (root.getAttribute('data-units') || 'nova,ledger,aura,insight')
+      .split(',')
+      .map(function (s) { return s.trim(); })
+      .filter(function (s) { return !!bySlug[s]; });
+    if (!roster.length) return;
+
+    var SWAP_MS = 800, GAP_MS = 400, STAMP_MS = 2800;
+
+    var idx = 0;                 /* roster position */
+    var cyc = { agent: null, steps: [], phase: 'swap', wait: 0, lineIdx: 0, typedMs: 0, lines: [] };
+    var hcRafId = 0;
+    var hcLastNow = 0;
+    var started = false;         /* loop entered at least once */
+    var bootKicked = false;
+    var inView = true;
+    var pageVis = !doc.hidden;
+
+    /* ---- robot rig: clone the stage rig into the console (spec §2.2) ----
+       HTML-validity note: the clone duplicates the internal bot-* ids (and
+       the rbH/rbHd pattern defs) in-document. That is SAFE here because
+       every bot-* id use is CSS-descendant-scoped (agentes.css §8 pose
+       selectors `:is(.rb-*, [data-bot-state=…]) #bot-…` are not
+       .stage-bot-scoped), no JS calls getElementById on bot-* internals,
+       and url(#rbH/rbHd) resolves to identical cloned defs. Do NOT prefix
+       the ids — that would orphan the pose CSS. Only the root svg id and
+       its <title> id are stripped. */
+    function mountRig() {
+      try {
+        if (!botEl || botEl.getAttribute('data-rig') === '1') return;
+        var rig = $('#agStage #agRobot');
+        if (!rig) return;                  /* keep the crew-mini.svg fallback */
+        var clone = rig.cloneNode(true);
+        clone.removeAttribute('id');
+        var ttl = clone.querySelector('title');
+        if (ttl) ttl.removeAttribute('id');
+        var img = botEl.querySelector('img');
+        if (img && img.parentNode) img.parentNode.replaceChild(clone, img);
+        else botEl.appendChild(clone);
+        botEl.setAttribute('data-rig', '1');
+      } catch (err) { warn('hcRig', err); }
+    }
+
+    function setHcBot(state) {
+      if (!botEl) return;
+      ROBOT_STATES.forEach(function (s) { botEl.classList.remove('rb-' + s); });
+      botEl.classList.add('rb-' + state);
+      botEl.setAttribute('data-bot-state', state);
+    }
+
+    /* spec §2.2 selection rule: first, middle, last step */
+    function pickSteps(agent) {
+      var pasos = agent.pasos || [];
+      var n = pasos.length;
+      if (!n) return [];
+      var out = [];
+      [0, Math.floor(n / 2), n - 1].forEach(function (k) { if (pasos[k]) out.push(pasos[k]); });
+      return out;
+    }
+
+    /* honest seal: the sim's own runtime, computed from data — never hardcoded */
+    function stampSecs(agent) {
+      return Math.round((agent.pasos || []).reduce(function (a, p) {
+        return a + (p.duracionMs || 2000);
+      }, 0) / 1000);
+    }
+
+    function setPlate(agent) {
+      if (!plateEl) return;
+      var ci = catInfo[agent.categoria] || { num: '', label: {} };
+      plateEl.textContent = unitOf[agent.slug] + ' ' + (agent.nombre || agent.slug).toUpperCase() +
+        ' · ' + ci.num + ' — ' + pick(ci.label).toUpperCase();
+    }
+
+    /* script.js's capture-phase quote handler consumes data-agent-slug (§2.3) */
+    function setCta(agent) {
+      if (ctaEl) ctaEl.setAttribute('data-agent-slug', agent.slug);
+    }
+
+    function makeLine(paso, text) {
+      var el = doc.createElement('p');
+      el.className = 'hc-line';
+      el.setAttribute('data-actor', (paso && paso.actor) || 'sistema');  /* actor tint hook */
+      if (text) el.textContent = text;
+      return el;
+    }
+
+    function showStamp(agent) {
+      if (!stampEl) return;
+      stampEl.textContent = tt('ag-hc-stamp').replace('{s}', String(stampSecs(agent)));
+      stampEl.hidden = false;
+      stampEl.classList.remove('on');
+      void stampEl.offsetWidth;            /* restart the ink-stamp keyframe */
+      stampEl.classList.add('on');
+    }
+
+    function hideStamp() {
+      if (!stampEl) return;
+      stampEl.classList.remove('on');
+      stampEl.hidden = true;
+    }
+
+    /* inline transition — zero stylesheet dependency (mirrors clearLog) */
+    function fadeOutLines() {
+      $$('.hc-line', logEl).forEach(function (el, i) {
+        el.style.transition = 'opacity .24s ease';
+        el.style.transitionDelay = (i * 60) + 'ms';
+        el.style.opacity = '0';
+      });
+    }
+
+    /* phase 1 — swap: fade log, restamp plate/CTA, robot thinks (§2.2.1) */
+    function startCycle(i) {
+      idx = i;
+      cyc.agent = bySlug[roster[idx]];
+      cyc.steps = pickSteps(cyc.agent);
+      cyc.phase = 'swap';
+      cyc.wait = SWAP_MS;
+      cyc.lineIdx = 0;
+      cyc.typedMs = 0;
+      cyc.lines = [];
+      setPlate(cyc.agent);
+      setCta(cyc.agent);
+      setHcBot('pensando');
+      hideStamp();
+      fadeOutLines();
+      emitEvt('hero_cycle', cyc.agent.slug);
+    }
+
+    /* phase 2 — typing: ≤34 ms/char, any line lands ≤2.6 s (§2.2.2) */
+    function startLine(j) {
+      cyc.lineIdx = j;
+      cyc.typedMs = 0;
+      cyc.phase = 'typing';
+      var p = cyc.steps[j];
+      if (!p) { enterStamp(); return; }
+      var full = pick(p.log || p.titulo);
+      var el = makeLine(p, '');
+      el.classList.add('typing');          /* caret via .hc-line.typing::after */
+      logEl.appendChild(el);
+      cyc.lines[j] = { el: el, full: full, typed: 0, perChar: Math.min(34, 2600 / Math.max(1, full.length)) };
+      setHcBot(j === 0 ? 'pensando' : 'trabajando');
+    }
+
+    function beginTyping() {
+      logEl.innerHTML = '';
+      cyc.lines = [];
+      if (!cyc.steps.length) { enterStamp(); return; }
+      startLine(0);
+    }
+
+    /* phase 3 — stamp: RESUELTO · Ns + robot éxito, 2.8 s hold (§2.2.3) */
+    function enterStamp() {
+      cyc.phase = 'stamp';
+      cyc.wait = STAMP_MS;
+      showStamp(cyc.agent);
+      setHcBot('exito');
+    }
+
+    function hcStep(dt) {
+      if (cyc.phase === 'typing') {
+        var line = cyc.lines[cyc.lineIdx];
+        if (!line) { enterStamp(); return; }
+        cyc.typedMs += dt;
+        var chars = Math.min(line.full.length, Math.floor(cyc.typedMs / line.perChar));
+        if (chars !== line.typed) {
+          line.typed = chars;
+          line.el.textContent = line.full.slice(0, chars);
+        }
+        if (chars >= line.full.length) {
+          line.el.classList.remove('typing');
+          if (cyc.lineIdx >= cyc.steps.length - 1) enterStamp();
+          else { cyc.phase = 'gap'; cyc.wait = GAP_MS; }
+        }
+        return;
+      }
+      /* time-gated phases: swap / gap / stamp */
+      cyc.wait -= dt;
+      if (cyc.wait > 0) return;
+      if (cyc.phase === 'swap') { beginTyping(); return; }
+      if (cyc.phase === 'gap') { startLine(cyc.lineIdx + 1); return; }
+      if (cyc.phase === 'stamp') { startCycle((idx + 1) % roster.length); }
+    }
+
+    function canRun() { return started && inView && pageVis && !reduced(); }
+
+    function hcTick(now) {
+      hcRafId = 0;
+      var dt = clamp(now - hcLastNow, 0, 100);   /* same tab-jank clamp as §8 */
+      hcLastNow = now;
+      try { hcStep(dt); } catch (err) { warn('hcTick', err); return; }  /* stop on error — no leak */
+      if (canRun()) hcRafId = requestAnimationFrame(hcTick);
+    }
+
+    function syncRun() {
+      if (canRun()) {
+        if (!hcRafId) {
+          hcLastNow = (window.performance && performance.now) ? performance.now() : Date.now();
+          hcRafId = requestAnimationFrame(hcTick);
+        }
+      } else if (hcRafId) {
+        cancelAnimationFrame(hcRafId);
+        hcRafId = 0;                       /* state frozen — resume picks up where it left */
+      }
+    }
+
+    /* reduced-motion / frozen end state: full lines + seal, no typing (§2.2) */
+    function renderFinal(i) {
+      try {
+        var agent = bySlug[roster[i]];
+        if (!agent) return;
+        mountRig();
+        setPlate(agent);
+        setCta(agent);
+        logEl.innerHTML = '';
+        pickSteps(agent).forEach(function (p) {
+          logEl.appendChild(makeLine(p, pick(p.log || p.titulo)));
+        });
+        showStamp(agent);
+        setHcBot('exito');
+      } catch (err) { warn('hcFinal', err); }
+    }
+
+    function bootLoop() {
+      if (started) return;
+      if (reduced()) { renderFinal(idx); return; }   /* flipped between init and idle */
+      started = true;
+      startCycle(idx);
+      syncRun();
+    }
+
+    /* perf rule (§2.2): fonts.ready → idle — never before first paint. The
+       static prerendered log is the hero's LCP text; only the first swap
+       (inside the running loop) clears it. */
+    function scheduleBoot() {
+      var kick = function () {
+        if (bootKicked) return;
+        bootKicked = true;
+        if (window.requestIdleCallback) window.requestIdleCallback(bootLoop, { timeout: 2500 });
+        else window.setTimeout(bootLoop, 0);
+      };
+      try {
+        if (doc.fonts && doc.fonts.ready && typeof doc.fonts.ready.then === 'function') {
+          doc.fonts.ready.then(kick);
+          window.setTimeout(kick, 3000);   /* safety net: fonts.ready may stall */
+        } else {
+          kick();
+        }
+      } catch (err) { kick(); }
+    }
+
+    /* pause offscreen (spec: IO threshold 0.15) */
+    if ('IntersectionObserver' in window) {
+      try {
+        var hcIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { inView = en.isIntersecting; });
+          syncRun();
+        }, { threshold: 0.15 });
+        hcIO.observe(root);
+      } catch (err) { warn('hcIO', err); }
+    }
+
+    /* pause when the tab hides; resume where it left */
+    doc.addEventListener('visibilitychange', function () {
+      try { pageVis = !doc.hidden; syncRun(); } catch (err) { warn('hcVis', err); }
+    });
+
+    /* language flip: restart the CURRENT cycle in the new language (§2.2).
+       'lang:changed' fires for the local toggle AND for the mirrored
+       optz:lang event from script.js (initOptzLangSync → applyLang). */
+    doc.addEventListener('lang:changed', function () {
+      try {
+        if (reduced()) { renderFinal(idx); return; }
+        if (!started) return;              /* pre-boot: first cycle types in the new lang anyway */
+        startCycle(idx);
+        syncRun();
+      } catch (err) { warn('hcLang', err); }
+    });
+
+    /* runtime reduced-motion flip */
+    if (mqReduce) {
+      var onHcMq = function () {
+        try {
+          if (reduced()) {
+            if (hcRafId) { cancelAnimationFrame(hcRafId); hcRafId = 0; }
+            renderFinal(idx);
+          } else if (started) {
+            startCycle(idx);
+            syncRun();
+          } else {
+            bootLoop();                    /* was frozen before ever starting */
+          }
+        } catch (err) { warn('hcMq', err); }
+      };
+      if (mqReduce.addEventListener) mqReduce.addEventListener('change', onHcMq);
+      else if (mqReduce.addListener) mqReduce.addListener(onHcMq);
+    }
+
+    mountRig();
+    if (reduced()) {
+      /* static final state (Nova): keep the prerendered log + stamp, pose the
+         rig on éxito; CTA stays on the prerendered unit. Re-render only when
+         the stored language disagrees with the ES prerender. */
+      setHcBot('exito');
+      if (currentLang !== 'es') renderFinal(idx);
+    } else {
+      scheduleBoot();
+    }
+  }
+
+  /* ------------------------------------------------------------
+     17. INIT
      ------------------------------------------------------------ */
   function init() {
     /* page reveal hook first so .rv rules arm before first paint */
@@ -1959,6 +2698,9 @@
       try { initPill(); } catch (err) { warn('initPill', err); }
     }
     try { initRouter(); } catch (err) { warn('initRouter', err); }
+    /* hero shift console (§2.2): boot ONLY on the home embed; no-ops until
+       index.html ships the #heroConsole markup */
+    if (EMBED) { try { initHeroConsole(); } catch (err) { warn('initHeroConsole', err); } }
   }
 
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', init);

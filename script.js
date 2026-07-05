@@ -72,15 +72,37 @@ const sections = document.querySelectorAll('section[id]:not(.ag-group)');
 const NAV_SECTION_MAP = {
     flota: '#flota',
     tarifario: '#tarifario',
-    metodo: '#metodo',
-    proceso: '#metodo',
     proyectos: '#proyectos',
-    servicios: '#servicios',
-    anatomia: '#servicios',
     cotizador: '#cotizador',
-    'sobre-mi': '#contacto',
     contacto: '#contacto'
 };
+
+// ========== LEGACY HASH ALIASES (storefront spec §4.2) ==========
+// #metodo/#servicios/#sobre-mi content moved to /agentes/. Old shared links
+// still land here; forward them. A target containing '/' means cross-page:
+// navigate via location.href instead of scrolling.
+const HASH_ALIASES = {
+    metodo: 'agentes/#metodo',
+    proceso: 'agentes/#metodo',
+    'sobre-mi': 'agentes/#metodo',
+    servicios: 'agentes/#taller',
+    anatomia: 'agentes/#taller'
+};
+(function () {
+    var h = (location.hash || '').slice(1);
+    var target = HASH_ALIASES[h];
+    if (!target) return;
+    if (target.indexOf('/') !== -1) { location.href = target; return; }
+    var el = document.querySelector(target);
+    if (el) el.scrollIntoView();
+})();
+// Same-document hash edits (e.g. address-bar #servicios on the loaded home)
+// forward too; agentes.js's own hashchange router ignores these alias hashes.
+window.addEventListener('hashchange', function () {
+    var h = (location.hash || '').slice(1);
+    var target = HASH_ALIASES[h];
+    if (target && target.indexOf('/') !== -1) location.href = target;
+});
 
 window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
@@ -130,13 +152,10 @@ const translations = (function () {
     "cartouche-approved": ["APROBADO", "APPROVED"],
     "cartouche-drawn": ["PROYECTÓ: OPTIMATIZA · REV 2026.07", "PREPARED BY: OPTIMATIZA · REV 2026.07"],
     "case-cta": ["¿Tienes un proceso así? → Cotízalo", "Have a process like this? → Estimate it"],
-    "ch-01": ["01 — EL PISO DE OPERACIONES · CATÁLOGO ABIERTO", "01 — THE OPERATIONS FLOOR · OPEN CATALOG"],
+    "ch-01": ["01 — LA VITRINA · SEIS UNIDADES DESTACADAS", "01 — THE SHOWCASE · SIX FEATURED UNITS"],
     "ch-02": ["02 — TARIFARIO · SOLO REFERENCIA", "02 — RATE CARD · REFERENCE ONLY"],
-    "ch-03": ["03 — LÍNEA DE PRODUCCIÓN", "03 — PRODUCTION LINE"],
-    "ch-04": ["04 — EVIDENCIA", "04 — EVIDENCE"],
-    "ch-05": ["05 — TALLER A MEDIDA", "05 — CUSTOM SHOP"],
+    "ch-04": ["04 — EVIDENCIA · UN CASO EN PRODUCCIÓN", "04 — EVIDENCE · ONE CASE IN PRODUCTION"],
     "ch-06": ["06 — COTIZADOR", "06 — ESTIMATE"],
-    "ch-07": ["07 — QUIÉNES FABRICAN", "07 — WHO BUILDS THIS"],
     "ch-08": ["08 — CONTACTO · DIAGNÓSTICO GRATIS", "08 — CONTACT · FREE DIAGNOSTIC"],
     "chip-founder": ["ENTREGADO POR NUESTRO FUNDADOR", "DELIVERED BY OUR FOUNDER"],
     "colophon-motto": ["DIBUJADO A MANO · CORRIDO POR MÁQUINAS", "DRAWN BY HAND · RUN BY MACHINES"],
@@ -144,8 +163,7 @@ const translations = (function () {
     "contact-mailnote": ["CORREO DEL DOMINIO EN PREPARACIÓN — MIENTRAS TANTO, FORMULARIO Y WHATSAPP RESPONDEN &lt;24H.", "DOMAIN MAILBOX IN PREPARATION — MEANWHILE, FORM AND WHATSAPP REPLY &lt;24H."],
     "contact-portrait-cap": ["TE ATIENDE EL INGENIERO FUNDADOR — SIN CAPA COMERCIAL", "THE FOUNDING ENGINEER TAKES YOUR CALL — NO SALES LAYER"],
     "contact-reply": ["RESPUESTA &lt; 24H", "REPLY &lt; 24H"],
-    "cta-note": ["Sin compromiso. Sin discurso de ventas. Una conversación para entender tu situación.", "No commitment. No sales pitch. Just a conversation to understand your situation."],
-    "cta-subtitle": ["Diagnóstico de 30 minutos, gratis. Te decimos con honestidad si podemos ayudarte y cuánto costaría. <em>Sales con un plano, no con una promesa.</em>", "A free 30-minute diagnostic. We tell you honestly whether we can help and what it would cost. <em>You leave with a drawing, not a promise.</em>"],
+    "cta-subtitle": ["Diagnóstico de 30 minutos, gratis. Sales con un plano, no con una promesa.", "A free 30-minute diagnosis. You leave with a blueprint, not a promise."],
     "cta-title": ["Dinos qué proceso te come horas.", "Tell us which process is eating your hours."],
     "cta-whatsapp": ["Escríbenos por WhatsApp", "Chat on WhatsApp"],
     "diff-1-desc": ["Fabricamos el sistema completo que alimenta el dashboard: interfaz + datos + automatización + aprobaciones + reporte.", "We build the complete system that feeds the dashboard: interface + data + automation + approvals + reporting."],
@@ -157,21 +175,28 @@ const translations = (function () {
     "diff-4-desc": ["Ingeniería de producción: manejo de errores, logging, seguridad por roles y ALM en cada entrega.", "Production engineering: error handling, logging, role-based security and ALM in every delivery."],
     "diff-4-title": ["Un constructor de demos", "A demo builder"],
     "diff-title": ["Lo que no somos — y lo que somos", "What we are not — and what we are"],
+    "evidencia-all": ["Ver los 6 casos completos →", "See all 6 full cases →"],
+    "floor-all": ["Ver las 20 unidades del catálogo →", "See all 20 units in the catalog →"],
     "floor-bridge": ["Estos patrones nacen de sistemas que ya operamos en producción →", "These patterns come from systems we already run in production →"],
-    "floor-sub": ["Veinte unidades agrupadas según lo que te quitan de encima. Presiona play y mira a tu próximo coworker digital hacer el trabajo.", "Twenty units grouped by what they take off your plate. Press play and watch your next digital coworker do the job."],
-    "floor-title": ["El piso de operaciones.", "The operations floor."],
+    "floor-sub": ["Una por cada dolor de negocio. Presiona play y mira a tu próximo coworker digital hacer el trabajo — antes de pagar un centavo.", "One for each business pain. Press play and watch your next digital coworker do the job — before you pay a cent."],
+    "floor-title": ["Seis unidades listas para tu turno.", "Six units ready for your shift."],
     "flow-process-caption": ["Sistemas que siguen trabajando solos después de la entrega.", "Systems that keep working on their own after handover."],
+    "footer-casos": ["Casos", "Cases"],
     "footer-catalogo": ["Catálogo", "Catalog"],
+    "footer-certs": ["MICROSOFT CERTIFIED ×3 — POWER APPS · POWER AUTOMATE · POWER BI · MSC DATA SCIENCE · MSC BUSINESS INTELLIGENCE · EST. 2026", "MICROSOFT CERTIFIED ×3 — POWER APPS · POWER AUTOMATE · POWER BI · MSC DATA SCIENCE · MSC BUSINESS INTELLIGENCE · EST. 2026"],
     "footer-contact": ["Contacto", "Contact"],
     "footer-copy": ["&copy; 2026 Optimatiza. Todos los derechos reservados.", "&copy; 2026 Optimatiza. All rights reserved."],
-    "footer-cotizador": ["Cotizador", "Estimate"],
+    "footer-cotizador": ["Cotizar", "Estimate"],
     "footer-descriptor": ["AGENTES DE IA & AUTOMATIZACIÓN · INGENIERÍA DE OPERACIONES", "AI AGENTS & AUTOMATION · OPERATIONS ENGINEERING"],
-    "footer-flota": ["Flota", "Fleet"],
+    "footer-flota": ["Agentes", "Agents"],
+    "footer-metodo": ["Método", "Method"],
     "footer-precios": ["Precios", "Pricing"],
     "footer-privacy": ["Privacidad", "Privacy"],
     "footer-projects": ["Evidencia", "Evidence"],
+    "footer-taller": ["Taller", "Workshop"],
     "footer-terms": ["Términos", "Terms"],
-    "footer-ticker": ["VENTAS · OPERACIONES · FINANZAS · SOPORTE · DATOS · MARKETING · RRHH · LEGAL · ", "SALES · OPERATIONS · FINANCE · SUPPORT · DATA · MARKETING · HR · LEGAL · "],
+    "founder-more": ["Quiénes fabrican →", "Who builds this →"],
+    "founder-plate": ["PROYECTÓ: ING. H. HENRÍQUEZ · MSC DATA SCIENCE · 3× MICROSOFT CERTIFIED", "ENGINEERED BY: H. HENRÍQUEZ, MSC DATA SCIENCE · 3× MICROSOFT CERTIFIED"],
     "form-fallback": ["No se pudo enviar el formulario en este momento.", "The form couldn't be sent right now."],
     "form-label-company": ["Empresa (opcional)", "Company (optional)"],
     "form-label-email": ["Correo electrónico", "Email"],
@@ -190,13 +215,17 @@ const translations = (function () {
     "form-privacy": ["Tus datos se procesan mediante Formspree únicamente para responderte. No se venden ni se usan para marketing.", "Your details are processed via Formspree solely to reply to you. They are not sold or used for marketing."],
     "form-submit": ["<i class=\"ph ph-paper-plane-tilt\"></i> Solicitar diagnóstico gratis", "<i class=\"ph ph-paper-plane-tilt\"></i> Request the free diagnostic"],
     "form-success": ["Enviado. Respondemos en menos de 24 horas.", "Sent. We reply within 24 hours."],
-    "hero-cta-primary": ["Entrar al piso ↓", "Walk the floor ↓"],
+    "hc-aria": ["Consola de simulación de agentes", "Agent simulation console"],
+    "hc-cta": ["Contratar esta unidad →", "Hire this unit →"],
+    "hc-note": ["SIMULACIÓN · PATRÓN REAL DE OPERACIÓN", "SIMULATION · REAL OPERATING PATTERN"],
+    "hc-title": ["CONSOLA DE TURNO — EN VIVO", "SHIFT CONSOLE — LIVE"],
+    "hero-chips": ["20 UNIDADES · 8 CATEGORÍAS · 15+ SISTEMAS EN PRODUCCIÓN · 10+ AÑOS DE INGENIERÍA", "20 UNITS · 8 CATEGORIES · 15+ SYSTEMS IN PRODUCTION · 10+ YEARS OF ENGINEERING"],
+    "hero-cta-primary": ["Elegir mi agente ↓", "Pick my agent ↓"],
     "hero-cta-secondary": ["Cotiza tu unidad en 60 segundos →", "Price your unit in 60 seconds →"],
-    "hero-doc-left": ["DOC. OPTZ/2026 — CATÁLOGO DE FLOTA · INGENIERÍA DE OPERACIONES", "DOC. OPTZ/2026 — FLEET CATALOG · OPERATIONS ENGINEERING"],
+    "hero-doc-left": ["DOC. OPTZ/2026 — CONSOLA DE TURNO · INGENIERÍA DE OPERACIONES", "DOC. OPTZ/2026 — SHIFT CONSOLE · OPERATIONS ENGINEERING"],
     "hero-doc-right": ["ESTADO · OPERACIONAL", "STATUS · OPERATIONAL"],
-    "hero-marquee": ["EQUIPO FUNDADOR CERTIFICADO — MICROSOFT CERTIFIED — POWER APPS&ensp;·&ensp;MICROSOFT CERTIFIED — POWER AUTOMATE&ensp;·&ensp;MICROSOFT CERTIFIED — POWER BI&ensp;·&ensp;MSC DATA SCIENCE&ensp;·&ensp;MSC BUSINESS INTELLIGENCE&ensp;·&ensp;PGD BLOCKCHAIN TECHNOLOGY&ensp;·&ensp;BSC COMPUTER SYSTEMS ENGINEERING&ensp;·&ensp;", "CERTIFIED FOUNDING TEAM — MICROSOFT CERTIFIED — POWER APPS&ensp;·&ensp;MICROSOFT CERTIFIED — POWER AUTOMATE&ensp;·&ensp;MICROSOFT CERTIFIED — POWER BI&ensp;·&ensp;MSC DATA SCIENCE&ensp;·&ensp;MSC BUSINESS INTELLIGENCE&ensp;·&ensp;PGD BLOCKCHAIN TECHNOLOGY&ensp;·&ensp;BSC COMPUTER SYSTEMS ENGINEERING&ensp;·&ensp;"],
-    "hero-subtitle": ["Fabricamos e instalamos agentes de IA y automatización para empresas de LATAM y EE. UU. Catálogo abierto, precios a la vista, entrega en semanas.", "We build and install AI agents and automation for companies across LATAM and the US. Open catalog, prices on the nameplate, delivery in weeks."],
-    "hero-title": ["<span class=\"line-mask\"><span class=\"line\">Veinte agentes de IA,</span></span><span class=\"line-mask\"><span class=\"line\">dibujados y en marcha.</span></span><span class=\"line-mask\"><span class=\"line\">Elige el tuyo y <em>míralo trabajar</em>.</span></span>", "<span class=\"line-mask\"><span class=\"line\">Twenty AI agents,</span></span><span class=\"line-mask\"><span class=\"line\">drawn and running.</span></span><span class=\"line-mask\"><span class=\"line\">Pick yours and <em>watch it work</em>.</span></span>"],
+    "hero-subtitle": ["Fabricamos e instalamos agentes de IA que atienden leads, cobran facturas y responden clientes. Desde $600, en semanas.", "We build and install AI agents that handle leads, collect invoices and answer customers. From $600, live in weeks."],
+    "hero-title": ["<span class=\"line-mask\"><span class=\"line\">Míralo trabajar.</span></span><span class=\"line-mask\"><span class=\"line\">Luego <em>contrátalo</em>.</span></span>", "<span class=\"line-mask\"><span class=\"line\">Watch it work.</span></span><span class=\"line-mask\"><span class=\"line\">Then <em>hire it</em>.</span></span>"],
     "label-inprod": ["EN PRODUCCIÓN", "IN PRODUCTION"],
     "label-problem": ["Situación", "Situation"],
     "label-results": ["Resultado", "Result"],
@@ -207,7 +236,7 @@ const translations = (function () {
     "nav-cotizador": ["Cotizador", "Estimate"],
     "nav-cta": ["Contacto", "Contact"],
     "nav-estimate": ["Cotizar", "Get a quote"],
-    "nav-flota": ["Flota", "Fleet"],
+    "nav-flota": ["Agentes", "Agents"],
     "nav-logo-aria": ["Optimatiza — inicio", "Optimatiza — home"],
     "nav-menu-aria": ["Abrir menú", "Open menu"],
     "nav-precios": ["Precios", "Pricing"],
@@ -267,14 +296,6 @@ const translations = (function () {
     "projects-bridge": ["Tu proceso puede ser el Caso 07.", "Your process can be Case 07."],
     "projects-subtitle": ["Casos reales, resultados cualitativos verificables — sin porcentajes inventados.", "Real cases, verifiable qualitative results — no invented percentages."],
     "projects-title": ["Sistemas que ya operamos en producción.", "Systems we already run in production."],
-    "proof-cats": ["Categorías de operación", "Operating categories"],
-    "proof-cats-sub": ["De Ventas a Legal — el back-office completo", "Sales to Legal — the whole back office"],
-    "proof-systems": ["Sistemas en producción", "Systems in production"],
-    "proof-systems-sub": ["Entregados por nuestro fundador en 4 países", "Delivered by our founder across 4 countries"],
-    "proof-units": ["Unidades en catálogo", "Units in catalog"],
-    "proof-units-sub": ["Patrones listos para aterrizar en tus sistemas", "Patterns ready to land on your systems"],
-    "proof-years": ["Años de ingeniería", "Years of engineering"],
-    "proof-years-sub": ["2 maestrías (Data Science · BI) · 3 certificaciones Microsoft", "2 MSc (Data Science · BI) · 3 Microsoft certs"],
     "quienes-coverage-label": ["Cobertura", "Coverage"],
     "quienes-coverage-value": ["LATAM y EE. UU. — 100% remoto", "LATAM and the US — 100% remote"],
     "quienes-founder-label": ["Fundador y director", "Founder & director"],
@@ -319,7 +340,7 @@ const translations = (function () {
     "quote-step1-title": ["¿Qué necesitas?", "What do you need?"],
     "quote-step2-title": ["Selecciona funcionalidades", "Select features"],
     "quote-step3-title": ["Tamaño de la unidad", "Unit size"],
-    "quote-subtitle": ["La misma IA que instalamos en las unidades del catálogo — cotizando la tuya.", "The same AI we install in catalog units — pricing yours."],
+    "quote-subtitle": ["Elige, marca y mira el precio en vivo. O descríbelo y deja que la IA lo cotice.", "Pick, tick and watch the price live. Or describe it and let the AI quote it."],
     "quote-summary-badge": ["Estimado no vinculante", "Non-binding estimate"],
     "quote-summary-empty": ["Elige un tipo de unidad para ver tu estimación", "Pick a unit type to see your estimate"],
     "quote-summary-title": ["Estimación", "Estimate"],
@@ -399,6 +420,8 @@ const translations = (function () {
     "svc-stack-line": ["FABRICAMOS SOBRE MICROSOFT POWER PLATFORM · N8N · CLAUDE/GEMINI · NEXT.JS · SQL — TÚ ELIGES EL TERRENO.", "WE BUILD ON MICROSOFT POWER PLATFORM · N8N · CLAUDE/GEMINI · NEXT.JS · SQL — YOU PICK THE GROUND."],
     "tar-cta": ["Cotiza tu caso exacto en 60 segundos →", "Price your exact case in 60 seconds →"],
     "tar-inc": ["Toda unidad incluye: diseño, construcción, pruebas, entrega documentada y 30 días de soporte post-lanzamiento.", "Every unit includes: design, build, testing, documented handover and 30 days of post-launch support."],
+    "tar-kicker": ["PRECIO DE PLACA. SIN REUNIONES PARA SABERLO.", "NAMEPLATE PRICING. NO MEETING REQUIRED TO KNOW IT."],
+    "tar-method": ["DIAGNÓSTICO GRATIS 30 MIN → CONSTRUIMOS EN SEMANAS → 30 DÍAS DE SOPORTE · <a href=\"agentes/#metodo\">Ver el método completo →</a>", "FREE 30-MIN DIAGNOSIS → BUILT IN WEEKS → 30 DAYS OF SUPPORT · <a href=\"agentes/#metodo\">See the full method →</a>"],
     "tar-l": ["<strong>Célula compuesta — $3,000–8,000.</strong> Varios agentes orquestados con memoria compartida y tableros. ~4–8 semanas.", "<strong>Composite cell — $3,000–8,000.</strong> Several agents orchestrated with shared memory and dashboards. ~4–8 weeks."],
     "tar-m": ["<strong>Unidad estándar — $1,200–3,000.</strong> Multi-paso, razonamiento IA, 2–3 integraciones, ciclo de aprobación. ~2–4 semanas.", "<strong>Standard unit — $1,200–3,000.</strong> Multi-step, AI reasoning, 2–3 integrations, approval loop. ~2–4 weeks."],
     "tar-o": ["<strong>Operación continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagnóstico.", "<strong>Continuous operation.</strong> Monthly monitoring, tuning and improvement of your units. Scope and price defined at the diagnostic."],
@@ -412,6 +435,10 @@ const translations = (function () {
     "tierline-1": ["DIAGNÓSTICO DE 30 MIN — GRATIS", "30-MIN DIAGNOSTIC — FREE"],
     "tierline-2": ["UNIDAD DESDE $600 — PAGOS POR HITOS 40/30/30", "UNITS FROM $600 — 40/30/30 MILESTONE PAYMENTS"],
     "tierline-3": ["OPERACIÓN CONTINUA — OPCIONAL", "CONTINUOUS OPERATION — OPTIONAL"],
+    "tile-custom-cta": ["Cotizar a medida →", "Get a custom quote →"],
+    "tile-custom-desc": ["Lo dibujamos a medida — mismo método, misma entrega documentada.", "We draft it custom — same method, same documented handover."],
+    "tile-custom-taller": ["Ver el taller →", "See the workshop →"],
+    "tile-custom-title": ["¿Tu proceso no está aquí?", "Your process isn't here?"],
     "trust-1": ["Alcance y precio fijos", "Fixed scope & price"],
     "trust-2": ["Pagos por hitos", "Milestone-based payments"],
     "trust-3": ["El código y las cuentas son tuyos", "You own the code & accounts"],
@@ -1142,6 +1169,10 @@ if (proposalForm) {
         e.preventDefault();
         var form = this;
         sendForm(form, function() {
+            // Day-1 instrumentation (storefront spec graft #4)
+            try {
+                document.dispatchEvent(new CustomEvent('optz:evt', { detail: { name: 'estimator_submit', slug: '' } }));
+            } catch (err) { /* best-effort */ }
             form.style.display = 'none';
             document.getElementById('quoteModalSuccess').style.display = 'block';
             setTimeout(function() {
@@ -1186,12 +1217,22 @@ if (proposalForm) {
     document.addEventListener('click', function (e) {
         var q = e.target && e.target.closest ? e.target.closest('a.ag-cta-quote') : null;
         if (!q) return;
-        var card = q.closest('.ag-card');
-        var link = card && card.querySelector('.ag-card-link');
-        var slug = link ? (link.getAttribute('href') || '').replace(/^#/, '') : '';
+        // Hero console CTA carries the unit directly (storefront spec §2.3);
+        // vitrina cards keep deriving it from their card link. One consume path.
+        var slug = q.getAttribute('data-agent-slug') || '';
+        if (!slug) {
+            var card = q.closest('.ag-card');
+            var link = card && card.querySelector('.ag-card-link');
+            slug = link ? (link.getAttribute('href') || '').replace(/^#/, '') : '';
+        }
         if (!slug) return;
         try { sessionStorage.setItem('optz-unit', slug); } catch (err) { /* storage unavailable */ }
         initUnitPrefill();
+        // Day-1 instrumentation (graft #4): on home, script.js owns the quote
+        // click, so it emits the prefill event (agentes.js only emits standalone).
+        try {
+            document.dispatchEvent(new CustomEvent('optz:evt', { detail: { name: 'prefill', slug: slug } }));
+        } catch (err) { /* CustomEvent unavailable — metrics are best-effort */ }
     }, true);
 
     // Re-render features and recalculate prices when language/market changes.
@@ -1441,4 +1482,33 @@ if (proposalForm) {
         }
         sessionStorage.removeItem('ag_interest');
     } catch (e) { /* ignore */ }
+})();
+
+// ========== DAY-1 INSTRUMENTATION (storefront spec graft #4) ==========
+// CSP-safe: agentes.js and this file dispatch 'optz:evt' CustomEvents
+// (hero_cycle, sim_open, prefill, estimator_submit); this listener counts
+// them into the localStorage 'optz-metrics' ledger. No network calls.
+(function () {
+    var KEY = 'optz-metrics';
+
+    function bump(name) {
+        if (!name) return;
+        try {
+            var ledger = JSON.parse(localStorage.getItem(KEY) || '{}');
+            if (typeof ledger !== 'object' || ledger === null) ledger = {};
+            ledger[name] = (ledger[name] || 0) + 1;
+            localStorage.setItem(KEY, JSON.stringify(ledger));
+        } catch (e) { /* storage unavailable / corrupt — metrics are best-effort */ }
+    }
+
+    document.addEventListener('optz:evt', function (e) {
+        var d = e && e.detail;
+        if (d && d.name) bump(String(d.name));
+    });
+
+    // wa_click: any WhatsApp exit (contact rows, sticky pill, footer, stage CTA).
+    document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
+        if (a) bump('wa_click');
+    }, true);
 })();
