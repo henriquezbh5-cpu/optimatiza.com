@@ -71,11 +71,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="agentes/agentes.css">
 </head>
-<body data-ag-embed="home">
+<body data-ag-embed="home" class="bg-static">
     <a class="ag-skip" href="#main" data-i18n="skip">Saltar al contenido</a>
 
     <!-- ========== 3D BACKGROUND ========== -->
-    <canvas id="bg-canvas"></canvas>
     <div class="bg-fallback"></div>
     <div class="bg-grid-overlay"></div>
 
@@ -2319,8 +2318,6 @@
         <div class="stage-stamp mono" id="agStamp" hidden data-i18n="ag-stamp">COMPLETADO &#10003;</div>
     </dialog>
 
-    <script defer src="vendor/three.min.js"></script>
-    <script defer src="background-3d.js"></script>
     <script defer src="vendor/gsap/gsap.min.js"></script>
     <script defer src="vendor/gsap/ScrollTrigger.min.js"></script>
     <script defer src="vendor/lenis/lenis.min.js"></script>
