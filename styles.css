@@ -3301,3 +3301,106 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 @keyframes procPulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
 .proc-static .proc-hint { display: none; }
 @media (prefers-reduced-motion: reduce) { .proc-hint i { animation: none; } }
+
+/* ---- A1 Bitcoin advisory annex: the one orange room in the house ---- */
+.btc-annex { position: relative; }
+.btc-annex::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(247,147,26,0.06), transparent 55%);
+}
+.btc-chips {
+  display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-bottom: var(--sp-5);
+  font-size: var(--t-0); font-weight: 500; letter-spacing: 0.12em;
+  color: var(--btc);
+  border: 1px solid rgba(247,147,26,0.35); border-radius: var(--r-pill);
+  padding: 8px 16px;
+  background: rgba(247,147,26,0.06);
+}
+.btc-chips i { font-size: 15px; }
+
+.btc-grid {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--sp-4);
+  align-items: start; max-width: 1020px;
+}
+.btc-card {
+  position: relative;
+  background: var(--node-bg);
+  border: 1px solid var(--node-line);
+  border-radius: var(--r-0);
+  box-shadow: var(--shadow-card);
+  padding: var(--sp-4) var(--sp-4) var(--sp-4);
+  overflow: hidden;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.btc-card:hover { transform: translateY(-3px); }
+.btc-featured { border-color: rgba(247,147,26,0.45); }
+.btc-featured::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #B45309, #F7931A);
+}
+.btc-featured:hover, .btc-card:hover {
+  border-color: rgba(247,147,26,0.55);
+  box-shadow: 0 0 0 1px rgba(247,147,26,0.3), 0 0 32px rgba(247,147,26,0.14), var(--shadow-card);
+}
+.btc-card-head {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-3);
+  font-size: var(--t-0); font-weight: 500; letter-spacing: 0.12em;
+}
+.btc-plan { color: var(--ink); }
+.btc-badge {
+  color: var(--btc);
+  border: 1px solid rgba(247,147,26,0.4); border-radius: 6px;
+  padding: 3px 9px;
+  background: rgba(247,147,26,0.07);
+  white-space: nowrap;
+}
+.btc-price {
+  font-size: clamp(2.25rem, 4vw, 3rem); font-weight: 500; line-height: 1;
+  color: var(--btc);
+  margin-bottom: var(--sp-3);
+}
+.btc-per { font-size: var(--t-2); color: var(--ink-dim); font-weight: 400; }
+.btc-list { list-style: none; margin: 0 0 var(--sp-4); padding: 0; display: grid; gap: 10px; }
+.btc-list li {
+  position: relative; padding-left: 26px;
+  font-size: var(--t-2); color: var(--ink-body); line-height: 1.5;
+}
+.btc-list li::before {
+  content: '\20BF'; /* ₿ */
+  position: absolute; left: 0; top: 0;
+  font-family: var(--ff-mono); font-weight: 500;
+  color: var(--btc); opacity: 0.9;
+}
+.btn-btc {
+  width: 100%;
+  position: relative; overflow: hidden; isolation: isolate;
+  color: #1A0E02; border-color: transparent; border-radius: 10px;
+  transition: box-shadow var(--dur-micro) ease, transform var(--dur-micro) ease;
+}
+.btn-btc::after {
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background: linear-gradient(120deg, #D97706, #F7931A);
+}
+.btn-btc::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(255,255,255,0.22);
+  transform: translateY(101%); transition: transform .25s var(--ease-draw);
+}
+.btn-btc:hover::before, .btn-btc:focus-visible::before { transform: translateY(0); }
+.btn-btc:hover, .btn-btc:focus-visible {
+  box-shadow: 0 0 28px rgba(247,147,26,0.35); transform: translateY(-1px);
+}
+.btn-btc-ghost { color: var(--btc); }
+.btn-btc-ghost::after { background: rgba(247,147,26,0.1); }
+.btn-btc-ghost::before { background: rgba(247,147,26,0.14); }
+.btc-annex .btn-btc-ghost { border: 1px solid rgba(247,147,26,0.45); }
+.btc-note {
+  margin-top: var(--sp-5); max-width: 72ch;
+  font-size: var(--t-0); letter-spacing: 0.08em; line-height: 1.7;
+  color: var(--ink-dim);
+}
+@media (max-width: 899px) {
+  .btc-grid { grid-template-columns: 1fr; }
+}

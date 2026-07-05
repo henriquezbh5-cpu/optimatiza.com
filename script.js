@@ -127,6 +127,28 @@ const translations = (function () {
   // Combined ES/EN table — es and en share one key set, so parity is
   // guaranteed by construction (spec §9.2). [ES, EN] per key.
   var I18N = {
+    /* ---- Bitcoin advisory annex (btc-*) ---- */
+    "ch-btc": ["A1 — ANEXO · ASESORÍA BITCOIN", "A1 — ANNEX · BITCOIN ADVISORY"],
+    "btc-title": ["Asesoría Bitcoin, de operador a operador.", "Bitcoin advisory, operator to operator."],
+    "btc-sub": ["Opero Bitcoin desde 2017 — y sigo operando activamente. La asesoría se apoya en indicadores automatizados propios que estudian el comportamiento histórico del mercado para proyectar escenarios. Los estudiamos juntos, y el plan se adapta a ti.", "I have traded Bitcoin since 2017 — and I still trade actively. The advisory is backed by my own automated indicators that study the market's historical behavior to project scenarios. We study them together, and the plan adapts to you."],
+    "btc-chips": ["<i class=\"ph ph-currency-btc\" aria-hidden=\"true\"></i> OPERANDO DESDE 2017 · INDICADORES AUTOMATIZADOS PROPIOS · SESIONES EN VIVO SOBRE EL PANEL", "<i class=\"ph ph-currency-btc\" aria-hidden=\"true\"></i> TRADING SINCE 2017 · MY OWN AUTOMATED INDICATORS · LIVE SESSIONS ON THE PANEL"],
+    "btc-p1-name": ["INMERSIÓN COMPLETA", "FULL IMMERSION"],
+    "btc-p1-badge": ["SESIÓN ÚNICA · 3 HORAS", "ONE SESSION · 3 HOURS"],
+    "btc-p1-f1": ["Fundamentos e historia de Bitcoin, explicados sin humo", "Bitcoin fundamentals and history, explained without hype"],
+    "btc-p1-f2": ["Indicadores y patrones de ciclo — y cómo leerlos tú mismo", "Cycle indicators and patterns — and how to read them yourself"],
+    "btc-p1-f3": ["Mi experiencia real operando desde 2017: aciertos y errores", "My real trading experience since 2017: wins and mistakes"],
+    "btc-p1-f4": ["Estudio del mercado en vivo sobre el panel automatizado", "Live market study on the automated panel"],
+    "btc-p1-f5": ["Plan de ciclo: zonas de suelo para comprar y posible techo histórico para vender", "Cycle plan: floor zones to buy and possible historical top to sell"],
+    "btc-p1-cta": ["Reservar inmersión →", "Book the immersion →"],
+    "btc-p2-name": ["ACOMPAÑAMIENTO MENSUAL", "MONTHLY GUIDANCE"],
+    "btc-p2-badge": ["1 HORA / MES", "1 HOUR / MONTH"],
+    "btc-p2-per": ["/mes", "/mo"],
+    "btc-p2-f1": ["Dónde estamos en el ciclo, con datos — no con ruido de redes", "Where we are in the cycle, with data — not social-media noise"],
+    "btc-p2-f2": ["Lectura del mes sobre el panel: qué dicen los indicadores", "The month's read on the panel: what the indicators say"],
+    "btc-p2-f3": ["Ajuste de tu plan: acumular, esperar o tomar ganancia", "Adjusting your plan: accumulate, wait or take profit"],
+    "btc-p2-cta": ["Empezar acompañamiento →", "Start monthly guidance →"],
+    "btc-note": ["ACOMPAÑAMIENTO EDUCATIVO ENTRE PARTICULARES — NO ES ASESORÍA FINANCIERA REGULADA NI PROMESA DE RENDIMIENTOS. BITCOIN ES VOLÁTIL: OPERA SOLO CAPITAL QUE PUEDAS ARRIESGAR.", "PRIVATE EDUCATIONAL GUIDANCE — NOT REGULATED FINANCIAL ADVICE NOR A PROMISE OF RETURNS. BITCOIN IS VOLATILE: ONLY TRADE CAPITAL YOU CAN AFFORD TO RISK."],
+    "footer-bitcoin": ["Bitcoin", "Bitcoin"],
     /* ---- Flow Canvas hero (fw-*) + end-to-end process (proc-*) ---- */
     "fw-aria": ["Simulación de flujo de agentes en vivo", "Live agent workflow simulation"],
     "fw-name": ["FLUJO: ATENCIÓN AL CLIENTE — 24/7", "WORKFLOW: CUSTOMER OPERATIONS — 24/7"],
