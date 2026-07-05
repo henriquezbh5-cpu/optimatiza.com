@@ -319,10 +319,13 @@
     var N = cards.length;
     var isNarrow = window.matchMedia('(max-width: 899px)').matches;
 
+    var hint = $('#procHint'), hintStep = $('#procHintStep');
     function activate(i) {
       nodes.forEach(function (n, k) { n.classList.toggle('is-on', k <= i); });
       cards.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
       if (fill) fill.style.width = ((i + 1) / N * 100) + '%';
+      if (hintStep) hintStep.textContent = (L ? 'STEP ' : 'PASO ') + (i + 1) + (L ? ' OF ' : ' DE ') + N;
+      if (hint) hint.classList.toggle('is-done', i >= N - 1);
     }
 
     if (REDUCED || isNarrow || !window.gsap || !window.ScrollTrigger) {

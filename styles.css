@@ -1426,8 +1426,6 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 }
 .about-photo {
   display: block; width: 100%;
-  /* duotone: grayscale + warm sepia pulled toward navy */
-  filter: grayscale(1) sepia(.12) hue-rotate(170deg) saturate(.5) contrast(1.02);
 }
 .about-portrait figcaption {
   font-size: var(--t-0); font-weight: 500;
@@ -2028,20 +2026,20 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 .form-field input, .form-field select, .form-field textarea {
   width: 100%;
   font-size: var(--t-2); color: var(--ink);
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--line);
-  border-radius: var(--r-0);
-  padding: var(--sp-1) 0;
+  background: var(--node-bg);
+  border: 1px solid var(--node-line);
+  border-radius: 10px;
+  padding: 12px 14px;
   transition: border-color var(--dur-micro) ease, box-shadow var(--dur-micro) ease;
 }
+.form-field input::placeholder, .form-field textarea::placeholder { color: var(--ink-dim); }
 .form-field select { cursor: pointer; }
 .form-field select option { background: var(--paper-0); color: var(--ink); }
 .form-field textarea { resize: vertical; }
 .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
   outline: none;
-  border-bottom-color: var(--steel);
-  box-shadow: 0 1px 0 0 var(--steel);
+  border-color: rgba(20,184,166,0.6);
+  box-shadow: var(--glow-teal);
 }
 .form-hp { display: none !important; }
 .form-success { font-size: var(--t-2); font-weight: 500; color: var(--ok-text); }
@@ -2451,7 +2449,6 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 .tb-photo {
   width: 72px; height: 88px; object-fit: cover; flex-shrink: 0;
   border: 1px solid var(--line-strong);
-  filter: grayscale(1) sepia(0.12); /* matches the about duotone family */
 }
 .tb-signature {
   font-family: var(--ff-display); font-style: italic; font-weight: 400;
@@ -2615,7 +2612,6 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 .contact-portrait img {
   display: block;
   width: 180px; height: 220px; object-fit: cover;
-  filter: grayscale(1) sepia(0.12);
   border: 1px solid var(--line-strong);
   padding: 6px;
   background: var(--paper-1);
@@ -3288,3 +3284,18 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
     white-space: normal; overflow-wrap: anywhere;
   }
 }
+
+/* proc: scroll cue so nobody thinks the page ended mid-pin */
+.proc { min-height: 68vh; display: flex; flex-direction: column; justify-content: center; }
+.proc-hint {
+  margin-top: var(--sp-5);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: var(--t-0); font-weight: 500; letter-spacing: 0.14em;
+  color: var(--live);
+  transition: opacity .4s ease;
+}
+.proc-hint i { font-size: 15px; animation: procNudge 1.4s ease-in-out infinite; }
+@keyframes procNudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+.proc-hint.is-done { opacity: 0; }
+.proc-static .proc-hint { display: none; }
+@media (prefers-reduced-motion: reduce) { .proc-hint i { animation: none; } }
