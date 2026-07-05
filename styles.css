@@ -3438,3 +3438,41 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 @media (max-width: 1099px) {
   .btc-grid { grid-template-columns: 1fr; max-width: 560px; }
 }
+
+/* btc v3: equal-height cards, CTAs on one baseline */
+.btc-grid { align-items: stretch; }
+.btc-card { display: flex; flex-direction: column; }
+.btc-card .btn-btc { margin-top: auto; }
+.btc-example { margin-top: var(--sp-3); }
+
+/* Bitcoin Academy credential callout */
+.btc-academy {
+  display: flex; align-items: center; gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(247,147,26,0.05);
+  border: 1px solid rgba(247,147,26,0.25);
+  border-left: 3px solid var(--btc);
+  border-radius: var(--r-0);
+}
+.btc-academy-ico {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: 12px; font-size: 22px;
+  background: rgba(247,147,26,0.12); color: var(--btc);
+}
+.btc-academy-text { margin: 0; font-size: var(--t-2); color: var(--ink-body); line-height: 1.6; }
+.btc-academy-text strong { color: var(--ink); }
+.btc-academy-link {
+  flex-shrink: 0;
+  font-size: var(--t-1); font-weight: 500; letter-spacing: 0.06em;
+  color: var(--btc);
+  border-bottom: 1px solid rgba(247,147,26,0.5);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: color var(--dur-micro) ease;
+}
+.btc-academy-link:hover { color: #FFB347; }
+@media (max-width: 899px) {
+  .btc-academy { flex-direction: column; align-items: flex-start; }
+}
