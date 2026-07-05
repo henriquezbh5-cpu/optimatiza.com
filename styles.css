@@ -3404,3 +3404,37 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 @media (max-width: 899px) {
   .btc-grid { grid-template-columns: 1fr; }
 }
+
+/* btc annex v2: 3-tier ladder */
+.btc-grid { grid-template-columns: repeat(3, 1fr); max-width: none; }
+.btc-kicker {
+  font-size: var(--t-0); font-weight: 500; letter-spacing: 0.14em;
+  color: var(--ink-dim); margin-bottom: var(--sp-2);
+}
+.btc-ribbon {
+  position: absolute; top: 14px; right: -34px;
+  transform: rotate(38deg);
+  font-size: 0.5938rem; font-weight: 500; letter-spacing: 0.14em;
+  background: linear-gradient(120deg, #D97706, #F7931A); color: #1A0E02;
+  padding: 4px 38px;
+}
+.btc-annual {
+  margin: -6px 0 var(--sp-3);
+  font-size: var(--t-0); font-weight: 500; letter-spacing: 0.1em;
+  color: var(--ok-text);
+}
+.btc-slash { color: var(--ink-dim); font-size: 0.6em; margin: 0 2px; }
+.btc-fund {
+  background: linear-gradient(180deg, rgba(247,147,26,0.05), rgba(14,22,38,0) 40%), var(--node-bg);
+  border-color: rgba(247,147,26,0.35);
+}
+.btc-example {
+  margin: 0 0 var(--sp-3);
+  font-size: 0.6563rem; letter-spacing: 0.04em; line-height: 1.7;
+  color: var(--ink-dim);
+  border-left: 2px solid rgba(247,147,26,0.5);
+  padding-left: 10px;
+}
+@media (max-width: 1099px) {
+  .btc-grid { grid-template-columns: 1fr; max-width: 560px; }
+}
