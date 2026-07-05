@@ -9,6 +9,7 @@
     <meta name="description" content="Fabricamos e instalamos agentes de IA y automatización para empresas de LATAM y EE. UU. Catálogo de 20 unidades con simuladores en vivo, precios de placa desde $600 y entrega en semanas. Operaciones que corren solas.">
     <meta name="author" content="Optimatiza">
     <link rel="canonical" href="https://optimatiza.com/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Optimatiza — Agentes de IA y Automatización | LATAM & US">
@@ -19,9 +20,11 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Optimatiza — Operating Ledger">
-    <meta property="og:locale" content="es_LA">
+    <meta property="og:locale" content="es_ES">
     <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimatiza — Agentes de IA y Automatización | LATAM & US">
+    <meta name="twitter:description" content="Veinte agentes de IA con simuladores en vivo. Precios a la vista, entrega en semanas. Operaciones que corren solas.">
     <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
 
     <!-- Favicon: Puerto de Unidad seal -->
@@ -50,7 +53,7 @@
       "areaServed": ["El Salvador", "Latin America", "United States"],
       "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": "+503-7192-8070", "availableLanguage": ["es", "en"] }
     },
-    { "@type": "WebSite", "url": "https://optimatiza.com/", "name": "Optimatiza", "inLanguage": ["es", "en"], "publisher": { "@id": "https://optimatiza.com/#org" } }
+    { "@type": "WebSite", "@id": "https://optimatiza.com/#website", "url": "https://optimatiza.com/", "name": "Optimatiza", "inLanguage": ["es", "en"], "publisher": { "@id": "https://optimatiza.com/#org" } }
   ]
 }
     </script>
@@ -69,6 +72,7 @@
     <link rel="stylesheet" href="agentes/agentes.css">
 </head>
 <body data-ag-embed="home">
+    <a class="ag-skip" href="#main" data-i18n="skip">Saltar al contenido</a>
 
     <!-- ========== 3D BACKGROUND ========== -->
     <canvas id="bg-canvas"></canvas>
@@ -127,6 +131,7 @@
     </nav>
 
     <!-- ========== HERO: DOCUMENT HEADER ========== -->
+    <main id="main">
     <section class="hero" id="hero">
         <div class="container">
             <header class="hero-dochead rv">
@@ -625,7 +630,7 @@
                 </div>
                 <div class="tar-row rv">
                     <span class="tar-band mono" aria-hidden="true">O</span>
-                    <p class="tar-body" data-i18n="tar-o"><strong>O &mdash; Operaci&oacute;n continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagn&oacute;stico.</p>
+                    <p class="tar-body" data-i18n="tar-o"><strong>Operaci&oacute;n continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagn&oacute;stico.</p>
                 </div>
             </div>
 
@@ -857,35 +862,35 @@
                         <article class="dossier rv">
                 <div class="dossier-rule mono">
                     <span class="dossier-case">CASE 01</span>
-                    <span class="dossier-industry" data-i18n="proj1-industry">Managed IT Services — LATAM Regional</span>
+                    <span class="dossier-industry" data-i18n="proj1-industry">Servicios IT Gestionados — Regional LATAM</span>
                     <span class="chip-inprod" data-i18n="label-inprod">EN PRODUCCIÓN</span>
                     <span class="chip-founder mono" data-i18n="chip-founder">ENTREGADO POR NUESTRO FUNDADOR</span>
                     <img src="img/stamp-verified.svg" alt="" aria-hidden="true" class="stamp-inprod" width="72" height="72" loading="lazy">
                 </div>
-                <h3 class="dossier-title"><span class="line-mask"><span class="line" data-i18n="proj1-title">AI-Powered Technical Assistant</span></span></h3>
-                <p class="dossier-tagline" data-i18n="proj1-tagline">From searching manuals for hours to finding answers in seconds</p>
+                <h3 class="dossier-title"><span class="line-mask"><span class="line" data-i18n="proj1-title">Asistente Técnico con Inteligencia Artificial</span></span></h3>
+                <p class="dossier-tagline" data-i18n="proj1-tagline">De buscar manuales por horas a encontrar respuestas en segundos</p>
                 <div class="dossier-cols">
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-problem">Situation</h4>
-                        <p data-i18n="proj1-problem">Field technicians wasted significant time searching for technical documentation. They navigated SharePoint folders without an intelligent search system, sent messages to colleagues asking for files, or resolved issues without consulting official documentation.</p>
+                        <h4 class="dossier-label mono" data-i18n="label-problem">Situación</h4>
+                        <p data-i18n="proj1-problem">Técnicos de campo perdían tiempo significativo buscando documentación técnica. Navegaban carpetas de SharePoint sin sistema de búsqueda inteligente, enviaban mensajes a colegas pidiendo archivos, o resolvían sin consultar la documentación oficial.</p>
                     </div>
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-solution">Solution</h4>
-                        <p data-i18n="proj1-solution">A Power Apps app where the technician types their query in natural language. AI Builder extracts keywords, builds a KQL query against SharePoint Search API, filters results by the technician's area/role, and returns relevant documents in seconds.</p>
+                        <h4 class="dossier-label mono" data-i18n="label-solution">Solución</h4>
+                        <p data-i18n="proj1-solution">App en Power Apps donde el técnico escribe su consulta en lenguaje natural. AI Builder extrae keywords, se construye una query KQL contra SharePoint Search API, se filtran resultados por área/rol del técnico, y se devuelven documentos relevantes en segundos.</p>
                     </div>
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-results">Result</h4>
+                        <h4 class="dossier-label mono" data-i18n="label-results">Resultado</h4>
                         <ul class="dossier-results">
-                            <li data-i18n="proj1-result-1">Documentation search went from minutes to seconds</li>
-                            <li data-i18n="proj1-result-2">Eliminated dependency on "asking the expert"</li>
-                            <li data-i18n="proj1-result-3">Escalations due to lack of information visibly reduced</li>
-                            <li data-i18n="proj1-result-4">Role-based security: each technician sees only what they should</li>
+                            <li data-i18n="proj1-result-1">Búsqueda de documentación pasó de minutos a segundos</li>
+                            <li data-i18n="proj1-result-2">Eliminó dependencia de "preguntarle al que sabe"</li>
+                            <li data-i18n="proj1-result-3">Escalaciones por falta de información reducidas visiblemente</li>
+                            <li data-i18n="proj1-result-4">Seguridad por rol: cada técnico ve solo lo que le corresponde</li>
                         </ul>
                     </div>
                 </div>
-                <div class="slab rv"><span class="slab-before" data-i18n="slab-1-before">HOURS</span><span class="slab-arrow" aria-hidden="true">→</span><span class="slab-after" data-i18n="slab-1-after">SECONDS</span></div>
+                <div class="slab rv"><span class="slab-before" data-i18n="slab-1-before">HORAS</span><span class="slab-arrow" aria-hidden="true">→</span><span class="slab-after" data-i18n="slab-1-after">SEGUNDOS</span></div>
                 <div class="dossier-arch">
-                    <div class="arch-title mono" data-i18n="proj1-arch-title">System schematic</div>
+                    <div class="arch-title mono" data-i18n="proj1-arch-title">Esquema del sistema</div>
                     <div class="arch-flow">
                         <div class="arch-node"><i class="ph ph-app-window" aria-hidden="true"></i><span>Power Apps</span></div>
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
@@ -893,93 +898,93 @@
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
                         <div class="arch-node"><i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>SharePoint Search (KQL)</span></div>
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
-                        <div class="arch-node"><i class="ph ph-user-gear" aria-hidden="true"></i><span data-i18n="arch-role-results">Role-filtered results</span></div>
+                        <div class="arch-node"><i class="ph ph-user-gear" aria-hidden="true"></i><span data-i18n="arch-role-results">Resultados filtrados por rol</span></div>
                     </div>
                     <p class="dossier-stack mono">Power Apps · Power Automate · AI Builder · SharePoint Search API · KQL</p>
                 </div>
-                <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">Have a process like this? → Estimate it</a></p>
+                <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">¿Tienes un proceso así? → Cotízalo</a></p>
             </article>
 
             <!-- CASE 02: Multi-Source Service Desk Dashboard -->
             <article class="dossier rv">
                 <div class="dossier-rule mono">
                     <span class="dossier-case">CASE 02</span>
-                    <span class="dossier-industry" data-i18n="proj2-industry">Regional Service Desk</span>
+                    <span class="dossier-industry" data-i18n="proj2-industry">Service Desk Regional</span>
                     <span class="chip-inprod" data-i18n="label-inprod">EN PRODUCCIÓN</span>
                     <span class="chip-founder mono" data-i18n="chip-founder">ENTREGADO POR NUESTRO FUNDADOR</span>
                     <img src="img/stamp-verified.svg" alt="" aria-hidden="true" class="stamp-inprod" width="72" height="72" loading="lazy">
                 </div>
-                <h3 class="dossier-title"><span class="line-mask"><span class="line" data-i18n="proj2-title">Multi-Source Executive Dashboard</span></span></h3>
-                <p class="dossier-tagline" data-i18n="proj2-tagline">Unifying data from 3 service desks into a single dashboard</p>
+                <h3 class="dossier-title"><span class="line-mask"><span class="line" data-i18n="proj2-title">Dashboard Ejecutivo Multi-Fuente</span></span></h3>
+                <p class="dossier-tagline" data-i18n="proj2-tagline">Unificando datos de 3 service desks en un solo dashboard</p>
                 <div class="dossier-cols">
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-problem">Situation</h4>
-                        <p data-i18n="proj2-problem">Three different data sources (a monitoring tool, a ticketing system and a SQL Server database) with no unified view. To see the complete picture, you had to log into three different portals. Management was making decisions with partial information.</p>
+                        <h4 class="dossier-label mono" data-i18n="label-problem">Situación</h4>
+                        <p data-i18n="proj2-problem">Tres fuentes de datos distintas (una herramienta de monitoreo, un sistema de tickets y una base de datos SQL Server) sin vista unificada. Para ver el panorama completo, había que entrar a tres portales diferentes. La gerencia tomaba decisiones con información parcial.</p>
                     </div>
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-solution">Solution</h4>
-                        <p data-i18n="proj2-solution">Executive dashboard in Power BI connecting all three sources. M queries with dynamic pagination (List.Generate) for APIs, on-premises gateway for SQL Server, unified dimensional model and automatic refresh.</p>
+                        <h4 class="dossier-label mono" data-i18n="label-solution">Solución</h4>
+                        <p data-i18n="proj2-solution">Dashboard ejecutivo en Power BI conectando las tres fuentes. Queries M con paginación dinámica (List.Generate) para APIs, gateway on-premises para SQL Server, modelo dimensional unificado y refresh automático.</p>
                     </div>
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-results">Result</h4>
+                        <h4 class="dossier-label mono" data-i18n="label-results">Resultado</h4>
                         <ul class="dossier-results">
-                            <li data-i18n="proj2-result-1">Consolidated view of the entire support operation</li>
-                            <li data-i18n="proj2-result-2">Eliminated manual executive report preparation</li>
-                            <li data-i18n="proj2-result-3">Identified workload patterns by country and technician</li>
-                            <li data-i18n="proj2-result-4">Real-time visibility for decision making</li>
+                            <li data-i18n="proj2-result-1">Vista consolidada de toda la operación de soporte</li>
+                            <li data-i18n="proj2-result-2">Eliminó preparación manual de reportes ejecutivos</li>
+                            <li data-i18n="proj2-result-3">Identificó patrones de carga por país y técnico</li>
+                            <li data-i18n="proj2-result-4">Visibilidad en tiempo real para toma de decisiones</li>
                         </ul>
                     </div>
                 </div>
-                <div class="slab rv"><span class="slab-before" data-i18n="slab-2-before">3 PORTALS</span><span class="slab-arrow" aria-hidden="true">→</span><span class="slab-after" data-i18n="slab-2-after">1 DASHBOARD</span></div>
+                <div class="slab rv"><span class="slab-before" data-i18n="slab-2-before">3 PORTALES</span><span class="slab-arrow" aria-hidden="true">→</span><span class="slab-after" data-i18n="slab-2-after">1 DASHBOARD</span></div>
                 <div class="dossier-arch">
-                    <div class="arch-title mono" data-i18n="proj2-arch-title">Data flow</div>
+                    <div class="arch-title mono" data-i18n="proj2-arch-title">Flujo de datos</div>
                     <div class="arch-flow">
-                        <div class="arch-node"><i class="ph ph-plugs-connected" aria-hidden="true"></i><span data-i18n="arch-three-sources">3 data sources</span></div>
+                        <div class="arch-node"><i class="ph ph-plugs-connected" aria-hidden="true"></i><span data-i18n="arch-three-sources">3 fuentes de datos</span></div>
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
                         <div class="arch-node highlight"><i class="ph ph-funnel" aria-hidden="true"></i><span>Power Query (M)</span></div>
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
-                        <div class="arch-node"><i class="ph ph-cube" aria-hidden="true"></i><span data-i18n="arch-star-model">Dimensional model</span></div>
+                        <div class="arch-node"><i class="ph ph-cube" aria-hidden="true"></i><span data-i18n="arch-star-model">Modelo dimensional</span></div>
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
                         <div class="arch-node"><i class="ph ph-chart-line-up" aria-hidden="true"></i><span>Power BI</span></div>
                     </div>
                     <p class="dossier-stack mono">Power BI · Power Query (M) · DAX · REST APIs · SQL Server</p>
                 </div>
-                <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">Have a process like this? → Estimate it</a></p>
+                <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">¿Tienes un proceso así? → Cotízalo</a></p>
             </article>
 
             <!-- CASE 03: RPA for Legacy Systems -->
             <article class="dossier rv">
                 <div class="dossier-rule mono">
                     <span class="dossier-case">CASE 03</span>
-                    <span class="dossier-industry" data-i18n="proj6-industry">Internal Operations — LATAM</span>
+                    <span class="dossier-industry" data-i18n="proj6-industry">Operaciones Internas — LATAM</span>
                     <span class="chip-inprod" data-i18n="label-inprod">EN PRODUCCIÓN</span>
                     <span class="chip-founder mono" data-i18n="chip-founder">ENTREGADO POR NUESTRO FUNDADOR</span>
                     <img src="img/stamp-verified.svg" alt="" aria-hidden="true" class="stamp-inprod" width="72" height="72" loading="lazy">
                 </div>
-                <h3 class="dossier-title"><span class="line-mask"><span class="line" data-i18n="proj6-title">RPA Automation for Legacy Systems</span></span></h3>
-                <p class="dossier-tagline" data-i18n="proj6-tagline">Bots that process what nobody wants to process</p>
+                <h3 class="dossier-title"><span class="line-mask"><span class="line" data-i18n="proj6-title">Automatización RPA para Sistemas Legacy</span></span></h3>
+                <p class="dossier-tagline" data-i18n="proj6-tagline">Bots que procesan lo que nadie quiere procesar</p>
                 <div class="dossier-cols">
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-problem">Situation</h4>
-                        <p data-i18n="proj6-problem">Repetitive manual processes with Excel files: massive case-management imports across multiple LATAM countries, inconsistent date formats, files locked by OneDrive sync.</p>
+                        <h4 class="dossier-label mono" data-i18n="label-problem">Situación</h4>
+                        <p data-i18n="proj6-problem">Procesos manuales repetitivos con archivos Excel: importaciones masivas de casos para múltiples países LATAM, formatos de fecha inconsistentes, archivos bloqueados por OneDrive sync.</p>
                     </div>
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-solution">Solution</h4>
-                        <p data-i18n="proj6-solution">Bot suite in Power Automate Desktop with OneDrive sync handling, automatic format validation by country, batch processing of 500 records, orchestration from cloud flows.</p>
+                        <h4 class="dossier-label mono" data-i18n="label-solution">Solución</h4>
+                        <p data-i18n="proj6-solution">Suite de bots en Power Automate Desktop con manejo de OneDrive sync, validación automática de formatos por país, procesamiento batch de 500 registros, orquestación desde cloud flows.</p>
                     </div>
                     <div class="dossier-col">
-                        <h4 class="dossier-label mono" data-i18n="label-results">Result</h4>
+                        <h4 class="dossier-label mono" data-i18n="label-results">Resultado</h4>
                         <ul class="dossier-results">
-                            <li data-i18n="proj6-result-1">Weekly hours of manual work eliminated</li>
-                            <li data-i18n="proj6-result-2">Format and data errors completely eliminated</li>
-                            <li data-i18n="proj6-result-3">Processes independent of specific individuals</li>
-                            <li data-i18n="proj6-result-4">Staff redirected to higher-value activities</li>
+                            <li data-i18n="proj6-result-1">Horas semanales de trabajo manual eliminadas</li>
+                            <li data-i18n="proj6-result-2">Errores de formato y datos eliminados por completo</li>
+                            <li data-i18n="proj6-result-3">Procesos independientes de personas específicas</li>
+                            <li data-i18n="proj6-result-4">Personal redirigido a actividades de mayor valor</li>
                         </ul>
                     </div>
                 </div>
-                <div class="slab rv"><span class="slab-before" data-i18n="slab-3-before">MANUAL PROCESS</span><span class="slab-arrow" aria-hidden="true">→</span><span class="slab-after" data-i18n="slab-3-after">ZERO TOUCH</span></div>
+                <div class="slab rv"><span class="slab-before" data-i18n="slab-3-before">PROCESO MANUAL</span><span class="slab-arrow" aria-hidden="true">→</span><span class="slab-after" data-i18n="slab-3-after">CERO INTERVENCIÓN</span></div>
                 <div class="dossier-arch">
-                    <div class="arch-title mono" data-i18n="proj6-arch-title">Automation flow</div>
+                    <div class="arch-title mono" data-i18n="proj6-arch-title">Flujo de automatización</div>
                     <div class="arch-flow">
                         <div class="arch-node"><i class="ph ph-cloud" aria-hidden="true"></i><span>Cloud Flow</span></div>
                         <div class="arch-arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></div>
@@ -991,7 +996,7 @@
                     </div>
                     <p class="dossier-stack mono">Power Automate Desktop · Power Automate Cloud · PowerShell · ExcelScript</p>
                 </div>
-                <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">Have a process like this? → Estimate it</a></p>
+                <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">¿Tienes un proceso así? → Cotízalo</a></p>
             </article>
 
             <!-- Compact cases 04–06 -->
@@ -999,46 +1004,46 @@
                 <details class="dossier-mini">
                     <summary>
                         <span class="dossier-case mono">CASE 04</span>
-                        <h3 class="dossier-mini-title" data-i18n="proj7-title">Automated Document Control</h3>
-                        <span class="dossier-mini-ind mono" data-i18n="proj7-industry">Managed IT Services — LATAM Regional</span>
+                        <h3 class="dossier-mini-title" data-i18n="proj7-title">Control Documental Automatizado</h3>
+                        <span class="dossier-mini-ind mono" data-i18n="proj7-industry">Servicios IT Gestionados — Regional LATAM</span>
                         <i class="ph ph-plus dossier-mini-ico" aria-hidden="true"></i>
                     </summary>
                     <div class="dossier-mini-body">
-                        <p class="dossier-tagline" data-i18n="proj7-tagline">One governed master list instead of a hand-maintained spreadsheet</p>
-                        <p><strong class="dossier-label mono" data-i18n="label-problem">Situation</strong> <span data-i18n="proj7-problem">Controlled documents were tracked in a master list maintained by hand. Versions drifted, review dates slipped by unnoticed, and preparing for an audit meant days of chasing files and cross-checking spreadsheets.</span></p>
-                        <p><strong class="dossier-label mono" data-i18n="label-solution">Solution</strong> <span data-i18n="proj7-solution">An automated document-control system on SharePoint: a governed master list with version control, approval flows for new and updated documents, automatic review-date reminders and a live status view of the entire library.</span></p>
-                        <p><strong class="dossier-label mono" data-i18n="label-results">Result</strong> <span data-i18n="proj7-result-1">The master list maintains itself — audits are prepared from a live, trustworthy register instead of a rescue mission.</span></p>
-                        <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">Have a process like this? → Estimate it</a></p>
+                        <p class="dossier-tagline" data-i18n="proj7-tagline">Un listado maestro gobernado en lugar de una hoja mantenida a mano</p>
+                        <p><strong class="dossier-label mono" data-i18n="label-problem">Situación</strong> <span data-i18n="proj7-problem">Los documentos controlados se llevaban en un listado maestro mantenido a mano. Las versiones se desfasaban, las fechas de revisión pasaban inadvertidas y preparar una auditoría implicaba días persiguiendo archivos y cruzando hojas de cálculo.</span></p>
+                        <p><strong class="dossier-label mono" data-i18n="label-solution">Solución</strong> <span data-i18n="proj7-solution">Un sistema automatizado de control documental sobre SharePoint: listado maestro gobernado con control de versiones, flujos de aprobación para documentos nuevos y actualizados, recordatorios automáticos de fechas de revisión y una vista en vivo del estado de toda la biblioteca.</span></p>
+                        <p><strong class="dossier-label mono" data-i18n="label-results">Resultado</strong> <span data-i18n="proj7-result-1">El listado maestro se mantiene solo — las auditorías se preparan desde un registro vivo y confiable, no como una misión de rescate.</span></p>
+                        <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">¿Tienes un proceso así? → Cotízalo</a></p>
                     </div>
                 </details>
                 <details class="dossier-mini">
                     <summary>
                         <span class="dossier-case mono">CASE 05</span>
-                        <h3 class="dossier-mini-title" data-i18n="proj8-title">Request & Approval Portal</h3>
-                        <span class="dossier-mini-ind mono" data-i18n="proj8-industry">Corporate Operations — Multi-country</span>
+                        <h3 class="dossier-mini-title" data-i18n="proj8-title">Portal de Solicitudes y Aprobaciones</h3>
+                        <span class="dossier-mini-ind mono" data-i18n="proj8-industry">Operaciones Corporativas — Multipaís</span>
                         <i class="ph ph-plus dossier-mini-ico" aria-hidden="true"></i>
                     </summary>
                     <div class="dossier-mini-body">
-                        <p class="dossier-tagline" data-i18n="proj8-tagline">Travel requests with multi-level digital approval</p>
-                        <p><strong class="dossier-label mono" data-i18n="label-problem">Situation</strong> <span data-i18n="proj8-problem">Travel requests and approvals ran over email. No standard form, no visibility of where a request was stuck, and every country handled the process slightly differently.</span></p>
-                        <p><strong class="dossier-label mono" data-i18n="label-solution">Solution</strong> <span data-i18n="proj8-solution">A digital portal that replaced email-based approvals with a standardized form, automatic multi-level approval flow, real-time notifications and status tracking — standardized across all countries of operation.</span></p>
-                        <p><strong class="dossier-label mono" data-i18n="label-results">Result</strong> <span data-i18n="proj8-result-1">Every request is traceable from submission to approval, and nobody chases signatures by email anymore.</span></p>
-                        <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">Have a process like this? → Estimate it</a></p>
+                        <p class="dossier-tagline" data-i18n="proj8-tagline">Solicitudes de viaje con aprobación digital multinivel</p>
+                        <p><strong class="dossier-label mono" data-i18n="label-problem">Situación</strong> <span data-i18n="proj8-problem">Las solicitudes y aprobaciones de viaje corrían por correo. Sin formulario estándar, sin visibilidad de dónde estaba detenida una solicitud, y cada país manejaba el proceso de forma ligeramente distinta.</span></p>
+                        <p><strong class="dossier-label mono" data-i18n="label-solution">Solución</strong> <span data-i18n="proj8-solution">Un portal digital que reemplazó las aprobaciones por correo con un formulario estandarizado, flujo de aprobación multinivel automático, notificaciones en tiempo real y seguimiento de estado — estandarizado para todos los países de operación.</span></p>
+                        <p><strong class="dossier-label mono" data-i18n="label-results">Resultado</strong> <span data-i18n="proj8-result-1">Cada solicitud es trazable desde el envío hasta la aprobación, y ya nadie persigue firmas por correo.</span></p>
+                        <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">¿Tienes un proceso así? → Cotízalo</a></p>
                     </div>
                 </details>
                 <details class="dossier-mini">
                     <summary>
                         <span class="dossier-case mono">CASE 06</span>
-                        <h3 class="dossier-mini-title" data-i18n="proj12-title">Automated Purchasing Cycle</h3>
-                        <span class="dossier-mini-ind mono" data-i18n="proj12-industry">Procurement — LATAM</span>
+                        <h3 class="dossier-mini-title" data-i18n="proj12-title">Ciclo de Compras Automatizado</h3>
+                        <span class="dossier-mini-ind mono" data-i18n="proj12-industry">Compras — LATAM</span>
                         <i class="ph ph-plus dossier-mini-ico" aria-hidden="true"></i>
                     </summary>
                     <div class="dossier-mini-body">
-                        <p class="dossier-tagline" data-i18n="proj12-tagline">From request to approved purchase order without retyping</p>
-                        <p><strong class="dossier-label mono" data-i18n="label-problem">Situation</strong> <span data-i18n="proj12-problem">Purchase orders were assembled by hand from emails and spreadsheets: re-typed data, missing approvals, and no clear record of who authorized what or when.</span></p>
-                        <p><strong class="dossier-label mono" data-i18n="label-solution">Solution</strong> <span data-i18n="proj12-solution">An automated purchase-order workflow: standardized request capture, approval routing by amount and category, automatic document generation and a complete audit trail on every order.</span></p>
-                        <p><strong class="dossier-label mono" data-i18n="label-results">Result</strong> <span data-i18n="proj12-result-1">Orders move on their own from request to approval, with a full record that stands up to any audit.</span></p>
-                        <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">Have a process like this? → Estimate it</a></p>
+                        <p class="dossier-tagline" data-i18n="proj12-tagline">De la solicitud a la orden de compra aprobada sin redigitar</p>
+                        <p><strong class="dossier-label mono" data-i18n="label-problem">Situación</strong> <span data-i18n="proj12-problem">Las órdenes de compra se armaban a mano desde correos y hojas de cálculo: datos redigitados, aprobaciones faltantes y ningún registro claro de quién autorizó qué ni cuándo.</span></p>
+                        <p><strong class="dossier-label mono" data-i18n="label-solution">Solución</strong> <span data-i18n="proj12-solution">Un flujo automatizado de órdenes de compra: captura estandarizada de solicitudes, ruteo de aprobaciones por monto y categoría, generación automática de documentos y una traza de auditoría completa en cada orden.</span></p>
+                        <p><strong class="dossier-label mono" data-i18n="label-results">Resultado</strong> <span data-i18n="proj12-result-1">Las órdenes avanzan solas de la solicitud a la aprobación, con un registro completo que resiste cualquier auditoría.</span></p>
+                        <p class="case-cta"><a class="btn-link" href="#cotizador" data-i18n="case-cta">¿Tienes un proceso así? → Cotízalo</a></p>
                     </div>
                 </details>
             </div>
@@ -1636,9 +1641,9 @@
                 <div class="quote-panel quote-ai" id="quoteAI">
                     <div class="quote-ai-content">
                         <div class="quote-ai-icon"><i class="ph ph-brain"></i></div>
-                        <h3 data-i18n="quote-ai-title">Describe tu operación</h3>
+                        <h3 id="quoteAiTitle" data-i18n="quote-ai-title">Describe tu operación</h3>
                         <p data-i18n="quote-ai-desc">Cuéntanos qué proceso te come horas, en tus propias palabras. Analizamos tu descripción y generamos un estimado según las funcionalidades y la complejidad detectadas.</p>
-                        <textarea id="quoteAiInput" rows="6" placeholder="Ejemplo: Cada factura de proveedor llega por correo, alguien la digita en el ERP y pide aprobación por WhatsApp..." data-i18n-placeholder="quote-ai-placeholder"></textarea>
+                        <textarea id="quoteAiInput" rows="6" placeholder="Ejemplo: Cada factura de proveedor llega por correo, alguien la digita en el ERP y pide aprobación por WhatsApp..." data-i18n-placeholder="quote-ai-placeholder" aria-labelledby="quoteAiTitle"></textarea>
                         <p class="quote-ai-privacy mono" data-i18n="quote-ai-privacy"><i class="ph ph-info"></i> Tu descripción se procesa con Google Gemini para generar el estimado; no incluyas datos confidenciales.</p>
                         <button class="btn btn-ink" id="quoteAiAnalyze" data-i18n="quote-ai-btn">
                             <i class="ph ph-sparkle"></i> Analizar y estimar
@@ -1852,22 +1857,22 @@
                 <span class="tier" data-i18n="tierline-3">OPERACIÓN CONTINUA — OPCIONAL</span>
             </div>
 
-            <div class="quote-modal-overlay" id="quoteModal" style="display: none;">
+            <div class="quote-modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteModalTitle" style="display: none;">
                 <div class="quote-modal">
                     <button class="quote-modal-close" id="quoteModalClose" aria-label="Cerrar"><i class="ph ph-x"></i></button>
-                    <h3 data-i18n="quote-modal-title">Envía los requisitos de tu unidad</h3>
+                    <h3 id="quoteModalTitle" data-i18n="quote-modal-title">Envía los requisitos de tu unidad</h3>
                     <p data-i18n="quote-modal-desc">Revisa el detalle y comparte tus datos de contacto. Todos tus requisitos seleccionados se incluyen automáticamente.</p>
                     <div class="quote-modal-summary" id="quoteModalSummary"></div>
                     <form id="quoteHireForm" class="quote-hire-form" action="https://formspree.io/f/xeevjelz" method="POST">
                         <input type="hidden" name="_subject" id="quoteHireSubject" value="Optimatiza — cotización de unidad">
                         <input type="text" name="_gotcha" style="display:none">
                         <div class="quote-form-row">
-                            <input type="text" name="hireName" placeholder="Tu nombre" required data-i18n-placeholder="quote-form-name">
-                            <input type="email" name="hireEmail" placeholder="Correo electrónico" required data-i18n-placeholder="quote-form-email">
+                            <input type="text" name="hireName" placeholder="Tu nombre" required data-i18n-placeholder="quote-form-name" aria-label="Tu nombre" data-i18n-aria="quote-form-name">
+                            <input type="email" name="hireEmail" placeholder="Correo electrónico" required data-i18n-placeholder="quote-form-email" aria-label="Correo electrónico" data-i18n-aria="quote-form-email">
                         </div>
-                        <input type="text" name="hireCompany" placeholder="Empresa (opcional)" data-i18n-placeholder="quote-form-company">
-                        <input type="tel" name="hirePhone" placeholder="Teléfono / WhatsApp (opcional)" data-i18n-placeholder="quote-form-phone">
-                        <textarea name="hireNotes" rows="3" placeholder="Notas adicionales o contexto..." data-i18n-placeholder="quote-form-notes"></textarea>
+                        <input type="text" name="hireCompany" placeholder="Empresa (opcional)" data-i18n-placeholder="quote-form-company" aria-label="Empresa (opcional)" data-i18n-aria="quote-form-company">
+                        <input type="tel" name="hirePhone" placeholder="Teléfono / WhatsApp (opcional)" data-i18n-placeholder="quote-form-phone" aria-label="Teléfono / WhatsApp (opcional)" data-i18n-aria="quote-form-phone">
+                        <textarea name="hireNotes" rows="3" placeholder="Notas adicionales o contexto..." data-i18n-placeholder="quote-form-notes" aria-label="Notas adicionales o contexto..." data-i18n-aria="quote-form-notes"></textarea>
                         <input type="hidden" name="hireRequirements" id="hireRequirements">
                         <button type="submit" class="btn btn-ink btn-lg" data-i18n="quote-form-submit">
                             <i class="ph ph-paper-plane-tilt"></i> Enviar requisitos y solicitar propuesta
@@ -1919,7 +1924,7 @@
                         <div class="about-row about-row-product">
                             <dt class="mono" data-i18n="quienes-product-label">Producto publicado</dt>
                             <dd>
-                                <span data-i18n="quienes-product-value">Bitcoin Academy — PWA educativa en 7 idiomas, en Google Play. Verífícalo tú mismo: instálalo ahora.</span>
+                                <span data-i18n="quienes-product-value">Bitcoin Academy — PWA educativa en 7 idiomas, en Google Play. Verifícalo tú mismo: instálalo ahora.</span>
                                 <a class="quienes-badge" href="https://play.google.com/store/apps/details?id=tech.bitcoinacademy.app" target="_blank" rel="noopener"><span data-i18n="quienes-product-badge"><img src="img/google-play-badge-es.png" alt="Disponible en Google Play" width="160" height="62" loading="lazy" decoding="async"></span></a>
                             </dd>
                         </div>
@@ -2024,6 +2029,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- ========== FOOTER COLOPHON ========== -->
     <footer class="footer">

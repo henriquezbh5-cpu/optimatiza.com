@@ -681,6 +681,11 @@ html.js-anim .animate-target.is-in { opacity: 1; }
 .band .section-subtitle { color: var(--band-muted); }
 .band .btn-link { color: var(--band-accent); border-bottom-color: var(--band-line); }
 .band .btn-link:hover { color: var(--band-text); }
+/* Inoculate <strong> inside navy bands: strong{color:var(--ink)} == --band navy
+   would render navy-on-navy (invisible). Remap to band-text everywhere in a band.
+   .band .dossier-label (below) keeps higher specificity to preserve its muted tone;
+   .tar-body strong (agentes.css) keeps higher order to stay accent-blue. */
+.band strong { color: var(--band-text); }
 
 /* — flagship dossier — */
 .dossier {
@@ -719,7 +724,7 @@ html.js-anim .animate-target.is-in { opacity: 1; }
   gap: var(--sp-5);
 }
 .dossier-col p { font-size: var(--t-2); color: rgba(242,239,231,0.78); }
-.dossier-label {
+.band .dossier-label {
   display: block;
   font-size: var(--t-0); font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.08em;
@@ -2784,9 +2789,9 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   font-family: var(--ff-mono); font-size: var(--t-0);
   text-transform: uppercase; letter-spacing: 0.08em;
 }
-.ag-price { color: var(--ink); font-weight: 500; }
+.ag-price { color: var(--band-text); font-weight: 500; }
 .ag-cta-quote, .ag-cta-ficha {
-  position: relative; color: var(--steel);
+  position: relative; color: var(--band-accent);
   transition: color var(--dur-micro) ease;
 }
 .ag-cta-ficha { margin-left: auto; }
@@ -2796,7 +2801,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   transform: scaleX(0); transform-origin: left;
   transition: transform var(--dur-micro) var(--ease-draw);
 }
-.ag-cta-quote:hover, .ag-cta-ficha:hover { color: var(--steel-deep); }
+.ag-cta-quote:hover, .ag-cta-ficha:hover { color: var(--band-text); }
 .ag-cta-quote:hover::after, .ag-cta-ficha:hover::after { transform: scaleX(1); }
 
 /* --- 4.7 G3 founder chip (clone of .chip-inprod, sits beside it) --- */

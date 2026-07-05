@@ -595,9 +595,16 @@
            cotizador (HOME-relative: '#cotizador' on home, '../#cotizador' on
            /agentes/). No preventDefault — native nav + middle-click both work. */
         quoteEl.setAttribute('href', HOME + '#cotizador');
-        (function (slug) {
-          quoteEl.addEventListener('click', function () { ssSet('optz-unit', slug); });
-        })(agent.slug);
+        /* On the home embed (EMBED), script.js owns set+consume of optz-unit via a
+           device-independent capture handler before native nav; a second write here
+           survives unconsumed on coarse-pointer / no-Lenis devices and spuriously
+           prefills the catalog on the next home load. Standalone /agentes/ still
+           needs it (cross-page ../#cotizador load). */
+        if (!EMBED) {
+          (function (slug) {
+            quoteEl.addEventListener('click', function () { ssSet('optz-unit', slug); });
+          })(agent.slug);
+        }
 
         /* FICHA COMPLETA → deep spec sheet, embed (home) only. On standalone
            /agentes/ the card already links to '#slug', so drop the node. */
@@ -1748,7 +1755,11 @@
   function initConversion() {
     if (refs.ctaDemo) {
       refs.ctaDemo.addEventListener('click', function () {
-        if (sim.agent) ssSet('ag_interest', sim.agent.slug);
+        // Standalone /agentes/ only: the CTA does a cross-page load to ../#contacto,
+        // where script.js consumes ag_interest at page load. On the home embed the CTA
+        // is an in-page scroll (no reload, no consumer), so a write here would linger
+        // and spuriously prefill the contact form on the next home visit.
+        if (!EMBED && sim.agent) ssSet('ag_interest', sim.agent.slug);
       });
     }
   }

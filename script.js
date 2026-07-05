@@ -67,7 +67,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // NOTE: universal card-reveal IntersectionObserver removed — motion.js owns scroll reveals.
 
 // ========== ACTIVE NAV LINK HIGHLIGHT ==========
-const sections = document.querySelectorAll('section[id]');
+const sections = document.querySelectorAll('section[id]:not(.ag-group)');
 // Sections without their own nav link highlight the chapter they belong to.
 const NAV_SECTION_MAP = {
     flota: '#flota',
@@ -214,6 +214,7 @@ const translations = (function () {
     "nav-proyectos": ["Evidencia", "Evidence"],
     "pill-estimate": ["Cotizar", "Estimate"],
     "process-subtitle": ["Cinco pasos claros para llevar tu operación de manual a automática.", "Five clear steps to take your operation from manual to automatic."],
+    "skip": ["Saltar al contenido", "Skip to content"],
     "process-title": ["De diagnóstico a unidad en servicio, en semanas.", "From diagnostic to unit in service, in weeks."],
     "proj1-arch-title": ["Esquema del sistema", "System schematic"],
     "proj1-industry": ["Servicios IT Gestionados — Regional LATAM", "Managed IT Services — LATAM Regional"],
@@ -400,7 +401,7 @@ const translations = (function () {
     "tar-inc": ["Toda unidad incluye: diseño, construcción, pruebas, entrega documentada y 30 días de soporte post-lanzamiento.", "Every unit includes: design, build, testing, documented handover and 30 days of post-launch support."],
     "tar-l": ["<strong>Célula compuesta — $3,000–8,000.</strong> Varios agentes orquestados con memoria compartida y tableros. ~4–8 semanas.", "<strong>Composite cell — $3,000–8,000.</strong> Several agents orchestrated with shared memory and dashboards. ~4–8 weeks."],
     "tar-m": ["<strong>Unidad estándar — $1,200–3,000.</strong> Multi-paso, razonamiento IA, 2–3 integraciones, ciclo de aprobación. ~2–4 semanas.", "<strong>Standard unit — $1,200–3,000.</strong> Multi-step, AI reasoning, 2–3 integrations, approval loop. ~2–4 weeks."],
-    "tar-o": ["<strong>O — Operación continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagnóstico.", "<strong>O — Continuous operation.</strong> Monthly monitoring, tuning and improvement of your units. Scope and price defined at the diagnostic."],
+    "tar-o": ["<strong>Operación continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagnóstico.", "<strong>Continuous operation.</strong> Monthly monitoring, tuning and improvement of your units. Scope and price defined at the diagnostic."],
     "tar-ref": ["PRECIOS DE REFERENCIA — EL NÚMERO REAL SALE DE UN DIAGNÓSTICO DE 30 MINUTOS.", "REFERENCE PRICES — THE REAL NUMBER COMES OUT OF A 30-MINUTE DIAGNOSTIC."],
     "tar-s": ["<strong>Unidad simple — $600–1,200.</strong> Un flujo, una integración, reglas fijas. ~1–2 semanas.", "<strong>Simple unit — $600–1,200.</strong> One flow, one integration, fixed rules. ~1–2 weeks."],
     "tar-title": ["Cada unidad tiene precio de placa.", "Every unit has a nameplate price."],
@@ -469,7 +470,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 
-// On page load: restore saved language preference or default to English
+// On page load: restore saved language preference or default to Spanish
 (function() {
     var savedLang = localStorage.getItem('preferred-lang') || 'es';
     applyLanguage(savedLang);
@@ -941,6 +942,9 @@ if (proposalForm) {
             var features = (data.features || []).map(function(id) { return idMap[id]; }).filter(Boolean);
 
             var mappedType = LEGACY_TYPE_MAP[data.type] || data.type;
+            // Degrade any unknown/unmapped worker type to the custom-agent SKU so
+            // getMarketBasePrice/computeEstimate never hit an undefined typeLabels entry.
+            if (!typeLabels[mappedType]) mappedType = 'agente';
             return { type: mappedType, features: features, complexity: data.complexity || 'medium', source: 'ai', reasoning: data.reasoning || '' };
         } finally {
             clearTimeout(timeoutId);
@@ -959,6 +963,7 @@ if (proposalForm) {
         var max = Math.round(rawTotal * 1.15);
         var capped = false;
         if (max > 8000) { max = 8000; capped = true; }
+        if (min > max) min = max;
 
         var sizeLabels = { small: { en: 'Small', es: 'Pequeño' }, medium: { en: 'Medium', es: 'Mediano' }, large: { en: 'Large', es: 'Grande' } };
         var tl2 = lang === 'es' ? timelinesEs : timelines;
@@ -1108,6 +1113,7 @@ if (proposalForm) {
 
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        document.getElementById('quoteModalClose').focus();
     });
 
     // Close modal
@@ -1115,10 +1121,20 @@ if (proposalForm) {
     document.getElementById('quoteModal').addEventListener('click', function(e) {
         if (e.target === this) closeModal();
     });
+    // Escape closes the modal. Registered once at document level (gated on the
+    // modal being visible) because the hidden/overlay div never receives key events.
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' &&
+            document.getElementById('quoteModal').style.display !== 'none') {
+            closeModal();
+        }
+    });
 
     function closeModal() {
         document.getElementById('quoteModal').style.display = 'none';
         document.body.style.overflow = '';
+        var trigger = document.getElementById('quoteHireBtn');
+        if (trigger) trigger.focus();
     }
 
     // Submit hire form
@@ -1182,12 +1198,34 @@ if (proposalForm) {
     // applyLanguage() dispatches 'lang:changed' after the key loop, so the
     // active-language button state is already final here (no setTimeout race).
     document.addEventListener('lang:changed', function() {
-        if (state.projectType) {
+        var lang = getLang();
+        if (state.mode === 'ai' && state.aiEstimate) {
+            // Re-render the AI estimate in the new language so type/complexity/
+            // timeline labels and the detected-features panel stay consistent
+            // (they were frozen at analyze-time). Also keeps prices market-consistent.
+            var prev = state.aiEstimate;
+            var analysis = {
+                type: prev.type,
+                features: prev.features,          // already full feature objects
+                complexity: prev.complexity,
+                source: prev.source,
+                reasoning: prev.reasoning
+            };
+            state.aiEstimate = computeEstimate(analysis, prev.description, lang);
+            renderAiResult(state.aiEstimate, lang);
+        } else if (state.projectType) {
             state.basePrice = getMarketBasePrice(state.projectType);
-            renderFeatures();
-            // Recalculate features total with new market prices
-            state.featuresTotal = 0;
-            state.selectedFeatures = [];
+            var keep = state.selectedFeatures.slice();   // snapshot before rebuild
+            renderFeatures();                            // relabels ES/EN, rebuilds grid unchecked
+            keep.forEach(function(id) {
+                var cb = featuresGrid.querySelector('input[value="' + id + '"]');
+                if (cb) {
+                    cb.checked = true;
+                    var item = cb.closest('.quote-feature-item');
+                    if (item) item.classList.add('selected');
+                }
+            });
+            updateFeatureSelection();  // recomputes featuresTotal + selectedFeatures from checked boxes
         }
         updateSummary();
     });

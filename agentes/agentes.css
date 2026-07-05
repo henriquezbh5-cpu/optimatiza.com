@@ -306,6 +306,11 @@ html.js-anim .ag-grid .rv:nth-child(3) { transition-delay: 140ms; }
 .rate-notes { margin-top: var(--sp-4); display: grid; gap: var(--sp-1); }
 .rate-notes p { font-size: var(--t-2); color: var(--band-muted); }
 .rate-notes .btn-link { justify-self: start; margin-top: var(--sp-2); }
+/* Home tarifario: prices live inside <p class="tar-body"><strong>. The base
+   strong{color:var(--ink)} is navy-on-navy in the band; recolor to band-accent
+   so the nameplate price pops blue, matching the .rate-band letters. Loaded on
+   both pages after styles.css, so it wins over the .band strong inoculation. */
+.tar-body strong { color: var(--band-accent); font-weight: 600; }
 
 .ag-contact { margin-top: var(--sp-8); padding-top: var(--sp-6); scroll-margin-top: 96px; }
 .ag-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); align-items: start; }
