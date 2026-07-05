@@ -174,7 +174,7 @@ const translations = (function () {
     "proc-c5-meta": ["T+3 MIN · TABLERO EN VIVO", "T+3 MIN · LIVE DASHBOARD"],
     "proc-c5-title": ["Todo queda documentado.", "Everything is documented."],
     "proc-c5-body": ["El cliente recibe su respuesta, el tablero se actualiza y a la mañana siguiente el trabajo ya está hecho.", "The customer gets their answer, the dashboard updates, and by morning the work is already done."],
-    "proc-hint": ["SIGUE DESLIZANDO PARA VER EL PROCESO", "KEEP SCROLLING TO SEE THE PROCESS"],
+    "proc-hint": ["CORRE SOLO — HAZ CLIC EN UN PASO PARA SALTAR", "RUNS ON ITS OWN — CLICK ANY STEP TO JUMP"],
     "proc-cta": ["¿Cuánto de tu operación puede correr así? Cotízalo en 60 segundos →", "How much of your operation could run like this? Estimate it in 60 seconds →"],
     "about-certs-label": ["Certificaciones", "Certifications"],
     "about-certs-value": ["Power Apps · Power Automate · Power BI", "Power Apps · Power Automate · Power BI"],

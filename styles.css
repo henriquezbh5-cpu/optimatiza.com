@@ -3201,13 +3201,17 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   display: block; height: 100%; width: 0;
   background: var(--grad-ai);
   box-shadow: 0 0 12px rgba(20,184,166,0.5);
-  transition: width .2s linear;
+  transition: width .6s ease;
 }
 .proc-node {
   position: relative; z-index: 1;
   display: flex; flex-direction: column; align-items: center; gap: 10px;
   width: 110px; text-align: center;
+  cursor: pointer;
 }
+.proc-node:hover .proc-dot { border-color: rgba(20,184,166,0.55); color: var(--live-bright); }
+.proc-node:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; border-radius: 8px; }
+.proc-static .proc-node { cursor: default; }
 .proc-dot {
   display: inline-flex; align-items: center; justify-content: center;
   width: 52px; height: 52px; border-radius: 14px;
@@ -3285,8 +3289,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   }
 }
 
-/* proc: scroll cue so nobody thinks the page ended mid-pin */
-.proc { min-height: 68vh; display: flex; flex-direction: column; justify-content: center; }
+/* proc: autoplay indicator (the section no longer pins the scroll) */
 .proc-hint {
   margin-top: var(--sp-5);
   display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -3294,8 +3297,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   color: var(--live);
   transition: opacity .4s ease;
 }
-.proc-hint i { font-size: 15px; animation: procNudge 1.4s ease-in-out infinite; }
-@keyframes procNudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
-.proc-hint.is-done { opacity: 0; }
+.proc-hint i { font-size: 13px; animation: procPulse 2s ease-in-out infinite; }
+@keyframes procPulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
 .proc-static .proc-hint { display: none; }
 @media (prefers-reduced-motion: reduce) { .proc-hint i { animation: none; } }

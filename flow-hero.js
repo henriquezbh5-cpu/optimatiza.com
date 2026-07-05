@@ -325,10 +325,9 @@
       cards.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
       if (fill) fill.style.width = ((i + 1) / N * 100) + '%';
       if (hintStep) hintStep.textContent = (L ? 'STEP ' : 'PASO ') + (i + 1) + (L ? ' OF ' : ' DE ') + N;
-      if (hint) hint.classList.toggle('is-done', i >= N - 1);
     }
 
-    if (REDUCED || isNarrow || !window.gsap || !window.ScrollTrigger) {
+    if (REDUCED || isNarrow) {
       proc.classList.add('proc-static');
       nodes.forEach(function (n) { n.classList.add('is-on'); });
       cards.forEach(function (c) { c.classList.add('is-on'); });
@@ -336,19 +335,36 @@
       return;
     }
 
-    gsap.registerPlugin(ScrollTrigger);
-    activate(0);
-    ScrollTrigger.create({
-      trigger: proc,
-      start: 'top top+=96',
-      end: '+=' + (N * 520),
-      pin: true,
-      scrub: 0.4,
-      onUpdate: function (self) {
-        var i = Math.min(N - 1, Math.floor(self.progress * N));
-        activate(i);
-        if (fill) fill.style.width = (self.progress * 100) + '%';
-      }
+    /* auto-advance slideshow: no scroll hijacking. Steps loop on a timer,
+       pause offscreen/hidden, and the rail nodes are click-to-jump. */
+    var idx = 0, timer = null, inView = false;
+    var STEP_MS = 4200;
+    function show(i) { idx = i; activate(i); }
+    function play() {
+      if (timer) return;
+      timer = setInterval(function () { show((idx + 1) % N); }, STEP_MS);
+    }
+    function stop() { clearInterval(timer); timer = null; }
+
+    nodes.forEach(function (n, k) {
+      n.tabIndex = 0;
+      n.setAttribute('role', 'button');
+      function jump() { stop(); show(k); if (inView && !document.hidden) play(); }
+      n.addEventListener('click', jump);
+      n.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(); }
+      });
+    });
+
+    show(0);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        if (inView && !document.hidden) play(); else stop();
+      }, { threshold: 0.25 }).observe(proc);
+    } else { inView = true; play(); }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop(); else if (inView) play();
     });
   }
 
