@@ -1,5 +1,5 @@
 /* ============================================================
-   THE OPERATING LEDGER — inghumbertohenriquez.com
+   THE OPERATING LEDGER — optimatiza.com
    Light-mode archival-paper engineering dossier.
    Token-only design system (spec §1). Full rewrite 2026-07.
    ============================================================ */
@@ -2733,4 +2733,103 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   .fleet-teaser-inner { grid-template-columns: 1fr; }
   .fleet-teaser-units { border-left: 0; padding-left: 0; border-top: 1px solid var(--band-line); padding-top: var(--sp-3); flex-direction: row; flex-wrap: wrap; gap: var(--sp-2); }
   .ft-unit { border-bottom: 0; }
+}
+
+/* ============================================================
+   28. OPTIMATIZA BRAND LAYER (additions only)
+   Company rebrand of the Operating Ledger site. Tokens, motion
+   primitives and existing rules above are UNCHANGED — this block
+   only adds the wordmark, the "Puerto de Unidad" seal, the
+   nameplate commerce row, the founder chip, the method kicker and
+   the footer registry. All values via existing tokens.
+   ============================================================ */
+
+/* --- 1.1 wordmark: OPTIMATIZA (IBM Plex Mono 500, tracking .14em) --- */
+/* color inherits from context (var(--ink) on paper, var(--band-text) on navy) */
+.logo-word {
+  font-family: var(--ff-mono); font-weight: 500;
+  font-size: 15px; letter-spacing: 0.14em;
+  color: inherit; text-transform: uppercase;
+}
+.site-footer .logo-word { font-size: 13px; }
+
+/* --- 1.2 "Puerto de Unidad" seal (SVG inside existing .logo-seal box) --- */
+/* currentColor is driven by the nav/footer context (ink on paper, band-text on navy) */
+.seal-svg {
+  display: block; width: 100%; height: 100%;
+  color: inherit;
+}
+.seal-dot { animation: sealPulse 2.4s ease-in-out infinite; }
+@keyframes sealPulse {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 1; }
+}
+/* Injerto G9 (progressive enhancement): on nav-logo hover the status dot
+   runs the outer ring once. Silent fallback where offset-path is unsupported. */
+.nav-logo:hover .seal-dot {
+  offset-path: circle(26px at 32px 32px);
+  animation: sealOrbit 1.6s ease-in-out 1;
+}
+@keyframes sealOrbit {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+/* --- 4.4 nameplate commerce row (agent card + spec sheet) --- */
+.ag-card-commerce {
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: var(--sp-2); row-gap: var(--sp-1);
+  margin-top: var(--sp-3); padding-top: var(--sp-2);
+  border-top: 1px solid var(--line);
+  font-family: var(--ff-mono); font-size: var(--t-0);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.ag-price { color: var(--ink); font-weight: 500; }
+.ag-cta-quote, .ag-cta-ficha {
+  position: relative; color: var(--steel);
+  transition: color var(--dur-micro) ease;
+}
+.ag-cta-ficha { margin-left: auto; }
+.ag-cta-quote::after, .ag-cta-ficha::after {
+  content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-micro) var(--ease-draw);
+}
+.ag-cta-quote:hover, .ag-cta-ficha:hover { color: var(--steel-deep); }
+.ag-cta-quote:hover::after, .ag-cta-ficha:hover::after { transform: scaleX(1); }
+
+/* --- 4.7 G3 founder chip (clone of .chip-inprod, sits beside it) --- */
+.chip-founder {
+  font-family: var(--ff-mono); font-size: var(--t-0); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ok-mark);
+  border: 1px solid rgba(16,185,129,0.5);
+  border-radius: var(--r-s);
+  padding: 2px var(--sp-1);
+}
+
+/* --- 4.6 G4 method kicker (mono steel, tracking .18em) --- */
+.method-kicker {
+  font-family: var(--ff-mono); font-size: var(--t-0); font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--steel);
+}
+
+/* --- 4.14 footer registry + descriptor (mono small) --- */
+.footer-registry {
+  font-family: var(--ff-mono); font-size: var(--t-0);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-dim);
+}
+.footer-descriptor {
+  font-family: var(--ff-mono); font-size: var(--t-0);
+  letter-spacing: 0.04em;
+  color: var(--steel);
+}
+
+/* --- reduced motion: kill seal pulse + hover orbit --- */
+@media (prefers-reduced-motion: reduce) {
+  .seal-dot { animation: none !important; opacity: 1 !important; }
+  .nav-logo:hover .seal-dot { animation: none !important; offset-path: none !important; }
 }

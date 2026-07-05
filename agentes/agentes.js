@@ -1,5 +1,5 @@
 /* ============================================================
-   AGENT FLEET — SHEET 10 (/agentes/) — engine
+   OPERATIONS FLOOR — fleet engine (home #flota embed + /agentes/)
    Classic script IIFE. Zero dependencies. CSP-safe. ES2019.
    Consumes: window.AGENTS (20), window.AGENT_CATEGORIES (8)
    Drives:   catalog render · i18n · hash router · <dialog> stage
@@ -65,6 +65,27 @@
 
   var WA_NUMBER = '50371928070';
 
+  /* ------------------------------------------------------------
+     EMBED CONTRACT (spec §7.2) — home embeds this engine inside
+     #flota; script.js owns page chrome there. Standalone /agentes/
+     leaves every default untouched (data-ag-embed absent).
+     ------------------------------------------------------------ */
+  var EMBED = !!(doc.body && doc.body.getAttribute('data-ag-embed') === 'home');
+  var BASE  = EMBED ? 'agentes/' : '';   /* FICHA COMPLETA target (deep spec sheet) */
+  var HOME  = EMBED ? '' : '../';        /* #cotizador / #contacto target */
+
+  /* nameplate price by band (spec §4.4) — parametric, so kept out of the
+     i18n dict; textContent-safe literals (· = U+00B7) */
+  var BAND_PRICE = {
+    S: { es: 'DESDE $600 · BANDA S',   en: 'FROM $600 · BAND S' },
+    M: { es: 'DESDE $1,200 · BANDA M', en: 'FROM $1,200 · BAND M' },
+    L: { es: 'DESDE $3,000 · BANDA L', en: 'FROM $3,000 · BAND L' }
+  };
+  function bandOf(agent) {
+    var b = (agent && agent.banda ? String(agent.banda) : '').toUpperCase();
+    return (b === 'S' || b === 'L') ? b : 'M';   /* determinism fallback: M */
+  }
+
   /* actor -> robot pose (task §6 binding) */
   var ACTOR_TO_ROBOT = {
     trigger: 'idle',
@@ -112,24 +133,24 @@
   var AG_DICT = {
     es: {
       /* nav */
-      'ag-nav-back': '&larr; Volver al documento',
+      'ag-nav-back': '&larr; Volver al piso',
       'ag-nav-how': 'C&oacute;mo funciona',
       'ag-nav-fleet': 'La flota',
       'ag-nav-pricing': 'Tarifario',
       'ag-nav-contact': 'Contacto',
       'ag-nav-cta': 'Cotizar',
       /* hero */
-      'ag-doc-left': 'DOC. HH/2026 &mdash; L&Aacute;MINA 10 &middot; FLOTA DE AGENTES',
-      'ag-doc-right': 'ESTADO &middot; 20 UNIDADES EN SERVICIO',
-      'ag-ch-10': '10 &mdash; FLOTA DE AGENTES',
+      'ag-doc-left': 'DOC. OPTZ/2026 &mdash; CAT&Aacute;LOGO DE FLOTA &middot; FICHAS T&Eacute;CNICAS',
+      'ag-doc-right': 'ESTADO &middot; 20 UNIDADES EN CAT&Aacute;LOGO',
+      'ag-ch-10': 'CAT&Aacute;LOGO &mdash; FICHAS T&Eacute;CNICAS',
       'ag-hero-title': 'Veinte agentes de IA, <em>dibujados y en marcha.</em>',
-      'ag-hero-sub': 'Cada unidad de esta l&aacute;mina es un patr&oacute;n real de automatizaci&oacute;n que implemento. No los leas: presiona play y mira el flujo completo correr, paso a paso, en tiempo real.',
+      'ag-hero-sub': 'Cada unidad es un patr&oacute;n real de automatizaci&oacute;n que fabricamos e instalamos. No los leas: presiona play y mira el flujo completo correr, paso a paso.',
       'ag-hero-cta1': 'Bajar a la sala de control &darr;',
-      'ag-hero-cta2': 'Hablar con el ingeniero &rarr;',
+      'ag-hero-cta2': 'Habla con un ingeniero &rarr;',
       'ag-hero-strip': '20 UNIDADES &middot; 8 CATEGOR&Iacute;AS &middot; SIMULACIONES EN VIVO &middot; EST. 2026',
       'ag-hero-figcap': 'FIG. 10-0 &mdash; UNIDAD R-07, RECEPCI&Oacute;N DE FLOTA',
       /* how */
-      'ag-como-index': '10.1 &mdash; INSTRUCCIONES DE LECTURA',
+      'ag-como-index': '01 &mdash; INSTRUCCIONES DE LECTURA',
       'ag-como-title': '<em>C&oacute;mo leer esta sala</em>',
       'ag-como-1': '<strong>Elige una unidad.</strong> Cada tarjeta es un agente con un trabajo concreto.',
       'ag-como-2': '<strong>Corre la simulaci&oacute;n.</strong> El robot ejecuta el flujo real: disparadores, herramientas, decisiones.',
@@ -138,8 +159,8 @@
       /* floor */
       'ag-floor-index': 'SALA DE CONTROL &mdash; &Iacute;NDICE DE FLOTA',
       'ag-floor-title': 'El piso de operaciones.',
-      'ag-floor-sub': 'Veinte unidades en servicio, agrupadas seg&uacute;n lo que te quitan de encima. Abre cualquier unidad para ver su corrida completa.',
-      'ag-floor-proof': 'Estos patrones no son maquetas: nacen de sistemas que ya opero en producci&oacute;n. Ve un caso real construido &rarr;',
+      'ag-floor-sub': 'Veinte unidades agrupadas seg&uacute;n lo que te quitan de encima. Abre cualquier unidad para ver su corrida completa.',
+      'ag-floor-proof': 'Estos patrones nacen de sistemas que ya operamos en producci&oacute;n. Ve un caso real &rarr;',
       'ag-legend-label': 'LEYENDA:',
       'ag-legend-trigger': 'DISPARADOR',
       'ag-legend-agent': 'AGENTE IA',
@@ -157,7 +178,7 @@
       'ag-cat-marketing': 'Marketing',
       'ag-cat-rrhh': 'RRHH',
       'ag-cat-legal': 'Legal',
-      'ag-rail-foot': '&Iacute;NDICE DE LA L&Aacute;MINA 10 &middot; DESPL&Aacute;ZATE O SALTA',
+      'ag-rail-foot': '&Iacute;NDICE DEL CAT&Aacute;LOGO &middot; DESPL&Aacute;ZATE O SALTA',
       /* groups */
       'ag-group-ventas': 'C1 &mdash; VENTAS &middot; 2 UNIDADES',
       'ag-blurb-ventas': 'Responde antes de que tu competencia abra Excel.',
@@ -185,7 +206,7 @@
       'ag-tar-ref': 'PRECIOS DE REFERENCIA &mdash; EL N&Uacute;MERO REAL SALE DE UN DIAGN&Oacute;STICO DE 30 MINUTOS.',
       'ag-tar-cta': 'Cotiza tu caso exacto en 60 segundos &rarr;',
       /* contact */
-      'ag-contact-index': '10.4 &mdash; CONTACTO DIRECTO',
+      'ag-contact-index': '04 &mdash; CONTACTO DIRECTO',
       'ag-contact-title': '&iquest;Cu&aacute;l de estos procesos le est&aacute; comiendo horas a tu equipo?',
       'ag-contact-wa': 'Hablemos por WhatsApp',
       'ag-contact-reply': 'RESPUESTA &lt; 24H &middot; GMT-6',
@@ -193,20 +214,22 @@
       'ag-form-email': 'Correo',
       'ag-form-msg': '&iquest;Qu&eacute; quieres automatizar?',
       'ag-form-send': 'ENVIAR',
-      'ag-form-ok': 'Enviado. Respondo en menos de 24 horas.',
+      'ag-form-ok': 'Enviado. Respondemos en menos de 24 horas.',
       'ag-form-privacy': 'Tus datos se procesan v&iacute;a Formspree solo para responderte. No se venden ni se usan para marketing.',
       /* footer */
-      'ag-foot-back': '&larr; Volver al documento principal',
+      'ag-foot-back': '&larr; Volver al piso',
       'ag-foot-services': 'Servicios',
       'ag-foot-quote': 'Cotizador',
       'ag-foot-contact': 'Contacto',
-      'ag-foot-line': 'L&Aacute;MINA 10 &middot; REV 2026.07 &middot; DIBUJADO A MANO &middot; CORRIDO POR M&Aacute;QUINAS',
-      'ag-foot-copy': '&copy; 2026 Humberto Henr&iacute;quez. Todos los derechos reservados.',
+      'ag-foot-line': 'CAT&Aacute;LOGO DE FLOTA &middot; REV 2026.07 &middot; DIBUJADO A MANO &middot; CORRIDO POR M&Aacute;QUINAS',
+      'ag-foot-copy': '&copy; 2026 Optimatiza. Todos los derechos reservados.',
       'ag-foot-privacy': 'Privacidad',
       'ag-foot-terms': 'T&eacute;rminos',
       'ag-pill-estimate': 'Cotizar',
       /* card + stage chrome */
       'ag-card-sim': '&#9656; VER SIMULACI&Oacute;N',
+      'ag-cta-quote': 'COTIZAR ESTA UNIDAD',
+      'ag-cta-ficha': 'FICHA COMPLETA &rarr;',
       'ag-term-title': 'REGISTRO DE OPERACI&Oacute;N',
       'ag-term-new': 'NUEVAS L&Iacute;NEAS',
       'ag-cta-want': 'QUIERO ESTE AGENTE',
@@ -245,24 +268,24 @@
     },
     en: {
       /* nav */
-      'ag-nav-back': '&larr; Back to the ledger',
+      'ag-nav-back': '&larr; Back to the floor',
       'ag-nav-how': 'How it works',
       'ag-nav-fleet': 'The fleet',
       'ag-nav-pricing': 'Pricing',
       'ag-nav-contact': 'Contact',
       'ag-nav-cta': 'Estimate',
       /* hero */
-      'ag-doc-left': 'DOC. HH/2026 &mdash; SHEET 10 &middot; AGENT FLEET',
-      'ag-doc-right': 'STATUS &middot; 20 UNITS IN SERVICE',
-      'ag-ch-10': '10 &mdash; AGENT FLEET',
+      'ag-doc-left': 'DOC. OPTZ/2026 &mdash; FLEET CATALOG &middot; SPEC SHEETS',
+      'ag-doc-right': 'STATUS &middot; 20 UNITS IN CATALOG',
+      'ag-ch-10': 'CATALOG &mdash; SPEC SHEETS',
       'ag-hero-title': 'Twenty AI agents, <em>drawn and running.</em>',
-      'ag-hero-sub': 'Each unit on this sheet is a real automation pattern I implement. Don&rsquo;t read about them &mdash; press play and watch the full workflow run, step by step, in real time.',
+      'ag-hero-sub': 'Each unit is a real automation pattern we build and install. Don&rsquo;t read about them &mdash; press play and watch the full workflow run, step by step.',
       'ag-hero-cta1': 'Enter the control room &darr;',
-      'ag-hero-cta2': 'Talk to the engineer &rarr;',
+      'ag-hero-cta2': 'Talk to an engineer &rarr;',
       'ag-hero-strip': '20 UNITS &middot; 8 CATEGORIES &middot; LIVE SIMULATIONS &middot; EST. 2026',
       'ag-hero-figcap': 'FIG. 10-0 &mdash; UNIT R-07, FLEET GREETER',
       /* how */
-      'ag-como-index': '10.1 &mdash; READING INSTRUCTIONS',
+      'ag-como-index': '01 &mdash; READING INSTRUCTIONS',
       'ag-como-title': '<em>How to read this room</em>',
       'ag-como-1': '<strong>Pick a unit.</strong> Every card is one agent with one concrete job.',
       'ag-como-2': '<strong>Run the simulation.</strong> The robot executes the real workflow: triggers, tools, decisions.',
@@ -271,8 +294,8 @@
       /* floor */
       'ag-floor-index': 'CONTROL ROOM &mdash; FLEET INDEX',
       'ag-floor-title': 'The operations floor.',
-      'ag-floor-sub': 'Twenty units in service, grouped by what they take off your plate. Open any unit to watch its full run.',
-      'ag-floor-proof': 'These patterns aren&rsquo;t mockups &mdash; they come from systems I already run in production. See a real build &rarr;',
+      'ag-floor-sub': 'Twenty units grouped by what they take off your plate. Open any unit to watch its full run.',
+      'ag-floor-proof': 'These patterns come from systems we already run in production. See a real build &rarr;',
       'ag-legend-label': 'KEY:',
       'ag-legend-trigger': 'TRIGGER',
       'ag-legend-agent': 'AI AGENT',
@@ -290,7 +313,7 @@
       'ag-cat-marketing': 'Marketing',
       'ag-cat-rrhh': 'HR',
       'ag-cat-legal': 'Legal',
-      'ag-rail-foot': 'INDEX OF SHEET 10 &middot; SCROLL OR JUMP',
+      'ag-rail-foot': 'CATALOG INDEX &middot; SCROLL OR JUMP',
       /* groups */
       'ag-group-ventas': 'C1 &mdash; SALES &middot; 2 UNITS',
       'ag-blurb-ventas': 'Answer faster than your competition can open Excel.',
@@ -318,7 +341,7 @@
       'ag-tar-ref': 'REFERENCE PRICES &mdash; THE REAL NUMBER COMES OUT OF A 30-MINUTE DIAGNOSTIC.',
       'ag-tar-cta': 'Estimate your exact case in 60 seconds &rarr;',
       /* contact */
-      'ag-contact-index': '10.4 &mdash; DIRECT CONTACT',
+      'ag-contact-index': '04 &mdash; DIRECT CONTACT',
       'ag-contact-title': 'Which of these processes is eating your team&rsquo;s hours?',
       'ag-contact-wa': 'Let&rsquo;s talk on WhatsApp',
       'ag-contact-reply': 'REPLY &lt; 24H &middot; GMT-6',
@@ -326,20 +349,22 @@
       'ag-form-email': 'Email',
       'ag-form-msg': 'What do you want to automate?',
       'ag-form-send': 'SEND',
-      'ag-form-ok': 'Sent. I&rsquo;ll reply within 24 hours.',
+      'ag-form-ok': 'Sent. We&rsquo;ll reply within 24 hours.',
       'ag-form-privacy': 'Your data is processed via Formspree only to reply to you. Never sold, never used for marketing.',
       /* footer */
-      'ag-foot-back': '&larr; Back to the main document',
+      'ag-foot-back': '&larr; Back to the floor',
       'ag-foot-services': 'Services',
       'ag-foot-quote': 'Estimator',
       'ag-foot-contact': 'Contact',
-      'ag-foot-line': 'SHEET 10 &middot; REV 2026.07 &middot; DRAWN BY HAND &middot; RUN BY MACHINES',
-      'ag-foot-copy': '&copy; 2026 Humberto Henr&iacute;quez. All rights reserved.',
+      'ag-foot-line': 'FLEET CATALOG &middot; REV 2026.07 &middot; DRAWN BY HAND &middot; RUN BY MACHINES',
+      'ag-foot-copy': '&copy; 2026 Optimatiza. All rights reserved.',
       'ag-foot-privacy': 'Privacy',
       'ag-foot-terms': 'Terms',
       'ag-pill-estimate': 'Estimate',
       /* card + stage chrome */
       'ag-card-sim': '&#9656; RUN SIMULATION',
+      'ag-cta-quote': 'QUOTE THIS UNIT',
+      'ag-cta-ficha': 'FULL SPEC SHEET &rarr;',
       'ag-term-title': 'OPERATION LOG',
       'ag-term-new': 'NEW LINES',
       'ag-cta-want': 'I WANT THIS AGENT',
@@ -408,30 +433,57 @@
   function applyLang(lang) {
     try {
       currentLang = (lang === 'en') ? 'en' : 'es';
-      doc.documentElement.lang = currentLang;
       var dict = AG_DICT[currentLang];
 
-      $$('[data-i18n]').forEach(function (el) {
+      /* EMBED (§7.2): script.js owns the page-level dict, <html lang>, the
+         lang buttons and preferred-lang storage. Restrict our writes to the
+         floor + stage so we never fight script.js outside #flota/#agStage. */
+      var i18nEls, ariaEls;
+      if (EMBED) {
+        i18nEls = $$('#flota [data-i18n], #agStage [data-i18n]');
+        ariaEls = $$('#flota [data-i18n-aria], #agStage [data-i18n-aria]');
+      } else {
+        doc.documentElement.lang = currentLang;
+        i18nEls = $$('[data-i18n]');
+        ariaEls = $$('[data-i18n-aria]');
+      }
+
+      i18nEls.forEach(function (el) {
         var key = el.getAttribute('data-i18n');
         if (dict && Object.prototype.hasOwnProperty.call(dict, key)) el.innerHTML = dict[key];
       });
-      $$('[data-i18n-aria]').forEach(function (el) {
+      ariaEls.forEach(function (el) {
         var key = el.getAttribute('data-i18n-aria');
         if (dict && Object.prototype.hasOwnProperty.call(dict, key)) {
           el.setAttribute('aria-label', toText(dict[key]));
         }
       });
-      $$('.lang-btn').forEach(function (btn) {
-        var isActive = btn.getAttribute('data-lang') === currentLang;
-        btn.classList.toggle('active', isActive);
-        btn.setAttribute('aria-pressed', String(isActive));
-      });
 
-      lsSet('preferred-lang', currentLang);
+      if (!EMBED) {
+        $$('.lang-btn').forEach(function (btn) {
+          var isActive = btn.getAttribute('data-lang') === currentLang;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-pressed', String(isActive));
+        });
+        lsSet('preferred-lang', currentLang);
+      }
+
       try {
         doc.dispatchEvent(new CustomEvent('lang:changed', { detail: { lang: currentLang } }));
       } catch (e) { /* CustomEvent unavailable */ }
     } catch (err) { warn('applyLang', err); }
+  }
+
+  /* home fires 'optz:lang' from script.js's setLang(); mirror it into the
+     floor (keeps our own 'lang:changed' path for standalone /agentes/). */
+  function initOptzLangSync() {
+    doc.addEventListener('optz:lang', function (e) {
+      try {
+        var lang = (e && e.detail && e.detail.lang) ? e.detail.lang : (lsGet('preferred-lang') || 'es');
+        lang = (lang === 'en') ? 'en' : 'es';
+        if (lang !== currentLang) applyLang(lang);
+      } catch (err) { warn('optz:lang', err); }
+    });
   }
 
   function initLangToggle() {
@@ -521,9 +573,55 @@
         if (slabAr) slabAr.hidden = true;
         if (linkEl) linkEl.setAttribute('href', '#' + agent.slug);
 
+        /* ---- commerce row (§4.4): price · quote CTA · ficha CTA ----
+           The HTML builder may supply these nodes in the template; if any
+           is missing we create it defensively so the row works on both
+           pages. It must sit above .ag-card-link (a full-card overlay at
+           z-index:2), or the CTAs would be unclickable. */
+        var commerceEl = frag.querySelector('.ag-card-commerce');
+        var createdCommerce = false;
+        if (!commerceEl) {
+          commerceEl = doc.createElement('div');
+          commerceEl.className = 'ag-card-commerce mono';
+          createdCommerce = true;
+        }
+        var priceEl = commerceEl.querySelector('.ag-price');
+        if (!priceEl) { priceEl = doc.createElement('span'); priceEl.className = 'ag-price'; commerceEl.appendChild(priceEl); }
+        var quoteEl = commerceEl.querySelector('.ag-cta-quote');
+        if (!quoteEl) { quoteEl = doc.createElement('a'); quoteEl.className = 'ag-cta-quote'; commerceEl.appendChild(quoteEl); }
+        var fichaEl = commerceEl.querySelector('.ag-cta-ficha');
+
+        /* QUOTE: prefill the picked unit, then let the anchor navigate to the
+           cotizador (HOME-relative: '#cotizador' on home, '../#cotizador' on
+           /agentes/). No preventDefault — native nav + middle-click both work. */
+        quoteEl.setAttribute('href', HOME + '#cotizador');
+        (function (slug) {
+          quoteEl.addEventListener('click', function () { ssSet('optz-unit', slug); });
+        })(agent.slug);
+
+        /* FICHA COMPLETA → deep spec sheet, embed (home) only. On standalone
+           /agentes/ the card already links to '#slug', so drop the node. */
+        if (EMBED) {
+          if (!fichaEl) { fichaEl = doc.createElement('a'); fichaEl.className = 'ag-cta-ficha'; commerceEl.appendChild(fichaEl); }
+          fichaEl.setAttribute('href', BASE + '#' + agent.slug);
+        } else if (fichaEl) {
+          if (fichaEl.parentNode) fichaEl.parentNode.removeChild(fichaEl);
+          fichaEl = null;
+        }
+
+        /* keep the row above the overlay link regardless of stylesheet state */
+        commerceEl.style.position = 'relative';
+        commerceEl.style.zIndex = '3';
+
+        if (createdCommerce) {
+          if (linkEl && linkEl.parentNode === article) article.insertBefore(commerceEl, linkEl);
+          else article.appendChild(commerceEl);
+        }
+
         var ref = {
           agent: agent, article: article, catTag: catEl, alias: aliasEl,
-          resumen: resEl, slabAfter: slabAf, chip: chipEl, link: linkEl
+          resumen: resEl, slabAfter: slabAf, chip: chipEl, link: linkEl,
+          band: bandOf(agent), price: priceEl, quote: quoteEl, ficha: fichaEl
         };
         cardRefs.push(ref);
         fillCardLang(ref);
@@ -543,6 +641,20 @@
     if (ref.link) {
       ref.link.setAttribute('aria-label',
         tt('ag-x-open-sim').replace('{name}', agent.nombre || agent.slug).replace('{rol}', pick(agent.rol)));
+    }
+    /* commerce row: price from band, labels from dict (innerHTML keeps the
+       trailing arrow), per-unit aria so 20 identical CTAs stay distinguishable */
+    var name = agent.nombre || agent.slug;
+    if (ref.price) ref.price.textContent = (BAND_PRICE[ref.band] || BAND_PRICE.M)[currentLang];
+    if (ref.quote) {
+      ref.quote.innerHTML = t('ag-cta-quote');
+      ref.quote.setAttribute('aria-label',
+        (currentLang === 'en' ? 'Quote the ' + name + ' unit' : 'Cotizar la unidad ' + name));
+    }
+    if (ref.ficha) {
+      ref.ficha.innerHTML = t('ag-cta-ficha');
+      ref.ficha.setAttribute('aria-label',
+        (currentLang === 'en' ? 'Full spec sheet for ' + name : 'Ficha completa de ' + name));
     }
   }
 
@@ -1607,12 +1719,16 @@
      12. CONVERSION — per-agent CTAs + form subject
      ------------------------------------------------------------ */
   function waText(agent) {
+    var unit = unitOf[agent.slug] || 'A-00';
+    var name = agent.nombre || agent.slug;
     if (currentLang === 'en') {
-      return 'Hi Humberto — I’m interested in the ' + agent.nombre + ' agent (' +
-        (agent.rol && agent.rol.en ? agent.rol.en : '') + '). Can we talk?';
+      var rolEn = (agent.rol && agent.rol.en) ? agent.rol.en : '';
+      return 'Hi Optimatiza — I’m interested in unit ' + unit + ' · ' + name +
+        ' (' + rolEn + '). How do we land it in my operation?';
     }
-    return 'Hola Humberto — me interesa el agente ' + agent.nombre + ' (' +
-      (agent.rol && agent.rol.es ? agent.rol.es : '') + '). ¿Podemos hablar?';
+    var rolEs = (agent.rol && agent.rol.es) ? agent.rol.es : '';
+    return 'Hola Optimatiza — me interesa la unidad ' + unit + ' · ' + name +
+      ' (' + rolEs + '). ¿Cómo la aterrizamos a mi operación?';
   }
 
   function updateConversion(agent) {
@@ -1621,10 +1737,10 @@
       if (refs.ctaWa) {
         refs.ctaWa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waText(agent));
       }
-      if (refs.ctaDemo) refs.ctaDemo.href = '../#contacto';
+      if (refs.ctaDemo) refs.ctaDemo.href = HOME + '#contacto';
       var subj = $('#agFormSubject');
       var af = $('#agFormAgent');
-      if (subj) subj.value = 'Agent Fleet — ' + unitOf[agent.slug] + ' ' + agent.nombre;
+      if (subj) subj.value = 'Optimatiza — unidad ' + unitOf[agent.slug] + ' ' + agent.nombre;
       if (af) af.value = agent.slug;
     } catch (err) { warn('conversion', err); }
   }
@@ -1673,8 +1789,8 @@
         var msg = tt('ag-x-form-fail');
         var wa = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(
           currentLang === 'en'
-            ? 'Hi Humberto — the Agent Fleet form failed, I want to automate a process.'
-            : 'Hola Humberto — el formulario de Agent Fleet falló, quiero automatizar un proceso.');
+            ? 'Hi Optimatiza — the site form failed, I want to quote a unit.'
+            : 'Hola Optimatiza — el formulario del sitio falló, quiero cotizar una unidad.');
         fbEl.textContent = msg + ' ';
         var a = doc.createElement('a');
         a.href = wa;
@@ -1732,6 +1848,7 @@
 
   function pillUpdate() {
     try {
+      if (EMBED) return;   /* script.js owns the sticky pill on home (§7.2) */
       var pill = $('#stickyPill');
       if (!pill || pillDismissed) return;
       var show = (window.pageYOffset || 0) > 600 && !(stage && stage.open);
@@ -1811,7 +1928,10 @@
 
     try { cssCompatShim(); } catch (err) { warn('cssCompatShim', err); }
     try { renderCards(); } catch (err) { warn('renderCards', err); }
-    try { initLangToggle(); } catch (err) { warn('initLangToggle', err); }
+    /* EMBED (§7.2): script.js owns the lang buttons on home — we only mirror
+       its 'optz:lang' event into the floor; standalone binds its own toggle. */
+    if (!EMBED) { try { initLangToggle(); } catch (err) { warn('initLangToggle', err); } }
+    try { initOptzLangSync(); } catch (err) { warn('initOptzLangSync', err); }
     try { doc.addEventListener('lang:changed', onLangChanged); } catch (err) { warn('langSub', err); }
     try { applyLang(currentLang); } catch (err) { warn('applyLangInit', err); }
     try { initReveals(); } catch (err) { warn('initReveals', err); }
@@ -1820,9 +1940,13 @@
     try { initControls(); } catch (err) { warn('initControls', err); }
     try { initConversion(); } catch (err) { warn('initConversion', err); }
     try { initForm(); } catch (err) { warn('initForm', err); }
-    try { initClock(); } catch (err) { warn('initClock', err); }
-    try { initNav(); } catch (err) { warn('initNav', err); }
-    try { initPill(); } catch (err) { warn('initPill', err); }
+    /* EMBED (§7.2): clock, mobile-nav toggle and sticky pill belong to
+       script.js on home — do not double-bind them from here. */
+    if (!EMBED) {
+      try { initClock(); } catch (err) { warn('initClock', err); }
+      try { initNav(); } catch (err) { warn('initNav', err); }
+      try { initPill(); } catch (err) { warn('initPill', err); }
+    }
     try { initRouter(); } catch (err) { warn('initRouter', err); }
   }
 

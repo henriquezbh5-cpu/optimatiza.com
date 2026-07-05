@@ -1,0 +1,205 @@
+<meta charset="utf-8">
+<title>Optimatiza — OG Card</title>
+<style>
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+    src: url('E:/Proyectos/Optimatiza/site/fonts/ibm-plex-mono-500.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    src: url('E:/Proyectos/Optimatiza/site/fonts/ibm-plex-mono-400.woff2') format('woff2');
+  }
+  :root {
+    --paper: #F6F4EE;
+    --navy: #0F2B46;
+    --steel: #2D6A9F;
+    --teal: #14B8A6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #ffffff;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background: var(--paper);
+    overflow: hidden;
+  }
+
+  /* ---- Blueprint frame (double navy rule + corner ticks) ---- */
+  .frame-outer {
+    position: absolute;
+    inset: 30px;
+    border: 2px solid var(--navy);
+  }
+  .frame-inner {
+    position: absolute;
+    inset: 40px;
+    border: 1px solid var(--navy);
+    opacity: 0.42;
+  }
+  .corner {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+  }
+  .corner::before, .corner::after {
+    content: '';
+    position: absolute;
+    background: var(--steel);
+    opacity: 0.75;
+  }
+  .corner::before { left: 12px; top: 0; width: 1px; height: 26px; }
+  .corner::after  { top: 12px; left: 0; width: 26px; height: 1px; }
+  .corner.tl { left: 44px;  top: 44px; }
+  .corner.tr { right: 44px; top: 44px; transform: scaleX(-1); }
+  .corner.bl { left: 44px;  bottom: 44px; transform: scaleY(-1); }
+  .corner.br { right: 44px; bottom: 44px; transform: scale(-1, -1); }
+
+  /* ---- Doc-head strip (top) ---- */
+  .dochead {
+    position: absolute;
+    left: 78px;
+    right: 78px;
+    top: 66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--steel);
+    text-transform: uppercase;
+  }
+
+  /* ---- Center stack ---- */
+  .stack {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 18px;
+  }
+  .seal {
+    width: 116px;
+    height: 116px;
+    color: var(--navy);
+    margin-bottom: 34px;
+  }
+  .seal svg { display: block; width: 100%; height: 100%; }
+
+  .wordmark {
+    font-weight: 500;
+    font-size: 92px;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    /* offset half the tracking so the block stays optically centered */
+    text-indent: 0.14em;
+    color: var(--navy);
+  }
+
+  .rule {
+    width: 132px;
+    height: 1px;
+    background: var(--navy);
+    opacity: 0.55;
+    margin: 30px 0 26px;
+  }
+
+  .tagline {
+    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 34px;
+    letter-spacing: 0.01em;
+    color: var(--navy);
+  }
+  /* Serif isn't self-hosted here; fall back gracefully but keep the mono
+     descriptor lines crisp. Tagline uses system serif for a distinct voice. */
+
+  .est {
+    margin-top: 26px;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    color: var(--steel);
+    text-transform: uppercase;
+  }
+
+  /* ---- Bottom nameplate strip ---- */
+  .nameplate {
+    position: absolute;
+    left: 78px;
+    right: 78px;
+    bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    color: var(--navy);
+    text-transform: uppercase;
+  }
+  .nameplate .units {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--navy);
+    padding: 7px 14px;
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: inline-block;
+  }
+  .nameplate .rev { color: var(--steel); }
+</style>
+
+<div class="card">
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
+  <span class="corner tl"></span>
+  <span class="corner tr"></span>
+  <span class="corner bl"></span>
+  <span class="corner br"></span>
+
+  <div class="dochead">
+    <span>DOC. OPTZ/2026 — INGENIERÍA DE OPERACIONES</span>
+    <span>ESTADO · OPERACIONAL</span>
+  </div>
+
+  <div class="stack">
+    <span class="seal" aria-hidden="true">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="26" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="32" cy="32" r="17" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+        <path d="M32 3v4 M32 57v4 M3 32h4 M57 32h4" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+        <circle cx="32" cy="6" r="4" fill="#14B8A6" stroke="#F6F4EE" stroke-width="1.5"/>
+      </svg>
+    </span>
+
+    <div class="wordmark">OPTIMATIZA</div>
+    <div class="rule"></div>
+    <div class="tagline">Fabricamos agentes de IA que hacen el trabajo.</div>
+    <div class="est">EST. 2026 · SAN SALVADOR · LATAM &amp; US</div>
+  </div>
+
+  <div class="nameplate">
+    <span class="units"><span class="dot"></span>20 UNIDADES · 8 CATEGORÍAS</span>
+    <span class="rev">DWG OPTZ-2026 · REV 2026.07 · SIN ESCALA</span>
+  </div>
+</div>

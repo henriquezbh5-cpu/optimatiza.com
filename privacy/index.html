@@ -1,106 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | ClickMental AI</title>
-    <meta name="description" content="Privacy policy for ClickMental AI, an automated video publishing tool by Humberto Henriquez.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://quote-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Política de Privacidad | Optimatiza</title>
+    <meta name="description" content="Política de privacidad de Optimatiza — qué datos recogemos a través del formulario de contacto y el cotizador con IA, y cómo los tratamos.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F6F4EE'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%230F2B46' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%230F2B46' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='6' r='4' fill='%2314B8A6'/%3E%3C/svg%3E">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0F2B46;
-            color: #FFFFFF;
-            line-height: 1.7;
-            padding: 48px 24px;
+        @font-face{font-family:'IBM Plex Mono';src:url('../fonts/ibm-plex-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
+        @font-face{font-family:'IBM Plex Mono';src:url('../fonts/ibm-plex-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
+        @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+        @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+        @font-face{font-family:'Inter';src:url('../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
+        @font-face{font-family:'Instrument Serif';src:url('../fonts/instrument-serif-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+        @font-face{font-family:'Instrument Serif';src:url('../fonts/instrument-serif-400italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+
+        :root{
+            --paper:#F6F4EE; --paper-0:#FBFAF6; --ink:#0F2B46; --ink-dim:rgba(15,43,70,.62);
+            --steel:rgba(15,43,70,.48); --line:rgba(15,43,70,.16); --teal:#14B8A6; --teal-ink:#0F766E;
         }
-        .container { max-width: 780px; margin: 0 auto; }
-        header { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 24px; margin-bottom: 40px; }
-        .logo { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.5px; color: #FFFFFF; text-decoration: none; }
-        .logo:hover { color: #5B9BD5; }
-        h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
-        .meta { font-size: 0.875rem; color: rgba(255,255,255,0.5); margin-bottom: 40px; }
-        h2 { font-size: 1.25rem; font-weight: 700; margin-top: 40px; margin-bottom: 16px; color: #5B9BD5; }
-        p { font-size: 1rem; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
-        ul { margin: 12px 0 20px 24px; }
-        li { margin-bottom: 10px; color: rgba(255,255,255,0.85); }
-        a { color: #5B9BD5; text-decoration: underline; }
-        a:hover { color: #7BB3E5; }
-        strong { color: #FFFFFF; }
-        .back { display: inline-flex; align-items: center; gap: 8px; margin-top: 48px; padding: 10px 20px; background: #2D6A9F; color: #FFFFFF; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9375rem; }
-        .back:hover { background: #245a87; }
-        footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{-webkit-text-size-adjust:100%}
+        body{
+            font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+            background:var(--paper); color:var(--ink); line-height:1.72;
+            padding:40px 24px 72px; -webkit-font-smoothing:antialiased;
+        }
+        .sheet{max-width:800px; margin:0 auto}
+
+        /* Header / seal */
+        header.doc-head{
+            display:flex; align-items:center; gap:14px;
+            padding-bottom:18px; margin-bottom:8px; border-bottom:1.5px solid var(--ink);
+        }
+        .logo-seal{display:inline-flex; width:42px; height:42px; color:var(--ink); flex:0 0 auto}
+        .seal-svg{width:100%; height:100%; display:block}
+        .seal-dot{animation:sealPulse 2.4s ease-in-out infinite}
+        @keyframes sealPulse{0%,100%{opacity:.45}50%{opacity:1}}
+        .brand-lines{display:flex; flex-direction:column; gap:3px}
+        .logo-word{
+            font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:16px;
+            letter-spacing:.14em; color:var(--ink); text-decoration:none;
+        }
+        .brand-registry{
+            font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:9.5px;
+            letter-spacing:.16em; color:var(--steel);
+        }
+        .doc-tag{
+            margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:10px;
+            letter-spacing:.14em; color:var(--steel); text-align:right; line-height:1.5;
+        }
+        @media (max-width:560px){.doc-tag{display:none}}
+
+        h1{
+            font-family:'Instrument Serif',Georgia,serif; font-weight:400;
+            font-size:clamp(2.4rem,7vw,3.4rem); line-height:1.05; letter-spacing:-.01em;
+            margin:34px 0 6px;
+        }
+        .meta{
+            font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em;
+            color:var(--steel); text-transform:uppercase; margin-bottom:30px;
+        }
+
+        /* EN summary block */
+        .en-summary{
+            background:var(--paper-0); border:1px solid var(--line); border-left:3px solid var(--teal);
+            padding:18px 22px; margin-bottom:40px;
+        }
+        .en-summary .en-label{
+            font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em;
+            color:var(--teal-ink); text-transform:uppercase; display:block; margin-bottom:8px;
+        }
+        .en-summary p{font-size:.94rem; color:var(--ink-dim); margin:0}
+        .en-summary strong{color:var(--ink); font-weight:600}
+
+        h2{
+            font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:.92rem;
+            letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
+            margin:42px 0 14px; padding-top:20px; border-top:1px solid var(--line);
+            display:flex; gap:12px;
+        }
+        h2 .n{color:var(--teal-ink); flex:0 0 auto}
+        p{font-size:1rem; color:var(--ink-dim); margin-bottom:15px}
+        ul{margin:12px 0 20px 22px}
+        li{margin-bottom:9px; color:var(--ink-dim)}
+        strong{color:var(--ink); font-weight:600}
+        a{color:var(--teal-ink); text-decoration:underline; text-underline-offset:2px}
+        a:hover{color:var(--ink)}
+        code{font-family:'IBM Plex Mono',monospace; font-size:.86em; background:var(--paper-0); border:1px solid var(--line); padding:1px 5px; border-radius:3px}
+
+        .back{
+            display:inline-flex; align-items:center; gap:9px; margin-top:48px;
+            font-family:'IBM Plex Mono',monospace; font-size:.82rem; letter-spacing:.06em;
+            padding:12px 22px; background:var(--ink); color:var(--paper);
+            text-decoration:none; text-transform:uppercase;
+        }
+        .back:hover{background:#0a2038; color:var(--paper)}
+
+        footer{
+            margin-top:60px; padding-top:20px; border-top:1px solid var(--line);
+            font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em;
+            color:var(--steel); display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
+        }
+        footer a{color:var(--steel)}
+        @media (prefers-reduced-motion:reduce){.seal-dot{animation:none; opacity:1}}
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">HH — Humberto Henriquez</a>
+    <div class="sheet">
+        <header class="doc-head">
+            <a href="/" class="logo-seal" aria-label="Optimatiza — inicio">
+                <svg viewBox="0 0 64 64" class="seal-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="32" r="26" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="32" cy="32" r="17" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                    <path d="M32 3v4 M32 57v4 M3 32h4 M57 32h4" stroke="currentColor" stroke-width="1" opacity="0.55"/>
+                    <circle class="seal-dot" cx="32" cy="6" r="4" fill="#14B8A6" stroke="var(--paper-0)" stroke-width="1.5"/>
+                </svg>
+            </a>
+            <span class="brand-lines">
+                <a href="/" class="logo-word">OPTIMATIZA</a>
+                <span class="brand-registry">EST. 2026 · SAN SALVADOR</span>
+            </span>
+            <span class="doc-tag">DOC. OPTZ/2026<br>PRIVACIDAD · REV 2026.07</span>
         </header>
 
-        <h1>Privacy Policy</h1>
-        <p class="meta">Last updated: April 20, 2026</p>
+        <h1>Política de Privacidad</h1>
+        <p class="meta">Última actualización: 4 de julio de 2026</p>
 
-        <p>This Privacy Policy describes how <strong>ClickMental AI</strong> ("the Service", "we", "our"), operated by Humberto Henriquez, collects, uses, and protects information when you authorize the Service to publish content to your social media accounts on your behalf.</p>
+        <div class="en-summary">
+            <span class="en-label">EN — Summary</span>
+            <p><strong>In short:</strong> Optimatiza (founded and run by Humberto Henríquez, San Salvador, El Salvador) only collects the data you voluntarily send through our contact form (name, email, company, message) in order to reply to you, plus the project descriptions you type into the AI estimator, which are processed by Google Gemini through a Cloudflare Worker. We store only your language preference in your browser's <code>localStorage</code> — no cookies, no analytics, no tracking, no data sales. Please do not include confidential data in estimator descriptions. You can request deletion at any time via WhatsApp or the contact form. The full, governing policy follows in Spanish.</p>
+        </div>
 
-        <h2>1. Information We Collect</h2>
-        <p>When you authorize ClickMental AI through a third-party platform (such as TikTok) using OAuth 2.0, we receive:</p>
+        <h2><span class="n">01</span> Responsable del tratamiento</h2>
+        <p>El responsable del tratamiento de los datos descritos en esta política es <strong>Optimatiza</strong> ("Optimatiza", "nosotros"), fábrica de agentes de IA y automatización fundada y dirigida por <strong>Humberto Henríquez</strong>, con domicilio en San Salvador, El Salvador. Puedes contactarnos por WhatsApp al <strong>+503 7192 8070</strong> o a través del formulario de contacto de nuestra <a href="/#contacto">página principal</a>.</p>
+
+        <h2><span class="n">02</span> Qué datos recogemos y para qué</h2>
+        <p>Solo tratamos los datos que tú nos entregas de forma voluntaria. No recogemos datos de navegación de forma silenciosa.</p>
         <ul>
-            <li><strong>Account identifier</strong> (e.g., TikTok <code>open_id</code>) — a platform-issued identifier used to associate uploads with your account.</li>
-            <li><strong>Display name and avatar URL</strong> — used only to show which account you are currently connected to.</li>
-            <li><strong>Access and refresh tokens</strong> — scoped credentials that allow the Service to publish videos you explicitly queue for upload.</li>
-        </ul>
-        <p>We do <strong>not</strong> collect your password, private messages, email, or any personal data beyond what is strictly required to publish content you have approved.</p>
-
-        <h2>2. How We Use Your Information</h2>
-        <ul>
-            <li>To upload and publish video content that you have created and explicitly scheduled via the Service.</li>
-            <li>To refresh expired access tokens automatically so you do not need to re-authenticate frequently.</li>
-            <li>To keep a local log of successful and failed upload attempts for troubleshooting purposes.</li>
-        </ul>
-        <p>We do not use your information for advertising, profiling, or any purpose unrelated to the publishing workflow you initiated.</p>
-
-        <h2>3. Data Storage and Security</h2>
-        <p>OAuth tokens and account identifiers are stored <strong>locally</strong> on the device where ClickMental AI is installed. Tokens are stored in a file protected by the operating system's file-level permissions. We do not transmit tokens to any third-party server operated by us, and we do not maintain a centralized database of user credentials.</p>
-
-        <h2>4. Data Sharing</h2>
-        <p>We do <strong>not</strong> sell, rent, or share your data with third parties. The only external service that receives your tokens is the platform that issued them (e.g., TikTok), and only for the purpose of completing the API calls required to publish your content.</p>
-
-        <h2>5. Data Retention and Deletion</h2>
-        <p>Tokens and account information are retained locally until:</p>
-        <ul>
-            <li>You revoke authorization on the platform (e.g., TikTok Settings → Manage apps).</li>
-            <li>You manually delete the local token file.</li>
-            <li>You uninstall the Service.</li>
-        </ul>
-        <p>Upload logs are retained locally for a maximum of 90 days, after which they are automatically rotated.</p>
-
-        <h2>6. Your Rights</h2>
-        <p>You may at any time:</p>
-        <ul>
-            <li>Revoke the Service's access from your TikTok account settings.</li>
-            <li>Request deletion of any locally stored data by contacting us.</li>
-            <li>Request a copy of any data the Service holds about you.</li>
+            <li><strong>Formulario de contacto</strong> (procesado por Formspree): nombre, correo electrónico, empresa y el mensaje que escribas. Los usamos <strong>únicamente para responder</strong> tu consulta y dar seguimiento a tu solicitud de diagnóstico. No los usamos para publicidad ni los cedemos con fines comerciales.</li>
+            <li><strong>Cotizador — modo IA</strong>: la descripción del proceso o proyecto que escribes en el cotizador. Ese texto se envía a un <strong>Cloudflare Worker</strong> que lo procesa con <strong>Google Gemini</strong> para clasificar el tipo de solución y generar un estimado. <strong>No incluyas datos confidenciales</strong> (información personal sensible, secretos comerciales, credenciales o datos de terceros) en esa descripción; escribe el caso en términos generales.</li>
+            <li><strong>Preferencia de idioma</strong>: guardamos tu elección de idioma (ES/EN) en el <code>localStorage</code> de tu navegador para recordarla en tu próxima visita. No es una cookie, no viaja a ningún servidor y puedes borrarla limpiando los datos del sitio en tu navegador.</li>
         </ul>
 
-        <h2>7. Children's Privacy</h2>
-        <p>The Service is not directed to individuals under 13 (or the applicable minimum age in your jurisdiction). We do not knowingly collect data from children.</p>
+        <h2><span class="n">03</span> Lo que no hacemos</h2>
+        <ul>
+            <li>No usamos <strong>cookies</strong> de rastreo ni identificadores publicitarios.</li>
+            <li>No usamos <strong>analítica</strong> web ni herramientas de seguimiento de comportamiento.</li>
+            <li>No <strong>vendemos, alquilamos ni cedemos</strong> tus datos a terceros con fines comerciales.</li>
+            <li>No hacemos <strong>perfilado</strong> ni decisiones automatizadas con efectos jurídicos sobre ti.</li>
+        </ul>
 
-        <h2>8. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Material changes will be reflected in the "Last updated" date above.</p>
+        <h2><span class="n">04</span> Encargados y terceros</h2>
+        <p>Para operar el sitio nos apoyamos en proveedores que actúan como encargados del tratamiento, cada uno con sus propias garantías:</p>
+        <ul>
+            <li><strong>Formspree</strong> — recepción y reenvío de los mensajes del formulario de contacto.</li>
+            <li><strong>Cloudflare Workers</strong> y <strong>Google Gemini</strong> — procesamiento del texto que introduces en el cotizador con IA.</li>
+            <li><strong>GitHub Pages</strong> — alojamiento estático del sitio.</li>
+        </ul>
+        <p>El sitio incluye enlaces salientes a <strong>WhatsApp</strong>, <strong>LinkedIn</strong> y <strong>Google Play</strong>. Al seguirlos sales de nuestro dominio y quedas sujeto a las políticas de privacidad de esos servicios; no tenemos control sobre lo que ellos recogen.</p>
 
-        <h2>9. Contact</h2>
-        <p>Questions about this policy or requests related to your data can be sent through the contact form on our <a href="/#contacto">homepage</a>.</p>
-        <p><strong>Operator:</strong> Humberto Henriquez<br>
-        <strong>Location:</strong> San Salvador, El Salvador</p>
+        <h2><span class="n">05</span> Conservación</h2>
+        <p>Los mensajes del formulario se conservan solo el tiempo necesario para atender tu consulta y darle seguimiento comercial razonable, tras lo cual pueden eliminarse. Las descripciones que introduces en el cotizador se procesan para generar el estimado y no las almacenamos en una base de datos persistente propia; el proveedor de IA puede retenerlas temporalmente conforme a sus propias políticas.</p>
 
-        <a href="/" class="back">Back to homepage</a>
+        <h2><span class="n">06</span> Tus derechos y eliminación de datos</h2>
+        <p>En cualquier momento puedes solicitar <strong>acceso, rectificación o eliminación</strong> de los datos que nos hayas enviado, así como oponerte a su tratamiento. Para ejercer estos derechos, escríbenos por:</p>
+        <ul>
+            <li><strong>WhatsApp</strong>: <a href="https://wa.me/50371928070" target="_blank" rel="noopener">+503 7192 8070</a>.</li>
+            <li>El <strong>formulario de contacto</strong> de la <a href="/#contacto">página principal</a>.</li>
+        </ul>
+        <p>Atenderemos tu solicitud en un plazo razonable y sin costo.</p>
+
+        <h2><span class="n">07</span> Menores de edad</h2>
+        <p>El sitio y los servicios de Optimatiza están dirigidos a empresas y profesionales. No están dirigidos a menores de 13 años y no recogemos de forma consciente datos de menores.</p>
+
+        <h2><span class="n">08</span> Cambios en esta política</h2>
+        <p>Podemos actualizar esta política ocasionalmente. Cualquier cambio material se reflejará en la fecha de "Última actualización" al inicio de este documento.</p>
+
+        <h2><span class="n">09</span> Contacto</h2>
+        <p>Para cualquier consulta sobre esta política o sobre tus datos, escríbenos por el <a href="/#contacto">formulario de contacto</a> o por WhatsApp.</p>
+        <p><strong>Responsable:</strong> Optimatiza — fundada y dirigida por Humberto Henríquez<br>
+        <strong>Ubicación:</strong> San Salvador, El Salvador</p>
+
+        <a href="/" class="back">Volver al inicio →</a>
 
         <footer>
-            &copy; 2026 Humberto Henriquez. All rights reserved.
+            <span>© 2026 Optimatiza · San Salvador, El Salvador</span>
+            <span><a href="/terms/">Términos</a> · <a href="/">optimatiza.com</a></span>
         </footer>
     </div>
 </body>

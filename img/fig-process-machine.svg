@@ -237,7 +237,7 @@
 
     <!-- ================= CAPTION BLOCK ================= -->
     <text x="360" y="769" font-size="12.5" fill="#0F2B46" text-anchor="middle" letter-spacing="2.5">FIG. 1 — THE PROCESS MACHINE</text>
-    <text x="360" y="787" font-size="8.5" fill="#2D6A9F" text-anchor="middle" letter-spacing="1.5">DWG HH-2026 · REV A · NOT TO SCALE — SIN ESCALA</text>
+    <text x="360" y="787" font-size="8.5" fill="#2D6A9F" text-anchor="middle" letter-spacing="1.5">DWG OPTZ-2026 · REV A · NOT TO SCALE — SIN ESCALA</text>
 
     <!-- traveling dot: parked at VALIDATE gate (reduced-motion end-state) -->
     <circle class="ill-live" data-role="flow-dot" cx="452" cy="421" r="4" fill="#14B8A6" stroke="#FFFFFF" stroke-width="1"/>
