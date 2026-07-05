@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0F1A">
+    <link rel="manifest" href="/site.webmanifest">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://quote-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Optimatiza &mdash; Agentes de IA y Automatizaci&oacute;n | LATAM &amp; US</title>
-    <meta name="description" content="Míralo trabajar. Luego contrátalo. Fabricamos e instalamos agentes de IA que atienden leads, cobran facturas y responden clientes. Simulación en vivo, precios de placa desde $600, entrega en semanas.">
+    <meta name="description" content="Agentes de IA que atienden leads, cobran facturas y responden clientes. Simulación en vivo, desde $600, entrega en semanas. Míralo trabajar.">
     <meta name="author" content="Optimatiza">
     <link rel="canonical" href="https://optimatiza.com/">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -20,7 +22,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Optimatiza — Operating Ledger">
-    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale" content="es_LA">
     <meta property="og:locale:alternate" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Optimatiza — Agentes de IA y Automatización | LATAM & US">
@@ -43,6 +45,7 @@
       "name": "Optimatiza",
       "url": "https://optimatiza.com/",
       "foundingDate": "2026",
+      "logo": "https://optimatiza.com/img/logo-badge-512.png",
       "slogan": "Fabricamos agentes de IA que hacen el trabajo.",
       "description": "Fábrica de agentes de IA y automatización para empresas de LATAM y EE. UU.",
       "founder": {
@@ -55,20 +58,19 @@
       "areaServed": ["El Salvador", "Latin America", "United States"],
       "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": "+503-7192-8070", "availableLanguage": ["es", "en"] }
     },
-    { "@type": "WebSite", "@id": "https://optimatiza.com/#website", "url": "https://optimatiza.com/", "name": "Optimatiza", "inLanguage": ["es", "en"], "publisher": { "@id": "https://optimatiza.com/#org" } }
+    { "@type": "WebSite", "@id": "https://optimatiza.com/#website", "url": "https://optimatiza.com/", "name": "Optimatiza", "inLanguage": ["es", "en"], "publisher": { "@id": "https://optimatiza.com/#org" } },
+    { "@type": "Service", "@id": "https://optimatiza.com/#service", "serviceType": "Agentes de IA y automatización de procesos", "name": "Agentes de IA y Automatización", "provider": { "@id": "https://optimatiza.com/#org" }, "areaServed": ["El Salvador", "Latin America", "United States"], "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "600", "highPrice": "8000", "offerCount": "20" } }
   ]
 }
     </script>
 
     <!-- Fonts: self-hosted (styles.css declares @font-face) -->
+    <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/instrument-serif-400italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Phosphor Icons (self-hosted: regular + fill weights only) -->
     <link rel="stylesheet" href="vendor/phosphor/regular/style.css">
-    <link rel="stylesheet" href="vendor/phosphor/fill/style.css">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="agentes/agentes.css">
@@ -118,7 +120,7 @@
                 </div>
                 <a href="#cotizador" class="btn btn-ink nav-cta magnetic" data-i18n="nav-estimate">Cotizar</a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" data-i18n-aria="nav-menu-aria">
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" data-i18n-aria="nav-menu-aria" aria-expanded="false" aria-controls="navLinks">
                 <i class="ph ph-list" aria-hidden="true"></i>
             </button>
         </div>
@@ -348,7 +350,7 @@
     <!-- ========== 04 EVIDENCE (#proyectos) ========== -->
     <section class="band" id="proyectos">
         <div class="container">
-            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-04">04 — EVIDENCIA · UN CASO EN PRODUCCIÓN</span><span class="ch-rule rule-x"></span></div>
+            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-04">03 — EVIDENCIA · UN CASO EN PRODUCCIÓN</span><span class="ch-rule rule-x"></span></div>
             <header class="section-header rv">
                 <h2 class="section-title"><span class="line-mask"><span class="line" data-i18n="projects-title">Sistemas que ya operamos en producción.</span></span></h2>
                 <p class="section-subtitle" data-i18n="projects-subtitle">Casos reales, resultados cualitativos verificables — sin porcentajes inventados.</p>
@@ -495,7 +497,7 @@
     <!-- ========== 06 ESTIMATE DESK (#cotizador) ========== -->
     <section class="section" id="cotizador">
         <div class="container">
-            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-06">06 — COTIZADOR</span><span class="ch-rule rule-x"></span></div>
+            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-06">04 — COTIZADOR</span><span class="ch-rule rule-x"></span></div>
             <header class="section-header rv">
                 <h2 class="section-title"><span class="line-mask"><span class="line" data-i18n="quote-title">Cotiza tu unidad en 60 segundos.</span></span></h2>
                 <p class="section-subtitle" data-i18n="quote-subtitle">Elige, marca y mira el precio en vivo. O descríbelo y deja que la IA lo cotice.</p>
@@ -584,21 +586,21 @@
                                 <input type="radio" name="complexity" value="small" data-mult="1">
                                 <div class="quote-option-inner">
                                     <strong data-i18n="quote-size-small">Unidad simple</strong>
-                                    <span class="quote-option-desc" data-i18n="quote-size-small-desc">~1–2 semanas · banda S</span>
+                                    <span class="quote-option-desc" data-i18n="quote-size-small-desc">Banda S — un flujo, reglas fijas</span>
                                 </div>
                             </label>
                             <label class="quote-option-card small">
                                 <input type="radio" name="complexity" value="medium" data-mult="1.8">
                                 <div class="quote-option-inner">
                                     <strong data-i18n="quote-size-medium">Unidad estándar</strong>
-                                    <span class="quote-option-desc" data-i18n="quote-size-medium-desc">~2–4 semanas · banda M</span>
+                                    <span class="quote-option-desc" data-i18n="quote-size-medium-desc">Banda M — multi-paso con IA</span>
                                 </div>
                             </label>
                             <label class="quote-option-card small">
                                 <input type="radio" name="complexity" value="large" data-mult="3">
                                 <div class="quote-option-inner">
                                     <strong data-i18n="quote-size-large">Célula compuesta</strong>
-                                    <span class="quote-option-desc" data-i18n="quote-size-large-desc">~4–8 semanas · banda L</span>
+                                    <span class="quote-option-desc" data-i18n="quote-size-large-desc">Banda L — célula orquestada</span>
                                 </div>
                             </label>
                         </div>
@@ -854,7 +856,7 @@
     <!-- ========== 08 CONTACT (#contacto) ========== -->
     <section class="section section-close" id="contacto">
         <div class="container">
-            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-08">08 — CONTACTO · DIAGNÓSTICO GRATIS</span><span class="ch-rule rule-x"></span></div>
+            <div class="ch-head rv"><span class="ch-index" data-i18n="ch-08">05 — CONTACTO · DIAGNÓSTICO GRATIS</span><span class="ch-rule rule-x"></span></div>
             <div class="contact-layout">
                 <div class="contact-left rv">
                     <h2 class="section-title"><span class="line-mask"><span class="line" data-i18n="cta-title">Dinos qué proceso te come horas.</span></span></h2>
@@ -869,7 +871,7 @@
                     </figure>
 
                     <div class="contact-rows">
-                        <a class="contact-row" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20del%20cat%C3%A1logo%20de%20Optimatiza%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener">
+                        <a class="contact-row" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener">
                             <i class="ph ph-whatsapp-logo contact-row-ico wa" aria-hidden="true"></i>
                             <span class="contact-row-label" data-i18n="cta-whatsapp">Escríbenos por WhatsApp</span>
                             <span class="contact-row-arrow" aria-hidden="true">→</span>
@@ -959,7 +961,7 @@
                 </nav>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/humberto-wilfredo-henriquez-benitez/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
-                    <a href="https://wa.me/50371928070?text=Hola%2C%20vengo%20del%20cat%C3%A1logo%20de%20Optimatiza%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+                    <a href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
                     <span class="footer-clock mono">GMT-6 <span class="clock" data-clock>14:32:07</span></span>
                 </div>
             </div>
@@ -977,7 +979,7 @@
 
     <!-- ========== STICKY PILL (script.js owns visibility) ========== -->
     <div class="sticky-pill" id="stickyPill" hidden>
-        <a class="pill-wa" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20del%20cat%C3%A1logo%20de%20Optimatiza%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
+        <a class="pill-wa" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
         <a class="pill-estimate" href="#cotizador"><span data-i18n="pill-estimate">Cotizar</span></a>
         <button class="pill-dismiss" id="pillDismiss" aria-label="Cerrar"><i class="ph ph-x" aria-hidden="true"></i></button>
     </div>

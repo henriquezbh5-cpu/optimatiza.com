@@ -71,7 +71,7 @@
   --ink:      #EDF3FA;           /* headlines, strong text — light on canvas */
   --ink-700:  #C4D1E0;           /* subheads */
   --ink-body: #9BABBF;           /* body copy (AA+ on paper-0) */
-  --ink-dim:  #64748B;           /* captions only, AA-large only, never body */
+  --ink-dim:  #75859B;           /* captions only, AA-large only, never body */
 
   --line:        rgba(148,163,184,0.16);   /* 1px hairlines everywhere */
   --line-strong: rgba(196,209,224,0.55);   /* chapter rules, table headers */
@@ -1917,7 +1917,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   width: 100%;
   font-size: var(--t-2); color: var(--ink);
   background: var(--paper-0);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(148,163,184,0.45);
   border-radius: var(--r-s);
   padding: var(--sp-1) var(--sp-2);
   transition: border-color var(--dur-micro) ease;
@@ -2027,7 +2027,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   width: 100%;
   font-size: var(--t-2); color: var(--ink);
   background: var(--node-bg);
-  border: 1px solid var(--node-line);
+  border: 1px solid rgba(148,163,184,0.45);
   border-radius: 10px;
   padding: 12px 14px;
   transition: border-color var(--dur-micro) ease, box-shadow var(--dur-micro) ease;
@@ -2862,72 +2862,6 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) { .logo-badge { transition: none; } }
 
 /* ============================================================
-   29. HERO SHIFT CONSOLE — navy control panel (storefront)
-   ============================================================ */
-.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--sp-6); align-items: center; }
-.hero-console { min-width: 0; }
-.hc-frame {
-  background: var(--band); color: var(--band-text);
-  border: 1px solid var(--line-strong);
-  box-shadow: var(--shadow-modal);
-  padding: var(--sp-4);
-  display: flex; flex-direction: column; gap: var(--sp-3);
-  --actor: var(--band-accent);
-}
-.hc-head { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2);
-  border-bottom: 1px solid var(--band-line); padding-bottom: var(--sp-2);
-  font-size: var(--t-0); letter-spacing: 0.08em; text-transform: uppercase; }
-.hc-title { color: var(--live-bright); display: inline-flex; align-items: center; gap: 8px; }
-.hc-title::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--live-bright);
-  box-shadow: 0 0 0 0 rgba(20,184,166,0.5); animation: hcDot 2.4s ease-out infinite; }
-@keyframes hcDot { 0%{box-shadow:0 0 0 0 rgba(20,184,166,.5)} 70%{box-shadow:0 0 0 7px rgba(20,184,166,0)} 100%{box-shadow:0 0 0 0 rgba(20,184,166,0)} }
-.hc-plate { color: var(--band-muted); }
-.hc-body { display: grid; grid-template-columns: 96px 1fr; gap: var(--sp-3); align-items: start; min-height: 168px; }
-.hc-bot { margin: 0; width: 96px; }
-.hc-bot img, .hc-bot svg { width: 100%; height: auto; display: block; }
-/* line-art robot rig: light strokes pop on navy */
-.hc-bot svg [stroke] { stroke: var(--band-text); }
-.hc-bot svg .ill-live, .hc-bot svg [fill="#14B8A6"] { fill: var(--live-bright); }
-.hc-log { font-size: var(--t-1); line-height: 1.55; display: flex; flex-direction: column; gap: 6px;
-  min-width: 0; overflow: hidden; }
-.hc-line { margin: 0; color: var(--band-muted); overflow-wrap: anywhere; }
-.hc-line[data-actor="trigger"]     { color: #F0B968; }
-.hc-line[data-actor="herramienta"], .hc-line[data-actor="sistema"] { color: #7FD8CE; }
-.hc-line[data-actor="agente"], .hc-line[data-actor="llm"] { color: var(--band-accent); }
-.hc-line[data-actor="decision"]    { color: #F2D479; }
-.hc-line[data-actor="humano"]      { color: #86E0B0; }
-.hc-line[data-actor="resultado"]   { color: var(--band-text); font-weight: 500; }
-.hc-stamp { align-self: start; display: inline-block; font-size: var(--t-0); letter-spacing: 0.1em;
-  color: var(--band); background: var(--live-bright); padding: 3px 10px; border-radius: var(--r-s);
-  text-transform: uppercase; font-weight: 600; }
-.hc-foot { border-top: 1px solid var(--band-line); padding-top: var(--sp-3);
-  display: flex; flex-direction: column; gap: var(--sp-2); }
-.hc-cta { color: var(--live-bright) !important; font-weight: 500; letter-spacing: 0.04em;
-  text-transform: uppercase; font-size: var(--t-1); text-decoration: none; align-self: flex-start; }
-.hc-cta:hover { text-decoration: underline; }
-.hc-note { color: var(--band-muted); font-size: var(--t-0); letter-spacing: 0.08em; text-transform: uppercase; }
-.hc-tb { color: var(--band-muted); font-size: var(--t-0); letter-spacing: 0.04em; opacity: 0.75; }
-.hc-tb .tb-signature { font-family: var(--ff-display); font-style: italic; text-transform: none; letter-spacing: 0; }
-
-/* curated vitrina cards: keep the agent metric inside the card */
-#flota .ag-slab { display: block; }
-#flota .ag-slab .slab-arrow { display: none; }
-#flota .ag-slab .slab-before:empty { display: none; }
-#flota .ag-slab .slab-after { display: block; overflow-wrap: anywhere; white-space: normal; }
-
-/* verifier integration fixes — navy-band contrast hookups for storefront
-   elements whose dedicated rules were missing (spec §6 item 5.1) */
-.ag-card-custom .ag-custom-title { color: var(--band-text); font-family: var(--ff-display); font-weight: 400; }
-.founder-plate { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
-.founder-plate .tb-signature { color: var(--band-text); font-size: var(--t-3); }
-.footer-certs { padding: 0 var(--sp-4); }
-
-@media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hc-body { grid-template-columns: 80px 1fr; }
-}
-
-/* ============================================================
    30. FLOW CANVAS LAYER — Flowise-style hero window, animated
        edges, chat panel, end-to-end process scroll. 2026-07.
    ============================================================ */
@@ -3490,3 +3424,6 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   box-shadow: 0 0 8px rgba(247,147,26,0.7);
 }
 .btc-rule { border-left-color: var(--ok-mark); color: var(--ink-body); }
+
+/* a11y: marquee pausable desde teclado */
+.marquee:focus-within .marquee-track { animation-play-state: paused; }

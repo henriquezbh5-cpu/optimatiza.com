@@ -213,7 +213,7 @@
                 if (subActs.length) gsap.set(subActs, { autoAlpha: 0, y: 16 });
                 if (proofCells.length) gsap.set(proofCells, { autoAlpha: 0, scale: 1.04 });
                 if (heroMarquee) gsap.set(heroMarquee, { autoAlpha: 0 });
-                if (bgCanvas) gsap.set(bgCanvas, { opacity: 0 }); // opacity only: background-3d.js owns visibility/display
+                if (bgCanvas) gsap.set(bgCanvas, { opacity: 0 });
 
                 heroTl = gsap.timeline({ defaults: { ease: EASE_TEXT } });
                 if (heroRules.length) {

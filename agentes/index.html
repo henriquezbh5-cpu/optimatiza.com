@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0F1A">
+    <link rel="manifest" href="/site.webmanifest">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://quote-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Cat&aacute;logo de la Flota &mdash; 20 agentes de IA con simuladores | Optimatiza</title>
@@ -15,6 +17,8 @@
     <meta property="og:description" content="Veinte agentes de IA con simuladores en vivo. Precios de placa desde $600. Presiona play y mira cada flujo correr paso a paso.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://optimatiza.com/agentes/">
+    <meta property="og:locale" content="es_LA">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -30,14 +34,12 @@
     <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 
     <!-- Fonts: self-hosted (styles.css declares @font-face) -->
+    <link rel="preload" href="../fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/instrument-serif-400italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/ibm-plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Phosphor Icons (self-hosted: regular + fill weights only) -->
     <link rel="stylesheet" href="../vendor/phosphor/regular/style.css">
-    <link rel="stylesheet" href="../vendor/phosphor/fill/style.css">
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="agentes.css">
@@ -65,6 +67,7 @@
           "areaServed": ["El Salvador", "Latin America", "United States"],
           "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "telephone": "+503-7192-8070", "availableLanguage": ["es", "en"] }
         },
+        { "@type": "WebSite", "@id": "https://optimatiza.com/#website", "url": "https://optimatiza.com/", "name": "Optimatiza", "inLanguage": ["es", "en"], "publisher": { "@id": "https://optimatiza.com/#org" } },
         { "@type": "WebPage", "url": "https://optimatiza.com/agentes/", "name": "Catálogo de la Flota — Optimatiza", "inLanguage": ["es", "en"], "isPartOf": { "@id": "https://optimatiza.com/#website" }, "publisher": { "@id": "https://optimatiza.com/#org" } }
       ]
     }

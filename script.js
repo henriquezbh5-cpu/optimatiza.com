@@ -27,6 +27,7 @@ const navLinks = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('active')));
     const icon = navToggle.querySelector('i');
     if (navLinks.classList.contains('active')) {
         icon.className = 'ph ph-x';
@@ -41,6 +42,7 @@ navToggle.addEventListener('click', () => {
 navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
         navToggle.querySelector('i').className = 'ph ph-list';
         document.body.style.overflow = '';
     });
@@ -246,9 +248,9 @@ const translations = (function () {
     "case-cta": ["¿Tienes un proceso así? → Cotízalo", "Have a process like this? → Estimate it"],
     "ch-01": ["01 — LA VITRINA · SEIS UNIDADES DESTACADAS", "01 — THE SHOWCASE · SIX FEATURED UNITS"],
     "ch-02": ["02 — TARIFARIO · SOLO REFERENCIA", "02 — RATE CARD · REFERENCE ONLY"],
-    "ch-04": ["04 — EVIDENCIA · UN CASO EN PRODUCCIÓN", "04 — EVIDENCE · ONE CASE IN PRODUCTION"],
-    "ch-06": ["06 — COTIZADOR", "06 — ESTIMATE"],
-    "ch-08": ["08 — CONTACTO · DIAGNÓSTICO GRATIS", "08 — CONTACT · FREE DIAGNOSTIC"],
+    "ch-04": ["03 — EVIDENCIA · UN CASO EN PRODUCCIÓN", "03 — EVIDENCE · ONE CASE IN PRODUCTION"],
+    "ch-06": ["04 — COTIZADOR", "04 — ESTIMATE"],
+    "ch-08": ["05 — CONTACTO · DIAGNÓSTICO GRATIS", "05 — CONTACT · FREE DIAGNOSTIC"],
     "chip-founder": ["ENTREGADO POR NUESTRO FUNDADOR", "DELIVERED BY OUR FOUNDER"],
     "colophon-motto": ["DIBUJADO A MANO · CORRIDO POR MÁQUINAS", "DRAWN BY HAND · RUN BY MACHINES"],
     "contact-linkedin": ["LinkedIn del fundador", "Founder's LinkedIn"],
@@ -307,10 +309,6 @@ const translations = (function () {
     "form-privacy": ["Tus datos se procesan mediante Formspree únicamente para responderte. No se venden ni se usan para marketing.", "Your details are processed via Formspree solely to reply to you. They are not sold or used for marketing."],
     "form-submit": ["<i class=\"ph ph-paper-plane-tilt\"></i> Solicitar diagnóstico gratis", "<i class=\"ph ph-paper-plane-tilt\"></i> Request the free diagnostic"],
     "form-success": ["Enviado. Respondemos en menos de 24 horas.", "Sent. We reply within 24 hours."],
-    "hc-aria": ["Consola de simulación de agentes", "Agent simulation console"],
-    "hc-cta": ["Contratar esta unidad →", "Hire this unit →"],
-    "hc-note": ["SIMULACIÓN · PATRÓN REAL DE OPERACIÓN", "SIMULATION · REAL OPERATING PATTERN"],
-    "hc-title": ["CONSOLA DE TURNO — EN VIVO", "SHIFT CONSOLE — LIVE"],
     "hero-chips": ["20 UNIDADES · 8 CATEGORÍAS · 15+ SISTEMAS EN PRODUCCIÓN · 10+ AÑOS DE INGENIERÍA", "20 UNITS · 8 CATEGORIES · 15+ SYSTEMS IN PRODUCTION · 10+ YEARS OF ENGINEERING"],
     "hero-cta-primary": ["Elegir mi agente ↓", "Pick my agent ↓"],
     "hero-cta-secondary": ["Cotiza tu unidad en 60 segundos →", "Price your unit in 60 seconds →"],
@@ -424,11 +422,11 @@ const translations = (function () {
     "quote-mode-ai": ["<i class=\"ph ph-brain\"></i> Describe con IA", "<i class=\"ph ph-brain\"></i> Describe with AI"],
     "quote-mode-builder": ["<i class=\"ph ph-list-checks\"></i> Arma tu unidad", "<i class=\"ph ph-list-checks\"></i> Build your unit"],
     "quote-size-large": ["Célula compuesta", "Composite cell"],
-    "quote-size-large-desc": ["~4–8 semanas · banda L", "~4–8 weeks · L band"],
+    "quote-size-large-desc": ["Banda L — célula orquestada", "L band — orchestrated cell"],
     "quote-size-medium": ["Unidad estándar", "Standard unit"],
-    "quote-size-medium-desc": ["~2–4 semanas · banda M", "~2–4 weeks · M band"],
+    "quote-size-medium-desc": ["Banda M — multi-paso con IA", "M band — multi-step with AI"],
     "quote-size-small": ["Unidad simple", "Simple unit"],
-    "quote-size-small-desc": ["~1–2 semanas · banda S", "~1–2 weeks · S band"],
+    "quote-size-small-desc": ["Banda S — un flujo, reglas fijas", "S band — one flow, fixed rules"],
     "quote-step1-title": ["¿Qué necesitas?", "What do you need?"],
     "quote-step2-title": ["Selecciona funcionalidades", "Select features"],
     "quote-step3-title": ["Tamaño de la unidad", "Unit size"],
@@ -697,7 +695,7 @@ if (proposalForm) {
             { id: 'approvals', name: 'Multi-level approval workflows', nameEs: 'Flujos de aprobación multinivel', price: 400 },
             { id: 'email-auto', name: 'Email automation + templates', nameEs: 'Automatización de correo + plantillas', price: 300 },
             { id: 'data-sync', name: 'System-to-system data sync', nameEs: 'Sincronización de datos entre sistemas', price: 550 },
-            { id: 'doc-gen', name: 'Document generation (PDF/Word/Excel)', nameEs: 'Generacion de docs (PDF/Word/Excel)', price: 450 },
+            { id: 'doc-gen', name: 'Document generation (PDF/Word/Excel)', nameEs: 'Generación de docs (PDF/Word/Excel)', price: 450 },
             { id: 'sharepoint', name: 'SharePoint integration + libraries', nameEs: 'Integración SharePoint + bibliotecas', price: 400 },
             { id: 'custom-connector', name: 'Custom API connectors', nameEs: 'Conectores API personalizados', price: 550 },
             { id: 'error-handling', name: 'Error handling + retry + logging', nameEs: 'Manejo de errores + reintentos + logging', price: 350 },
@@ -719,13 +717,13 @@ if (proposalForm) {
             { id: 'data-model', name: 'Star schema data model', nameEs: 'Modelo de datos estrella', price: 450 },
             { id: 'dax', name: 'Advanced DAX measures + KPIs', nameEs: 'Medidas DAX avanzadas + KPIs', price: 550 },
             { id: 'power-query', name: 'ETL with Power Query (M)', nameEs: 'ETL con Power Query (M)', price: 450 },
-            { id: 'multi-source', name: 'Multiple data sources + gateway', nameEs: 'Multiples fuentes + gateway', price: 500 },
+            { id: 'multi-source', name: 'Multiple data sources + gateway', nameEs: 'Múltiples fuentes + gateway', price: 500 },
             { id: 'rls', name: 'Row-level security (RLS)', nameEs: 'Seguridad a nivel de fila (RLS)', price: 400 },
             { id: 'scheduled-refresh', name: 'Scheduled refresh + incremental', nameEs: 'Refresh programado + incremental', price: 300 },
-            { id: 'api-connection', name: 'API / REST data with pagination', nameEs: 'Datos API / REST con paginacion', price: 550 },
+            { id: 'api-connection', name: 'API / REST data with pagination', nameEs: 'Datos API / REST con paginación', price: 550 },
             { id: 'kpi-alerts', name: 'KPI alerts + data-driven subscriptions', nameEs: 'Alertas KPI + suscripciones por datos', price: 350 },
             { id: 'embed', name: 'Embedded reports (web/portal)', nameEs: 'Reportes embebidos (web/portal)', price: 450 },
-            { id: 'training', name: 'User training + documentation', nameEs: 'Capacitacion + documentación', price: 350 },
+            { id: 'training', name: 'User training + documentation', nameEs: 'Capacitación + documentación', price: 350 },
             { id: 'mobile-report', name: 'Mobile-optimized reports', nameEs: 'Reportes optimizados para móvil', price: 300 },
             { id: 'paginated', name: 'Paginated reports (SSRS)', nameEs: 'Reportes paginados (SSRS)', price: 400 },
         ]
@@ -915,7 +913,7 @@ if (proposalForm) {
 
             // Calculate total range
             var rawTotal = (state.basePrice + state.featuresTotal) * state.multiplier;
-            var min = Math.round(rawTotal * 0.85);
+            var min = Math.max(600, Math.round(rawTotal * 0.85));
             var max = Math.round(rawTotal * 1.15);
             // Rate-card ceiling (spec §6.4): the site never quotes past $8,000
             var capped = false;
@@ -1078,7 +1076,7 @@ if (proposalForm) {
         var fMult = marketFeatureMultiplier[lang] || 1;
         var featuresTotal = analysis.features.reduce(function(sum, f) { return sum + Math.round(f.price * fMult); }, 0);
         var rawTotal = (base + featuresTotal) * mult;
-        var min = Math.round(rawTotal * 0.85);
+        var min = Math.max(600, Math.round(rawTotal * 0.85));
         var max = Math.round(rawTotal * 1.15);
         var capped = false;
         if (max > 8000) { max = 8000; capped = true; }
@@ -1206,7 +1204,7 @@ if (proposalForm) {
                 document.getElementById('quoteTotalMin').textContent + ' - ' + document.getElementById('quoteTotalMax').textContent);
             lines.push((lang === 'es' ? 'Tiempo estimado: ' : 'Estimated timeline: ') + document.getElementById('quoteTimeline').textContent);
         } else if (state.mode === 'ai' && state.aiEstimate) {
-            lines.push((lang === 'es' ? 'Descripcion del proyecto: ' : 'Project description: ') + state.aiEstimate.description);
+            lines.push((lang === 'es' ? 'Descripción del proyecto: ' : 'Project description: ') + state.aiEstimate.description);
             lines.push((lang === 'es' ? 'Tipo detectado: ' : 'Detected type: ') + (lang === 'es' ? typeLabels[state.aiEstimate.type].es : typeLabels[state.aiEstimate.type].en));
             var featureNames = state.aiEstimate.features.map(function(f) { return lang === 'es' ? f.nameEs : f.name; });
             lines.push((lang === 'es' ? 'Funcionalidades detectadas: ' : 'Detected features: ') + featureNames.join(', '));

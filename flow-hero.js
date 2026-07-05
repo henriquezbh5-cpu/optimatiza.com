@@ -265,6 +265,7 @@
     /* ---------- static end state (reduced motion / initial paint) ---------- */
     function staticState() {
       drawEdges();
+      if (plate) plate.textContent = SCENES[0].plate[L];
       edges.forEach(function (e) { if (e.from === 'start' || e.to === 'ventas') e.flow.classList.add('on-static'); });
       setNode('start', 'is-done'); setNode('intent', 'is-done'); setNode('ventas', 'is-done');
     }
@@ -298,7 +299,7 @@
       else { visible = true; if (running) loop(); }
     });
     document.addEventListener('optz:lang', function () {
-      if (!running) return;
+      if (!running) { if (REDUCED) staticState(); return; }
       clearAll(); resetRound();
       if (visible) loop();
     });
@@ -349,7 +350,7 @@
     nodes.forEach(function (n, k) {
       n.tabIndex = 0;
       n.setAttribute('role', 'button');
-      function jump() { stop(); show(k); if (inView && !document.hidden) play(); }
+      function jump() { stop(); show(k); } /* manual = autoplay off (WCAG 2.2.2) */
       n.addEventListener('click', jump);
       n.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); jump(); }
