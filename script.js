@@ -177,6 +177,8 @@ const translations = (function () {
     "share-note": ["LA TARJETA QUE APARECE AL COMPARTIR LLEVA NUESTRO ROBOT — MARCA INCLUIDA.", "THE CARD THAT SHOWS UP WHEN YOU SHARE CARRIES OUR ROBOT — BRAND INCLUDED."],
     "share-aria": ["Compartir Optimatiza", "Share Optimatiza"],
     "share-copy-aria": ["Copiar enlace", "Copy link"],
+    "follow-li-aria": ["Seguir a Optimatiza en LinkedIn", "Follow Optimatiza on LinkedIn"],
+    "follow-strip": ["SÍGUENOS EN LINKEDIN — OPTIMATIZA →", "FOLLOW OPTIMATIZA ON LINKEDIN →"],
     /* ---- Flow Canvas hero (fw-*) + end-to-end process (proc-*) ---- */
     "fw-aria": ["Simulación de flujo de agentes en vivo", "Live agent workflow simulation"],
     "fw-name": ["FLUJO: ATENCIÓN AL CLIENTE — 24/7", "WORKFLOW: CUSTOMER OPERATIONS — 24/7"],

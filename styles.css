@@ -3626,3 +3626,28 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   .nv-fab { animation: none; }
   .nv-fab::after { animation: none; opacity: 0; }
 }
+
+/* --- seguir en LinkedIn (rail + franja) --- */
+.share-rail-sep { width: 26px; height: 1px; background: var(--node-line); margin: 3px 0; }
+.share-btn.follow-li { position: relative; border-color: rgba(91,168,232,0.5); color: #5BA8E8; }
+.share-btn.follow-li:hover, .share-btn.follow-li:focus-visible {
+  border-color: #5BA8E8; color: #8CC3F2;
+  box-shadow: 0 0 0 1px rgba(91,168,232,0.35), 0 0 24px rgba(91,168,232,0.2);
+}
+.follow-plus {
+  position: absolute; top: -4px; right: -4px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #5BA8E8; color: #071018;
+  font-size: 12px; font-weight: 700; line-height: 16px; text-align: center;
+}
+.follow-strip {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: var(--sp-3);
+  font-size: var(--t-1); font-weight: 500; letter-spacing: 0.1em;
+  color: #5BA8E8;
+  border: 1px solid rgba(91,168,232,0.4); border-radius: var(--r-pill);
+  padding: 10px 20px;
+  transition: color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.follow-strip:hover { color: #8CC3F2; border-color: #5BA8E8; box-shadow: 0 0 24px rgba(91,168,232,0.25); transform: translateY(-2px); }
+.follow-strip i { font-size: 18px; }
