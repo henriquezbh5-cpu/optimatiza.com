@@ -116,18 +116,29 @@
     history.push({ role: 'user', content: text });
     renderChips();
     busy = true; typing(true);
-    var ctl = new AbortController();
-    var timer = setTimeout(function () { ctl.abort(); }, 25000);
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: history.slice(-14) }),
-      signal: ctl.signal
-    })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    function attempt(retriesLeft) {
+      var ctl = new AbortController();
+      var timer = setTimeout(function () { ctl.abort(); }, 25000);
+      return fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history.slice(-14) }),
+        signal: ctl.signal
+      })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) { if (!d.reply) throw new Error('empty'); return d; })
+        .catch(function (e) {
+          if (retriesLeft > 0) { /* Gemini free tier: 503 transitorio — reintenta en silencio */
+            return new Promise(function (res) { setTimeout(res, 2500); })
+              .then(function () { return attempt(retriesLeft - 1); });
+          }
+          throw e;
+        })
+        .finally(function () { clearTimeout(timer); });
+    }
+    attempt(2)
       .then(function (d) {
         typing(false);
-        if (!d.reply) throw new Error('empty');
         msg('bot', d.reply);
         history.push({ role: 'model', content: d.reply });
       })
@@ -135,7 +146,7 @@
         typing(false);
         msg('bot', t('err') + ' <a href="' + WA + '" target="_blank" rel="noopener">' + t('wa') + '</a>', true);
       })
-      .finally(function () { clearTimeout(timer); busy = false; });
+      .finally(function () { busy = false; });
   });
 
   applyLang();
