@@ -92,6 +92,7 @@
     <a class="ag-skip" href="#main" data-i18n="skip">Saltar al contenido</a>
 
     <!-- ========== 3D BACKGROUND ========== -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="bg-fallback"></div>
     <div class="bg-grid-overlay"></div>
 
@@ -142,6 +143,7 @@
     <!-- ========== HERO: DOCUMENT HEADER ========== -->
     <main id="main">
     <section class="hero" id="hero">
+        <canvas id="bgfx" class="bgfx" aria-hidden="true"></canvas>
         <div class="container">
             <header class="hero-dochead rv">
                 <div class="dochead-strip mono">
@@ -1241,5 +1243,7 @@
     <script defer src="motion.js"></script>
     <script defer src="flow-hero.js"></script>
     <script defer src="chat-agent.js"></script>
+    <script type="module" src="webgl-bg.js"></script>
+    <script type="module" src="background-3d.js"></script>
 </body>
 </html>

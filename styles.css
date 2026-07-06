@@ -532,7 +532,15 @@ html.js-anim .animate-target.is-in { opacity: 1; }
   display: flex; flex-direction: column;
   padding-top: var(--sp-8);
 }
-.hero > .container { margin-top: auto; padding-top: var(--sp-6); }
+.hero > .container { margin-top: auto; padding-top: var(--sp-6); position: relative; z-index: 1; }
+
+/* WebGL ambient layer (webgl-bg.js) — decorative, behind all hero content */
+.bgfx {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
 
 .hero-dochead { margin-bottom: var(--sp-6); }
 .dochead-strip {
@@ -3499,3 +3507,16 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   .nv-log { height: 42vh; }
 }
 @media (prefers-reduced-motion: reduce) { .nv-dot { animation: none; } .nv-dots i { animation: none; } }
+
+/* ============================================================
+   32. FIX vitrina móvil: la métrica destacada (.slab-after) del
+   catálogo curado es una frase larga — debe envolver, no nowrap
+   (el nowrap solo aplica a los slabs cortos tipo "HORAS→SEGUNDOS").
+   ============================================================ */
+#flota .ag-slab { display: block; }
+#flota .ag-slab .slab-arrow { display: none; }
+#flota .ag-slab .slab-before,
+#flota .ag-slab .slab-after {
+  display: block; white-space: normal; overflow-wrap: anywhere;
+  font-size: var(--t-1); line-height: 1.4;
+}
