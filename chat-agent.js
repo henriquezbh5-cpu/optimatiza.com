@@ -103,7 +103,31 @@
       input.focus();
     }
   }
-  fab.addEventListener('click', function () { toggle(); });
+  fab.addEventListener('click', function () { hideHint(); toggle(); });
+
+  /* burbuja de saludo: señala que el chat es interactivo (1 vez por sesión) */
+  var hintEl = null;
+  function hideHint() {
+    if (hintEl) { hintEl.classList.remove('on'); setTimeout(function () { hintEl && hintEl.remove(); hintEl = null; }, 300); }
+  }
+  (function scheduleHint() {
+    var seen = false;
+    try { seen = sessionStorage.getItem('nv-hint') === '1'; } catch (e) {}
+    if (seen) return;
+    setTimeout(function () {
+      if (!panel.hidden) return;
+      hintEl = document.createElement('button');
+      hintEl.className = 'nv-hint';
+      hintEl.type = 'button';
+      hintEl.innerHTML = '<b>' + (lang() ? 'Questions? I\u2019m Nova' : '\u00bfHablamos? Soy Nova') + '</b>' +
+        (lang() ? 'Ask me about agents \u0026 pricing' : 'Preg\u00fantame por agentes y precios');
+      hintEl.addEventListener('click', function () { hideHint(); toggle(true); });
+      root.appendChild(hintEl);
+      requestAnimationFrame(function () { hintEl && hintEl.classList.add('on'); });
+      try { sessionStorage.setItem('nv-hint', '1'); } catch (e) {}
+      setTimeout(hideHint, 9000);
+    }, 4500);
+  })();
   document.getElementById('nvX').addEventListener('click', function () { toggle(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) toggle(false); });
 

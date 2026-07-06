@@ -1628,17 +1628,19 @@ if (proposalForm) {
         } else { ok(); }
     }
     function esLang() { try { return localStorage.getItem('preferred-lang') !== 'en'; } catch (e) { return true; } }
-    var ig = document.getElementById('shareIG');
-    if (ig) ig.addEventListener('click', function () {
-        if (navigator.share) {
-            navigator.share({ title: 'Optimatiza', text: TXT, url: URL_SITE }).catch(function () {});
-        } else {
-            copyLink(esLang() ? 'Enlace copiado \u2014 p\u00e9galo en tu historia o post de Instagram'
-                              : 'Link copied \u2014 paste it into your Instagram story or post');
-        }
+    document.querySelectorAll('.js-share-ig').forEach(function (ig) {
+        ig.addEventListener('click', function () {
+            if (navigator.share) {
+                navigator.share({ title: 'Optimatiza', text: TXT, url: URL_SITE }).catch(function () {});
+            } else {
+                copyLink(esLang() ? 'Enlace copiado \u2014 p\u00e9galo en tu historia o post de Instagram'
+                                  : 'Link copied \u2014 paste it into your Instagram story or post');
+            }
+        });
     });
-    var cp = document.getElementById('shareCopy');
-    if (cp) cp.addEventListener('click', function () {
-        copyLink(esLang() ? 'Enlace copiado' : 'Link copied');
+    document.querySelectorAll('.js-share-copy').forEach(function (cp) {
+        cp.addEventListener('click', function () {
+            copyLink(esLang() ? 'Enlace copiado' : 'Link copied');
+        });
     });
 })();
