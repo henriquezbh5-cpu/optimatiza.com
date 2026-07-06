@@ -173,6 +173,10 @@ const translations = (function () {
     "btc-note": ["SERVICIOS ENTRE PARTICULARES BAJO ACUERDO PRIVADO — NO ES ASESORÍA FINANCIERA REGULADA NI PROMESA DE RENDIMIENTOS. RESULTADOS PASADOS NO GARANTIZAN RESULTADOS FUTUROS. BITCOIN ES VOLÁTIL: OPERA SOLO CAPITAL QUE PUEDAS ARRIESGAR. LA GESTIÓN DE PORTAFOLIO REQUIERE ESTRATEGIA ACORDADA POR ESCRITO Y ACEPTACIÓN MUTUA.", "PRIVATE SERVICES UNDER PRIVATE AGREEMENT — NOT REGULATED FINANCIAL ADVICE NOR A PROMISE OF RETURNS. PAST RESULTS DO NOT GUARANTEE FUTURE RESULTS. BITCOIN IS VOLATILE: ONLY TRADE CAPITAL YOU CAN AFFORD TO RISK. PORTFOLIO MANAGEMENT REQUIRES A WRITTEN, MUTUALLY ACCEPTED STRATEGY."],
     "footer-bitcoin": ["Bitcoin", "Bitcoin"],
     "footer-blog": ["Blog", "Blog"],
+    "share-kicker": ["¿TE GUSTÓ LO QUE VISTE? COMPÁRTELO EN TU MURO", "LIKED WHAT YOU SAW? SHARE IT ON YOUR FEED"],
+    "share-note": ["LA TARJETA QUE APARECE AL COMPARTIR LLEVA NUESTRO ROBOT — MARCA INCLUIDA.", "THE CARD THAT SHOWS UP WHEN YOU SHARE CARRIES OUR ROBOT — BRAND INCLUDED."],
+    "share-aria": ["Compartir Optimatiza", "Share Optimatiza"],
+    "share-copy-aria": ["Copiar enlace", "Copy link"],
     /* ---- Flow Canvas hero (fw-*) + end-to-end process (proc-*) ---- */
     "fw-aria": ["Simulación de flujo de agentes en vivo", "Live agent workflow simulation"],
     "fw-name": ["FLUJO: ATENCIÓN AL CLIENTE — 24/7", "WORKFLOW: CUSTOMER OPERATIONS — 24/7"],
@@ -1602,4 +1606,39 @@ if (proposalForm) {
         var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
         if (a) bump('wa_click');
     }, true);
+})();
+
+/* ============================================================
+   COMPARTE OPTIMATIZA — Instagram via Web Share nativo + copiar
+   ============================================================ */
+(function () {
+    var URL_SITE = 'https://optimatiza.com/';
+    var TXT = 'Mira esto: agentes de IA que hacen el trabajo \u2014 simulaciones en vivo y precios publicados.';
+    function toast(msg) {
+        var t = document.querySelector('.share-toast');
+        if (!t) { t = document.createElement('div'); t.className = 'share-toast'; document.body.appendChild(t); }
+        t.textContent = msg;
+        t.classList.add('on');
+        setTimeout(function () { t.classList.remove('on'); }, 2200);
+    }
+    function copyLink(doneMsg) {
+        var ok = function () { toast(doneMsg); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(URL_SITE).then(ok, ok);
+        } else { ok(); }
+    }
+    function esLang() { try { return localStorage.getItem('preferred-lang') !== 'en'; } catch (e) { return true; } }
+    var ig = document.getElementById('shareIG');
+    if (ig) ig.addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({ title: 'Optimatiza', text: TXT, url: URL_SITE }).catch(function () {});
+        } else {
+            copyLink(esLang() ? 'Enlace copiado \u2014 p\u00e9galo en tu historia o post de Instagram'
+                              : 'Link copied \u2014 paste it into your Instagram story or post');
+        }
+    });
+    var cp = document.getElementById('shareCopy');
+    if (cp) cp.addEventListener('click', function () {
+        copyLink(esLang() ? 'Enlace copiado' : 'Link copied');
+    });
 })();

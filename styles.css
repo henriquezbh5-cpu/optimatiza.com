@@ -3520,3 +3520,42 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   display: block; white-space: normal; overflow-wrap: anywhere;
   font-size: var(--t-1); line-height: 1.4;
 }
+
+/* ============================================================
+   33. COMPARTE OPTIMATIZA — fila de redes (share intents)
+   ============================================================ */
+.share-strip {
+  text-align: center;
+  padding: var(--sp-5) var(--sp-3);
+  border-top: 1px solid var(--line);
+}
+.share-kicker {
+  font-size: var(--t-0); font-weight: 500; letter-spacing: 0.18em;
+  color: var(--ink-700); margin-bottom: var(--sp-3);
+}
+.share-row { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.share-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--node-bg); border: 1px solid var(--node-line);
+  color: var(--ink-700); font-size: 24px; cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.share-btn:hover, .share-btn:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(20,184,166,0.6); color: var(--live-bright);
+  box-shadow: var(--glow-teal);
+}
+.share-note {
+  margin-top: var(--sp-3);
+  font-size: var(--t-0); letter-spacing: 0.1em; color: var(--ink-dim);
+}
+.share-toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: var(--grad-ai); color: #071018;
+  font-family: var(--ff-mono); font-size: 12px; letter-spacing: .06em;
+  padding: 11px 20px; border-radius: 10px; z-index: 1300;
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+.share-toast.on { opacity: 1; }
+@media (max-width: 480px) { .share-btn { width: 46px; height: 46px; font-size: 21px; } }
