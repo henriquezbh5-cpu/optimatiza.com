@@ -16,6 +16,13 @@
     font-display: block;
     src: url('E:/Proyectos/Optimatiza/site/fonts/ibm-plex-mono-400.woff2') format('woff2');
   }
+  @font-face {
+    font-family: 'Space Grotesk';
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+    src: url('E:/Proyectos/Optimatiza/site/fonts/space-grotesk-700.woff2') format('woff2');
+  }
   :root {
     --paper: #0A0F1A;
     --navy: #EDF3FA;
@@ -125,10 +132,10 @@
   }
 
   .tagline {
-    font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
-    font-weight: 400;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
     font-size: 34px;
-    letter-spacing: 0.01em;
+    letter-spacing: -0.02em;
     color: var(--navy);
   }
   /* Serif isn't self-hosted here; fall back gracefully but keep the mono

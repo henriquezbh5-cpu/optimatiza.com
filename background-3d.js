@@ -1,10 +1,12 @@
 /* ============================================================
-   FLOW DEPTH v3 — background-3d.js (estándar threejs-pro)
+   FLOW DEPTH v4 — background-3d.js (estándar threejs-pro)
    Escena WebGL cinematográfica del hero:
-   · Nebulosa animada de fondo (shader de flujo, colores de marca).
+   · Nebulosa animada de fondo (sprites difusos, colores de marca).
    · Anillo del isotipo en 3D con pulso de luz recorriéndolo.
    · Constelación de nodos en 2 capas de profundidad (parallax real).
    · Paquetes de datos viajando por las conexiones (agentes en flujo).
+   · v4: NÚCLEO PBR facetado con reflexiones IBL reales (env PMREM de marca),
+     luces puntuales orbitando (especulares vivos) y halo fresnel aditivo.
    Guardrails: import() lazy del módulo tras first-paint, reduced-motion/
    saveData → fallback .bg-static, DPR≤1.75, antialias off, sprite circular,
    móvil ≤45% densidad, pausa fuera de vista/hidden, dispose en resize.
@@ -33,14 +35,17 @@
     catch (e) { document.body.classList.add('bg-static'); }  /* cualquier fallo -> fallback CSS */
   }
   function build(THREE) {
+    var MOBILE = window.innerWidth < 768;
     var renderer;
     try {
       renderer = new THREE.WebGLRenderer({
-        canvas: canvas, alpha: true, antialias: false, powerPreference: 'low-power'
+        canvas: canvas, alpha: true,
+        antialias: !MOBILE,          /* MSAA para los bordes del núcleo PBR (desktop) */
+        powerPreference: 'low-power'
       });
     } catch (e) { return; }
 
-    var MOBILE = window.innerWidth < 768;
+    if ('outputColorSpace' in renderer) renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, MOBILE ? 1.5 : 1.75));
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.classList.remove('bg-static');
@@ -194,6 +199,72 @@
     var pkPoints = new THREE.Points(pkGeo, pmat({ color: GLOW, size: 0.7, opacity: 0.95 }));
     scene.add(pkPoints);
 
+    /* ---------- 4. NÚCLEO PBR (super-realismo: reflexiones IBL reales) ----------
+       Objeto sólido facetado con material metálico que refleja un entorno de
+       marca generado por PMREM (IBL real). Dos luces puntuales lo orbitan →
+       destellos especulares vivos. Halo fresnel aditivo = glow por-objeto
+       (bloom barato sin post-proceso de pantalla, que rompería el canvas
+       transparente sobre el fondo CSS). */
+    var core = null, coreHalo = null, coreGrp = new THREE.Group(), light1 = null, light2 = null;
+    try {
+      /* entorno IBL: escena de gradiente navy + dos emisores de marca */
+      var envScene = new THREE.Scene();
+      var envGeo = new THREE.SphereGeometry(60, 24, 16);
+      var envMat = new THREE.ShaderMaterial({
+        side: THREE.BackSide, depthWrite: false,
+        vertexShader: 'varying vec3 vP;void main(){vP=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
+        fragmentShader:
+          'varying vec3 vP;void main(){vec3 d=normalize(vP);float h=d.y*0.5+0.5;' +
+          'vec3 col=mix(vec3(0.02,0.04,0.08),vec3(0.055,0.09,0.16),h);' +
+          'col+=vec3(0.03,0.55,0.45)*pow(max(0.0,1.0-length(d-normalize(vec3(-0.6,0.2,0.5)))),6.0);' +
+          'col+=vec3(0.35,0.20,0.70)*pow(max(0.0,1.0-length(d-normalize(vec3(0.6,0.3,-0.4)))),6.0);' +
+          'gl_FragColor=vec4(col,1.0);}'
+      });
+      envScene.add(new THREE.Mesh(envGeo, envMat));
+      [[0x2DD4BF, -30, 14, 20], [0x8B5CF6, 26, 18, -16]].forEach(function (e) {
+        var s = new THREE.Mesh(new THREE.SphereGeometry(6, 12, 12), new THREE.MeshBasicMaterial({ color: e[0] }));
+        s.position.set(e[1], e[2], e[3]); envScene.add(s);
+      });
+      var pmrem = new THREE.PMREMGenerator(renderer);
+      var envRT = pmrem.fromScene(envScene, 0, 0.1, 100);
+      scene.environment = envRT.texture;
+      pmrem.dispose(); envGeo.dispose(); envMat.dispose();
+
+      /* luces reales (solo iluminan el núcleo; los Points aditivos las ignoran) */
+      scene.add(new THREE.AmbientLight(0x223044, 0.6));
+      light1 = new THREE.PointLight(0x2DD4BF, MOBILE ? 95 : 170, 100, 2);
+      light2 = new THREE.PointLight(0x8B5CF6, MOBILE ? 80 : 135, 100, 2);
+      scene.add(light1); scene.add(light2);
+
+      /* núcleo facetado metálico + aristas de marca */
+      var rad = MOBILE ? 1.75 : 3.2;
+      var coreGeo = new THREE.IcosahedronGeometry(rad, 0);
+      core = new THREE.Mesh(coreGeo, new THREE.MeshStandardMaterial({
+        color: 0x131d33, metalness: 0.94, roughness: 0.13, envMapIntensity: 1.9, flatShading: true
+      }));
+      core.add(new THREE.LineSegments(new THREE.EdgesGeometry(coreGeo),
+        new THREE.LineBasicMaterial({ color: 0x2DD4BF, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false })));
+      coreGrp.add(core);
+
+      /* halo fresnel aditivo (glow por-objeto) */
+      coreHalo = new THREE.Mesh(new THREE.IcosahedronGeometry(rad * 1.42, 3), new THREE.ShaderMaterial({
+        transparent: true, side: THREE.BackSide, depthWrite: false, blending: THREE.AdditiveBlending,
+        uniforms: { uA: { value: 0 }, uC1: { value: new THREE.Color(0x14B8A6) }, uC2: { value: new THREE.Color(0x8B5CF6) } },
+        vertexShader: 'varying vec3 vN;varying vec3 vE;void main(){vN=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.0);vE=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',
+        fragmentShader:
+          'varying vec3 vN;varying vec3 vE;uniform float uA;uniform vec3 uC1;uniform vec3 uC2;' +
+          'void main(){float f=pow(1.0-max(0.0,dot(vN,vE)),3.4);' +
+          'vec3 col=mix(uC1,uC2,clamp(vN.y*0.5+0.5,0.0,1.0));' +
+          'gl_FragColor=vec4(col,f*(0.55+0.22*sin(uA))*0.75);}'
+      }));
+      coreGrp.add(coreHalo);
+
+      if (MOBILE) coreGrp.position.set(3, 21, -12);
+      else coreGrp.position.set(20, 9, -5);
+      coreGrp.rotation.set(0.5, 0.4, 0);
+      scene.add(coreGrp);
+    } catch (e) { core = null; /* el flujo de fondo sigue intacto */ }
+
     /* ---------- ciclo, parallax, pausas ---------- */
     var mx = 0, my = 0, running = false, raf = 0, t0 = performance.now();
     document.addEventListener('mousemove', function (e) {
@@ -236,6 +307,16 @@
       }
       pkGeo.attributes.position.needsUpdate = true;
 
+      /* núcleo PBR: rotación lenta + luces orbitando (especulares vivos) + halo */
+      if (core) {
+        coreGrp.rotation.y = 0.4 + t * 0.12;
+        coreGrp.rotation.x = 0.5 + Math.sin(t * 0.15) * 0.12;
+        var cx = coreGrp.position.x, cy = coreGrp.position.y, cz = coreGrp.position.z;
+        light1.position.set(cx + Math.cos(t * 0.6) * 16, cy + Math.sin(t * 0.6) * 12, cz + 14);
+        light2.position.set(cx + Math.cos(t * 0.6 + 2.4) * 16, cy + Math.sin(t * 0.6 + 2.4) * 12, cz + 10);
+        coreHalo.material.uniforms.uA.value = t * 1.6;
+      }
+
       /* parallax de cámara */
       camera.position.x += ((mx * 2.6) - camera.position.x) * 0.03;
       camera.position.y += ((-my * 1.7) - camera.position.y) * 0.03;
@@ -260,6 +341,6 @@
     canvas.addEventListener('webglcontextrestored', function () { setRunning(want()); }, false);
 
     setRunning(true);
-    window.__optzBG = { ok: true, v: 3 };
+    window.__optzBG = { ok: true, v: 4, core: !!core };
   }
 })();
