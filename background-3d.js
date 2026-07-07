@@ -8,7 +8,7 @@
    · v4: NÚCLEO PBR facetado con reflexiones IBL reales (env PMREM de marca),
      luces puntuales orbitando (especulares vivos) y halo fresnel aditivo.
    Guardrails: import() lazy del módulo tras first-paint, reduced-motion/
-   saveData → fallback .bg-static, DPR≤1.75, antialias off, sprite circular,
+   saveData → fallback .bg-static, DPR≤1.75, antialias condicional (desktop capaz),
    móvil ≤45% densidad, pausa fuera de vista/hidden, dispose en resize.
    ============================================================ */
 (function () {
@@ -40,7 +40,10 @@
     try {
       renderer = new THREE.WebGLRenderer({
         canvas: canvas, alpha: true,
-        antialias: !MOBILE,          /* MSAA para los bordes del núcleo PBR (desktop) */
+        /* MSAA para los bordes del núcleo PBR solo en equipos capaces: con
+           powerPreference 'low-power' (iGPU) el resolve MSAA por frame penaliza;
+           la escena es mayormente aditiva (los Points no se suavizan con MSAA). */
+        antialias: !MOBILE && (navigator.hardwareConcurrency || 4) >= 8,
         powerPreference: 'low-power'
       });
     } catch (e) { return; }
@@ -221,14 +224,17 @@
           'gl_FragColor=vec4(col,1.0);}'
       });
       envScene.add(new THREE.Mesh(envGeo, envMat));
+      var envTmp = [];
       [[0x2DD4BF, -30, 14, 20], [0x8B5CF6, 26, 18, -16]].forEach(function (e) {
         var s = new THREE.Mesh(new THREE.SphereGeometry(6, 12, 12), new THREE.MeshBasicMaterial({ color: e[0] }));
-        s.position.set(e[1], e[2], e[3]); envScene.add(s);
+        s.position.set(e[1], e[2], e[3]); envScene.add(s); envTmp.push(s);
       });
       var pmrem = new THREE.PMREMGenerator(renderer);
       var envRT = pmrem.fromScene(envScene, 0, 0.1, 100);
       scene.environment = envRT.texture;
+      /* liberar todos los temporales del entorno (env sphere + 2 emisores) */
       pmrem.dispose(); envGeo.dispose(); envMat.dispose();
+      envTmp.forEach(function (s) { s.geometry.dispose(); s.material.dispose(); });
 
       /* luces reales (solo iluminan el núcleo; los Points aditivos las ignoran) */
       scene.add(new THREE.AmbientLight(0x223044, 0.6));
@@ -236,9 +242,11 @@
       light2 = new THREE.PointLight(0x8B5CF6, MOBILE ? 80 : 135, 100, 2);
       scene.add(light1); scene.add(light2);
 
-      /* núcleo facetado metálico + aristas de marca */
-      var rad = MOBILE ? 1.75 : 3.2;
-      var coreGeo = new THREE.IcosahedronGeometry(rad, 0);
+      /* núcleo facetado metálico + aristas de marca. La geometría se construye
+         una vez con coreBaseRad; el tamaño aparente se ajusta con coreGrp.scale
+         en placeCore(), para re-adaptarse si el viewport cruza 768px en resize. */
+      var coreBaseRad = MOBILE ? 1.75 : 3.2;
+      var coreGeo = new THREE.IcosahedronGeometry(coreBaseRad, 0);
       core = new THREE.Mesh(coreGeo, new THREE.MeshStandardMaterial({
         color: 0x131d33, metalness: 0.94, roughness: 0.13, envMapIntensity: 1.9, flatShading: true
       }));
@@ -247,7 +255,7 @@
       coreGrp.add(core);
 
       /* halo fresnel aditivo (glow por-objeto) */
-      coreHalo = new THREE.Mesh(new THREE.IcosahedronGeometry(rad * 1.42, 3), new THREE.ShaderMaterial({
+      coreHalo = new THREE.Mesh(new THREE.IcosahedronGeometry(coreBaseRad * 1.42, 3), new THREE.ShaderMaterial({
         transparent: true, side: THREE.BackSide, depthWrite: false, blending: THREE.AdditiveBlending,
         uniforms: { uA: { value: 0 }, uC1: { value: new THREE.Color(0x14B8A6) }, uC2: { value: new THREE.Color(0x8B5CF6) } },
         vertexShader: 'varying vec3 vN;varying vec3 vE;void main(){vN=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.0);vE=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',
@@ -259,11 +267,21 @@
       }));
       coreGrp.add(coreHalo);
 
-      if (MOBILE) coreGrp.position.set(3, 21, -12);
-      else coreGrp.position.set(20, 9, -5);
       coreGrp.rotation.set(0.5, 0.4, 0);
       scene.add(coreGrp);
+      placeCore(MOBILE);
     } catch (e) { core = null; /* el flujo de fondo sigue intacto */ }
+
+    /* coloca/escala el núcleo y ajusta luces según el layout (re-llamable en resize) */
+    function placeCore(mobile) {
+      if (!core) return;
+      var targetRad = mobile ? 1.75 : 3.2;
+      coreGrp.scale.setScalar(targetRad / coreBaseRad);
+      if (mobile) coreGrp.position.set(3, 21, -12);
+      else coreGrp.position.set(20, 9, -5);
+      if (light1) light1.intensity = mobile ? 95 : 170;
+      if (light2) light2.intensity = mobile ? 80 : 135;
+    }
 
     /* ---------- ciclo, parallax, pausas ---------- */
     var mx = 0, my = 0, running = false, raf = 0, t0 = performance.now();
@@ -335,6 +353,9 @@
       camera.updateProjectionMatrix();
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.5 : 1.75));
       renderer.setSize(window.innerWidth, window.innerHeight);
+      /* si el viewport cruza el breakpoint, re-adaptar el núcleo (tamaño/pos/luces) */
+      var nowMobile = window.innerWidth < 768;
+      if (nowMobile !== MOBILE) { MOBILE = nowMobile; placeCore(MOBILE); }
     });
     /* GPU context perdido (sleep/throttling): parar el loop y reanudar al volver */
     canvas.addEventListener('webglcontextlost', function (e) { e.preventDefault(); setRunning(false); }, false);

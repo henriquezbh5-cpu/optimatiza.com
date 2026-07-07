@@ -286,12 +286,7 @@ body.bg-static .bg-fallback {
   font-size: var(--t-6); line-height: 1.08; letter-spacing: -0.022em;
   color: var(--ink); margin-bottom: var(--sp-2);
 }
-.section-title em {
-  font-style: normal;
-  background-image: var(--grad-ai);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
+.section-title em { font-style: normal; color: var(--steel); }
 .section-subtitle {
   font-size: var(--t-3); color: var(--ink-body); max-width: 60ch;
 }
@@ -585,12 +580,7 @@ html.js-anim .animate-target.is-in { opacity: 1; }
   margin-bottom: var(--sp-4);
   overflow-wrap: break-word;
 }
-.hero-title em {
-  font-style: normal;
-  background-image: var(--grad-ai);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
+.hero-title em { font-style: normal; color: var(--steel); }
 
 .hero-subtitle {
   font-size: var(--t-4); line-height: 1.5; color: var(--ink-body);
@@ -1295,12 +1285,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   max-width: 44ch;
   margin-top: var(--sp-2);
 }
-.platform-quote em {
-  font-style: normal; font-weight: 700;
-  background-image: var(--grad-ai);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
+.platform-quote em { font-style: normal; font-weight: 700; color: var(--steel); }
 
 .arch-block { margin-bottom: var(--sp-7); }
 .arch-block-title {
@@ -1974,12 +1959,7 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   margin: var(--sp-3) 0;
   max-width: 48ch;
 }
-.contact-lead em {
-  font-style: normal; font-weight: 700;
-  background-image: var(--grad-ai);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
+.contact-lead em { font-style: normal; font-weight: 700; color: var(--steel); }
 .contact-diagnostic {
   font-size: var(--t-3); color: var(--ink-body);
   max-width: 55ch;
@@ -2909,11 +2889,26 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 .hero-subtitle { margin-inline: auto; }
 .hero-actions { justify-content: center; }
 .hero-chips { text-align: center; }
-.hero-title em {
-  font-style: normal; font-weight: 700;
-  background: var(--grad-ai);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
+.hero-title em { font-style: normal; font-weight: 700; }
+
+/* ---- Acentos de titular con gradiente de marca ----
+   Base = color sólido (--steel), definido en cada regla .X em. El gradiente-clip
+   se aplica SOLO donde background-clip:text está soportado (universal moderno);
+   si no, queda el sólido → nunca hay texto invisible. Bloque al final del
+   archivo para ganar la cascada sobre las reglas base. */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .hero-title em, .section-title em, .platform-quote em, .contact-lead em {
+    background-image: var(--grad-ai);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+  }
+}
+/* Modo Alto Contraste (Windows/forced-colors): sin el clip, color:transparent
+   dejaría el acento invisible. Restaurar texto del sistema. */
+@media (forced-colors: active) {
+  .hero-title em, .section-title em, .platform-quote em, .contact-lead em {
+    -webkit-text-fill-color: currentColor; color: CanvasText; background-image: none;
+  }
 }
 
 /* ---- the workflow editor window ---- */
