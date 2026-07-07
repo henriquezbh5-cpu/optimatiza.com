@@ -3687,3 +3687,84 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
 .faq-item[open] summary::after { content: '–'; }
 .faq-item[open] summary { border-bottom: 1px solid var(--node-line); }
 .faq-item p { padding: 14px 20px 18px; color: var(--ink-body); font-size: var(--t-2); line-height: 1.6; margin: 0; }
+
+
+/* ============================================================
+   36. PLANES MENSUALES DE OPERACIÓN (#planes)
+   ============================================================ */
+#planes .section-header { max-width: 72ch; }
+.plan-cred {
+  font-size: var(--t-0); letter-spacing: 0.06em; color: var(--ink-dim);
+  border: 1px solid var(--node-line); border-radius: var(--r-pill);
+  padding: 10px 18px; margin: var(--sp-4) 0 var(--sp-5); display: inline-flex;
+  align-items: center; gap: 8px; line-height: 1.5; text-transform: uppercase;
+}
+.plan-cred i { color: var(--live-bright); font-size: var(--t-2); }
+.plan-controls {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+  flex-wrap: wrap; margin-bottom: var(--sp-5);
+}
+.plan-toggle {
+  display: inline-flex; gap: 4px; background: var(--node-bg);
+  border: 1px solid var(--line); border-radius: var(--r-pill); padding: 4px;
+}
+.plan-cycle-btn {
+  font-family: var(--ff-body); font-size: var(--t-1); font-weight: 600; color: var(--ink-body);
+  padding: 9px 18px; border-radius: var(--r-pill); cursor: pointer;
+  transition: color var(--dur-micro) ease, background-color var(--dur-micro) ease;
+}
+.plan-cycle-btn.active { color: var(--paper-0); background: var(--grad-ai); }
+.plan-trial {
+  font-size: var(--t-0); letter-spacing: 0.04em; color: var(--live); display: inline-flex;
+  align-items: center; gap: 7px; text-transform: uppercase;
+}
+.plan-trial i { color: var(--live-bright); font-size: var(--t-2); }
+
+.plan-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
+.plan-card {
+  display: flex; flex-direction: column; background: var(--paper-1);
+  border: 1px solid var(--node-line); border-radius: var(--r-0); padding: var(--sp-4);
+  position: relative; box-shadow: var(--shadow-card);
+}
+.plan-featured {
+  border-color: rgba(91,168,232,0.5);
+  box-shadow: 0 0 0 1px rgba(91,168,232,0.35), 0 18px 44px rgba(2,8,20,0.55);
+}
+.plan-ribbon {
+  position: absolute; top: -11px; left: var(--sp-4);
+  font-size: var(--t-0); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--paper-0); background: var(--grad-ai); padding: 4px 12px; border-radius: var(--r-pill);
+}
+.plan-card-head { min-height: 92px; }
+.plan-name { font-family: var(--ff-display); font-weight: 700; font-size: var(--t-4); color: var(--ink); letter-spacing: -0.02em; }
+.plan-for { font-size: var(--t-1); color: var(--ink-dim); line-height: 1.5; margin-top: 6px; }
+.plan-price { margin: var(--sp-3) 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px; min-height: 58px; }
+.plan-amount { font-size: 2.1rem; font-weight: 700; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
+.plan-custom .plan-amount { font-size: 1.7rem; }
+.plan-per { font-size: var(--t-2); color: var(--ink-body); }
+.plan-billed { flex-basis: 100%; font-size: var(--t-0); color: var(--ink-dim); margin-top: 6px; letter-spacing: 0.02em; }
+.plan-cta { width: 100%; justify-content: center; margin-bottom: var(--sp-3); }
+.btn-outline {
+  background: transparent; color: var(--ink); border: 1px solid var(--line-strong);
+}
+.btn-outline:hover { border-color: var(--steel); color: var(--steel-deep); background: rgba(91,168,232,0.06); }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-top: auto; }
+.plan-features li {
+  position: relative; padding-left: 22px; font-size: var(--t-1); color: var(--ink-body); line-height: 1.45;
+}
+.plan-features li::before {
+  content: ''; position: absolute; left: 0; top: 7px; width: 12px; height: 12px;
+  background-image: linear-gradient(120deg,#14B8A6,#3B82F6); border-radius: 3px;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.plan-features li.plan-inherit { color: var(--ink-700); font-weight: 600; }
+.plan-features li.plan-inherit::before { display: none; }
+.plan-note { margin-top: var(--sp-5); color: var(--ink-dim); font-size: var(--t-0); letter-spacing: 0.03em; max-width: 82ch; line-height: 1.7; }
+
+@media (max-width: 1024px) { .plan-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .plan-grid { grid-template-columns: 1fr; }
+  .plan-controls { flex-direction: column; align-items: flex-start; }
+  .plan-cred { text-transform: none; }
+}

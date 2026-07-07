@@ -344,6 +344,47 @@ const translations = (function () {
     "nav-cotizador": ["Cotizador", "Estimate"],
     "nav-cta": ["Contacto", "Contact"],
     "nav-estimate": ["Cotizar", "Get a quote"],
+    "nav-planes": ["Planes", "Plans"],
+    "pl-ch": ["05 — OPERACIÓN MENSUAL", "05 — MONTHLY OPERATION"],
+    "pl-title": ["Que sigan trabajando, <em>mes a mes</em>.", "Keep them working, <em>month after month</em>."],
+    "pl-sub": ["Construir la unidad es el día uno. Mantenerla afinada, monitoreada y mejorando es lo que separa un experimento de una operación. El build se cotiza arriba; aquí eliges cómo la operamos contigo — o por ti.", "Building the unit is day one. Keeping it tuned, monitored and improving is what separates an experiment from an operation. The build is quoted above; here you choose how we run it with you — or for you."],
+    "pl-cred": ["<i class=\"ph ph-seal-check\" aria-hidden=\"true\"></i> 10+ AÑOS DE INGENIERÍA · 15+ SISTEMAS EN PRODUCCIÓN · ING. DE SISTEMAS + 2 MAESTRÍAS + POSGRADO BLOCKCHAIN · 3× MICROSOFT CERTIFIED · CREADOR DE BITCOIN ACADEMY", "<i class=\"ph ph-seal-check\" aria-hidden=\"true\"></i> 10+ YEARS OF ENGINEERING · 15+ SYSTEMS IN PRODUCTION · SYSTEMS ENG. + 2 MASTER'S + BLOCKCHAIN POSTGRAD · 3× MICROSOFT CERTIFIED · CREATOR OF BITCOIN ACADEMY"],
+    "pl-cycle-m": ["Mensual", "Monthly"],
+    "pl-cycle-y": ["Anual · 2 meses gratis", "Yearly · 2 months free"],
+    "pl-trial": ["<i class=\"ph ph-gift\" aria-hidden=\"true\"></i> Empieza con un diagnóstico gratis de 30 min · sin tarjeta · sin compromiso", "<i class=\"ph ph-gift\" aria-hidden=\"true\"></i> Start with a free 30-min diagnostic · no card · no commitment"],
+    "pl-pop": ["Más elegido", "Most popular"],
+    "pl-note": ["Todos los planes son mes a mes: cancelas cuando quieras. El build de cada unidad se cotiza aparte (arriba). ¿Solo Bitcoin? Mira el anexo de asesoría. Precios en USD.", "All plans are month-to-month: cancel anytime. Each unit's build is quoted separately (above). Bitcoin only? See the advisory annex. Prices in USD."],
+    "pl-1-name": ["Esencial", "Essential"],
+    "pl-1-for": ["Para 1 unidad en producción que quieres mantener estable.", "For 1 unit in production that you want to keep stable."],
+    "pl-1-cta": ["Empezar con diagnóstico →", "Start with a diagnostic →"],
+    "pl-1-f1": ["1 unidad monitoreada — uptime y alertas de error", "1 monitored unit — uptime and error alerts"],
+    "pl-1-f2": ["Parches y ajustes menores incluidos", "Patches and minor tweaks included"],
+    "pl-1-f3": ["Reporte mensual de operación", "Monthly operations report"],
+    "pl-1-f4": ["Soporte por correo · respuesta en 48 h", "Email support · 48h response"],
+    "pl-2-name": ["Operación", "Operations"],
+    "pl-2-for": ["Para negocios que ya dependen de sus agentes y quieren que mejoren.", "For businesses that already rely on their agents and want them to improve."],
+    "pl-2-cta": ["Empezar con diagnóstico →", "Start with a diagnostic →"],
+    "pl-2-f1": ["Todo lo de Esencial, y además:", "Everything in Essential, plus:"],
+    "pl-2-f2": ["Hasta 3 unidades / flujos operados", "Up to 3 units / flows operated"],
+    "pl-2-f3": ["1 mejora o regla nueva cada mes", "1 improvement or new rule every month"],
+    "pl-2-f4": ["Soporte prioritario por WhatsApp · mismo día", "Priority WhatsApp support · same day"],
+    "pl-2-f5": ["Tablero de operación en Power BI", "Operations dashboard in Power BI"],
+    "pl-3-name": ["Escala", "Scale"],
+    "pl-3-for": ["Para células multi-agente y procesos críticos del negocio.", "For multi-agent cells and business-critical processes."],
+    "pl-3-cta": ["Hablar con el ingeniero →", "Talk to the engineer →"],
+    "pl-3-f1": ["Todo lo de Operación, y además:", "Everything in Operations, plus:"],
+    "pl-3-f2": ["Unidades ilimitadas · célula orquestada", "Unlimited units · orchestrated cell"],
+    "pl-3-f3": ["Optimización continua + roadmap mensual", "Continuous optimization + monthly roadmap"],
+    "pl-3-f4": ["Ingeniero asignado + SLA de respuesta", "Assigned engineer + response SLA"],
+    "pl-3-f5": ["Canales e integraciones nuevas incluidos", "New channels and integrations included"],
+    "pl-4-name": ["A medida", "Custom"],
+    "pl-4-for": ["Para operaciones grandes o con gobierno y requisitos propios.", "For large operations or with their own governance and requirements."],
+    "pl-4-cta": ["Hablar con el ingeniero →", "Talk to the engineer →"],
+    "pl-4-f1": ["Todo lo de Escala, y además:", "Everything in Scale, plus:"],
+    "pl-4-f2": ["Asesoría Bitcoin dedicada (ver anexo)", "Dedicated Bitcoin advisory (see annex)"],
+    "pl-4-f3": ["Volumen, SLA y facturación a tu medida", "Volume, SLA and billing tailored to you"],
+    "pl-4-f4": ["Revisión de seguridad y gestión de accesos", "Security review and access management"],
+
     "nav-flota": ["Agentes", "Agents"],
     "nav-logo-aria": ["Optimatiza — inicio", "Optimatiza — home"],
     "nav-menu-aria": ["Abrir menú", "Open menu"],
@@ -532,7 +573,7 @@ const translations = (function () {
     "tar-method": ["DIAGNÓSTICO GRATIS 30 MIN → CONSTRUIMOS EN SEMANAS → 30 DÍAS DE SOPORTE · <a href=\"agentes/#metodo\">Ver el método completo →</a>", "FREE 30-MIN DIAGNOSIS → BUILT IN WEEKS → 30 DAYS OF SUPPORT · <a href=\"agentes/#metodo\">See the full method →</a>"],
     "tar-l": ["<strong>Célula compuesta — $3,000–8,000.</strong> Varios agentes orquestados con memoria compartida y tableros. ~4–8 semanas.", "<strong>Composite cell — $3,000–8,000.</strong> Several agents orchestrated with shared memory and dashboards. ~4–8 weeks."],
     "tar-m": ["<strong>Unidad estándar — $1,200–3,000.</strong> Multi-paso, razonamiento IA, 2–3 integraciones, ciclo de aprobación. ~2–4 semanas.", "<strong>Standard unit — $1,200–3,000.</strong> Multi-step, AI reasoning, 2–3 integrations, approval loop. ~2–4 weeks."],
-    "tar-o": ["<strong>Operación continua.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Alcance y precio se definen en el diagnóstico.", "<strong>Continuous operation.</strong> Monthly monitoring, tuning and improvement of your units. Scope and price defined at the diagnostic."],
+    "tar-o": ["<strong>Operación continua — desde $149/mes.</strong> Monitoreo, ajustes y mejora mensual de tus unidades. Mira los <a href=\"#planes\">planes de operación →</a>", "<strong>Continuous operation — from $149/mo.</strong> Monthly monitoring, tuning and improvement of your units. See the <a href=\"#planes\">operation plans →</a>"],
     "tar-ref": ["PRECIOS DE REFERENCIA — EL NÚMERO REAL SALE DE UN DIAGNÓSTICO DE 30 MINUTOS.", "REFERENCE PRICES — THE REAL NUMBER COMES OUT OF A 30-MINUTE DIAGNOSTIC."],
     "tar-s": ["<strong>Unidad simple — $600–1,200.</strong> Un flujo, una integración, reglas fijas. ~1–2 semanas.", "<strong>Simple unit — $600–1,200.</strong> One flow, one integration, fixed rules. ~1–2 weeks."],
     "tar-title": ["Cada unidad tiene precio de placa.", "Every unit has a nameplate price."],
@@ -1656,4 +1697,40 @@ if (proposalForm) {
             copyLink(esLang() ? 'Enlace copiado' : 'Link copied');
         });
     });
+})();
+
+
+// ========== MONTHLY OPERATION PLANS — toggle mensual/anual (idioma-aware) ==========
+(function () {
+  var grid = document.getElementById('planes');
+  if (!grid) return;
+  var cycle = 'monthly';
+  function fmt(n) { return Number(n).toLocaleString('en-US'); }
+  function renderPlans() {
+    var es = (document.documentElement.lang || 'es') !== 'en';
+    var yearly = cycle === 'yearly';
+    grid.querySelectorAll('.plan-price').forEach(function (el) {
+      var pm = el.getAttribute('data-pm');
+      if (!pm) { el.innerHTML = '<span class="plan-amount">' + (es ? 'A medida' : 'Custom') + '</span>'; return; }
+      var py = el.getAttribute('data-py'), yt = el.getAttribute('data-yt');
+      var amount = yearly ? py : pm;
+      var per = es ? '/mes' : '/mo';
+      var billed = yearly
+        ? ('$' + fmt(yt) + (es ? '/año · facturado anual' : '/yr · billed annually'))
+        : (es ? 'Facturado mes a mes' : 'Billed monthly');
+      el.innerHTML = '<span class="plan-amount">$' + amount + '</span><span class="plan-per">' + per +
+        '</span><span class="plan-billed mono">' + billed + '</span>';
+    });
+  }
+  grid.querySelectorAll('.plan-cycle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      cycle = btn.dataset.cycle;
+      grid.querySelectorAll('.plan-cycle-btn').forEach(function (b) {
+        var on = b === btn; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      renderPlans();
+    });
+  });
+  document.addEventListener('optz:lang', renderPlans);
+  renderPlans();
 })();
