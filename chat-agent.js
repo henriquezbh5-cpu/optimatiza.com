@@ -42,7 +42,7 @@
       '<div class="nv-log" id="nvLog" role="log" aria-live="polite"></div>' +
       '<div class="nv-chips" id="nvChips"></div>' +
       '<form class="nv-input" id="nvForm">' +
-        '<input id="nvText" autocomplete="off" maxlength="600">' +
+        '<input id="nvText" autocomplete="off" maxlength="600" aria-label="Escribe tu mensaje para Nova">' +
         '<button type="submit" class="nv-send mono" id="nvSend"></button>' +
       '</form>' +
     '</div>';
@@ -101,6 +101,8 @@
     if (show) {
       if (!greeted) { greeted = true; msg('bot', t('hello')); history.push({ role: 'model', content: t('hello') }); }
       input.focus();
+    } else {
+      fab.focus();  /* WCAG 2.4.3: devolver el foco al disparador al cerrar */
     }
   }
   fab.addEventListener('click', function () { hideHint(); toggle(); });

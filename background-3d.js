@@ -29,6 +29,10 @@
 
   function init(THREE) {
     if (!THREE || !THREE.WebGLRenderer) return;
+    try { build(THREE); }
+    catch (e) { document.body.classList.add('bg-static'); }  /* cualquier fallo -> fallback CSS */
+  }
+  function build(THREE) {
     var renderer;
     try {
       renderer = new THREE.WebGLRenderer({
@@ -248,8 +252,12 @@
     window.addEventListener('resize', function () {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.5 : 1.75));
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
+    /* GPU context perdido (sleep/throttling): parar el loop y reanudar al volver */
+    canvas.addEventListener('webglcontextlost', function (e) { e.preventDefault(); setRunning(false); }, false);
+    canvas.addEventListener('webglcontextrestored', function () { setRunning(want()); }, false);
 
     setRunning(true);
     window.__optzBG = { ok: true, v: 3 };
