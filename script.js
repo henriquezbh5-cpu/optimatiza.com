@@ -345,6 +345,7 @@ const translations = (function () {
     "footer-videocasos": ["Casos en video", "Video cases"],
     "footer-guia": ["Guía gratis", "Free guide"],
     "footer-distri": ["Para distribuidoras", "For distributors"],
+    "footer-soluciones": ["Soluciones", "Solutions"],
     "tar-precios": ["Ver la página de precios completa →", "See the full pricing page →"],
     "guide-k": ["Recurso gratuito", "Free resource"],
     "guide-title": ["10 procesos que tu pyme puede automatizar hoy", "10 processes your business can automate today"],
