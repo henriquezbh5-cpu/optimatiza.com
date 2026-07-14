@@ -337,6 +337,7 @@ const translations = (function () {
     "hero-title": ["<span class=\"line-mask\"><span class=\"line\">Empleados digitales que atienden,</span></span><span class=\"line-mask\"><span class=\"line\">cobran y <em>responden por&nbsp;ti</em>.</span></span>", "<span class=\"line-mask\"><span class=\"line\">Digital employees that answer,</span></span><span class=\"line-mask\"><span class=\"line\">collect and <em>respond for&nbsp;you</em>.</span></span>"],
     "footer-security": ["Seguridad", "Security"],
     "footer-videocasos": ["Casos en video", "Video cases"],
+    "footer-guia": ["Guía gratis", "Free guide"],
     "guide-k": ["Recurso gratuito", "Free resource"],
     "guide-title": ["10 procesos que tu pyme puede automatizar hoy", "10 processes your business can automate today"],
     "guide-sub": ["La guía en cristiano: el dolor de cada proceso, cómo se ve automatizado paso a paso y para quién aplica. Cada caso existe como demo en video — nada de humo.", "The plain-language guide: each process's pain, what it looks like automated step by step, and who it applies to. Every case exists as a video demo — no smoke."],
