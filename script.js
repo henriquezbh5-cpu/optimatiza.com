@@ -329,6 +329,8 @@ const translations = (function () {
     "form-success": ["Enviado. Respondemos en menos de 24 horas.", "Sent. We reply within 24 hours."],
     "hero-chips": ["RESPUESTA EN SEGUNDOS, 24/7 · 15+ SISTEMAS EN PRODUCCIÓN · PRECIOS PUBLICADOS · SAN SALVADOR → LATAM", "ANSWERS IN SECONDS, 24/7 · 15+ SYSTEMS IN PRODUCTION · PUBLISHED PRICING · SAN SALVADOR → LATAM"],
     "hero-kicker": ["Míralo trabajar. Luego contrátalo.", "Watch it work. Then hire it."],
+    "hero-vertical": ["¿Distribuidora, ferretería o importadora? Empieza aquí →", "Distributor, hardware store or importer? Start here →"],
+    "hero-try": ["O escribile a un agente ahora — Nova te responde en segundos", "Or message an agent right now — Nova replies in seconds"],
     "hero-cta-primary": ["Cotiza tu agente en 60 segundos →", "Price your agent in 60 seconds →"],
     "hero-cta-secondary": ["Míralo trabajar primero ↓", "Watch it work first ↓"],
     "hero-doc-left": ["DOC. OPTZ/2026 — CONSOLA DE TURNO · INGENIERÍA DE OPERACIONES", "DOC. OPTZ/2026 — SHIFT CONSOLE · OPERATIONS ENGINEERING"],
@@ -338,6 +340,7 @@ const translations = (function () {
     "footer-security": ["Seguridad", "Security"],
     "footer-videocasos": ["Casos en video", "Video cases"],
     "footer-guia": ["Guía gratis", "Free guide"],
+    "footer-distri": ["Para distribuidoras", "For distributors"],
     "guide-k": ["Recurso gratuito", "Free resource"],
     "guide-title": ["10 procesos que tu pyme puede automatizar hoy", "10 processes your business can automate today"],
     "guide-sub": ["La guía en cristiano: el dolor de cada proceso, cómo se ve automatizado paso a paso y para quién aplica. Cada caso existe como demo en video — nada de humo.", "The plain-language guide: each process's pain, what it looks like automated step by step, and who it applies to. Every case exists as a video demo — no smoke."],
@@ -519,6 +522,8 @@ const translations = (function () {
     "quote-timeline-label": ["Tiempo estimado:", "Estimated timeline:"],
     "quote-title": ["Cotiza tu unidad en 60 segundos.", "Price your unit in 60 seconds."],
     "quote-total-label": ["Rango estimado", "Estimated range"],
+    "quote-wa-btn": ["Enviar esta cotización por WhatsApp →", "Send this quote via WhatsApp →"],
+    "quote-wa-or": ["o dejá tus datos y te respondemos en menos de 24 h:", "or leave your details and we reply within 24 h:"],
     "quote-type-agente": ["Agente a medida", "Custom agent"],
     "quote-type-agente-desc": ["Un flujo que no está en catálogo, con razonamiento IA.", "A workflow not in the catalog, with AI reasoning."],
     "quote-type-agente-price": ["Desde $1,200", "From $1,200"],
@@ -1310,6 +1315,15 @@ if (proposalForm) {
         summaryDiv.innerHTML = lines.map(function(l) { return '<p>' + escapeHtml(l) + '</p>'; }).join('');
         document.getElementById('hireRequirements').value = lines.join('\n');
 
+        /* P0: canal de pico de intención — WhatsApp con la cotización precargada */
+        var waBtn = document.getElementById('quoteWhatsApp');
+        if (waBtn) {
+            var waIntro = lang === 'es'
+                ? 'Hola, vengo del cotizador de optimatiza.com. Mi cotización:\n'
+                : 'Hi, I used the optimatiza.com quote builder. My quote:\n';
+            waBtn.href = 'https://wa.me/50371928070?text=' + encodeURIComponent(waIntro + lines.join('\n'));
+        }
+
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         document.getElementById('quoteModalClose').focus();
@@ -1781,5 +1795,17 @@ if (proposalForm) {
         var mail = form.querySelector('input[type="email"]');
         if (mail) mail.disabled = true;
       });
+  });
+})();
+
+
+/* Hero: 'escribile a un agente ahora' abre el chat Nova (demo real) */
+(function () {
+  var btn = document.getElementById('heroTryAgent');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var fab = document.getElementById('nvFab');
+    if (fab) { fab.click(); }
+    else { location.href = 'https://wa.me/50371928070?text=' + encodeURIComponent('Hola, quiero ver un agente funcionando.'); }
   });
 })();
