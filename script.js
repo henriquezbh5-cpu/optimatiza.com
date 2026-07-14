@@ -170,7 +170,7 @@ const translations = (function () {
     "btc-p2-f2": ["Lectura del mes sobre el panel: qué dicen los indicadores", "The month's read on the panel: what the indicators say"],
     "btc-p2-f3": ["Ajuste de tu plan: acumular, esperar o tomar ganancia", "Adjusting your plan: accumulate, wait or take profit"],
     "btc-p2-cta": ["Empezar acompañamiento →", "Start monthly guidance →"],
-    "btc-note": ["SERVICIOS ENTRE PARTICULARES BAJO ACUERDO PRIVADO — NO ES ASESORÍA FINANCIERA REGULADA NI PROMESA DE RENDIMIENTOS. RESULTADOS PASADOS NO GARANTIZAN RESULTADOS FUTUROS. BITCOIN ES VOLÁTIL: OPERA SOLO CAPITAL QUE PUEDAS ARRIESGAR. LA GESTIÓN DE PORTAFOLIO REQUIERE ESTRATEGIA ACORDADA POR ESCRITO Y ACEPTACIÓN MUTUA.", "PRIVATE SERVICES UNDER PRIVATE AGREEMENT — NOT REGULATED FINANCIAL ADVICE NOR A PROMISE OF RETURNS. PAST RESULTS DO NOT GUARANTEE FUTURE RESULTS. BITCOIN IS VOLATILE: ONLY TRADE CAPITAL YOU CAN AFFORD TO RISK. PORTFOLIO MANAGEMENT REQUIRES A WRITTEN, MUTUALLY ACCEPTED STRATEGY."],
+    "btc-note": ["SIN CUSTODIA: TUS FONDOS PERMANECEN EN TUS PROPIAS CUENTAS Y BILLETERAS — SE OPERA BAJO MANDATO PRIVADO, NUNCA MOVEMOS TU CAPITAL A CUENTAS NUESTRAS. SERVICIOS ENTRE PARTICULARES BAJO ACUERDO PRIVADO — NO ES ASESORÍA FINANCIERA REGULADA NI PROMESA DE RENDIMIENTOS. RESULTADOS PASADOS NO GARANTIZAN RESULTADOS FUTUROS. BITCOIN ES VOLÁTIL: OPERA SOLO CAPITAL QUE PUEDAS ARRIESGAR. LA GESTIÓN DE PORTAFOLIO REQUIERE ESTRATEGIA ACORDADA POR ESCRITO Y ACEPTACIÓN MUTUA.", "NON-CUSTODIAL: YOUR FUNDS REMAIN IN YOUR OWN ACCOUNTS AND WALLETS — WE OPERATE UNDER PRIVATE MANDATE AND NEVER MOVE YOUR CAPITAL INTO OUR ACCOUNTS. PRIVATE SERVICES UNDER PRIVATE AGREEMENT — NOT REGULATED FINANCIAL ADVICE NOR A PROMISE OF RETURNS. PAST RESULTS DO NOT GUARANTEE FUTURE RESULTS. BITCOIN IS VOLATILE: ONLY TRADE CAPITAL YOU CAN AFFORD TO RISK. PORTFOLIO MANAGEMENT REQUIRES A WRITTEN, MUTUALLY ACCEPTED STRATEGY."],
     "ch-faq": ["04B — PREGUNTAS FRECUENTES", "04B — FREQUENTLY ASKED"],
     "faq-title": ["Lo que todos preguntan.", "What everyone asks."],
     "faq-q1": ["¿Cuánto cuesta un agente de IA?", "How much does an AI agent cost?"],
@@ -327,13 +327,35 @@ const translations = (function () {
     "form-privacy": ["Tus datos se procesan mediante Formspree únicamente para responderte. No se venden ni se usan para marketing.", "Your details are processed via Formspree solely to reply to you. They are not sold or used for marketing."],
     "form-submit": ["<i class=\"ph ph-paper-plane-tilt\"></i> Solicitar diagnóstico gratis", "<i class=\"ph ph-paper-plane-tilt\"></i> Request the free diagnostic"],
     "form-success": ["Enviado. Respondemos en menos de 24 horas.", "Sent. We reply within 24 hours."],
-    "hero-chips": ["20 UNIDADES · 8 CATEGORÍAS · 15+ SISTEMAS EN PRODUCCIÓN · 10+ AÑOS DE INGENIERÍA", "20 UNITS · 8 CATEGORIES · 15+ SYSTEMS IN PRODUCTION · 10+ YEARS OF ENGINEERING"],
-    "hero-cta-primary": ["Elegir mi agente ↓", "Pick my agent ↓"],
-    "hero-cta-secondary": ["Cotiza tu unidad en 60 segundos →", "Price your unit in 60 seconds →"],
+    "hero-chips": ["RESPUESTA EN SEGUNDOS, 24/7 · 15+ SISTEMAS EN PRODUCCIÓN · PRECIOS PUBLICADOS · SAN SALVADOR → LATAM", "ANSWERS IN SECONDS, 24/7 · 15+ SYSTEMS IN PRODUCTION · PUBLISHED PRICING · SAN SALVADOR → LATAM"],
+    "hero-kicker": ["Míralo trabajar. Luego contrátalo.", "Watch it work. Then hire it."],
+    "hero-cta-primary": ["Cotiza tu agente en 60 segundos →", "Price your agent in 60 seconds →"],
+    "hero-cta-secondary": ["Míralo trabajar primero ↓", "Watch it work first ↓"],
     "hero-doc-left": ["DOC. OPTZ/2026 — CONSOLA DE TURNO · INGENIERÍA DE OPERACIONES", "DOC. OPTZ/2026 — SHIFT CONSOLE · OPERATIONS ENGINEERING"],
     "hero-doc-right": ["ESTADO · OPERACIONAL", "STATUS · OPERATIONAL"],
-    "hero-subtitle": ["Fabricamos e instalamos agentes de IA que atienden leads, cobran facturas y responden clientes. Desde $600, en semanas.", "We build and install AI agents that handle leads, collect invoices and answer customers. From $600, live in weeks."],
-    "hero-title": ["<span class=\"line-mask\"><span class=\"line\">Míralo trabajar.</span></span><span class=\"line-mask\"><span class=\"line\">Luego <em>contrátalo</em>.</span></span>", "<span class=\"line-mask\"><span class=\"line\">Watch it work.</span></span><span class=\"line-mask\"><span class=\"line\">Then <em>hire it</em>.</span></span>"],
+    "hero-subtitle": ["Fabricamos e instalamos agentes de IA en tu operación: responden en segundos, de día, de noche y en fin de semana. Desde $600, funcionando en semanas.", "We build and install AI agents inside your operation: they answer in seconds — day, night and weekends. From $600, live in weeks."],
+    "hero-title": ["<span class=\"line-mask\"><span class=\"line\">Empleados digitales que atienden,</span></span><span class=\"line-mask\"><span class=\"line\">cobran y <em>responden por&nbsp;ti</em>.</span></span>", "<span class=\"line-mask\"><span class=\"line\">Digital employees that answer,</span></span><span class=\"line-mask\"><span class=\"line\">collect and <em>respond for&nbsp;you</em>.</span></span>"],
+    "footer-security": ["Seguridad", "Security"],
+    "footer-videocasos": ["Casos en video", "Video cases"],
+    "guide-k": ["Recurso gratuito", "Free resource"],
+    "guide-title": ["10 procesos que tu pyme puede automatizar hoy", "10 processes your business can automate today"],
+    "guide-sub": ["La guía en cristiano: el dolor de cada proceso, cómo se ve automatizado paso a paso y para quién aplica. Cada caso existe como demo en video — nada de humo.", "The plain-language guide: each process's pain, what it looks like automated step by step, and who it applies to. Every case exists as a video demo — no smoke."],
+    "guide-cta": ["Enviarme la guía →", "Send me the guide →"],
+    "guide-note": ["Sin spam: solo la guía y, si quieres, novedades útiles. <a href=\"privacy/\">Privacidad</a>.", "No spam: just the guide and, if you want, useful updates. <a href=\"privacy/\">Privacy</a>."],
+    "guide-done": ["¡Listo! <a href=\"recursos/guia-10-procesos-optimatiza.pdf\" target=\"_blank\" rel=\"noopener\">Descarga tu guía aquí (PDF) →</a>", "Done! <a href=\"recursos/guia-10-procesos-optimatiza.pdf\" target=\"_blank\" rel=\"noopener\">Download your guide here (PDF) →</a>"],
+    "trust-strip": ["🔒 Tus datos viven en tus cuentas · No entrenamos modelos con tu información · Lo delicado siempre lo decide una persona — <a href=\"seguridad/\">cómo cuidamos tus datos →</a>", "🔒 Your data lives in your accounts · We never train models on your information · Sensitive calls always go to a human — <a href=\"seguridad/\">how we protect your data →</a>"],
+    "otrust-title": ["Resultados que puedes ver funcionando", "Results you can watch working"],
+    "trust-sub": ["Nada de promesas en el aire: cada número sale de sistemas y demos nuestros que corren de verdad. Pídenos verlo en vivo con tus propios datos.", "No empty promises: every number comes from our own systems and demos that actually run. Ask us to show you live with your own data."],
+    "trust-m1-num": ["~4 s", "~4 s"],
+    "trust-m1-lbl": ["por factura capturada con IA — contra ~3 minutos digitándola a mano", "per invoice captured with AI — versus ~3 minutes typing it by hand"],
+    "trust-m2-num": ["24/7", "24/7"],
+    "trust-m2-lbl": ["respuesta en segundos, también a las 2 de la mañana y en fin de semana", "answers in seconds — including 2 a.m. and weekends"],
+    "trust-m3-num": ["100%", "100%"],
+    "trust-m3-lbl": ["de tu cartera con seguimiento de cobro diario — sin que a nadie le toque la tarea incómoda", "of your receivables followed up daily — without anyone getting stuck with the awkward task"],
+    "trust-cases": ["Ver los casos en video →", "Watch the video cases →"],
+    "trust-frole": ["Fundador e ingeniero responsable", "Founder and engineer in charge"],
+    "trust-fbio": ["Ingeniero en Sistemas, MSc en Ciencia de Datos y MSc en Business Intelligence, con 10+ años construyendo sistemas para operaciones reales. Cuando escribes, te responde quien construye — no un call center.", "Systems Engineer, MSc in Data Science and MSc in Business Intelligence, with 10+ years building systems for real operations. When you write, the person who builds answers — not a call center."],
+    "trust-flink": ["Ver trayectoria en LinkedIn", "See track record on LinkedIn"],
     "label-inprod": ["EN PRODUCCIÓN", "IN PRODUCTION"],
     "label-problem": ["Situación", "Situation"],
     "label-results": ["Resultado", "Result"],
@@ -1733,4 +1755,30 @@ if (proposalForm) {
   });
   document.addEventListener('optz:lang', renderPlans);
   renderPlans();
+})();
+
+/* ============================================================
+   Lead magnet: guía 10 procesos — envía email a Formspree por
+   fetch y revela el enlace de descarga sin salir de la página.
+   ============================================================ */
+(function () {
+  var form = document.getElementById('guiaForm');
+  if (!form) return;
+  var done = document.getElementById('guiaDone');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.style.opacity = '.6'; }
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).catch(function () { /* aunque falle el registro, entregamos la guía */ })
+      .finally(function () {
+        if (done) done.hidden = false;
+        if (btn) btn.hidden = true;
+        var mail = form.querySelector('input[type="email"]');
+        if (mail) mail.disabled = true;
+      });
+  });
 })();

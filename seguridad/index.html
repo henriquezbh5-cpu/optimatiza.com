@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A0F1A">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://quote-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Seguridad de tus datos | Optimatiza</title>
+    <meta name="description" content="Cómo Optimatiza protege los datos de tu negocio: tus datos viven en tus cuentas, no se usan para entrenar modelos, cifrado, acceso mínimo y escalado humano.">
+    <link rel="canonical" href="https://optimatiza.com/seguridad/">
+    <meta property="og:title" content="Seguridad de tus datos | Optimatiza">
+    <meta property="og:description" content="Cómo Optimatiza protege los datos de tu negocio: tus datos viven en tus cuentas, no se usan para entrenar modelos, cifrado, acceso mínimo y escalado humano.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optimatiza.com/seguridad/">
+    <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+    <meta property="og:locale" content="es_LA">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16.png">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+    <style>
+        @font-face{font-family:'IBM Plex Mono';src:url('../fonts/ibm-plex-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
+        @font-face{font-family:'IBM Plex Mono';src:url('../fonts/ibm-plex-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
+        @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+        @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+        @font-face{font-family:'Inter';src:url('../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
+        @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+        @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+        :root{
+            --paper:#0A0F1A; --paper-0:#101828; --ink:#EDF3FA; --ink-dim:rgba(196,209,224,.62);
+            --steel:rgba(196,209,224,.55); --line:rgba(148,163,184,.18); --teal:#14B8A6; --teal-ink:#0F766E;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{-webkit-text-size-adjust:100%}
+        body{
+            font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+            background:var(--paper); color:var(--ink); line-height:1.72;
+            padding:40px 24px 72px; -webkit-font-smoothing:antialiased;
+        }
+        .sheet{max-width:800px; margin:0 auto}
+
+        /* Header / seal */
+        header.doc-head{
+            display:flex; align-items:center; gap:14px;
+            padding-bottom:18px; margin-bottom:8px; border-bottom:1.5px solid var(--ink);
+        }
+        .logo-seal{display:inline-flex; width:42px; height:42px; color:var(--ink); flex:0 0 auto}
+        .seal-svg{width:100%; height:100%; display:block}
+        .logo-badge{width:100%; height:100%; display:block; border-radius:50%}
+        .seal-dot{animation:sealPulse 2.4s ease-in-out infinite}
+        @keyframes sealPulse{0%,100%{opacity:.45}50%{opacity:1}}
+        .brand-lines{display:flex; flex-direction:column; gap:3px}
+        .logo-word{
+            font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:16px;
+            letter-spacing:.14em; color:var(--ink); text-decoration:none;
+        }
+        .brand-registry{
+            font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:9.5px;
+            letter-spacing:.16em; color:var(--steel);
+        }
+        .doc-tag{
+            margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:10px;
+            letter-spacing:.14em; color:var(--steel); text-align:right; line-height:1.5;
+        }
+        @media (max-width:560px){.doc-tag{display:none}}
+
+        h1{
+            font-family:'Space Grotesk','Inter',sans-serif; font-weight:700; letter-spacing:-0.02em;
+            font-size:clamp(2.4rem,7vw,3.4rem); line-height:1.05; letter-spacing:-.01em;
+            margin:34px 0 6px;
+        }
+        .meta{
+            font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em;
+            color:var(--steel); text-transform:uppercase; margin-bottom:30px;
+        }
+
+        /* EN summary block */
+        .en-summary{
+            background:var(--paper-0); border:1px solid var(--line); border-left:3px solid var(--teal);
+            padding:18px 22px; margin-bottom:40px;
+        }
+        .en-summary .en-label{
+            font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.18em;
+            color:var(--teal-ink); text-transform:uppercase; display:block; margin-bottom:8px;
+        }
+        .en-summary p{font-size:.94rem; color:var(--ink-dim); margin:0}
+        .en-summary strong{color:var(--ink); font-weight:600}
+
+        h2{
+            font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:.92rem;
+            letter-spacing:.06em; text-transform:uppercase; color:var(--ink);
+            margin:42px 0 14px; padding-top:20px; border-top:1px solid var(--line);
+            display:flex; gap:12px;
+        }
+        h2 .n{color:var(--teal-ink); flex:0 0 auto}
+        p{font-size:1rem; color:var(--ink-dim); margin-bottom:15px}
+        ul{margin:12px 0 20px 22px}
+        li{margin-bottom:9px; color:var(--ink-dim)}
+        strong{color:var(--ink); font-weight:600}
+        a{color:var(--teal-ink); text-decoration:underline; text-underline-offset:2px}
+        a:hover{color:var(--ink)}
+        code{font-family:'IBM Plex Mono',monospace; font-size:.86em; background:var(--paper-0); border:1px solid var(--line); padding:1px 5px; border-radius:3px}
+
+        .back{
+            display:inline-flex; align-items:center; gap:9px; margin-top:48px;
+            font-family:'IBM Plex Mono',monospace; font-size:.82rem; letter-spacing:.06em;
+            padding:12px 22px; background:var(--ink); color:var(--paper);
+            text-decoration:none; text-transform:uppercase;
+        }
+        .back:hover{background:#0a2038; color:var(--paper)}
+
+        footer{
+            margin-top:60px; padding-top:20px; border-top:1px solid var(--line);
+            font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.08em;
+            color:var(--steel); display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
+        }
+        footer a{color:var(--steel)}
+        @media (prefers-reduced-motion:reduce){.seal-dot{animation:none; opacity:1}}
+    </style>
+</head>
+<body>
+    <div class="sheet">
+        <header class="doc-head">
+            <a href="/" class="logo-seal" aria-label="Optimatiza — inicio">
+                <img class="logo-badge" src="/img/logo-badge-96.png" alt="" width="40" height="40" decoding="async">
+            </a>
+            <span class="brand-lines">
+                <a href="/" class="logo-word">OPTIMATIZA</a>
+                <span class="brand-registry">EST. 2026 · SAN SALVADOR</span>
+            </span>
+            <span class="doc-tag">DOC. OPTZ/2026<br>SEGURIDAD · REV 2026.07</span>
+        </header>
+
+        <h1>Seguridad de tus datos</h1>
+        <p class="meta">Última actualización: 13 de julio de 2026</p>
+
+        <div class="en-summary">
+            <span class="en-label">English summary</span>
+            <p>Your data lives in <strong>your own accounts</strong> (WhatsApp Business, Microsoft 365, your CRM) — we configure, we don't take ownership. In production projects we use AI APIs under terms that <strong>exclude your data from model training</strong>. Encryption in transit, least-privilege access, NDAs available, human escalation for sensitive decisions, and full handover + deletion when a contract ends.</p>
+        </div>
+
+        <h2><span class="n">01</span>Tus datos viven en tus cuentas</h2>
+        <p>Los agentes y automatizaciones que construimos se instalan <strong>sobre tus propias cuentas</strong>: tu WhatsApp Business, tu Microsoft 365, tu CRM, tu base de datos. Optimatiza configura y opera con acceso delegado — <strong>no nos apropiamos de tu información ni la movemos a sistemas nuestros</strong> salvo lo estrictamente necesario para el servicio acordado. Si un día dejamos de trabajar juntos, todo queda en tu casa.</p>
+
+        <h2><span class="n">02</span>No entrenamos modelos con tus datos</h2>
+        <p>En proyectos productivos usamos las APIs de inteligencia artificial (Anthropic, Google, OpenAI, Azure) en modalidades empresariales cuyos términos <strong>excluyen el uso de tus datos para entrenar modelos</strong>. Tus conversaciones, facturas y clientes no se convierten en material de entrenamiento de nadie.</p>
+
+        <h2><span class="n">03</span>Cifrado y manejo de credenciales</h2>
+        <p>Toda la comunicación entre tus sistemas, los agentes y los proveedores de IA viaja <strong>cifrada en tránsito (TLS)</strong>. Las credenciales y llaves de acceso se gestionan como secretos — nunca en código fuente, nunca en repositorios, nunca compartidas por chat.</p>
+
+        <h2><span class="n">04</span>Acceso mínimo y confidencialidad</h2>
+        <p>Solo las personas que trabajan en tu proyecto acceden a tus datos, con el <strong>mínimo privilegio necesario</strong>. Firmamos <strong>acuerdos de confidencialidad (NDA)</strong> cuando lo pides — y para datos sensibles, lo recomendamos nosotros primero.</p>
+
+        <h2><span class="n">05</span>Los agentes no deciden lo delicado</h2>
+        <p>Nuestros agentes responden <strong>solo desde los datos de tu negocio</strong> — no inventan precios ni prometen lo que no está escrito. Los compromisos comerciales (crédito, descuentos, excepciones) y los casos sensibles se <strong>escalan siempre a una persona</strong>. Así lo diseñamos y así lo configuramos, por regla.</p>
+
+        <h2><span class="n">06</span>Si algo falla</h2>
+        <p>Todo sistema puede fallar; lo honesto es diseñar para ese día. Nuestras instalaciones incluyen <strong>monitoreo, reintentos y una ruta de respaldo hacia un humano</strong>: si el agente no puede, la conversación o la tarea le llega a tu equipo con contexto — no se pierde en silencio.</p>
+
+        <h2><span class="n">07</span>Entrega y borrado al terminar</h2>
+        <p>Al cierre de un contrato te entregamos <strong>todo lo construido y su documentación</strong>, y borramos de nuestros entornos de trabajo las copias operativas de tus datos. Lo tuyo es tuyo.</p>
+
+        <h2><span class="n">08</span>Sobre los servicios de Bitcoin</h2>
+        <p>En nuestros servicios de asesoría Bitcoin, <strong>tus fondos permanecen en tus propias cuentas y billeteras</strong>. Nuestro servicio es educativo y de acompañamiento estratégico; no es asesoría financiera regulada y ningún plan promete rendimientos. Detalles y condiciones en la sección <a href="/#bitcoin">Bitcoin</a>.</p>
+
+        <h2><span class="n">09</span>Dudas o solicitudes</h2>
+        <p>¿Quieres revisar esto en detalle para tu caso, pedir un NDA o solicitar borrado de datos? Escríbenos por <a href="https://wa.me/50371928070">WhatsApp</a> o desde el <a href="/#contacto">formulario de contacto</a>. Responde una persona.</p>
+
+        <a class="back" href="/">← Volver al inicio</a>
+
+        <footer>
+            <span>OPTIMATIZA · SAN SALVADOR</span>
+            <span><a href="/privacy/">Privacidad</a> · <a href="/terms/">Términos</a> · <a href="/seguridad/">Seguridad</a></span>
+        </footer>
+    </div>
+</body>
+</html>

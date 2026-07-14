@@ -87,9 +87,9 @@
   /* nameplate price by band (spec §4.4) — parametric, so kept out of the
      i18n dict; textContent-safe literals (· = U+00B7) */
   var BAND_PRICE = {
-    S: { es: 'DESDE $600 · BANDA S',   en: 'FROM $600 · BAND S' },
-    M: { es: 'DESDE $1,200 · BANDA M', en: 'FROM $1,200 · BAND M' },
-    L: { es: 'DESDE $3,000 · BANDA L', en: 'FROM $3,000 · BAND L' }
+    S: { es: 'desde $600',   en: 'from $600' },
+    M: { es: 'desde $1,200', en: 'from $1,200' },
+    L: { es: 'desde $3,000', en: 'from $3,000' }
   };
   function bandOf(agent) {
     var b = (agent && agent.banda ? String(agent.banda) : '').toUpperCase();
@@ -237,8 +237,8 @@
       'ag-foot-terms': 'T&eacute;rminos',
       'ag-pill-estimate': 'Cotizar',
       /* card + stage chrome */
-      'ag-card-sim': '&#9656; VER SIMULACI&Oacute;N',
-      'ag-cta-quote': 'COTIZAR ESTA UNIDAD',
+      'ag-card-sim': 'Ver c&oacute;mo funciona &nbsp;&rarr;',
+      'ag-cta-quote': 'Cotizar',
       'ag-cta-ficha': 'FICHA COMPLETA &rarr;',
       'ag-term-title': 'REGISTRO DE OPERACI&Oacute;N',
       'ag-term-new': 'NUEVAS L&Iacute;NEAS',
@@ -548,8 +548,8 @@
       'ag-foot-terms': 'Terms',
       'ag-pill-estimate': 'Estimate',
       /* card + stage chrome */
-      'ag-card-sim': '&#9656; RUN SIMULATION',
-      'ag-cta-quote': 'QUOTE THIS UNIT',
+      'ag-card-sim': 'See how it works &nbsp;&rarr;',
+      'ag-cta-quote': 'Get a quote',
       'ag-cta-ficha': 'FULL SPEC SHEET &rarr;',
       'ag-term-title': 'OPERATION LOG',
       'ag-term-new': 'NEW LINES',

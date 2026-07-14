@@ -966,3 +966,127 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
   .ag-dot { display: none; }
   html.js-anim .rv { opacity: 1 !important; translate: none !important; }
 }
+
+/* ========================================================================
+   VITRINA · tarjeta "empleado digital" (rediseño 2026-07 · solo #flota)
+   La clase .octa vive solo en el template del home, así que /agentes/
+   queda intacto. Misma data e hidratación: esto solo la re-presenta para
+   que se entienda a simple vista (menos jerga, jerarquía fuerte).
+   ======================================================================== */
+#flota .ag-card.octa{
+  position:relative; display:flex; flex-direction:column; gap:0;
+  padding:24px 24px 22px; overflow:hidden;
+  color:#9BABBF; font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:radial-gradient(130% 90% at 0% 0%, rgba(45,212,191,.07), transparent 58%), #101828;
+  border:1px solid rgba(148,163,184,.16); border-radius:16px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 24px 48px -30px rgba(2,8,20,.8);
+}
+#flota .ag-card.octa:hover{ border-color:rgba(45,212,191,.45); }
+#flota .ag-card.octa .ag-card-head,
+#flota .ag-card.octa .ag-unit,
+#flota .ag-card.octa .ag-cat-tag,
+#flota .ag-card.octa .ag-card-chip,
+#flota .ag-card.octa .slab-before,
+#flota .ag-card.octa .slab-arrow,
+#flota .ag-card.octa .ag-cta-ficha{ display:none !important; }
+
+/* antetítulo — el gancho de dolor (.ag-pain, inyectado como primer hijo) */
+#flota .ag-card.octa .ag-pain{
+  display:block; position:static; order:-1; margin:0 0 14px; padding:0;
+  font-family:'Inter',system-ui,sans-serif !important; font-size:12.5px; font-weight:600;
+  letter-spacing:0; text-transform:none; color:#2DD4BF; background:none; border:0;
+}
+
+/* identidad — avatar + nombre + puesto + "En turno" */
+#flota .ag-card.octa .ag-id-row{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+#flota .ag-card.octa .ag-ico{
+  flex:0 0 auto; width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(120% 120% at 30% 25%, rgba(45,212,191,.28), rgba(45,212,191,.06));
+  border:1px solid rgba(45,212,191,.35); box-shadow:0 0 24px -6px rgba(45,212,191,.45);
+}
+#flota .ag-card.octa .ag-ico i{ font-size:23px; color:#5EEAD4; line-height:1; }
+#flota .ag-card.octa .ag-id-text{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+#flota .ag-card.octa .ag-name{
+  margin:0; font-family:'Space Grotesk','Inter',sans-serif; font-weight:700;
+  font-size:16px; letter-spacing:-.01em; color:#EDF3FA;
+}
+#flota .ag-card.octa .ag-alias{ margin:0; font-size:12.5px; color:#75859B; line-height:1.35; }
+#flota .ag-card.octa .ag-turno{
+  margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center; gap:7px;
+  padding:5px 11px; border-radius:999px; font-size:11.5px; font-weight:600; color:#34D399;
+  background:rgba(52,211,153,.10); border:1px solid rgba(52,211,153,.24); white-space:nowrap;
+}
+#flota .ag-card.octa .ag-turno .ag-live-dot{
+  width:7px; height:7px; border-radius:50%; background:#34D399; display:inline-block;
+  animation:octaPulse 2.6s ease-out infinite;
+}
+@keyframes octaPulse{
+  0%{box-shadow:0 0 0 0 rgba(52,211,153,.45)}
+  70%{box-shadow:0 0 0 6px rgba(52,211,153,0)}
+  100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}
+}
+
+/* burbuja — qué hace, en voz humana (tagline) */
+#flota .ag-card.octa .ag-resumen{
+  margin:0 0 16px; padding:13px 15px; font-size:14px; line-height:1.5; color:#C4D1E0;
+  background:rgba(255,255,255,.03); border:1px solid rgba(148,163,184,.14); border-radius:12px;
+  display:block; -webkit-line-clamp:unset; -webkit-box-orient:unset;
+  max-height:none; overflow:visible; white-space:normal;
+}
+
+/* prueba — badge verde con check (metricaDestacada) */
+#flota .ag-card.octa .ag-slab.octa-proof{
+  display:flex; align-items:center; gap:12px; margin:0 0 15px; padding:12px 14px;
+  border-radius:12px; background:rgba(52,211,153,.06); border:1px solid rgba(52,211,153,.20);
+}
+#flota .ag-card.octa .octa-check{
+  flex:0 0 auto; width:24px; height:24px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:13px; color:#34D399; background:rgba(52,211,153,.14);
+}
+#flota .ag-card.octa .slab-after{
+  font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.4; color:#EDF3FA;
+  letter-spacing:0; text-transform:none;
+}
+
+/* integraciones — susurro */
+#flota .ag-card.octa .ag-stack.octa-integr{
+  margin:0 0 16px; font-family:'Inter',sans-serif !important; font-size:12px; line-height:1.5;
+  color:#75859B; letter-spacing:0; text-transform:none;
+  display:block; white-space:normal; overflow:visible; text-overflow:clip;
+  -webkit-line-clamp:unset; -webkit-box-orient:unset; max-height:none;
+}
+#flota .ag-card.octa .ag-stack.octa-integr::before{ content:"Se conecta con "; color:#5c6a7e; }
+
+/* precio + cotizar (sobre el overlay, clickeable) */
+#flota .ag-card.octa .ag-card-commerce{
+  position:relative; z-index:3; display:flex; align-items:baseline; justify-content:space-between;
+  gap:12px; margin:0 0 14px; padding-top:14px; border-top:1px solid rgba(148,163,184,.12);
+  font-family:'Inter',sans-serif;
+}
+#flota .ag-card.octa .ag-price{
+  font-size:15px; color:#EDF3FA; font-weight:600; letter-spacing:0; text-transform:none;
+  font-variant-numeric:tabular-nums;
+}
+#flota .ag-card.octa .ag-cta-quote{
+  font-size:13px; color:#2DD4BF; font-weight:600; text-decoration:none; letter-spacing:0; text-transform:none;
+}
+#flota .ag-card.octa .ag-cta-quote:hover{ color:#5EEAD4; text-decoration:underline; }
+
+/* botón principal (visual; el click real lo toma el overlay -> simulación) */
+#flota .ag-card.octa .octa-cta{ margin-top:auto; }
+#flota .ag-card.octa .ag-card-sim{
+  display:block; width:100%; text-align:center; padding:13px 16px; border-radius:12px;
+  font-family:'Inter',sans-serif; font-size:15px; font-weight:700; letter-spacing:0; text-transform:none;
+  color:#04220f; background:linear-gradient(135deg,#2DD4BF,#14B8A6);
+  box-shadow:0 10px 24px -12px rgba(20,184,166,.7);
+}
+#flota .ag-card.octa:hover .ag-card-sim{ filter:brightness(1.05); }
+
+/* overlay clickeable — abre la simulación (debajo de commerce/quote) */
+#flota .ag-card.octa .ag-card-link{ position:absolute; inset:0; z-index:2; border-radius:16px; }
+
+@media (prefers-reduced-motion: reduce){
+  #flota .ag-card.octa .ag-turno .ag-live-dot{ animation:none; }
+}
