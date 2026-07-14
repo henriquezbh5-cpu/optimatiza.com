@@ -3891,3 +3891,21 @@ html.js-anim .diff-row.animate-in s::after { transform: scaleX(1); }
   border-bottom:1px dashed rgba(91,168,232,.4); padding-bottom:2px;
 }
 .hero-vertical:hover{ color: var(--steel-deep); }
+
+/* ============================================================
+   40) Bitcoin teaser en el home (contenido completo en /bitcoin/)
+   ============================================================ */
+.btc-teaser{ padding-block: var(--sp-5); }
+.btc-teaser-box{
+  display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap;
+  background: linear-gradient(135deg, rgba(247,147,26,.10), rgba(247,147,26,.03));
+  border:1px solid rgba(247,147,26,.28); border-radius: var(--r-0); padding: 26px 30px;
+}
+.btc-teaser-txt{ max-width: 62ch; }
+.btc-teaser-k{ color: var(--btc); font-size: 12px; letter-spacing:.08em; margin:0 0 8px; display:flex; align-items:center; gap:7px; }
+.btc-teaser-h{ font-family: var(--ff-display); color: var(--ink); font-size: var(--t-5); margin:0 0 8px; }
+.btc-teaser-p{ color: var(--ink-body); font-size: var(--t-2); margin:0; }
+.btc-teaser-p strong{ color: var(--amber-ink); }
+.btc-teaser-cta{ white-space:nowrap; border-color: rgba(247,147,26,.5); color: var(--amber-ink); }
+.btc-teaser-cta:hover{ background: rgba(247,147,26,.12); }
+@media (max-width: 760px){ .btc-teaser-box{ flex-direction:column; align-items:flex-start; } }
