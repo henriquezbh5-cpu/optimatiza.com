@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FFFFFF">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://chat-ai.henriquezbh5.workers.dev; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://chat-ai.henriquezbh5.workers.dev https://formspree.io; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Optimatiza — Empleados digitales de IA que automatizan tu trabajo de oficina de inicio a fin</title>
   <meta name="description" content="Agentes de IA que ejecutan procesos completos: reciben el correo, capturan los datos, piden aprobación, actualizan tus sistemas y confirman con el cliente. Con Microsoft, Google y WhatsApp. Desde $600.">
@@ -133,6 +133,12 @@
     .sec-k{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
     h2{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.15;margin:10px 0 12px;text-wrap:balance}
     .sec-sub{font-size:16.5px;max-width:62ch;margin-bottom:34px}
+    /* ---------- tarjetas pilares / prueba ---------- */
+    .pil{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .pi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--sh);display:flex;flex-direction:column}
+    .pi .ic{font-size:30px}
+    .pi h3{font-family:var(--ffd);color:var(--ink);font-size:17.5px;margin:12px 0 6px}
+    .pi p{font-size:14.5px}
     /* ---------- por que elegir (tabs) ---------- */
     .wtabs{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 22px}
     .wtab{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 18px;font-size:14px;font-weight:600;color:var(--body);cursor:pointer;font-family:var(--ff)}
@@ -227,6 +233,19 @@
     .fund .rol{color:var(--teal);font-size:13.5px;font-weight:600;margin-bottom:6px;display:block}
     .fund p{font-size:14.5px;max-width:64ch}
     .fund a{color:var(--teal);font-weight:600}
+    .pi .more{margin-top:10px;font-size:14px}
+    /* contacto */
+    .cform{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--sh);max-width:720px;margin-top:18px}
+    .cform label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:14px}
+    .cform input,.cform textarea{display:block;width:100%;margin-top:6px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:var(--ff);color:var(--ink);background:#fff;outline:none;box-sizing:border-box}
+    .cform input:focus,.cform textarea:focus{border-color:var(--teal)}
+    .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media(max-width:640px){.cf-row{grid-template-columns:1fr}}
+    .cf-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+    .cform .btn{border:none;cursor:pointer;font-family:var(--ff)}
+    .cf-alt{font-size:13.5px;color:var(--dim)} .cf-alt a{color:var(--teal);font-weight:700}
+    .cf-note{font-size:12px;color:var(--dim);margin-top:12px}
+    .cf-note.ok{color:#159A4E;font-weight:600}
     .faq details{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:10px;box-shadow:var(--sh)}
     .faq summary{padding:17px 20px;cursor:pointer;font-weight:600;color:var(--ink);font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
     .faq summary::-webkit-details-marker{display:none}
@@ -570,9 +589,22 @@
     </div>
   </div></section>
 
-  <!-- FUNDADOR -->
-  <section><div class="wrap">
-    <div class="fund">
+  <!-- PRUEBA: CORRIENDO AHORA MISMO -->
+  <section id="prueba"><div class="wrap">
+    <span class="sec-k">No te pedimos fe</span>
+    <h2>Sistemas nuestros corriendo ahora mismo — compruébalo tú</h2>
+    <p class="sec-sub">Somos una empresa nueva y no vamos a inventarte logos ni testimonios. Lo que sí podemos darte es evidencia que puedes verificar en este momento:</p>
+    <div class="pil">
+      <div class="pi"><span class="ic">🧾</span><h3>Capturista Digital</h3><p>Una factura por foto entra a Excel en ~4 segundos. <b>Míralo medido en video</b>, paso a paso, sin cortes.</p><a class="more" href="casos/">Ver el video →</a></div>
+      <div class="pi"><span class="ic">📣</span><h3>Este negocio publica solo</h3><p>Las publicaciones diarias de nuestro Facebook e Instagram las genera y publica <b>un sistema nuestro, sin humanos</b>. Entra y revisa las fechas.</p><a class="more" href="https://www.instagram.com/optimatiza" target="_blank" rel="noopener">Ver @optimatiza →</a></div>
+      <div class="pi"><span class="ic">🤖</span><h3>Nova, aquí mismo</h3><p>El chat de la esquina es <b>un agente real nuestro</b> — de los mismos que instalamos. Pregúntale precios ahora y mira cómo responde.</p><a class="more" href="#" id="tryNova">Hablar con Nova →</a></div>
+      <div class="pi"><span class="ic">🤝</span><h3>Programa Clientes Fundadores</h3><p>3 cupos con precio preferencial a cambio de tu testimonio real con nombre y métrica. <b>Transparencia total, por escrito.</b></p><a class="more" href="fundadores/">Conocer el programa →</a></div>
+    </div>
+  </div></section>
+
+  <!-- FUNDADOR + CONTACTO -->
+  <section id="contacto" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
+    <div class="fund" style="margin-bottom:26px">
       <img src="humberto.jpg" alt="Humberto Henríquez, fundador de Optimatiza">
       <div>
         <b>Humberto Henríquez</b>
@@ -580,6 +612,24 @@
         <p>8+ años automatizando operaciones para empresas de la región. Cada agente lo diseño y superviso personalmente — y si algo no se puede automatizar bien, te lo digo antes de cobrarte. <a href="https://www.linkedin.com/company/135964888" target="_blank" rel="noopener">Optimatiza en LinkedIn →</a></p>
       </div>
     </div>
+    <span class="sec-k">¿Prefieres no chatear todavía?</span>
+    <h2>Cuéntanos qué proceso te duele y te respondemos</h2>
+    <form class="cform" action="https://formspree.io/f/xeevjelz" method="POST" id="cform">
+      <input type="hidden" name="_subject" value="Contacto desde optimatiza.com">
+      <div class="cf-row">
+        <label>Tu nombre<input type="text" name="nombre" required maxlength="80" autocomplete="name"></label>
+        <label>Tu negocio<input type="text" name="negocio" required maxlength="120" autocomplete="organization"></label>
+      </div>
+      <div class="cf-row">
+        <label>WhatsApp o correo<input type="text" name="contacto" required maxlength="120"></label>
+      </div>
+      <label>¿Qué proceso te está comiendo horas?<textarea name="mensaje" rows="3" required maxlength="1000" placeholder="Ej.: pasamos pedidos de WhatsApp a mano al sistema, la cobranza se atrasa…"></textarea></label>
+      <div class="cf-actions">
+        <button type="submit" class="btn" id="cfBtn">Enviar — te respondemos en horas</button>
+        <span class="cf-alt">o directo por <a href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">WhatsApp</a></span>
+      </div>
+      <p class="cf-note" id="cfNote">Solo usamos estos datos para responderte. Nada de listas de spam.</p>
+    </form>
   </div></section>
 
   <!-- FAQ -->
@@ -625,6 +675,7 @@
     </div>
     <div><b>Empresa</b>
       <a href="blog/">Blog</a>
+      <a href="fundadores/">Clientes fundadores</a>
       <a href="seguridad/">Manejo de datos</a>
       <a href="legal/privacidad.html">Privacidad</a>
       <a href="legal/terminos.html">Términos</a>

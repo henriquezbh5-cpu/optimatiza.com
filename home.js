@@ -48,6 +48,36 @@
     setTimeout(function () { step(0); }, 900);
   })();
 
+  // "Hablar con Nova" abre el chat del sitio
+  var tryNova = document.getElementById('tryNova');
+  if (tryNova) tryNova.addEventListener('click', function (e) {
+    e.preventDefault();
+    var fab = document.getElementById('nvFab');
+    if (fab) { fab.click(); } else { location.href = 'https://wa.me/50371928070'; }
+  });
+
+  // formulario de contacto: envia por fetch y confirma en la misma pagina
+  var cform = document.getElementById('cform');
+  if (cform) cform.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('cfBtn'), note = document.getElementById('cfNote');
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    fetch(cform.action, {
+      method: 'POST',
+      body: new FormData(cform),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      cform.reset();
+      btn.textContent = '✓ Enviado';
+      note.textContent = '¡Recibido! Te respondemos en horas por el medio que dejaste.';
+      note.classList.add('ok');
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Enviar — te respondemos en horas';
+      note.textContent = 'No se pudo enviar. Escríbenos directo por WhatsApp: +503 7192 8070.';
+    });
+  });
+
   // tabs "Por que elegir Optimatiza"
   var tabs = document.querySelectorAll('#wtabs .wtab');
   tabs.forEach(function (tab) {

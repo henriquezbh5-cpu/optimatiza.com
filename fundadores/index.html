@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programa Clientes Fundadores — 3 cupos | Optimatiza</title>
+  <meta name="description" content="3 cupos con precio preferencial a cambio de un testimonio real con nombre y métrica medida. Transparencia total: el trato completo, publicado. Optimatiza, El Salvador.">
+  <link rel="canonical" href="https://optimatiza.com/fundadores/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Programa Clientes Fundadores — 3 cupos | Optimatiza">
+  <meta property="og:description" content="Precio preferencial a cambio de un testimonio real con nombre y métrica. El trato completo, publicado.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/fundadores/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;--warn:#F7931A;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px}
+    .hero{padding:56px 0 20px}
+    .k{display:inline-block;background:#FFF3E0;color:#B45309;font-weight:800;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.4vw,2.8rem);line-height:1.1;margin:14px 0 12px;text-wrap:balance}
+    .sub{font-size:17px;max-width:62ch}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:22px;margin:0 0 14px}
+    section{padding:30px 0}
+    .deal{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+    @media(max-width:700px){.deal{grid-template-columns:1fr}}
+    .dcard{background:var(--alt);border:1px solid var(--line);border-radius:16px;padding:24px}
+    .dcard h3{font-family:var(--ffd);color:var(--ink);font-size:17px;margin-bottom:10px}
+    .dcard ul{margin:0;padding-left:18px;font-size:14.5px}
+    .dcard li{margin:7px 0}
+    .dcard.tu{border-color:rgba(13,148,136,.4);background:var(--teal-soft)}
+    .why{background:#fff;border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:14px;padding:20px 22px;font-size:14.5px;margin-top:8px}
+    .why b{color:var(--ink)}
+    .steps{counter-reset:p;display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .st{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px 17px;font-size:14.5px}
+    .st:before{counter-increment:p;content:counter(p);background:var(--teal);color:#fff;font-family:var(--ffd);font-weight:700;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;font-size:13px}
+    .st b{color:var(--ink)}
+    .cupos{display:flex;gap:12px;margin:14px 0}
+    .cupo{flex:1;text-align:center;background:#fff;border:1.5px dashed var(--line);border-radius:14px;padding:18px 10px;font-size:13px;color:var(--dim)}
+    .cupo b{display:block;font-family:var(--ffd);font-size:15px;color:var(--ink);margin-bottom:2px}
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:26px 0 40px}
+    .final h2{color:#fff}
+    .final p{color:#D9F5F1;max-width:56ch;margin:6px auto 20px;font-size:15px}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:14px 26px;border-radius:999px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+  <div class="sp"></div>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20me%20interesa%20el%20programa%20de%20clientes%20fundadores." target="_blank" rel="noopener">Aplicar por WhatsApp</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="k">3 cupos · programa de lanzamiento</span>
+    <h1>Clientes Fundadores: te damos el mejor trato que jamás daremos, a cambio de tu testimonio real</h1>
+    <p class="sub">Somos una empresa nueva. En vez de inventar logos y testimonios como hacen otros, preferimos ganarnos los primeros a la vieja usanza: <b>haciéndolo tan bien, y a tan buen precio, que quieras contarlo con tu nombre.</b></p>
+  </div>
+
+  <section>
+    <h2>El trato, completo y por escrito</h2>
+    <div class="deal">
+      <div class="dcard tu">
+        <h3>Lo que recibes tú</h3>
+        <ul>
+          <li><b>Precio preferencial de fundador</b> sobre nuestras bandas publicadas — definido por escrito en el diagnóstico, antes de cualquier pago.</li>
+          <li>La misma entrega completa de siempre: diseño, construcción, pruebas, documentación y 30 días de soporte.</li>
+          <li>Prioridad de agenda: tu proyecto entra primero.</li>
+          <li>Atención directa del fundador, sin intermediarios.</li>
+        </ul>
+      </div>
+      <div class="dcard">
+        <h3>Lo que recibimos nosotros</h3>
+        <ul>
+          <li>Tu <b>testimonio real</b>: nombre, cargo o negocio, y una métrica medida de lo que el sistema hace por ti.</li>
+          <li>Permiso para usar tu logo o nombre en optimatiza.com.</li>
+          <li>Una llamada de referencia ocasional con un prospecto serio (máximo 1 al mes).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="why"><b>Transparencia total:</b> cuando publiquemos tu testimonio, indicaremos que fuiste cliente fundador con precio preferencial. Un testimonio incentivado presentado como espontáneo sería engañar — y si engañáramos con eso, ¿por qué confiarías en lo demás?</div>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <div class="steps">
+      <div class="st"><span><b>Diagnóstico gratis (20-30 min).</b> Revisamos tu operación y elegimos UN proceso con resultado medible: cobranza, pedidos, facturas, citas…</span></div>
+      <div class="st"><span><b>Propuesta de fundador por escrito.</b> Alcance, precio preferencial, fechas y la métrica que vamos a medir juntos. Pagos por hitos 40/30/30.</span></div>
+      <div class="st"><span><b>Construcción en semanas.</b> Lo ves funcionando con tus datos antes del último pago.</span></div>
+      <div class="st"><span><b>Medimos el resultado real</b> (tiempo ahorrado, facturas procesadas, respuestas atendidas) y solo entonces escribes tu testimonio — con tus palabras.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Los cupos</h2>
+    <div class="cupos">
+      <div class="cupo"><b>Cupo 1</b>disponible</div>
+      <div class="cupo"><b>Cupo 2</b>disponible</div>
+      <div class="cupo"><b>Cupo 3</b>disponible</div>
+    </div>
+    <p style="font-size:13.5px;color:var(--dim)">Cuando se llenen, esta página lo dirá — y el precio de fundador no vuelve.</p>
+  </section>
+
+  <div class="final">
+    <h2>¿Te interesa uno de los 3 cupos?</h2>
+    <p>Escríbenos y agendamos el diagnóstico gratis. Si tu caso no calza con el programa, te lo decimos de frente.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20me%20interesa%20el%20programa%20de%20clientes%20fundadores.%20Mi%20negocio%20es%3A%20" target="_blank" rel="noopener">Aplicar por WhatsApp →</a>
+  </div>
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../seguridad/">Manejo de datos</a>
+</div></footer>
+</body>
+</html>
