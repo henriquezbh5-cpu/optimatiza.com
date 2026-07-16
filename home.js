@@ -1,7 +1,19 @@
-// Home ligera de Optimatiza — cotizador de rangos publicados + año del footer.
+// Home ligera de Optimatiza — cotizador de rangos publicados + tabs + año del footer.
 (function () {
   var yy = document.getElementById('yy');
   if (yy) yy.textContent = new Date().getFullYear();
+
+  // tabs "Por que elegir Optimatiza"
+  var tabs = document.querySelectorAll('#wtabs .wtab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.classList.remove('on'); });
+      document.querySelectorAll('.wpanel').forEach(function (p) { p.classList.remove('on'); });
+      tab.classList.add('on');
+      var panel = document.getElementById(tab.dataset.w);
+      if (panel) panel.classList.add('on');
+    });
+  });
 
   var boxes = document.querySelectorAll('#pick input');
   var rng = document.getElementById('rng');

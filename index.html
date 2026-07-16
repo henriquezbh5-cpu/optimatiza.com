@@ -119,11 +119,51 @@
     .sec-k{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
     h2{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.15;margin:10px 0 12px;text-wrap:balance}
     .sec-sub{font-size:16.5px;max-width:62ch;margin-bottom:34px}
-    .pil{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .pi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--sh)}
-    .pi .ic{font-size:30px}
-    .pi h3{font-family:var(--ffd);color:var(--ink);font-size:17.5px;margin:12px 0 6px}
-    .pi p{font-size:14.5px}
+    /* ---------- por que elegir (tabs) ---------- */
+    .wtabs{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 22px}
+    .wtab{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:11px 18px;font-size:14px;font-weight:600;color:var(--body);cursor:pointer;font-family:var(--ff)}
+    .wtab:hover{border-color:var(--teal2)}
+    .wtab.on{background:var(--teal-soft);border-color:var(--teal);color:var(--teal)}
+    .wpanel{display:none;grid-template-columns:1fr 1fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--sh)}
+    .wpanel.on{display:grid}
+    @media(max-width:820px){.wpanel{grid-template-columns:1fr;padding:24px}}
+    .wpanel h3{font-family:var(--ffd);color:var(--ink);font-size:22px;margin-bottom:10px}
+    .wpanel p{font-size:15px;max-width:48ch}
+    .wviz{background:linear-gradient(160deg,#EAF7F4,#F2F7FD);border:1px solid var(--line);border-radius:16px;padding:22px;min-height:190px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+    .wcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:13.5px;color:var(--ink);box-shadow:0 1px 2px rgba(11,27,43,.05)}
+    .wcard .sm{display:block;font-size:11.5px;color:var(--dim);margin-top:2px}
+    .wcard.ok{border-left:3px solid var(--wa)}
+    .wcard.dim{opacity:.8}
+    .wrow{display:flex;align-items:center;gap:8px}
+    .wtick{color:var(--teal);font-weight:700}
+    /* ---------- canales (hub) ---------- */
+    .hub{position:relative;max-width:900px;margin:8px auto 0;aspect-ratio:1000/520}
+    .hub svg.lines{position:absolute;inset:0;width:100%;height:100%}
+    .sat,.core{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}
+    .sat{width:76px;height:76px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh)}
+    .sat svg{width:40px;height:40px}
+    .core{left:50%;top:50%;width:150px;height:112px;background:#fff;border:2px solid var(--teal);border-radius:20px;box-shadow:0 10px 34px rgba(13,148,136,.18);flex-direction:column;gap:6px}
+    .core::before{content:"";position:absolute;inset:-9px;border-radius:26px;border:2px solid rgba(13,148,136,.5);animation:corePulse 2.6s ease-out infinite;pointer-events:none}
+    .core img{width:46px;height:46px;animation:coreBob 3.2s ease-in-out infinite}
+    .core b{font-family:var(--ffd);color:var(--ink);font-size:12.5px}
+    @keyframes corePulse{0%{transform:scale(.94);opacity:.85}75%{transform:scale(1.14);opacity:0}100%{transform:scale(1.14);opacity:0}}
+    @keyframes coreBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @media(prefers-reduced-motion:reduce){.core::before{animation:none;opacity:0}.core img{animation:none}}
+    .hlbl{position:absolute;transform:translate(-50%,-50%);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--body);box-shadow:0 1px 2px rgba(11,27,43,.05);white-space:nowrap}
+    @media(max-width:640px){
+      .hub{aspect-ratio:auto;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:8px 0}
+      .hub svg.lines,.hlbl{display:none}
+      .sat,.core{position:static;transform:none}
+      .core{order:-1;width:100%;height:auto;padding:14px;flex-direction:row}
+    }
+    /* marquee de canales/herramientas */
+    .mq{overflow:hidden;margin-top:30px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+    .mq-track{display:flex;gap:12px;width:max-content;animation:mq 26s linear infinite}
+    .mq:hover .mq-track{animation-play-state:paused}
+    @media(prefers-reduced-motion:reduce){.mq-track{animation:none}}
+    @keyframes mq{to{transform:translateX(-50%)}}
+    .mqc{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+    .mqc svg{width:20px;height:20px;flex:none}
     .ags{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
     .ag{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh);display:flex;flex-direction:column}
     .ag-top{display:flex;align-items:center;gap:12px}
@@ -197,11 +237,14 @@
     #nova{position:fixed;right:20px;bottom:20px;z-index:90;font-family:var(--ff)}
     #nova .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.02em}
     .nv-fab{position:relative;width:62px;height:62px;border-radius:50%;border:none;cursor:pointer;background:var(--teal);box-shadow:0 6px 22px rgba(13,148,136,.35);display:flex;align-items:center;justify-content:center;animation:nvBob 3.6s ease-in-out infinite}
-    .nv-fab img{width:44px;height:44px;border-radius:50%;background:#fff;padding:3px}
+    .nv-fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2.5px solid var(--teal);animation:nvPulse 2.2s ease-out infinite;pointer-events:none}
+    .nv-fab img{width:44px;height:44px;border-radius:50%;background:#fff;padding:3px;animation:nvWave 7s ease-in-out infinite}
     .nv-fab:hover{filter:brightness(1.06)}
     .nv-dot{position:absolute;top:4px;right:4px;width:13px;height:13px;border-radius:50%;background:var(--wa);border:2.5px solid #fff}
     @keyframes nvBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    @media(prefers-reduced-motion:reduce){.nv-fab{animation:none}}
+    @keyframes nvPulse{0%{transform:scale(1);opacity:.75}75%,100%{transform:scale(1.7);opacity:0}}
+    @keyframes nvWave{0%,86%,100%{transform:rotate(0)}90%{transform:rotate(-10deg)}94%{transform:rotate(10deg)}}
+    @media(prefers-reduced-motion:reduce){.nv-fab{animation:none}.nv-fab::before{animation:none;opacity:0}.nv-fab img{animation:none}}
     .nv-panel{position:absolute;right:0;bottom:76px;width:min(370px,calc(100vw - 40px));background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 60px rgba(11,27,43,.22);overflow:hidden;display:flex;flex-direction:column;max-height:min(560px,calc(100vh - 120px))}
     .nv-panel[hidden]{display:none}
     .nv-head{display:flex;align-items:center;justify-content:space-between;background:var(--teal);color:#fff;padding:12px 16px;font-size:12.5px;font-weight:600}
@@ -288,17 +331,101 @@
     <div><b>Desde $600</b><span>precios publicados, sin sorpresas</span></div>
   </div></div>
 
-  <!-- QUE HACE -->
+  <!-- POR QUE ELEGIR OPTIMATIZA -->
   <section id="que-hace"><div class="wrap">
-    <span class="sec-k">¿Qué hace un empleado digital?</span>
-    <h2>Se encarga de lo repetitivo que hoy te roba horas</h2>
-    <p class="sec-sub">Un agente de IA conectado a tu WhatsApp y a tus sistemas. Estas son las 4 cosas que más piden nuestros clientes:</p>
-    <div class="pil">
-      <div class="pi"><span class="ic">💬</span><h3>Atiende y vende 24/7</h3><p>Responde preguntas, cotiza y aparta productos al instante — aunque el cliente escriba a las 10 de la noche.</p></div>
-      <div class="pi"><span class="ic">💵</span><h3>Cobra tu cartera sola</h3><p>Recordatorios de pago por WhatsApp que suben de tono solos, con monto y medios de pago. Nadie persigue factura por factura.</p></div>
-      <div class="pi"><span class="ic">📦</span><h3>Toma pedidos sin errores</h3><p>El pedido llega por chat o audio y entra limpio a tu sistema. Tu vendedor deja de tipear y vuelve a vender.</p></div>
-      <div class="pi"><span class="ic">🔄</span><h3>Da seguimiento a cada cliente</h3><p>Detecta quién dejó de comprar, recuerda citas y reactiva clientes dormidos — sin que nadie tenga que acordarse.</p></div>
+    <span class="sec-k">¿Por qué elegir Optimatiza?</span>
+    <h2>Empleados digitales que trabajan por ti 24/7 — sin descanso</h2>
+    <p class="sec-sub">No es un chatbot de respuestas enlatadas: es un empleado digital entrenado con tu negocio, que atiende, cobra y da seguimiento mientras tú duermes. Sin turnos, sin vacaciones, sin días libres.</p>
+    <div class="wtabs" id="wtabs">
+      <button type="button" class="wtab on" data-w="w1">🕐 Trabaja 24/7</button>
+      <button type="button" class="wtab" data-w="w2">🎯 Aprende tu negocio</button>
+      <button type="button" class="wtab" data-w="w3">🔀 Todos tus canales</button>
+      <button type="button" class="wtab" data-w="w4">📈 Cobra y da seguimiento</button>
     </div>
+    <div class="wpanel on" id="w1">
+      <div><h3>Nunca duerme, nunca pide turno</h3><p>Tu cliente escribe a las 10 de la noche, un domingo o un feriado — y recibe respuesta en segundos: precio, disponibilidad, apartado. Tú ves el resumen al día siguiente y solo intervienes en lo que necesita tu criterio.</p></div>
+      <div class="wviz">
+        <div class="wcard dim">🌙 <b>3:12 AM</b> — cliente pregunta por disponibilidad<span class="sm">el agente responde en 4 segundos</span></div>
+        <div class="wcard ok">✅ <b>3:14 AM</b> — pedido apartado y confirmado<span class="sm">orden registrada en tu sistema</span></div>
+        <div class="wcard">☀️ <b>8:00 AM</b> — tú ves el resumen con tu café<span class="sm">la venta ya estaba hecha</span></div>
+      </div>
+    </div>
+    <div class="wpanel" id="w2">
+      <div><h3>Entrenado con TU negocio, no con plantillas</h3><p>Se alimenta de tus precios, tu inventario, tus políticas y hasta tu forma de hablar. Por eso responde como alguien de tu equipo — no como un robot genérico que frustra al cliente.</p></div>
+      <div class="wviz">
+        <div class="wrow wcard"><span class="wtick">✓</span> Conoce tus precios y promociones vigentes</div>
+        <div class="wrow wcard"><span class="wtick">✓</span> Sabe qué hay en inventario y qué no</div>
+        <div class="wrow wcard"><span class="wtick">✓</span> Habla con el tono de tu marca</div>
+        <div class="wrow wcard"><span class="wtick">✓</span> Escala a tu equipo lo que necesita criterio</div>
+      </div>
+    </div>
+    <div class="wpanel" id="w3">
+      <div><h3>Una sola conversación, todos tus canales</h3><p>WhatsApp, Instagram, Messenger, Telegram, correo y el chat de tu web: el mismo empleado digital atiende donde tu cliente prefiera escribir. Nada se pierde entre bandejas.</p></div>
+      <div class="wviz">
+        <div class="wcard">💬 WhatsApp → <b>respondido</b></div>
+        <div class="wcard">📸 Instagram DM → <b>respondido</b></div>
+        <div class="wcard">✉️ Correo → <b>clasificado y respondido</b></div>
+        <div class="wcard ok">Todo en un solo lugar, con historial completo</div>
+      </div>
+    </div>
+    <div class="wpanel" id="w4">
+      <div><h3>Cobra tu cartera y no suelta al cliente</h3><p>Recordatorios de pago que suben de tono solos — cordial, firme, urgente — con monto y medios de pago. Y seguimiento a cada cliente que dejó de comprar. Nadie más persigue factura por factura.</p></div>
+      <div class="wviz">
+        <div class="wcard">📅 <b>Día 1</b> — recordatorio cordial con el monto<span class="sm">"Le recordamos su factura #1042..."</span></div>
+        <div class="wcard">📅 <b>Día 5</b> — tono firme + enlace de pago</div>
+        <div class="wcard ok">💵 <b>Pagado</b> — registrado; la mora fuerte escala a tu equipo</div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CANALES -->
+  <section id="canales" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
+    <span class="sec-k">Donde están tus clientes</span>
+    <h2>Un empleado digital, todos tus canales — siempre</h2>
+    <p class="sec-sub">Tu agente atiende en los canales donde tus clientes ya te escriben, y se conecta con las herramientas que ya usas.</p>
+    <div class="hub">
+      <svg class="lines" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="#B9C6D4" stroke-width="2" stroke-dasharray="4 7">
+          <path d="M310 62 H480 V204"/>
+          <path d="M662 62 H540 V204"/>
+          <path d="M212 255 H418"/>
+          <path d="M792 255 H582"/>
+          <path d="M375 418 V330 H470"/>
+          <path d="M600 418 V330 H540"/>
+        </g>
+      </svg>
+      <div class="sat" style="left:27%;top:11.5%"><svg viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M9.4 7.4c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3-.3-.2-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.7-1.2-1.5-1.4-1.7-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.1-.5-.1-.2-.6-1.5-.9-2z"/></svg></div>
+      <div class="sat" style="left:70%;top:11.5%"><svg viewBox="0 0 24 24"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FFDD55"/><stop offset=".5" stop-color="#FF543E"/><stop offset="1" stop-color="#C837AB"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igg)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.4" fill="#fff"/></svg></div>
+      <div class="sat" style="left:17%;top:49%"><svg viewBox="0 0 24 24"><defs><linearGradient id="msg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00B2FF"/><stop offset="1" stop-color="#A033FF"/></linearGradient></defs><path fill="url(#msg)" d="M12 2C6.5 2 2 6.1 2 11.2c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.3S17.5 2 12 2z"/><path fill="#fff" d="m5.9 14.2 3.9-6.2 3 2.3 4.3-2.3-3.9 6.2-3-2.3-4.3 2.3z"/></svg></div>
+      <div class="sat" style="left:83%;top:49%"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2AABEE"/><path fill="#fff" d="m6.2 11.6 10.5-4.1c.5-.2 1 .1.8.9l-1.8 8.4c-.1.6-.5.8-1 .5l-2.8-2-1.3 1.3c-.2.2-.3.3-.6.3l.2-2.7 5-4.5c.2-.2-.1-.3-.3-.2l-6.2 3.9-2.6-.8c-.6-.2-.6-.6.1-1z"/></svg></div>
+      <div class="sat" style="left:37.5%;top:87%"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="none" stroke="#0D9488" stroke-width="1.8"/><path d="M2.8 12h18.4M12 2.8c2.6 2.4 3.9 5.5 3.9 9.2S14.6 18.8 12 21.2M12 2.8c-2.6 2.4-3.9 5.5-3.9 9.2s1.3 6.8 3.9 9.2" fill="none" stroke="#0D9488" stroke-width="1.8"/></svg></div>
+      <div class="sat" style="left:60%;top:87%"><svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" fill="#fff" stroke="#E3EAF2"/><path fill="#EA4335" d="M4.2 6.5c-.5-.4-.2-1.2.5-1.2h.4L12 10.6l6.9-5.3h.4c.7 0 1 .8.5 1.2L12 12.4 4.2 6.5z"/><path fill="#4285F4" d="M3.5 7.6v9.9c0 .6.4 1 1 1h1V9.5l-2-1.9z"/><path fill="#34A853" d="M20.5 7.6v9.9c0 .6-.4 1-1 1h-1V9.5l2-1.9z"/></svg></div>
+      <div class="core"><img src="img/logo-badge-192.png" alt=""><b>Tu agente Optimatiza</b></div>
+      <div class="hlbl" style="left:38.8%;top:11.9%">WhatsApp</div>
+      <div class="hlbl" style="left:60.1%;top:11.9%">Instagram</div>
+      <div class="hlbl" style="left:30%;top:49%">Messenger</div>
+      <div class="hlbl" style="left:69%;top:49%">Telegram</div>
+      <div class="hlbl" style="left:37.5%;top:69%">Chat web</div>
+      <div class="hlbl" style="left:60%;top:69%">Correo</div>
+    </div>
+    <div class="mq" aria-hidden="true"><div class="mq-track">
+      <span class="mqc"><svg viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp Business</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#E1306C"/></svg>Instagram</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0084FF"/></svg>Messenger</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2AABEE"/></svg>Telegram</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="#EA4335"/></svg>Gmail / Outlook</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0D9488"/></svg>Chat de tu web</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#107C41"/></svg>Excel / Google Sheets</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#42566B"/></svg>Tu sistema (ERP / CRM)</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp Business</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#E1306C"/></svg>Instagram</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0084FF"/></svg>Messenger</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2AABEE"/></svg>Telegram</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="#EA4335"/></svg>Gmail / Outlook</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0D9488"/></svg>Chat de tu web</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#107C41"/></svg>Excel / Google Sheets</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#42566B"/></svg>Tu sistema (ERP / CRM)</span>
+    </div></div>
   </div></section>
 
   <!-- AGENTES -->
