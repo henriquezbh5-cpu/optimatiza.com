@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Cartera Vencida | ¿Cuánto tienes congelado en cobranza? | Optimatiza</title>
+  <meta name="description" content="Calcula gratis cuánto capital tiene congelado tu distribuidora en cartera vencida por cobranza lenta. Herramienta para distribuidoras, ferreterías e importadoras de El Salvador. Sin registro.">
+  <link rel="canonical" href="https://optimatiza.com/calculadora/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Calculadora de Cartera Vencida — ¿Cuánto tienes congelado? | Optimatiza">
+  <meta property="og:description" content="Mete tus números y ve cuánto capital tiene congelado tu distribuidora en cobranza vencida. Gratis, sin registro.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/calculadora/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#0A0F1A;--panel:#101828;--ink:#EDF3FA;--body:#9BABBF;--dim:#75859B;
+      --line:rgba(148,163,184,.16);--teal:#14B8A6;--teal2:#2DD4BF;--wa:#25D366;--warn:#F7931A;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif}
+    *{box-sizing:border-box;margin:0}
+    body{background:radial-gradient(1200px 700px at 82% -12%,#12253f 0,var(--bg) 60%);
+      color:var(--body);font-family:var(--ff);line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(10,15,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--teal)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .wa-btn{background:var(--wa);color:#04220f;font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px}
+    .hero{padding:56px 0 26px;max-width:760px}
+    .k{color:var(--teal2);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.7rem);line-height:1.12;margin:12px 0 12px;text-wrap:balance}
+    .sub{font-size:17px;max-width:60ch}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px}
+    .card h2{font-family:var(--ffd);color:var(--ink);font-size:19px;margin:0 0 4px}
+    .card .hint{font-size:13px;color:var(--dim);margin-bottom:18px}
+    .field{margin:0 0 20px}
+    .field label{display:block;color:var(--ink);font-size:14.5px;font-weight:500;margin-bottom:2px}
+    .field .lh{font-size:12.5px;color:var(--dim);margin-bottom:9px}
+    .field .val{float:right;color:var(--teal2);font-family:var(--ffd);font-weight:700}
+    input[type=range]{width:100%;accent-color:var(--teal);height:6px}
+    .num{display:flex;align-items:center;gap:6px;background:#0A0F1A;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-top:8px}
+    .num span{color:var(--dim);font-size:15px}
+    .num input{background:transparent;border:0;color:var(--ink);font-size:16px;font-family:var(--ffd);font-weight:700;width:100%;outline:none}
+    /* resultado */
+    .res{background:linear-gradient(135deg,rgba(247,147,26,.10),rgba(20,184,166,.05));
+      border:1px solid rgba(247,147,26,.28);border-radius:18px;padding:26px;position:sticky;top:78px}
+    .res .lbl{color:var(--warn);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+    .big{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(2.2rem,6vw,3.2rem);line-height:1;margin:8px 0 6px}
+    .res .expl{font-size:14px;color:var(--body);max-width:44ch}
+    .mini{display:flex;gap:18px;margin:16px 0;flex-wrap:wrap}
+    .mini div{font-size:13px;color:var(--dim)} .mini b{display:block;color:var(--ink);font-family:var(--ffd);font-size:19px}
+    .solve{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:14px;padding:16px 18px;font-size:14px;margin:16px 0}
+    .solve b{color:var(--ink)}
+    .btn{display:inline-block;background:var(--wa);color:#04220f;font-weight:700;padding:14px 22px;border-radius:999px;font-size:15px;margin-top:4px}
+    .ghost{display:inline-block;color:var(--teal2);font-weight:600;font-size:14px;margin-top:12px}
+    .foot-note{font-size:12px;color:var(--dim);margin-top:16px;max-width:52ch}
+    section{padding:30px 0}
+    h2.sec{font-family:var(--ffd);color:var(--ink);font-size:22px;margin:0 0 14px}
+    .steps{display:flex;flex-wrap:wrap;gap:10px}
+    .step{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink)}
+    .step .i{font-size:19px} .arrow{color:var(--teal)}
+    footer{border-top:1px solid var(--line);padding:26px 0;font-size:13px;color:var(--dim);margin-top:20px}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px} footer a{color:var(--dim)} footer a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+  <header><div class="wrap nav">
+    <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+    <div class="sp"></div>
+    <a class="ghost" href="../distribuidoras/">Para distribuidoras</a>
+    <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20ver%20el%20Cobrador%20Digital%20con%20mis%20datos." target="_blank" rel="noopener">WhatsApp</a>
+  </div></header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="k">Calculadora gratis · distribuidoras y mayoristas</div>
+      <h1>¿Cuánto capital tienes congelado en cartera vencida?</h1>
+      <p class="sub">La plata que ya vendiste a crédito pero todavía no cobras está trabajando para tus clientes, no para tu flujo. Mete tus números y velo con tu propia realidad — sin registro, sin que nadie te llame.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2>Tus números</h2>
+        <p class="hint">Estimados está bien. Nadie ve estos datos: el cálculo pasa solo en tu navegador.</p>
+
+        <div class="field">
+          <label>Ventas mensuales a crédito <span class="val" id="vVentas">$50,000</span></label>
+          <div class="lh">Cuánto vendes al mes que se paga después (no de contado)</div>
+          <input type="range" id="ventas" min="2000" max="500000" step="1000" value="50000">
+          <div class="num"><span>$</span><input type="number" id="ventasN" value="50000"></div>
+        </div>
+
+        <div class="field">
+          <label>% de esas ventas que se atrasa <span class="val" id="vMora">30%</span></label>
+          <div class="lh">De lo que vendes a crédito, cuánto se paga tarde</div>
+          <input type="range" id="mora" min="5" max="80" step="1" value="30">
+        </div>
+
+        <div class="field">
+          <label>Días promedio de atraso <span class="val" id="vDias">25 días</span></label>
+          <div class="lh">Cuánto tarda de más en pagarte el que se atrasa</div>
+          <input type="range" id="dias" min="5" max="120" step="1" value="25">
+        </div>
+      </div>
+
+      <div class="res">
+        <div class="lbl">Capital tuyo congelado (estimado)</div>
+        <div class="big" id="frozen">$12,500</div>
+        <p class="expl">Es plata que ya vendiste pero está afuera, atrapada en cobranza vencida en un momento dado. No es una pérdida definitiva — es flujo que no tienes disponible.</p>
+        <div class="mini">
+          <div>Al año, rotando<b id="anual">—</b></div>
+          <div>Ventas a crédito/mes<b id="miniVentas">—</b></div>
+        </div>
+        <div class="solve"><b>El Cobrador Digital 24/7</b> le da seguimiento diario a toda tu cartera por WhatsApp — recordatorios cordiales que suben de tono solos, con monto y medios de pago — para que esta cifra no crezca y cobres antes, <b>sin que nadie persiga factura por factura</b>.</div>
+        <a class="btn" id="waCta" href="#" target="_blank" rel="noopener">Pedir mi diagnóstico gratis por WhatsApp →</a>
+        <a class="ghost" href="../#cotizador">o cotizarlo en 60 segundos</a>
+        <p class="foot-note">No prometemos un porcentaje de recuperación: el número de arriba lo calculas tú con tus datos. En el diagnóstico gratis revisamos tu cartera real y te decimos qué se puede automatizar, sin compromiso.</p>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="sec">Cómo funciona el diagnóstico</h2>
+      <div class="steps">
+        <div class="step"><span class="i">💬</span> Escribes por WhatsApp</div>
+        <span class="arrow">→</span>
+        <div class="step"><span class="i">📋</span> Revisamos tu cartera real (20 min)</div>
+        <span class="arrow">→</span>
+        <div class="step"><span class="i">🎬</span> Te mostramos un demo con tus datos</div>
+        <span class="arrow">→</span>
+        <div class="step"><span class="i">✅</span> Decides, sin presión</div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap f">
+    <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+    <a href="../distribuidoras/">Distribuidoras</a>
+    <a href="../precios/">Precios</a>
+    <a href="../seguridad/">Manejo de datos</a>
+    <a href="../legal/privacidad.html">Privacidad</a>
+  </div></footer>
+
+<script>
+  const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+  const $ = id => document.getElementById(id);
+  const ventas = $('ventas'), ventasN = $('ventasN'), mora = $('mora'), dias = $('dias');
+
+  function calc(){
+    const V = +ventas.value, p = +mora.value/100, d = +dias.value;
+    const frozen = V * p * (d/30);        // capital promedio atrapado en mora
+    $('vVentas').textContent = fmt(V);
+    $('vMora').textContent = mora.value + '%';
+    $('vDias').textContent = dias.value + ' días';
+    $('frozen').textContent = fmt(frozen);
+    $('anual').textContent = fmt(V*12*p) + ' vencen/año';
+    $('miniVentas').textContent = fmt(V);
+    // WhatsApp precargado con el número que calculó el dueño (lead tibio y específico)
+    const msg = `Hola, calculé mi cartera vencida en la web: ~${fmt(frozen)} congelados (${mora.value}% de mora, ${dias.value} días de atraso). Quiero ver el Cobrador Digital con mis datos.`;
+    $('waCta').href = 'https://wa.me/50371928070?text=' + encodeURIComponent(msg);
+  }
+  // sincronizar slider <-> input numérico
+  ventas.addEventListener('input', () => { ventasN.value = ventas.value; calc(); });
+  ventasN.addEventListener('input', () => {
+    let v = Math.max(0, +ventasN.value||0);
+    ventas.value = Math.min(+ventas.max, Math.max(+ventas.min, v));
+    calc();
+  });
+  mora.addEventListener('input', calc);
+  dias.addEventListener('input', calc);
+  calc();
+</script>
+</body>
+</html>
