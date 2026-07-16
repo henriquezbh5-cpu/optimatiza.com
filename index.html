@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#FFFFFF">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://chat-ai.henriquezbh5.workers.dev; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Optimatiza — Empleados digitales de IA que atienden, cobran y venden por WhatsApp</title>
-  <meta name="description" content="Agentes de IA para pymes: responden a tus clientes al instante, dan seguimiento a tu cobranza y toman pedidos por WhatsApp, 24/7. Precios publicados desde $600. Demo gratis.">
+  <title>Optimatiza — Empleados digitales de IA que automatizan tu trabajo de oficina de inicio a fin</title>
+  <meta name="description" content="Agentes de IA que ejecutan procesos completos: reciben el correo, capturan los datos, piden aprobación, actualizan tus sistemas y confirman con el cliente. Con Microsoft, Google y WhatsApp. Desde $600.">
   <meta name="author" content="Optimatiza">
   <link rel="canonical" href="https://optimatiza.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -17,7 +17,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Optimatiza — Empleados digitales de IA para tu negocio">
-  <meta property="og:description" content="Atienden, cobran y venden por WhatsApp, 24/7. Precios publicados desde $600. Demo gratis con tus datos.">
+  <meta property="og:description" content="Automatizan el trabajo de rutina de inicio a fin: correo, captura, aprobación, registro y confirmación. Con Microsoft, Google y WhatsApp. Desde $600.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -26,7 +26,7 @@
   <meta property="og:locale" content="es_LA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Optimatiza — Empleados digitales de IA para tu negocio">
-  <meta name="twitter:description" content="Atienden, cobran y venden por WhatsApp, 24/7. Precios publicados desde $600.">
+  <meta name="twitter:description" content="Automatizan el trabajo de rutina de inicio a fin, con Microsoft, Google y WhatsApp. Desde $600.">
   <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
   <script type="application/ld+json">
   {
@@ -95,22 +95,36 @@
     .btn2:hover{border-color:var(--teal);color:var(--teal)}
     .hero-note{font-size:13px;color:var(--dim);margin-top:14px}
     .hero-note b{color:var(--body)}
-    .phone{background:linear-gradient(160deg,#EAF7F4,#F2F7FD);border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:var(--sh2)}
-    .chat{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:420px;margin:0 auto}
-    .chat-h{display:flex;align-items:center;gap:10px;background:var(--teal);color:#fff;padding:12px 16px}
-    .chat-h img{width:34px;height:34px;border-radius:50%;background:#fff;padding:3px}
-    .chat-h b{font-size:14.5px;display:block;line-height:1.2}
-    .chat-h span{font-size:11.5px;opacity:.85}
-    .chat-b{padding:16px 14px;background:#F0F4F8;display:flex;flex-direction:column;gap:9px;min-height:280px}
-    .bub{max-width:82%;padding:9px 13px;border-radius:12px;font-size:13.8px;line-height:1.45;box-shadow:0 1px 1px rgba(11,27,43,.06);opacity:0;transform:translateY(8px);animation:pop .5s ease forwards}
-    .them{background:#fff;color:#1d2b3a;border-top-left-radius:4px;align-self:flex-start}
-    .me{background:#D9FDD3;color:#0b3d1f;border-top-right-radius:4px;align-self:flex-end}
-    .bub .t{display:block;font-size:10.5px;color:#7b8a99;text-align:right;margin-top:3px}
-    .b1{animation-delay:.3s}.b2{animation-delay:1.1s}.b3{animation-delay:2s}.b4{animation-delay:2.9s}.b5{animation-delay:3.8s}
-    @keyframes pop{to{opacity:1;transform:none}}
-    @media(prefers-reduced-motion:reduce){.bub{animation:none;opacity:1;transform:none}}
-    .chat-f{padding:9px 14px;background:#fff;border-top:1px solid var(--line);font-size:12px;color:var(--dim);display:flex;align-items:center;gap:8px}
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);display:inline-block}
+    /* ---------- flujo en vivo (hero) ---------- */
+    .flowin{background:linear-gradient(160deg,#EAF7F4,#F2F7FD);border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--sh2)}
+    .fwin{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .fw-h{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:#FBFDFF}
+    .fw-dots i{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:4px}
+    .fw-title{font-size:12px;font-weight:600;color:var(--body);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .fw-live{font-size:10.5px;color:var(--teal);font-weight:800;display:flex;align-items:center;gap:5px;letter-spacing:.04em}
+    .fw-live i{width:7px;height:7px;border-radius:50%;background:var(--wa);animation:fblink 1.4s infinite}
+    @keyframes fblink{0%,100%{opacity:1}50%{opacity:.25}}
+    .fw-b{padding:13px 15px;display:flex;flex-direction:column}
+    .fnode{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:13px;padding:9px 12px;background:#fff;transition:all .35s;opacity:.5}
+    .fnode .fic{width:38px;height:38px;border-radius:10px;background:var(--alt);display:flex;align-items:center;justify-content:center;flex:none}
+    .fnode .fic svg,.fnode .fic img{width:24px;height:24px}
+    .fnode b{display:block;font-size:13px;color:var(--ink);font-family:var(--ffd);line-height:1.25}
+    .fnode .fst{font-size:11.5px;color:var(--dim);display:block;margin-top:1px}
+    .fnode.run{opacity:1;border-color:var(--teal);box-shadow:0 4px 18px rgba(13,148,136,.18);transform:translateX(3px)}
+    .fnode.run .fst{color:var(--teal);font-weight:600}
+    .fnode.done{opacity:1}
+    .fnode.done .fst{color:#159A4E;font-weight:600}
+    .fline{width:2px;height:16px;margin-left:30px;background:repeating-linear-gradient(180deg,#B9C6D4 0 4px,transparent 4px 9px);position:relative;flex:none}
+    .fline::after{content:"";position:absolute;left:-3px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--teal);opacity:0}
+    .fline.go::after{animation:ftravel .55s linear forwards}
+    @keyframes ftravel{0%{top:-4px;opacity:1}100%{top:14px;opacity:0}}
+    .fapr{display:flex;gap:7px;margin-top:6px}
+    .fbtn{font-size:11px;font-weight:700;border-radius:8px;padding:3px 10px;border:1.5px solid var(--line);color:var(--dim);background:#fff;transition:.25s}
+    .fbtn.ok.hit{background:var(--wa);color:#04220f;border-color:var(--wa);transform:scale(1.06)}
+    .fres{margin-top:11px;background:linear-gradient(135deg,#E9FBF3,#F0FBF9);border:1.5px solid rgba(37,211,102,.45);border-radius:13px;padding:11px 14px;font-size:12.8px;color:var(--ink);opacity:0;transform:translateY(6px);transition:.45s}
+    .fres.on{opacity:1;transform:none}
+    .fw-note{font-size:11.5px;color:var(--dim);padding:10px 14px;border-top:1px solid var(--line);background:#FBFDFF}
+    @media(prefers-reduced-motion:reduce){.fw-live i{animation:none}.fnode.run{transform:none}}
     .band{background:var(--alt);border-block:1px solid var(--line);padding:26px 0}
     .band-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;text-align:center}
     .band b{font-family:var(--ffd);font-size:26px;color:var(--ink);display:block}
@@ -297,28 +311,56 @@
   <div class="wrap hero">
     <div>
       <span class="k">Agentes de IA para pymes · El Salvador y LATAM</span>
-      <h1>Empleados digitales que <span class="hl">atienden, cobran y venden</span> por WhatsApp</h1>
-      <p class="sub">Optimatiza crea agentes de IA que responden a tus clientes al instante, dan seguimiento a tu cobranza y toman pedidos — las 24 horas, todos los días. Tu gente se dedica a vender; el agente hace lo repetitivo.</p>
+      <h1>Empleados digitales que hacen tu trabajo de oficina <span class="hl">de inicio a fin</span></h1>
+      <p class="sub">No solo chatean: reciben el correo, capturan los datos, los procesan, piden tu aprobación, actualizan tus sistemas y confirman con el cliente. Todo el proceso que hoy hace una persona en su rutina — corriendo solo, las 24 horas, con las herramientas que ya usas.</p>
       <div class="cta-row">
         <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20negocio." target="_blank" rel="noopener">Agenda tu diagnóstico gratis →</a>
         <a class="btn2" href="casos/">Ver demos en video</a>
       </div>
       <p class="hero-note"><b>Precios publicados</b> desde $600 · funcionando en semanas · tus datos viven en tus propias cuentas</p>
     </div>
-    <div class="phone" aria-hidden="true">
-      <div class="chat">
-        <div class="chat-h">
-          <img src="img/logo-badge-96.png" alt="">
-          <div><b>Agente de Optimatiza</b><span>en línea · responde en segundos</span></div>
+    <div class="flowin" aria-hidden="true">
+      <div class="fwin">
+        <div class="fw-h">
+          <span class="fw-dots"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></span>
+          <span class="fw-title">Flujo: factura de proveedor → registro y confirmación</span>
+          <span class="fw-live"><i></i>EN VIVO</span>
         </div>
-        <div class="chat-b">
-          <div class="bub them b1">Hola, ¿tienen la bomba de agua de 1HP? ¿A cómo?<span class="t">10:47 PM</span></div>
-          <div class="bub me b2">¡Hola! Sí tenemos: $145 con garantía de 1 año. ¿Se la aparto o prefiere que le cotice la instalación también?<span class="t">10:47 PM</span></div>
-          <div class="bub them b3">Apártemela. ¿Puedo pasar mañana?<span class="t">10:48 PM</span></div>
-          <div class="bub me b4">Listo, apartada a su nombre ✅ Mañana de 8am a 5pm en sucursal centro. Le acabo de enviar la orden por aquí.<span class="t">10:48 PM</span></div>
-          <div class="bub them b5">Excelente servicio, ¡gracias!<span class="t">10:49 PM</span></div>
+        <div class="fw-b">
+          <div class="fnode" data-run="leyendo el adjunto factura-2231.pdf…" data-done="✓ factura del proveedor recibida">
+            <span class="fic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="4" fill="#0F6CBD"/><circle cx="10" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2.2"/><path fill="#28A8EA" d="M16.5 8h5.5v8h-5.5z" opacity=".85"/></svg></span>
+            <div><b>Llega un correo — Outlook</b><span class="fst">en espera</span></div>
+          </div>
+          <div class="fline"></div>
+          <div class="fnode" data-run="extrayendo monto, NIT y vencimiento…" data-done="✓ $1,240.50 · NIT 0614-… · vence 15/08">
+            <span class="fic"><img src="img/logo-badge-96.png" alt=""></span>
+            <div><b>El agente de IA captura los datos</b><span class="fst">en espera</span></div>
+          </div>
+          <div class="fline"></div>
+          <div class="fnode" data-run="comparando contra la orden OC-2231…" data-done="✓ montos coinciden · sin duplicados">
+            <span class="fic"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#107C41"/><path d="M8 8l8 8M16 8l-8 8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+            <div><b>Valida contra tu orden de compra — Excel</b><span class="fst">en espera</span></div>
+          </div>
+          <div class="fline"></div>
+          <div class="fnode" data-approve="1" data-run="esperando aprobación…" data-done="✓ aprobada por Gerencia">
+            <span class="fic"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#6264A7"/><path d="M6.5 8.5h8M10.5 8.5v8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="17.6" cy="8.3" r="2" fill="#fff" opacity=".9"/></svg></span>
+            <div><b>Pide aprobación a tu equipo — Teams</b><span class="fst">en espera</span>
+              <span class="fapr"><span class="fbtn ok" id="faprOk">✓ Aprobar</span><span class="fbtn">✕ Rechazar</span></span>
+            </div>
+          </div>
+          <div class="fline"></div>
+          <div class="fnode" data-run="guardando el registro…" data-done="✓ registro #1042 creado">
+            <span class="fic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3" fill="#42566B"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13" fill="#5B7086"/><ellipse cx="12" cy="12" rx="8" ry="3" fill="#42566B" opacity=".55"/></svg></span>
+            <div><b>Registra en tu sistema — SQL / Sheets</b><span class="fst">en espera</span></div>
+          </div>
+          <div class="fline"></div>
+          <div class="fnode" data-run="enviando confirmación al proveedor…" data-done="✓ “Recibida, pago programado 15/08” ✓✓">
+            <span class="fic"><svg viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M9.4 7.4c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3-.3-.2-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.7-1.2-1.5-1.4-1.7-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.1-.5-.1-.2-.6-1.5-.9-2z"/></svg></span>
+            <div><b>Confirma al proveedor — WhatsApp / Gmail</b><span class="fst">en espera</span></div>
+          </div>
+          <div class="fres" id="fres">✅ <b>Proceso completado de inicio a fin.</b> Nadie digitó nada — tu equipo solo tocó “Aprobar”.</div>
         </div>
-        <div class="chat-f"><span class="dot"></span> El dueño dormía. La venta se hizo igual.</div>
+        <div class="fw-note">Construido con Power Automate, n8n o código a medida — con los conectores de Microsoft y Google que ya usas.</div>
       </div>
     </div>
   </div>
@@ -417,6 +459,10 @@
       <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0D9488"/></svg>Chat de tu web</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#107C41"/></svg>Excel / Google Sheets</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#42566B"/></svg>Tu sistema (ERP / CRM)</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="4" fill="#0F6CBD"/><circle cx="11" cy="12" r="4.4" fill="none" stroke="#fff" stroke-width="2.2"/></svg>Outlook</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#6264A7"/><path d="M6.5 8.5h8M10.5 8.5v8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>Microsoft Teams</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><path fill="#FFC107" d="M8.7 3h6.6l7 12.2H15.7z"/><path fill="#2196F3" d="M22.3 15.2 19 21H5.6l3.3-5.8z"/><path fill="#4CAF50" d="M8.7 3 1.7 15.2 5 21l7-12.2z"/></svg>Google Drive</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="5.5" width="20" height="13" rx="4" fill="#FF0000"/><path fill="#fff" d="M10 9.2v5.6l5-2.8z"/></svg>YouTube</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp Business</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#E1306C"/></svg>Instagram</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0084FF"/></svg>Messenger</span>
@@ -425,6 +471,10 @@
       <span class="mqc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#0D9488"/></svg>Chat de tu web</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#107C41"/></svg>Excel / Google Sheets</span>
       <span class="mqc"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#42566B"/></svg>Tu sistema (ERP / CRM)</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="4" fill="#0F6CBD"/><circle cx="11" cy="12" r="4.4" fill="none" stroke="#fff" stroke-width="2.2"/></svg>Outlook</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#6264A7"/><path d="M6.5 8.5h8M10.5 8.5v8" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>Microsoft Teams</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><path fill="#FFC107" d="M8.7 3h6.6l7 12.2H15.7z"/><path fill="#2196F3" d="M22.3 15.2 19 21H5.6l3.3-5.8z"/><path fill="#4CAF50" d="M8.7 3 1.7 15.2 5 21l7-12.2z"/></svg>Google Drive</span>
+      <span class="mqc"><svg viewBox="0 0 24 24"><rect x="2" y="5.5" width="20" height="13" rx="4" fill="#FF0000"/><path fill="#fff" d="M10 9.2v5.6l5-2.8z"/></svg>YouTube</span>
     </div></div>
   </div></section>
 
