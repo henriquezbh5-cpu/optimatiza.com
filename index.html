@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FFFFFF">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://chat-ai.henriquezbh5.workers.dev https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://chat-ai.henriquezbh5.workers.dev https://quote-ai.henriquezbh5.workers.dev https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Optimatiza — Empleados digitales de IA que automatizan tu trabajo de oficina de inicio a fin</title>
   <meta name="description" content="Agentes de IA que ejecutan procesos completos: reciben el correo, capturan los datos, piden aprobación, actualizan tus sistemas y confirman con el cliente. Con Microsoft, Google y WhatsApp. Desde $600.">
@@ -222,11 +222,31 @@
     .pick input{margin-top:4px;accent-color:var(--teal);width:17px;height:17px}
     .pick b{color:var(--ink);font-size:14.5px;display:block}
     .pick span{font-size:13px;color:var(--dim)}
+    .pg{font-family:var(--ffd);font-weight:700;font-size:13.5px;color:var(--ink);margin:16px 0 10px;letter-spacing:.01em}
+    .pick .pg:first-child{margin-top:0}
+    .pg.btcg{color:#B45309}
+    .btcopt{border-color:#F3D9AE !important;background:#FFFBF3}
+    .btcopt.on{border-color:var(--warn) !important;background:#FFF3E0 !important}
+    .btclink{color:var(--warn);font-weight:700}
+    .ai-box{background:var(--panel);border:1.5px dashed var(--teal2);border-radius:16px;padding:20px 22px;margin-top:16px;box-shadow:var(--sh)}
+    .ai-box textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:var(--ff);color:var(--ink);resize:vertical;outline:none;background:#fff}
+    .ai-box textarea:focus{border-color:var(--teal)}
+    .ai-btn{margin-top:10px;cursor:pointer;font-family:var(--ff)}
+    .ai-res{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+    .ai-tag{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:12.5px;font-weight:700;padding:4px 12px;border-radius:999px}
+    .ai-rng{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.4rem,3.4vw,1.9rem);margin:8px 0 4px}
+    .ai-why{font-size:13.5px;color:var(--body)}
     .est{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--sh);position:sticky;top:84px}
     .est .lbl{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
     .est .rng{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.6rem,4vw,2.2rem);margin:6px 0 2px}
     .est .op{font-size:13.5px;color:var(--body);margin-bottom:14px}
     .est .note{font-size:12.5px;color:var(--dim);margin-top:14px;line-height:1.5}
+    .btc-band{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,#FFF7EC,#FFF3E0);border:1.5px solid #F3D9AE;border-radius:20px;padding:30px 32px}
+    .btc-band h2{font-size:clamp(1.3rem,2.8vw,1.7rem)}
+    .btc-band p{font-size:14.5px;max-width:64ch}
+    .btc-band b{color:var(--ink)}
+    .btc-k{display:inline-block;background:#B45309;color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.05em;padding:4px 12px;border-radius:20px}
+    .btc-cta{background:var(--warn);color:#3d2200;font-weight:700;padding:13px 22px;border-radius:999px;font-size:14.5px;white-space:nowrap;box-shadow:var(--sh)}
     .fund{display:flex;gap:24px;align-items:center;background:var(--alt);border:1px solid var(--line);border-radius:18px;padding:28px;flex-wrap:wrap}
     .fund img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:var(--sh)}
     .fund b{font-family:var(--ffd);color:var(--ink);font-size:17px;display:block}
@@ -499,18 +519,18 @@
 
   <!-- AGENTES -->
   <section id="agentes" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
-    <span class="sec-k">El equipo digital</span>
-    <h2>Elige tu primer empleado digital</h2>
-    <p class="sec-sub">Cada agente resuelve un proceso completo. Empiezas por uno — el que más te duele — y creces desde ahí.</p>
+    <span class="sec-k">Flujos y agentes</span>
+    <h2>Elige tu primer flujo automático</h2>
+    <p class="sec-sub">Construimos sobre <b>Power Automate, n8n o código a medida</b> — lo que tu caso necesite. Cada solución resuelve un proceso completo: empiezas por el que más te duele y creces desde ahí.</p>
     <div class="ags">
-      <div class="ag"><div class="ag-top"><span class="ag-ic">💬</span><h3>Atención y Ventas 24/7</h3></div><p>Responde WhatsApp, redes y web al instante: precios, disponibilidad, apartados. Pasa a tu equipo solo los casos que necesitan criterio.</p><div class="ag-tier"><span>unidad simple</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">💵</span><h3>Cobrador Digital 24/7</h3></div><p>Revisa tus facturas por vencer y vencidas, manda recordatorios cordiales que suben de tono cuando toca y escala la mora fuerte a tu equipo.</p><div class="ag-tier"><span>unidad estándar</span><b>$1,200–3,000</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">📦</span><h3>Toma-Pedidos por WhatsApp</h3></div><p>Convierte el chat o audio del cliente en una orden limpia y estructurada en tu sistema. Cero pedidos perdidos, cero errores de tipeo.</p><div class="ag-tier"><span>unidad estándar</span><b>$1,200–3,000</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">📅</span><h3>Agenda Inteligente</h3></div><p>Reserva citas, confirma, recuerda y llena los huecos con lista de espera. Menos sillas vacías por clientes que no llegan.</p><div class="ag-tier"><span>unidad simple</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">🧾</span><h3>Capturista de Facturas</h3></div><p>Foto de la factura por WhatsApp → registro ordenado en tu Excel o sistema, en ~4 segundos. Se acabó el digitado manual.</p><div class="ag-tier"><span>unidad simple</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">🏗️</span><h3>Célula a tu medida</h3></div><p>¿Tu proceso no está aquí? Diseñamos el agente (o el equipo de agentes) sobre tu operación real. Primero el diagnóstico, después el precio.</p><div class="ag-tier"><span>célula multi-agente</span><b>$3,000–8,000</b></div></div>
+      <div class="ag"><div class="ag-top"><span class="ag-ic">🧾</span><h3>Capturista de Facturas</h3></div><p>Foto de la factura por WhatsApp → registro ordenado en tu Excel o sistema, en ~4 segundos. Se acabó el digitado manual.</p><div class="ag-tier"><span>Flujo · Power Automate/n8n</span><b>$600–1,200</b></div></div>
+      <div class="ag"><div class="ag-top"><span class="ag-ic">💵</span><h3>Cobranza automática</h3></div><p>Revisa tus facturas por vencer y vencidas, manda recordatorios cordiales que suben de tono cuando toca y escala la mora fuerte a tu equipo.</p><div class="ag-tier"><span>Flujo · Power Automate/n8n</span><b>$1,200–3,000</b></div></div>
+      <div class="ag"><div class="ag-top"><span class="ag-ic">📦</span><h3>Flujo de Pedidos</h3></div><p>Convierte el chat o audio del cliente en una orden limpia y estructurada en tu sistema. Cero pedidos perdidos, cero errores de tipeo.</p><div class="ag-tier"><span>Flujo · Power Automate/n8n</span><b>$1,200–3,000</b></div></div>
+      <div class="ag"><div class="ag-top"><span class="ag-ic">💬</span><h3>Atención y Ventas 24/7</h3></div><p>Responde WhatsApp, redes y web al instante: precios, disponibilidad, apartados. Pasa a tu equipo solo los casos que necesitan criterio.</p><div class="ag-tier"><span>Agente de IA</span><b>$600–1,200</b></div></div>
+      <div class="ag"><div class="ag-top"><span class="ag-ic">📅</span><h3>Agenda Inteligente</h3></div><p>Reserva citas, confirma, recuerda y llena los huecos con lista de espera. Menos sillas vacías por clientes que no llegan.</p><div class="ag-tier"><span>Agente de IA</span><b>$600–1,200</b></div></div>
+      <div class="ag"><div class="ag-top"><span class="ag-ic">🏗️</span><h3>Desarrollo a tu medida</h3></div><p>¿Tu proceso no está aquí? Diseñamos el flujo, el agente o el desarrollo completo sobre tu operación real. Primero el diagnóstico, después el precio.</p><div class="ag-tier"><span>Célula / desarrollo</span><b>$3,000–8,000</b></div></div>
     </div>
-    <a class="more" href="agentes/">Ver el catálogo completo de 20 agentes →</a>
+    <a class="more" href="agentes/">Ver el catálogo completo de 20 soluciones →</a>
   </div></section>
 
   <!-- COMO FUNCIONA -->
@@ -568,23 +588,43 @@
   <!-- COTIZADOR -->
   <section id="cotizador" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
     <span class="sec-k">Cotizador</span>
-    <h2>Arma tu equipo y ve el rango de inversión al instante</h2>
-    <p class="sec-sub">Marca lo que necesitas. El precio exacto sale del diagnóstico gratis — esto te da el rango publicado, sin comprometerte a nada.</p>
+    <h2>Arma tu solución y ve el rango de inversión al instante</h2>
+    <p class="sec-sub">Marca lo que necesitas — o descríbelo con tus palabras y deja que la IA lo estime. El precio exacto sale del diagnóstico gratis; esto te da el rango publicado, sin comprometerte a nada.</p>
     <div class="cotz">
+      <div>
       <div class="pick" id="pick">
+        <div class="pg">⚡ Flujos automáticos · Power Automate y n8n</div>
+        <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Flujo de facturas y DTE"><div><b>🧾 Flujo de facturas y DTE</b><span>Llega el correo → captura los datos → registro en tu sistema, sin digitar</span></div></label>
+        <label><input type="checkbox" data-lo="1200" data-hi="3000" data-n="Cobranza automática"><div><b>💵 Cobranza automática</b><span>Recordatorios por WhatsApp que suben de tono solos, sobre toda tu cartera</span></div></label>
+        <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Flujo de aprobaciones"><div><b>✅ Flujo de aprobaciones</b><span>Solicitud → aprobador (Teams/correo) → registro y aviso automático</span></div></label>
+        <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Reportes automáticos"><div><b>📊 Reportes automáticos</b><span>Tus datos → reporte o dashboard listo cada mañana en tu correo</span></div></label>
+        <label><input type="checkbox" data-lo="1200" data-hi="3000" data-n="Flujo de pedidos"><div><b>📦 Flujo de pedidos</b><span>Del WhatsApp o correo del cliente a una orden limpia en tu sistema</span></div></label>
+        <div class="pg">🤖 Agentes de IA</div>
         <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Atención y Ventas 24/7"><div><b>💬 Atención y Ventas 24/7</b><span>Responde, cotiza y aparta por WhatsApp — día y noche</span></div></label>
-        <label><input type="checkbox" data-lo="1200" data-hi="3000" data-n="Cobrador Digital 24/7"><div><b>💵 Cobrador Digital 24/7</b><span>Seguimiento diario a toda tu cartera</span></div></label>
-        <label><input type="checkbox" data-lo="1200" data-hi="3000" data-n="Toma-Pedidos por WhatsApp"><div><b>📦 Toma-Pedidos por WhatsApp</b><span>Del chat o audio a una orden limpia en tu sistema</span></div></label>
         <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Agenda Inteligente"><div><b>📅 Agenda Inteligente</b><span>Citas, confirmaciones y recordatorios automáticos</span></div></label>
-        <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Capturista de Facturas"><div><b>🧾 Capturista de Facturas</b><span>Foto de factura → registro ordenado en segundos</span></div></label>
-        <label><input type="checkbox" data-lo="3000" data-hi="8000" data-n="Célula a la medida"><div><b>🏗️ Célula a la medida</b><span>Varios agentes orquestados sobre tu operación</span></div></label>
+        <div class="pg">🧩 Desarrollos</div>
+        <label><input type="checkbox" data-lo="3000" data-hi="8000" data-n="Desarrollo a la medida"><div><b>🏗️ Desarrollo a la medida</b><span>Web, app o integración construida sobre tu operación (célula completa)</span></div></label>
+        <div class="pg btcg">₿ Bitcoin · línea aparte</div>
+        <label class="btcopt"><input type="checkbox" data-lo="200" data-hi="200" data-n="Inmersión a Bitcoin (3h)"><div><b>₿ Inmersión a Bitcoin</b><span>Sesión 1:1 de 3 horas: método, seguridad y plan por escrito — <a href="bitcoin/" class="btclink">ver línea completa →</a></span></div></label>
+      </div>
+      <div class="ai-box">
+        <div class="pg" style="margin-top:0">✨ ¿No ves tu caso? Descríbelo y simula el precio</div>
+        <textarea id="aiDesc" rows="3" maxlength="900" placeholder="Ej.: cada vez que un cliente paga, quiero que el comprobante se registre en Excel, se avise al vendedor por WhatsApp y se emita el recibo…"></textarea>
+        <button type="button" class="btn2 ai-btn" id="aiGo">Simular precio estimado</button>
+        <div class="ai-res" id="aiRes" hidden>
+          <div class="ai-tag" id="aiTipo"></div>
+          <div class="ai-rng" id="aiRng"></div>
+          <p class="ai-why" id="aiWhy"></p>
+          <p class="note">Estimación orientativa según nuestras bandas publicadas. El número exacto sale del diagnóstico gratis.</p>
+        </div>
+      </div>
       </div>
       <div class="est">
         <div class="lbl">Inversión estimada (una vez)</div>
-        <div class="rng" id="rng">Selecciona un agente</div>
+        <div class="rng" id="rng">Selecciona una opción</div>
         <div class="op">+ operación opcional desde $149/mes tras los 30 días de soporte incluidos</div>
-        <a class="btn" id="cotWa" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20cotizar%20un%20agente%20para%20mi%20negocio." target="_blank" rel="noopener" style="display:block;text-align:center">Pedir cotización exacta por WhatsApp →</a>
-        <p class="note">Rangos publicados en <a href="precios/" style="color:var(--teal);font-weight:600">optimatiza.com/precios</a>. Incluyen diseño, construcción, pruebas, entrega documentada y 30 días de soporte. Pagos por hitos 40/30/30.</p>
+        <a class="btn" id="cotWa" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20cotizar%20una%20automatizaci%C3%B3n%20para%20mi%20negocio." target="_blank" rel="noopener" style="display:block;text-align:center">Pedir cotización exacta por WhatsApp →</a>
+        <p class="note">Rangos publicados en <a href="precios/" style="color:var(--teal);font-weight:600">optimatiza.com/precios</a>, con <b>garantía de arranque de 30 días</b>. Incluyen diseño, construcción, pruebas, entrega documentada y 30 días de soporte. Pagos por hitos 40/30/30.</p>
       </div>
     </div>
   </div></section>
@@ -630,6 +670,18 @@
       </div>
       <p class="cf-note" id="cfNote">Solo usamos estos datos para responderte. Nada de listas de spam.</p>
     </form>
+  </div></section>
+
+  <!-- BITCOIN -->
+  <section id="bitcoin"><div class="wrap">
+    <div class="btc-band">
+      <div>
+        <span class="btc-k">₿ LÍNEA BITCOIN · APARTE DE AUTOMATIZACIÓN</span>
+        <h2 style="margin-top:8px">¿También operas o te interesa Bitcoin?</h2>
+        <p>Inmersión 1:1, acompañamiento mensual y gestión bajo mandato — con método por escrito, indicadores propios desde 2017 y una regla de la casa: <b>no compramos caro</b>. Sin custodia de tus fondos y sin promesas de rendimiento.</p>
+      </div>
+      <a class="btc-cta" href="bitcoin/">Conocer la línea Bitcoin →</a>
+    </div>
   </div></section>
 
   <!-- FAQ -->
