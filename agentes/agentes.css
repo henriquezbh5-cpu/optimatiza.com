@@ -8,16 +8,16 @@
    0. ACTOR PALETTE — scoped tokens (spec §7)
    ------------------------------------------------------------ */
 .ag-floor, .ag-stage {
-  --ag-trigger:  #ECA24D;                    /* drafting brass    */
-  --ag-agent:    #7FB4E0;                    /* brand steel       */
-  --ag-llm:      #7FB4E0;                    /* llm ≡ agent       */
-  --ag-tool:     #2DD4BF;                    /* telemetry teal    */
+  --ag-trigger:  #C2410C;                    /* drafting brass — deep orange on paper */
+  --ag-agent:    #2563EB;                    /* brand steel       */
+  --ag-llm:      #2563EB;                    /* llm ≡ agent       */
+  --ag-tool:     #0D9488;                    /* telemetry teal    */
   --ag-tool-mark:#14B8A6;
-  --ag-system:   rgba(242,239,231,0.62);     /* band-muted        */
-  --ag-decision: #F2D479;                    /* blueprint marker  */
-  --ag-human:    #34D399;                    /* ok, lightened     */
+  --ag-system:   #6B7E93;                    /* band-muted        */
+  --ag-decision: #B45309;                    /* blueprint marker — amber on paper */
+  --ag-human:    #159A4E;                    /* ok, darkened      */
   --ag-human-mark:#10B981;
-  --ag-result:   #F2EFE7;                    /* printed chit      */
+  --ag-result:   #0B1B2B;                    /* printed chit — ink */
 }
 
 /* actor → --actor indirection (nodes, legend chips, log tags) */
@@ -197,8 +197,9 @@ html.js-anim .ag-grid .rv:nth-child(3) { transition-delay: 140ms; }
   display: flex; flex-direction: column; gap: var(--sp-2);
   min-height: 320px;
   padding: var(--sp-3);
-  background: rgba(242,239,231,0.02);
+  background: var(--paper-0);
   border: 1px solid var(--band-line);
+  box-shadow: 0 1px 2px rgba(11,27,43,.04);
   transition: border-color var(--dur-micro) ease;
 }
 .ag-card:hover, .ag-card:focus-within { border-color: var(--band-accent); }
@@ -335,7 +336,7 @@ html.js-anim .ag-grid .rv:nth-child(3) { transition-delay: 140ms; }
 .ag-form input, .ag-form textarea {
   width: 100%; padding: var(--sp-1) var(--sp-2);
   font-size: var(--t-2); color: var(--band-text);
-  background: rgba(242,239,231,0.04);
+  background: var(--paper-0);
   border: 1px solid var(--band-line); border-radius: var(--r-s);
   transition: border-color var(--dur-micro) ease;
 }
@@ -378,12 +379,13 @@ html.js-anim .ag-grid .rv:nth-child(3) { transition-delay: 140ms; }
   max-width: none; max-height: none;
   padding: 0; overflow: hidden;
   display: grid; grid-template-rows: 56px 1fr auto;
-  background: var(--band); color: var(--band-text);
+  background: var(--paper-0); color: var(--band-text);
   border: 1px solid var(--band-line); border-radius: var(--r-0);
+  box-shadow: 0 8px 24px rgba(11,27,43,.12);
   --line: var(--band-line);
 }
 .ag-stage:not([open]) { display: none; }
-.ag-stage::backdrop { background: rgba(7,19,32,0.62); }
+.ag-stage::backdrop { background: rgba(11,27,43,0.45); }
 html.js-anim .ag-stage[open] { animation: stageIn .24s var(--ease-text); }
 html.js-anim .ag-stage[open]::backdrop { animation: backdropIn .2s ease; }
 @keyframes stageIn { from { opacity: 0; translate: 0 12px; } }
@@ -391,11 +393,11 @@ html.js-anim .ag-stage[open]::backdrop { animation: backdropIn .2s ease; }
 /* double top rule */
 .ag-stage::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: rgba(242,239,231,0.5); z-index: 5;
+  background: rgba(11,27,43,0.28); z-index: 5;
 }
 .ag-stage::after {
   content: ''; position: absolute; top: 4px; left: 0; right: 0; height: 1px;
-  background: rgba(242,239,231,0.35); z-index: 5;
+  background: #E3EAF2; z-index: 5;
 }
 .ag-stage :focus-visible { outline: 2px solid var(--band-accent); outline-offset: 2px; }
 
@@ -403,6 +405,7 @@ html.js-anim .ag-stage[open]::backdrop { animation: backdropIn .2s ease; }
 .stage-head {
   display: flex; align-items: center; gap: var(--sp-2);
   padding: 0 var(--sp-3); position: relative;
+  background: #FBFDFF;
   border-bottom: 1px solid var(--band-line);
 }
 html.js-anim .ag-stage[open] .stage-head::after {
@@ -555,7 +558,7 @@ html.js-anim .ag-stage[open] .stage-head::after {
   /* 9 nodes overflow at common widths: scroll horizontally, active node auto-centers via JS */
   overflow-x: auto; overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: rgba(242,239,231,0.25) transparent;
+  scrollbar-color: rgba(11,27,43,0.25) transparent;
   /* edge fades advertise off-screen steps; JS toggles data-at-start/data-at-end */
   --fade-l: 0px; --fade-r: 28px;
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent 100%);
@@ -565,7 +568,7 @@ html.js-anim .ag-stage[open] .stage-head::after {
 .stage-flow[data-at-start="true"]  { --fade-l: 0px; }
 .stage-flow[data-at-end="true"]    { --fade-r: 0px; }
 .stage-flow::-webkit-scrollbar { height: 6px; }
-.stage-flow::-webkit-scrollbar-thumb { background: rgba(242,239,231,0.2); border-radius: 3px; }
+.stage-flow::-webkit-scrollbar-thumb { background: rgba(11,27,43,0.2); border-radius: 3px; }
 .stage-flow::-webkit-scrollbar-track { background: transparent; }
 .fl-node {
   position: relative;
@@ -653,7 +656,7 @@ html.js-anim .ag-stage[open] .stage-head::after {
   position: relative;
   display: flex; flex-direction: column;
   min-height: 0; min-width: 0;
-  background: #0B2036;
+  background: var(--paper-0);
 }
 .term-head {
   display: flex; align-items: center; gap: var(--sp-1);
@@ -661,6 +664,7 @@ html.js-anim .ag-stage[open] .stage-head::after {
   font-size: var(--t-0); font-weight: 500; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--band-muted);
   padding: var(--sp-1) var(--sp-2);
+  background: #FBFDFF;
   border-bottom: 1px solid var(--band-line);
   white-space: nowrap; overflow: hidden;
 }
@@ -679,10 +683,10 @@ html.js-anim .ag-stage[open] .stage-head::after {
   font-variant-numeric: tabular-nums;
   color: var(--band-text);
   padding: var(--sp-2);
-  scrollbar-width: thin; scrollbar-color: rgba(242,239,231,0.25) transparent;
+  scrollbar-width: thin; scrollbar-color: rgba(11,27,43,0.25) transparent;
 }
 .term-log::-webkit-scrollbar { width: 6px; }
-.term-log::-webkit-scrollbar-thumb { background: rgba(242,239,231,0.25); }
+.term-log::-webkit-scrollbar-thumb { background: rgba(11,27,43,0.25); }
 .term-log:focus-visible { outline-offset: -2px; }
 
 /* log line anatomy: [ts] icon ACTOR › text */
@@ -756,7 +760,7 @@ html.js-anim .ag-stage[open] .stage-head::after {
 .stage-progress { flex: 1; min-width: 160px; display: flex; align-items: center; gap: var(--sp-2); }
 .prog-rail {
   position: relative; flex: 1; height: 6px;
-  background: rgba(242,239,231,0.08);
+  background: rgba(11,27,43,0.06);
   border: 1px solid var(--band-line);
 }
 .prog-fill {
@@ -976,12 +980,12 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
 #flota .ag-card.octa{
   position:relative; display:flex; flex-direction:column; gap:0;
   padding:24px 24px 22px; overflow:hidden;
-  color:#9BABBF; font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  background:radial-gradient(130% 90% at 0% 0%, rgba(45,212,191,.07), transparent 58%), #101828;
-  border:1px solid rgba(148,163,184,.16); border-radius:16px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 24px 48px -30px rgba(2,8,20,.8);
+  color:#42566B; font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:radial-gradient(130% 90% at 0% 0%, rgba(13,148,136,.06), transparent 58%), #FFFFFF;
+  border:1px solid #E3EAF2; border-radius:16px;
+  box-shadow:0 1px 2px rgba(11,27,43,.04), 0 8px 24px rgba(11,27,43,.06);
 }
-#flota .ag-card.octa:hover{ border-color:rgba(45,212,191,.45); }
+#flota .ag-card.octa:hover{ border-color:rgba(13,148,136,.45); }
 #flota .ag-card.octa .ag-card-head,
 #flota .ag-card.octa .ag-unit,
 #flota .ag-card.octa .ag-cat-tag,
@@ -994,7 +998,7 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
 #flota .ag-card.octa .ag-pain{
   display:block; position:static; order:-1; margin:0 0 14px; padding:0;
   font-family:'Inter',system-ui,sans-serif !important; font-size:12.5px; font-weight:600;
-  letter-spacing:0; text-transform:none; color:#2DD4BF; background:none; border:0;
+  letter-spacing:0; text-transform:none; color:#0D9488; background:none; border:0;
 }
 
 /* identidad — avatar + nombre + puesto + "En turno" */
@@ -1002,35 +1006,35 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
 #flota .ag-card.octa .ag-ico{
   flex:0 0 auto; width:44px; height:44px; border-radius:12px;
   display:flex; align-items:center; justify-content:center;
-  background:radial-gradient(120% 120% at 30% 25%, rgba(45,212,191,.28), rgba(45,212,191,.06));
-  border:1px solid rgba(45,212,191,.35); box-shadow:0 0 24px -6px rgba(45,212,191,.45);
+  background:radial-gradient(120% 120% at 30% 25%, rgba(13,148,136,.16), rgba(13,148,136,.04));
+  border:1px solid rgba(13,148,136,.35); box-shadow:0 0 24px -6px rgba(13,148,136,.25);
 }
-#flota .ag-card.octa .ag-ico i{ font-size:23px; color:#5EEAD4; line-height:1; }
+#flota .ag-card.octa .ag-ico i{ font-size:23px; color:#0D9488; line-height:1; }
 #flota .ag-card.octa .ag-id-text{ display:flex; flex-direction:column; gap:1px; min-width:0; }
 #flota .ag-card.octa .ag-name{
   margin:0; font-family:'Space Grotesk','Inter',sans-serif; font-weight:700;
-  font-size:16px; letter-spacing:-.01em; color:#EDF3FA;
+  font-size:16px; letter-spacing:-.01em; color:#0B1B2B;
 }
-#flota .ag-card.octa .ag-alias{ margin:0; font-size:12.5px; color:#75859B; line-height:1.35; }
+#flota .ag-card.octa .ag-alias{ margin:0; font-size:12.5px; color:#6B7E93; line-height:1.35; }
 #flota .ag-card.octa .ag-turno{
   margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center; gap:7px;
-  padding:5px 11px; border-radius:999px; font-size:11.5px; font-weight:600; color:#34D399;
-  background:rgba(52,211,153,.10); border:1px solid rgba(52,211,153,.24); white-space:nowrap;
+  padding:5px 11px; border-radius:999px; font-size:11.5px; font-weight:600; color:#159A4E;
+  background:rgba(21,154,78,.10); border:1px solid rgba(21,154,78,.24); white-space:nowrap;
 }
 #flota .ag-card.octa .ag-turno .ag-live-dot{
-  width:7px; height:7px; border-radius:50%; background:#34D399; display:inline-block;
+  width:7px; height:7px; border-radius:50%; background:#159A4E; display:inline-block;
   animation:octaPulse 2.6s ease-out infinite;
 }
 @keyframes octaPulse{
-  0%{box-shadow:0 0 0 0 rgba(52,211,153,.45)}
-  70%{box-shadow:0 0 0 6px rgba(52,211,153,0)}
-  100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}
+  0%{box-shadow:0 0 0 0 rgba(21,154,78,.35)}
+  70%{box-shadow:0 0 0 6px rgba(21,154,78,0)}
+  100%{box-shadow:0 0 0 0 rgba(21,154,78,0)}
 }
 
 /* burbuja — qué hace, en voz humana (tagline) */
 #flota .ag-card.octa .ag-resumen{
-  margin:0 0 16px; padding:13px 15px; font-size:14px; line-height:1.5; color:#C4D1E0;
-  background:rgba(255,255,255,.03); border:1px solid rgba(148,163,184,.14); border-radius:12px;
+  margin:0 0 16px; padding:13px 15px; font-size:14px; line-height:1.5; color:#42566B;
+  background:#FBFDFF; border:1px solid #E3EAF2; border-radius:12px;
   display:block; -webkit-line-clamp:unset; -webkit-box-orient:unset;
   max-height:none; overflow:visible; white-space:normal;
 }
@@ -1038,41 +1042,41 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
 /* prueba — badge verde con check (metricaDestacada) */
 #flota .ag-card.octa .ag-slab.octa-proof{
   display:flex; align-items:center; gap:12px; margin:0 0 15px; padding:12px 14px;
-  border-radius:12px; background:rgba(52,211,153,.06); border:1px solid rgba(52,211,153,.20);
+  border-radius:12px; background:rgba(21,154,78,.06); border:1px solid rgba(21,154,78,.22);
 }
 #flota .ag-card.octa .octa-check{
   flex:0 0 auto; width:24px; height:24px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
-  font-size:13px; color:#34D399; background:rgba(52,211,153,.14);
+  font-size:13px; color:#159A4E; background:rgba(21,154,78,.14);
 }
 #flota .ag-card.octa .slab-after{
-  font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.4; color:#EDF3FA;
+  font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.4; color:#0B1B2B;
   letter-spacing:0; text-transform:none;
 }
 
 /* integraciones — susurro */
 #flota .ag-card.octa .ag-stack.octa-integr{
   margin:0 0 16px; font-family:'Inter',sans-serif !important; font-size:12px; line-height:1.5;
-  color:#75859B; letter-spacing:0; text-transform:none;
+  color:#6B7E93; letter-spacing:0; text-transform:none;
   display:block; white-space:normal; overflow:visible; text-overflow:clip;
   -webkit-line-clamp:unset; -webkit-box-orient:unset; max-height:none;
 }
-#flota .ag-card.octa .ag-stack.octa-integr::before{ content:"Se conecta con "; color:#5c6a7e; }
+#flota .ag-card.octa .ag-stack.octa-integr::before{ content:"Se conecta con "; color:#6B7E93; }
 
 /* precio + cotizar (sobre el overlay, clickeable) */
 #flota .ag-card.octa .ag-card-commerce{
   position:relative; z-index:3; display:flex; align-items:baseline; justify-content:space-between;
-  gap:12px; margin:0 0 14px; padding-top:14px; border-top:1px solid rgba(148,163,184,.12);
+  gap:12px; margin:0 0 14px; padding-top:14px; border-top:1px solid #E3EAF2;
   font-family:'Inter',sans-serif;
 }
 #flota .ag-card.octa .ag-price{
-  font-size:15px; color:#EDF3FA; font-weight:600; letter-spacing:0; text-transform:none;
+  font-size:15px; color:#0B1B2B; font-weight:600; letter-spacing:0; text-transform:none;
   font-variant-numeric:tabular-nums;
 }
 #flota .ag-card.octa .ag-cta-quote{
-  font-size:13px; color:#2DD4BF; font-weight:600; text-decoration:none; letter-spacing:0; text-transform:none;
+  font-size:13px; color:#0D9488; font-weight:600; text-decoration:none; letter-spacing:0; text-transform:none;
 }
-#flota .ag-card.octa .ag-cta-quote:hover{ color:#5EEAD4; text-decoration:underline; }
+#flota .ag-card.octa .ag-cta-quote:hover{ color:#14B8A6; text-decoration:underline; }
 
 /* botón principal (visual; el click real lo toma el overlay -> simulación) */
 #flota .ag-card.octa .octa-cta{ margin-top:auto; }
@@ -1080,7 +1084,7 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
   display:block; width:100%; text-align:center; padding:13px 16px; border-radius:12px;
   font-family:'Inter',sans-serif; font-size:15px; font-weight:700; letter-spacing:0; text-transform:none;
   color:#04220f; background:linear-gradient(135deg,#2DD4BF,#14B8A6);
-  box-shadow:0 10px 24px -12px rgba(20,184,166,.7);
+  box-shadow:0 10px 24px -12px rgba(20,184,166,.45);
 }
 #flota .ag-card.octa:hover .ag-card-sim{ filter:brightness(1.05); }
 

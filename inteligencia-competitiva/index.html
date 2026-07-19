@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Departamento de Inteligencia Competitiva, externo y automatizado | Optimatiza</title>
+  <meta name="description" content="Optimatiza funciona como tu departamento externo de inteligencia competitiva: monitoreo automatizado de competidores, precios, tendencias y noticias, con alertas al instante e informe ejecutivo semanal. Desde $600.">
+  <link rel="canonical" href="https://optimatiza.com/inteligencia-competitiva/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Tu Departamento de Inteligencia Competitiva, externo y automatizado | Optimatiza">
+  <meta property="og:description" content="Monitoreo automatizado de competidores, precios, tendencias y noticias. Alertas al instante e informe ejecutivo semanal. Desde $600.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/inteligencia-competitiva/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;--warn:#F7931A;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .ghost{color:var(--teal);font-weight:600;font-size:14px}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
+    .hero{padding:60px 0 36px;max-width:820px}
+    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.1;margin:14px 0 14px;text-wrap:balance}
+    .sub{font-size:17.5px;max-width:62ch}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px;text-wrap:balance}
+    section{padding:34px 0}
+    .lead{font-size:15px;max-width:70ch;margin:-6px 0 20px}
+    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+    .dol-i{font-size:26px}
+    .dol h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
+    .dol p{font-size:13.5px}
+    .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .cap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
+    .cap-i{font-size:24px}
+    .cap h3{font-family:var(--ffd);color:var(--ink);font-size:15.5px;margin:8px 0 5px}
+    .cap p{font-size:13.5px}
+    .pipe{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:6px}
+    .pnode{flex:1 1 170px;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--sh);position:relative}
+    .pnode .pi{font-size:22px}
+    .pnode b{display:block;font-family:var(--ffd);color:var(--ink);font-size:14px;margin:6px 0 3px}
+    .pnode span{font-size:12.5px;color:var(--dim)}
+    .pnode.hot{border-color:var(--teal)}
+    .parrow{display:flex;align-items:center;color:var(--teal);font-weight:700;font-size:18px}
+    @media(max-width:700px){.parrow{display:none}.pnode{flex-basis:100%}}
+    .pnote{font-size:12.5px;color:var(--dim);margin-top:12px}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;counter-reset:paso}
+    .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh);position:relative;margin-top:14px}
+    .st:before{counter-increment:paso;content:counter(paso);position:absolute;top:-13px;left:18px;background:var(--teal);color:#fff;font-family:var(--ffd);font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+    .st h3{font-family:var(--ffd);color:var(--ink);font-size:15.5px;margin:6px 0 5px}
+    .st p{font-size:13.5px}
+    .ags{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .ag{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+    .ag-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+    .ag-h b{font-family:var(--ffd);color:var(--ink);font-size:16px}
+    .ag-p{color:var(--teal);font-size:13px;font-weight:700;white-space:nowrap}
+    .ag p{font-size:13.5px;margin-top:8px}
+    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
+    .note a{color:var(--teal);font-weight:600}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{display:flex;align-items:center;gap:8px;background:var(--teal-soft);color:var(--teal);border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:600}
+    .who{background:var(--alt);border:1px solid var(--line);border-radius:16px;padding:22px 24px;font-size:14.5px;max-width:80ch}
+    .who b{color:var(--ink)}
+    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(20,184,166,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px}
+    .guar b{color:var(--ink)}
+    .guar a{color:var(--teal);font-weight:600}
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final h2{color:#fff;margin-bottom:8px}
+    .final p{color:#D9F5F1;max-width:56ch;margin:0 auto 20px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+    footer a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+  <div class="sp"></div>
+  <a class="ghost" href="../#cotizador">Cotizador</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20me%20interesa%20el%20Departamento%20de%20Inteligencia%20Competitiva." target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="k">Inteligencia competitiva · automatizada</span>
+    <h1>Tus competidores se mueven todos los días. ¿Quién los está viendo por ti?</h1>
+    <p class="sub">Optimatiza funciona como tu <b>departamento externo de inteligencia competitiva</b>: la misma automatización que corre tu operación, apuntada a vigilar tu mercado. Monitoreo de competidores, precios, tendencias y noticias — convertido en alertas e informes que sí se leen, no en carpetas que nadie abre.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20de%20inteligencia%20competitiva%20para%20mi%20empresa." target="_blank" rel="noopener">Quiero mi diagnóstico gratis →</a>
+      <a class="ghost" href="../#cotizador">o cotizalo en 60 segundos</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>¿Te suena?</h2>
+    <div class="dols">
+      <div class="dol"><span class="dol-i">🕐</span><h3>Te enteras tarde</h3><p>El competidor bajó precios hace tres semanas — y te lo contó un cliente que ya le compró. Cuando la señal llega por rumor, la decisión llega tarde.</p></div>
+      <div class="dol"><span class="dol-i">🗂️</span><h3>Información regada</h3><p>Algo en un grupo de WhatsApp, algo en redes, algo que vio un vendedor. Nada centralizado, nada comparable, nada accionable.</p></div>
+      <div class="dol"><span class="dol-i">👤</span><h3>No es el trabajo de nadie</h3><p>Vigilar el mercado "es de todos" — o sea, de nadie. Un analista dedicado cuesta un salario completo y las pymes rara vez lo tienen.</p></div>
+      <div class="dol"><span class="dol-i">📄</span><h3>El informe que nunca sale</h3><p>Cada trimestre alguien promete "un análisis de la competencia". Se hace una vez, a mano, y muere ahí porque nadie tiene tiempo de repetirlo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo que este departamento hace por ti</h2>
+    <p class="lead">Un radar permanente sobre tu mercado, operado por flujos automáticos e IA — no por horas-hombre.</p>
+    <div class="caps">
+      <div class="cap"><span class="cap-i">🔎</span><h3>Monitoreo de competidores</h3><p>Sus precios, productos, servicios y promociones, revisados todos los días de forma automática.</p></div>
+      <div class="cap"><span class="cap-i">📈</span><h3>Tendencias y mercado</h3><p>Hacia dónde se mueve tu industria: demanda, hábitos, tecnología y competidores nuevos entrando.</p></div>
+      <div class="cap"><span class="cap-i">📰</span><h3>Noticias y señales estratégicas</h3><p>Cientos de publicaciones filtradas con IA hasta quedarte solo con lo que afecta a tu negocio.</p></div>
+      <div class="cap"><span class="cap-i">🎯</span><h3>Oportunidades comerciales</h3><p>Licitaciones, convocatorias y aperturas de mercado detectadas a tiempo — no cuando ya cerraron.</p></div>
+      <div class="cap"><span class="cap-i">🔔</span><h3>Alertas cuando algo cambia</h3><p>Un cambio de precio o un lanzamiento relevante te llega por WhatsApp, Teams o correo al momento.</p></div>
+      <div class="cap"><span class="cap-i">📊</span><h3>Informes y paneles de decisión</h3><p>Informe ejecutivo automático cada semana y un panel en Power BI o Sheets para ver el mercado de un vistazo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Así lo automatizamos, de la fuente a la decisión</h2>
+    <p class="lead">Inteligencia competitiva y automatización son el mismo músculo: recopilar, procesar, avisar y reportar — sin digitación y sin depender de que alguien "tenga tiempo".</p>
+    <div class="pipe">
+      <div class="pnode"><span class="pi">🌐</span><b>Fuentes</b><span>webs de competidores, noticias, redes, listas de precios, portales de licitaciones</span></div>
+      <span class="parrow">→</span>
+      <div class="pnode"><span class="pi">⚙️</span><b>Captura automática</b><span>flujos con Power Automate y n8n recopilan sin que nadie navegue a mano</span></div>
+      <span class="parrow">→</span>
+      <div class="pnode hot"><span class="pi">🧠</span><b>Filtro y resumen con IA</b><span>separa la señal del ruido y lo redacta en lenguaje de negocio</span></div>
+      <span class="parrow">→</span>
+      <div class="pnode"><span class="pi">🔔</span><b>Alertas</b><span>lo urgente llega al instante por WhatsApp, Teams o correo</span></div>
+      <span class="parrow">→</span>
+      <div class="pnode"><span class="pi">📊</span><b>Informe + panel</b><span>resumen ejecutivo semanal y dashboard siempre actualizado</span></div>
+    </div>
+    <p class="pnote">Todo queda centralizado e integrado con lo que ya usas: correo, Microsoft 365, Google Workspace, Power BI, tu CRM o ERP y hojas de cálculo.</p>
+  </section>
+
+  <section>
+    <h2>De la señal a la decisión, en 4 pasos</h2>
+    <div class="steps">
+      <div class="st"><h3>Diagnóstico</h3><p>Aclaramos qué decisiones quieres alimentar: ¿precios? ¿expansión? ¿licitaciones? El radar se diseña alrededor de eso, no al revés.</p></div>
+      <div class="st"><h3>Diseño del radar</h3><p>Definimos competidores, fuentes, frecuencia y qué merece alerta inmediata versus resumen semanal.</p></div>
+      <div class="st"><h3>Automatización</h3><p>Construimos los flujos, el filtrado con IA, las alertas y el panel. Lo ves funcionando con tu mercado real antes del último hito.</p></div>
+      <div class="st"><h3>Operación y ajuste</h3><p>El radar corre solo y se afina con tu retroalimentación. Tu equipo aprende a usarlo — el conocimiento queda en tu empresa.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Con precio publicado, como todo en Optimatiza</h2>
+    <div class="ags">
+      <div class="ag"><div class="ag-h"><b>🔎 Radar de Competencia</b><span class="ag-p">$600–1,200</span></div><p>Monitoreo diario de precios, productos y noticias de los competidores que definas, con alertas cuando algo cambia.</p></div>
+      <div class="ag"><div class="ag-h"><b>🧭 Departamento IC completo</b><span class="ag-p">$1,200–3,000</span></div><p>Radar + filtrado con IA + informe ejecutivo semanal + panel de decisión en Power BI o Sheets.</p></div>
+      <div class="ag"><div class="ag-h"><b>🏢 Célula de inteligencia + BI</b><span class="ag-p">$3,000–8,000</span></div><p>Varias fuentes y mercados, oportunidades comerciales, dashboards por área y distribución automática a tu equipo directivo.</p></div>
+    </div>
+    <p class="note">Rangos de setup publicados en <a href="../precios/">optimatiza.com/precios</a>, con garantía de arranque de 30 días. La operación mensual (mantener el radar corriendo, ajustes y soporte) va desde <b>$149/mes</b> tras los 30 días de soporte incluidos.</p>
+  </section>
+
+  <section>
+    <h2>Se conecta con lo que ya usas</h2>
+    <div class="chips">
+      <span class="chip">✉️ Correo</span>
+      <span class="chip">🟦 Microsoft 365</span>
+      <span class="chip">🟩 Google Workspace</span>
+      <span class="chip">📊 Power BI</span>
+      <span class="chip">⚙️ Power Automate</span>
+      <span class="chip">🔗 n8n</span>
+      <span class="chip">👥 Tu CRM</span>
+      <span class="chip">🏭 Tu ERP</span>
+      <span class="chip">📗 Hojas de cálculo</span>
+      <span class="chip">💬 WhatsApp y Teams</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="who"><b>¿Por qué Optimatiza?</b> Porque la inteligencia competitiva sin automatización es un informe que se hace una vez y muere. Nuestro equipo viene de datos y business intelligence (MSc en Data Science y MSc en BI, 8+ años automatizando operaciones) y construye el radar con la misma tecnología de nuestros flujos: por eso corre todos los días, no solo cuando alguien se acuerda.</div>
+  </section>
+
+  <section>
+    <div class="guar"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. <a href="../precios/">Los términos completos, publicados →</a></div>
+  </section>
+
+  <div class="final">
+    <h2>¿Qué decidirías distinto si vieras tu mercado todos los días?</h2>
+    <p>Diagnóstico gratis de 20–30 minutos: definimos qué vale la pena vigilar en tu industria y te decimos qué puede hacer el radar por ti — y qué no.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20el%20diagn%C3%B3stico%20gratis%20de%20inteligencia%20competitiva." target="_blank" rel="noopener">Hablar por WhatsApp →</a>
+  </div>
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — automatización, agentes de IA e inteligencia competitiva para pymes.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../agentes/">Catálogo</a><a href="../seguridad/">Manejo de datos</a>
+</div></footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
