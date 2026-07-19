@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power BI para Empresas: Dashboards Automáticos | Optimatiza</title>
+  <meta name="description" content="Dashboards de Power BI que se actualizan solos y un reporte automático en tu correo cada mañana. Deja atrás el Excel manual. Diagnóstico gratis de 20 minutos.">
+  <link rel="canonical" href="https://optimatiza.com/power-bi/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Power BI para Empresas: Dashboards Automáticos | Optimatiza">
+  <meta property="og:description" content="Dashboards que se actualizan solos y un reporte automático en tu correo cada mañana. Deja atrás el Excel manual. Diagnóstico gratis.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/power-bi/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta un dashboard de Power BI para mi empresa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un dashboard inicial conectado a tus fuentes principales cuesta entre $600 y $1,200 y se entrega en 1 a 2 semanas. Un modelo completo con varias áreas (ventas, finanzas, inventario) va de $1,200 a $3,000 en 2 a 4 semanas. Pagos por hitos 40/30/30 y garantía de arranque de 30 días. Todos los rangos están publicados en optimatiza.com/precios."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Necesito comprar licencias de Power BI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Las licencias de Microsoft se pagan aparte del proyecto y dependen de cuántas personas verán el dashboard y de cómo quieras compartirlo. En el diagnóstico gratis te decimos exactamente qué necesitas antes de que compres nada; en muchas empresas pequeñas basta con pocas licencias por usuario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si mis datos están en Excel y desordenados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el caso más común. Parte del proyecto es la limpieza y el modelado de los datos: se configura una vez y se aplica de forma automática en cada actualización, sin que nadie tenga que volver a ordenar el archivo a mano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cada cuánto se actualiza el dashboard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La actualización se programa según tu operación: por ejemplo, cada madrugada para que las cifras estén listas antes de tu primera reunión, o varias veces al día si la fuente lo permite. El reporte resumido llega a tu correo cada mañana de forma automática."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda la implementación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El dashboard inicial toma de 1 a 2 semanas y el modelo completo de 2 a 4 semanas, contadas desde que recibimos accesos e información. Aplica la garantía de arranque: si el primer flujo no corre en producción en 30 días desde los accesos, devolvemos el setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quién construye el dashboard y qué pasa después de la entrega?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada modelo lo diseña y supervisa el fundador de Optimatiza, con maestría en Business Intelligence y maestría en Data Science. La entrega incluye documentación y 30 días de soporte; si quieres mantenimiento y ajustes continuos, la operación mensual parte de $149."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;--blue:#2563EB;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .ghost{color:var(--teal);font-weight:600;font-size:14px}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
+    .hero{padding:60px 0 36px;max-width:820px}
+    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
+    .sub{font-size:17.5px;max-width:62ch}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px;text-wrap:balance}
+    h3{font-family:var(--ffd);color:var(--ink)}
+    section{padding:34px 0}
+    .lead{max-width:64ch;margin-bottom:18px;font-size:15px}
+    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
+    .note a{color:var(--teal);font-weight:600}
+    /* dolores */
+    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+    .dol h3{font-size:16px;margin:8px 0 6px}
+    .dol p{font-size:13.5px}
+    .ic{width:34px;height:34px;border-radius:9px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center}
+    .ic svg{width:19px;height:19px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    /* antes / despues */
+    .ba{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:760px){.ba{grid-template-columns:1fr 1fr}}
+    .ba-col{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:#fff;box-shadow:var(--sh)}
+    .ba-col.hoy{background:var(--alt);box-shadow:none}
+    .ba-col.man{border-color:rgba(13,148,136,.35)}
+    .ba-col h3{font-size:15.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+    .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+    .tag.g{background:#EEF2F6;color:var(--dim)}
+    .tag.t{background:var(--teal-soft);color:var(--teal)}
+    .ba-col ul{list-style:none;padding:0;display:grid;gap:10px}
+    .ba-col li{font-size:14px;padding-left:22px;position:relative}
+    .ba-col.hoy li::before{content:"✕";position:absolute;left:0;color:var(--dim);font-weight:700;font-size:12px;top:2px}
+    .ba-col.man li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;font-size:13px;top:1px}
+    /* flujo */
+    .flow{display:flex;flex-direction:column;gap:8px;align-items:stretch;margin-top:8px}
+    @media(min-width:820px){.flow{flex-direction:row;align-items:stretch}}
+    .fnode{flex:1;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
+    .fnode .fn{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+    .fnode .num{width:24px;height:24px;border-radius:999px;background:var(--teal);color:#fff;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .fnode b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
+    .fnode p{font-size:13.5px}
+    .fchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .fchips span{font-size:11.5px;background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:3px 9px;color:var(--dim)}
+    .farrow{display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:20px;font-weight:700}
+    .farrow::before{content:"↓"}
+    @media(min-width:820px){.farrow{padding:0 4px}.farrow::before{content:"→"}}
+    /* mock dashboard */
+    .mockwrap{margin-top:22px}
+    .mock{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);overflow:hidden;max-width:640px}
+    .mock-top{display:flex;align-items:center;gap:6px;background:var(--alt);border-bottom:1px solid var(--line);padding:10px 14px}
+    .mock-top i{width:9px;height:9px;border-radius:999px;background:#D3DDE7;display:inline-block}
+    .mock-top span{margin-left:8px;font-size:12px;color:var(--dim);font-weight:600}
+    .mock-body{padding:16px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .kpi{background:var(--alt);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+    .kpi small{display:block;font-size:10.5px;color:var(--dim);letter-spacing:.02em}
+    .kpi b{font-family:var(--ffd);color:var(--ink);font-size:clamp(13px,2.4vw,17px)}
+    .chart{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:12px 12px 8px}
+    .chart small{font-size:10.5px;color:var(--dim)}
+    .bars{display:flex;align-items:flex-end;gap:6px;height:110px;margin-top:8px;border-bottom:1.5px solid var(--line);padding-bottom:0}
+    .bars i{flex:1;max-width:30px;background:#A7DFD8;border-radius:4px 4px 0 0;display:block}
+    .bars i.hl{background:var(--teal)}
+    .months{display:flex;gap:6px;margin-top:5px}
+    .months span{flex:1;max-width:30px;text-align:center;font-size:9.5px;color:var(--dim)}
+    .cap{font-size:12.5px;color:var(--dim);margin-top:10px;max-width:640px}
+    /* pasos */
+    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+    .paso{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso .num{width:22px;height:22px;border-radius:999px;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+    .arrow{color:var(--teal)}
+    /* chips sistemas */
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chips span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    /* precios */
+    .prices{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:760px){.prices{grid-template-columns:1fr 1fr}}
+    .price{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh)}
+    .price.feat{border-color:rgba(13,148,136,.45)}
+    .price h3{font-size:17px}
+    .price .amt{font-family:var(--ffd);color:var(--teal);font-size:24px;font-weight:700;margin:6px 0 2px}
+    .price .t{font-size:12.5px;color:var(--dim)}
+    .price ul{list-style:none;padding:0;margin-top:12px;display:grid;gap:8px}
+    .price li{font-size:13.5px;padding-left:20px;position:relative}
+    .price li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700;font-size:12.5px}
+    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(20,184,166,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
+    .guar b{color:var(--ink)}
+    .guar a{color:var(--teal);font-weight:600}
+    /* evidencia */
+    .evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .ev{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+    .ev h3{font-size:15.5px;margin-bottom:8px}
+    .ev p{font-size:13.5px}
+    .ev p+p{margin-top:8px}
+    .ev a{color:var(--teal);font-weight:600}
+    /* caso avanzado */
+    .adv{background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(37,99,235,.02));border:1.5px solid rgba(37,99,235,.3);border-radius:16px;padding:24px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+    .adv .tag.b{background:#E8EEFC;color:var(--blue)}
+    .adv h3{font-size:18px;margin:8px 0 6px}
+    .adv p{font-size:14px;max-width:58ch}
+    .adv .go{display:inline-block;color:var(--blue);font-weight:700;font-size:14.5px;white-space:nowrap}
+    /* faq */
+    .faq{display:grid;gap:10px;max-width:820px}
+    details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 18px;box-shadow:var(--sh)}
+    summary{cursor:pointer;font-weight:600;color:var(--ink);padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14.5px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--teal);font-weight:700;font-size:18px;flex-shrink:0}
+    details[open] summary::after{content:"−"}
+    details p{padding:0 0 16px;font-size:14px}
+    details p a{color:var(--teal);font-weight:600}
+    /* final */
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final h2{color:#fff;margin-bottom:8px}
+    .final p{color:#D9F5F1;max-width:56ch;margin:0 auto 20px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+    footer a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+  <div class="sp"></div>
+  <a class="ghost" href="../casos/">Demos en video</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20decidimos%20con%20reportes%20manuales%20de%20Excel%20y%20quiero%20verlos%20en%20Power%20BI." target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="k">Para gerencias que hoy deciden con Excel manual</span>
+    <h1>Power BI para empresas: el reporte que hoy tarda días, en tu correo cada mañana</h1>
+    <p class="sub">Si tu equipo pasa horas copiando y pegando entre archivos de Excel y las cifras llegan cuando la decisión ya se tomó, ese proceso se puede automatizar: un dashboard que se actualiza solo desde tus fuentes y un reporte automático en tu correo cada mañana, antes de tu primera reunión.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20dashboard%20de%20Power%20BI%20que%20se%20actualice%20solo%20y%20el%20reporte%20autom%C3%A1tico%20cada%20ma%C3%B1ana.%20%C2%BFPodemos%20agendar%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+      <a class="ghost" href="../casos/">o mira los demos en video</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>¿Te suena este lunes?</h2>
+    <div class="dols">
+      <div class="dol">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <h3>El consolidado tarda días</h3>
+        <p>Alguien de tu equipo copia y pega de cinco archivos distintos, cruza tablas a mano y reza para que las fórmulas no se hayan roto.</p>
+      </div>
+      <div class="dol">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h8M8 12h8M8 17h4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></span>
+        <h3>Cada quien tiene su versión</h3>
+        <p>Ventas reporta una cifra, finanzas otra, y media reunión se va en discutir cuál Excel es el bueno en vez de decidir.</p>
+      </div>
+      <div class="dol">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        <h3>El reporte llega tarde</h3>
+        <p>Cuando por fin está listo, la semana ya se decidió sin él. Diriges viendo el retrovisor, no el camino.</p>
+      </div>
+      <div class="dol">
+        <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span>
+        <h3>Todo depende de una persona</h3>
+        <p>Si quien arma el Excel se enferma o se va de vacaciones, la gerencia se queda sin cifras. El conocimiento vive en su cabeza.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo que cambia con un dashboard que se actualiza solo</h2>
+    <div class="ba">
+      <div class="ba-col hoy">
+        <h3><span class="tag g">Hoy</span> Reporte manual en Excel</h3>
+        <ul>
+          <li>Horas de copiar y pegar cada semana</li>
+          <li>Las cifras llegan cuando la decisión ya pasó</li>
+          <li>Cada área maneja su propia versión del dato</li>
+          <li>Si falta quien arma el archivo, nadie ve nada</li>
+        </ul>
+      </div>
+      <div class="ba-col man">
+        <h3><span class="tag t">Con Power BI</span> Reporte automático</h3>
+        <ul>
+          <li>La actualización corre sola, programada, sin digitación</li>
+          <li>El resumen está en tu correo cada mañana</li>
+          <li>Una sola versión de las cifras para toda la gerencia</li>
+          <li>Proceso documentado que no depende de una persona</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo se ve el proceso, de punta a punta</h2>
+    <div class="flow">
+      <div class="fnode">
+        <div class="fn"><span class="num">1</span><b>Tus fuentes, tal como están</b></div>
+        <p>No hay que cambiar de sistema: el modelo lee tus datos donde ya viven.</p>
+        <div class="fchips"><span>Excel</span><span>ERP</span><span>CRM</span><span>SQL</span><span>Google Sheets</span></div>
+      </div>
+      <div class="farrow" aria-hidden="true"></div>
+      <div class="fnode">
+        <div class="fn"><span class="num">2</span><b>Modelo Power BI</b></div>
+        <p>Limpieza, cruces y cálculos configurados una vez, ejecutados de forma automática en cada actualización programada.</p>
+      </div>
+      <div class="farrow" aria-hidden="true"></div>
+      <div class="fnode">
+        <div class="fn"><span class="num">3</span><b>Cada mañana, sin que nadie lo arme</b></div>
+        <p>Dashboard actualizado para explorar y un correo automático con el resumen del día en tu bandeja.</p>
+      </div>
+    </div>
+
+    <div class="mockwrap">
+      <div class="mock" aria-hidden="true">
+        <div class="mock-top"><i></i><i></i><i></i><span>Panel gerencial · datos de ejemplo</span></div>
+        <div class="mock-body">
+          <div class="kpis">
+            <div class="kpi"><small>Ventas del mes</small><b>$128,400</b></div>
+            <div class="kpi"><small>Pedidos entregados</small><b>1,254</b></div>
+            <div class="kpi"><small>Cuentas por cobrar</small><b>$36,900</b></div>
+          </div>
+          <div class="chart">
+            <small>Ventas por mes</small>
+            <div class="bars">
+              <i style="height:38%"></i><i style="height:52%"></i><i style="height:45%"></i><i style="height:60%"></i><i style="height:55%"></i><i style="height:68%"></i><i style="height:63%"></i><i style="height:74%"></i><i style="height:70%"></i><i style="height:82%"></i><i style="height:77%"></i><i class="hl" style="height:90%"></i>
+            </div>
+            <div class="months"><span>E</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="cap">Ilustración con datos de ejemplo. Tu dashboard se diseña sobre tus cifras y tu operación reales. En <a class="ghost" href="../casos/">/casos/</a> puedes ver demos en video de otros flujos — son animaciones ilustrativas, etiquetadas como tales.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <div class="pasos">
+      <div class="paso"><span class="num">1</span>Diagnóstico gratis (20–30 min)</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="num">2</span>Conectamos tus fuentes y modelamos los datos</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="num">3</span>Revisas el dashboard con tus cifras reales</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="num">4</span>Se actualiza solo + correo cada mañana</div>
+    </div>
+    <p class="note">En el diagnóstico revisamos tus reportes actuales y te decimos qué se puede automatizar primero — y qué no. Sin compromiso.</p>
+  </section>
+
+  <section>
+    <h2>Se conecta con lo que ya usas</h2>
+    <div class="chips">
+      <span>Excel</span><span>SQL Server</span><span>MySQL / PostgreSQL</span><span>ERP</span><span>CRM</span><span>SharePoint</span><span>Microsoft 365</span><span>Google Sheets</span><span>Google Workspace</span><span>Archivos CSV</span><span>APIs</span><span>Power Automate</span>
+    </div>
+    <p class="note">¿Tu sistema no aparece? Si exporta datos o tiene API, casi seguro podemos conectarlo — <a href="../integraciones-api/">así trabajamos las integraciones →</a></p>
+  </section>
+
+  <section>
+    <h2>Precio publicado, sin sorpresas</h2>
+    <div class="prices">
+      <div class="price">
+        <h3>Dashboard inicial</h3>
+        <div class="amt">$600–1,200</div>
+        <div class="t">Entrega en 1–2 semanas desde accesos</div>
+        <ul>
+          <li>Un dashboard conectado a tus fuentes principales</li>
+          <li>Actualización automática programada</li>
+          <li>Reporte automático por correo cada mañana</li>
+          <li>Entrega documentada + 30 días de soporte</li>
+        </ul>
+      </div>
+      <div class="price feat">
+        <h3>Modelo completo</h3>
+        <div class="amt">$1,200–3,000</div>
+        <div class="t">Entrega en 2–4 semanas desde accesos</div>
+        <ul>
+          <li>Modelo de datos con varias áreas: ventas, finanzas, inventario</li>
+          <li>Varios dashboards y vistas por rol</li>
+          <li>Reportes automáticos por correo para cada audiencia</li>
+          <li>Entrega documentada + 30 días de soporte</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Pagos por hitos 40/30/30. Si luego quieres mantenimiento y ajustes continuos, la operación mensual parte de $149. Rangos completos publicados en <a href="../precios/">optimatiza.com/precios</a>. Las licencias de Microsoft van aparte; en el diagnóstico te decimos exactamente cuáles necesitas.</p>
+    <div class="guar"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. <a href="../precios/">Los términos completos, publicados →</a></div>
+  </section>
+
+  <section>
+    <h2>Evidencia honesta, sin humo</h2>
+    <div class="evs">
+      <div class="ev">
+        <h3>Quién lo construye</h3>
+        <p>Cada modelo lo diseña y supervisa el fundador de Optimatiza, con maestría en Business Intelligence y maestría en Data Science. Modelado con criterio de ingeniería de datos, no plantillas genéricas.</p>
+      </div>
+      <div class="ev">
+        <h3>Lo que podemos mostrar hoy</h3>
+        <p>Nuestro Capturista Digital procesa una factura en ~4 segundos, medido en video en <a href="../casos/">/casos/</a>. Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin humanos. Y el chat Nova de este sitio es un agente real funcionando en vivo.</p>
+      </div>
+      <div class="ev">
+        <h3>Lo que no vas a encontrar aquí</h3>
+        <p>No publicamos testimonios inventados ni porcentajes de mejora que no hemos medido. Los demos de <a href="../casos/">/casos/</a> son animaciones ilustrativas y están etiquetados como tales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="adv">
+      <div>
+        <span class="tag b">Caso avanzado</span>
+        <h3>No solo tus datos: también los del mercado</h3>
+        <p>El mismo motor de reportes automáticos, apuntando hacia afuera: monitoreo de competidores, precios y noticias, con alertas al instante e informe ejecutivo semanal.</p>
+      </div>
+      <a class="go" href="../inteligencia-competitiva/">Conocer Inteligencia Competitiva →</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Cuánto cuesta un dashboard de Power BI para mi empresa?</summary>
+        <p>Un dashboard inicial conectado a tus fuentes principales cuesta entre $600 y $1,200 y se entrega en 1 a 2 semanas. Un modelo completo con varias áreas (ventas, finanzas, inventario) va de $1,200 a $3,000 en 2 a 4 semanas. Pagos por hitos 40/30/30 y garantía de arranque de 30 días. Todos los rangos están publicados en <a href="../precios/">optimatiza.com/precios</a>.</p>
+      </details>
+      <details>
+        <summary>¿Necesito comprar licencias de Power BI?</summary>
+        <p>Las licencias de Microsoft se pagan aparte del proyecto y dependen de cuántas personas verán el dashboard y de cómo quieras compartirlo. En el diagnóstico gratis te decimos exactamente qué necesitas antes de que compres nada; en muchas empresas pequeñas basta con pocas licencias por usuario.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si mis datos están en Excel y desordenados?</summary>
+        <p>Es el caso más común. Parte del proyecto es la limpieza y el modelado de los datos: se configura una vez y se aplica de forma automática en cada actualización, sin que nadie tenga que volver a ordenar el archivo a mano.</p>
+      </details>
+      <details>
+        <summary>¿Cada cuánto se actualiza el dashboard?</summary>
+        <p>La actualización se programa según tu operación: por ejemplo, cada madrugada para que las cifras estén listas antes de tu primera reunión, o varias veces al día si la fuente lo permite. El reporte resumido llega a tu correo cada mañana de forma automática.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tarda la implementación?</summary>
+        <p>El dashboard inicial toma de 1 a 2 semanas y el modelo completo de 2 a 4 semanas, contadas desde que recibimos accesos e información. Aplica la garantía de arranque: si el primer flujo no corre en producción en 30 días desde los accesos, devolvemos el setup.</p>
+      </details>
+      <details>
+        <summary>¿Quién construye el dashboard y qué pasa después de la entrega?</summary>
+        <p>Cada modelo lo diseña y supervisa el fundador de Optimatiza, con maestría en Business Intelligence y maestría en Data Science. La entrega incluye documentación y 30 días de soporte; si quieres mantenimiento y ajustes continuos, la operación mensual parte de $149.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>¿Cuántas horas se fueron este mes en armar reportes?</h2>
+    <p>Diagnóstico gratis de 20–30 minutos: revisamos tus reportes actuales y te decimos qué se puede automatizar primero — y qué no. Sin compromiso.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20dashboard%20de%20Power%20BI%20que%20se%20actualice%20solo%20y%20el%20reporte%20autom%C3%A1tico%20cada%20ma%C3%B1ana.%20%C2%BFPodemos%20agendar%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+  </div>
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../inteligencia-competitiva/">Inteligencia competitiva</a><a href="../automatizacion-de-procesos/">Automatización</a><a href="../seguridad/">Manejo de datos</a>
+</div></footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

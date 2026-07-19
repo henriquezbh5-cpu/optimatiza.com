@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agente de IA para WhatsApp: atención 24/7 | Optimatiza</title>
+  <meta name="description" content="Un agente de IA responde tu WhatsApp al instante, 24/7: cotiza, aparta pedidos, agenda citas y escala a humano cuando hace falta. Diagnóstico gratis de 20 min.">
+  <link rel="canonical" href="https://optimatiza.com/agente-ia-whatsapp/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Agente de IA para WhatsApp: atención 24/7 | Optimatiza">
+  <meta property="og:description" content="Tus clientes nunca más quedan en visto: un agente de IA cotiza, aparta y agenda por WhatsApp, y escala a tu equipo lo que requiere criterio.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/agente-ia-whatsapp/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;--blue:#2563EB;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .ghost{color:var(--teal);font-weight:600;font-size:14px}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
+    .hero{padding:60px 0 36px;max-width:820px}
+    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.1;margin:14px 0 14px;text-wrap:balance}
+    .sub{font-size:17.5px;max-width:62ch}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
+    section{padding:34px 0}
+    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
+    .note a{color:var(--teal);font-weight:600}
+    /* dolores / resultados */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .card{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+    .card-i{font-size:26px}
+    .card h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
+    .card p{font-size:13.5px}
+    .card.solid{background:#fff;box-shadow:var(--sh)}
+    /* audiencia */
+    .aud-lead{max-width:64ch;font-size:15px;margin-bottom:16px}
+    .aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .aud-c{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
+    .aud-c b{font-family:var(--ffd);color:var(--ink);font-size:15.5px;display:block;margin-bottom:5px}
+    .aud-c p{font-size:13.5px}
+    .aud-c .go{color:var(--teal);font-weight:600;font-size:13px;display:inline-block;margin-top:8px}
+    /* mockup WhatsApp */
+    .demo{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:32px;align-items:start}
+    @media(max-width:820px){.demo{grid-template-columns:1fr}}
+    .phone{max-width:400px;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:var(--sh);background:#F0EAE2}
+    .ph-top{display:flex;align-items:center;gap:10px;background:#fff;border-bottom:1px solid var(--line);padding:10px 14px}
+    .ph-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:var(--ffd)}
+    .ph-top b{color:var(--ink);font-size:14px;display:block;line-height:1.2}
+    .ph-top small{color:var(--teal);font-size:11.5px;font-weight:600}
+    .ph-chat{padding:14px 12px 18px;display:flex;flex-direction:column;gap:8px}
+    .day{align-self:center;background:#fff;border:1px solid var(--line);color:var(--dim);font-size:11px;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:4px}
+    .msg{max-width:86%;padding:8px 12px 6px;border-radius:12px;font-size:13.5px;line-height:1.45;color:#111B21;box-shadow:0 1px 1px rgba(11,27,43,.08)}
+    .msg .t{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:3px}
+    .msg .t .ck{color:#53BDEB;letter-spacing:-2px}
+    .in{align-self:flex-start;background:#FFFFFF;border-top-left-radius:4px}
+    .out{align-self:flex-end;background:#D9FDD3;border-top-right-radius:4px}
+    .demo-txt h3{font-family:var(--ffd);color:var(--ink);font-size:17px;margin:0 0 8px}
+    .demo-txt p{font-size:14.5px;margin-bottom:14px}
+    .demo-txt ul{margin:0 0 14px 18px;padding:0;font-size:14px}
+    .demo-txt li{margin-bottom:6px}
+    /* pasos */
+    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+    .paso{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso-n{width:22px;height:22px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .arrow{color:var(--teal)}
+    /* chips */
+    .chips{display:flex;flex-wrap:wrap;gap:9px}
+    .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13.5px;color:var(--ink);font-weight:500;box-shadow:var(--sh)}
+    /* precio */
+    .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .pr{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh)}
+    .pr.hl{border:1.5px solid var(--teal);background:linear-gradient(180deg,var(--teal-soft),#fff 45%)}
+    .pr b{font-family:var(--ffd);color:var(--ink);font-size:16px}
+    .pr .amt{font-family:var(--ffd);color:var(--teal);font-size:26px;font-weight:700;display:block;margin:6px 0 2px}
+    .pr small{color:var(--dim);font-size:12.5px;font-weight:600}
+    .pr p{font-size:13.5px;margin-top:10px}
+    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(20,184,166,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
+    .guar b{color:var(--ink)}
+    .guar a{color:var(--teal);font-weight:600}
+    /* evidencia */
+    .evi{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .ev{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+    .ev b{font-family:var(--ffd);color:var(--ink);font-size:15.5px;display:block;margin-bottom:6px}
+    .ev p{font-size:13.5px}
+    .ev a{color:var(--teal);font-weight:600}
+    .ev .tag{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+    /* faq */
+    .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 20px;margin-bottom:10px;box-shadow:var(--sh)}
+    .faq summary{cursor:pointer;font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:'+';color:var(--teal);font-size:20px;font-weight:400;flex-shrink:0}
+    .faq details[open] summary::after{content:'–'}
+    .faq details p{font-size:14px;padding:0 0 16px}
+    .faq details p a{color:var(--teal);font-weight:600}
+    /* final */
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final h2{color:#fff;margin-bottom:8px}
+    .final p{color:#D9F5F1;max-width:56ch;margin:0 auto 20px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+    footer a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+  <div class="sp"></div>
+  <a class="ghost" href="../casos/">Demos en video</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20agente%20de%20IA%20para%20el%20WhatsApp%20de%20mi%20negocio.%20%C2%BFPodemos%20agendar%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Agendar diagnóstico</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="k">Para negocios que venden y atienden por WhatsApp</span>
+    <h1>Agente de IA para WhatsApp: tus clientes nunca más quedan en visto</h1>
+    <p class="sub">Cada mensaje sin responder a las 9 de la noche es un pedido que se va con otro. Un agente de IA responde al instante, 24/7: cotiza con tu catálogo, aparta pedidos, agenda citas y pasa a tu equipo — con todo el contexto — lo que requiere criterio humano.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20agente%20de%20IA%20para%20el%20WhatsApp%20de%20mi%20negocio.%20%C2%BFPodemos%20agendar%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+      <a class="ghost" href="../casos/">o mira los demos en video</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>El WhatsApp de tu negocio, hoy</h2>
+    <div class="cards">
+      <div class="card"><span class="card-i">👁️</span><h3>Clientes en visto</h3><p>Tu equipo está vendiendo, despachando o atendiendo en ventanilla. Mientras tanto, los mensajes se acumulan — y el que no recibe respuesta le compra al que sí contestó.</p></div>
+      <div class="card"><span class="card-i">🌙</span><h3>Pedidos fuera de horario</h3><p>El cliente pregunta precios a las 9 p. m. o el domingo. Cuando alguien le responde el lunes, ya resolvió con otro proveedor.</p></div>
+      <div class="card"><span class="card-i">🔁</span><h3>Las mismas 20 preguntas</h3><p>Precio, disponibilidad, horarios, ubicación, formas de pago. Tu mejor vendedor pierde horas respondiendo lo que un catálogo bien conectado contesta solo.</p></div>
+      <div class="card"><span class="card-i">📝</span><h3>Pedidos que se pierden en el chat</h3><p>El pedido quedó en una conversación de hace tres días, nadie lo pasó al sistema, y el cliente llama molesto preguntando por su entrega.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lo que cambia con un agente de IA en tu WhatsApp</h2>
+    <div class="cards">
+      <div class="card solid"><span class="card-i">⚡</span><h3>Respuesta al instante, 24/7</h3><p>Cada mensaje recibe respuesta en segundos, de día, de noche y en fin de semana. Nadie vuelve a quedar en visto.</p></div>
+      <div class="card solid"><span class="card-i">🧾</span><h3>Cotiza con tu catálogo real</h3><p>Precios, presentaciones y disponibilidad salen de tu catálogo y tus reglas — no de la memoria del que esté de turno.</p></div>
+      <div class="card solid"><span class="card-i">📦</span><h3>Aparta pedidos y agenda citas</h3><p>Toma el pedido, lo registra con número de orden, o reserva la cita en tu calendario. Nada se queda perdido en el chat.</p></div>
+      <div class="card solid"><span class="card-i">🤝</span><h3>Escala a humano con contexto</h3><p>Reclamos, negociaciones y casos especiales pasan a tu equipo con el historial completo. El agente hace lo repetitivo; las decisiones y relaciones siguen siendo tuyas.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Así se ve una venta a las 9 de la noche</h2>
+    <div class="demo">
+      <div class="phone" role="img" aria-label="Simulación de una conversación de WhatsApp donde un cliente pregunta precio a las 9 de la noche y el agente de IA cotiza, aparta el pedido y lo confirma">
+        <div class="ph-top">
+          <div class="ph-av" aria-hidden="true">D</div>
+          <div><b>Distribuidora — Ventas</b><small>en línea</small></div>
+        </div>
+        <div class="ph-chat">
+          <span class="day">Hoy</span>
+          <div class="msg in">Buenas noches, ¿tienen aceite de 900 ml? ¿A cómo me dejan la caja?<span class="t">9:14 p. m.</span></div>
+          <div class="msg out">¡Buenas noches! Sí tenemos disponible. Aceite 900 ml, caja de 12 unidades: <b>$21.50</b>. ¿Cuántas cajas te aparto?<span class="t">9:14 p. m. <span class="ck">✓✓</span></span></div>
+          <div class="msg in">Dejame 10 cajas para mañana<span class="t">9:15 p. m.</span></div>
+          <div class="msg out">Listo ✅ Aparté <b>10 cajas de aceite 900 ml</b> — total $215.00. Tu pedido es el <b>#4218</b> y entra en la ruta de mañana. Te confirmo la hora de entrega en cuanto se arme la ruta. ¿Algo más?<span class="t">9:15 p. m. <span class="ck">✓✓</span></span></div>
+          <div class="msg in">Así está bien, gracias<span class="t">9:16 p. m.</span></div>
+          <div class="msg out">¡Con gusto! Cualquier cambio me escribes por aquí. Atiendo 24/7 🙂<span class="t">9:16 p. m. <span class="ck">✓✓</span></span></div>
+        </div>
+      </div>
+      <div class="demo-txt">
+        <h3>Qué pasó en esos 2 minutos</h3>
+        <ul>
+          <li><b>9:14 p. m.</b> — el cliente pregunta fuera de horario. El agente responde en segundos con precio y presentación desde el catálogo.</li>
+          <li><b>9:15 p. m.</b> — el pedido queda apartado y registrado con número de orden, no perdido en un chat.</li>
+          <li><b>Al día siguiente</b> — tu equipo abre el día con el pedido listo en su sistema y solo confirma la entrega.</li>
+        </ul>
+        <p>Si el cliente pide crédito, reclama o negocia, el agente no improvisa: pasa la conversación a tu equipo con el historial completo.</p>
+        <p class="note">Conversación simulada con fines ilustrativos. Tu agente se construye a medida sobre tu catálogo, tus precios y tus reglas. Los <a href="../casos/">demos en video</a> también son animaciones ilustrativas — el agente real que puedes probar hoy es <a href="../">Nova, el chat de nuestra página de inicio</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>¿Para quién es?</h2>
+    <p class="aud-lead">Para negocios donde WhatsApp ya es el canal principal de venta o atención y los mensajes superan lo que el equipo alcanza a responder:</p>
+    <div class="aud">
+      <a class="aud-c" href="../distribuidoras/"><b>🚚 Distribuidoras y mayoristas</b><p>Pedidos recurrentes, listas de precios por cliente, rutas de entrega. El agente toma el pedido y lo deja registrado.</p><span class="go">Ver la página para distribuidoras →</span></a>
+      <a class="aud-c" href="../clinicas/"><b>🩺 Clínicas y consultorios</b><p>Citas, confirmaciones, recordatorios y preguntas frecuentes de pacientes, sin saturar a recepción.</p><span class="go">Ver la página para clínicas →</span></a>
+      <div class="aud-c"><b>🏪 Comercios y servicios</b><p>Cotizaciones, disponibilidad, reservas y seguimiento de encargos — respondidos al momento, aunque la tienda esté cerrada.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <div class="pasos">
+      <div class="paso"><span class="paso-n">1</span>Diagnóstico gratis (20–30 min): revisamos tu flujo real de mensajes</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-n">2</span>Construimos el agente con tu catálogo y tus reglas</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-n">3</span>Lo pruebas con conversaciones reales antes de salir</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-n">4</span>Sale a producción: atiende 24/7 y escala a tu equipo lo crítico</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Se conecta con lo que ya usas</h2>
+    <div class="chips">
+      <span class="chip">WhatsApp Business</span>
+      <span class="chip">Google Sheets</span>
+      <span class="chip">Google Calendar</span>
+      <span class="chip">Google Workspace</span>
+      <span class="chip">Microsoft 365</span>
+      <span class="chip">Excel</span>
+      <span class="chip">CRM</span>
+      <span class="chip">ERP</span>
+      <span class="chip">Power Automate</span>
+      <span class="chip">n8n</span>
+      <span class="chip">APIs a medida</span>
+    </div>
+    <p class="note">Estas son las herramientas con las que trabajamos, no el producto: lo que entregamos es el flujo completo funcionando en tu operación. ¿Necesitas conectar un sistema propio? Mira <a href="../integraciones-api/">integraciones con APIs</a>.</p>
+  </section>
+
+  <section>
+    <h2>Precio publicado, sin sorpresas</h2>
+    <div class="price">
+      <div class="pr hl">
+        <b>Agente de IA para WhatsApp</b>
+        <span class="amt">$600–1,200</span>
+        <small>entrega en 1–2 semanas</small>
+        <p>Un agente conectado a tu catálogo o agenda: responde, cotiza, aparta o agenda, y escala a humano. Incluye construcción, pruebas, entrega documentada y 30 días de soporte.</p>
+      </div>
+      <div class="pr">
+        <b>Con integración a tu CRM/ERP</b>
+        <span class="amt">$1,200–3,000</span>
+        <small>entrega en 2–4 semanas</small>
+        <p>El mismo agente, pero además actualiza tus sistemas: registra pedidos en el ERP, clientes en el CRM o pagos en tu contabilidad.</p>
+      </div>
+      <div class="pr">
+        <b>Operación mensual</b>
+        <span class="amt">desde $149/mes</span>
+        <small>planes de $149 / $449 / $999</small>
+        <p>Monitoreo, ajustes y mejoras para que el agente siga afinado con tu operación. Detalle completo en <a class="ghost" href="../precios/">optimatiza.com/precios</a>.</p>
+      </div>
+    </div>
+    <p class="note">Pagos por hitos 40/30/30: pagas al arrancar, al ver el agente funcionando y al recibirlo en producción.</p>
+    <div class="guar"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. <a href="../precios/">Los términos completos, publicados →</a></div>
+  </section>
+
+  <section>
+    <h2>Evidencia honesta (lo que puedes verificar hoy)</h2>
+    <div class="evi">
+      <div class="ev"><span class="tag">Agente real en vivo</span><b>Habla con Nova ahora mismo</b><p>El chat de <a href="../">optimatiza.com</a> es un agente de IA real funcionando en producción — no un video ni un guion. Entra a la página de inicio y hazle las preguntas difíciles.</p></div>
+      <div class="ev"><span class="tag">Sistema propio en producción</span><b>Nuestras redes las publica una máquina</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. Usamos lo que vendemos.</p></div>
+      <div class="ev"><span class="tag">Métrica medida</span><b>Una factura en ~4 segundos</b><p>La única cifra que publicamos es medida: nuestro Capturista Digital procesa una factura en ~4 segundos, medido en video en <a href="../casos/">los demos</a>. No publicamos testimonios ni resultados que no podamos demostrar.</p></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿El agente reemplaza a mi equipo de ventas o atención?</summary>
+      <p>No. El agente se encarga del trabajo repetitivo — responder al instante, cotizar, registrar pedidos, agendar — y tu equipo conserva las decisiones, las relaciones y las tareas que requieren criterio. En la práctica, tu equipo deja de transcribir chats y se dedica a vender y atender.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa cuando el agente no sabe responder?</summary>
+      <p>Escala a tu equipo con el historial completo de la conversación. Definimos juntos las reglas: qué responde solo, qué requiere aprobación y qué pasa directo a un humano (reclamos, negociaciones de precio, casos delicados). El agente nunca inventa una respuesta fuera de sus reglas.</p>
+    </details>
+    <details>
+      <summary>¿Funciona con el número de WhatsApp que ya uso?</summary>
+      <p>Depende de cómo usas WhatsApp hoy (app normal, WhatsApp Business o API). En el diagnóstico gratis revisamos tu caso y te decimos honestamente qué opción aplica, qué implica y si conviene mantener tu número o habilitar uno de atención.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta y cuánto tarda?</summary>
+      <p>Un agente conectado a tu catálogo o agenda cuesta entre $600 y $1,200 y se entrega en 1–2 semanas. Si además debe actualizar tu CRM o ERP, la banda es $1,200–3,000 (2–4 semanas). La operación mensual va desde $149. Pagos por hitos 40/30/30 y garantía de arranque de 30 días.</p>
+    </details>
+    <details>
+      <summary>¿Puedo ver un agente funcionando antes de contratar?</summary>
+      <p>Sí, hoy mismo: el chat de optimatiza.com (Nova) es un agente real en producción — pruébalo con tus propias preguntas. Además hay demos animados ilustrativos de otros casos en la sección de demos.</p>
+    </details>
+    <details>
+      <summary>¿Qué pasa con los datos de mis clientes?</summary>
+      <p>Las conversaciones y datos de tus clientes son tuyos: se procesan solo para operar el agente, con accesos limitados y acordados por escrito. Publicamos cómo manejamos los datos en <a href="../seguridad/">optimatiza.com/seguridad</a>.</p>
+    </details>
+  </section>
+
+  <div class="final">
+    <h2>¿Cuántos mensajes quedaron en visto esta semana?</h2>
+    <p>Diagnóstico gratis de 20–30 minutos: revisamos tu flujo real de mensajes y pedidos, y te decimos qué puede hacer un agente de IA en tu WhatsApp — y qué no.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20agente%20de%20IA%20para%20el%20WhatsApp%20de%20mi%20negocio.%20%C2%BFPodemos%20agendar%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+  </div>
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../agentes-de-ia/">Agentes de IA</a><a href="../cobranza-automatizada/">Cobranza automatizada</a><a href="../seguridad/">Manejo de datos</a>
+</div></footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El agente reemplaza a mi equipo de ventas o atención?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El agente se encarga del trabajo repetitivo — responder al instante, cotizar, registrar pedidos, agendar — y tu equipo conserva las decisiones, las relaciones y las tareas que requieren criterio. En la práctica, tu equipo deja de transcribir chats y se dedica a vender y atender."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa cuando el agente no sabe responder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escala a tu equipo con el historial completo de la conversación. Definimos juntos las reglas: qué responde solo, qué requiere aprobación y qué pasa directo a un humano (reclamos, negociaciones de precio, casos delicados). El agente nunca inventa una respuesta fuera de sus reglas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona con el número de WhatsApp que ya uso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de cómo usas WhatsApp hoy (app normal, WhatsApp Business o API). En el diagnóstico gratis revisamos tu caso y te decimos honestamente qué opción aplica, qué implica y si conviene mantener tu número o habilitar uno de atención."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta y cuánto tarda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un agente conectado a tu catálogo o agenda cuesta entre $600 y $1,200 y se entrega en 1–2 semanas. Si además debe actualizar tu CRM o ERP, la banda es $1,200–3,000 (2–4 semanas). La operación mensual va desde $149. Pagos por hitos 40/30/30 y garantía de arranque de 30 días."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo ver un agente funcionando antes de contratar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, hoy mismo: el chat de optimatiza.com (Nova) es un agente real en producción — pruébalo con tus propias preguntas. Además hay demos animados ilustrativos de otros casos en optimatiza.com/casos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa con los datos de mis clientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las conversaciones y datos de tus clientes son tuyos: se procesan solo para operar el agente, con accesos limitados y acordados por escrito. Publicamos cómo manejamos los datos en optimatiza.com/seguridad."
+      }
+    }
+  ]
+}
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

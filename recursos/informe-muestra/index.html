@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muestra de Informe de Inteligencia Competitiva | Optimatiza</title>
+  <meta name="description" content="Muestra del informe semanal de inteligencia competitiva: alertas, precios de competidores, noticias filtradas y oportunidades. Con datos de demostración.">
+  <link rel="canonical" href="https://optimatiza.com/recursos/informe-muestra/">
+  <link rel="icon" href="../../img/logo-badge-96.png">
+  <meta property="og:title" content="Muestra de Informe de Inteligencia Competitiva | Optimatiza">
+  <meta property="og:description" content="Así se ve el entregable semanal del Departamento de Inteligencia Competitiva. Muestra con datos de demostración — el tuyo se construye sobre tu mercado real.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/recursos/informe-muestra/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    @font-face{font-family:'IBM Plex Mono';src:url('../../fonts/ibm-plex-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'IBM Plex Mono';src:url('../../fonts/ibm-plex-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;
+      --blue:#2563EB;--blue-soft:#EAF1FE;--violet:#6D28D9;
+      --amber-bg:#FFF6E3;--amber-line:#EFC974;--amber-ink:#7A4E00;
+      --red-soft:#FDEDEA;--red-ink:#B3401F;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;--ffm:'IBM Plex Mono',ui-monospace,monospace;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    /* ---- Banner DEMO fijo + header ---- */
+    .stick{position:sticky;top:0;z-index:30}
+    .demoband{background:var(--amber-bg);border-bottom:1px solid var(--amber-line);color:var(--amber-ink);font-size:12.5px;font-weight:600;text-align:center;padding:7px 14px;letter-spacing:.02em}
+    header{background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .ghost{color:var(--teal);font-weight:600;font-size:14px}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh);white-space:nowrap}
+    @media(max-width:560px){.nav .ghost{display:none}}
+    /* ---- Hero ---- */
+    .hero{padding:52px 0 30px;max-width:820px}
+    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
+    .sub{font-size:17px;max-width:62ch}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;align-items:center}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh);border:0;cursor:pointer}
+    .btn-line{display:inline-block;background:#fff;color:var(--ink);font-weight:600;padding:12px 20px;border-radius:999px;font-size:14px;border:1px solid var(--line);box-shadow:var(--sh);cursor:pointer;font-family:var(--ff)}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 14px}
+    section{padding:30px 0}
+    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
+    /* ---- Documento informe ---- */
+    .report{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:34px 34px 28px;overflow:hidden;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+    @media(max-width:640px){.report{padding:22px 16px 20px}}
+    .report::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+      background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='460'%20height='320'%3E%3Ctext%20x='230'%20y='160'%20fill='%230D9488'%20fill-opacity='.08'%20font-family='Arial,sans-serif'%20font-size='28'%20font-weight='700'%20letter-spacing='2'%20text-anchor='middle'%20transform='rotate(-22%20230%20160)'%3EDATOS%20DE%20DEMOSTRACI%C3%93N%3C/text%3E%3C/svg%3E") repeat}
+    .rp-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:14px}
+    .rp-org{font-family:var(--ffm);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:500}
+    .rp-demo{background:var(--amber-bg);border:1px solid var(--amber-line);color:var(--amber-ink);font-family:var(--ffm);font-size:11px;font-weight:500;letter-spacing:.08em;padding:4px 10px;border-radius:6px;text-transform:uppercase}
+    .rp-title{font-family:var(--ffd);color:var(--ink);font-size:clamp(1.25rem,3vw,1.7rem);margin:16px 0 4px}
+    .rp-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 22px;margin:12px 0 4px;font-size:13.5px}
+    .rp-meta b{color:var(--ink);font-weight:600}
+    .rp-sec{margin-top:28px}
+    .rp-sec h3{font-family:var(--ffm);font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border-bottom:1px solid var(--line);padding-bottom:7px;margin-bottom:14px}
+    .rp-sec h3 span{color:var(--dim)}
+    ul.exec{list-style:none;padding:0;display:grid;gap:10px}
+    ul.exec li{padding-left:24px;position:relative;font-size:14.5px;color:var(--ink)}
+    ul.exec li::before{content:'▸';position:absolute;left:4px;color:var(--teal);font-weight:700}
+    /* alertas */
+    .alert{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;padding:14px 16px;margin-bottom:12px;background:var(--alt)}
+    .alert.hi{border-left-color:#DC6A45;background:var(--red-soft)}
+    .alert.mid{border-left-color:var(--amber-line);background:var(--amber-bg)}
+    .alert-h{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+    .alert-h b{color:var(--ink);font-size:14.5px;font-family:var(--ffd)}
+    .chip-sev{font-family:var(--ffm);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:5px;font-weight:500}
+    .hi .chip-sev{background:#fff;color:var(--red-ink);border:1px solid #EFC0B0}
+    .mid .chip-sev{background:#fff;color:var(--amber-ink);border:1px solid var(--amber-line)}
+    .alert-src{font-family:var(--ffm);font-size:11.5px;color:var(--dim);margin-top:4px}
+    .alert p{font-size:13.5px;margin-top:6px}
+    .alert p b{color:var(--ink)}
+    /* tabla precios */
+    .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+    table{border-collapse:collapse;width:100%;min-width:660px;font-size:13px}
+    caption{caption-side:bottom;text-align:left;font-size:12px;color:var(--dim);padding:8px 12px}
+    th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+    thead th{background:var(--alt);color:var(--ink);font-family:var(--ffd);font-size:12.5px;white-space:nowrap}
+    tbody tr:last-child td{border-bottom:0}
+    td.num{font-family:var(--ffm);white-space:nowrap;color:var(--ink)}
+    td.you{background:var(--teal-soft)}
+    .d-up{color:var(--blue);font-weight:500}
+    .d-dn{color:var(--red-ink);font-weight:500}
+    .d-eq{color:var(--dim)}
+    .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--dim);margin-top:8px}
+    /* noticias */
+    .news{display:grid;gap:10px}
+    .new{border:1px solid var(--line);border-radius:10px;padding:13px 16px}
+    .new b{color:var(--ink);font-size:14px}
+    .new .src{font-family:var(--ffm);font-size:11.5px;color:var(--dim);display:block;margin:2px 0 4px}
+    .new p{font-size:13px}
+    .new p em{font-style:normal;color:var(--teal);font-weight:600}
+    /* oportunidades / recomendaciones */
+    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:700px){.twocol{grid-template-columns:1fr}}
+    .opp{background:var(--blue-soft);border:1px solid #C9DBFA;border-radius:10px;padding:14px 16px;font-size:13.5px}
+    .opp b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--ffd);font-size:14px}
+    .rec{background:var(--teal-soft);border:1px solid #BDEAE2;border-radius:10px;padding:14px 16px;font-size:13.5px}
+    .rec b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--ffd);font-size:14px}
+    /* mini-dashboard */
+    .dash{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.dash{grid-template-columns:1fr}}
+    .dash-b{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--alt)}
+    .dash-b h4{font-size:13px;color:var(--ink);font-family:var(--ffd);margin-bottom:12px}
+    .bar-row{display:grid;grid-template-columns:118px 1fr 30px;gap:10px;align-items:center;margin-bottom:9px;font-size:12.5px}
+    .bar-row:last-child{margin-bottom:0}
+    .bar-track{background:#fff;border:1px solid var(--line);border-radius:999px;height:14px;overflow:hidden}
+    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
+    .bar-fill.b{background:linear-gradient(90deg,var(--blue),#5B8DF0)}
+    .bar-val{font-family:var(--ffm);color:var(--ink);text-align:right;font-size:12px}
+    .rp-end{margin-top:28px;border-top:2px solid var(--ink);padding-top:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--ffm);font-size:11.5px;color:var(--dim)}
+    /* pie + resto de landing */
+    .claim{background:linear-gradient(135deg,rgba(13,148,136,.07),rgba(37,99,235,.05));border:1.5px solid rgba(13,148,136,.35);border-radius:16px;padding:20px 24px;font-size:15px;color:var(--ink)}
+    .claim a{color:var(--teal);font-weight:600}
+    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+    .paso{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso-i{font-size:19px}
+    .arrow{color:var(--teal)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
+    .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .price{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+    .price b{font-family:var(--ffd);color:var(--ink);font-size:16px}
+    .price .pp{color:var(--teal);font-weight:700;font-size:14px;margin:6px 0 8px}
+    .price p{font-size:13.5px}
+    .ev{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:20px 22px;font-size:14px}
+    .ev b{color:var(--ink)}
+    .ev ul{margin:10px 0 0;padding-left:20px;display:grid;gap:8px}
+    /* FAQ */
+    details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;background:#fff}
+    summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:14.5px;font-family:var(--ffd)}
+    details p{margin-top:10px;font-size:14px}
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final h2{color:#fff;margin-bottom:8px}
+    .final p{color:#D9F5F1;max-width:56ch;margin:0 auto 20px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+    footer a:hover{color:var(--ink)}
+    /* ---- Print ---- */
+    @media print{
+      .stick header,.cta-row,.after-report,.final,footer,.noprint{display:none!important}
+      .stick{position:static}
+      .demoband{border:1.5px solid var(--amber-line);border-radius:8px;margin:0 0 14px}
+      .hero{padding:10px 0 8px}
+      body{background:#fff}
+      .wrap{max-width:none;padding:0}
+      .report{border:1px solid #bbb;box-shadow:none;border-radius:8px}
+      .alert,.new,.opp,.rec,.dash-b,tr{break-inside:avoid}
+      .tbl-scroll{overflow:visible;border-color:#bbb}
+      a[href]::after{content:''}
+    }
+  </style>
+</head>
+<body>
+<div class="stick">
+  <div class="demoband">MUESTRA CON DATOS DE DEMOSTRACIÓN — no corresponden a ningún cliente ni mercado real</div>
+  <header><div class="wrap nav">
+    <a class="brand" href="../../"><img src="../../img/logo-badge-192.png" alt="">Optimatiza</a>
+    <div class="sp"></div>
+    <a class="ghost" href="../../inteligencia-competitiva/">El servicio completo</a>
+    <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20la%20muestra%20del%20informe%20de%20inteligencia%20competitiva%20y%20quiero%20uno%20sobre%20mi%20mercado." target="_blank" rel="noopener">WhatsApp</a>
+  </div></header>
+</div>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="k">Recurso gratuito · para gerentes comerciales y dueños de pyme</span>
+    <h1>Así se ve un informe semanal de inteligencia competitiva</h1>
+    <p class="sub">Tus competidores mueven precios, lanzan combos y abren rutas todas las semanas — y normalmente te enteras tarde. Este es el entregable que produce nuestro Departamento de Inteligencia Competitiva: cada lunes, 10 minutos de lectura con lo que cambió en tu mercado, por qué te importa y qué conviene hacer. Abajo tienes una muestra completa, con datos 100% ficticios de una empresa inventada.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20la%20muestra%20del%20informe%20y%20quiero%20uno%20sobre%20mi%20mercado.%20%C2%BFAgendamos%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Quiero este informe para mi mercado →</a>
+      <button class="btn-line" id="printBtn" type="button">🖨️ Imprimir o guardar PDF</button>
+    </div>
+  </div>
+
+  <!-- ==================== EL INFORME (muestra) ==================== -->
+  <section aria-label="Muestra del informe semanal">
+    <article class="report">
+      <div class="rp-top">
+        <span class="rp-org">Optimatiza · Inteligencia Competitiva</span>
+        <span class="rp-demo">Muestra · datos demo</span>
+      </div>
+      <h2 class="rp-title">Informe semanal de mercado — categoría bebidas</h2>
+      <div class="rp-meta">
+        <span><b>Cliente:</b> Distribuidora Ejemplo S.A. <em>(empresa ficticia)</em></span>
+        <span><b>Periodo:</b> Semana 28 — semana de demostración</span>
+        <span><b>Preparado por:</b> Analista de Optimatiza</span>
+        <span><b>Distribución:</b> Gerencia comercial (DEMO)</span>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>01 ·</span> Resumen ejecutivo</h3>
+        <ul class="exec">
+          <li><b>Competidor B (DEMO)</b> bajó por segunda semana consecutiva el precio de la gaseosa 2.5 L; ya está $0.15 por debajo del precio de lista de Distribuidora Ejemplo.</li>
+          <li><b>Competidor A (DEMO)</b> publicó una vacante de "jefe de ruta — zona oriente": señal temprana de expansión de cobertura en esa zona.</li>
+          <li>Dos noticias del sector apuntan a presión de costos en empaque PET para el próximo trimestre; conviene adelantar la negociación con el proveedor actual.</li>
+        </ul>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>02 ·</span> Alertas de la semana</h3>
+        <div class="alert hi">
+          <div class="alert-h"><b>Competidor B (DEMO) bajó la gaseosa 2.5 L a $1.85 (−$0.10)</b><span class="chip-sev">Prioridad alta</span></div>
+          <div class="alert-src">Detectada: martes, día 2 de la semana DEMO · Fuente: catálogo web del competidor (DEMO)</div>
+          <p><b>Por qué importa:</b> es el segundo recorte consecutivo y toca el producto de mayor rotación de la canasta. Si se sostiene una tercera semana, deja de ser promoción puntual y pasa a ser precio de guerra.</p>
+        </div>
+        <div class="alert mid">
+          <div class="alert-h"><b>Competidor C (DEMO) lanzó combo "agua + néctar" para canal mayorista</b><span class="chip-sev">Prioridad media</span></div>
+          <div class="alert-src">Detectada: jueves, día 4 de la semana DEMO · Fuente: redes sociales públicas del competidor (DEMO)</div>
+          <p><b>Por qué importa:</b> el combo empuja dos categorías donde Distribuidora Ejemplo tiene margen alto; los mayoristas suelen pedir igualación en menos de dos semanas.</p>
+        </div>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>03 ·</span> Movimientos de precios — canasta monitoreada</h3>
+        <div class="tbl-scroll">
+          <table>
+            <caption>Precios ficticios de demostración. Δ = cambio vs semana anterior (DEMO).</caption>
+            <thead>
+              <tr><th scope="col">Producto (DEMO)</th><th scope="col">Tu lista</th><th scope="col">Competidor A</th><th scope="col">Competidor B</th><th scope="col">Competidor C</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Gaseosa 2.5 L</td><td class="num you">$2.00</td><td class="num">$1.95 <span class="d-eq">=</span></td><td class="num">$1.85 <span class="d-dn">▼ −0.10</span></td><td class="num">$1.98 <span class="d-eq">=</span></td></tr>
+              <tr><td>Agua embotellada 750 ml</td><td class="num you">$0.60</td><td class="num">$0.65 <span class="d-up">▲ +0.05</span></td><td class="num">$0.60 <span class="d-eq">=</span></td><td class="num">$0.58 <span class="d-dn">▼ −0.02</span></td></tr>
+              <tr><td>Néctar 1 L</td><td class="num you">$1.35</td><td class="num">$1.40 <span class="d-eq">=</span></td><td class="num">$1.32 <span class="d-dn">▼ −0.03</span></td><td class="num">$1.45 <span class="d-up">▲ +0.05</span></td></tr>
+              <tr><td>Bebida energética 473 ml</td><td class="num you">$1.25</td><td class="num">$1.20 <span class="d-eq">=</span></td><td class="num">$1.25 <span class="d-up">▲ +0.05</span></td><td class="num">$1.15 <span class="d-dn">▼ −0.05</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="legend"><span><span class="d-dn">▼ bajó</span> — presión sobre tu precio</span><span><span class="d-up">▲ subió</span> — espacio para tu margen</span><span><span class="d-eq">=</span> sin cambio</span></div>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>04 ·</span> Noticias filtradas del sector</h3>
+        <div class="news">
+          <div class="new"><b>Cadena regional de supermercados anuncia 4 sucursales nuevas en el oriente del país</b><span class="src">Medio del sector (DEMO) · esta semana</span><p><em>Por qué te importa:</em> nueva demanda de distribución en la misma zona donde Competidor A busca jefe de ruta. La ventana para llegar primero es corta.</p></div>
+          <div class="new"><b>El precio internacional de la resina PET acumula tres meses al alza</b><span class="src">Publicación de industria (DEMO) · esta semana</span><p><em>Por qué te importa:</em> presión directa sobre el costo de botellas de agua y gaseosa; anticipa alzas de proveedores en el próximo trimestre.</p></div>
+          <div class="new"><b>Marca internacional de energéticas explora entrada al mercado centroamericano</b><span class="src">Medio de negocios (DEMO) · esta semana</span><p><em>Por qué te importa:</em> la categoría energéticas es la de mayor margen de la canasta; un entrante nuevo cambiaría la pelea de espacios en el punto de venta.</p></div>
+        </div>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>05 ·</span> Oportunidades detectadas</h3>
+        <div class="twocol">
+          <div class="opp"><b>Hueco en néctar 500 ml (DEMO)</b>Competidor A retiró la presentación de 500 ml de su catálogo web por segunda semana consecutiva. Espacio para empujar la presentación equivalente en el canal detallista antes de que otro lo ocupe.</div>
+          <div class="opp"><b>Bebidas sin azúcar, poco cubiertas (DEMO)</b>La conversación pública local sobre "bebidas sin azúcar" viene creciendo y los tres competidores monitoreados suman un solo SKU sin azúcar entre todos. Categoría con poca pelea para entrar.</div>
+        </div>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>06 ·</span> Recomendaciones del analista</h3>
+        <div class="twocol">
+          <div class="rec"><b>No igualar todavía el recorte de Competidor B</b>Responder con un combo de rotación en el canal detallista y revisar la próxima semana si el recorte se sostiene. Igualar precio hoy sacrificaría margen contra un movimiento que aún puede ser promocional.</div>
+          <div class="rec"><b>Adelantar la negociación de empaque PET</b>Con tres meses de alza en la resina, asegurar precio con el proveedor actual antes del próximo trimestre y cotizar un segundo proveedor como respaldo.</div>
+        </div>
+      </div>
+
+      <div class="rp-sec">
+        <h3><span>07 ·</span> Mini-dashboard de la semana</h3>
+        <div class="dash">
+          <div class="dash-b">
+            <h4>Movimientos de precio detectados por competidor (semana DEMO)</h4>
+            <div class="bar-row"><span>Competidor A</span><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div><span class="bar-val">1</span></div>
+            <div class="bar-row"><span>Competidor B</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">3</span></div>
+            <div class="bar-row"><span>Competidor C</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">3</span></div>
+          </div>
+          <div class="dash-b">
+            <h4>Alertas emitidas por tipo — últimas 4 semanas (DEMO)</h4>
+            <div class="bar-row"><span>Precios</span><div class="bar-track"><div class="bar-fill b" style="width:100%"></div></div><span class="bar-val">6</span></div>
+            <div class="bar-row"><span>Lanzamientos</span><div class="bar-track"><div class="bar-fill b" style="width:50%"></div></div><span class="bar-val">3</span></div>
+            <div class="bar-row"><span>Costos del sector</span><div class="bar-track"><div class="bar-fill b" style="width:50%"></div></div><span class="bar-val">3</span></div>
+            <div class="bar-row"><span>Expansión</span><div class="bar-track"><div class="bar-fill b" style="width:33%"></div></div><span class="bar-val">2</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rp-end">
+        <span>Fin del informe · todos los datos son ficticios y de demostración</span>
+        <span>optimatiza.com/inteligencia-competitiva</span>
+      </div>
+    </article>
+    <p class="note">"Distribuidora Ejemplo S.A.", los competidores A/B/C, precios, fechas y fuentes son inventados para ilustrar el formato. Ningún dato corresponde a un cliente o mercado real.</p>
+  </section>
+
+  <!-- ==================== después del informe ==================== -->
+  <div class="after-report">
+
+  <section>
+    <div class="claim">Así se ve el entregable del Departamento de Inteligencia Competitiva — <b>el tuyo se construye sobre TU mercado real</b>: tus productos, tus competidores, tus zonas y tus fuentes. Conoce el servicio completo en <a href="../../inteligencia-competitiva/">inteligencia competitiva →</a></div>
+  </section>
+
+  <section>
+    <h2>Cómo se produce el informe real</h2>
+    <p class="sub">Un sistema automatizado monitorea fuentes públicas de tu mercado todos los días; un analista valida y prioriza; tú recibes el informe cada semana. El sistema se encarga del trabajo repetitivo de vigilar; tu equipo conserva las decisiones.</p>
+    <div class="pasos">
+      <div class="paso"><span class="paso-i">💬</span>Diagnóstico gratis (20–30 min): definimos competidores y productos</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-i">📡</span>El sistema monitorea fuentes públicas a diario</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-i">🧠</span>Un analista valida, filtra y recomienda</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-i">📬</span>Informe semanal en tu correo o WhatsApp</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fuentes y sistemas con los que trabaja</h2>
+    <div class="chips">
+      <span class="chip">Sitios web y catálogos de competidores</span>
+      <span class="chip">Redes sociales públicas</span>
+      <span class="chip">Medios y publicaciones del sector</span>
+      <span class="chip">Listas de precios públicas</span>
+      <span class="chip">Correo / Outlook / Gmail</span>
+      <span class="chip">WhatsApp</span>
+      <span class="chip">Power BI</span>
+      <span class="chip">Google Sheets / Excel</span>
+      <span class="chip">Tu CRM o ERP (opcional)</span>
+    </div>
+    <p class="note">Solo se monitorea información pública. Nunca accedemos a sistemas privados de terceros.</p>
+  </section>
+
+  <section>
+    <h2>Precio publicado</h2>
+    <div class="prices">
+      <div class="price"><b>Monitoreo esencial</b><div class="pp">$600–1,200 setup · luego $149/mes</div><p>Un frente (por ejemplo, precios de 3–5 competidores) con alertas e informe semanal. Listo en 1–2 semanas.</p></div>
+      <div class="price"><b>Departamento estándar</b><div class="pp">$1,200–3,000 setup · luego $449/mes</div><p>Varios frentes: precios, noticias, lanzamientos y oportunidades, como en esta muestra. 2–4 semanas.</p></div>
+      <div class="price"><b>Célula completa</b><div class="pp">$3,000–8,000 setup · luego $999/mes</div><p>Monitoreo amplio + dashboard en Power BI o Sheets + reunión mensual de hallazgos. 4–8 semanas.</p></div>
+    </div>
+    <p class="note">Pagos por hitos 40/30/30 · <b>Garantía de arranque 30 días:</b> si el primer flujo no corre en producción en 30 días desde que recibimos accesos, devolvemos el setup. Detalle en <a class="ghost" href="../../precios/">optimatiza.com/precios</a>.</p>
+  </section>
+
+  <section>
+    <h2>Qué es demo y qué es real</h2>
+    <div class="ev">
+      <b>Somos directos con la evidencia:</b>
+      <ul>
+        <li>Todo el contenido del informe de arriba es <b>ficticio</b>, creado solo para mostrar el formato del entregable.</li>
+        <li>Lo que sí es real y puedes verificar: las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio sin intervención humana, y el chat Nova de este sitio es un agente de IA real en vivo.</li>
+        <li>Nuestra única métrica medida hasta hoy: el Capturista Digital procesa una factura en ~4 segundos, medido en video. Los demos de <a class="ghost" href="../../casos/">/casos/</a> son animaciones ilustrativas.</li>
+        <li>No prometemos resultados financieros: el valor del informe depende de tu mercado y de las decisiones que tomes con él.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Los datos de esta muestra son reales?</summary>
+      <p>No. Todos los datos — empresa, competidores, precios, fechas, fuentes y noticias — son ficticios y están marcados como DEMO. "Distribuidora Ejemplo S.A." no existe. La muestra solo ilustra el formato del entregable; tu informe se construye sobre tu mercado real.</p>
+    </details>
+    <details>
+      <summary>¿Qué fuentes usa el informe real?</summary>
+      <p>Fuentes públicas de tu mercado: sitios web y catálogos de competidores, redes sociales públicas, medios del sector y listas de precios disponibles. Nunca accedemos a información privada de terceros ni a sistemas ajenos.</p>
+    </details>
+    <details>
+      <summary>¿Cada cuánto se entrega y por dónde?</summary>
+      <p>Cada semana, por correo o WhatsApp, en un formato pensado para leerse en unos 10 minutos. Puede acompañarse de un dashboard en Power BI o Google Sheets y de una reunión mensual de hallazgos, según el plan.</p>
+    </details>
+    <details>
+      <summary>¿Puedo elegir qué competidores y productos se monitorean?</summary>
+      <p>Sí. En el diagnóstico gratis de 20–30 minutos definimos juntos la canasta de productos, los competidores y las zonas que importan para tu operación. El alcance se ajusta cuando tu mercado cambia.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta y qué garantía tiene?</summary>
+      <p>Rangos publicados: monitoreo esencial $600–1,200 de setup más $149/mes; departamento estándar $1,200–3,000 más $449/mes; célula completa $3,000–8,000 más $999/mes. Pagos por hitos 40/30/30. Garantía de arranque de 30 días: si el primer flujo no corre en producción en 30 días desde que recibimos accesos, devolvemos el setup.</p>
+    </details>
+  </section>
+
+  <div class="final">
+    <h2>¿Quieres este informe, pero de TU mercado?</h2>
+    <p>Diagnóstico gratis de 20–30 minutos: definimos qué competidores y productos vale la pena vigilar en tu caso — y te decimos con honestidad si el servicio te sirve o no.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20la%20muestra%20del%20informe%20y%20quiero%20uno%20sobre%20mi%20mercado.%20%C2%BFAgendamos%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Quiero este informe para mi mercado →</a>
+  </div>
+
+  </div><!-- /after-report -->
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <a href="../../">Inicio</a><a href="../../inteligencia-competitiva/">Inteligencia competitiva</a><a href="../../precios/">Precios</a><a href="../../casos/">Demos</a><a href="../../recursos/">Recursos</a><a href="../../seguridad/">Manejo de datos</a>
+</div></footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Los datos de esta muestra son reales?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Todos los datos — empresa, competidores, precios, fechas, fuentes y noticias — son ficticios y están marcados como DEMO. \"Distribuidora Ejemplo S.A.\" no existe. La muestra solo ilustra el formato del entregable; tu informe se construye sobre tu mercado real."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué fuentes usa el informe real?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Fuentes públicas de tu mercado: sitios web y catálogos de competidores, redes sociales públicas, medios del sector y listas de precios disponibles. Nunca accedemos a información privada de terceros ni a sistemas ajenos."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cada cuánto se entrega y por dónde?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Cada semana, por correo o WhatsApp, en un formato pensado para leerse en unos 10 minutos. Puede acompañarse de un dashboard en Power BI o Google Sheets y de una reunión mensual de hallazgos, según el plan."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo elegir qué competidores y productos se monitorean?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí. En el diagnóstico gratis de 20–30 minutos definimos juntos la canasta de productos, los competidores y las zonas que importan para tu operación. El alcance se ajusta cuando tu mercado cambia."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta y qué garantía tiene?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Rangos publicados: monitoreo esencial $600–1,200 de setup más $149/mes; departamento estándar $1,200–3,000 más $449/mes; célula completa $3,000–8,000 más $999/mes. Pagos por hitos 40/30/30. Garantía de arranque de 30 días: si el primer flujo no corre en producción en 30 días desde que recibimos accesos, devolvemos el setup."}
+    }
+  ]
+}
+</script>
+<script>
+  (function(){
+    var b=document.getElementById('printBtn');
+    if(b){b.addEventListener('click',function(){window.print();});}
+  })();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

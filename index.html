@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#FFFFFF">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://chat-ai.henriquezbh5.workers.dev https://quote-ai.henriquezbh5.workers.dev https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>Optimatiza — Automatización de procesos, agentes de IA e inteligencia competitiva</title>
-  <meta name="description" content="Automatizamos tus procesos de inicio a fin y convertimos información dispersa en decisiones estratégicas: flujos con Power Automate y n8n, agentes de IA y tu departamento externo de inteligencia competitiva. Desde $600.">
+  <title>Optimatiza — Automatización de procesos y agentes de IA para tu empresa</title>
+  <meta name="description" content="Automatizamos los procesos repetitivos de tu empresa para que tu equipo venda, atienda y tome mejores decisiones. Flujos, agentes de IA e inteligencia competitiva, con precios publicados desde $600. Diagnóstico gratis.">
   <meta name="author" content="Optimatiza">
   <link rel="canonical" href="https://optimatiza.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -77,12 +77,32 @@
     .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:19px;color:var(--ink)}
     .brand img{width:30px;height:30px}
     .brand .oz{color:var(--teal)}
-    .nav-links{display:flex;gap:20px;font-size:14.5px;font-weight:500;color:var(--body)}
-    .nav-links a:hover{color:var(--teal)}
+    .nav-links{display:flex;gap:16px;font-size:14px;font-weight:500;color:var(--body);align-items:center}
+    .nav-links>a:hover{color:var(--teal)}
     .sp{flex:1}
     .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:10px 18px;border-radius:999px;font-size:14px;white-space:nowrap;box-shadow:var(--sh)}
     .wa-btn:hover{filter:brightness(1.04)}
-    @media(max-width:840px){.nav-links{display:none}}
+    /* dropdowns de navegacion (CSS puro) */
+    .dd{position:relative}
+    .dd>button{background:none;border:none;font:inherit;font-weight:500;color:var(--body);cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
+    .dd>button:after{content:"▾";font-size:10px;color:var(--dim)}
+    .dd>button:hover{color:var(--teal)}
+    .dd-menu{position:absolute;top:calc(100% + 12px);left:-14px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh2);padding:8px;min-width:240px;display:none;z-index:60}
+    .dd-menu:before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
+    .dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
+    .dd-menu a{display:block;padding:9px 12px;border-radius:9px;font-size:13.5px;color:var(--body)}
+    .dd-menu a:hover{background:var(--teal-soft);color:var(--teal)}
+    .dd-menu a b{display:block;color:var(--ink);font-size:13.5px;font-weight:600}
+    /* menu movil */
+    .mnav{display:none;position:relative}
+    .mnav summary{list-style:none;cursor:pointer;font-size:22px;color:var(--ink);padding:4px 8px;border:1px solid var(--line);border-radius:10px;line-height:1}
+    .mnav summary::-webkit-details-marker{display:none}
+    .mnav[open] .mnav-panel{display:flex}
+    .mnav-panel{position:absolute;right:0;top:calc(100% + 10px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh2);padding:12px;min-width:230px;display:none;flex-direction:column;z-index:70}
+    .mnav-panel a{padding:9px 10px;border-radius:8px;font-size:14px;color:var(--body)}
+    .mnav-panel a:hover{background:var(--teal-soft);color:var(--teal)}
+    .mnav-panel .mh{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);padding:8px 10px 2px}
+    @media(max-width:960px){.nav-links{display:none}.mnav{display:block}}
     .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:64px 0 56px}
     @media(max-width:900px){.hero{grid-template-columns:1fr;padding:44px 0 36px}}
     .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
@@ -214,6 +234,19 @@
     .cs b{font-family:var(--ffd);color:var(--ink);font-size:15px}
     .cs p{font-size:13.5px;margin-top:4px}
     .cs .thumb{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:44px;background:linear-gradient(135deg,#E8F7F4,#EDF3FB)}
+    .ag:hover{border-color:var(--teal);box-shadow:var(--sh2)}
+    /* caso real estructurado */
+    .case-real{background:#fff;border:1.5px solid rgba(37,211,102,.45);border-radius:18px;padding:26px 28px;box-shadow:var(--sh)}
+    .cr-tag{display:inline-block;background:#E9FBF3;color:#0F7A3D;font-size:11.5px;font-weight:800;letter-spacing:.05em;padding:4px 12px;border-radius:20px}
+    .case-real h3{font-family:var(--ffd);color:var(--ink);font-size:19px;margin:10px 0 14px}
+    .cr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px;margin-bottom:14px}
+    .cr-grid b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--dim)}
+    .cr-grid span{font-size:14px;color:var(--ink)}
+    /* seguridad */
+    .seg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:8px}
+    .seg{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 16px;font-size:13.5px}
+    .seg .si{font-size:19px;flex:none}
+    .seg b{color:var(--ink)}
     #cotizador .cotz{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:start}
     @media(max-width:860px){#cotizador .cotz{grid-template-columns:1fr}}
     .pick{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--sh)}
@@ -278,8 +311,8 @@
     /* contacto */
     .cform{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--sh);max-width:720px;margin-top:18px}
     .cform label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:14px}
-    .cform input,.cform textarea{display:block;width:100%;margin-top:6px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:var(--ff);color:var(--ink);background:#fff;outline:none;box-sizing:border-box}
-    .cform input:focus,.cform textarea:focus{border-color:var(--teal)}
+    .cform input,.cform textarea,.cform select{display:block;width:100%;margin-top:6px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-size:14.5px;font-family:var(--ff);color:var(--ink);background:#fff;outline:none;box-sizing:border-box}
+    .cform input:focus,.cform textarea:focus,.cform select:focus{border-color:var(--teal)}
     .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     @media(max-width:640px){.cf-row{grid-template-columns:1fr}}
     .cf-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
@@ -355,16 +388,51 @@
 <header><div class="wrap nav">
   <a class="brand" href="/"><img src="img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <nav class="nav-links">
-    <a href="#agentes">Automatización</a>
-    <a href="#inteligencia">Inteligencia</a>
-    <a href="#como">Cómo funciona</a>
-    <a href="casos/">Demos en video</a>
+  <nav class="nav-links" aria-label="Principal">
+    <div class="dd"><button type="button" aria-haspopup="true">Soluciones</button>
+      <div class="dd-menu">
+        <a href="automatizacion-de-procesos/"><b>Automatización de procesos</b>La línea principal</a>
+        <a href="agentes-de-ia/"><b>Agentes de IA</b>Ejecutan procesos completos</a>
+        <a href="agente-ia-whatsapp/">Atención y ventas por WhatsApp</a>
+        <a href="cobranza-automatizada/">Cobranza automatizada</a>
+        <a href="procesamiento-automatico-facturas/">Procesamiento de facturas</a>
+        <a href="integraciones-api/">Integraciones y APIs</a>
+        <a href="power-bi/">Dashboards y Power BI</a>
+      </div>
+    </div>
+    <div class="dd"><button type="button" aria-haspopup="true">Industrias</button>
+      <div class="dd-menu">
+        <a href="distribuidoras/">Distribuidoras e importadoras</a>
+        <a href="clinicas/">Clínicas y consultorios</a>
+        <a href="servicios-profesionales/">Servicios profesionales y tecnología</a>
+      </div>
+    </div>
+    <a href="inteligencia-competitiva/">Inteligencia competitiva</a>
+    <a href="casos/">Casos</a>
+    <a href="recursos/">Recursos</a>
     <a href="precios/">Precios</a>
-    <a href="#cotizador">Cotizador</a>
-    <a href="blog/">Blog</a>
+    <a href="#contacto">Empresa</a>
   </nav>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20negocio." target="_blank" rel="noopener">Diagnóstico gratis</a>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">☰</summary>
+    <nav class="mnav-panel">
+      <span class="mh">Soluciones</span>
+      <a href="automatizacion-de-procesos/">Automatización de procesos</a>
+      <a href="agentes-de-ia/">Agentes de IA</a>
+      <a href="agente-ia-whatsapp/">Ventas por WhatsApp</a>
+      <a href="cobranza-automatizada/">Cobranza automatizada</a>
+      <span class="mh">Industrias</span>
+      <a href="distribuidoras/">Distribuidoras</a>
+      <a href="clinicas/">Clínicas</a>
+      <a href="servicios-profesionales/">Servicios profesionales</a>
+      <span class="mh">Más</span>
+      <a href="inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="casos/">Casos</a>
+      <a href="recursos/">Recursos</a>
+      <a href="precios/">Precios</a>
+    </nav>
+  </details>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20empresa." target="_blank" rel="noopener">Agendar diagnóstico</a>
 </div></header>
 
 <main>
@@ -372,11 +440,11 @@
   <div class="wrap hero">
     <div>
       <span class="k">Automatización · Agentes de IA · Inteligencia competitiva</span>
-      <h1>Empleados digitales que hacen tu trabajo de oficina <span class="hl">de inicio a fin</span></h1>
-      <p class="sub">No solo chatean: reciben el correo, capturan los datos, los procesan, piden tu aprobación, actualizan tus sistemas y confirman con el cliente. Todo el proceso que hoy hace una persona en su rutina — corriendo solo, las 24 horas, con las herramientas que ya usas.</p>
+      <h1>Automatizamos los procesos repetitivos para que tu equipo <span class="hl">venda, atienda y decida mejor</span></h1>
+      <p class="sub">Construimos flujos y agentes de IA que reciben información, la procesan, solicitan aprobaciones, actualizan tus sistemas y responden a tus clientes automáticamente — las 24 horas, con las herramientas que ya usas. Tu equipo conserva las decisiones que requieren criterio.</p>
       <div class="cta-row">
-        <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20negocio." target="_blank" rel="noopener">Agenda tu diagnóstico gratis →</a>
-        <a class="btn2" href="casos/">Ver demos en video</a>
+        <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20empresa." target="_blank" rel="noopener">Agendar diagnóstico gratuito →</a>
+        <a class="btn2" href="casos/">Ver una demostración</a>
       </div>
       <p class="hero-note"><b>Precios publicados</b> desde $600 · funcionando en semanas · tus datos viven en tus propias cuentas</p>
     </div>
@@ -434,60 +502,20 @@
     <div><b>Desde $600</b><span>precios publicados, sin sorpresas</span></div>
   </div></div>
 
-  <!-- POR QUE ELEGIR OPTIMATIZA -->
-  <section id="que-hace"><div class="wrap">
-    <span class="sec-k">¿Por qué elegir Optimatiza?</span>
-    <h2>Empleados digitales que trabajan por ti 24/7 — sin descanso</h2>
-    <p class="sec-sub">No es un chatbot de respuestas enlatadas: es un empleado digital entrenado con tu negocio, que atiende, cobra y da seguimiento mientras tú duermes. Sin turnos, sin vacaciones, sin días libres.</p>
-    <div class="wtabs" id="wtabs">
-      <button type="button" class="wtab on" data-w="w1">🕐 Trabaja 24/7</button>
-      <button type="button" class="wtab" data-w="w2">🎯 Aprende tu negocio</button>
-      <button type="button" class="wtab" data-w="w3">🔀 Todos tus canales</button>
-      <button type="button" class="wtab" data-w="w4">📈 Cobra y da seguimiento</button>
-      <button type="button" class="wtab" data-w="w5">🔎 Vigila tu mercado</button>
+  <!-- PROBLEMAS QUE RESOLVEMOS -->
+  <section id="problemas"><div class="wrap">
+    <span class="sec-k">Problemas que resolvemos</span>
+    <h2>Si tu equipo pierde horas en esto, se puede automatizar</h2>
+    <p class="sec-sub">Estos son los dolores que más nos traen las empresas — y los primeros que un diagnóstico gratuito pone en orden:</p>
+    <div class="pil">
+      <div class="pi"><span class="ic">🔁</span><h3>Tareas repetitivas</h3><p>Digitar, copiar y pegar entre sistemas, mover archivos: horas de tu equipo en trabajo que no piensa nadie.</p><a class="more" href="automatizacion-de-procesos/">Automatizar procesos →</a></div>
+      <div class="pi"><span class="ic">📱</span><h3>Clientes sin respuesta</h3><p>Preguntas por WhatsApp que quedan en visto — y ventas que se van con el competidor que sí respondió.</p><a class="more" href="agente-ia-whatsapp/">Responder 24/7 →</a></div>
+      <div class="pi"><span class="ic">💵</span><h3>Cobranza atrasada</h3><p>Nadie da abasto persiguiendo factura por factura, y la cartera vencida congela tu capital de trabajo.</p><a class="more" href="cobranza-automatizada/">Cobrar constante →</a></div>
+      <div class="pi"><span class="ic">🗂️</span><h3>Información dispersa</h3><p>El dato vive en un correo, un Excel, un chat y la cabeza de alguien. Nada conectado, todo duplicado.</p><a class="more" href="integraciones-api/">Conectar sistemas →</a></div>
+      <div class="pi"><span class="ic">📊</span><h3>Reportes manuales</h3><p>Cada cierre alguien arma el reporte a mano — y la gerencia decide con datos de la semana pasada.</p><a class="more" href="power-bi/">Reportes automáticos →</a></div>
+      <div class="pi"><span class="ic">🔎</span><h3>Competidores sin vigilar</h3><p>Se mueven todos los días — precios, productos, promociones — y te enteras cuando ya es tarde.</p><a class="more" href="inteligencia-competitiva/">Vigilar el mercado →</a></div>
     </div>
-    <div class="wpanel on" id="w1">
-      <div><h3>Nunca duerme, nunca pide turno</h3><p>Tu cliente escribe a las 10 de la noche, un domingo o un feriado — y recibe respuesta en segundos: precio, disponibilidad, apartado. Tú ves el resumen al día siguiente y solo intervienes en lo que necesita tu criterio.</p></div>
-      <div class="wviz">
-        <div class="wcard dim">🌙 <b>3:12 AM</b> — cliente pregunta por disponibilidad<span class="sm">el agente responde en 4 segundos</span></div>
-        <div class="wcard ok">✅ <b>3:14 AM</b> — pedido apartado y confirmado<span class="sm">orden registrada en tu sistema</span></div>
-        <div class="wcard">☀️ <b>8:00 AM</b> — tú ves el resumen con tu café<span class="sm">la venta ya estaba hecha</span></div>
-      </div>
-    </div>
-    <div class="wpanel" id="w2">
-      <div><h3>Entrenado con TU negocio, no con plantillas</h3><p>Se alimenta de tus precios, tu inventario, tus políticas y hasta tu forma de hablar. Por eso responde como alguien de tu equipo — no como un robot genérico que frustra al cliente.</p></div>
-      <div class="wviz">
-        <div class="wrow wcard"><span class="wtick">✓</span> Conoce tus precios y promociones vigentes</div>
-        <div class="wrow wcard"><span class="wtick">✓</span> Sabe qué hay en inventario y qué no</div>
-        <div class="wrow wcard"><span class="wtick">✓</span> Habla con el tono de tu marca</div>
-        <div class="wrow wcard"><span class="wtick">✓</span> Escala a tu equipo lo que necesita criterio</div>
-      </div>
-    </div>
-    <div class="wpanel" id="w3">
-      <div><h3>Una sola conversación, todos tus canales</h3><p>WhatsApp, Instagram, Messenger, Telegram, correo y el chat de tu web: el mismo empleado digital atiende donde tu cliente prefiera escribir. Nada se pierde entre bandejas.</p></div>
-      <div class="wviz">
-        <div class="wcard">💬 WhatsApp → <b>respondido</b></div>
-        <div class="wcard">📸 Instagram DM → <b>respondido</b></div>
-        <div class="wcard">✉️ Correo → <b>clasificado y respondido</b></div>
-        <div class="wcard ok">Todo en un solo lugar, con historial completo</div>
-      </div>
-    </div>
-    <div class="wpanel" id="w4">
-      <div><h3>Cobra tu cartera y no suelta al cliente</h3><p>Recordatorios de pago que suben de tono solos — cordial, firme, urgente — con monto y medios de pago. Y seguimiento a cada cliente que dejó de comprar. Nadie más persigue factura por factura.</p></div>
-      <div class="wviz">
-        <div class="wcard">📅 <b>Día 1</b> — recordatorio cordial con el monto<span class="sm">"Le recordamos su factura #1042..."</span></div>
-        <div class="wcard">📅 <b>Día 5</b> — tono firme + enlace de pago</div>
-        <div class="wcard ok">💵 <b>Pagado</b> — registrado; la mora fuerte escala a tu equipo</div>
-      </div>
-    </div>
-    <div class="wpanel" id="w5">
-      <div><h3>Mientras trabaja, también vigila tu mercado</h3><p>La misma tecnología que automatiza tu operación puede monitorear a tus competidores: precios, productos, noticias y movimientos del sector. Tú recibes la señal ya filtrada — no 200 pestañas abiertas. <a class="more" href="#inteligencia" style="margin-top:8px">Conocer el Departamento de Inteligencia Competitiva ↓</a></p></div>
-      <div class="wviz">
-        <div class="wcard">🔎 <b>Lunes 7:00 AM</b> — informe ejecutivo en tu correo<span class="sm">competidores, precios y tendencias de la semana</span></div>
-        <div class="wcard">⚠️ <b>Martes 2:40 PM</b> — un competidor bajó precios<span class="sm">alerta al instante por WhatsApp o Teams</span></div>
-        <div class="wcard ok">🎯 <b>Decisión tomada con datos</b> — no con rumores</div>
-      </div>
-    </div>
+    <p class="sec-sub" style="margin:24px 0 0;font-size:14.5px">Cuando decimos <b style="color:var(--ink)">“empleado digital”</b> hablamos de flujos y agentes que se encargan del trabajo repetitivo. <b style="color:var(--ink)">Tu equipo conserva las decisiones, las relaciones y las tareas que requieren criterio.</b></p>
   </div></section>
 
   <!-- CANALES -->
@@ -550,21 +578,81 @@
     </div></div>
   </div></section>
 
-  <!-- AGENTES -->
-  <section id="agentes" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
-    <span class="sec-k">Flujos y agentes</span>
-    <h2>Elige tu primer flujo automático</h2>
-    <p class="sec-sub">Construimos sobre <b>Power Automate, n8n o código a medida</b> — lo que tu caso necesite. Cada solución resuelve un proceso completo: empiezas por el que más te duele y creces desde ahí.</p>
+  <!-- ELIGE POR RESULTADO -->
+  <section id="resultados"><span id="agentes"></span><div class="wrap">
+    <span class="sec-k">Elige por resultado</span>
+    <h2>¿Qué quieres lograr primero?</h2>
+    <p class="sec-sub">Organizamos las soluciones por el resultado que buscas — la tecnología (<b>Power Automate, n8n, Power BI, APIs o código a medida</b>) la elegimos en el diagnóstico según tu caso.</p>
     <div class="ags">
-      <div class="ag"><div class="ag-top"><span class="ag-ic">🧾</span><h3>Capturista de Facturas</h3></div><p>Foto de la factura por WhatsApp → registro ordenado en tu Excel o sistema, en ~4 segundos. Se acabó el digitado manual.</p><div class="ag-tier"><span>Flujo · Power Automate/n8n</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">💵</span><h3>Cobranza automática</h3></div><p>Revisa tus facturas por vencer y vencidas, manda recordatorios cordiales que suben de tono cuando toca y escala la mora fuerte a tu equipo.</p><div class="ag-tier"><span>Flujo · Power Automate/n8n</span><b>$1,200–3,000</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">📦</span><h3>Flujo de Pedidos</h3></div><p>Convierte el chat o audio del cliente en una orden limpia y estructurada en tu sistema. Cero pedidos perdidos, cero errores de tipeo.</p><div class="ag-tier"><span>Flujo · Power Automate/n8n</span><b>$1,200–3,000</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">💬</span><h3>Atención y Ventas 24/7</h3></div><p>Responde WhatsApp, redes y web al instante: precios, disponibilidad, apartados. Pasa a tu equipo solo los casos que necesitan criterio.</p><div class="ag-tier"><span>Agente de IA</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">📅</span><h3>Agenda Inteligente</h3></div><p>Reserva citas, confirma, recuerda y llena los huecos con lista de espera. Menos sillas vacías por clientes que no llegan.</p><div class="ag-tier"><span>Agente de IA</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">🔎</span><h3>Radar de Competencia</h3></div><p>Vigila precios, productos y noticias de tus competidores todos los días, y te avisa solo cuando algo cambia. Tu inteligencia competitiva, automatizada.</p><div class="ag-tier"><span>Flujo · Inteligencia competitiva</span><b>$600–1,200</b></div></div>
-      <div class="ag"><div class="ag-top"><span class="ag-ic">🏗️</span><h3>Desarrollo a tu medida</h3></div><p>¿Tu proceso no está aquí? Diseñamos el flujo, el agente o el desarrollo completo sobre tu operación real. Primero el diagnóstico, después el precio.</p><div class="ag-tier"><span>Célula / desarrollo</span><b>$3,000–8,000</b></div></div>
+      <a class="ag" href="agente-ia-whatsapp/"><div class="ag-top"><span class="ag-ic">💬</span><h3>Vender y responder más rápido</h3></div><p>Un agente de IA responde WhatsApp, redes y web al instante: precios, disponibilidad, apartados. Solo escala a tu equipo lo que necesita criterio.</p><div class="ag-tier"><span>Agente de IA · 24/7</span><b>$600–1,200</b></div></a>
+      <a class="ag" href="cobranza-automatizada/"><div class="ag-top"><span class="ag-ic">💵</span><h3>Cobrar de forma constante</h3></div><p>Recordatorios sobre toda tu cartera que suben de tono solos — cordial, firme, urgente — y escalan la mora fuerte a tu equipo.</p><div class="ag-tier"><span>Flujo automático</span><b>$1,200–3,000</b></div></a>
+      <a class="ag" href="procesamiento-automatico-facturas/"><div class="ag-top"><span class="ag-ic">🧾</span><h3>Eliminar la digitación</h3></div><p>Llega el correo o la foto de la factura → datos capturados, validados y registrados en tu sistema. Sin retipear, sin errores.</p><div class="ag-tier"><span>Flujo automático</span><b>$600–1,200</b></div></a>
+      <a class="ag" href="integraciones-api/"><div class="ag-top"><span class="ag-ic">🔗</span><h3>Conectar tus sistemas</h3></div><p>CRM, ERP, hojas de cálculo, correo y WhatsApp hablando entre sí — con sincronización automática y trazabilidad.</p><div class="ag-tier"><span>Integraciones y APIs</span><b>$1,200–3,000</b></div></a>
+      <a class="ag" href="power-bi/"><div class="ag-top"><span class="ag-ic">📊</span><h3>Obtener reportes automáticos</h3></div><p>Un dashboard que se actualiza solo y el resumen ejecutivo cada mañana en tu correo. Decide con datos de hoy, no de la semana pasada.</p><div class="ag-tier"><span>Dashboards y Power BI</span><b>$600–1,200</b></div></a>
+      <a class="ag" href="inteligencia-competitiva/"><div class="ag-top"><span class="ag-ic">🔎</span><h3>Vigilar el mercado</h3></div><p>Monitoreo automático de competidores, precios y noticias, con alertas al momento e informe ejecutivo semanal.</p><div class="ag-tier"><span>Inteligencia competitiva</span><b>$600–1,200</b></div></a>
     </div>
-    <a class="more" href="agentes/">Ver el catálogo completo de 20 soluciones →</a>
+    <a class="more" href="automatizacion-de-procesos/">Conocer la línea completa de automatización →</a>
+    <a class="more" href="agentes/" style="margin-left:18px">Ver el catálogo de 20 soluciones →</a>
+  </div></section>
+
+  <!-- EVIDENCIA -->
+  <section id="evidencia" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
+    <span class="sec-k">Evidencia</span>
+    <h2>No te lo contamos: te lo mostramos</h2>
+    <p class="sec-sub">Diferenciamos siempre lo real de lo ilustrativo. Este es nuestro caso medido:</p>
+    <div class="case-real">
+      <div>
+        <span class="cr-tag">CASO REAL · MEDIDO EN VIDEO</span>
+        <h3>Capturista Digital de facturas</h3>
+        <div class="cr-grid">
+          <div><b>Problema</b><span>facturas digitadas a mano, una por una</span></div>
+          <div><b>Antes</b><span>minutos por factura + errores de tipeo</span></div>
+          <div><b>Solución</b><span>foto por WhatsApp → captura con IA → registro en Excel</span></div>
+          <div><b>Herramientas</b><span>WhatsApp + IA de visión + hoja de cálculo</span></div>
+          <div><b>Después</b><span>~4 segundos por factura</span></div>
+          <div><b>Verifícalo</b><span>grabación del sistema real, paso a paso, sin cortes</span></div>
+        </div>
+        <a class="more" href="casos/">Ver la grabación completa →</a>
+      </div>
+    </div>
+    <p class="sec-sub" style="margin:26px 0 18px">Y estas cápsulas de 30–60 segundos muestran cómo funciona cada solución <b>(demostraciones ilustrativas animadas, señaladas como tales)</b>:</p>
+    <div class="cases3">
+      <a class="cs" href="casos/"><div class="thumb">🧾</div><div class="cb"><b>Capturista Digital</b><p>Foto de factura por WhatsApp → registro en Excel en segundos.</p></div></a>
+      <a class="cs" href="casos/"><div class="thumb">💵</div><div class="cb"><b>Cobranza automática</b><p>Recordatorios que suben de tono solos, con enlace de pago.</p></div></a>
+      <a class="cs" href="casos/"><div class="thumb">💬</div><div class="cb"><b>Atención 24/7</b><p>El cliente pregunta a medianoche; la venta se hace igual.</p></div></a>
+    </div>
+    <a class="more" href="casos/">Ver todos los demos en video →</a>
+  </div></section>
+
+  <!-- PRUEBA: CORRIENDO AHORA MISMO -->
+  <section id="prueba"><div class="wrap">
+    <span class="sec-k">No te pedimos fe</span>
+    <h2>Sistemas nuestros corriendo ahora mismo — compruébalo tú</h2>
+    <p class="sec-sub">Somos una empresa nueva y no vamos a inventarte logos ni testimonios. Lo que sí podemos darte es evidencia que puedes verificar en este momento:</p>
+    <div class="pil">
+      <div class="pi"><span class="ic">🧾</span><h3>Capturista Digital</h3><p>Una factura por foto entra a Excel en ~4 segundos. <b>Míralo medido en video</b>, paso a paso, sin cortes.</p><a class="more" href="casos/">Ver el video →</a></div>
+      <div class="pi"><span class="ic">📣</span><h3>Este negocio publica solo</h3><p>Las publicaciones diarias de nuestro Facebook e Instagram las genera y publica <b>un sistema nuestro, sin humanos</b>. Entra y revisa las fechas.</p><a class="more" href="https://www.instagram.com/optimatiza" target="_blank" rel="noopener">Ver @optimatiza →</a></div>
+      <div class="pi"><span class="ic">🤖</span><h3>Nova, aquí mismo</h3><p>El chat de la esquina es <b>un agente real nuestro</b> — de los mismos que instalamos. Pregúntale precios ahora y mira cómo responde.</p><a class="more" href="#" id="tryNova">Hablar con Nova →</a></div>
+      <div class="pi"><span class="ic">🤝</span><h3>Programa Clientes Fundadores</h3><p>3 cupos con precio preferencial a cambio de tu testimonio real con nombre y métrica. <b>Transparencia total, por escrito.</b></p><a class="more" href="fundadores/">Conocer el programa →</a></div>
+    </div>
+  </div></section>
+
+  <!-- INDUSTRIAS -->
+  <section id="industrias" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
+    <span class="sec-k">Industrias prioritarias</span>
+    <h2>Conocemos tu operación — no llegamos a aprender contigo</h2>
+    <p class="sec-sub">Nos concentramos en tres tipos de empresa donde ya tenemos soluciones armadas:</p>
+    <div class="ags">
+      <a class="ag" href="distribuidoras/"><div class="ag-top"><span class="ag-ic">📦</span><h3>Distribuidoras, importadoras y ferreterías</h3></div><p>Cartera vencida, pedidos perdidos en WhatsApp, cotizaciones lentas, doble digitación y reportes manuales.</p><div class="ag-tier"><span>Cobranza · pedidos · facturas</span><b>Ver soluciones →</b></div></a>
+      <a class="ag" href="clinicas/"><div class="ag-top"><span class="ag-ic">🩺</span><h3>Clínicas, consultorios y centros médicos</h3></div><p>Inasistencias, citas sin confirmar, consultas repetitivas, controles olvidados y mensajes fuera de horario.</p><div class="ag-tier"><span>Agenda · recordatorios · atención</span><b>Ver soluciones →</b></div></a>
+      <a class="ag" href="servicios-profesionales/"><div class="ag-top"><span class="ag-ic">💼</span><h3>Servicios profesionales, tecnología y operaciones</h3></div><p>Aprobaciones por correo, facturas, datos repartidos, integraciones pendientes y competidores sin vigilar.</p><div class="ag-tier"><span>Aprobaciones · reportes · IC</span><b>Ver soluciones →</b></div></a>
+    </div>
+    <div class="calc-cta">
+      <div><b>¿Tienes distribuidora? Calcula cuánto tienes congelado en cartera vencida</b>
+      <span>Herramienta gratis, sin registro — mete tus números y velo en 30 segundos.</span></div>
+      <a class="calc-btn" href="calculadora/">Abrir calculadora →</a>
+    </div>
+    <p class="sec-sub" style="margin:18px 0 0;font-size:13.5px">¿Otro rubro? Igual podemos ayudarte — mira los <a href="soluciones/" style="color:var(--teal);font-weight:600">16 casos de uso</a> o cuéntanos tu proceso en el <a href="#contacto" style="color:var(--teal);font-weight:600">formulario</a>.</p>
   </div></section>
 
   <!-- INTELIGENCIA COMPETITIVA -->
@@ -581,7 +669,7 @@
           <li><span class="wtick">✓</span><span><b>Informe ejecutivo automático</b> — resumen claro y accionable en tu correo cada semana, más un panel para ver el mercado de un vistazo.</span></li>
         </ul>
         <div class="cta-row" style="margin-top:24px">
-          <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20me%20interesa%20el%20Departamento%20de%20Inteligencia%20Competitiva%20para%20mi%20empresa." target="_blank" rel="noopener">Quiero vigilar mi mercado →</a>
+          <a class="btn" href="recursos/informe-muestra/">Solicitar muestra del informe →</a>
           <a class="btn2" href="inteligencia-competitiva/">Conocer el departamento completo</a>
         </div>
       </div>
@@ -613,56 +701,33 @@
     <p class="ic-tools">Se integra con lo que ya usas: <b>correo, Microsoft 365, Google Workspace, Power BI, Power Automate, n8n, tu CRM o ERP y hojas de cálculo</b>. Sin sistemas nuevos que aprender.</p>
   </div></section>
 
-  <!-- COMO FUNCIONA -->
-  <section id="como"><div class="wrap">
-    <span class="sec-k">Cómo funciona</span>
-    <h2>De la primera llamada a tu agente trabajando: semanas, no meses</h2>
-    <div class="steps3">
-      <div class="st"><h3>Diagnóstico gratis</h3><p>20–30 minutos por WhatsApp o llamada. Revisamos tu operación real y te decimos qué conviene automatizar primero — y qué no.</p></div>
-      <div class="st"><h3>Lo construimos y lo pruebas</h3><p>Armamos tu agente conectado a tus sistemas. Lo ves funcionando con tus propios datos antes de pagar el último hito (pagos 40/30/30).</p></div>
-      <div class="st"><h3>Trabaja para ti, tú decides lo crítico</h3><p>El agente opera 24/7 y te escala solo lo que necesita tu criterio. Incluye 30 días de soporte; luego eliges un plan de operación desde $149/mes.</p></div>
-    </div>
-    <div class="garantias">
-      <span class="gar">✓ Precios publicados</span>
-      <span class="gar">✓ Tus datos en tus cuentas</span>
-      <span class="gar">✓ 30 días de soporte incluidos</span>
-      <span class="gar">✓ Mes a mes, cancelas cuando quieras</span>
+  <!-- COMO TRABAJAMOS -->
+  <section id="como" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
+    <span class="sec-k">Cómo trabajamos</span>
+    <h2>De la primera llamada a tu proceso corriendo solo: semanas, no meses</h2>
+    <div class="steps3" style="margin-top:22px">
+      <div class="st"><h3>Diagnóstico</h3><p>20–30 minutos gratis por WhatsApp o llamada. Revisamos tu operación real y te decimos qué conviene automatizar primero — y qué no.</p></div>
+      <div class="st"><h3>Diseño</h3><p>Definimos por escrito el proceso, las herramientas, los responsables y el criterio de éxito. Ese documento es parte de la propuesta.</p></div>
+      <div class="st"><h3>Construcción</h3><p>Armamos el flujo o agente conectado a tus sistemas reales, con pagos por hitos 40/30/30.</p></div>
+      <div class="st"><h3>Pruebas</h3><p>Lo ves funcionando con tus propios datos — y lo ajustamos contigo — antes de pagar el último hito.</p></div>
+      <div class="st"><h3>Implementación</h3><p>Entra en producción con entrega documentada: accesos, manual de operación y qué hacer si algo falla.</p></div>
+      <div class="st"><h3>Operación y mejora</h3><p>30 días de soporte incluidos; luego eliges un plan de operación desde $149/mes para mantenerlo, ajustarlo y mejorarlo. Mes a mes.</p></div>
     </div>
   </div></section>
 
-  <!-- VERTICALES -->
-  <section style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
-    <span class="sec-k">Para tu negocio</span>
-    <h2>Hecho para pymes reales, no para corporativos</h2>
-    <p class="sec-sub">Trabajamos procesos de negocios como el tuyo:</p>
-    <div class="verts">
-      <a class="vert" href="distribuidoras/">Distribuidoras y mayoristas</a>
-      <a class="vert" href="clinicas/">Clínicas y consultorios</a>
-      <a class="vert" href="soluciones/">Ferreterías</a>
-      <a class="vert" href="soluciones/">Restaurantes y hoteles</a>
-      <a class="vert" href="soluciones/">Talleres y repuestos</a>
-      <a class="vert" href="soluciones/">Farmacias y veterinarias</a>
-      <a class="vert" href="soluciones/">Inmobiliarias</a>
-      <a class="vert" href="soluciones/">Ver 16 casos de uso →</a>
+  <!-- SEGURIDAD Y CONFIANZA -->
+  <section id="seguridad-home"><div class="wrap">
+    <span class="sec-k">Seguridad y confianza</span>
+    <h2>Reglas claras desde el primer día</h2>
+    <div class="seg-grid">
+      <div class="seg"><span class="si">🔐</span><span><b>Tus datos viven en tus cuentas</b> — tu WhatsApp, tu correo, tus sistemas. No entrenamos modelos con tu información.</span></div>
+      <div class="seg"><span class="si">🔑</span><span><b>Accesos mínimos y revocables</b> — pedimos solo los permisos que el flujo necesita, y puedes cortarlos cuando quieras.</span></div>
+      <div class="seg"><span class="si">🙋</span><span><b>Aprobaciones humanas</b> — lo crítico (pagos, excepciones, mora fuerte) siempre pasa por alguien de tu equipo.</span></div>
+      <div class="seg"><span class="si">📄</span><span><b>Entrega documentada</b> — el flujo, sus accesos y su manual quedan en tus manos, no en las nuestras.</span></div>
+      <div class="seg"><span class="si">🛟</span><span><b>30 días de soporte incluidos</b> — y planes de operación mes a mes, cancelables cuando quieras.</span></div>
+      <div class="seg"><span class="si">✅</span><span><b>Garantía de arranque</b> — si tu primer flujo no corre en producción en 30 días desde los accesos, devolvemos el setup. <a href="precios/" style="color:var(--teal);font-weight:600">Términos publicados →</a></span></div>
     </div>
-    <div class="calc-cta">
-      <div><b>¿Tienes distribuidora? Calcula cuánto tienes congelado en cartera vencida</b>
-      <span>Herramienta gratis, sin registro — mete tus números y velo en 30 segundos.</span></div>
-      <a class="calc-btn" href="calculadora/">Abrir calculadora →</a>
-    </div>
-  </div></section>
-
-  <!-- CASOS EN VIDEO -->
-  <section id="casos"><div class="wrap">
-    <span class="sec-k">Míralo trabajar</span>
-    <h2>No te lo contamos: te lo mostramos en video</h2>
-    <p class="sec-sub">Demos reales de agentes funcionando, en cápsulas de 30–60 segundos.</p>
-    <div class="cases3">
-      <a class="cs" href="casos/"><div class="thumb">🧾</div><div class="cb"><b>Capturista Digital</b><p>Foto de factura por WhatsApp → registro en Excel en segundos.</p></div></a>
-      <a class="cs" href="casos/"><div class="thumb">💵</div><div class="cb"><b>Cobranza automática</b><p>Recordatorios que suben de tono solos, con enlace de pago.</p></div></a>
-      <a class="cs" href="casos/"><div class="thumb">💬</div><div class="cb"><b>Atención 24/7</b><p>El cliente pregunta a medianoche; la venta se hace igual.</p></div></a>
-    </div>
-    <a class="more" href="casos/">Ver todos los demos en video →</a>
+    <p class="sec-sub" style="margin:18px 0 0;font-size:13.5px">El detalle completo del manejo de datos está publicado en <a href="seguridad/" style="color:var(--teal);font-weight:600">optimatiza.com/seguridad</a>.</p>
   </div></section>
 
   <!-- COTIZADOR -->
@@ -687,8 +752,6 @@
         <label><input type="checkbox" data-lo="600" data-hi="1200" data-n="Agenda Inteligente"><div><b>📅 Agenda Inteligente</b><span>Citas, confirmaciones y recordatorios automáticos</span></div></label>
         <div class="pg">🧩 Desarrollos</div>
         <label><input type="checkbox" data-lo="3000" data-hi="8000" data-n="Desarrollo a la medida"><div><b>🏗️ Desarrollo a la medida</b><span>Web, app o integración construida sobre tu operación (célula completa)</span></div></label>
-        <div class="pg btcg">₿ Bitcoin · línea aparte</div>
-        <label class="btcopt"><input type="checkbox" data-lo="200" data-hi="200" data-n="Inmersión a Bitcoin (3h)"><div><b>₿ Inmersión a Bitcoin</b><span>Sesión 1:1 de 3 horas: método, seguridad y plan por escrito — <a href="bitcoin/" class="btclink">ver línea completa →</a></span></div></label>
       </div>
       <div class="ai-box">
         <div class="pg" style="margin-top:0">✨ ¿No ves tu caso? Descríbelo y simula el precio</div>
@@ -712,21 +775,8 @@
     </div>
   </div></section>
 
-  <!-- PRUEBA: CORRIENDO AHORA MISMO -->
-  <section id="prueba"><div class="wrap">
-    <span class="sec-k">No te pedimos fe</span>
-    <h2>Sistemas nuestros corriendo ahora mismo — compruébalo tú</h2>
-    <p class="sec-sub">Somos una empresa nueva y no vamos a inventarte logos ni testimonios. Lo que sí podemos darte es evidencia que puedes verificar en este momento:</p>
-    <div class="pil">
-      <div class="pi"><span class="ic">🧾</span><h3>Capturista Digital</h3><p>Una factura por foto entra a Excel en ~4 segundos. <b>Míralo medido en video</b>, paso a paso, sin cortes.</p><a class="more" href="casos/">Ver el video →</a></div>
-      <div class="pi"><span class="ic">📣</span><h3>Este negocio publica solo</h3><p>Las publicaciones diarias de nuestro Facebook e Instagram las genera y publica <b>un sistema nuestro, sin humanos</b>. Entra y revisa las fechas.</p><a class="more" href="https://www.instagram.com/optimatiza" target="_blank" rel="noopener">Ver @optimatiza →</a></div>
-      <div class="pi"><span class="ic">🤖</span><h3>Nova, aquí mismo</h3><p>El chat de la esquina es <b>un agente real nuestro</b> — de los mismos que instalamos. Pregúntale precios ahora y mira cómo responde.</p><a class="more" href="#" id="tryNova">Hablar con Nova →</a></div>
-      <div class="pi"><span class="ic">🤝</span><h3>Programa Clientes Fundadores</h3><p>3 cupos con precio preferencial a cambio de tu testimonio real con nombre y métrica. <b>Transparencia total, por escrito.</b></p><a class="more" href="fundadores/">Conocer el programa →</a></div>
-    </div>
-  </div></section>
-
   <!-- FUNDADOR + CONTACTO -->
-  <section id="contacto" style="background:var(--alt);border-block:1px solid var(--line)"><div class="wrap">
+  <section id="contacto"><div class="wrap">
     <div class="fund" style="margin-bottom:26px">
       <img src="humberto.jpg" alt="Humberto Henríquez, fundador de Optimatiza">
       <div>
@@ -745,26 +795,36 @@
       </div>
       <div class="cf-row">
         <label>WhatsApp o correo<input type="text" name="contacto" required maxlength="120"></label>
+        <label>Industria<select name="industria">
+          <option value="">Elige una (opcional)</option>
+          <option>Distribuidora / importadora / ferretería</option>
+          <option>Clínica / consultorio / centro médico</option>
+          <option>Servicios profesionales / tecnología</option>
+          <option>Otra</option>
+        </select></label>
       </div>
       <label>¿Qué proceso te está comiendo horas?<textarea name="mensaje" rows="3" required maxlength="1000" placeholder="Ej.: pasamos pedidos de WhatsApp a mano al sistema, la cobranza se atrasa…"></textarea></label>
+      <div class="cf-row">
+        <label>Volumen mensual aproximado<select name="volumen">
+          <option value="">Opcional</option>
+          <option>Menos de 100 operaciones/mes</option>
+          <option>100 – 500 operaciones/mes</option>
+          <option>500 – 2,000 operaciones/mes</option>
+          <option>Más de 2,000 operaciones/mes</option>
+        </select></label>
+        <label>¿Qué tan urgente es?<select name="urgencia">
+          <option value="">Opcional</option>
+          <option>Lo necesito ya (este mes)</option>
+          <option>Próximos 1–3 meses</option>
+          <option>Explorando opciones</option>
+        </select></label>
+      </div>
       <div class="cf-actions">
         <button type="submit" class="btn" id="cfBtn">Enviar — te respondemos en horas</button>
         <span class="cf-alt">o directo por <a href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">WhatsApp</a></span>
       </div>
       <p class="cf-note" id="cfNote">Solo usamos estos datos para responderte. Nada de listas de spam.</p>
     </form>
-  </div></section>
-
-  <!-- BITCOIN -->
-  <section id="bitcoin"><div class="wrap">
-    <div class="btc-band">
-      <div>
-        <span class="btc-k">₿ LÍNEA BITCOIN · APARTE DE AUTOMATIZACIÓN</span>
-        <h2 style="margin-top:8px">¿También operas o te interesa Bitcoin?</h2>
-        <p>Inmersión 1:1, acompañamiento mensual y gestión bajo mandato — con método por escrito, indicadores propios desde 2017 y una regla de la casa: <b>no compramos caro</b>. Sin custodia de tus fondos y sin promesas de rendimiento.</p>
-      </div>
-      <a class="btc-cta" href="bitcoin/">Conocer la línea Bitcoin →</a>
-    </div>
   </div></section>
 
   <!-- FAQ -->
@@ -784,9 +844,9 @@
   <!-- CTA FINAL -->
   <section><div class="wrap">
     <div class="final">
-      <h2>Empieza por el proceso que más te duele</h2>
-      <p>Diagnóstico gratis de 20–30 minutos: revisamos tu operación y te decimos qué puede hacer un agente por ti — y qué no. Sin compromiso.</p>
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">Hablar por WhatsApp ahora →</a>
+      <h2>Agenda un diagnóstico de 30 minutos</h2>
+      <p>Revisamos tu operación real y te decimos qué conviene automatizar primero, cuánto cuesta y qué no vale la pena — sin compromiso y con precios publicados.</p>
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20agendar%20mi%20diagn%C3%B3stico%20gratis%20de%2030%20minutos." target="_blank" rel="noopener">Agendar mi diagnóstico →</a>
     </div>
   </div></section>
 </main>
@@ -797,25 +857,31 @@
       <div class="fbrand"><img src="img/logo-badge-96.png" alt="">Optimatiza</div>
       <p style="max-width:34ch">Automatización, agentes de IA e inteligencia competitiva para pymes de El Salvador y Latinoamérica.</p>
     </div>
-    <div><b>Producto</b>
-      <a href="agentes/">Catálogo de agentes</a>
+    <div><b>Soluciones</b>
+      <a href="automatizacion-de-procesos/">Automatización de procesos</a>
+      <a href="agentes-de-ia/">Agentes de IA</a>
+      <a href="agente-ia-whatsapp/">Ventas por WhatsApp</a>
+      <a href="cobranza-automatizada/">Cobranza automatizada</a>
       <a href="inteligencia-competitiva/">Inteligencia competitiva</a>
-      <a href="casos/">Demos en video</a>
-      <a href="precios/">Precios</a>
-      <a href="soluciones/">Casos de uso</a>
+      <a href="agentes/">Catálogo completo</a>
     </div>
-    <div><b>Para tu industria</b>
+    <div><b>Industrias y casos</b>
       <a href="distribuidoras/">Distribuidoras</a>
-      <a href="calculadora/">Calculadora de cartera</a>
-      <a href="recursos/guia-10-procesos-optimatiza.pdf">Guía gratis</a>
-      <a href="bitcoin/">Bitcoin (línea aparte)</a>
+      <a href="clinicas/">Clínicas</a>
+      <a href="servicios-profesionales/">Servicios profesionales</a>
+      <a href="casos/">Demos en video</a>
+      <a href="soluciones/">16 casos de uso</a>
     </div>
-    <div><b>Empresa</b>
+    <div><b>Recursos y empresa</b>
+      <a href="recursos/">Centro de recursos</a>
+      <a href="calculadora/">Calculadora de cartera</a>
+      <a href="precios/">Precios</a>
       <a href="blog/">Blog</a>
       <a href="fundadores/">Clientes fundadores</a>
       <a href="seguridad/">Manejo de datos</a>
       <a href="legal/privacidad.html">Privacidad</a>
       <a href="legal/terminos.html">Términos</a>
+      <a href="bitcoin/">Bitcoin — línea aparte</a>
     </div>
   </div>
   <div class="copy">© <span id="yy">2026</span> Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070" style="display:inline;color:var(--teal)">WhatsApp +503 7192 8070</a></div>

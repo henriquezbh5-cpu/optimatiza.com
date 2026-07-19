@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automatización para Empresas de Servicios Profesionales | Optimatiza</title>
+  <meta name="description" content="Flujos de aprobación, reportes automáticos y radar de mercado para empresas de servicios, tecnología y operaciones. Diagnóstico gratis de 20-30 minutos.">
+  <link rel="canonical" href="https://optimatiza.com/servicios-profesionales/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Automatización para Empresas de Servicios Profesionales | Optimatiza">
+  <meta property="og:description" content="Flujos de aprobación, reportes automáticos y radar de mercado para empresas de servicios, tecnología y operaciones. Diagnóstico gratis de 20-30 minutos.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/servicios-profesionales/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;
+      --blue:#2563EB;--violet:#6D28D9;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .ghost{color:var(--teal);font-weight:600;font-size:14px}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
+    .hero{padding:60px 0 36px;max-width:820px}
+    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
+    .sub{font-size:17.5px;max-width:62ch}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
+    section{padding:34px 0}
+    .lead{max-width:70ch;margin-bottom:18px}
+    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+    .dol-i{font-size:26px}
+    .dol h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
+    .dol p{font-size:13.5px}
+    .outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .out{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
+    .out b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
+    .out p{font-size:13.5px;margin-top:6px}
+    .out .more{display:inline-block;margin-top:8px;color:var(--teal);font-weight:600;font-size:13px}
+    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin-top:6px}
+    .fstep{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--sh)}
+    .fstep b{font-family:var(--ffd);color:var(--ink);font-size:14.5px;display:block;margin-top:4px}
+    .fstep p{font-size:13px;margin-top:4px}
+    .fi{font-size:22px}
+    .farr{align-self:center;color:var(--teal);font-weight:700;font-size:18px}
+    .farr.down{grid-column:1/-1;justify-self:center;transform:rotate(90deg)}
+    .fbranch{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .fcase{border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:13.5px;background:#fff;box-shadow:var(--sh)}
+    .fcase.ok{border-left:3px solid var(--teal)}
+    .fcase.wait{border-left:3px solid var(--blue)}
+    .fcase b{color:var(--ink)}
+    @media(max-width:820px){.flow{grid-template-columns:1fr}.farr{justify-self:center;transform:rotate(90deg)}.fbranch{grid-template-columns:1fr}}
+    .vids{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:start;margin-top:26px}
+    @media(max-width:760px){.vids{grid-template-columns:1fr}}
+    .vid{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+    .vid video{width:100%;aspect-ratio:16/9;display:block;background:#000}
+    .vid .vb{padding:14px 18px}
+    .vid b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
+    .vid p{font-size:13.5px;margin-top:4px}
+    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
+    .note a{color:var(--teal);font-weight:600}
+    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+    .paso{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso-i{font-size:19px}
+    .arrow{color:var(--teal)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
+    a.chip{color:var(--teal);font-weight:600;border-color:rgba(13,148,136,.35);background:var(--teal-soft)}
+    .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .pr{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
+    .pr b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
+    .pr .amt{color:var(--teal);font-weight:700;font-size:17px;display:block;margin:6px 0 2px}
+    .pr .tm{color:var(--dim);font-size:12.5px}
+    .pr p{font-size:13.5px;margin-top:8px}
+    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(20,184,166,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
+    .guar b{color:var(--ink)}
+    .guar a{color:var(--teal);font-weight:600}
+    .evs{display:grid;gap:10px}
+    .ev{display:flex;gap:12px;background:var(--alt);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:14px}
+    .ev-i{font-size:20px;flex:none}
+    .ev b{color:var(--ink)}
+    .ev a{color:var(--teal);font-weight:600}
+    .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:10px;box-shadow:var(--sh)}
+    .faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--teal);font-size:19px;font-weight:700;flex:none}
+    .faq details[open] summary::after{content:"–"}
+    .faq .fa{padding:0 18px 16px;font-size:14px;max-width:75ch}
+    .faq .fa a{color:var(--teal);font-weight:600}
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final h2{color:#fff;margin-bottom:8px}
+    .final p{color:#D9F5F1;max-width:58ch;margin:0 auto 20px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+    footer a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+  <div class="sp"></div>
+  <a class="ghost" href="../casos/">Demos en video</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20tengo%20una%20empresa%20de%20servicios%20y%20quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="k">Para empresas de servicios profesionales, tecnología y operaciones</span>
+    <h1>Automatización para empresas de servicios profesionales que están cansadas de perseguir aprobaciones por correo</h1>
+    <p class="sub">Construimos flujos y agentes de IA que reciben cada solicitud, arman el expediente, piden la aprobación al responsable, actualizan tus sistemas y avisan a quien corresponde — con registro de cada paso. El resultado: una operación ordenada, con reportes que se arman solos y un radar que vigila tu mercado. Tu equipo conserva las decisiones que requieren criterio; el sistema se encarga del trabajo repetitivo.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20tengo%20una%20empresa%20de%20servicios%20y%20quiero%20el%20diagn%C3%B3stico%20gratis%20de%20mis%20procesos." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+      <a class="ghost" href="../casos/">o mira los demos en video</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>Los dolores que conocemos de memoria</h2>
+    <div class="dols">
+      <div class="dol"><span class="dol-i">📧</span><h3>Aprobaciones que se pierden en el correo</h3><p>La solicitud de compra quedó en un hilo con 14 respuestas. Nadie sabe si el gerente ya la vio, y el proveedor sigue esperando. Se aprueba tarde o se aprueba dos veces.</p></div>
+      <div class="dol"><span class="dol-i">📊</span><h3>Reportes armados a mano cada semana</h3><p>Alguien de tu equipo pierde el viernes copiando datos de tres sistemas a un Excel para el reporte de dirección. Si esa persona falta, no hay reporte.</p></div>
+      <div class="dol"><span class="dol-i">🗄️</span><h3>Datos repartidos en sistemas que no se hablan</h3><p>El CRM dice una cosa, la facturación otra y el Excel del jefe una tercera. Cada consolidación manual es una oportunidad de error.</p></div>
+      <div class="dol"><span class="dol-i">🧾</span><h3>Facturas digitadas a mano</h3><p>Llegan por correo, alguien las descarga, las transcribe al sistema y archiva el PDF. Horas de digitación con errores que aparecen al cierre del mes.</p></div>
+      <div class="dol"><span class="dol-i">🎫</span><h3>Solicitudes sin seguimiento</h3><p>Un cliente o un compañero pide algo por correo o WhatsApp. Sin un registro central, nadie sabe qué está pendiente, de quién, ni desde cuándo.</p></div>
+      <div class="dol"><span class="dol-i">📡</span><h3>Cero inteligencia de mercado</h3><p>Tu competencia cambió precios, publicó un servicio nuevo o ganó una licitación — y te enteraste semanas después, por casualidad.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>El resultado: una operación ordenada</h2>
+    <p class="lead">Cada pieza ataca uno de esos dolores. Se construyen por separado, funcionan juntas.</p>
+    <div class="outs">
+      <a class="out" href="../automatizacion-de-procesos/"><b>🔀 Flujos de aprobación con trazabilidad</b><p>Compras, vacaciones, descuentos, viáticos: la solicitud entra por un solo canal, se aprueba con un clic y queda registrado quién, cuándo y por qué.</p><span class="more">Automatización de procesos →</span></a>
+      <a class="out" href="../power-bi/"><b>📈 Reportes que llegan solos</b><p>Cada mañana o cada lunes, el tablero y el resumen ejecutivo se actualizan sin que nadie copie ni pegue nada.</p><span class="more">Reportes con Power BI →</span></a>
+      <a class="out" href="../integraciones-api/"><b>🔌 Sistemas que por fin se hablan</b><p>CRM, ERP, facturación y hojas de cálculo sincronizados por API: un solo dato verdadero en vez de tres versiones.</p><span class="more">Integraciones por API →</span></a>
+      <a class="out" href="../procesamiento-automatico-facturas/"><b>🧾 Facturas capturadas sin digitar</b><p>La factura llega, el sistema la lee, extrae los datos y los deja en tu sistema contable con el PDF archivado.</p><span class="more">Procesamiento de facturas →</span></a>
+      <a class="out" href="../inteligencia-competitiva/"><b>📡 Radar de mercado</b><p>Un sistema vigila precios, lanzamientos y movimientos de tu competencia y tu sector, y te resume lo relevante.</p><span class="more">Inteligencia competitiva →</span></a>
+      <a class="out" href="../agentes-de-ia/"><b>🎫 Solicitudes con dueño y estado</b><p>Cada pedido interno o de cliente queda registrado, asignado y con seguimiento automático hasta cerrarse.</p><span class="more">Agentes de IA →</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Así se ve un flujo de aprobación automatizado</h2>
+    <div class="flow">
+      <div class="fstep"><span class="fi">📥</span><b>1. Llega la solicitud</b><p>Por formulario, correo o WhatsApp: una compra, un descuento, unas vacaciones.</p></div>
+      <span class="farr" aria-hidden="true">→</span>
+      <div class="fstep"><span class="fi">🗂️</span><b>2. Se arma el expediente</b><p>El flujo registra quién pide, qué pide, y adjunta cotizaciones o documentos.</p></div>
+      <span class="farr" aria-hidden="true">→</span>
+      <div class="fstep"><span class="fi">✅</span><b>3. Aprobación con un clic</b><p>El responsable aprueba o rechaza desde Teams, correo o WhatsApp, sin buscar hilos.</p></div>
+      <span class="farr down" aria-hidden="true">→</span>
+      <div class="fbranch">
+        <div class="fcase ok"><b>Si se aprueba:</b> el flujo actualiza tu sistema, genera el documento y avisa al solicitante. Nadie transcribe nada.</div>
+        <div class="fcase wait"><b>Si no hay respuesta:</b> recordatorio automático a las 24 horas; si sigue pendiente, escala al siguiente responsable.</div>
+      </div>
+    </div>
+    <p class="note">Cada paso queda registrado: quién aprobó, cuándo y con qué comentario. Se acabó el "yo nunca vi ese correo".</p>
+
+    <div class="vids">
+      <div class="vid">
+        <video controls preload="none" playsinline poster="../casos/videos/captura-facturas-sin-digitar.jpg">
+          <source src="../casos/videos/captura-facturas-sin-digitar.mp4" type="video/mp4">
+        </video>
+        <div class="vb"><b>Captura de facturas sin digitar</b><p>Demostración ilustrativa animada: cómo una factura entra por correo y termina registrada en tu sistema sin que nadie la transcriba.</p></div>
+      </div>
+      <div>
+        <h2 style="font-size:19px">¿Prefieres verlo en movimiento?</h2>
+        <p style="font-size:14.5px;max-width:48ch">En la página de casos tenemos demostraciones en video de captura de facturas, cotizador exprés, resumen ejecutivo diario y más. Son animaciones ilustrativas — tu flujo se construye a medida sobre tus sistemas reales.</p>
+        <p style="margin-top:12px"><a class="ghost" href="../casos/">Ver todos los demos en video →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <div class="pasos">
+      <div class="paso"><span class="paso-i">💬</span>Diagnóstico gratis (20–30 min)</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="paso"><span class="paso-i">🎯</span>Elegimos el proceso con más fricción</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="paso"><span class="paso-i">🔧</span>Lo construimos y lo pruebas con tu equipo</div>
+      <span class="arrow" aria-hidden="true">→</span>
+      <div class="paso"><span class="paso-i">✅</span>Corre en producción; pagos por hitos 40/30/30</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Trabajamos sobre los sistemas que ya usas</h2>
+    <p class="lead">No vendemos migraciones ni licencias: conectamos lo que ya tienes.</p>
+    <div class="chips">
+      <span class="chip">Microsoft 365 · Outlook · Teams · SharePoint</span>
+      <span class="chip">Google Workspace</span>
+      <a class="chip" href="../power-automate/">Power Automate</a>
+      <a class="chip" href="../n8n/">n8n</a>
+      <a class="chip" href="../power-bi/">Power BI</a>
+      <span class="chip">WhatsApp Business</span>
+      <span class="chip">CRM</span>
+      <span class="chip">ERP y facturación</span>
+      <span class="chip">Bases de datos SQL</span>
+      <span class="chip">APIs propias</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Precios publicados, sin letra pequeña</h2>
+    <div class="prices">
+      <div class="pr"><b>Unidad simple</b><span class="amt">$600–1,200</span><span class="tm">1–2 semanas</span><p>Un flujo puntual: un reporte automático diario, una alerta, una captura de facturas a tu sistema.</p></div>
+      <div class="pr"><b>Proceso estándar</b><span class="amt">$1,200–3,000</span><span class="tm">2–4 semanas</span><p>Un proceso completo: flujo de aprobaciones con recordatorios, escalamiento y registro de punta a punta.</p></div>
+      <div class="pr"><b>Célula de operación</b><span class="amt">$3,000–8,000</span><span class="tm">4–8 semanas</span><p>Varios flujos y agentes trabajando juntos: aprobaciones + reportes + integraciones + radar de mercado.</p></div>
+      <div class="pr"><b>Operación mensual</b><span class="amt">$149 / $449 / $999</span><span class="tm">al mes, según plan</span><p>Monitoreo, ajustes y soporte para que los flujos sigan corriendo cuando algo cambie en tus sistemas.</p></div>
+    </div>
+    <div class="guar"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. Pagos por hitos 40/30/30. <a href="../precios/">Los términos completos, publicados →</a></div>
+  </section>
+
+  <section>
+    <h2>Evidencia honesta, sin humo</h2>
+    <div class="evs">
+      <div class="ev"><span class="ev-i">⏱️</span><p><b>Una métrica medida, no una promesa:</b> nuestro Capturista Digital procesa una factura en ~4 segundos, medido en video. <a href="../casos/">Puedes verlo aquí</a>.</p></div>
+      <div class="ev"><span class="ev-i">🤖</span><p><b>Comemos de nuestra propia cocina:</b> las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. Y el chat Nova de este sitio es un agente real en vivo, no un guion.</p></div>
+      <div class="ev"><span class="ev-i">🎬</span><p><b>Los demos de <a href="../casos/">la página de casos</a> son animaciones ilustrativas</b> y así están etiquetados. Tu flujo se construye a medida sobre tus sistemas.</p></div>
+      <div class="ev"><span class="ev-i">🚫</span><p><b>No publicamos testimonios ni porcentajes de mejora que no podamos demostrar.</b> Cuando tengamos cifras medidas de clientes, las verás aquí con nombre y contexto.</p></div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Qué procesos conviene automatizar primero en una empresa de servicios?</summary>
+      <div class="fa"><p>Los que generan más fricción con menos criterio involucrado: aprobaciones internas (compras, vacaciones, descuentos), reportes que alguien arma a mano cada semana, captura de facturas y seguimiento de solicitudes. En el <a href="https://wa.me/50371928070?text=Hola%2C%20tengo%20una%20empresa%20de%20servicios%20y%20quiero%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">diagnóstico gratis</a> identificamos cuál te quita más horas y por dónde empezar.</p></div>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta automatizar un proceso?</summary>
+      <div class="fa"><p>Precios publicados: una unidad simple va de $600 a $1,200 (1–2 semanas), un proceso estándar de $1,200 a $3,000 (2–4 semanas) y una célula de varios flujos de $3,000 a $8,000 (4–8 semanas). La operación mensual va de $149 a $999 según el plan. Pagos por hitos 40/30/30. Detalle completo en <a href="../precios/">la página de precios</a>.</p></div>
+    </details>
+    <details>
+      <summary>¿Tenemos que cambiar nuestros sistemas actuales?</summary>
+      <div class="fa"><p>No. Trabajamos sobre lo que ya usas: Microsoft 365, Google Workspace, tu CRM, tu ERP o sistema de facturación, y APIs propias. Herramientas como Power Automate o n8n conectan lo que ya tienes — no vendemos migraciones ni licencias. Mira cómo lo hacemos en <a href="../integraciones-api/">integraciones por API</a>.</p></div>
+    </details>
+    <details>
+      <summary>¿Qué pasa cuando un caso necesita criterio humano?</summary>
+      <div class="fa"><p>El flujo lo escala a una persona de tu equipo con todo el contexto: qué se pidió, qué pasó y qué falta. El sistema se encarga del trabajo repetitivo; tu equipo conserva las decisiones, relaciones y tareas que requieren criterio.</p></div>
+    </details>
+    <details>
+      <summary>¿Y si el primer flujo no funciona?</summary>
+      <div class="fa"><p>Tienes garantía de arranque: si el primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. Los términos completos están publicados en <a href="../precios/">la página de precios</a>.</p></div>
+    </details>
+    <details>
+      <summary>¿Dónde quedan nuestros datos?</summary>
+      <div class="fa"><p>En tus propias cuentas. Los flujos corren sobre tus licencias y tus sistemas; no almacenamos tu información en servidores nuestros. El detalle está en <a href="../seguridad/">cómo cuidamos tu información</a>.</p></div>
+    </details>
+  </section>
+
+  <div class="final">
+    <h2>¿Cuántas horas se fueron esta semana en perseguir aprobaciones y armar reportes?</h2>
+    <p>Diagnóstico gratis de 20–30 minutos: revisamos tus procesos reales y te decimos qué conviene automatizar primero, qué no, y cuánto costaría — con los precios que ya viste publicados.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20tengo%20una%20empresa%20de%20servicios%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20gratis%20de%20mis%20procesos." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+  </div>
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../clinicas/">Clínicas</a><a href="../distribuidoras/">Distribuidoras</a><a href="../seguridad/">Manejo de datos</a>
+</div></footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué procesos conviene automatizar primero en una empresa de servicios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los que generan más fricción con menos criterio involucrado: aprobaciones internas (compras, vacaciones, descuentos), reportes que alguien arma a mano cada semana, captura de facturas y seguimiento de solicitudes. En el diagnóstico gratis de 20-30 minutos identificamos cuál te quita más horas y por dónde empezar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta automatizar un proceso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Precios publicados: una unidad simple va de $600 a $1,200 (1-2 semanas), un proceso estándar de $1,200 a $3,000 (2-4 semanas) y una célula de varios flujos de $3,000 a $8,000 (4-8 semanas). La operación mensual va de $149 a $999 según el plan. Pagos por hitos 40/30/30."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tenemos que cambiar nuestros sistemas actuales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Trabajamos sobre lo que ya usas: Microsoft 365, Google Workspace, tu CRM, tu ERP o sistema de facturación, y APIs propias. Herramientas como Power Automate o n8n conectan lo que ya tienes; no vendemos migraciones ni licencias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa cuando un caso necesita criterio humano?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El flujo lo escala a una persona de tu equipo con todo el contexto: qué se pidió, qué pasó y qué falta. El sistema se encarga del trabajo repetitivo; tu equipo conserva las decisiones, relaciones y tareas que requieren criterio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si el primer flujo no funciona?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hay garantía de arranque: si el primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. Los términos completos están publicados en optimatiza.com/precios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde quedan nuestros datos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En tus propias cuentas. Los flujos corren sobre tus licencias y tus sistemas; Optimatiza no almacena tu información en servidores propios. El detalle está publicado en optimatiza.com/seguridad."
+      }
+    }
+  ]
+}
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

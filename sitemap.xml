@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://optimatiza.com/</loc><lastmod>2026-07-19</lastmod><priority>1.0</priority></url>
+  <url><loc>https://optimatiza.com/automatizacion-de-procesos/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://optimatiza.com/agentes-de-ia/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://optimatiza.com/agente-ia-whatsapp/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://optimatiza.com/cobranza-automatizada/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://optimatiza.com/procesamiento-automatico-facturas/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://optimatiza.com/integraciones-api/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://optimatiza.com/power-automate/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://optimatiza.com/n8n/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://optimatiza.com/power-bi/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://optimatiza.com/servicios-profesionales/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://optimatiza.com/recursos/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://optimatiza.com/recursos/calculadora-roi/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://optimatiza.com/recursos/calculadora-inasistencias/</loc><lastmod>2026-07-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://optimatiza.com/recursos/informe-muestra/</loc><lastmod>2026-07-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://optimatiza.com/recursos/power-automate-vs-n8n/</loc><lastmod>2026-07-19</lastmod><priority>0.7</priority></url>
   <url><loc>https://optimatiza.com/inteligencia-competitiva/</loc><lastmod>2026-07-19</lastmod><priority>0.9</priority></url>
   <url><loc>https://optimatiza.com/agentes/</loc><lastmod>2026-07-05</lastmod><priority>0.8</priority></url>
   <url><loc>https://optimatiza.com/seguridad/</loc><lastmod>2026-07-13</lastmod><priority>0.4</priority></url>

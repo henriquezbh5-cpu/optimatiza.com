@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Procesamiento Automático de Facturas con IA | Optimatiza</title>
+  <meta name="description" content="Captura de facturas con IA: llega el correo o la foto, los datos se extraen, se validan contra tu orden de compra y quedan en tu sistema. Con DTE El Salvador.">
+  <link rel="canonical" href="https://optimatiza.com/procesamiento-automatico-facturas/">
+  <link rel="icon" href="../img/logo-badge-96.png">
+  <meta property="og:title" content="Procesamiento Automático de Facturas con IA | Optimatiza">
+  <meta property="og:description" content="Llega el correo o la foto, los datos se capturan, se validan contra la orden de compra y se registran en tu sistema. Compatible con DTE de El Salvador.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/procesamiento-automatico-facturas/">
+  <style>
+    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
+      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;--blue:#2563EB;
+      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
+      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+    *{box-sizing:border-box;margin:0}
+    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:14px;height:62px}
+    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
+    .brand img{width:26px;height:26px}
+    .sp{flex:1}
+    .ghost{color:var(--teal);font-weight:600;font-size:14px}
+    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
+    .hero{padding:60px 0 36px;max-width:820px}
+    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
+    .sub{font-size:17.5px;max-width:62ch}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
+    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
+    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
+    section{padding:34px 0}
+    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+    .dol-i{font-size:26px}
+    .dol h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
+    .dol p{font-size:13.5px}
+    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
+    /* flow diagram */
+    .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-top:6px}
+    .fstep{flex:1 1 170px;min-width:165px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--sh);position:relative}
+    .fstep .fi{font-size:24px}
+    .fstep b{display:block;font-family:var(--ffd);color:var(--ink);font-size:14.5px;margin:8px 0 4px}
+    .fstep p{font-size:12.8px}
+    .farr{align-self:center;color:var(--teal);font-weight:700;font-size:18px}
+    @media(max-width:700px){.flow{flex-direction:column}.farr{transform:rotate(90deg);align-self:flex-start;margin-left:22px}}
+    .fexc{margin-top:12px;background:var(--teal-soft);border:1px dashed var(--teal2);border-radius:12px;padding:12px 16px;font-size:13.5px}
+    .fexc b{color:var(--ink)}
+    /* video */
+    .vid{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh);max-width:760px}
+    .vid video{width:100%;aspect-ratio:16/9;display:block;background:#000}
+    .vid .vb{padding:14px 18px}
+    .vid b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
+    .vid p{font-size:13.5px;margin-top:4px}
+    .tag-real{display:inline-block;background:var(--teal);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:8px}
+    /* pasos */
+    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+    .paso{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso-i{font-size:19px}
+    .arrow{color:var(--teal)}
+    /* chips */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
+    /* precios */
+    .ags{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .ag{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+    .ag-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+    .ag-h b{font-family:var(--ffd);color:var(--ink);font-size:16px}
+    .ag-p{color:var(--teal);font-size:13px;font-weight:700;white-space:nowrap}
+    .ag p{font-size:13.5px;margin-top:8px}
+    .ag .t{font-size:12px;color:var(--dim);margin-top:2px}
+    /* evidencia */
+    .ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .evc{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:13.5px}
+    .evc b{display:block;font-family:var(--ffd);color:var(--ink);font-size:15px;margin-bottom:6px}
+    .evc .big{font-family:var(--ffd);font-weight:700;color:var(--teal);font-size:30px;line-height:1.1}
+    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(20,184,166,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px}
+    .guar b{color:var(--ink)}
+    .guar a{color:var(--teal);font-weight:600}
+    /* faq */
+    .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:10px;box-shadow:var(--sh)}
+    .faq summary{cursor:pointer;font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;padding:15px 18px;list-style:none;position:relative}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:'+';position:absolute;right:18px;top:12px;color:var(--teal);font-size:20px;font-weight:400}
+    .faq details[open] summary::after{content:'–'}
+    .faq .fa{padding:0 18px 16px;font-size:14px}
+    /* related */
+    .rel{display:flex;flex-wrap:wrap;gap:10px}
+    .rel a{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13.5px;color:var(--teal);font-weight:600}
+    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final h2{color:#fff;margin-bottom:8px}
+    .final p{color:#D9F5F1;max-width:56ch;margin:0 auto 20px;font-size:15px}
+    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
+    footer .f{display:flex;flex-wrap:wrap;gap:14px}
+    footer a:hover{color:var(--ink)}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+  <div class="sp"></div>
+  <a class="ghost" href="../casos/">Demos en video</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20automatizar%20la%20captura%20de%20facturas%20de%20mi%20empresa." target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<main class="wrap">
+  <!-- 1 · Problema + 2 · Audiencia + 3 · Resultado -->
+  <div class="hero">
+    <span class="k">Para finanzas, contabilidad y administración</span>
+    <h1>Procesamiento automático de facturas: del correo a tu sistema, sin digitar</h1>
+    <p class="sub">Tu equipo pierde horas tecleando facturas a mano — y cada tecleo es un NIT mal copiado, un IVA que no cuadra o una factura pagada dos veces. Con captura de facturas con IA, llega el correo o la foto, los datos se extraen, se validan contra la orden de compra y quedan registrados en tu sistema. Tu equipo revisa excepciones; el sistema hace el digitado.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20ver%20el%20procesamiento%20autom%C3%A1tico%20de%20facturas%20funcionando.%20%C2%BFPodemos%20agendar%20el%20diagn%C3%B3stico%20gratis%3F" target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+      <a class="ghost" href="../casos/">o mira los demos en video</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>El costo real del digitado manual</h2>
+    <div class="dols">
+      <div class="dol"><span class="dol-i">⌨️</span><h3>Horas de digitado</h3><p>Cada factura que entra por correo, PDF o foto la teclea alguien de tu equipo en el sistema contable. Es trabajo repetitivo que no agrega criterio — solo consume el día.</p></div>
+      <div class="dol"><span class="dol-i">✏️</span><h3>Errores de transcripción</h3><p>Un dígito del NIT, un decimal del IVA, un monto invertido: los errores de tecleo aparecen semanas después, cuando conciliar cuesta el triple.</p></div>
+      <div class="dol"><span class="dol-i">🔁</span><h3>Duplicados que se pagan</h3><p>La misma factura llega por correo y de nuevo en físico. Sin un control automático, se registra dos veces — y a veces se paga dos veces.</p></div>
+      <div class="dol"><span class="dol-i">📅</span><h3>Cierre de mes lento</h3><p>El cierre se atrasa porque falta registrar la pila de facturas de la última semana. Contabilidad corre; los reportes llegan tarde a quien decide.</p></div>
+    </div>
+  </section>
+
+  <!-- 4 · Demostración: diagrama -->
+  <section>
+    <h2>Así queda tu proceso</h2>
+    <div class="flow">
+      <div class="fstep"><span class="fi">📧</span><b>1 · Llega la factura</b><p>Por correo (PDF o DTE), por foto de WhatsApp o desde una carpeta compartida.</p></div>
+      <span class="farr">→</span>
+      <div class="fstep"><span class="fi">🤖</span><b>2 · La IA extrae los datos</b><p>Proveedor, NIT, fecha, detalle, IVA y totales — sin que nadie teclee.</p></div>
+      <span class="farr">→</span>
+      <div class="fstep"><span class="fi">🔍</span><b>3 · Se valida</b><p>Contra la orden de compra, aritmética del IVA y control de duplicados por número y NIT.</p></div>
+      <span class="farr">→</span>
+      <div class="fstep"><span class="fi">✅</span><b>4 · Se registra</b><p>En tu ERP, sistema contable o Excel/Sheets, con el respaldo archivado y trazable.</p></div>
+    </div>
+    <div class="fexc"><b>¿Y si algo no cuadra?</b> El sistema no adivina: la factura borrosa, el monto que difiere de la orden de compra o el proveedor nuevo se marcan como <b>excepción</b> y le llegan a una persona de tu equipo para decidir. Nada entra a tu sistema sin validar.</div>
+  </section>
+
+  <!-- 4b · Demostración: video real -->
+  <section>
+    <h2>Míralo funcionando de verdad</h2>
+    <div class="vid">
+      <span class="tag-real" style="margin:14px 0 0 18px">🎥 Grabación del sistema real</span>
+      <video controls preload="none" playsinline poster="../casos/videos/capturista-finanzas-60s.jpg">
+        <source src="../casos/videos/capturista-finanzas-60s.mp4" type="video/mp4">
+      </video>
+      <div class="vb"><b>Capturista Digital · Finanzas</b><p>Grabación del sistema real funcionando, sin cortes: una foto de factura por WhatsApp queda capturada y registrada en <b>~4 segundos</b> — medido en el video, puedes cronometrarlo tú mismo.</p></div>
+    </div>
+    <p class="note">Los demás demos de <a class="ghost" href="../casos/">la galería de casos</a> son demostraciones ilustrativas animadas. Tu solución se construye a medida sobre tus facturas y tus sistemas.</p>
+  </section>
+
+  <!-- 5 · Cómo funciona -->
+  <section>
+    <h2>Cómo funciona el proyecto</h2>
+    <div class="pasos">
+      <div class="paso"><span class="paso-i">💬</span>Diagnóstico gratis (20–30 min)</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-i">🔧</span>Lo construimos con tus facturas reales</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-i">👀</span>Corre en paralelo a tu proceso actual</div>
+      <span class="arrow">→</span>
+      <div class="paso"><span class="paso-i">✅</span>Producción: tu equipo solo ve excepciones</div>
+    </div>
+    <p class="note">En el diagnóstico revisamos una muestra de tus facturas reales y te decimos qué se puede automatizar, qué no, y con qué precisión esperable — antes de que pagues nada.</p>
+  </section>
+
+  <!-- 6 · Sistemas compatibles -->
+  <section>
+    <h2>Se conecta con lo que ya usas</h2>
+    <div class="chips">
+      <span class="chip">📧 Outlook / Gmail</span>
+      <span class="chip">💬 WhatsApp</span>
+      <span class="chip">🧾 DTE El Salvador (JSON del Ministerio de Hacienda)</span>
+      <span class="chip">📊 Excel / Google Sheets</span>
+      <span class="chip">🏢 ERP (SAP, Odoo, Dynamics…)</span>
+      <span class="chip">📚 Sistemas contables</span>
+      <span class="chip">🗄️ SQL Server / PostgreSQL</span>
+      <span class="chip">☁️ SharePoint / Google Drive</span>
+      <span class="chip">⚙️ Power Automate</span>
+      <span class="chip">🔗 n8n</span>
+      <span class="chip">🔌 APIs REST</span>
+    </div>
+    <p class="note">Con los DTE (documentos tributarios electrónicos) leemos el JSON directamente — sin OCR, sin ambigüedad — y validamos NIT, IVA y totales contra el documento oficial. Si tu sistema no tiene API, lo evaluamos en el diagnóstico: <a class="ghost" href="../integraciones-api/">así conectamos sistemas →</a></p>
+  </section>
+
+  <!-- 7 · Precio -->
+  <section>
+    <h2>Precio publicado, sin sorpresas</h2>
+    <div class="ags">
+      <div class="ag"><div class="ag-h"><b>📥 Captura y registro de facturas</b><span class="ag-p">$600–1,200</span></div><p class="t">1–2 semanas</p><p>Entrada por correo o WhatsApp, extracción con IA, validación de NIT, IVA y duplicados, y registro en Excel/Sheets o tu sistema.</p></div>
+      <div class="ag"><div class="ag-h"><b>🔍 Con orden de compra y aprobaciones</b><span class="ag-p">$1,200–3,000</span></div><p class="t">2–4 semanas</p><p>Todo lo anterior más matching contra orden de compra, flujo de aprobación e integración por API con tu ERP o sistema contable.</p></div>
+      <div class="ag"><div class="ag-h"><b>🛠️ Operación mensual</b><span class="ag-p">desde $149/mes</span></div><p class="t">Opcional</p><p>Monitoreo, ajustes cuando cambian los formatos de tus proveedores y soporte continuo. Planes de $149, $449 y $999.</p></div>
+    </div>
+    <p class="note">Pagos por hitos 40/30/30. Rangos completos y términos en <a class="ghost" href="../precios/">optimatiza.com/precios</a>.</p>
+  </section>
+
+  <!-- 8 · Evidencia honesta -->
+  <section>
+    <h2>Evidencia honesta</h2>
+    <div class="ev">
+      <div class="evc"><b>La métrica que sí medimos</b><span class="big">~4 seg</span><p style="margin-top:6px">por factura procesada con el Capturista Digital — medido en la grabación del sistema real, sin cortes, que puedes ver arriba o en <a class="ghost" href="../casos/">la galería de casos</a>.</p></div>
+      <div class="evc"><b>Automatización que usamos nosotros</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. Y el chat Nova de este sitio es un agente de IA real, en vivo — pruébalo.</p></div>
+      <div class="evc"><b>Lo que no vas a encontrar aquí</b><p>No publicamos testimonios inventados ni porcentajes de ahorro que no hemos medido. Los números de tu caso salen del diagnóstico, con tus facturas y tus volúmenes reales.</p></div>
+    </div>
+    <div class="guar" style="margin-top:16px"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. <a href="../precios/">Términos completos, publicados →</a></div>
+  </section>
+
+  <!-- 9 · FAQ -->
+  <section class="faq">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Funciona con los DTE (documentos tributarios electrónicos) de El Salvador?</summary>
+      <div class="fa">Sí. Los DTE viajan como JSON estructurado del Ministerio de Hacienda, así que los leemos directamente — sin OCR ni interpretación — y validamos NIT, IVA y totales contra el documento oficial. Para facturas en papel, PDF escaneado o foto usamos extracción con IA de visión.</div>
+    </details>
+    <details>
+      <summary>¿Qué pasa si una factura llega borrosa o incompleta?</summary>
+      <div class="fa">El sistema no adivina: la marca como excepción y se la envía a una persona de tu equipo con la imagen original para que decida. Nada se registra en tu sistema sin pasar la validación.</div>
+    </details>
+    <details>
+      <summary>¿Cómo evita duplicados y pagos dobles?</summary>
+      <div class="fa">Antes de registrar, cruza número de documento, NIT del proveedor y monto contra lo ya registrado (en DTE, también el código de generación). Si ya existe, no se duplica el registro y se avisa a tu equipo.</div>
+    </details>
+    <details>
+      <summary>¿Se integra con mi ERP o sistema contable?</summary>
+      <div class="fa">Sí, por API, base de datos o conectores de Power Automate y n8n. Si tu sistema no expone API, evaluamos alternativas en el diagnóstico. Y si hoy trabajas en Excel o Google Sheets, también funciona: el registro llega ahí, ordenado y con respaldo.</div>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta y cuánto tarda?</summary>
+      <div class="fa">La captura y registro de facturas va de $600 a $1,200 y toma 1–2 semanas. Si necesitas validación contra orden de compra, aprobaciones e integración con ERP, el rango es $1,200–3,000 en 2–4 semanas. Pagos por hitos 40/30/30 y garantía de arranque de 30 días.</div>
+    </details>
+    <details>
+      <summary>¿Esto reemplaza a mi equipo de contabilidad?</summary>
+      <div class="fa">No. Se encarga del trabajo repetitivo de digitar y validar; tu equipo conserva las decisiones, las relaciones con proveedores y las tareas que requieren criterio — como aprobar pagos y resolver excepciones.</div>
+    </details>
+  </section>
+
+  <section>
+    <h2>También te puede servir</h2>
+    <div class="rel">
+      <a href="../cobranza-automatizada/">Cobranza automatizada</a>
+      <a href="../integraciones-api/">Integraciones y APIs</a>
+      <a href="../automatizacion-de-procesos/">Automatización de procesos</a>
+      <a href="../recursos/calculadora-roi/">Calculadora ROI de automatización</a>
+    </div>
+  </section>
+
+  <!-- 10 · CTA final -->
+  <div class="final">
+    <h2>¿Cuántas horas digitó facturas tu equipo esta semana?</h2>
+    <p>Diagnóstico gratis de 20–30 minutos: revisamos una muestra de tus facturas reales y te decimos qué se puede automatizar, en cuánto tiempo y a qué precio — y qué no vale la pena automatizar.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20en%20mi%20empresa%20digitamos%20facturas%20a%20mano%20y%20quiero%20el%20diagn%C3%B3stico%20gratis%20de%2020%20minutos." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+  </div>
+</main>
+
+<footer><div class="wrap f">
+  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../agentes-de-ia/">Agentes de IA</a><a href="../seguridad/">Manejo de datos</a>
+</div></footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Funciona con los DTE (documentos tributarios electrónicos) de El Salvador?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los DTE viajan como JSON estructurado del Ministerio de Hacienda, así que se leen directamente, sin OCR ni interpretación, y se validan NIT, IVA y totales contra el documento oficial. Para facturas en papel, PDF escaneado o foto se usa extracción con IA de visión."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si una factura llega borrosa o incompleta?",
+      "acceptedAnswer": {"@type": "Answer", "text": "El sistema no adivina: marca la factura como excepción y se la envía a una persona del equipo con la imagen original para que decida. Nada se registra en el sistema sin pasar la validación."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo evita duplicados y pagos dobles?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Antes de registrar, cruza número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si ya existe, no se duplica el registro y se avisa al equipo."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se integra con mi ERP o sistema contable?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí, por API, base de datos o conectores de Power Automate y n8n. Si el sistema no expone API, se evalúan alternativas en el diagnóstico gratuito. También funciona con Excel o Google Sheets como destino del registro."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta y cuánto tarda?",
+      "acceptedAnswer": {"@type": "Answer", "text": "La captura y registro de facturas va de $600 a $1,200 y toma 1 a 2 semanas. Con validación contra orden de compra, aprobaciones e integración con ERP, el rango es $1,200 a $3,000 en 2 a 4 semanas. Pagos por hitos 40/30/30 y garantía de arranque de 30 días."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Esto reemplaza a mi equipo de contabilidad?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Se encarga del trabajo repetitivo de digitar y validar; el equipo conserva las decisiones, las relaciones con proveedores y las tareas que requieren criterio, como aprobar pagos y resolver excepciones."}
+    }
+  ]
+}
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
