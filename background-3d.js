@@ -57,8 +57,8 @@
     var camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 300);
     camera.position.set(0, 0, 40);
 
-    var TEAL = new THREE.Color(0x14B8A6), BLUE = new THREE.Color(0x3B82F6),
-        VIOLET = new THREE.Color(0x8B5CF6), GLOW = new THREE.Color(0x9FFFEF);
+    var TEAL = new THREE.Color(0x2C7A63), BLUE = new THREE.Color(0x3F6F8A),
+        VIOLET = new THREE.Color(0xC9913B), GLOW = new THREE.Color(0xE8F5DC);
 
     /* sprite circular (los Points nativos son cuadrados) */
     var dot = (function () {
@@ -119,7 +119,7 @@
       var lg = new THREE.BufferGeometry();
       lg.setAttribute('position', new THREE.Float32BufferAttribute(lp, 3));
       ring.add(new THREE.Line(lg, new THREE.LineBasicMaterial({
-        color: 0x14B8A6, transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false
+        color: 0x2C7A63, transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false
       })));
 
       var np = [];
@@ -225,7 +225,7 @@
       });
       envScene.add(new THREE.Mesh(envGeo, envMat));
       var envTmp = [];
-      [[0x2DD4BF, -30, 14, 20], [0x8B5CF6, 26, 18, -16]].forEach(function (e) {
+      [[0x3F8F74, -30, 14, 20], [0xC9913B, 26, 18, -16]].forEach(function (e) {
         var s = new THREE.Mesh(new THREE.SphereGeometry(6, 12, 12), new THREE.MeshBasicMaterial({ color: e[0] }));
         s.position.set(e[1], e[2], e[3]); envScene.add(s); envTmp.push(s);
       });
@@ -237,9 +237,9 @@
       envTmp.forEach(function (s) { s.geometry.dispose(); s.material.dispose(); });
 
       /* luces reales (solo iluminan el núcleo; los Points aditivos las ignoran) */
-      scene.add(new THREE.AmbientLight(0x223044, 0.6));
-      light1 = new THREE.PointLight(0x2DD4BF, MOBILE ? 95 : 170, 100, 2);
-      light2 = new THREE.PointLight(0x8B5CF6, MOBILE ? 80 : 135, 100, 2);
+      scene.add(new THREE.AmbientLight(0x1B3A30, 0.6));
+      light1 = new THREE.PointLight(0x3F8F74, MOBILE ? 95 : 170, 100, 2);
+      light2 = new THREE.PointLight(0xC9913B, MOBILE ? 80 : 135, 100, 2);
       scene.add(light1); scene.add(light2);
 
       /* núcleo facetado metálico + aristas de marca. La geometría se construye
@@ -248,16 +248,16 @@
       var coreBaseRad = MOBILE ? 1.75 : 3.2;
       var coreGeo = new THREE.IcosahedronGeometry(coreBaseRad, 0);
       core = new THREE.Mesh(coreGeo, new THREE.MeshStandardMaterial({
-        color: 0x131d33, metalness: 0.94, roughness: 0.13, envMapIntensity: 1.9, flatShading: true
+        color: 0x122720, metalness: 0.94, roughness: 0.13, envMapIntensity: 1.9, flatShading: true
       }));
       core.add(new THREE.LineSegments(new THREE.EdgesGeometry(coreGeo),
-        new THREE.LineBasicMaterial({ color: 0x2DD4BF, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false })));
+        new THREE.LineBasicMaterial({ color: 0x3F8F74, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false })));
       coreGrp.add(core);
 
       /* halo fresnel aditivo (glow por-objeto) */
       coreHalo = new THREE.Mesh(new THREE.IcosahedronGeometry(coreBaseRad * 1.42, 3), new THREE.ShaderMaterial({
         transparent: true, side: THREE.BackSide, depthWrite: false, blending: THREE.AdditiveBlending,
-        uniforms: { uA: { value: 0 }, uC1: { value: new THREE.Color(0x14B8A6) }, uC2: { value: new THREE.Color(0x8B5CF6) } },
+        uniforms: { uA: { value: 0 }, uC1: { value: new THREE.Color(0x2C7A63) }, uC2: { value: new THREE.Color(0xC9913B) } },
         vertexShader: 'varying vec3 vN;varying vec3 vE;void main(){vN=normalize(normalMatrix*normal);vec4 mv=modelViewMatrix*vec4(position,1.0);vE=normalize(-mv.xyz);gl_Position=projectionMatrix*mv;}',
         fragmentShader:
           'varying vec3 vN;varying vec3 vE;uniform float uA;uniform vec3 uC1;uniform vec3 uC2;' +

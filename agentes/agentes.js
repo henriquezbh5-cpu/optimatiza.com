@@ -134,7 +134,7 @@
     legal: 'ph-files'
   };
 
-  var CONFETTI_COLORS = ['#F2EFE7', '#14B8A6', '#ECA24D', '#7FB4E0'];
+  var CONFETTI_COLORS = ['#F2EFE7', '#2C7A63', '#ECA24D', '#7FB4E0'];
 
   /* ------------------------------------------------------------
      2. I18N DICTIONARY — every data-i18n / data-i18n-aria key in

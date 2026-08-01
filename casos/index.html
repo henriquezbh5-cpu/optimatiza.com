@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#FFFFFF">
+  <meta name="theme-color" content="#F6F1E8">
   <title>Casos de automatización · Optimatiza</title>
   <meta name="description" content="Ejemplos reales de automatizaciones y agentes de IA que Optimatiza monta para pymes de El Salvador: cotizaciones, inventario, DTE, cobranza, planilla, Bitcoin y más.">
   <link rel="canonical" href="https://optimatiza.com/casos/">
@@ -16,16 +16,16 @@
     @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
     @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
     @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#FFFFFF;--panel:#FFFFFF;--well:#F6F9FC;--ink:#0B1B2B;--body:#42566B;
-      --line:#E3EAF2;--teal:#0D9488;--btc:#F7931A;--wa:#25D366;
+    :root{--bg:#F6F1E8;--panel:#FFFDF8;--well:#EFE8D9;--ink:#183F35;--body:#3A4A45;
+      --line:#E2DAC7;--teal:#1D5C4D;--btc:#F7931A;--wa:#25D366;
       --ff:'Inter',-apple-system,'Segoe UI',sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;--maxw:1240px}
     *{box-sizing:border-box;margin:0}
     html{scroll-behavior:smooth}
-    body{background:radial-gradient(1200px 700px at 82% -12%,#EAF7F4 0,var(--bg) 60%);
+    body{background:radial-gradient(1200px 700px at 82% -12%,#E9EFE2 0,var(--bg) 60%);
       color:var(--ink);font-family:var(--ff);line-height:1.6;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);
+    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;gap:16px;height:64px}
     .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:19px;color:var(--teal)}
@@ -37,12 +37,12 @@
     .hero .k{font-family:var(--ffd);color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-size:13px;font-weight:700}
     .hero h1{font-family:var(--ffd);font-weight:700;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;margin:16px auto 14px;max-width:16ch}
     .hero p{color:var(--body);font-size:18px;max-width:56ch;margin:0 auto}
-    .hero .note{margin-top:16px;font-size:14px;color:#6B7E93}
+    .hero .note{margin-top:16px;font-size:14px;color:#6E7D74}
     /* destacado */
     .feat{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:center;
       background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;margin:26px 0 10px;
-      box-shadow:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
-    .feat video{width:100%;border-radius:12px;display:block;background:#F6F9FC}
+      box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
+    .feat video{width:100%;border-radius:12px;display:block;background:#EFE8D9}
     .feat .tag{display:inline-block;background:color-mix(in srgb,var(--teal) 16%,transparent);
       color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 45%,transparent);
       font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
@@ -56,10 +56,10 @@
       padding:2px 10px;border-radius:999px}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;
-      box-shadow:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06);
+      box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06);
       transition:transform .2s ease,border-color .2s ease}
     .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--acc) 50%,var(--line))}
-    .vwrap{aspect-ratio:16/9;background:#F6F9FC}
+    .vwrap{aspect-ratio:16/9;background:#EFE8D9}
     .card video{width:100%;height:100%;display:block;object-fit:cover}
     .card .chip{display:inline-block;margin:14px 16px 0;font-size:11.5px;font-weight:700;color:var(--acc);
       background:color-mix(in srgb,var(--acc) 14%,transparent);padding:3px 10px;border-radius:999px}
@@ -67,7 +67,7 @@
     .card p{color:var(--body);font-size:14.5px;margin:0 16px 18px}
     /* CTA + footer */
     .cta-band{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;
-      box-shadow:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06);
+      box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06);
       padding:40px 24px;margin:56px 0 30px}
     .cta-band h2{font-family:var(--ffd);font-size:28px;margin-bottom:10px}
     .cta-band p{color:var(--body);margin-bottom:22px}
@@ -92,10 +92,10 @@
       <div class="k">Casos en video</div>
       <h1>Automatizaciones que le devuelven horas a tu negocio</h1>
       <p>Ejemplos reales de procesos que montamos para pymes en El Salvador — cada uno resuelve un problema distinto, de punta a punta.</p>
-      <div class="note">El caso destacado es una <b style="color:#0B1B2B">grabación del sistema real funcionando</b>. Las cápsulas son demostraciones ilustrativas animadas — cada solución se construye a medida sobre tus sistemas y datos.</div>
+      <div class="note">El caso destacado es una <b style="color:#183F35">grabación del sistema real funcionando</b>. Las cápsulas son demostraciones ilustrativas animadas — cada solución se construye a medida sobre tus sistemas y datos.</div>
     </section>
 
-    <section class="feat" style="--acc:#0D9488">
+    <section class="feat" style="--acc:#1D5C4D">
       <div class="vwrap" style="aspect-ratio:16/9;border-radius:12px;overflow:hidden">
         <video controls preload="metadata" playsinline poster="videos/capturista-finanzas-60s.jpg" style="width:100%;height:100%;object-fit:cover">
           <source src="videos/capturista-finanzas-60s.mp4" type="video/mp4">
@@ -105,14 +105,14 @@
         <span class="tag">Caso destacado · sistema real</span>
         <h2>Capturista Digital · Finanzas</h2>
         <p>Tu equipo de finanzas pierde horas digitando facturas a mano. Le tomás una foto por WhatsApp y queda registrada sola, clasificada y con el ahorro calculado.</p>
-        <p style="margin-top:12px;font-size:13.5px;color:#0D9488;font-weight:600">🎥 Grabación del sistema funcionando, sin cortes: mirá la factura pasar de foto a registro en segundos — verificalo tú mismo en el video.</p>
+        <p style="margin-top:12px;font-size:13.5px;color:#1D5C4D;font-weight:600">🎥 Grabación del sistema funcionando, sin cortes: mirá la factura pasar de foto a registro en segundos — verificalo tú mismo en el video.</p>
       </div>
     </section>
 
     <section class="cat">
-      <h2 style="--acc:#0D9488"><span class="dot"></span>Automatización <em>6</em></h2>
+      <h2 style="--acc:#1D5C4D"><span class="dot"></span>Automatización <em>6</em></h2>
       <div class="grid">
-      <article class="card" id="cotizador-express" style="--acc:#0D9488">
+      <article class="card" id="cotizador-express" style="--acc:#1D5C4D">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/cotizador-express.jpg">
             <source src="videos/cotizador-express.mp4" type="video/mp4">
@@ -122,7 +122,7 @@
         <h3>Cotizador Express</h3>
         <p>Cada cotización se arma a mano en Excel y sale con precios ya vencidos.</p>
       </article>
-      <article class="card" id="alerta-de-stock" style="--acc:#0D9488">
+      <article class="card" id="alerta-de-stock" style="--acc:#1D5C4D">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/alerta-de-stock.jpg">
             <source src="videos/alerta-de-stock.mp4" type="video/mp4">
@@ -132,7 +132,7 @@
         <h3>Alerta de Stock</h3>
         <p>No conocen el stock real: venden lo que no hay o se quedan sin lo que más se mueve.</p>
       </article>
-      <article class="card" id="dte-sin-doble-digitacion" style="--acc:#0D9488">
+      <article class="card" id="dte-sin-doble-digitacion" style="--acc:#1D5C4D">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/dte-sin-doble-digitacion.jpg">
             <source src="videos/dte-sin-doble-digitacion.mp4" type="video/mp4">
@@ -142,7 +142,7 @@
         <h3>DTE sin Doble Digitación</h3>
         <p>Vuelven a teclear el pedido en el facturador para emitir el DTE, con errores y rechazos.</p>
       </article>
-      <article class="card" id="recordatorio-anti-inasistencia" style="--acc:#0D9488">
+      <article class="card" id="recordatorio-anti-inasistencia" style="--acc:#1D5C4D">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/recordatorio-anti-inasistencia.jpg">
             <source src="videos/recordatorio-anti-inasistencia.mp4" type="video/mp4">
@@ -152,7 +152,7 @@
         <h3>Recordatorio Anti-Inasistencia</h3>
         <p>Pacientes y clientes olvidan la cita, y cada hueco sin avisar es un ingreso perdido.</p>
       </article>
-      <article class="card" id="captura-facturas-sin-digitar" style="--acc:#0D9488">
+      <article class="card" id="captura-facturas-sin-digitar" style="--acc:#1D5C4D">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/captura-facturas-sin-digitar.jpg">
             <source src="videos/captura-facturas-sin-digitar.mp4" type="video/mp4">
@@ -162,7 +162,7 @@
         <h3>Facturas sin Digitar</h3>
         <p>El asistente contable transcribe cada factura a Excel, con errores de NIT, IVA y montos.</p>
       </article>
-      <article class="card" id="precalculo-planilla-isss-afp" style="--acc:#0D9488">
+      <article class="card" id="precalculo-planilla-isss-afp" style="--acc:#1D5C4D">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/precalculo-planilla-isss-afp.jpg">
             <source src="videos/precalculo-planilla-isss-afp.mp4" type="video/mp4">
@@ -175,9 +175,9 @@
       </div>
     </section>
     <section class="cat">
-      <h2 style="--acc:#2563EB"><span class="dot"></span>Agentes IA <em>2</em></h2>
+      <h2 style="--acc:#3F6F8A"><span class="dot"></span>Agentes IA <em>2</em></h2>
       <div class="grid">
-      <article class="card" id="cobrador-digital-24-7" style="--acc:#2563EB">
+      <article class="card" id="cobrador-digital-24-7" style="--acc:#3F6F8A">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/cobrador-digital-24-7.jpg">
             <source src="videos/cobrador-digital-24-7.mp4" type="video/mp4">
@@ -187,7 +187,7 @@
         <h3>Cobrador Digital 24/7</h3>
         <p>La cartera vencida crece porque nadie da seguimiento factura por factura.</p>
       </article>
-      <article class="card" id="agente-soporte-faq" style="--acc:#2563EB">
+      <article class="card" id="agente-soporte-faq" style="--acc:#3F6F8A">
         <div class="vwrap">
           <video controls preload="none" playsinline poster="videos/agente-soporte-faq.jpg">
             <source src="videos/agente-soporte-faq.mp4" type="video/mp4">
@@ -234,12 +234,12 @@
 
   <footer><div class="wrap f">
     <a class="brand" href="../" style="font-size:17px"><img src="../img/logo-badge-96.png" width="24" height="24" alt="">Optimatiza</a>
-    <span style="color:#6B7E93">Agentes de IA y automatización · El Salvador</span>
+    <span style="color:#6E7D74">Agentes de IA y automatización · El Salvador</span>
     <div class="sp"></div>
     <a href="https://wa.me/50371928070" target="_blank" rel="noopener">WhatsApp</a>
     <a href="https://www.linkedin.com/company/optimatiza-sv/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="../">Inicio</a>
-    <span style="color:#6B7E93">© 2026 Optimatiza</span>
+    <span style="color:#6E7D74">© 2026 Optimatiza</span>
   </div></footer>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
 <!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script><!-- End GA4 -->

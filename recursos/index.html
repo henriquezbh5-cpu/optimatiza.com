@@ -15,16 +15,16 @@
     @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
     @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
     @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
-      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#2563EB;--blue-soft:#EAF1FE;--violet:#6D28D9;--violet-soft:#F2ECFC;
+    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
+      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
+      --blue:#3F6F8A;--blue-soft:#E7EDF1;--violet:#C9913B;--violet-soft:#F6EEDD;
       --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
     *{box-sizing:border-box;margin:0}
     body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;gap:14px;height:62px}
     .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
     .brand img{width:26px;height:26px}
@@ -39,7 +39,7 @@
     .h2sub{font-size:14.5px;color:var(--dim);margin:0 0 18px;max-width:64ch}
     section{padding:30px 0}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-    .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh);transition:transform .15s ease,border-color .15s ease}
+    .card{display:flex;flex-direction:column;background:#FFFDF8;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh);transition:transform .15s ease,border-color .15s ease}
     .card:hover{transform:translateY(-2px);border-color:var(--teal2)}
     .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
     .badge{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px}
@@ -68,15 +68,15 @@
     .evi li{margin-bottom:6px}
     .evi li:last-child{margin-bottom:0}
     .evi a{color:var(--teal);font-weight:600}
-    .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:var(--sh)}
+    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:var(--sh)}
     .faq summary{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
     .faq summary::-webkit-details-marker{display:none}
     .faq summary::after{content:"+";color:var(--teal);font-size:19px;font-weight:700;flex-shrink:0}
     .faq details[open] summary::after{content:"–"}
     .faq details p{font-size:14px;margin-top:10px}
-    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
     .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#D9F5F1;max-width:58ch;margin:0 auto 20px;font-size:15px}
+    .final p{color:#DCE9DF;max-width:58ch;margin:0 auto 20px;font-size:15px}
     .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
     footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
     footer .f{display:flex;flex-wrap:wrap;gap:14px}

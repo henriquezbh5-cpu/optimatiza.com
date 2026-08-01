@@ -4,29 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Integración de Sistemas y APIs para Empresas | Optimatiza</title>
-  <meta name="description" content="Conectamos tu CRM, ERP, hojas de cálculo, WhatsApp y correo con integraciones API a medida: sincronización automática y trazabilidad. Diagnóstico gratis.">
+  <meta name="description" content="Integramos ERP, CRM, bases de datos y canales con APIs a medida: sincronización automática, bitácora de cada movimiento, reintentos y gobernanza del dato. Diagnóstico ejecutivo.">
   <link rel="canonical" href="https://optimatiza.com/integraciones-api/">
   <link rel="icon" href="../img/logo-badge-96.png">
   <meta property="og:title" content="Integración de Sistemas y APIs para Empresas | Optimatiza">
-  <meta property="og:description" content="Tus sistemas conectados: CRM, ERP, hojas, WhatsApp y correo sincronizados automáticamente, con trazabilidad. Diagnóstico gratis.">
+  <meta property="og:description" content="Sus sistemas conectados: ERP, CRM, bases de datos y canales sincronizados con bitácora, reintentos y control de errores. Diagnóstico ejecutivo.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/integraciones-api/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Integración de Sistemas y APIs para Empresas | Optimatiza">
+  <meta name="twitter:description" content="Sus sistemas conectados: ERP, CRM, bases de datos y canales sincronizados con bitácora, reintentos y control de errores. Diagnóstico ejecutivo.">
   <style>
     @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
     @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
     @font-face{font-family:'Inter';src:url('../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
     @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
-      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#2563EB;--violet:#6D28D9;
+    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
+      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
+      --blue:#3F6F8A;--violet:#C9913B;
       --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
     *{box-sizing:border-box;margin:0}
     body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;gap:14px;height:62px}
     .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
     .brand img{width:26px;height:26px}
@@ -47,13 +49,13 @@
     /* dolores */
     .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
     .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .dol .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid var(--line)}
+    .dol .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#FFFDF8;border:1px solid var(--line)}
     .dol .ic svg{width:20px;height:20px}
     .dol h3{font-size:16px;margin:10px 0 6px}
     .dol p{font-size:13.5px}
     /* resultado */
     .res{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    .ri{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--sh)}
+    .ri{display:flex;gap:10px;align-items:flex-start;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--sh)}
     .ri svg{flex:none;width:20px;height:20px;margin-top:2px}
     .ri b{color:var(--ink);font-size:14.5px;display:block}
     .ri span{font-size:13px}
@@ -65,10 +67,10 @@
     @media (prefers-reduced-motion:reduce){.flowline{animation:none}}
     .dcap{font-size:12.5px;color:var(--dim);margin-top:10px;padding:0 14px}
     .dfeat{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-    .dfeat span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
+    .dfeat span{background:#FFFDF8;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
     /* pasos */
     .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso{display:flex;align-items:center;gap:10px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
     .pn{flex:none;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
     .arrow{color:var(--teal)}
     /* chips */
@@ -78,7 +80,7 @@
     .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
     /* precios */
     .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .pr{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh);position:relative}
+    .pr{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh);position:relative}
     .pr.hl{border:1.5px solid var(--teal)}
     .pr .tag{position:absolute;top:-11px;left:18px;background:var(--teal);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
     .pr h3{font-size:16px}
@@ -96,7 +98,7 @@
     .ev p{font-size:13.5px}
     .ev a{color:var(--teal);font-weight:600}
     /* faq */
-    .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;box-shadow:var(--sh)}
+    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;box-shadow:var(--sh)}
     .faq summary{cursor:pointer;padding:14px 18px;font-weight:600;color:var(--ink);font-size:14.5px;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
     .faq summary::-webkit-details-marker{display:none}
     .faq summary::after{content:"+";color:var(--teal);font-family:var(--ffd);font-weight:700;font-size:18px;line-height:1}
@@ -104,12 +106,12 @@
     .faq details p{padding:0 18px 16px;font-size:14px}
     /* relacionadas */
     .rel{display:flex;flex-wrap:wrap;gap:8px}
-    .rel a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13px;color:var(--ink)}
+    .rel a{background:#FFFDF8;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:13px;color:var(--ink)}
     .rel a:hover{border-color:var(--teal);color:var(--teal)}
     /* final */
-    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
     .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#D9F5F1;max-width:58ch;margin:0 auto 20px;font-size:15px}
+    .final p{color:#DCE9DF;max-width:58ch;margin:0 auto 20px;font-size:15px}
     footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
     footer .f{display:flex;flex-wrap:wrap;gap:14px}
     footer a:hover{color:var(--ink)}
@@ -120,17 +122,17 @@
   <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
   <div class="sp"></div>
   <a class="ghost" href="../casos/">Demos en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20integrar%20mis%20sistemas.%20Vengo%20de%20la%20p%C3%A1gina%20de%20integraciones." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20conversar%20sobre%20la%20integraci%C3%B3n%20de%20nuestros%20sistemas%20corporativos." target="_blank" rel="noopener">WhatsApp</a>
 </div></header>
 
 <main class="wrap">
   <div class="hero">
-    <span class="k">Para operaciones y TI de pymes y medianas</span>
-    <h1>Integración de sistemas: que tu CRM, tu ERP y tus hojas dejen de ser islas</h1>
-    <p class="sub">La cotización vive en el CRM, la factura en el ERP, el inventario en una hoja de cálculo y el pedido llegó por WhatsApp — y alguien de tu equipo copia y pega entre pantallas todo el día. Construimos integraciones API a medida que sincronizan tus sistemas automáticamente, con registro de cada movimiento, para que cada dato se digite una sola vez.</p>
+    <span class="k">Para dirección de operaciones y TI</span>
+    <h1>Integración de sistemas: que su ERP, su CRM y sus bases de datos dejen de ser islas</h1>
+    <p class="sub">La cotización vive en el CRM, la factura en el ERP, el inventario en una base departamental y el pedido entró por otro canal — y alguien de su equipo reconcilia pantallas todo el día. Cuando el volumen es de cientos o miles de documentos al mes, esa sincronización manual deja de ser una molestia y se vuelve riesgo operativo. Construimos la capa de integración que mantiene sus sistemas alineados, con bitácora de cada movimiento, reintentos y control de errores.</p>
     <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20mis%20sistemas%20no%20se%20hablan%20entre%20s%C3%AD.%20Quiero%20agendar%20el%20diagn%C3%B3stico%20gratis%20de%20integraci%C3%B3n." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
-      <a class="ghost" href="../casos/">o mira los demos en video</a>
+      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20en%20nuestra%20operaci%C3%B3n%20varios%20sistemas%20se%20sincronizan%20a%20mano.%20Quiero%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%20de%20integraci%C3%B3n." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
+      <a class="ghost" href="../casos/">o revise los demos en video</a>
     </div>
   </div>
 
@@ -138,43 +140,43 @@
     <h2>Cómo se ve el problema por dentro</h2>
     <div class="dols">
       <div class="dol">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3F6F8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
         <h3>Doble y triple digitación</h3>
-        <p>El mismo cliente, el mismo producto y el mismo precio se escriben a mano en dos o tres sistemas. Cada copia es una oportunidad de error — y horas de trabajo que no agregan valor.</p>
+        <p>El mismo cliente, el mismo producto y la misma condición comercial se capturan a mano en dos o tres sistemas. Cada captura repetida es una oportunidad de error y horas de personal calificado que no agregan valor.</p>
       </div>
       <div class="dol">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#C9913B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></span>
         <h3>Versiones que no cuadran</h3>
-        <p>El inventario de la hoja dice una cosa, el ERP dice otra y ventas promete con un tercer número. Nadie sabe cuál es el dato bueno hasta que un cliente reclama.</p>
+        <p>La base departamental dice una cosa, el ERP dice otra y comercial compromete con un tercer número. Sin una fuente única por entidad, la discusión sobre cuál es el dato bueno escala hasta la dirección.</p>
       </div>
       <div class="dol">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1D5C4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
         <h3>Procesos que esperan a una persona</h3>
-        <p>El pedido entró el viernes por la tarde, pero se registra hasta el lunes porque alguien tiene que pasarlo al sistema. El cliente espera; el proceso no debería.</p>
+        <p>El pedido entró el viernes por la tarde y se registra hasta el lunes porque alguien debe pasarlo al sistema. A volumen sostenido, esa espera se convierte en el cuello de botella de todo el ciclo.</p>
       </div>
       <div class="dol">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3F6F8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
         <h3>Errores que nadie detecta a tiempo</h3>
-        <p>Un cero de más en el precio, un correo que no se envió, un registro que quedó a medias. Sin trazabilidad, el error aparece semanas después — cuando ya costó dinero.</p>
+        <p>Un decimal de más, una notificación que no salió, un registro que quedó a medias. Sin bitácora ni alertas, la desviación aparece en el cierre de mes, cuando ya llegó al cliente y al estado de resultados.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Qué cambia cuando tus sistemas se conectan</h2>
-    <p class="lead">Construimos flujos que reciben la información donde nace, la procesan, solicitan aprobación cuando hace falta, actualizan tus sistemas y notifican a quien corresponde — automáticamente.</p>
+    <h2>Qué cambia cuando sus sistemas se conectan</h2>
+    <p class="lead">Construimos flujos que reciben la información donde nace, la validan contra sus reglas, solicitan aprobación cuando el monto o la excepción lo exige, actualizan cada sistema y notifican al responsable. Todo queda registrado.</p>
     <div class="res">
-      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Un solo punto de entrada</b><span>El dato se digita (o se recibe) una vez y viaja solo al resto de sistemas.</span></div></div>
-      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Sincronización automática</b><span>Clientes, pedidos, pagos e inventario alineados entre CRM, ERP y hojas, sin intervención manual.</span></div></div>
-      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Trazabilidad completa</b><span>Cada movimiento queda registrado: qué se sincronizó, cuándo y con qué resultado.</span></div></div>
-      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Alertas cuando algo falla</b><span>Si un sistema no responde, el flujo reintenta y avisa a tu equipo — el error no se entierra en silencio.</span></div></div>
+      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#1D5C4D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Un solo punto de captura</b><span>El dato se captura o se recibe una vez y viaja al resto de sistemas sin intervención.</span></div></div>
+      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#1D5C4D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Gobernanza del dato</b><span>Fuente única por entidad y reglas explícitas de precedencia entre ERP, CRM y bases departamentales.</span></div></div>
+      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#1D5C4D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Bitácora auditable</b><span>Cada movimiento queda registrado: qué se sincronizó, cuándo, con qué carga y con qué resultado.</span></div></div>
+      <div class="ri"><svg viewBox="0 0 24 24" fill="none" stroke="#1D5C4D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><div><b>Reintentos y escalamiento</b><span>Si un sistema no responde, el flujo reintenta con espera progresiva y escala al responsable. Ninguna falla queda en silencio.</span></div></div>
     </div>
   </section>
 
   <section>
     <h2>Así se ve una capa de integración</h2>
     <div class="diagram">
-      <svg viewBox="0 0 680 440" role="img" aria-label="Diagrama de integración tipo hub: una capa central de integración conecta CRM, ERP, hojas de cálculo, facturación, WhatsApp y correo, sincronizando datos entre todos los sistemas">
+      <svg viewBox="0 0 680 440" role="img" aria-label="Diagrama de integración tipo hub: una capa central de integración conecta CRM, ERP, bases de datos, facturación, WhatsApp y correo, sincronizando datos entre todos los sistemas">
         <!-- lineas -->
         <line class="flowline" x1="272" y1="188" x2="192" y2="86"/>
         <line class="flowline" x1="408" y1="188" x2="488" y2="86"/>
@@ -183,65 +185,66 @@
         <line class="flowline" x1="272" y1="252" x2="192" y2="354"/>
         <line class="flowline" x1="408" y1="252" x2="488" y2="354"/>
         <!-- hub -->
-        <rect x="248" y="184" width="184" height="72" rx="14" fill="#E6FAF7" stroke="#0D9488" stroke-width="2"/>
-        <text x="340" y="214" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-weight="700" font-size="16" fill="#0B1B2B">Capa de integración</text>
-        <text x="340" y="236" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#0D9488">reglas · reintentos · registro</text>
+        <rect x="248" y="184" width="184" height="72" rx="14" fill="#DDE7DF" stroke="#1D5C4D" stroke-width="2"/>
+        <text x="340" y="214" text-anchor="middle" font-family="Space Grotesk,Inter,sans-serif" font-weight="700" font-size="16" fill="#183F35">Capa de integración</text>
+        <text x="340" y="236" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#1D5C4D">reglas · reintentos · bitácora</text>
         <!-- nodos -->
         <g>
-          <rect x="80" y="38" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
-          <text x="146" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="15" fill="#0B1B2B">CRM</text>
+          <rect x="80" y="38" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#3F6F8A" stroke-width="1.6"/>
+          <text x="146" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="15" fill="#183F35">CRM</text>
         </g>
         <g>
-          <rect x="468" y="38" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.6"/>
-          <text x="534" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="15" fill="#0B1B2B">ERP</text>
+          <rect x="468" y="38" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#C9913B" stroke-width="1.6"/>
+          <text x="534" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="15" fill="#183F35">ERP</text>
         </g>
         <g>
-          <rect x="28" y="196" width="150" height="48" rx="12" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.6"/>
-          <text x="103" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#0B1B2B">Hojas de cálculo</text>
+          <rect x="28" y="196" width="150" height="48" rx="12" fill="#FFFFFF" stroke="#1D5C4D" stroke-width="1.6"/>
+          <text x="103" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#183F35">Bases de datos</text>
         </g>
         <g>
-          <rect x="502" y="196" width="150" height="48" rx="12" fill="#FFFFFF" stroke="#6D28D9" stroke-width="1.6"/>
-          <text x="577" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#0B1B2B">Facturación</text>
+          <rect x="502" y="196" width="150" height="48" rx="12" fill="#FFFFFF" stroke="#C9913B" stroke-width="1.6"/>
+          <text x="577" y="225" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#183F35">Facturación</text>
         </g>
         <g>
           <rect x="80" y="354" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#25D366" stroke-width="1.6"/>
-          <text x="146" y="383" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#0B1B2B">WhatsApp</text>
+          <text x="146" y="383" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#183F35">WhatsApp</text>
         </g>
         <g>
-          <rect x="468" y="354" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.6"/>
-          <text x="534" y="383" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#0B1B2B">Correo</text>
+          <rect x="468" y="354" width="132" height="48" rx="12" fill="#FFFFFF" stroke="#3F6F8A" stroke-width="1.6"/>
+          <text x="534" y="383" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="14" fill="#183F35">Correo</text>
         </g>
       </svg>
-      <p class="dcap">Diagrama ilustrativo. Tu integración se diseña sobre tus sistemas reales: la capa central aplica tus reglas de negocio, reintenta cuando un sistema no responde y deja registro de cada movimiento.</p>
+      <p class="dcap">Diagrama ilustrativo. Su integración se diseña sobre sus sistemas reales: la capa central aplica sus reglas de negocio, reintenta cuando un sistema no responde y deja bitácora de cada movimiento.</p>
     </div>
     <div class="dfeat">
       <span>Sincronización en ambos sentidos</span>
-      <span>Registro de cada movimiento</span>
-      <span>Reintentos y alertas ante fallas</span>
-      <span>Aprobaciones humanas donde hace falta</span>
+      <span>Bitácora auditable de cada movimiento</span>
+      <span>Reintentos, alertas y escalamiento</span>
+      <span>Aprobaciones humanas donde el control lo exige</span>
+      <span>Fuente única por entidad</span>
     </div>
-    <p class="note">¿Prefieres verlo en acción? Los <a class="ghost" href="../casos/">demos en video</a> muestran flujos como este (animaciones ilustrativas, salvo donde se indica medición real).</p>
+    <p class="note">¿Prefiere verlo en operación? Los <a class="ghost" href="../casos/">demos en video</a> muestran flujos como este; son demostraciones ilustrativas, salvo donde se indica medición real.</p>
   </section>
 
   <section>
     <h2>Cómo funciona</h2>
     <div class="pasos">
-      <div class="paso"><span class="pn">1</span>Diagnóstico gratis (20–30 min)</div>
+      <div class="paso"><span class="pn">1</span>Diagnóstico ejecutivo (45–60 min)</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="pn">2</span>Mapa de datos y sistemas</div>
+      <div class="paso"><span class="pn">2</span>Mapa de datos, sistemas y contratos de API</div>
       <span class="arrow">→</span>
       <div class="paso"><span class="pn">3</span>Construcción y pruebas con datos reales</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="pn">4</span>Producción con registro y alertas</div>
+      <div class="paso"><span class="pn">4</span>Salida a producción con bitácora y alertas</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="pn">5</span>Entrega documentada y soporte</div>
+      <div class="paso"><span class="pn">5</span>Entrega documentada y transferencia a TI</div>
     </div>
-    <p class="note">En el diagnóstico revisamos qué sistemas usas, qué APIs o exportaciones ofrecen y te decimos con honestidad qué se puede integrar, cómo y qué no vale la pena.</p>
+    <p class="note">En el diagnóstico revisamos qué sistemas operan hoy, qué APIs o exportaciones exponen y qué volumen manejan; con eso le decimos con honestidad qué conviene integrar, por qué vía y qué no vale la pena tocar.</p>
   </section>
 
   <section>
     <h2>Sistemas con los que trabajamos</h2>
-    <p class="lead">La integración se construye con la herramienta adecuada para tu caso — estas son capacidades, no el producto. Lo que compras es tu proceso funcionando conectado.</p>
+    <p class="lead">La integración se construye con la herramienta adecuada para su arquitectura — estas son capacidades, no el producto. Lo que contrata es su proceso funcionando conectado y gobernado.</p>
     <div class="cgrp"><b>CRM y ventas</b>
       <div class="chips"><span class="chip">HubSpot</span><span class="chip">Zoho</span><span class="chip">Dynamics 365</span><span class="chip">Salesforce</span><span class="chip">Pipedrive</span></div>
     </div>
@@ -249,7 +252,7 @@
       <div class="chips"><span class="chip">SAP Business One</span><span class="chip">Odoo</span><span class="chip">QuickBooks</span><span class="chip">Facturación electrónica (DTE)</span></div>
     </div>
     <div class="cgrp"><b>Datos y documentos</b>
-      <div class="chips"><span class="chip">Google Sheets</span><span class="chip">Excel / Microsoft 365</span><span class="chip">SharePoint</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL / MySQL</span><span class="chip">CSV / SFTP</span></div>
+      <div class="chips"><span class="chip">SQL Server</span><span class="chip">PostgreSQL / MySQL</span><span class="chip">Dataverse</span><span class="chip">SharePoint</span><span class="chip">Excel / Microsoft 365</span><span class="chip">Google Sheets</span><span class="chip">CSV / SFTP</span></div>
     </div>
     <div class="cgrp"><b>Comunicación</b>
       <div class="chips"><span class="chip">WhatsApp Business API</span><span class="chip">Gmail / Outlook</span><span class="chip">Teams / Slack</span></div>
@@ -257,76 +260,77 @@
     <div class="cgrp"><b>Orquestación</b>
       <div class="chips"><span class="chip">APIs REST</span><span class="chip">Webhooks</span><span class="chip">Power Automate</span><span class="chip">n8n</span><span class="chip">Scripts a medida</span></div>
     </div>
-    <p class="note">¿Tu sistema no aparece? Si tiene API, exporta archivos o expone su base de datos, casi seguro se puede integrar. Compara enfoques en <a class="ghost" href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n</a>.</p>
+    <p class="note">¿Su sistema no aparece en la lista? Si expone API, exporta archivos o permite acceso a su base de datos, casi siempre hay ruta de integración. Compare enfoques en <a class="ghost" href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n</a>.</p>
   </section>
 
   <section>
-    <h2>Precio publicado, sin sorpresas</h2>
+    <h2>Cómo se dimensiona el trabajo</h2>
+    <p class="lead">El alcance manda: número de sistemas, reglas de negocio, volumen mensual y nivel de gobernanza exigido. Estos son los tres alcances que cubren la mayoría de los proyectos.</p>
     <div class="prices">
       <div class="pr">
-        <h3>Conexión simple</h3>
-        <div class="amt">$600–1,200</div>
-        <div class="dur">1–2 semanas</div>
-        <p>Un flujo entre dos sistemas, en un sentido. Por ejemplo: cada venta del CRM crea su registro en la hoja de control, con notificación por correo.</p>
+        <h3>Conexión punto a punto</h3>
+        <div class="amt">Unidad simple</div>
+        <div class="dur">Alcance típico: 1–2 semanas</div>
+        <p>Un flujo entre dos sistemas, en un sentido. Por ejemplo: cada oportunidad ganada en el CRM genera su registro en el sistema de control, con notificación al responsable.</p>
       </div>
       <div class="pr hl">
-        <span class="tag">Lo más común</span>
+        <span class="tag">El caso más frecuente</span>
         <h3>Integración estándar</h3>
-        <div class="amt">$1,200–3,000</div>
-        <div class="dur">2–4 semanas</div>
-        <p>Dos o tres sistemas sincronizados con reglas de negocio, validaciones, reintentos y registro de movimientos. CRM ↔ ERP ↔ hojas es el caso típico.</p>
+        <div class="amt">Dos o tres sistemas</div>
+        <div class="dur">Alcance típico: 2–4 semanas</div>
+        <p>Sistemas sincronizados con reglas de negocio, validaciones, reintentos y bitácora de movimientos. ERP ↔ CRM ↔ base departamental es el caso típico.</p>
       </div>
       <div class="pr">
         <h3>Célula de integraciones</h3>
-        <div class="amt">$3,000–8,000</div>
-        <div class="dur">4–8 semanas</div>
-        <p>Varias integraciones trabajando juntas de punta a punta: múltiples sistemas, aprobaciones, notificaciones a clientes y tablero de seguimiento.</p>
+        <div class="amt">Célula multi-agente</div>
+        <div class="dur">Alcance típico: 4–8 semanas</div>
+        <p>Varias integraciones operando de punta a punta: múltiples sistemas, aprobaciones, notificaciones a clientes y tablero de seguimiento para la dirección.</p>
       </div>
     </div>
-    <p class="note">Pagos por hitos 40/30/30. Operación y monitoreo mensual opcional desde $149 (planes $149/$449/$999). Detalle completo en <a class="ghost" href="../precios/">optimatiza.com/precios</a>.</p>
-    <div class="guar"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. <a href="../precios/">Los términos completos, publicados →</a></div>
+    <p class="note">Pagos por hitos asociados a entregables verificables. La inversión se define según el alcance, y la operación y monitoreo mensual es opcional. <a class="ghost" href="../precios/">Ver rangos publicados</a>.</p>
+    <div class="guar"><b>Garantía de arranque:</b> si su primer flujo no entra en producción en 30 días desde que recibimos accesos e información, devolvemos la inversión del setup. <a href="../precios/">Términos completos, publicados →</a></div>
   </section>
 
   <section>
     <h2>Evidencia honesta</h2>
-    <p class="lead">No publicamos testimonios inventados, logos prestados ni porcentajes de mejora que no podemos demostrar. Esto es lo que sí podemos mostrarte hoy:</p>
+    <p class="lead">No publicamos testimonios inventados, logos prestados ni porcentajes de mejora que no podemos demostrar. Esto es lo que sí podemos mostrarle hoy:</p>
     <div class="evs">
-      <div class="ev"><b>Una métrica medida en video</b><p>Nuestro Capturista Digital procesa una factura en ~4 segundos, medido en video. Es la única cifra que publicamos porque es la única que hemos medido. <a href="../casos/">Verlo en demos →</a></p></div>
-      <div class="ev"><b>Operamos con lo que vendemos</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. El chat Nova de este sitio es un agente real funcionando en vivo.</p></div>
-      <div class="ev"><b>Demos etiquetados como lo que son</b><p>Los videos de <a href="../casos/">/casos/</a> son animaciones ilustrativas de cómo se ve cada flujo — no grabaciones de clientes. Tu integración se construye sobre tus sistemas reales.</p></div>
+      <div class="ev"><b>Una métrica medida en video</b><p>Nuestro Capturista Digital procesa una factura en ~4 segundos: es una grabación del sistema real, no una animación. Es la única cifra de desempeño que publicamos, porque es la única que hemos medido. <a href="../casos/">Verla en demos →</a></p></div>
+      <div class="ev"><b>Operamos con lo que vendemos</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. El chat Nova de este sitio es un agente en producción.</p></div>
+      <div class="ev"><b>Demos etiquetados como lo que son</b><p>Los videos de <a href="../casos/">/casos/</a> son demostraciones ilustrativas de cómo se ve cada flujo, no grabaciones de clientes. Su integración se construye sobre sus sistemas reales.</p></div>
     </div>
   </section>
 
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
     <details>
-      <summary>¿Mi sistema no tiene API, se puede integrar de todos modos?</summary>
-      <p>Casi siempre sí. Si el sistema exporta archivos (CSV, Excel), permite acceso a su base de datos o recibe correos, hay camino para integrarlo. La automatización de interfaz (RPA) queda como último recurso porque es más frágil. En el diagnóstico gratis revisamos tu caso concreto y te decimos con honestidad si vale la pena y por qué vía.</p>
+      <summary>¿Y si un sistema crítico no expone API?</summary>
+      <p>Casi siempre hay ruta. Si el sistema exporta archivos (CSV, Excel), permite acceso de solo lectura a su base de datos o recibe correos estructurados, se puede integrar por esa vía. La automatización de interfaz (RPA) queda como último recurso, porque es más frágil ante cambios de versión. En el diagnóstico ejecutivo revisamos su caso concreto y le decimos con honestidad si conviene y por qué vía.</p>
     </details>
     <details>
       <summary>¿Cuánto cuesta una integración de sistemas?</summary>
-      <p>Rangos publicados: una conexión simple entre dos sistemas va de $600 a $1,200; una integración estándar con reglas de negocio, de $1,200 a $3,000; y una célula de integraciones complejas, de $3,000 a $8,000. Pagos por hitos 40/30/30. El detalle completo está en optimatiza.com/precios.</p>
+      <p>La inversión se define según el alcance: número de sistemas, reglas de negocio, volumen mensual y nivel de gobernanza exigido. Trabajamos con pagos por hitos asociados a entregables verificables y publicamos los rangos vigentes en optimatiza.com/precios, para que su área de compras los tenga antes de la primera reunión.</p>
     </details>
     <details>
       <summary>¿Cuánto tiempo toma tener la integración funcionando?</summary>
-      <p>Una conexión simple, 1 a 2 semanas. Una integración estándar, 2 a 4 semanas. Una célula completa, 4 a 8 semanas. Los plazos corren desde que recibimos accesos e información, y aplica la garantía de arranque de 30 días para el primer flujo.</p>
+      <p>Una conexión punto a punto, 1 a 2 semanas. Una integración estándar, 2 a 4 semanas. Una célula completa, 4 a 8 semanas. Los plazos corren desde que recibimos accesos e información, y aplica la garantía de arranque de 30 días para el primer flujo en producción.</p>
     </details>
     <details>
       <summary>¿Qué pasa si la integración falla a las 3 de la mañana?</summary>
-      <p>Toda integración que entregamos incluye registro de cada movimiento, reintentos automáticos y alertas a tu equipo cuando algo no se pudo procesar. Nada falla en silencio. Si quieres que además nosotros la vigilemos y mantengamos, hay planes de operación mensual de $149, $449 o $999.</p>
+      <p>Toda integración que entregamos incluye bitácora de cada movimiento, reintentos automáticos con espera progresiva y alertas al responsable cuando algo no se pudo procesar. Nada falla en silencio. Si además prefiere que nosotros la vigilemos y mantengamos, hay planes de operación y monitoreo mensual con rangos publicados en optimatiza.com/precios.</p>
     </details>
     <details>
-      <summary>¿La integración es mía o dependo de ustedes?</summary>
-      <p>Es tuya. Corre sobre tus cuentas y tus sistemas, y la entregamos documentada: qué hace, cómo se configura y qué revisar si algo cambia. Puedes operarla con tu equipo de TI o contratar nuestro plan mensual — tú eliges.</p>
+      <summary>¿La integración es de la empresa o quedamos dependiendo de ustedes?</summary>
+      <p>Es suya. Corre sobre sus cuentas y sus sistemas, y la entregamos documentada: qué hace, cómo se configura, qué credenciales usa y qué revisar cuando un sistema cambie de versión. Puede operarla con su equipo de TI o contratar el plan mensual; la decisión es suya en cualquier momento.</p>
     </details>
     <details>
-      <summary>¿Esto reemplaza a mi equipo de TI u operaciones?</summary>
-      <p>No. La integración se encarga del trabajo repetitivo — copiar, validar, sincronizar, notificar — y tu equipo conserva las decisiones, las relaciones y las tareas que requieren criterio. TI gana visibilidad (todo queda registrado) en lugar de perder control.</p>
+      <summary>¿Esto sustituye a su equipo de TI u operaciones?</summary>
+      <p>No. La integración absorbe el trabajo repetitivo — copiar, validar, sincronizar, notificar — y su equipo conserva las decisiones, las relaciones y las tareas que exigen criterio. TI gana visibilidad y control, porque todo movimiento queda registrado y auditable.</p>
     </details>
   </section>
 
   <section>
-    <h2>También te puede interesar</h2>
+    <h2>También podría interesarle</h2>
     <div class="rel">
       <a href="../automatizacion-de-procesos/">Automatización de procesos</a>
       <a href="../agentes-de-ia/">Agentes de IA</a>
@@ -338,14 +342,14 @@
   </section>
 
   <div class="final">
-    <h2>¿Cuántas horas al mes se van en copiar y pegar entre sistemas?</h2>
-    <p>Diagnóstico gratis de 20–30 minutos: revisamos tus sistemas reales, qué APIs ofrecen y te decimos qué integración conviene, cuánto cuesta según los rangos publicados — y qué no vale la pena automatizar.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20el%20diagn%C3%B3stico%20gratis%20para%20conectar%20mi%20CRM%2C%20ERP%20y%20hojas%20de%20c%C3%A1lculo." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+    <h2>¿Cuántas horas al mes consume la sincronización manual entre sus sistemas?</h2>
+    <p>Diagnóstico ejecutivo de 45 a 60 minutos: revisamos sus sistemas reales, qué APIs exponen y qué volumen manejan, y le decimos qué integración conviene, con qué alcance y qué no vale la pena automatizar.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo%20para%20integrar%20nuestro%20ERP%2C%20CRM%20y%20bases%20de%20datos." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
   </div>
 </main>
 
 <footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
+  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
   <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../automatizacion-de-procesos/">Automatización</a><a href="../agentes-de-ia/">Agentes de IA</a><a href="../seguridad/">Manejo de datos</a>
 </div></footer>
 
@@ -356,10 +360,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Mi sistema no tiene API, se puede integrar de todos modos?",
+      "name": "¿Y si un sistema crítico no expone API?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Casi siempre sí. Si el sistema exporta archivos (CSV, Excel), permite acceso a su base de datos o recibe correos, hay camino para integrarlo. La automatización de interfaz (RPA) queda como último recurso porque es más frágil. En el diagnóstico gratis revisamos tu caso concreto y te decimos con honestidad si vale la pena y por qué vía."
+        "text": "Casi siempre hay ruta. Si el sistema exporta archivos (CSV, Excel), permite acceso de solo lectura a su base de datos o recibe correos estructurados, se puede integrar por esa vía. La automatización de interfaz (RPA) queda como último recurso, porque es más frágil ante cambios de versión. En el diagnóstico ejecutivo revisamos su caso concreto y le decimos con honestidad si conviene y por qué vía."
       }
     },
     {
@@ -367,7 +371,7 @@
       "name": "¿Cuánto cuesta una integración de sistemas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Rangos publicados: una conexión simple entre dos sistemas va de $600 a $1,200; una integración estándar con reglas de negocio, de $1,200 a $3,000; y una célula de integraciones complejas, de $3,000 a $8,000. Pagos por hitos 40/30/30. El detalle completo está en optimatiza.com/precios."
+        "text": "La inversión se define según el alcance: número de sistemas, reglas de negocio, volumen mensual y nivel de gobernanza exigido. Trabajamos con pagos por hitos asociados a entregables verificables y publicamos los rangos vigentes en optimatiza.com/precios, para que su área de compras los tenga antes de la primera reunión."
       }
     },
     {
@@ -375,7 +379,7 @@
       "name": "¿Cuánto tiempo toma tener la integración funcionando?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una conexión simple, 1 a 2 semanas. Una integración estándar, 2 a 4 semanas. Una célula completa, 4 a 8 semanas. Los plazos corren desde que recibimos accesos e información, y aplica la garantía de arranque de 30 días para el primer flujo."
+        "text": "Una conexión punto a punto, 1 a 2 semanas. Una integración estándar, 2 a 4 semanas. Una célula completa, 4 a 8 semanas. Los plazos corren desde que recibimos accesos e información, y aplica la garantía de arranque de 30 días para el primer flujo en producción."
       }
     },
     {
@@ -383,23 +387,23 @@
       "name": "¿Qué pasa si la integración falla a las 3 de la mañana?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Toda integración que entregamos incluye registro de cada movimiento, reintentos automáticos y alertas a tu equipo cuando algo no se pudo procesar. Nada falla en silencio. Si quieres que además nosotros la vigilemos y mantengamos, hay planes de operación mensual de $149, $449 o $999."
+        "text": "Toda integración que entregamos incluye bitácora de cada movimiento, reintentos automáticos con espera progresiva y alertas al responsable cuando algo no se pudo procesar. Nada falla en silencio. Si además prefiere que nosotros la vigilemos y mantengamos, hay planes de operación y monitoreo mensual con rangos publicados en optimatiza.com/precios."
       }
     },
     {
       "@type": "Question",
-      "name": "¿La integración es mía o dependo de ustedes?",
+      "name": "¿La integración es de la empresa o quedamos dependiendo de ustedes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Es tuya. Corre sobre tus cuentas y tus sistemas, y la entregamos documentada: qué hace, cómo se configura y qué revisar si algo cambia. Puedes operarla con tu equipo de TI o contratar nuestro plan mensual — tú eliges."
+        "text": "Es suya. Corre sobre sus cuentas y sus sistemas, y la entregamos documentada: qué hace, cómo se configura, qué credenciales usa y qué revisar cuando un sistema cambie de versión. Puede operarla con su equipo de TI o contratar el plan mensual; la decisión es suya en cualquier momento."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Esto reemplaza a mi equipo de TI u operaciones?",
+      "name": "¿Esto sustituye a su equipo de TI u operaciones?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. La integración se encarga del trabajo repetitivo — copiar, validar, sincronizar, notificar — y tu equipo conserva las decisiones, las relaciones y las tareas que requieren criterio. TI gana visibilidad (todo queda registrado) en lugar de perder control."
+        "text": "No. La integración absorbe el trabajo repetitivo — copiar, validar, sincronizar, notificar — y su equipo conserva las decisiones, las relaciones y las tareas que exigen criterio. TI gana visibilidad y control, porque todo movimiento queda registrado y auditable."
       }
     }
   ]

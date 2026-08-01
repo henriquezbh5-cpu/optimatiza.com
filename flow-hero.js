@@ -68,7 +68,7 @@
 
     var nodes = {};
     $$('.fw-node', canvas).forEach(function (n) { nodes[n.getAttribute('data-node')] = n; });
-    var EDGE_COLOR = { teal: '#14B8A6', blue: '#3B82F6', violet: '#8B5CF6' };
+    var EDGE_COLOR = { teal: '#2C7A63', blue: '#3F6F8A', violet: '#C9913B' };
     var edges = [];   /* {from,to,base,flow,color} */
     var packet = null;
 
@@ -99,7 +99,7 @@
       edgesSvg.setAttribute('width', w);
       edgesSvg.setAttribute('height', h);
       var pairs = [
-        ['start', 'intent', '#94A3B8'],
+        ['start', 'intent', '#93A196'],
         ['intent', 'ventas', EDGE_COLOR.teal],
         ['intent', 'cobros', EDGE_COLOR.blue],
         ['intent', 'soporte', EDGE_COLOR.violet]
@@ -133,7 +133,7 @@
     /* ---------- packet travel along a path ---------- */
     function travel(path, dur, color, done) {
       var len = path.getTotalLength();
-      packet.setAttribute('fill', color || '#14B8A6');
+      packet.setAttribute('fill', color || '#2C7A63');
       packet.setAttribute('opacity', '1');
       var t0 = null;
       function step(ts) {
@@ -222,7 +222,7 @@
           traceRow(TRACE.start[L], 'is-ok');
           var e1 = edge('start', 'intent');
           e1.flow.classList.add('on');
-          travel(e1.flow, 700, '#94A3B8', function () {
+          travel(e1.flow, 700, '#93A196', function () {
             /* 3. intent thinks */
             setNode('intent', 'is-running');
             later(function () {

@@ -3,28 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Automatización con n8n para tu empresa | Optimatiza</title>
-  <meta name="description" content="Flujos n8n con IA, alojados por nosotros o en tu infraestructura: procesan información, piden aprobaciones y actualizan tus sistemas. Diagnóstico gratis.">
+  <title>n8n autoalojado para empresas: automatización con IA | Optimatiza</title>
+  <meta name="description" content="Flujos n8n con IA desplegados en la nube de su empresa o gestionados por nosotros: control de la infraestructura, del dato y del costo por ejecución. Diagnóstico ejecutivo.">
   <link rel="canonical" href="https://optimatiza.com/n8n/">
   <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Automatización con n8n para tu empresa | Optimatiza">
-  <meta property="og:description" content="Diseñamos, alojamos o dejamos en tu propia infraestructura flujos n8n con IA integrada. Sin licencias por usuario. Diagnóstico gratis de 20 minutos.">
+  <meta property="og:title" content="n8n autoalojado para empresas: automatización con IA | Optimatiza">
+  <meta property="og:description" content="Diseñamos y desplegamos flujos n8n con IA en la infraestructura de su empresa o en una instancia que operamos nosotros. Sin licencias por usuario. Control del dato y del costo por ejecución.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/n8n/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="n8n autoalojado para empresas: automatización con IA | Optimatiza">
+  <meta name="twitter:description" content="Flujos n8n con IA en la infraestructura de su empresa o en una instancia gestionada. Control del dato, de la infraestructura y del costo por ejecución.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
   <style>
     @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
     @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
     @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#FFFFFF;--alt:#F6F9FC;--ink:#0B1B2B;--body:#42566B;--dim:#6B7E93;--line:#E3EAF2;
-      --teal:#0D9488;--teal2:#14B8A6;--teal-soft:#E6FAF7;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#2563EB;--violet:#6D28D9;
+    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
+      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
+      --blue:#3F6F8A;--violet:#C9913B;
       --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(11,27,43,.04),0 8px 24px rgba(11,27,43,.06)}
+      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
     *{box-sizing:border-box;margin:0}
     body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     .nav{display:flex;align-items:center;gap:14px;height:62px}
     .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
     .brand img{width:26px;height:26px}
@@ -49,7 +53,7 @@
     .dol p{font-size:13.5px}
     .diagram{background:var(--alt);border:1px solid var(--line);border-radius:16px;padding:20px;overflow-x:auto}
     .dg{display:flex;align-items:stretch;gap:10px;min-width:820px}
-    .node{background:#fff;border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:12px;padding:12px 14px;flex:1;box-shadow:var(--sh)}
+    .node{background:#FFFDF8;border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:12px;padding:12px 14px;flex:1;box-shadow:var(--sh)}
     .node.blue{border-top-color:var(--blue)}
     .node.violet{border-top-color:var(--violet)}
     .node .ni{font-size:20px}
@@ -58,26 +62,27 @@
     .dg-a{align-self:center;color:var(--teal);font-weight:700;font-size:18px;flex:0 0 auto}
     .note{font-size:12.5px;color:var(--dim);margin-top:10px}
     .ags{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .ag{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
+    .ag{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
     .ag-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
     .ag-h b{font-family:var(--ffd);color:var(--ink);font-size:16px}
     .ag-p{color:var(--teal);font-size:13px;font-weight:700;white-space:nowrap}
     .ag p{font-size:13.5px;margin-top:8px}
     .ag ul{font-size:13.5px;margin:8px 0 0;padding-left:18px}
     .ag li{margin-top:4px}
+    .ag a{color:var(--teal);font-weight:600}
     .tag{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:8px}
-    .tag.blue{background:#EFF4FE;color:var(--blue)}
-    .tag.violet{background:#F3EEFB;color:var(--violet)}
+    .tag.blue{background:#E7EDF1;color:var(--blue)}
+    .tag.violet{background:#F6EEDD;color:var(--violet)}
     .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
+    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
     .paso-i{font-size:19px}
     .arrow{color:var(--teal)}
     .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
+    .chip{background:#FFFDF8;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
     .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(20,184,166,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px}
     .guar b{color:var(--ink)}
     .guar a{color:var(--teal);font-weight:600}
-    .comp{background:#EFF4FE;border:1.5px solid rgba(37,99,235,.3);border-radius:16px;padding:20px 24px;font-size:14.5px}
+    .comp{background:#E7EDF1;border:1.5px solid rgba(63,111,138,.3);border-radius:16px;padding:20px 24px;font-size:14.5px}
     .comp b{color:var(--ink)}
     .comp a{color:var(--blue);font-weight:600}
     .evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
@@ -85,13 +90,13 @@
     .ev b{font-family:var(--ffd);color:var(--ink);font-size:15px;display:block;margin-bottom:6px}
     .ev p{font-size:13.5px}
     .ev a{color:var(--teal);font-weight:600}
-    .faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:var(--sh)}
+    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:var(--sh)}
     .faq summary{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;cursor:pointer}
     .faq details p{font-size:14px;margin-top:10px;max-width:72ch}
     .faq details a{color:var(--teal);font-weight:600}
-    .final{text-align:center;background:linear-gradient(135deg,#0D9488,#0B7A70);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
+    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
     .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#D9F5F1;max-width:56ch;margin:0 auto 20px;font-size:15px}
+    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
     footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
     footer .f{display:flex;flex-wrap:wrap;gap:14px}
     footer a:hover{color:var(--ink)}
@@ -101,144 +106,146 @@
 <header><div class="wrap nav">
   <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
   <div class="sp"></div>
-  <a class="ghost" href="../casos/">Demos en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20automatizar%20procesos%20con%20n8n." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="ghost" href="../casos/">Demostraciones</a>
+  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola.%20Escribo%20desde%20el%20%C3%A1rea%20de%20TI%20y%20estamos%20evaluando%20n8n%20para%20automatizar%20procesos%20internos." target="_blank" rel="noopener">WhatsApp</a>
 </div></header>
 
 <main class="wrap">
   <div class="hero">
-    <span class="k">Para empresas sin Microsoft 365 — o que quieren control total</span>
-    <h1>Automatización con n8n: flujos con IA en tu propia infraestructura</h1>
-    <p class="sub">Tu equipo sigue copiando datos entre correo, hojas de cálculo y sistemas que no se hablan entre sí — y las herramientas de automatización que cobran por usuario o por ejecución no te cuadran. Diseñamos, alojamos o dejamos en tu propio servidor flujos n8n con IA integrada: reciben información, la procesan, solicitan aprobaciones, actualizan tus sistemas y responden a clientes automáticamente.</p>
+    <span class="k">Para direcciones de TI que exigen control de infraestructura y de costo</span>
+    <h1>n8n en la infraestructura de su empresa: automatización con IA, sin licencias por usuario</h1>
+    <p class="sub">Su operación mueve cientos o miles de documentos, pedidos y solicitudes al mes, y varios sistemas se siguen sincronizando a mano. Las plataformas que cobran por usuario o por ejecución vuelven ese volumen impredecible en presupuesto. Desplegamos n8n en la nube de su empresa —o lo operamos por usted— con flujos que reciben información, la procesan con IA, solicitan aprobaciones, actualizan sus sistemas y responden a sus clientes.</p>
     <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20automatizar%20procesos%20con%20n8n.%20Me%20interesa%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
-      <a class="ghost" href="../casos/">o mira los demos en video</a>
+      <a class="btn" href="https://wa.me/50371928070?text=Hola.%20Quisiera%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%20sobre%20n8n%20autoalojado%20para%20nuestra%20operaci%C3%B3n." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
+      <a class="ghost" href="../casos/">o revise las demostraciones en video</a>
     </div>
   </div>
 
   <section>
-    <h2>¿Por qué n8n y no otra herramienta?</h2>
-    <p class="lead">n8n es una plataforma de automatización de código abierto que puedes autoalojar. Para muchas empresas de El Salvador y Latam es la opción que sí cuadra:</p>
+    <h2>Por qué n8n y no otra plataforma</h2>
+    <p class="lead">n8n es una plataforma de automatización de código abierto que su organización puede autoalojar. Para empresas con volumen sostenido y políticas propias de datos, es la opción que suele cuadrar:</p>
     <div class="dols">
-      <div class="dol"><span class="dol-i">🔓</span><h3>Sin licencias por usuario</h3><p>Autoalojado, n8n no cobra por usuario ni por cada persona que toca el flujo. Un servidor pequeño mueve cientos de ejecuciones al día.</p></div>
-      <div class="dol"><span class="dol-i">🏠</span><h3>Tus datos en tu casa</h3><p>Si lo instalamos en tu servidor o VPS, la información de tus clientes nunca sale de tu infraestructura. Ideal si manejas datos sensibles.</p></div>
-      <div class="dol"><span class="dol-i">🧩</span><h3>Se conecta con casi todo</h3><p>Cientos de integraciones nativas, y donde no hay conector, hablamos directo con la API de tu sistema. No dependes del ecosistema Microsoft.</p></div>
-      <div class="dol"><span class="dol-i">🤖</span><h3>IA dentro del flujo</h3><p>Nodos de IA para clasificar correos, extraer datos de documentos o redactar respuestas — como un paso más del proceso, no como un juguete aparte.</p></div>
+      <div class="dol"><span class="dol-i">🔓</span><h3>Sin licencias por usuario</h3><p>Autoalojado, n8n no cobra por usuario ni por cada persona que interviene en el flujo. El costo por ejecución lo determina su propia infraestructura, no un tarifario externo que crece con el volumen.</p></div>
+      <div class="dol"><span class="dol-i">🏠</span><h3>El dato no sale de su infraestructura</h3><p>Instalado en la nube o el centro de datos de su empresa, la información de sus clientes permanece bajo sus políticas de seguridad, retención y auditoría.</p></div>
+      <div class="dol"><span class="dol-i">🧩</span><h3>Se integra con su parque de sistemas</h3><p>Cientos de integraciones nativas, y donde no existe conector hablamos directo con la API de su ERP, CRM o core. Sin dependencia de un solo ecosistema de proveedor.</p></div>
+      <div class="dol"><span class="dol-i">🤖</span><h3>IA dentro del flujo</h3><p>Nodos de IA para clasificar correo, extraer datos de documentos o redactar respuestas, como un paso más del proceso y bajo las mismas reglas de control y trazabilidad.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Así se ve un flujo n8n trabajando</h2>
-    <p class="lead">Ejemplo real de arquitectura: un pedido que llega por correo o WhatsApp y termina registrado en tu sistema, sin que nadie lo digite.</p>
-    <div class="diagram" role="img" aria-label="Diagrama de un flujo n8n: entrada por correo, WhatsApp o webhook; la IA extrae y clasifica los datos; una persona aprueba si el caso lo requiere; el flujo actualiza CRM, ERP u hojas de cálculo; y responde al cliente y notifica al equipo.">
+    <h2>Así opera un flujo n8n en producción</h2>
+    <p class="lead">Arquitectura de referencia: un pedido que llega por correo o WhatsApp y termina registrado en el sistema de su empresa, sin que nadie lo digite.</p>
+    <div class="diagram" role="img" aria-label="Diagrama de un flujo n8n: entrada por correo, WhatsApp o webhook; la IA extrae y clasifica los datos; una persona aprueba si el caso lo requiere; el flujo actualiza CRM, ERP o bases de datos; y responde al cliente y notifica al equipo.">
       <div class="dg">
         <div class="node blue"><span class="ni">📥</span><b>1 · Llega la información</b><p>Correo, WhatsApp, formulario web o webhook de otro sistema.</p></div>
         <span class="dg-a">→</span>
-        <div class="node violet"><span class="ni">🧠</span><b>2 · La IA la procesa</b><p>Extrae datos, clasifica el caso y valida contra tus reglas.</p></div>
+        <div class="node violet"><span class="ni">🧠</span><b>2 · La IA la procesa</b><p>Extrae datos, clasifica el caso y valida contra las reglas de su operación.</p></div>
         <span class="dg-a">→</span>
-        <div class="node"><span class="ni">✋</span><b>3 · Aprobación humana</b><p>Si el monto o el caso lo amerita, una persona aprueba con un clic.</p></div>
+        <div class="node"><span class="ni">✋</span><b>3 · Aprobación humana</b><p>Si el monto o la excepción lo ameritan, un responsable aprueba con un clic.</p></div>
         <span class="dg-a">→</span>
-        <div class="node blue"><span class="ni">🗂️</span><b>4 · Actualiza tus sistemas</b><p>CRM, ERP, base de datos u hoja de cálculo quedan al día.</p></div>
+        <div class="node blue"><span class="ni">🗂️</span><b>4 · Actualiza sus sistemas</b><p>CRM, ERP, base de datos u hoja de control quedan al día.</p></div>
         <span class="dg-a">→</span>
-        <div class="node"><span class="ni">📤</span><b>5 · Responde y notifica</b><p>Confirma al cliente y avisa a tu equipo por el canal que usen.</p></div>
+        <div class="node"><span class="ni">📤</span><b>5 · Responde y notifica</b><p>Confirma al cliente y avisa al equipo por el canal que ya utilizan.</p></div>
       </div>
     </div>
-    <p class="note">El trabajo repetitivo lo hace el flujo; tu equipo conserva las decisiones, relaciones y tareas que requieren criterio. En <a class="ghost" href="../casos/">optimatiza.com/casos</a> hay demos en video (animaciones ilustrativas) de procesos como este.</p>
+    <p class="note">El trabajo repetitivo lo ejecuta el flujo; su equipo dedica el tiempo a lo que exige criterio. En <a class="ghost" href="../casos/">optimatiza.com/casos</a> hay demostraciones en video, etiquetadas como animaciones ilustrativas, de procesos como este.</p>
   </section>
 
   <section>
-    <h2>Tu instancia n8n, donde tú decidas</h2>
+    <h2>Su instancia n8n, donde su política lo exija</h2>
     <div class="ags">
-      <div class="ag"><span class="tag">Cero infraestructura tuya</span><div class="ag-h"><b>La alojamos nosotros</b></div><p>Instancia n8n administrada por Optimatiza: servidor, actualizaciones, respaldos y monitoreo incluidos en el plan de operación mensual ($149 / $449 / $999 según volumen y soporte).</p></div>
-      <div class="ag"><span class="tag blue">Control total</span><div class="ag-h"><b>En tu propio servidor</b></div><p>Instalamos n8n en tu VPS o servidor local, lo dejamos documentado y con respaldos configurados. Tus datos y tus flujos viven en tu infraestructura; tú tienes las llaves.</p></div>
-      <div class="ag"><span class="tag violet">SaaS oficial</span><div class="ag-h"><b>n8n Cloud</b></div><p>Si prefieres no administrar nada, construimos tus flujos sobre n8n Cloud, el servicio oficial de pago de n8n, con la cuenta a tu nombre.</p></div>
+      <div class="ag"><span class="tag">Sin carga para su equipo de TI</span><div class="ag-h"><b>Instancia gestionada por nosotros</b></div><p>Servidor, actualizaciones, respaldos y monitoreo bajo un plan de operación mensual, dimensionado por volumen de ejecuciones y nivel de soporte. <a href="../precios/">Ver rangos publicados →</a></p></div>
+      <div class="ag"><span class="tag blue">Control total</span><div class="ag-h"><b>En la nube de su empresa</b></div><p>Desplegamos n8n en su suscripción de nube o su centro de datos, en contenedores, con respaldos, variables de entorno y documentación de operación. Los flujos y las llaves quedan en su organización.</p></div>
+      <div class="ag"><span class="tag violet">SaaS oficial</span><div class="ag-h"><b>n8n Cloud</b></div><p>Si su política admite servicio administrado por el fabricante, construimos los flujos sobre n8n Cloud, el servicio oficial de pago, con la cuenta a nombre de su empresa.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Cómo funciona</h2>
+    <h2>Cómo trabajamos</h2>
     <div class="pasos">
-      <div class="paso"><span class="paso-i">💬</span>Diagnóstico gratis (20–30 min)</div>
+      <div class="paso"><span class="paso-i">💬</span>Diagnóstico ejecutivo (30–45 min)</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i">✏️</span>Diseñamos el flujo sobre tu proceso real</div>
+      <div class="paso"><span class="paso-i">✏️</span>Diseño sobre su proceso real</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i">🔧</span>Lo construimos y probamos con tus datos</div>
+      <div class="paso"><span class="paso-i">🔧</span>Construcción y pruebas con sus datos</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i">🚀</span>Entrega documentada, en tu infra o la nuestra</div>
+      <div class="paso"><span class="paso-i">🚀</span>Entrega documentada, en su infraestructura o la nuestra</div>
       <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i">📈</span>Operación y mejoras (opcional)</div>
+      <div class="paso"><span class="paso-i">📈</span>Operación y mejora continua (opcional)</div>
     </div>
   </section>
 
   <section>
-    <h2>Sistemas con los que conectamos tus flujos</h2>
+    <h2>Sistemas con los que conectamos sus flujos</h2>
     <div class="chips">
-      <span class="chip">WhatsApp Business</span><span class="chip">Gmail / Google Workspace</span><span class="chip">Google Sheets</span><span class="chip">Google Drive</span><span class="chip">Telegram</span><span class="chip">Slack</span><span class="chip">HubSpot</span><span class="chip">Pipedrive</span><span class="chip">Odoo</span><span class="chip">PostgreSQL / MySQL</span><span class="chip">Airtable</span><span class="chip">Notion</span><span class="chip">Shopify / WooCommerce</span><span class="chip">Stripe</span><span class="chip">Modelos de IA (Claude, GPT, Gemini)</span><span class="chip">APIs REST y webhooks</span>
+      <span class="chip">WhatsApp Business</span><span class="chip">Gmail / Google Workspace</span><span class="chip">Google Sheets</span><span class="chip">Google Drive</span><span class="chip">Telegram</span><span class="chip">Slack</span><span class="chip">HubSpot</span><span class="chip">Pipedrive</span><span class="chip">Odoo</span><span class="chip">PostgreSQL / MySQL</span><span class="chip">SQL Server</span><span class="chip">SFTP / archivos planos</span><span class="chip">Airtable</span><span class="chip">Notion</span><span class="chip">Shopify / WooCommerce</span><span class="chip">Stripe</span><span class="chip">Modelos de IA (Claude, GPT, Gemini)</span><span class="chip">APIs REST y webhooks</span>
     </div>
-    <p class="note">¿Tu sistema no está en la lista? Si tiene API, archivo de exportación o base de datos, casi seguro podemos conectarlo — pregúntanos en el diagnóstico. Ver también <a class="ghost" href="../integraciones-api/">integraciones a la medida →</a></p>
+    <p class="note">¿Su sistema no aparece en la lista? Si expone API, archivo de exportación o base de datos, en la mayoría de los casos podemos conectarlo; lo confirmamos en el diagnóstico. Ver también <a class="ghost" href="../integraciones-api/">integraciones a la medida →</a></p>
   </section>
 
   <section>
-    <h2>Precio publicado, sin sorpresas</h2>
+    <h2>Alcance típico de un proyecto n8n</h2>
+    <p class="lead">Trabajamos por alcance cerrado y plazo comprometido. Estos son los tres tamaños que cubren la mayoría de los proyectos:</p>
     <div class="ags">
-      <div class="ag"><div class="ag-h"><b>Flujo simple</b><span class="ag-p">$600–1,200</span></div><p>Un proceso, de punta a punta, en 1–2 semanas. Por ejemplo:</p><ul><li>Facturas o pedidos que llegan por correo → extraídos y registrados</li><li>Formulario web → CRM + respuesta automática al cliente</li><li>Reporte diario armado y enviado solo</li></ul></div>
-      <div class="ag"><div class="ag-h"><b>Flujo estándar</b><span class="ag-p">$1,200–3,000</span></div><p>Procesos con más pasos, aprobaciones o IA, en 2–4 semanas. Por ejemplo:</p><ul><li>Pedidos por WhatsApp con IA que extrae, valida y pide aprobación</li><li>Conciliación entre dos sistemas con reporte de diferencias</li><li>Seguimiento automático de cotizaciones con respuestas redactadas por IA</li></ul></div>
+      <div class="ag"><div class="ag-h"><b>Unidad simple</b><span class="ag-p">1–2 semanas</span></div><p>Un proceso, de punta a punta. Por ejemplo:</p><ul><li>Facturas o pedidos que llegan por correo, extraídos y registrados</li><li>Formulario web hacia el CRM, con respuesta automática al cliente</li><li>Reporte periódico armado, validado y distribuido solo</li></ul></div>
+      <div class="ag"><div class="ag-h"><b>Flujo estándar</b><span class="ag-p">2–4 semanas</span></div><p>Procesos con más pasos, aprobaciones o IA. Por ejemplo:</p><ul><li>Pedidos por WhatsApp con IA que extrae, valida y solicita aprobación</li><li>Conciliación entre dos sistemas con reporte de diferencias</li><li>Seguimiento de cotizaciones con respuestas redactadas por IA</li></ul></div>
+      <div class="ag"><div class="ag-h"><b>Célula multi-agente</b><span class="ag-p">4–8 semanas</span></div><p>Varios flujos coordinados sobre una misma instancia. Por ejemplo:</p><ul><li>Instancia n8n multi-flujo con roles, colas y trazabilidad por ejecución</li><li>Agentes especializados que se reparten el caso y escalan a un responsable</li><li>Integración con el ERP o el core, con conciliación y reporte de excepciones</li></ul></div>
     </div>
-    <p class="note">Pagos por hitos 40/30/30. Incluye construcción, pruebas, entrega documentada y 30 días de soporte. Detalle completo en <a class="ghost" href="../precios/">optimatiza.com/precios</a>.</p>
-    <div class="guar" style="margin-top:16px"><b>Garantía de arranque:</b> si tu primer flujo no corre en producción en 30 días desde que recibimos accesos e información, devolvemos el setup. <a href="../precios/">Los términos completos, publicados →</a></div>
+    <p class="note">Pagos por hitos. Incluye construcción, pruebas, entrega documentada y 30 días de soporte. La inversión se define según el alcance: <a class="ghost" href="../precios/">ver rangos publicados →</a></p>
+    <div class="guar" style="margin-top:16px"><b>Garantía de arranque:</b> si su primer flujo no entra en producción en 30 días desde que recibimos accesos e información, devolvemos la inversión del setup. <a href="../precios/">Los términos completos, publicados →</a></div>
   </section>
 
   <section>
-    <div class="comp"><b>¿Y si mi empresa sí usa Microsoft 365?</b> Entonces quizá te convenga más Power Automate, que ya viene en muchas licencias M365. Trabajamos con ambas herramientas y escribimos una comparación honesta para que decidas con criterio: <a href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n — cuál conviene según tu caso →</a></div>
+    <div class="comp"><b>¿Y si su empresa ya opera sobre Microsoft 365?</b> Entonces puede convenir más Power Automate, incluido en varias licencias M365. Trabajamos con ambas plataformas y publicamos una comparación honesta para que su equipo decida con criterio: <a href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n — cuál conviene según el caso →</a></div>
   </section>
 
   <section>
-    <h2>Evidencia honesta (lo que podemos demostrar hoy)</h2>
+    <h2>Evidencia verificable</h2>
     <div class="evs">
-      <div class="ev"><b>⏱️ Una factura en ~4 segundos</b><p>Nuestro Capturista Digital procesa una factura en aproximadamente 4 segundos, medido en video. Es la única métrica medida que publicamos — <a href="../casos/">verla en demos →</a></p></div>
-      <div class="ev"><b>🤖 Nos automatizamos a nosotros mismos</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. Y el chat Nova de este sitio es un agente real en vivo: pruébalo.</p></div>
-      <div class="ev"><b>🎬 Demos transparentes</b><p>Los demos de <a href="../casos/">/casos/</a> son animaciones ilustrativas de cómo trabaja cada flujo — no grabaciones de clientes. No publicamos testimonios ni cifras que no podamos respaldar.</p></div>
+      <div class="ev"><b>⏱️ Una factura en ~4 segundos</b><p>Nuestro Capturista Digital procesa una factura en aproximadamente 4 segundos. Es una grabación del sistema real y la única métrica de desempeño que publicamos — <a href="../casos/">verla en las demostraciones →</a></p></div>
+      <div class="ev"><b>🤖 Nos automatizamos a nosotros mismos</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. El chat Nova de este sitio es un agente en producción.</p></div>
+      <div class="ev"><b>🎬 Demostraciones etiquetadas</b><p>Los materiales de <a href="../casos/">/casos/</a> son demostraciones ilustrativas de cómo trabaja cada flujo, no grabaciones de clientes. No publicamos testimonios, logos ni cifras que no podamos respaldar.</p></div>
     </div>
   </section>
 
   <section class="faq">
     <h2>Preguntas frecuentes</h2>
     <details>
-      <summary>¿Qué es n8n y por qué lo recomendarían para mi empresa?</summary>
-      <p>n8n es una plataforma de automatización de flujos de trabajo, de código abierto y autoalojable, que conecta tus sistemas (correo, WhatsApp, CRM, ERP, bases de datos, APIs) y les agrega pasos de IA. La recomendamos cuando tu empresa no vive en Microsoft 365, cuando quieres que los datos se queden en tu propia infraestructura, o cuando el volumen de ejecuciones haría caro un SaaS que cobra por operación.</p>
+      <summary>¿Qué es n8n y en qué casos lo recomiendan?</summary>
+      <p>n8n es una plataforma de automatización de flujos de trabajo, de código abierto y autoalojable, que conecta los sistemas de su empresa (correo, WhatsApp, CRM, ERP, bases de datos, APIs) y les agrega pasos de IA. La recomendamos cuando la operación no vive sobre Microsoft 365, cuando el dato debe permanecer en infraestructura propia, o cuando el volumen de ejecuciones vuelve costoso e impredecible un servicio que cobra por operación.</p>
     </details>
     <details>
-      <summary>¿Necesito mi propio servidor para usar n8n?</summary>
-      <p>No necesariamente. Hay tres caminos: (1) nosotros alojamos y operamos tu instancia dentro del plan de operación mensual; (2) la instalamos en tu VPS o servidor local y te la entregamos documentada; o (3) usamos n8n Cloud, el servicio oficial de pago. En el diagnóstico gratis te decimos cuál conviene según tus datos, tu volumen y tu equipo técnico.</p>
+      <summary>¿Necesitamos servidor propio para operar n8n?</summary>
+      <p>No necesariamente. Hay tres caminos: (1) alojamos y operamos su instancia dentro de un plan de operación mensual; (2) la desplegamos en la nube o el centro de datos de su empresa y la entregamos documentada; o (3) usamos n8n Cloud, el servicio oficial de pago. En el diagnóstico ejecutivo definimos cuál corresponde según sus políticas de datos, su volumen y la capacidad de su equipo técnico.</p>
     </details>
     <details>
       <summary>¿Cuánto cuesta la licencia de n8n?</summary>
-      <p>Autoalojar n8n para uso interno de tu empresa no tiene costo de licencia (se distribuye bajo la licencia Sustainable Use). Lo que pagas es el servidor donde corre — un VPS pequeño suele bastar para empezar — o el plan de n8n Cloud si eliges la versión SaaS oficial. Nuestro cobro es por diseñar, construir y, si quieres, operar los flujos: los rangos están publicados arriba y en <a href="../precios/">precios</a>.</p>
+      <p>Autoalojar n8n para uso interno de la empresa no tiene costo de licencia (se distribuye bajo la licencia Sustainable Use). El gasto recurrente es la infraestructura donde corre, dimensionada por volumen de ejecuciones, o el plan de n8n Cloud si opta por la versión administrada por el fabricante. Nuestro cobro corresponde a diseñar, construir y, si lo requiere, operar los flujos; los rangos están publicados en <a href="../precios/">precios</a>.</p>
     </details>
     <details>
       <summary>¿Pueden integrar IA en los flujos?</summary>
-      <p>Sí, es nuestra especialidad: dentro del flujo n8n agregamos pasos de IA que clasifican correos, extraen datos de facturas y documentos, redactan respuestas o resumen conversaciones. La IA hace el trabajo repetitivo; tu equipo conserva las decisiones, relaciones y tareas que requieren criterio — los flujos incluyen puntos de aprobación humana donde hace falta.</p>
+      <p>Sí, es nuestra especialidad: dentro del flujo n8n agregamos pasos de IA que clasifican correo, extraen datos de facturas y documentos, redactan respuestas o resumen conversaciones. La IA ejecuta el trabajo repetitivo; su equipo dedica el tiempo a lo que exige criterio, y los flujos incluyen puntos de aprobación humana donde el proceso lo requiere.</p>
     </details>
     <details>
-      <summary>¿Qué pasa si un flujo falla a las 3 de la mañana?</summary>
-      <p>Los flujos se entregan con manejo de errores: reintentos automáticos, alertas al responsable y registro de cada ejecución para saber exactamente qué pasó. Si contratas la operación mensual, el monitoreo y la corrección los hacemos nosotros; si operas tú, te dejamos el flujo documentado y un runbook con los fallos más comunes y cómo resolverlos.</p>
+      <summary>¿Qué ocurre si un flujo falla de madrugada?</summary>
+      <p>Los flujos se entregan con manejo de errores: reintentos automáticos, alertas al responsable y registro de cada ejecución para saber exactamente qué ocurrió. Con el plan de operación mensual, el monitoreo y la corrección corren por nuestra cuenta; si la operación queda en su equipo, entregamos el flujo documentado y un runbook con los fallos más comunes y su resolución.</p>
     </details>
     <details>
-      <summary>¿Quedo amarrado a Optimatiza?</summary>
-      <p>No. Los flujos n8n se exportan como archivos JSON estándar y, si están en tu servidor o en tu cuenta de n8n Cloud, son tuyos desde el día uno. Entregamos todo documentado para que cualquier técnico — nuestro o tuyo — pueda mantenerlos. Preferimos que te quedes por los resultados, no por el candado.</p>
+      <summary>¿Quedamos amarrados a Optimatiza?</summary>
+      <p>No. Los flujos n8n se exportan como archivos JSON estándar y, si residen en el servidor o la cuenta de n8n Cloud de su empresa, son suyos desde el primer día. Entregamos todo documentado para que cualquier técnico, nuestro o de su organización, pueda mantenerlos. Preferimos la continuidad por resultados, no por dependencia.</p>
     </details>
   </section>
 
   <div class="final">
-    <h2>Cuéntanos qué proceso te está robando horas</h2>
-    <p>Diagnóstico gratis de 20–30 minutos: revisamos tu proceso real y te decimos si un flujo n8n lo resuelve, cuánto costaría según los rangos publicados — y también si no vale la pena automatizarlo.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20automatizar%20procesos%20con%20n8n.%20Me%20interesa%20el%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener">Agendar diagnóstico gratis →</a>
+    <h2>Hablemos del proceso que hoy sostiene su operación a mano</h2>
+    <p>Diagnóstico ejecutivo de 30–45 minutos: revisamos el proceso real, el volumen que mueve y la arquitectura que corresponde — y también le decimos cuándo no vale la pena automatizarlo.</p>
+    <a class="btn" href="https://wa.me/50371928070?text=Hola.%20Quisiera%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%20sobre%20n8n%20autoalojado%20para%20nuestra%20operaci%C3%B3n." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
   </div>
 </main>
 
 <footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para pymes.</span>
-  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demos</a><a href="../automatizacion-de-procesos/">Automatización</a><a href="../integraciones-api/">Integraciones</a><a href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n</a><a href="../seguridad/">Manejo de datos</a>
+  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
+  <a href="../">Inicio</a><a href="../precios/">Precios</a><a href="../casos/">Demostraciones</a><a href="../automatizacion-de-procesos/">Automatización</a><a href="../integraciones-api/">Integraciones</a><a href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n</a><a href="../seguridad/">Manejo de datos</a>
 </div></footer>
 
 <script type="application/ld+json">
@@ -248,18 +255,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué es n8n y por qué lo recomendarían para mi empresa?",
+      "name": "¿Qué es n8n y en qué casos lo recomiendan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "n8n es una plataforma de automatización de flujos de trabajo, de código abierto y autoalojable, que conecta tus sistemas (correo, WhatsApp, CRM, ERP, bases de datos, APIs) y les agrega pasos de IA. La recomendamos cuando tu empresa no vive en Microsoft 365, cuando quieres que los datos se queden en tu propia infraestructura, o cuando el volumen de ejecuciones haría caro un SaaS que cobra por operación."
+        "text": "n8n es una plataforma de automatización de flujos de trabajo, de código abierto y autoalojable, que conecta los sistemas de su empresa (correo, WhatsApp, CRM, ERP, bases de datos, APIs) y les agrega pasos de IA. La recomendamos cuando la operación no vive sobre Microsoft 365, cuando el dato debe permanecer en infraestructura propia, o cuando el volumen de ejecuciones vuelve costoso e impredecible un servicio que cobra por operación."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Necesito mi propio servidor para usar n8n?",
+      "name": "¿Necesitamos servidor propio para operar n8n?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No necesariamente. Hay tres caminos: nosotros alojamos y operamos tu instancia dentro del plan de operación mensual; la instalamos en tu VPS o servidor local y te la entregamos documentada; o usamos n8n Cloud, el servicio oficial de pago. En el diagnóstico gratis te decimos cuál conviene según tus datos, tu volumen y tu equipo técnico."
+        "text": "No necesariamente. Hay tres caminos: alojamos y operamos su instancia dentro de un plan de operación mensual; la desplegamos en la nube o el centro de datos de su empresa y la entregamos documentada; o usamos n8n Cloud, el servicio oficial de pago. En el diagnóstico ejecutivo definimos cuál corresponde según sus políticas de datos, su volumen y la capacidad de su equipo técnico."
       }
     },
     {
@@ -267,7 +274,7 @@
       "name": "¿Cuánto cuesta la licencia de n8n?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Autoalojar n8n para uso interno de tu empresa no tiene costo de licencia (se distribuye bajo la licencia Sustainable Use). Lo que pagas es el servidor donde corre o el plan de n8n Cloud si eliges la versión SaaS oficial. Nuestro cobro es por diseñar, construir y, si quieres, operar los flujos: flujo simple $600–1,200 y flujo estándar $1,200–3,000, publicados en optimatiza.com/precios."
+        "text": "Autoalojar n8n para uso interno de la empresa no tiene costo de licencia (se distribuye bajo la licencia Sustainable Use). El gasto recurrente es la infraestructura donde corre, dimensionada por volumen de ejecuciones, o el plan de n8n Cloud si opta por la versión administrada por el fabricante. Nuestro cobro corresponde a diseñar, construir y, si lo requiere, operar los flujos; los rangos están publicados en optimatiza.com/precios."
       }
     },
     {
@@ -275,23 +282,23 @@
       "name": "¿Pueden integrar IA en los flujos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí: dentro del flujo n8n agregamos pasos de IA que clasifican correos, extraen datos de facturas y documentos, redactan respuestas o resumen conversaciones. La IA hace el trabajo repetitivo; tu equipo conserva las decisiones, relaciones y tareas que requieren criterio — los flujos incluyen puntos de aprobación humana donde hace falta."
+        "text": "Sí: dentro del flujo n8n agregamos pasos de IA que clasifican correo, extraen datos de facturas y documentos, redactan respuestas o resumen conversaciones. La IA ejecuta el trabajo repetitivo; su equipo dedica el tiempo a lo que exige criterio, y los flujos incluyen puntos de aprobación humana donde el proceso lo requiere."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué pasa si un flujo falla a las 3 de la mañana?",
+      "name": "¿Qué ocurre si un flujo falla de madrugada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los flujos se entregan con manejo de errores: reintentos automáticos, alertas al responsable y registro de cada ejecución. Si contratas la operación mensual, el monitoreo y la corrección los hacemos nosotros; si operas tú, te dejamos el flujo documentado y un runbook con los fallos más comunes y cómo resolverlos."
+        "text": "Los flujos se entregan con manejo de errores: reintentos automáticos, alertas al responsable y registro de cada ejecución. Con el plan de operación mensual, el monitoreo y la corrección corren por nuestra cuenta; si la operación queda en su equipo, entregamos el flujo documentado y un runbook con los fallos más comunes y su resolución."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Quedo amarrado a Optimatiza?",
+      "name": "¿Quedamos amarrados a Optimatiza?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Los flujos n8n se exportan como archivos JSON estándar y, si están en tu servidor o en tu cuenta de n8n Cloud, son tuyos desde el día uno. Entregamos todo documentado para que cualquier técnico pueda mantenerlos."
+        "text": "No. Los flujos n8n se exportan como archivos JSON estándar y, si residen en el servidor o la cuenta de n8n Cloud de su empresa, son suyos desde el primer día. Entregamos todo documentado para que cualquier técnico, nuestro o de su organización, pueda mantenerlos."
       }
     }
   ]
