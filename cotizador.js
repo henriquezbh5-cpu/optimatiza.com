@@ -14,15 +14,15 @@
       if (b.checked) { lo += +b.dataset.lo; hi += +b.dataset.hi; names.push(b.dataset.n); }
     });
     if (!names.length) {
-      rng.textContent = 'Selecciona un agente';
+      rng.textContent = 'Seleccione un componente';
       wa.href = 'https://wa.me/50371928070?text=' +
-        encodeURIComponent('Hola, quiero cotizar un agente para mi negocio.');
+        encodeURIComponent('Hola, quisiera una propuesta para mi empresa.');
       return;
     }
     rng.textContent = fmt(lo) + ' – ' + fmt(hi);
     var msg = 'Hola, arme mi equipo en el cotizador: ' + names.join(' + ') +
       ' (rango publicado ' + fmt(lo) + '–' + fmt(hi) +
-      '). Quiero el diagnostico gratis para la cotizacion exacta.';
+      '). Quisiera el diagnóstico ejecutivo para la cifra exacta.';
     wa.href = 'https://wa.me/50371928070?text=' + encodeURIComponent(msg);
   }
   boxes.forEach(function (b) { b.addEventListener('change', upd); });
@@ -65,7 +65,7 @@
         })
         .finally(function () {
           clearTimeout(timer);
-          aiGo.disabled = false; aiGo.textContent = 'Simular precio estimado';
+          aiGo.disabled = false; aiGo.textContent = 'Estimar inversión';
         });
       function showAi(type, cx, why) {
         var band = BANDS[cx] || BANDS.medium;
@@ -75,7 +75,7 @@
         document.getElementById('aiWhy').textContent = why;
         document.getElementById('aiRes').hidden = false;
         var msg = 'Hola, simulé mi caso en el cotizador: "' + desc.slice(0, 220) + '"' +
-          ' (estimado ' + label + ', ' + fmt(band.lo) + '–' + fmt(band.hi) + '). Quiero el diagnóstico gratis.';
+          ' (estimado ' + label + ', ' + fmt(band.lo) + '–' + fmt(band.hi) + '). Quisiera el diagnóstico ejecutivo.';
         wa.href = 'https://wa.me/50371928070?text=' + encodeURIComponent(msg);
       }
     });

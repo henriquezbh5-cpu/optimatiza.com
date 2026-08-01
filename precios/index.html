@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
   <title>Precios de agentes de IA y automatización | Optimatiza</title>
-  <meta name="description" content="Precios publicados, sin reunión para saber cuánto cuesta: agentes desde $600 (pago único) + operación desde $149/mes. Bandas claras y cotizador de 60 segundos.">
+  <meta name="description" content="Rangos de inversión publicados por tipo de solución: construcción por pago único y operación mensual, con simulador abierto. La cifra exacta se define en el diagnóstico ejecutivo.">
   <link rel="canonical" href="https://optimatiza.com/precios/">
   <meta property="og:title" content="Precios de agentes de IA y automatización | Optimatiza">
   <meta property="og:description" content="Precios publicados. Desde $600 pago único + operación desde $149/mes. Sin letra pequeña.">
@@ -14,16 +14,17 @@
   <link rel="icon" href="../img/logo-badge-96.png">
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"¿Por qué muestran precios y otros no?","acceptedAnswer":{"@type":"Answer","text":"Porque un dueño de negocio merece saber si algo cabe en su presupuesto antes de invertir una hora en una llamada. Publicamos rangos reales por banda de complejidad; el precio exacto sale del cotizador o de un diagnóstico gratis."}},
-{"@type":"Question","name":"¿El precio incluye todo?","acceptedAnswer":{"@type":"Answer","text":"El pago único cubre construir e instalar el agente. La operación mensual cubre monitoreo, ajustes y mejoras. Los costos variables de terceros (tokens de IA, WhatsApp Business) van por separado, con un tope acordado y transparente. Si tu información de partida está muy desordenada, ordenarla se cotiza aparte antes de empezar."}},
-{"@type":"Question","name":"¿Y si mi caso no encaja en las bandas?","acceptedAnswer":{"@type":"Answer","text":"Se cotiza a medida. Las bandas son la referencia honesta para el 90% de los casos; lo tuyo se aclara en el cotizador de 60 segundos o en el diagnóstico gratis, sin compromiso."}},
-{"@type":"Question","name":"¿Qué garantía tengo?","acceptedAnswer":{"@type":"Answer","text":"Garantía de arranque: si tu primer flujo (definido por escrito en la propuesta) no corre en producción con tus datos reales en 30 días desde que recibimos accesos e información, devolvemos el 100% del setup pagado. Células grandes llevan cronograma por hito en contrato, con el mismo principio."}}]}
-  </script>
+{"@type":"Question","name":"¿Por qué muestran precios y otros no?","acceptedAnswer":{"@type":"Answer","text":"Porque una dirección merece saber si algo cabe en su presupuesto antes de invertir una hora en una llamada. Publicamos rangos reales por banda; la cifra exacta se define en el diagnóstico ejecutivo."}},
+{"@type":"Question","name":"¿El precio incluye todo?","acceptedAnswer":{"@type":"Answer","text":"El pago único cubre construir e instalar. La operación mensual cubre monitoreo y mejoras. Los costos de terceros (tokens de IA, WhatsApp Business) van por separado con tope acordado y visible. Ordenar datos muy desordenados se cotiza aparte, comunicado antes de empezar."}},
+{"@type":"Question","name":"¿Y si mi caso no encaja en las bandas?","acceptedAnswer":{"@type":"Answer","text":"Se cotiza a medida. Las bandas cubren la mayoría de los casos; el suyo se aclara en el simulador o en el diagnóstico ejecutivo, sin compromiso."}},
+{"@type":"Question","name":"¿Qué garantía tengo?","acceptedAnswer":{"@type":"Answer","text":"Si su primer flujo (definido por escrito en la propuesta) no corre en producción con sus datos reales en 30 días desde que recibimos accesos e información, devolvemos el 100% del setup pagado. Células grandes: cronograma por hito en contrato, mismo principio."}}
+]}
+</script>
   <style>
     @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
     @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
     @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--panel:#FFFDF8;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;
+    :root{--bg:#F6F1E8;--alt:#EFE8D9;--petrol:#3F6F8A;--panel:#FFFDF8;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;
       --line:#E2DAC7;--teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--btc:#F7931A;--wa:#25D366;
       --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06);
       --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif}
@@ -36,7 +37,7 @@
     .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;color:var(--teal);font-size:18px}
     .brand img{width:26px;height:26px}
     .sp{flex:1}
-    .wa-btn{background:var(--wa);color:#04220f;font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px}
+    .wa-btn{background:var(--teal);color:#F6F1E8;font-weight:600;padding:9px 18px;border-radius:999px;font-size:14px}
     .hero{padding:60px 0 30px;max-width:760px}
     .k{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
     h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.1;margin:12px 0 12px;text-wrap:balance}
@@ -63,7 +64,7 @@
     .compose b{color:var(--ink)}
     .compose p{font-size:14px;margin:2px 0 0}
     .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(29,92,77,.05));border:1.5px solid rgba(21,154,78,.35);border-radius:18px;padding:28px 30px}
-    .guar-badge{display:inline-block;background:var(--wa);color:#04220f;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+    .guar-badge{display:inline-block;background:var(--teal);color:#F6F1E8;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:4px 12px;border-radius:20px;margin-bottom:12px}
     .guar h2{margin-bottom:8px}
     .guar-p{font-size:14.5px;max-width:64ch}
     .guar-ul{margin-top:12px}
@@ -76,7 +77,7 @@
     .faq p{font-size:14px;max-width:72ch}
     .final{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:38px 24px;margin:30px 0 44px;box-shadow:var(--sh)}
     .final h2{margin-bottom:8px}
-    .btn{display:inline-block;background:var(--wa);color:#04220f;font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px}
+    .btn{display:inline-block;background:var(--teal);color:#F6F1E8;font-weight:600;padding:13px 26px;border-radius:999px;font-size:15px}
     .ghost{color:var(--teal);font-weight:600;font-size:14.5px}
     .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:18px}
     .note{color:var(--dim);font-size:12.5px;margin-top:14px}
@@ -128,13 +129,13 @@
   <main class="wrap">
     <div class="hero">
       <div class="k">Precios publicados</div>
-      <h1>Cuánto cuesta, sin tener que agendar una llamada primero.</h1>
-      <p class="sub">Casi nadie en este mercado publica precios. Nosotros sí: mira las bandas, arma tu unidad en el cotizador de 60 segundos y sabé el rango al instante. El número exacto sale del diagnóstico gratis.</p>
+      <h1>Rangos de inversión publicados, sin agendar una llamada primero.</h1>
+      <p class="sub">Casi nadie en este mercado publica rangos. Nosotros sí: revise las bandas, arme su solución en el simulador y obtenga el rango al instante. La cifra exacta se define en el diagnóstico ejecutivo, con el alcance por escrito.</p>
     </div>
 
     <section>
-      <h2>1. Construir tu agente — pago único</h2>
-      <p class="h2sub">Según qué tan complejo sea. Incluye diseñarlo, construirlo, conectarlo a tus sistemas y entregarlo documentado.</p>
+      <h2>1. Construcción de la solución — pago único</h2>
+      <p class="h2sub">Según la complejidad del alcance. Incluye diseño, construcción, conexión a sus sistemas y entrega documentada.</p>
       <div class="cards">
         <div class="card">
           <div class="band">Unidad simple</div>
@@ -191,24 +192,24 @@
     </section>
 
     <section>
-      <h2>3. Cómo se compone tu precio</h2>
+      <h2>3. Cómo se compone la inversión</h2>
       <p class="h2sub">Sin sorpresas. Esto es todo lo que puede entrar en una cotización.</p>
       <div class="compose">
-        <div class="row"><span class="n">1</span><div><b>Pago único de construcción</b><p>Lo de la sección 1. Es lo que cuesta dejar el agente funcionando en tu operación.</p></div></div>
-        <div class="row"><span class="n">2</span><div><b>Operación mensual</b><p>Opcional. Lo de la sección 2. Si prefieres operarlo tú, no lo pagas.</p></div></div>
+        <div class="row"><span class="n">1</span><div><b>Pago único de construcción</b><p>Lo de la sección 1: dejar la solución funcionando en su operación.</p></div></div>
+        <div class="row"><span class="n">2</span><div><b>Operación mensual</b><p>Opcional. Lo de la sección 2. Si su equipo prefiere operarla, no se paga.</p></div></div>
         <div class="row"><span class="n">3</span><div><b>Costos de terceros (passthrough)</b><p>Tokens de IA y WhatsApp Business se pagan al proveedor, con un <b>tope acordado</b> y visible. No les cargamos margen escondido.</p></div></div>
-        <div class="row"><span class="n">4</span><div><b>Orden de datos (solo si hace falta)</b><p>Si tu información de partida está muy desordenada, ordenarla se cotiza aparte y se te dice <b>antes</b> de empezar — nunca es una sorpresa a mitad de camino.</p></div></div>
+        <div class="row"><span class="n">4</span><div><b>Orden de datos (solo si hace falta)</b><p>Si la información de partida está muy desordenada, ordenarla se cotiza aparte y se comunica <b>antes</b> de empezar — nunca a mitad de camino.</p></div></div>
       </div>
     </section>
 
     <section>
       <div class="guar">
         <div class="guar-badge">GARANTÍA DE ARRANQUE</div>
-        <h2>Si tu primer flujo no corre en producción en 30 días, te devolvemos el setup</h2>
+        <h2>Si su primer flujo no corre en producción en 30 días, devolvemos el setup</h2>
         <p class="guar-p">Así de simple. Y para que sea una promesa seria y no letra pequeña, esto es exactamente lo que significa:</p>
         <ul class="guar-ul">
-          <li><b>"Primer flujo"</b> = el proceso acotado que definimos juntos por escrito en la propuesta.</li>
-          <li><b>"En producción"</b> = corriendo con tus datos reales, en tu operación — no una demo.</li>
+          <li><b>"Primer flujo"</b> = el proceso acotado que se define por escrito en la propuesta.</li>
+          <li><b>"En producción"</b> = corriendo con sus datos reales, en su operación — no una demo.</li>
           <li>Los 30 días cuentan desde que recibimos los accesos y la información acordados.</li>
           <li>Si el retraso es nuestro, devolvemos el 100% de lo pagado del setup.</li>
           <li>Aplica a unidades simples y estándar. Las células grandes (4–8 semanas) llevan su propio cronograma por contrato, con el mismo principio: fecha por hito o devolución.</li>
@@ -227,19 +228,19 @@
     <section class="faq">
       <h2>Preguntas sobre precio</h2>
       <h3>¿Por qué muestran precios y otros no?</h3>
-      <p>Porque mereces saber si algo cabe en tu presupuesto antes de invertir una hora en una llamada. Publicamos rangos reales por banda; el número exacto sale del cotizador o de un diagnóstico gratis.</p>
+      <p>Porque una dirección merece saber si algo cabe en su presupuesto antes de invertir una hora en una llamada. Publicamos rangos reales por banda; la cifra exacta se define en el diagnóstico ejecutivo.</p>
       <h3>¿El precio incluye todo?</h3>
-      <p>El pago único cubre construir e instalar. La operación mensual cubre monitoreo y mejoras. Los costos de terceros (tokens, WhatsApp) van por separado con tope acordado. Ordenar datos muy desordenados se cotiza aparte, avisado antes de empezar.</p>
+      <p>El pago único cubre construir e instalar. La operación mensual cubre monitoreo y mejoras. Los costos de terceros (tokens de IA, WhatsApp Business) van por separado con tope acordado y visible. Ordenar datos muy desordenados se cotiza aparte, comunicado antes de empezar.</p>
       <h3>¿Y si mi caso no encaja en las bandas?</h3>
-      <p>Se cotiza a medida. Las bandas cubren la mayoría de los casos; lo tuyo se aclara en el cotizador de 60 segundos o en el diagnóstico gratis, sin compromiso.</p>
+      <p>Se cotiza a medida. Las bandas cubren la mayoría de los casos; el suyo se aclara en el simulador o en el diagnóstico ejecutivo, sin compromiso.</p>
       <h3>¿Qué garantía tengo?</h3>
-      <p>Si tu primer flujo (definido por escrito en la propuesta) no corre en producción con tus datos reales en 30 días desde que recibimos accesos e información, devolvemos el 100% del setup pagado. Células grandes: cronograma por hito en contrato, mismo principio.</p>
-      <p class="note">🔒 Tus datos viven en tus cuentas — <a href="../seguridad/">cómo cuidamos tu información</a>.</p>
+      <p>Si su primer flujo (definido por escrito en la propuesta) no corre en producción con sus datos reales en 30 días desde que recibimos accesos e información, devolvemos el 100% del setup pagado. Células grandes: cronograma por hito en contrato, mismo principio.</p>
+      <p class="note">🔒 Sus datos permanecen en sus cuentas — <a href="../seguridad/">cómo cuidamos su información</a>.</p>
     </section>
 
     <section class="final">
-      <h2>Arma tu unidad y mira el precio al instante</h2>
-      <p>Sin registro, sin llamada. Y si prefieres, hablamos por WhatsApp con tu caso concreto.</p>
+      <h2>Arme su solución y vea el rango al instante</h2>
+      <p>Sin registro y sin llamada previa. Si lo prefiere, conversamos por WhatsApp sobre su caso concreto.</p>
       <div class="cta-row">
         <a class="btn" href="#cotizador">Ir al simulador de inversión →</a>
         <a class="ghost" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fprecios%20y%20quiero%20cotizar%20mi%20caso." target="_blank" rel="noopener">o hablar por WhatsApp</a>
