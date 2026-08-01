@@ -50,7 +50,7 @@
       <circle cx="29" cy="-131" r="3" fill="#0A0F1A" stroke-width="1"/>
       <path d="M0 -150 V-166" stroke-width="1.75"/>
       <circle cx="0" cy="-170" r="6" stroke="#2DD4BF" stroke-width="1" class="ill-live"/>
-      <circle cx="0" cy="-170" r="3.5" fill="#14B8A6" stroke="none" class="ill-live"/>
+      <circle cx="0" cy="-170" r="3.5" fill="#2C7A63" stroke="none" class="ill-live"/>
       <circle cx="-36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
       <circle cx="36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
     </g>

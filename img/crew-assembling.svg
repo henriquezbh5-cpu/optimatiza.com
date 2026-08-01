@@ -50,7 +50,7 @@
       <circle cx="29" cy="-131" r="3" fill="#0A0F1A" stroke-width="1"/>
       <path d="M0 -150 V-166" stroke-width="1.75"/>
       <circle cx="0" cy="-170" r="6" stroke="#2DD4BF" stroke-width="1" class="ill-live"/>
-      <circle cx="0" cy="-170" r="3.5" fill="#14B8A6" stroke="none" class="ill-live"/>
+      <circle cx="0" cy="-170" r="3.5" fill="#2C7A63" stroke="none" class="ill-live"/>
       <circle cx="-36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
       <circle cx="36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
     </g>
@@ -145,9 +145,9 @@
     <rect x="544" y="254" width="32" height="26" rx="5" fill="#101828" stroke-width="2.5" class="ill-draw"/>
     <rect x="549" y="259" width="22" height="16" rx="3" fill="#0A0F1A" stroke-width="1"/>
     <circle cx="556" cy="267" r="2" fill="#C4D1E0" stroke="none"/>
-    <circle cx="566" cy="267" r="2" fill="#14B8A6" stroke="none" class="ill-live"/>
+    <circle cx="566" cy="267" r="2" fill="#2C7A63" stroke="none" class="ill-live"/>
     <path d="M560 254 V242" stroke-width="1.75"/>
-    <circle cx="560" cy="239" r="3" fill="#14B8A6" stroke="none" class="ill-live"/>
+    <circle cx="560" cy="239" r="3" fill="#2C7A63" stroke="none" class="ill-live"/>
     <circle cx="538" cy="288" r="3.5" fill="#101828" stroke-width="1.75"/>
     <path d="M538 288 L524 300 L528 312" stroke-width="2.5"/>
     <path d="M528 312 l-5 5 M528 312 l6 4" stroke-width="1.75"/>

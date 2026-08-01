@@ -48,7 +48,7 @@
   position: fixed; left: 12px; top: 12px;
   width: auto; height: auto; overflow: visible;
   z-index: 1000; padding: .6rem 1rem;
-  background: var(--ink, #1a2b4a); color: #fff;
+  background: var(--ink, #183F35); color: #fff;
   border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,.3);
   font: inherit; text-decoration: none;
 }
@@ -232,9 +232,9 @@ html.js-anim .ag-grid .rv:nth-child(3) { transition-delay: 140ms; }
 .ag-card.awake:hover .ag-dot,
 .ag-card.awake:focus-within .ag-dot { animation-duration: 1.2s; }
 @keyframes agDotPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(20,184,166,0.45); }
-  60%  { box-shadow: 0 0 0 7px rgba(20,184,166,0); }
-  100% { box-shadow: 0 0 0 0 rgba(20,184,166,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(44,122,99,0.45); }
+  60%  { box-shadow: 0 0 0 7px rgba(44,122,99,0); }
+  100% { box-shadow: 0 0 0 0 rgba(44,122,99,0); }
 }
 
 .ag-id-row { display: flex; gap: var(--sp-2); align-items: flex-start; }
@@ -1084,7 +1084,7 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
   display:block; width:100%; text-align:center; padding:13px 16px; border-radius:12px;
   font-family:'Inter',sans-serif; font-size:15px; font-weight:700; letter-spacing:0; text-transform:none;
   color:#04220f; background:linear-gradient(135deg,#2DD4BF,#2C7A63);
-  box-shadow:0 10px 24px -12px rgba(20,184,166,.45);
+  box-shadow:0 10px 24px -12px rgba(44,122,99,.45);
 }
 #flota .ag-card.octa:hover .ag-card-sim{ filter:brightness(1.05); }
 

@@ -218,9 +218,9 @@
         vertexShader: 'varying vec3 vP;void main(){vP=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
         fragmentShader:
           'varying vec3 vP;void main(){vec3 d=normalize(vP);float h=d.y*0.5+0.5;' +
-          'vec3 col=mix(vec3(0.02,0.04,0.08),vec3(0.055,0.09,0.16),h);' +
-          'col+=vec3(0.03,0.55,0.45)*pow(max(0.0,1.0-length(d-normalize(vec3(-0.6,0.2,0.5)))),6.0);' +
-          'col+=vec3(0.35,0.20,0.70)*pow(max(0.0,1.0-length(d-normalize(vec3(0.6,0.3,-0.4)))),6.0);' +
+          'vec3 col=mix(vec3(0.008,0.02,0.016),vec3(0.045,0.10,0.08),h);' +
+          'col+=vec3(0.25,0.56,0.45)*pow(max(0.0,1.0-length(d-normalize(vec3(-0.6,0.2,0.5)))),6.0);' +
+          'col+=vec3(0.79,0.57,0.23)*pow(max(0.0,1.0-length(d-normalize(vec3(0.6,0.3,-0.4)))),6.0);' +
           'gl_FragColor=vec4(col,1.0);}'
       });
       envScene.add(new THREE.Mesh(envGeo, envMat));

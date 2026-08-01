@@ -197,7 +197,7 @@
       <circle cx="650" cy="640" r="2" fill="#C4D1E0"/>
       <path d="M628 610H640 M628 615H635" stroke="#5BA8E8" stroke-width="0.8" fill="none"/>
     </g>
-    <circle class="ill-live" cx="672" cy="608" r="4.5" fill="#14B8A6" stroke="#C4D1E0" stroke-width="1"/>
+    <circle class="ill-live" cx="672" cy="608" r="4.5" fill="#2C7A63" stroke="#C4D1E0" stroke-width="1"/>
     <text x="505" y="703" font-size="9" fill="#5BA8E8" text-anchor="middle" letter-spacing="1">OUT</text>
 
     <!-- ================= LEADERS + CALLOUT RAIL ================= -->
@@ -240,6 +240,6 @@
     <text x="360" y="787" font-size="8.5" fill="#5BA8E8" text-anchor="middle" letter-spacing="1.5">DWG OPTZ-2026 · REV A · NOT TO SCALE — SIN ESCALA</text>
 
     <!-- traveling dot: parked at VALIDATE gate (reduced-motion end-state) -->
-    <circle class="ill-live" data-role="flow-dot" cx="452" cy="421" r="4" fill="#14B8A6" stroke="#101828" stroke-width="1"/>
+    <circle class="ill-live" data-role="flow-dot" cx="452" cy="421" r="4" fill="#2C7A63" stroke="#101828" stroke-width="1"/>
   </g>
 </svg>

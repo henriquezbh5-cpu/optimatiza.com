@@ -51,7 +51,7 @@
       <circle cx="29" cy="-131" r="3" fill="#0A0F1A" stroke-width="1"/>
       <path d="M0 -150 V-166" stroke-width="1.75"/>
       <circle cx="0" cy="-170" r="6" stroke="#2DD4BF" stroke-width="1" class="ill-live"/>
-      <circle cx="0" cy="-170" r="3.5" fill="#14B8A6" stroke="none" class="ill-live"/>
+      <circle cx="0" cy="-170" r="3.5" fill="#2C7A63" stroke="none" class="ill-live"/>
       <circle cx="-36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
       <circle cx="36" cy="-88" r="5.5" fill="#101828" stroke-width="1.75"/>
     </g>
@@ -104,10 +104,10 @@
       <path d="M790 226 l12 7 -12 7"/>
     </g>
     <text x="104" y="200" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="2" fill="#C4D1E0" stroke="none">P-7 FLOW</text>
-    <circle cx="150" cy="233" r="4" fill="#14B8A6" stroke="none" class="p7-dot"/>
-    <circle cx="315" cy="233" r="3.5" fill="#14B8A6" stroke="none" class="p7-dot p7-d2"/>
-    <circle cx="505" cy="233" r="4" fill="#14B8A6" stroke="none" class="p7-dot p7-d3"/>
-    <circle cx="735" cy="233" r="3.5" fill="#14B8A6" stroke="none" class="p7-dot p7-d4"/>
+    <circle cx="150" cy="233" r="4" fill="#2C7A63" stroke="none" class="p7-dot"/>
+    <circle cx="315" cy="233" r="3.5" fill="#2C7A63" stroke="none" class="p7-dot p7-d2"/>
+    <circle cx="505" cy="233" r="4" fill="#2C7A63" stroke="none" class="p7-dot p7-d3"/>
+    <circle cx="735" cy="233" r="3.5" fill="#2C7A63" stroke="none" class="p7-dot p7-d4"/>
     <path d="M492 229 h-8 M492 237 h-6" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
 
     <!-- rag draped on pipe -->
