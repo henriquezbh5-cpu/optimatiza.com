@@ -84,12 +84,13 @@
   var BASE  = EMBED ? 'agentes/' : '';   /* FICHA COMPLETA target (deep spec sheet) */
   var HOME  = EMBED ? '' : '../';        /* #cotizador / #contacto target */
 
-  /* nameplate price by band (spec §4.4) — parametric, so kept out of the
-     i18n dict; textContent-safe literals (· = U+00B7) */
+  /* nameplate scope label by band (spec §4.4) — parametric, so kept out of
+     the i18n dict; textContent-safe literals (· = U+00B7). No price figures
+     outside /precios/ — ranges live there. */
   var BAND_PRICE = {
-    S: { es: 'desde $600',   en: 'from $600' },
-    M: { es: 'desde $1,200', en: 'from $1,200' },
-    L: { es: 'desde $3,000', en: 'from $3,000' }
+    S: { es: 'unidad simple',    en: 'simple unit' },
+    M: { es: 'unidad estándar',  en: 'standard unit' },
+    L: { es: 'célula compuesta', en: 'composite cell' }
   };
   function bandOf(agent) {
     var b = (agent && agent.banda ? String(agent.banda) : '').toUpperCase();
@@ -950,14 +951,15 @@
     var fichaEl = commerceEl.querySelector('.ag-cta-ficha');
 
     /* QUOTE: prefill the picked unit, then let the anchor navigate to the
-       cotizador (HOME-relative: '#cotizador' on home, '../#cotizador' on
-       /agentes/). No preventDefault — native nav + middle-click both work. */
-    quoteEl.setAttribute('href', HOME + '#cotizador');
+       cotizador, now under /precios/ (HOME-relative: 'precios/#cotizador' on
+       home, '../precios/#cotizador' on /agentes/). No preventDefault —
+       native nav + middle-click both work. */
+    quoteEl.setAttribute('href', HOME + 'precios/#cotizador');
     /* On the home embed (EMBED), script.js owns set+consume of optz-unit via a
        device-independent capture handler before native nav; a second write here
        survives unconsumed on coarse-pointer / no-Lenis devices and spuriously
        prefills the catalog on the next home load. Standalone /agentes/ still
-       needs it (cross-page ../#cotizador load). */
+       needs it (cross-page ../precios/#cotizador load). */
     if (!EMBED) {
       (function (slug) {
         quoteEl.addEventListener('click', function () {

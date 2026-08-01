@@ -267,7 +267,7 @@
   <section>
     <h2>Evidencia honesta, sin humo</h2>
     <div class="evs">
-      <div class="ev"><span class="tag">Medido en video</span><h3>~4 segundos por factura</h3><p>El Capturista Digital procesa una factura en ~4 segundos. Es la única métrica medida que publicamos, y puedes verla en <a class="ghost" href="../../casos/">los demos</a>.</p></div>
+      <div class="ev"><span class="tag">Medido en video</span><h3>~4 segundos por factura</h3><p>El Capturista Digital procesa una factura en ~4 segundos. Es la única métrica medida que publicamos, y puede verla en <a class="ghost" href="../../casos/">los demos</a>.</p></div>
       <div class="ev"><span class="tag">En producción real</span><h3>Nuestras redes se publican solas</h3><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana.</p></div>
       <div class="ev"><span class="tag">En vivo en este sitio</span><h3>Nova, nuestro agente</h3><p>El chat del sitio es un agente de IA real funcionando en vivo, no una simulación. Los demos de video de /casos/ sí son animaciones ilustrativas, y los etiquetamos así.</p></div>
     </div>
@@ -383,21 +383,23 @@
   function $(id) { return document.getElementById(id); }
   var inH = $('in-h'), inP = $('in-p'), inC = $('in-c'), inE = $('in-e'), inCE = $('in-ce');
   var oMes = $('o-mes'), oMesCx = $('o-mes-cx'), oAnio = $('o-anio'),
-      oBanda = $('o-banda'), oInv = $('o-inv'), oInvCx = $('o-inv-cx'),
+      oBanda = $('o-banda'), oInvCx = $('o-inv-cx'),
       oAhorro = $('o-ahorro'), oMeses = $('o-meses'), oMesesCx = $('o-meses-cx'),
       oWarn = $('o-warn'), resBody = $('res-body'), resEmpty = $('res-empty'),
       waResult = $('wa-result'), waFinal = $('wa-final');
 
   function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
 
+  // min/max reflejan los rangos publicados en /precios/ y se usan solo
+  // internamente para estimar la recuperación; no se muestran montos aquí.
   function band(totalHoursWeek) {
     if (totalHoursWeek < 10) {
-      return { label: 'Automatización simple', min: 600, max: 1200, time: '1–2 semanas' };
+      return { label: 'Unidad simple', min: 600, max: 1200, time: '1–2 semanas' };
     }
     if (totalHoursWeek <= 25) {
-      return { label: 'Automatización estándar', min: 1200, max: 3000, time: '2–4 semanas' };
+      return { label: 'Unidad estándar', min: 1200, max: 3000, time: '2–4 semanas' };
     }
-    return { label: 'Célula de automatización (a evaluar)', min: 3000, max: 8000, time: '4–8 semanas' };
+    return { label: 'Célula multi-agente (a evaluar)', min: 3000, max: 8000, time: '4–8 semanas' };
   }
 
   function calc() {
@@ -432,8 +434,7 @@
       (errCostMonth > 0 ? ' + ' + money(errCostMonth) + ' en errores' : '');
     oAnio.textContent = money(costYear) + ' /año';
     oBanda.textContent = b.label;
-    oInv.textContent = money(b.min) + '–' + money(b.max);
-    oInvCx.textContent = b.time + ' · inversión media usada para el cálculo: ' + money(invMid);
+    oInvCx.textContent = b.time + ' · pagos por hitos';
     oAhorro.textContent = money(savingMonth) + ' /mes';
 
     if (!isFinite(months)) {
@@ -442,18 +443,18 @@
       oWarn.style.display = 'none';
     } else if (months < 1) {
       oMeses.textContent = 'menos de 1 mes';
-      oMesesCx.textContent = 'rango según la banda: ' + fmtMonths(mMin) + ' a ' + fmtMonths(mMax);
+      oMesesCx.textContent = 'rango según el alcance: ' + fmtMonths(mMin) + ' a ' + fmtMonths(mMax);
       oWarn.style.display = 'none';
     } else {
       oMeses.textContent = '~' + fmtMonths(months);
-      oMesesCx.textContent = 'rango según la banda: ' + fmtMonths(mMin) + ' a ' + fmtMonths(mMax);
+      oMesesCx.textContent = 'rango según el alcance: ' + fmtMonths(mMin) + ' a ' + fmtMonths(mMax);
       oWarn.style.display = months > 24 ? 'block' : 'none';
     }
 
     var msg = 'Hola, usé la calculadora de ROI de Optimatiza. Mi proceso manual cuesta ~' + money(costMonth) +
       '/mes (~' + money(costYear) + '/año): ' + h + ' h/sem x ' + p + ' persona(s) a ' + money(c) + '/h' +
       (errCostMonth > 0 ? ' + ' + money(errCostMonth) + '/mes en errores' : '') +
-      '. Banda sugerida: ' + b.label + ' (' + money(b.min) + '-' + money(b.max) + '), recuperación estimada ~' +
+      '. Alcance sugerido: ' + b.label + ' (' + b.time + '), recuperación estimada ~' +
       (isFinite(months) ? fmtMonths(months) : 'N/D') + '. Quiero agendar el diagnóstico gratis.';
     var href = WA_BASE + encodeURIComponent(msg);
     waResult.href = href;
