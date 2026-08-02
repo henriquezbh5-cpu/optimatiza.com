@@ -4,212 +4,333 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
-  <title>Soluciones: qué podemos automatizar en su empresa | Optimatiza</title>
-  <meta name="description" content="16 soluciones que construimos para pymes: facturas, cuentas por cobrar, órdenes de compra, onboarding, inventario, citas, contratos y agentes de IA. Con demos en video.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Portafolio de soluciones: automatización e IA | Optimatiza</title>
+  <meta name="description" content="Portafolio integrado: automatización, agentes de IA, integración de sistemas, BI, aplicaciones empresariales y operación administrada que se combinan.">
+  <meta name="author" content="Optimatiza">
   <link rel="canonical" href="https://optimatiza.com/soluciones/">
-  <meta property="og:title" content="Soluciones: qué podemos automatizar en su empresa | Optimatiza">
-  <meta property="og:description" content="16 soluciones de automatización y agentes de IA para pymes, explicadas en cristiano y con demos en video.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/corp.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portafolio de soluciones: automatización e IA">
+  <meta property="og:description" content="Portafolio integrado: automatización, agentes de IA, integración de sistemas, BI, aplicaciones empresariales y operación administrada que se combinan.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/soluciones/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--panel:#FFFDF8;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;
-      --line:#E2DAC7;--teal:#1D5C4D;--teal2:#1D5C4D;--cyan:#3F6F8A;--wa:#25D366;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif}
-    *{box-sizing:border-box;margin:0}
-    body{background:radial-gradient(1200px 700px at 82% -12%,#E9EFE2 0,var(--bg) 60%);color:var(--body);font-family:var(--ff);line-height:1.6;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:60px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;color:var(--teal);font-size:18px}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal2);font-weight:600;font-size:14.5px}
-    .wa-btn{background:var(--wa);color:#04220f;font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px}
-    .hero{padding:58px 0 26px;max-width:800px}
-    .k{color:var(--teal2);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.2vw,2.9rem);line-height:1.1;margin:12px 0;text-wrap:balance}
-    .sub{font-size:17px;max-width:62ch}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:23px;margin:0 0 4px}
-    .h2sub{color:var(--dim);font-size:14px;margin:0 0 20px}
-    section{padding:26px 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-    .sol{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    .sol:hover{border-color:rgba(29,92,77,.45)}
-    .sol-h{display:flex;align-items:center;gap:12px}
-    .sn{flex:0 0 auto;font-family:var(--ffd);font-weight:700;color:var(--teal2);background:#DDE7DF;border:1px solid rgba(29,92,77,.3);border-radius:9px;padding:4px 9px;font-size:13px;font-variant-numeric:tabular-nums}
-    .sn.ai{color:var(--cyan);border-color:rgba(63,111,138,.3);background:rgba(63,111,138,.08)}
-    h3{font-family:var(--ffd);color:var(--ink);font-size:16.5px;line-height:1.25}
-    .sol p{font-size:13.8px}
-    .ideal{color:var(--dim);font-size:12.8px !important}
-    .ideal b{color:var(--body)}
-    .apps{margin:0;padding-left:18px;font-size:13px;color:var(--dim)}
-    .apps li{margin:2px 0}
-    .vlink{color:var(--teal2);font-size:13px;font-weight:600;margin-top:auto}
-    .vlink:hover{text-decoration:underline}
-    .proximamente{background:linear-gradient(160deg,#E9EFE2,#F4EFE2);border:1px solid var(--line);border-radius:16px;padding:24px 28px}
-    .proximamente h2{font-size:19px}
-    .proximamente p{font-size:14px;max-width:70ch}
-    .final{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:36px 24px;margin:26px 0 42px;box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    .btn{display:inline-block;background:var(--wa);color:#04220f;font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:16px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px} footer a:hover{color:var(--ink)}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portafolio de soluciones: automatización e IA">
+  <meta name="twitter:description" content="Portafolio integrado: automatización, agentes de IA, integración de sistemas, BI, aplicaciones empresariales y operación administrada que se combinan.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://optimatiza.com/soluciones/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Portafolio de soluciones de Optimatiza",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Automatización empresarial", "url": "https://optimatiza.com/automatizacion-empresarial/"},
+      {"@type": "ListItem", "position": 2, "name": "Agentes de IA", "url": "https://optimatiza.com/agentes-ia/"},
+      {"@type": "ListItem", "position": 3, "name": "Integración de sistemas", "url": "https://optimatiza.com/integracion-sistemas/"},
+      {"@type": "ListItem", "position": 4, "name": "Data y Business Intelligence", "url": "https://optimatiza.com/data-business-intelligence/"},
+      {"@type": "ListItem", "position": 5, "name": "Aplicaciones empresariales", "url": "https://optimatiza.com/aplicaciones-empresariales/"},
+      {"@type": "ListItem", "position": 6, "name": "Operación administrada", "url": "https://optimatiza.com/operacion-administrada/"},
+      {"@type": "ListItem", "position": 7, "name": "Inteligencia competitiva", "url": "https://optimatiza.com/inteligencia-competitiva/"}
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header><div class="wrap nav">
-    <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
-    <div class="sp"></div>
-    <a class="ghost" href="../casos/">Casos en video</a>
-    <a class="ghost" href="../precios/">Precios</a>
-    <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fsoluciones%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener">WhatsApp</a>
-  </div></header>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-  <main class="wrap">
-    <div class="hero">
-      <div class="k">Soluciones · en cristiano</div>
-      <h1>Qué podemos automatizar en su empresa</h1>
-      <p class="sub">16 soluciones que construimos, explicadas sin jerga: qué hace cada una y para quién aplica. Varias las puede <a class="ghost" href="../casos/">ver funcionando en video</a> — y todas se cotizan con <a class="ghost" href="../precios/">rangos publicados</a>.</p>
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Soluciones</button>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
     </div>
-
-    <section>
-      <h2>Procesos que automatizamos</h2>
-      <p class="h2sub">Flujos que reciben, validan, aprueban, avisan y dejan registro — sin que nadie digite ni persiga por correo.</p>
-      <div class="grid">
-      <article class="sol">
-        <div class="sol-h"><span class="sn">01</span><h3>Procesamiento de facturas</h3></div>
-        <p>Construimos flujos que reciben facturas, extraen automáticamente los datos principales y validan que la información esté completa antes de enviarla a aprobación. La solución puede mostrar qué documentos están pendientes, aprobados, rechazados o presentan inconsistencias, reduciendo la digitación y el seguimiento manual.</p>
-        <p class="ideal"><b>Ideal para:</b> Áreas financieras, administrativas, contables y de compras.</p>
-        <a class="vlink" href="../casos/#captura-facturas-sin-digitar">▶ Vea una demo en video →</a>
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">02</span><h3>Seguimiento de cuentas por cobrar</h3></div>
-        <p>Automatizamos la identificación de facturas próximas a vencer o con pagos atrasados. El sistema puede enviar recordatorios personalizados, registrar cada gestión y generar alertas cuando un cliente requiere seguimiento directo.</p>
-        <p class="ideal"><b>Ideal para:</b> Créditos, cobros, finanzas y administración.</p>
-        <a class="vlink" href="../casos/#captura-facturas-sin-digitar">▶ Vea una demo en video →</a>
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">03</span><h3>Gestión de oportunidades comerciales</h3></div>
-        <p>Centralizamos los prospectos que llegan por formularios, correo, WhatsApp u otros canales. Cada oportunidad puede registrarse automáticamente, clasificarse y asignarse al ejecutivo correspondiente, junto con recordatorios para darle seguimiento.</p>
-        <p class="ideal"><b>Ideal para:</b> Equipos comerciales, ventas y servicio al cliente.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">04</span><h3>Solicitudes y órdenes de compra</h3></div>
-        <p>Digitalizamos la creación, revisión y aprobación de solicitudes de compra. Cada solicitud puede avanzar automáticamente según el monto, departamento, categoría o responsable asignado, dejando trazabilidad de todo el proceso.</p>
-        <p class="ideal"><b>Ideal para:</b> Compras, administración, finanzas y operaciones.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">05</span><h3>Incorporación de nuevos empleados</h3></div>
-        <p>Automatizamos la coordinación entre Recursos Humanos, Tecnología, Administración y los responsables de cada área durante el ingreso de un colaborador. El flujo puede crear tareas para preparar equipos, accesos, documentos, inducciones y autorizaciones internas.</p>
-        <p class="ideal"><b>Ideal para:</b> Recursos Humanos, Tecnología y Administración.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">06</span><h3>Actualización de reportes gerenciales</h3></div>
-        <p>Conectamos diferentes fuentes de información para actualizar automáticamente indicadores y reportes. Esto permite reducir la consolidación manual de archivos y mantener los datos disponibles para análisis y toma de decisiones.</p>
-        <p class="ideal"><b>Ideal para:</b> Gerencias, analistas, finanzas y operaciones.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">07</span><h3>Control de inventario</h3></div>
-        <p>Creamos soluciones para registrar entradas, salidas y movimientos de inventario. El sistema puede generar alertas por niveles mínimos, identificar diferencias y facilitar la planificación de nuevas compras.</p>
-        <p class="ideal"><b>Ideal para:</b> Bodegas, distribución, comercios y empresas de servicios.</p>
-        <a class="vlink" href="../casos/#alerta-de-stock">▶ Vea una demo en video →</a>
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">08</span><h3>Gestión de solicitudes internas</h3></div>
-        <p>Centralizamos solicitudes de soporte, mantenimiento, compras, Recursos Humanos o servicios administrativos en un solo portal. Cada solicitud puede clasificarse, asignarse y monitorearse hasta su cierre.</p>
-        <p class="ideal"><b>Ideal para:</b> Empresas con múltiples departamentos o equipos de soporte interno.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">09</span><h3>Generación y aprobación de contratos</h3></div>
-        <p>Automatizamos la creación de contratos utilizando plantillas y datos previamente registrados. El proceso puede incluir revisiones, aprobaciones, control de versiones, almacenamiento y alertas antes del vencimiento.</p>
-        <p class="ideal"><b>Ideal para:</b> Áreas legales, administrativas, comerciales y Recursos Humanos.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">10</span><h3>Administración de citas y reservas</h3></div>
-        <p>Implementamos procesos para registrar citas, enviar confirmaciones y recordar a los clientes sus próximas reservas. También pueden gestionarse reprogramaciones, cancelaciones y notificaciones al equipo responsable.</p>
-        <p class="ideal"><b>Ideal para:</b> Clínicas, consultorios, servicios profesionales y centros de atención.</p>
-        <a class="vlink" href="../casos/#recordatorio-anti-inasistencia">▶ Vea una demo en video →</a>
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">11</span><h3>Registro y seguimiento de pedidos</h3></div>
-        <p>Centralizamos pedidos recibidos por formularios, correo u otros canales. Cada pedido puede registrarse automáticamente, enviarse al área responsable y avanzar por diferentes estados hasta su entrega.</p>
-        <p class="ideal"><b>Ideal para:</b> Distribución, comercios, proveedores y empresas de servicios.</p>
-        <a class="vlink" href="../casos/">▶ Vea una demo en video →</a>
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">12</span><h3>Solicitud y aprobación de gastos</h3></div>
-        <p>Digitalizamos el registro de gastos y comprobantes. El flujo puede validar campos obligatorios, aplicar reglas internas, solicitar aprobaciones y enviar la información organizada al departamento financiero.</p>
-        <p class="ideal"><b>Ideal para:</b> Finanzas, administración y equipos con gastos operativos frecuentes.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">13</span><h3>Coordinación de servicios de campo</h3></div>
-        <p>Creamos soluciones para asignar visitas o servicios técnicos según ubicación, especialidad y disponibilidad. Los técnicos pueden recibir la información del servicio, registrar evidencias y actualizar el estado desde un dispositivo móvil.</p>
-        <p class="ideal"><b>Ideal para:</b> Mantenimiento, soporte técnico, instalaciones y servicios en campo.</p>
-        
-      </article>
-      <article class="sol">
-        <div class="sol-h"><span class="sn">14</span><h3>Gestión documental</h3></div>
-        <p>Centralizamos documentos que se encuentran dispersos entre correos, carpetas compartidas y archivos locales. Las automatizaciones pueden clasificar archivos, controlar versiones, solicitar revisiones y enviar alertas sobre fechas importantes.</p>
-        <p class="ideal"><b>Ideal para:</b> Calidad, cumplimiento, administración y gestión de proyectos.</p>
-        
-      </article>
+    <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
       </div>
-    </section>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Firma</span>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
 
-    <section>
-      <h2>Soluciones con agentes de inteligencia artificial</h2>
-      <p class="h2sub">Agentes que responden desde la información real de su negocio — y escalan a una persona lo que requiere criterio humano.</p>
-      <div class="grid">
-      <article class="sol agente">
-        <div class="sol-h"><span class="sn ai">15</span><h3>Agente interno de conocimiento</h3></div>
-        <p>Desarrollamos agentes de IA que consultan manuales, políticas, procedimientos y documentación autorizada de la empresa. Los colaboradores pueden realizar preguntas en lenguaje natural y recibir respuestas basadas en la información interna disponible. El agente también puede indicar de qué documento obtuvo la respuesta, facilitando la verificación.</p>
-        <p class="ideal"><b>Aplicaciones:</b></p>
-        <ul class="apps"><li>Consultas sobre políticas internas</li><li>Búsqueda de procedimientos</li><li>Apoyo a nuevos empleados</li><li>Acceso rápido a manuales</li><li>Reducción de preguntas repetitivas</li></ul>
+<main id="contenido">
+  <div class="wrap crumbs" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true">/</span>Soluciones</div>
+
+  <!-- HERO -->
+  <section class="phero band"><div class="wrap">
+    <p class="kicker">Soluciones<i></i>Portafolio</p>
+    <h1>Un portafolio integrado</h1>
+    <p class="lead">Nuestras capacidades no son servicios sueltos: se combinan. <b>Automatizamos</b> el trabajo repetitivo, <b>integramos</b> los sistemas que no se hablan, <b>medimos</b> la operación con datos confiables y <b>anticipamos</b> el movimiento del mercado. Puede empezar por una sola pieza; el diseño ya contempla la siguiente.</p>
+  </div></section>
+
+  <!-- TESIS -->
+  <section><div class="wrap">
+    <p class="sec-k">La tesis</p>
+    <h2>Cuatro movimientos que se encadenan</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Automatizar</h3>
+        <p>Flujos que capturan, validan, aprueban y avisan sin digitación manual ni persecución por correo.</p>
+      </div>
+      <div class="step">
+        <h3>Integrar</h3>
+        <p>ERP, CRM, correo, hojas de cálculo y APIs conectados: el dato se registra una vez y viaja solo.</p>
+      </div>
+      <div class="step">
+        <h3>Medir</h3>
+        <p>Indicadores que se actualizan automáticamente y sostienen decisiones, no discusiones sobre versiones.</p>
+      </div>
+      <div class="step">
+        <h3>Anticipar</h3>
+        <p>Inteligencia competitiva con fuentes públicas y autorizadas: mercado, competidores y licitaciones.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- LINEAS -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Portafolio</p>
+    <h2>Siete líneas de trabajo</h2>
+    <p class="sec-sub">Cada línea tiene su propia página con alcance, entregables y forma de trabajo. Juntas cubren el ciclo completo: construir, conectar, medir, operar y anticipar.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="cnum" aria-hidden="true">01</span>
+        <h3>Automatización empresarial</h3>
+        <p>Procesos completos de punta a punta: recepción, validación, aprobación, registro y aviso. Construida con Power Automate, n8n o RPA según su entorno.</p>
+        <a class="link-more" href="/automatizacion-empresarial/">Conocer la línea &rarr;</a>
       </article>
-      <article class="sol agente">
-        <div class="sol-h"><span class="sn ai">16</span><h3>Agente de atención al cliente</h3></div>
-        <p>Implementamos agentes de IA que atienden consultas iniciales, recopilan información y ayudan a clasificar las necesidades de cada cliente. Cuando el caso requiere intervención humana, el agente puede transferirlo junto con el contexto de la conversación.</p>
-        <p class="ideal"><b>Aplicaciones:</b></p>
-        <ul class="apps"><li>Preguntas frecuentes</li><li>Calificación de prospectos</li><li>Registro de solicitudes</li><li>Atención fuera del horario laboral</li><li>Escalamiento de casos complejos</li></ul>
+      <article class="card">
+        <span class="cnum" aria-hidden="true">02</span>
+        <h3>Agentes de IA</h3>
+        <p>Agentes que atienden, clasifican y resuelven desde información autorizada de su empresa, con supervisión humana y escalamiento definido.</p>
+        <a class="link-more" href="/agentes-ia/">Conocer la línea &rarr;</a>
       </article>
-      </div>
-    </section>
+      <article class="card">
+        <span class="cnum" aria-hidden="true">03</span>
+        <h3>Integración de sistemas</h3>
+        <p>ERP, CRM, APIs y sistemas legacy conectados para eliminar la doble digitación y los archivos intermedios que nadie controla.</p>
+        <a class="link-more" href="/integracion-sistemas/">Conocer la línea &rarr;</a>
+      </article>
+      <article class="card">
+        <span class="cnum" aria-hidden="true">04</span>
+        <h3>Data &amp; Business Intelligence</h3>
+        <p>Modelos de datos y tableros en Power BI que convierten fuentes dispersas en una sola versión de los números.</p>
+        <a class="link-more" href="/data-business-intelligence/">Conocer la línea &rarr;</a>
+      </article>
+      <article class="card">
+        <span class="cnum" aria-hidden="true">05</span>
+        <h3>Aplicaciones empresariales</h3>
+        <p>Portales y aplicaciones de proceso — Power Apps, SharePoint — cuando el flujo necesita una interfaz propia para operar.</p>
+        <a class="link-more" href="/aplicaciones-empresariales/">Conocer la línea &rarr;</a>
+      </article>
+      <article class="card">
+        <span class="cnum" aria-hidden="true">06</span>
+        <h3>Operación administrada</h3>
+        <p>Monitoreo, soporte y mejora continua de lo construido: una automatización también se opera, no solo se entrega.</p>
+        <a class="link-more" href="/operacion-administrada/">Conocer la línea &rarr;</a>
+      </article>
+      <article class="card">
+        <span class="cnum" aria-hidden="true">07</span>
+        <h3>Inteligencia competitiva</h3>
+        <p>Monitoreo sistemático de mercado, competidores y licitaciones, elaborado únicamente con fuentes públicas y autorizadas, entregado como informes accionables.</p>
+        <a class="link-more" href="/inteligencia-competitiva/">Conocer la línea &rarr;</a>
+      </article>
+    </div>
+  </div></section>
 
-    <section>
-      <div class="proximamente">
-        <h2>Próximamente: experiencias verificadas</h2>
-        <p>Estamos recopilando experiencias reales de clientes que han utilizado nuestros servicios de automatización, agentes de inteligencia artificial y consultoría tecnológica. Cada testimonio que publiquemos contará con autorización de su autor y corresponderá a una experiencia verificable. Mientras tanto, lo que sí puede ver hoy: <a class="ghost" href="../casos/">nuestras demos en video</a> y <a class="ghost" href="../seguridad/">cómo cuidamos sus datos</a>.</p>
-      </div>
-    </section>
+  <!-- ARRANQUE -->
+  <section><div class="wrap">
+    <p class="sec-k">Puntos de entrada</p>
+    <h2>Soluciones de arranque frecuentes</h2>
+    <p class="sec-sub">Proyectos acotados, con alcance y entregables definidos, que suelen ser la primera colaboración. Cada uno funciona por sí solo y deja base para el siguiente.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Captura y registro de facturas</h3>
+        <ul>
+          <li><b>Problema:</b> facturas que llegan por correo o WhatsApp y se digitan a mano, con errores y atrasos</li>
+          <li><b>Solución:</b> extracción automática de los datos con IA, validación y registro en su sistema</li>
+          <li><b>Resultado esperado:</b> menos digitación y errores de captura; visibilidad del estado de cada documento</li>
+        </ul>
+        <p style="font-size:12.8px;color:var(--dim);margin-top:12px">Sistemas compatibles: correo, SharePoint, Excel, ERP vía API.</p>
+        <a class="link-more" href="/procesamiento-automatico-facturas/">Ver la solución &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>Cobranza estructurada</h3>
+        <ul>
+          <li><b>Problema:</b> cartera gestionada de memoria; recordatorios inconsistentes que dependen de una persona</li>
+          <li><b>Solución:</b> secuencias de recordatorio por WhatsApp y correo, registro de cada gestión y alertas de escalamiento</li>
+          <li><b>Resultado esperado:</b> gestión constante y trazable de cada factura por vencer, con criterio humano en los casos sensibles</li>
+        </ul>
+        <p style="font-size:12.8px;color:var(--dim);margin-top:12px">Sistemas compatibles: WhatsApp Business, correo, Excel, SharePoint, ERP vía API.</p>
+        <a class="link-more" href="/cobranza-automatizada/">Ver la solución &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>Atención y calificación de consultas</h3>
+        <ul>
+          <li><b>Problema:</b> consultas repetitivas y fuera de horario; oportunidades que se pierden sin registro</li>
+          <li><b>Solución:</b> agente de IA en WhatsApp que responde desde información autorizada, califica cada consulta y la transfiere a su equipo con contexto</li>
+          <li><b>Resultado esperado:</b> atención continua y ordenada, con intervención humana donde hace falta criterio</li>
+        </ul>
+        <p style="font-size:12.8px;color:var(--dim);margin-top:12px">Sistemas compatibles: WhatsApp Business, CRM, SharePoint, correo.</p>
+        <a class="link-more" href="/agente-ia-whatsapp/">Ver la solución &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>Dashboards ejecutivos</h3>
+        <ul>
+          <li><b>Problema:</b> reportes armados a mano cada semana; versiones que no cuadran entre áreas</li>
+          <li><b>Solución:</b> modelo de datos y tableros en Power BI conectados a las fuentes, con actualización automática</li>
+          <li><b>Resultado esperado:</b> una sola versión de los números, disponible cuando se necesita, sin trabajo de consolidación</li>
+        </ul>
+        <p style="font-size:12.8px;color:var(--dim);margin-top:12px">Sistemas compatibles: SQL, Excel, SharePoint, ERP y CRM vía API.</p>
+        <a class="link-more" href="/power-bi/">Ver la solución &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>Demos interactivos de agentes</h3>
+        <ul>
+          <li><b>Problema:</b> evaluar un agente de IA en abstracto, sin verlo operar sobre casos concretos</li>
+          <li><b>Solución:</b> demos navegables que muestran cómo un agente atiende, clasifica y escala una conversación</li>
+          <li><b>Resultado esperado:</b> criterio informado para decidir antes de comprometer un proyecto</li>
+        </ul>
+        <p style="font-size:12.8px;color:var(--dim);margin-top:12px">Solo requiere un navegador; no pide datos de su empresa.</p>
+        <a class="link-more" href="/agentes/">Explorar las demos &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>Muestra de informe de inteligencia</h3>
+        <ul>
+          <li><b>Problema:</b> contratar inteligencia competitiva sin saber qué formato ni profundidad recibirá</li>
+          <li><b>Solución:</b> una muestra del informe con su estructura, tipo de fuentes públicas y nivel de análisis</li>
+          <li><b>Resultado esperado:</b> expectativas claras del entregable antes de cualquier acuerdo</li>
+        </ul>
+        <p style="font-size:12.8px;color:var(--dim);margin-top:12px">Entregable en documento; elaborado solo con fuentes públicas y autorizadas.</p>
+        <a class="link-more" href="/recursos/informe-muestra/">Descargar la muestra &rarr;</a>
+      </article>
+    </div>
+    <div class="note demo"><b>Caso medido:</b> nuestro Capturista Digital registra una factura en aproximadamente 4 segundos, desde la imagen hasta el dato estructurado. La demostración está grabada en video: puede verla en <a href="/casos/" style="color:var(--petrol);font-weight:600">Casos</a>.</div>
+  </div></section>
 
-    <section class="final">
-      <h2>¿Cuál de estos procesos le está consumiendo horas a su equipo?</h2>
-      <p>Demo con sus propios datos, sin costo. Alcances definidos y pagos por hitos — <a class="ghost" href="../precios/">ver rangos publicados</a>.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fsoluciones%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener">Hablar por WhatsApp →</a>
-        <a class="ghost" href="../precios/#cotizador">o estime su proyecto en 60 segundos</a>
+  <!-- COMO ELEGIMOS -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Criterio</p>
+    <h2>Cómo elegimos el punto de entrada</h2>
+    <div class="cols2">
+      <div>
+        <p>No empezamos por la herramienta sino por el proceso. En la evaluación inicial revisamos cuatro criterios y proponemos el proyecto de arranque con alcance y entregables definidos por escrito. Nuestra forma de trabajo — diagnóstico, diseño, construcción y operación — está documentada en <a href="/metodologia/" style="color:var(--petrol);font-weight:600">Metodología</a>.</p>
+        <p style="margin-top:14px">Los controles de acceso y manejo de información se describen en <a href="/seguridad-gobierno/" style="color:var(--petrol);font-weight:600">Seguridad y gobierno</a>, y los lineamientos de uso responsable de IA que aplican a todo el portafolio, en <a href="/responsabilidad-ia/" style="color:var(--petrol);font-weight:600">Responsabilidad de IA</a>.</p>
       </div>
-    </section>
-  </main>
+      <div>
+        <ul class="checks">
+          <li><b>Volumen y frecuencia:</b> cuántas veces ocurre el proceso y cuánto tiempo consume</li>
+          <li><b>Dolor operativo:</b> errores, atrasos y retrabajos que genera hoy</li>
+          <li><b>Sistemas involucrados:</b> qué se integra y qué conviene no tocar</li>
+          <li><b>Riesgo y gobierno:</b> datos sensibles, accesos y controles que exige el proceso</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
 
-  <footer><div class="wrap f">
-    <span>© 2026 Optimatiza · San Salvador</span>
-    <span class="sp" style="flex:1"></span>
-    <a href="../">Inicio</a><a href="../casos/">Casos</a><a href="../precios/">Precios</a><a href="../distribuidoras/">Distribuidoras</a><a href="../seguridad/">Seguridad</a>
-  </div></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script><!-- End GA4 -->
+  <!-- CTA FINAL -->
+  <section><div class="wrap">
+    <div class="cta-band">
+      <span class="ck">Próximo paso</span>
+      <h2>Identifiquemos el punto de entrada para su operación</h2>
+      <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador (GMT-6).</p>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    </div>
+  </div></section>
+</main>
+
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Centro de recursos</a>
+      <a href="/agentes/">Demos interactivos</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
+</div></footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
 </body>
 </html>

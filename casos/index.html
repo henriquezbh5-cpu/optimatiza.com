@@ -4,244 +4,305 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
-  <title>Casos de automatización · Optimatiza</title>
-  <meta name="description" content="Ejemplos reales de automatizaciones y agentes de IA que Optimatiza monta para pymes de El Salvador: cotizaciones, inventario, DTE, cobranza, planilla, Bitcoin y más.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Casos y demostraciones de automatización | Optimatiza</title>
+  <meta name="description" content="Casos y demostraciones de automatización con IA: un caso real medido en video y cápsulas ilustrativas de procesos empresariales en El Salvador y Latinoamérica.">
+  <meta name="author" content="Optimatiza">
   <link rel="canonical" href="https://optimatiza.com/casos/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Casos de automatización · Optimatiza">
-  <meta property="og:description" content="10 ejemplos de automatización en video para pymes de El Salvador.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/corp.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Casos y demostraciones | Optimatiza">
+  <meta property="og:description" content="Un caso real medido en video —captura de facturas en unos 4 segundos— y cápsulas ilustrativas de automatización empresarial con IA.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/casos/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--panel:#FFFDF8;--well:#EFE8D9;--ink:#183F35;--body:#3A4A45;
-      --line:#E2DAC7;--teal:#1D5C4D;--btc:#F7931A;--wa:#25D366;
-      --ff:'Inter',-apple-system,'Segoe UI',sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;--maxw:1240px}
-    *{box-sizing:border-box;margin:0}
-    html{scroll-behavior:smooth}
-    body{background:radial-gradient(1200px 700px at 82% -12%,#E9EFE2 0,var(--bg) 60%);
-      color:var(--ink);font-family:var(--ff);line-height:1.6;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:16px;height:64px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:19px;color:var(--teal)}
-    .brand img{width:28px;height:28px}
-    .nav .sp{flex:1}
-    .nav a.back{color:var(--body);font-size:14px}
-    .wa-btn{background:var(--wa);color:#04220f;font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px}
-    .hero{padding:70px 0 40px;text-align:center}
-    .hero .k{font-family:var(--ffd);color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-size:13px;font-weight:700}
-    .hero h1{font-family:var(--ffd);font-weight:700;font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;margin:16px auto 14px;max-width:16ch}
-    .hero p{color:var(--body);font-size:18px;max-width:56ch;margin:0 auto}
-    .hero .note{margin-top:16px;font-size:14px;color:#6E7D74}
-    /* destacado */
-    .feat{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:center;
-      background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;margin:26px 0 10px;
-      box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    .feat video{width:100%;border-radius:12px;display:block;background:#EFE8D9}
-    .feat .tag{display:inline-block;background:color-mix(in srgb,var(--teal) 16%,transparent);
-      color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 45%,transparent);
-      font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
-    .feat h2{font-family:var(--ffd);font-size:28px;margin:12px 0 10px;line-height:1.15}
-    .feat p{color:var(--body);font-size:16px}
-    /* categorías */
-    .cat{padding:40px 0 10px}
-    .cat h2{font-family:var(--ffd);font-size:24px;display:flex;align-items:center;gap:12px;margin-bottom:22px}
-    .cat h2 .dot{width:11px;height:11px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 14%,transparent)}
-    .cat h2 em{font-style:normal;color:var(--acc);font-size:15px;background:color-mix(in srgb,var(--acc) 14%,transparent);
-      padding:2px 10px;border-radius:999px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;
-      box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06);
-      transition:transform .2s ease,border-color .2s ease}
-    .card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--acc) 50%,var(--line))}
-    .vwrap{aspect-ratio:16/9;background:#EFE8D9}
-    .card video{width:100%;height:100%;display:block;object-fit:cover}
-    .card .chip{display:inline-block;margin:14px 16px 0;font-size:11.5px;font-weight:700;color:var(--acc);
-      background:color-mix(in srgb,var(--acc) 14%,transparent);padding:3px 10px;border-radius:999px}
-    .card h3{font-family:var(--ffd);font-size:19px;margin:8px 16px 6px}
-    .card p{color:var(--body);font-size:14.5px;margin:0 16px 18px}
-    /* CTA + footer */
-    .cta-band{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;
-      box-shadow:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06);
-      padding:40px 24px;margin:56px 0 30px}
-    .cta-band h2{font-family:var(--ffd);font-size:28px;margin-bottom:10px}
-    .cta-band p{color:var(--body);margin-bottom:22px}
-    .btn{display:inline-block;background:var(--wa);color:#04220f;font-weight:700;padding:13px 26px;border-radius:999px}
-    footer{border-top:1px solid var(--line);background:var(--well);padding:34px 0;margin-top:10px}
-    footer .f{display:flex;flex-wrap:wrap;gap:16px;align-items:center;color:var(--body);font-size:14px}
-    footer a{color:var(--body)} footer a:hover{color:var(--ink)}
-    footer .sp{flex:1}
-    @media(max-width:820px){.feat{grid-template-columns:1fr}.hero{padding:48px 0 28px}}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Casos y demostraciones | Optimatiza">
+  <meta name="twitter:description" content="Un caso real medido en video —captura de facturas en unos 4 segundos— y cápsulas ilustrativas de automatización empresarial con IA.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Casos", "item": "https://optimatiza.com/casos/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Capturista Digital de facturas: grabación del sistema real",
+    "description": "Grabación sin cortes del Capturista Digital: una factura fotografiada por WhatsApp se extrae con IA de visión, se valida y queda registrada en una hoja de cálculo en aproximadamente 4 segundos.",
+    "thumbnailUrl": "https://optimatiza.com/casos/videos/capturista-finanzas-60s.jpg",
+    "contentUrl": "https://optimatiza.com/casos/videos/capturista-finanzas-60s.mp4",
+    "uploadDate": "2026-07-13",
+    "inLanguage": "es",
+    "publisher": {"@type": "Organization", "name": "Optimatiza", "url": "https://optimatiza.com/"}
+  }
+  </script>
 </head>
 <body>
-  <header><div class="wrap nav">
-    <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="Optimatiza">Optimatiza</a>
-    <div class="sp"></div>
-    <a class="back" href="../">← Inicio</a>
-    <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fcasos%20y%20quiero%20automatizar%20un%20proceso." target="_blank" rel="noopener">WhatsApp</a>
-  </div></header>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="k">Casos en video</div>
-      <h1>Automatizaciones que le devuelven horas a tu negocio</h1>
-      <p>Ejemplos reales de procesos que montamos para pymes en El Salvador — cada uno resuelve un problema distinto, de punta a punta.</p>
-      <div class="note">El caso destacado es una <b style="color:#183F35">grabación del sistema real funcionando</b>. Las cápsulas son demostraciones ilustrativas animadas — cada solución se construye a medida sobre tus sistemas y datos.</div>
-    </section>
-
-    <section class="feat" style="--acc:#1D5C4D">
-      <div class="vwrap" style="aspect-ratio:16/9;border-radius:12px;overflow:hidden">
-        <video controls preload="metadata" playsinline poster="videos/capturista-finanzas-60s.jpg" style="width:100%;height:100%;object-fit:cover">
-          <source src="videos/capturista-finanzas-60s.mp4" type="video/mp4">
-        </video>
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Soluciones</button>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
       </div>
+    </div>
+    <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Firma</span>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
+
+<main id="contenido">
+  <div class="wrap crumbs" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true">/</span>Casos</div>
+
+  <!-- HERO -->
+  <section class="phero band"><div class="wrap">
+    <span class="kicker"><i></i>Casos</span>
+    <h1>Casos y demostraciones</h1>
+    <p class="lead">Documentamos nuestro trabajo con evidencia. Cuando un resultado se puede mostrar, lo mostramos en video; cuando un concepto se explica mejor con una animación, lo rotulamos como ilustrativo. Esta página reúne ambos, claramente separados.</p>
+    <div class="note">Por acuerdos de confidencialidad, algunos nombres y datos sensibles no se publican. No presentamos cifras ni testimonios que no podamos respaldar. Diferenciamos siempre lo real de lo ilustrativo.</div>
+  </div></section>
+
+  <!-- CASO INSIGNIA -->
+  <section><div class="wrap">
+    <span class="sec-k">Caso insignia</span>
+    <h2>Capturista Digital de facturas</h2>
+    <p class="sec-sub">Captura de facturas por WhatsApp con IA de visión, sin digitación manual. El resultado no es una proyección: está grabado en video, sin cortes, y puede verificarlo usted mismo a continuación.</p>
+    <div class="cols2">
       <div>
-        <span class="tag">Caso destacado · sistema real</span>
-        <h2>Capturista Digital · Finanzas</h2>
-        <p>Tu equipo de finanzas pierde horas digitando facturas a mano. Le tomás una foto por WhatsApp y queda registrada sola, clasificada y con el ahorro calculado.</p>
-        <p style="margin-top:12px;font-size:13.5px;color:#1D5C4D;font-weight:600">🎥 Grabación del sistema funcionando, sin cortes: mirá la factura pasar de foto a registro en segundos — verificalo tú mismo en el video.</p>
+        <video controls preload="metadata" playsinline poster="videos/capturista-finanzas-60s.jpg" style="width:100%;border-radius:12px;display:block">
+          <source src="videos/capturista-finanzas-60s.mp4" type="video/mp4">
+          Su navegador no reproduce video HTML5. Puede <a href="videos/capturista-finanzas-60s.mp4">descargar la grabación</a>.
+        </video>
+        <p class="note demo" style="margin-top:14px"><b>Grabación real del sistema en funcionamiento, sin cortes.</b> La factura pasa de fotografía a registro validado frente a cámara: esta es la evidencia del resultado declarado en la ficha.</p>
       </div>
-    </section>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <tbody>
+            <tr><th scope="row">Sector</th><td>Distribución / finanzas</td></tr>
+            <tr><th scope="row">Región</th><td>El Salvador</td></tr>
+            <tr><th scope="row">Contexto</th><td>Las facturas se digitaban a mano en hojas de cálculo.</td></tr>
+            <tr><th scope="row">Proceso anterior</th><td>Varios minutos por factura, con errores de tipeo en montos y datos fiscales.</td></tr>
+            <tr><th scope="row">Solución</th><td>Fotografía por WhatsApp, extracción con IA de visión, validación y registro en hoja de cálculo.</td></tr>
+            <tr><th scope="row">Integraciones</th><td>WhatsApp, IA de visión, Excel/Sheets.</td></tr>
+            <tr><th scope="row">Controles</th><td>Validación de datos y revisión de excepciones antes de registrar.</td></tr>
+            <tr><th scope="row">Resultado verificable</th><td>Aproximadamente 4 segundos por factura, medido en la grabación sin cortes.</td></tr>
+            <tr><th scope="row">Tecnologías</th><td>IA de visión + automatización de flujo.</td></tr>
+            <tr><th scope="row">Estado</th><td>Demostrado en grabación real.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="margin-top:18px"><a class="link-more" href="/procesamiento-automatico-facturas/">Conozca la solución de procesamiento automático de facturas</a></p>
+  </div></section>
 
-    <section class="cat">
-      <h2 style="--acc:#1D5C4D"><span class="dot"></span>Automatización <em>6</em></h2>
-      <div class="grid">
-      <article class="card" id="cotizador-express" style="--acc:#1D5C4D">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/cotizador-express.jpg">
-            <source src="videos/cotizador-express.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Automatización</span>
+  <!-- CÁPSULAS DE DEMOSTRACIÓN -->
+  <section class="band"><div class="wrap">
+    <span class="sec-k">Demostraciones</span>
+    <h2>Cápsulas de demostración</h2>
+    <p class="sec-sub">Cada cápsula es una <b>demostración ilustrativa animada</b>: presenta el concepto y el flujo de una solución, no una implementación en producción. Todo proyecto real se diseña a medida sobre los sistemas y datos de su organización, con los controles que describimos en nuestra <a href="/metodologia/">metodología</a>.</p>
+    <div class="cards">
+      <article class="card" id="cotizador-express">
+        <video controls preload="none" playsinline poster="videos/cotizador-express.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/cotizador-express.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
         <h3>Cotizador Express</h3>
-        <p>Cada cotización se arma a mano en Excel y sale con precios ya vencidos.</p>
+        <p>Cuando cada cotización se arma a mano, sale lenta y con precios vencidos. La cápsula ilustra la generación automática desde un catálogo vigente, lista para revisión y envío.</p>
       </article>
-      <article class="card" id="alerta-de-stock" style="--acc:#1D5C4D">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/alerta-de-stock.jpg">
-            <source src="videos/alerta-de-stock.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Automatización</span>
+      <article class="card" id="alerta-de-stock">
+        <video controls preload="none" playsinline poster="videos/alerta-de-stock.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/alerta-de-stock.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
         <h3>Alerta de Stock</h3>
-        <p>No conocen el stock real: venden lo que no hay o se quedan sin lo que más se mueve.</p>
+        <p>Sin visibilidad del inventario real se vende lo que no hay y se agota lo que más rota. La cápsula ilustra alertas automáticas por nivel mínimo, con responsables notificados a tiempo.</p>
       </article>
-      <article class="card" id="dte-sin-doble-digitacion" style="--acc:#1D5C4D">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/dte-sin-doble-digitacion.jpg">
-            <source src="videos/dte-sin-doble-digitacion.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Automatización</span>
-        <h3>DTE sin Doble Digitación</h3>
-        <p>Vuelven a teclear el pedido en el facturador para emitir el DTE, con errores y rechazos.</p>
+      <article class="card" id="dte-sin-doble-digitacion">
+        <video controls preload="none" playsinline poster="videos/dte-sin-doble-digitacion.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/dte-sin-doble-digitacion.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
+        <h3>DTE sin doble digitación</h3>
+        <p>Volver a teclear el pedido en el facturador para emitir el DTE produce errores y rechazos. La cápsula ilustra el traslado automático de datos entre sistemas, con validación previa.</p>
       </article>
-      <article class="card" id="recordatorio-anti-inasistencia" style="--acc:#1D5C4D">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/recordatorio-anti-inasistencia.jpg">
-            <source src="videos/recordatorio-anti-inasistencia.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Automatización</span>
-        <h3>Recordatorio Anti-Inasistencia</h3>
-        <p>Pacientes y clientes olvidan la cita, y cada hueco sin avisar es un ingreso perdido.</p>
+      <article class="card" id="recordatorio-anti-inasistencia">
+        <video controls preload="none" playsinline poster="videos/recordatorio-anti-inasistencia.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/recordatorio-anti-inasistencia.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
+        <h3>Recordatorio anti-inasistencia</h3>
+        <p>Las citas olvidadas dejan espacios de agenda sin utilizar. La cápsula ilustra recordatorios y confirmaciones automáticas por WhatsApp, con reasignación del espacio liberado.</p>
       </article>
-      <article class="card" id="captura-facturas-sin-digitar" style="--acc:#1D5C4D">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/captura-facturas-sin-digitar.jpg">
-            <source src="videos/captura-facturas-sin-digitar.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Automatización</span>
-        <h3>Facturas sin Digitar</h3>
-        <p>El asistente contable transcribe cada factura a Excel, con errores de NIT, IVA y montos.</p>
+      <article class="card" id="captura-facturas-sin-digitar">
+        <video controls preload="none" playsinline poster="videos/captura-facturas-sin-digitar.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/captura-facturas-sin-digitar.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
+        <h3>Facturas sin digitar</h3>
+        <p>Transcribir facturas a mano introduce errores en NIT, IVA y montos. La cápsula ilustra en formato animado el mismo concepto del caso insignia mostrado arriba en grabación real.</p>
       </article>
-      <article class="card" id="precalculo-planilla-isss-afp" style="--acc:#1D5C4D">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/precalculo-planilla-isss-afp.jpg">
-            <source src="videos/precalculo-planilla-isss-afp.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Automatización</span>
-        <h3>Planilla ISSS/AFP Automática</h3>
-        <p>Cada quincena recalculan a mano ISSS, AFP, renta y horas extra en un Excel frágil.</p>
+      <article class="card" id="precalculo-planilla-isss-afp">
+        <video controls preload="none" playsinline poster="videos/precalculo-planilla-isss-afp.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/precalculo-planilla-isss-afp.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
+        <h3>Planilla ISSS/AFP automática</h3>
+        <p>Recalcular cada quincena ISSS, AFP, renta y horas extra en un archivo frágil expone a errores. La cápsula ilustra el precálculo automático con revisión humana antes de aplicar.</p>
       </article>
-      </div>
-    </section>
-    <section class="cat">
-      <h2 style="--acc:#3F6F8A"><span class="dot"></span>Agentes IA <em>2</em></h2>
-      <div class="grid">
-      <article class="card" id="cobrador-digital-24-7" style="--acc:#3F6F8A">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/cobrador-digital-24-7.jpg">
-            <source src="videos/cobrador-digital-24-7.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Agentes IA</span>
+      <article class="card" id="cobrador-digital-24-7">
+        <video controls preload="none" playsinline poster="videos/cobrador-digital-24-7.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/cobrador-digital-24-7.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
         <h3>Cobrador Digital 24/7</h3>
-        <p>La cartera vencida crece porque nadie da seguimiento factura por factura.</p>
+        <p>La cartera vencida crece cuando nadie da seguimiento factura por factura. La cápsula ilustra recordatorios de cobro programados con escalamiento a una persona cuando corresponde. Vea también <a href="/cobranza-automatizada/">cobranza automatizada</a>.</p>
       </article>
-      <article class="card" id="agente-soporte-faq" style="--acc:#3F6F8A">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/agente-soporte-faq.jpg">
-            <source src="videos/agente-soporte-faq.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Agentes IA</span>
-        <h3>Agente de Preguntas Frecuentes</h3>
-        <p>El equipo responde las mismas veinte preguntas todo el día: horarios, precios y garantías.</p>
+      <article class="card" id="agente-soporte-faq">
+        <video controls preload="none" playsinline poster="videos/agente-soporte-faq.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block">
+          <source src="videos/agente-soporte-faq.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:12.5px;letter-spacing:.4px;text-transform:uppercase;opacity:.72;margin:12px 0 2px">Demostración ilustrativa animada</p>
+        <h3>Agente de preguntas frecuentes</h3>
+        <p>El equipo responde las mismas consultas de horarios, precios y coberturas todo el día. La cápsula ilustra un agente que contesta con información aprobada y deriva lo que no sabe. Vea también <a href="/agente-ia-whatsapp/">agente de IA en WhatsApp</a>.</p>
       </article>
-      </div>
-    </section>
-    <section class="cat">
-      <h2 style="--acc:#B45309"><span class="dot"></span>Bitcoin <em>2</em></h2>
-      <div class="grid">
-      <article class="card" id="cobro-btc-conciliado" style="--acc:#B45309">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/cobro-btc-conciliado.jpg">
-            <source src="videos/cobro-btc-conciliado.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Bitcoin</span>
-        <h3>Cobro en BTC Conciliado</h3>
-        <p>Aceptan Bitcoin por QR, pero al cierre las ventas en BTC no cuadran con la contabilidad en dólares.</p>
-      </article>
-      <article class="card" id="remesas-btc-aviso" style="--acc:#B45309">
-        <div class="vwrap">
-          <video controls preload="none" playsinline poster="videos/remesas-btc-aviso.jpg">
-            <source src="videos/remesas-btc-aviso.mp4" type="video/mp4">
-          </video>
-        </div>
-        <span class="chip">Bitcoin</span>
-        <h3>Remesas en BTC con Aviso</h3>
-        <p>Reciben remesas por Lightning pero no saben cuándo llegó ni a qué tasa quedó en dólares.</p>
-      </article>
-      </div>
-    </section>
+    </div>
+    <p class="sec-sub" style="margin-top:26px">¿Quiere ver estos conceptos aplicados a su rubro? Revise <a href="/distribuidoras/">distribuidoras</a>, <a href="/clinicas/">clínicas</a> y <a href="/servicios-profesionales/">servicios profesionales</a>, o pruebe los <a href="/agentes/">demos interactivos</a>.</p>
+  </div></section>
 
-    <section class="cta-band">
-      <h2>¿Cuál de estos procesos te está quemando horas?</h2>
-      <p>Te armamos una demo con tus propios datos, sin costo. Escribinos y lo vemos.</p>
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20los%20casos%20en%20optimatiza.com%2Fcasos%20y%20quiero%20una%20demo." target="_blank" rel="noopener">Quiero mi demo →</a>
-    </section>
-  </main>
+  <!-- CÓMO DOCUMENTAMOS UN CASO -->
+  <section><div class="wrap">
+    <span class="sec-k">Método</span>
+    <h2>Cómo documentamos un caso</h2>
+    <p class="sec-sub">Antes de publicar un caso lo registramos con una ficha estándar de catorce campos. Si un campo no se puede respaldar con evidencia, se deja fuera o se marca como ilustrativo: preferimos describir método, entregables y controles antes que publicar cifras que no podamos sostener.</p>
+    <div class="cols2">
+      <ul class="checks">
+        <li><b>Sector:</b> industria y área funcional donde vive el proceso.</li>
+        <li><b>Región:</b> país u operación donde se implementó.</li>
+        <li><b>Contexto:</b> situación de la organización antes de intervenir.</li>
+        <li><b>Problema:</b> costo operativo o riesgo que motivó el proyecto.</li>
+        <li><b>Proceso anterior:</b> cómo se ejecutaba la tarea, paso a paso.</li>
+        <li><b>Solución:</b> flujo automatizado que reemplaza al proceso manual.</li>
+        <li><b>Arquitectura:</b> componentes de la solución y cómo se conectan.</li>
+      </ul>
+      <ul class="checks">
+        <li><b>Integraciones:</b> sistemas de origen y destino involucrados.</li>
+        <li><b>Controles:</b> validaciones, aprobaciones y trazabilidad.</li>
+        <li><b>Excepciones:</b> qué ocurre cuando un dato no valida y quién lo revisa.</li>
+        <li><b>Resultado:</b> qué se midió y con qué evidencia: grabación, bitácora o muestreo.</li>
+        <li><b>Tecnologías:</b> plataformas y herramientas empleadas.</li>
+        <li><b>Estado:</b> demostrado, en piloto o en producción.</li>
+        <li><b>Confidencialidad:</b> qué datos se anonimizaron y por qué.</li>
+      </ul>
+    </div>
+    <p style="max-width:72ch;margin-top:20px">Los proyectos los dirige Humberto Henríquez, fundador de Optimatiza: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence, con más de 8 años automatizando operaciones empresariales sobre Power Platform (Power Automate, Power Apps, Power BI), n8n, APIs, RPA, SQL, SharePoint, M365 e IA aplicada con modelos de lenguaje.</p>
+    <div class="cta-row" style="margin-top:20px">
+      <a class="btn-secondary" href="/metodologia/">Ver cómo abordamos estos proyectos</a>
+      <a class="link-more" href="/seguridad-gobierno/">Seguridad y gobierno de datos</a>
+    </div>
+  </div></section>
 
-  <footer><div class="wrap f">
-    <a class="brand" href="../" style="font-size:17px"><img src="../img/logo-badge-96.png" width="24" height="24" alt="">Optimatiza</a>
-    <span style="color:#6E7D74">Agentes de IA y automatización · El Salvador</span>
-    <div class="sp"></div>
-    <a href="https://wa.me/50371928070" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="https://www.linkedin.com/company/optimatiza-sv/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="../">Inicio</a>
-    <span style="color:#6E7D74">© 2026 Optimatiza</span>
-  </div></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script><!-- End GA4 -->
+  <!-- CTA FINAL -->
+  <section><div class="wrap">
+    <div class="cta-band">
+      <span class="ck">Próximo paso</span>
+      <h2>Su proceso puede ser el próximo caso documentado</h2>
+      <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador (GMT-6).</p>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    </div>
+  </div></section>
+</main>
+
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Centro de recursos</a>
+      <a href="/agentes/">Demos interactivos</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
+</div></footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
 </body>
 </html>

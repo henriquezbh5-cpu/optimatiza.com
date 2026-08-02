@@ -5,6 +5,17 @@ gtag('js', new Date());
 gtag('config', 'G-X9Q41BJNY8');
 
 (function () {
+  // CTA ejecutivo (enlaces a /contacto/)
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="/contacto"]') : null;
+    if (a) {
+      gtag('event', 'cta_click', {
+        page_path: location.pathname,
+        link_text: (a.textContent || '').trim().slice(0, 60)
+      });
+    }
+  });
+
   // Conversion primaria: clic a WhatsApp (cualquier CTA wa.me), con pagina y texto del boton
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Data &amp; Business Intelligence | Power BI y datos | Optimatiza</title>
+  <meta name="description" content="Diseñamos su capa de decisión: integración de fuentes, modelo de datos, dashboards Power BI e indicadores con actualización automática y gobierno de datos.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/data-business-intelligence/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/corp.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Data &amp; Business Intelligence — Optimatiza">
+  <meta property="og:description" content="Dashboards Power BI conectados a fuentes confiables: modelo de datos, indicadores con una sola definición y actualización automática.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/data-business-intelligence/">
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data &amp; Business Intelligence — Optimatiza">
+  <meta name="twitter:description" content="Dashboards Power BI conectados a fuentes confiables: modelo de datos, indicadores con una sola definición y actualización automática.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Data & Business Intelligence", "item": "https://optimatiza.com/data-business-intelligence/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Data & Business Intelligence",
+    "serviceType": "Business intelligence: integración de datos, modelado y dashboards Power BI",
+    "description": "Diseño y operación de la capa de decisión de la empresa: estrategia de datos, integración de fuentes y ETL, modelado en esquema estrella, dashboards Power BI, indicadores y alertas, automatización de reportes, calidad de datos y gobierno documentado.",
+    "url": "https://optimatiza.com/data-business-intelligence/",
+    "provider": {"@type": "Organization", "name": "Optimatiza", "url": "https://optimatiza.com/"},
+    "areaServed": ["El Salvador", "Latinoamérica", "Estados Unidos"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Trabajan únicamente con Power BI?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Power BI es nuestra herramienta principal de visualización por su integración con Microsoft 365 y su adopción en entornos corporativos. La capa de datos es independiente de la herramienta: integramos SQL, SharePoint, APIs y automatizaciones con Power Automate o n8n, de modo que el modelo de datos sobreviva a un cambio de visualizador. El detalle técnico está en la página de Power BI."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si nuestros datos están repartidos entre Excel y varios sistemas?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Es el punto de partida más común, no un impedimento. La etapa de integración conecta esas fuentes con Power Query, SQL y APIs, y deja cada carga programada y documentada. No necesita migrar de sistema para tener un tablero confiable; necesita un modelo que consolide lo que ya existe."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quién mantiene el tablero después de la entrega?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Usted decide. Documentamos el modelo, las medidas y las cargas para que su equipo pueda operarlo, o lo operamos nosotros bajo el servicio de operación administrada: monitoreo de actualizaciones, atención de fallos y mejoras por período."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tarda un proyecto de BI?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Depende del número de fuentes y del estado de los datos, por lo que no publicamos plazos genéricos. La primera etapa — fuentes y definiciones — cierra con un plan de alcance y calendario específico para su caso, antes de comprometer el proyecto completo."}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Soluciones</button>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Firma</span>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
+
+<main id="contenido">
+  <div class="wrap crumbs" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true">/</span>Data &amp; Business Intelligence</div>
+
+  <!-- HERO -->
+  <section class="phero band"><div class="wrap">
+    <p class="kicker"><i></i>Soluciones · Data &amp; Business Intelligence</p>
+    <h1>Data &amp; Business Intelligence</h1>
+    <p class="lead"><b>Un dashboard no es una visualización: es una capa de decisión conectada a fuentes confiables.</b> Diseñamos esa capa completa — integración de fuentes, modelo de datos, indicadores y operación — para que cada cifra de su tablero tenga una definición única, un origen trazable y una actualización automática.</p>
+    <p class="lead">Trabajamos sobre Power BI y el ecosistema Microsoft 365, conectados a los sistemas que usted ya usa: ERP, CRM, bases SQL, SharePoint, hojas de cálculo y APIs.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-secondary" href="/power-bi/">Ver la práctica técnica de Power BI</a>
+      <a class="btn-wa" href="https://wa.me/50371928070">Escribir por WhatsApp</a>
+    </div>
+  </div></section>
+
+  <!-- SERVICIOS -->
+  <section><div class="wrap">
+    <p class="sec-k">Servicios</p>
+    <h2>De la fuente al indicador: la cadena completa</h2>
+    <p class="sec-sub">Un tablero que nadie usa rara vez falla por el gráfico: falla por la fuente que se rompió, la métrica con tres definiciones o el reporte que alguien olvidó actualizar. Por eso tratamos estos ocho componentes como una sola cadena.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Estrategia de datos</h3>
+        <p>Definimos con la dirección qué decisiones debe soportar el tablero, qué indicadores las alimentan y qué fuentes existen hoy. El resultado es un mapa de datos priorizado, no una lista de deseos.</p>
+      </div>
+      <div class="card">
+        <h3>Integración de fuentes y ETL</h3>
+        <p>Conectamos ERP, CRM, SQL Server, SharePoint, hojas de cálculo y APIs con Power Query y SQL. Cada extracción queda programada, versionada y documentada.</p>
+        <a class="link-more" href="/integracion-sistemas/">Ver integración de sistemas →</a>
+      </div>
+      <div class="card">
+        <h3>Modelado de datos</h3>
+        <p>Construimos modelos en esquema estrella: tablas de hechos y dimensiones conformadas que sostienen el rendimiento del tablero y evitan métricas duplicadas entre áreas.</p>
+      </div>
+      <div class="card">
+        <h3>Dashboards en Power BI</h3>
+        <p>Diseñamos tableros para leerse en segundos: jerarquía visual, filtros pensados por rol y navegación por área. La estética está al servicio de la decisión, no al revés.</p>
+        <a class="link-more" href="/power-bi/">Ver la práctica de Power BI →</a>
+      </div>
+      <div class="card">
+        <h3>Indicadores y alertas</h3>
+        <p>Escribimos medidas DAX con una sola definición por indicador, y alertas que avisan cuando un umbral se cruza — sin esperar a que alguien abra el reporte.</p>
+      </div>
+      <div class="card">
+        <h3>Automatización de reportes</h3>
+        <p>Los reportes recurrentes se generan y distribuyen solos, con <a href="/power-automate/">Power Automate</a> o <a href="/n8n/">n8n</a>, en el formato y horario que cada audiencia necesita.</p>
+      </div>
+      <div class="card">
+        <h3>Calidad de datos</h3>
+        <p>Validaciones en la capa de carga: duplicados, valores fuera de rango, huecos de fechas, referencias rotas. Los problemas se detectan antes de llegar al tablero, no en la reunión.</p>
+      </div>
+      <div class="card">
+        <h3>Gobierno y documentación</h3>
+        <p>Diccionario de indicadores, responsable por dato, control de acceso por rol y bitácora de cambios. Lo que no está documentado termina discutiéndose en cada comité.</p>
+        <a class="link-more" href="/seguridad-gobierno/">Ver seguridad y gobierno →</a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- TABLEROS POR ÁREA -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Alcance</p>
+    <h2>Tableros por área: ejemplos de alcance</h2>
+    <p class="sec-sub">Estos ejemplos describen el tipo de tablero que diseñamos por función. El contenido exacto de cada uno se acuerda con usted en la etapa de fuentes y definiciones; no partimos de plantillas genéricas ni prometemos resultados por adelantado.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Dirección general</h3>
+        <p>Indicadores consolidados del negocio, resultado del período y desviaciones frente a lo planificado, en una sola vista ejecutiva.</p>
+      </div>
+      <div class="card">
+        <h3>Operaciones</h3>
+        <p>Órdenes en curso, cumplimiento de fechas, cuellos de botella y carga de trabajo por equipo o planta.</p>
+      </div>
+      <div class="card">
+        <h3>Finanzas</h3>
+        <p>Flujo de caja, cuentas por cobrar y por pagar con antigüedad de saldos, y ejecución presupuestaria por centro de costo.</p>
+      </div>
+      <div class="card">
+        <h3>Servicio y SLA</h3>
+        <p>Tickets por estado, tiempos de respuesta y resolución frente a los acuerdos de servicio comprometidos con cada cliente.</p>
+      </div>
+      <div class="card">
+        <h3>Ventas</h3>
+        <p>Embudo comercial, cumplimiento de metas por vendedor y territorio, y tendencia de pedidos por producto.</p>
+      </div>
+      <div class="card">
+        <h3>Inventario</h3>
+        <p>Existencias por bodega, rotación, quiebres de stock y productos sin movimiento que inmovilizan capital.</p>
+      </div>
+      <div class="card">
+        <h3>Compras</h3>
+        <p>Órdenes por proveedor, tiempos de entrega, cumplimiento y concentración de proveedores críticos.</p>
+      </div>
+      <div class="card">
+        <h3>Inteligencia competitiva</h3>
+        <p>Precios, catálogo y movimientos de competidores monitoreados de forma sistemática, siempre a partir de fuentes públicas y autorizadas.</p>
+        <a class="link-more" href="/inteligencia-competitiva/">Ver inteligencia competitiva →</a>
+      </div>
+    </div>
+    <div class="note"><b>Sobre la evidencia.</b> Presentamos estas áreas como ejemplos de alcance, no como casos con cifras. Los casos que sí documentamos — con método, entregables y grabación — están en <a href="/casos/">Casos</a>.</div>
+  </div></section>
+
+  <!-- METODOLOGÍA -->
+  <section class="forest"><div class="wrap">
+    <p class="sec-k">Metodología</p>
+    <h2>Cómo construimos un proyecto de BI</h2>
+    <p class="sec-sub">Cinco etapas con entregables verificables en cada una. El método de trabajo completo de la firma está descrito en <a href="/metodologia/">Metodología</a>.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>Fuentes y definiciones</h3>
+        <p>Inventariamos sistemas y archivos, acordamos la definición de cada indicador con su responsable y la dejamos por escrito. Aquí se evitan las discusiones futuras.</p>
+      </div>
+      <div class="step">
+        <h3>Modelo de datos</h3>
+        <p>Construimos el esquema estrella: hechos, dimensiones, granularidad y reglas de carga. En esta etapa se decide el rendimiento y la consistencia del tablero.</p>
+      </div>
+      <div class="step">
+        <h3>Medidas e indicadores</h3>
+        <p>Escribimos las medidas DAX contra las definiciones acordadas y las contrastamos con cifras que el negocio ya conoce y confía.</p>
+      </div>
+      <div class="step">
+        <h3>Validación con el negocio</h3>
+        <p>Los usuarios comparan el tablero contra sus reportes actuales hasta cerrar cada diferencia. Nada pasa a producción con cifras en disputa.</p>
+      </div>
+      <div class="step">
+        <h3>Operación y actualización</h3>
+        <p>Programamos la actualización automática, monitoreamos las cargas y documentamos el traspaso. La operación continua puede quedar con su equipo o con <a href="/operacion-administrada/">nuestra operación administrada</a>.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- SEÑALES DE UN BI SANO -->
+  <section><div class="wrap">
+    <p class="sec-k">Diagnóstico</p>
+    <h2>Señales de un BI sano</h2>
+    <div class="cols2">
+      <div>
+        <p class="sec-sub">Antes de rediseñar tableros conviene diagnosticar. Estas cinco señales distinguen una capa de decisión confiable de una colección de gráficos. Si alguna falta en su organización, ese es el punto de partida natural de la conversación.</p>
+        <ul class="checks">
+          <li><b>Una sola definición por indicador.</b> «Venta neta» significa lo mismo en finanzas, ventas y dirección; la definición vive en un diccionario, no en la memoria de una persona.</li>
+          <li><b>Actualización automática.</b> Nadie copia y pega datos un lunes por la mañana; las cargas corren solas y avisan cuando fallan.</li>
+          <li><b>Responsable claro por dato.</b> Cada fuente e indicador tiene un dueño con nombre, encargado de su calidad y vigencia.</li>
+          <li><b>Documentación viva.</b> Modelo, medidas y reglas de carga están documentados y se actualizan con cada cambio.</li>
+          <li><b>Control de acceso.</b> Cada rol ve lo que le corresponde; los datos sensibles tienen permisos definidos y auditables.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="note demo"><b>La capa de decisión empieza en la captura.</b> En nuestro caso Capturista Digital, una factura enviada por WhatsApp se convierte en un registro estructurado en alrededor de 4 segundos por documento — medido y grabado en video. Ese mismo principio, datos que entran limpios desde el origen, es la base de cualquier tablero confiable.<br><a class="link-more" href="/procesamiento-automatico-facturas/">Conocer la solución →</a></div>
+        <div class="note"><b>Quién dirige la práctica.</b> Humberto Henríquez, fundador de Optimatiza: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence, con más de 8 años automatizando operaciones empresariales. <a href="/nosotros/">Conocer la firma →</a></div>
+        <div class="pills plain">
+          <span>Power BI</span><span>Power Query</span><span>DAX</span><span>SQL</span><span>SharePoint</span><span>Power Automate</span><span>n8n</span><span>APIs</span><span>M365</span>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- FAQ -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Preguntas frecuentes</p>
+    <h2>Data &amp; BI: lo que suelen preguntarnos</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Trabajan únicamente con Power BI?</summary>
+        <p class="fa">Power BI es nuestra herramienta principal de visualización por su integración con Microsoft 365 y su adopción en entornos corporativos. La capa de datos es independiente de la herramienta: integramos SQL, SharePoint, APIs y automatizaciones con <a href="/power-automate/">Power Automate</a> o <a href="/n8n/">n8n</a>, de modo que el modelo de datos sobreviva a un cambio de visualizador. El detalle técnico está en la <a href="/power-bi/">página de Power BI</a>.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si nuestros datos están repartidos entre Excel y varios sistemas?</summary>
+        <p class="fa">Es el punto de partida más común, no un impedimento. La etapa de <a href="/integracion-sistemas/">integración</a> conecta esas fuentes con Power Query, SQL y APIs, y deja cada carga programada y documentada. No necesita migrar de sistema para tener un tablero confiable; necesita un modelo que consolide lo que ya existe.</p>
+      </details>
+      <details>
+        <summary>¿Quién mantiene el tablero después de la entrega?</summary>
+        <p class="fa">Usted decide. Documentamos el modelo, las medidas y las cargas para que su equipo pueda operarlo, o lo operamos nosotros bajo el servicio de <a href="/operacion-administrada/">operación administrada</a>: monitoreo de actualizaciones, atención de fallos y mejoras por período.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tarda un proyecto de BI?</summary>
+        <p class="fa">Depende del número de fuentes y del estado de los datos, por lo que no publicamos plazos genéricos. La primera etapa — fuentes y definiciones — cierra con un plan de alcance y calendario específico para su caso, antes de comprometer el proyecto completo.</p>
+      </details>
+    </div>
+  </div></section>
+
+  <!-- CTA FINAL -->
+  <section><div class="wrap">
+    <div class="cta-band">
+      <span class="ck">Próximo paso</span>
+      <h2>Convierta sus datos en una capa de decisión</h2>
+      <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador (GMT-6).</p>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    </div>
+  </div></section>
+</main>
+
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Centro de recursos</a>
+      <a href="/agentes/">Demos interactivos</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
+</div></footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+</body>
+</html>

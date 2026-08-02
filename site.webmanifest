@@ -1,11 +1,11 @@
 {
-  "name": "Optimatiza — Agentes de IA y Automatización",
+  "name": "Optimatiza — Automatización empresarial e inteligencia competitiva",
   "short_name": "Optimatiza",
-  "description": "Fabricamos agentes de IA que hacen el trabajo.",
+  "description": "Automatizamos su operación y convertimos información en ventaja competitiva.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A0F1A",
-  "theme_color": "#0A0F1A",
+  "background_color": "#F6F1E8",
+  "theme_color": "#183F35",
   "icons": [
     {
       "src": "/img/logo-badge-192.png",
