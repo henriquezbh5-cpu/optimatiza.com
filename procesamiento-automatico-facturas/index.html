@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Procesamiento Automático de Facturas con IA para Empresas | Optimatiza</title>
-  <meta name="description" content="Procesamiento automático de facturas para cuentas por pagar de alto volumen: extracción con IA, validación contra la orden de compra y registro en su ERP. Con DTE El Salvador.">
+  <meta name="theme-color" content="#F6F1E8">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Procesamiento Automático de Facturas con IA | Optimatiza</title>
+  <meta name="description" content="Procesamiento automático de facturas: extracción con IA, validación contra la orden de compra y registro en su ERP. Con DTE El Salvador.">
   <link rel="canonical" href="https://optimatiza.com/procesamiento-automatico-facturas/">
   <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Procesamiento Automático de Facturas con IA para Empresas | Optimatiza">
+  <meta property="og:title" content="Procesamiento Automático de Facturas con IA | Optimatiza">
   <meta property="og:description" content="Cuentas por pagar sin digitado manual: la factura llega por correo o DTE, los datos se extraen, se validan contra la orden de compra y se registran en su ERP.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/procesamiento-automatico-facturas/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Procesamiento Automático de Facturas con IA para Empresas | Optimatiza">
+  <meta name="twitter:title" content="Procesamiento Automático de Facturas con IA | Optimatiza">
   <meta name="twitter:description" content="Cuentas por pagar sin digitado manual: la factura llega por correo o DTE, los datos se extraen, se validan contra la orden de compra y se registran en su ERP.">
   <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
   <style>
@@ -285,37 +290,37 @@
     {
       "@type": "Question",
       "name": "¿Funciona con los DTE (documentos tributarios electrónicos) de El Salvador?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los DTE viajan como JSON estructurado del Ministerio de Hacienda, así que se leen directamente, sin OCR ni interpretación, y se validan NIT, IVA y totales contra el documento oficial. Para facturas en papel, PDF escaneado o foto se usa extracción con IA de visión."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los DTE viajan como JSON estructurado del Ministerio de Hacienda, así que los leemos directamente, sin OCR ni interpretación, y validamos NIT, IVA y totales contra el documento oficial. Para facturas en papel, PDF escaneado o foto usamos extracción con IA de visión."}
     },
     {
       "@type": "Question",
       "name": "¿Qué volumen mensual justifica automatizar cuentas por pagar?",
-      "acceptedAnswer": {"@type": "Answer", "text": "El caso se sostiene cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de facturas al mes en adelante, o menos volumen pero con varios sistemas que hoy se sincronizan a mano. Por debajo de ese punto, la automatización rara vez compensa el esfuerzo de implementación y así se indica en el diagnóstico."}
+      "acceptedAnswer": {"@type": "Answer", "text": "El caso se sostiene cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de facturas al mes en adelante, o menos volumen pero con varios sistemas que hoy se sincronizan a mano. Por debajo de ese punto, la automatización rara vez compensa el esfuerzo de implementación y lo decimos en el diagnóstico."}
     },
     {
       "@type": "Question",
       "name": "¿Qué pasa si una factura llega ilegible o incompleta?",
-      "acceptedAnswer": {"@type": "Answer", "text": "El sistema no adivina: marca la factura como excepción y la enruta a la persona responsable del equipo, con la imagen original, para que decida. Nada se registra en el sistema sin pasar la validación."}
+      "acceptedAnswer": {"@type": "Answer", "text": "El sistema no adivina: la marca como excepción y la enruta a la persona responsable de su equipo, con la imagen original, para que decida. Nada se registra en su sistema sin pasar la validación."}
     },
     {
       "@type": "Question",
       "name": "¿Cómo evita duplicados y pagos dobles?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Antes de registrar, cruza número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si el documento ya existe, no se duplica el registro y se notifica al responsable."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Antes de registrar, cruza número de documento, NIT del proveedor y monto contra lo ya registrado (en DTE, también el código de generación). Si el documento ya existe, no se duplica el registro y se notifica al responsable."}
     },
     {
       "@type": "Question",
       "name": "¿Se integra con nuestro ERP o sistema contable?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Sí, por API, base de datos o conectores de Power Automate y n8n. Si el sistema no expone API, se evalúan alternativas en el diagnóstico. Cuando parte del proceso vive todavía en hojas de cálculo, el registro también puede llegar ahí, ordenado y con respaldo, mientras se completa la integración."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí, por API, base de datos o conectores de Power Automate y n8n. Si el sistema no expone API, evaluamos alternativas en el diagnóstico. Cuando parte del proceso vive todavía en hojas de cálculo, el registro también puede llegar ahí, ordenado y con respaldo, mientras se completa la integración."}
     },
     {
       "@type": "Question",
       "name": "¿Cuánto tarda la implementación?",
-      "acceptedAnswer": {"@type": "Answer", "text": "La captura y registro de facturas tiene un alcance típico de 1 a 2 semanas. Con validación contra orden de compra, aprobaciones e integración con el ERP, el alcance típico es de 2 a 4 semanas. Se trabaja con pagos por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."}
+      "acceptedAnswer": {"@type": "Answer", "text": "La captura y registro de facturas tiene un alcance típico de 1–2 semanas. Con validación contra orden de compra, aprobaciones e integración con el ERP, el alcance típico es de 2–4 semanas. Se trabaja con pagos por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."}
     },
     {
       "@type": "Question",
       "name": "¿Esto reemplaza al equipo de contabilidad?",
-      "acceptedAnswer": {"@type": "Answer", "text": "No. Se encarga del trabajo repetitivo de capturar y validar; el equipo conserva las decisiones, la relación con proveedores y las tareas que exigen criterio, como aprobar pagos, negociar condiciones y resolver excepciones."}
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Se encarga del trabajo repetitivo de capturar y validar; su equipo conserva las decisiones, la relación con proveedores y las tareas que exigen criterio, como aprobar pagos, negociar condiciones y resolver excepciones."}
     }
   ]
 }

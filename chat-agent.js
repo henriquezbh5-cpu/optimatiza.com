@@ -12,15 +12,15 @@
 
   function lang() { try { return localStorage.getItem('preferred-lang') === 'en' ? 1 : 0; } catch (e) { return 0; } }
   var T = {
-    open:   ['Habla con Nova', 'Chat with Nova'],
+    open:   ['Hable con Nova', 'Chat with Nova'],
     title:  ['NOVA · AGENTE EN LÍNEA', 'NOVA · AGENT ONLINE'],
     note:   ['Este chat es un agente real de Optimatiza — como los que instalamos.', 'This chat IS a real Optimatiza agent — like the ones we build.'],
-    hello:  ['¡Hola! Soy Nova, el agente de Optimatiza. Cuéntame: ¿qué proceso te está comiendo horas en tu negocio?', 'Hi! I’m Nova, Optimatiza’s agent. Tell me: which process is eating your team’s hours?'],
-    ph:     ['Escribe tu pregunta…', 'Type your question…'],
+    hello:  ['¡Hola! Soy Nova, el agente de Optimatiza. Cuénteme: ¿qué proceso le está consumiendo horas?', 'Hi! I’m Nova, Optimatiza’s agent. Tell me: which process is eating your team’s hours?'],
+    ph:     ['Escriba su pregunta…', 'Type your question…'],
     send:   ['Enviar', 'Send'],
     chips:  [['¿Cuánto cuesta un agente?', '¿Qué agentes tienen?', 'Quiero un diagnóstico gratis'],
              ['How much does an agent cost?', 'What agents do you offer?', 'I want a free diagnostic']],
-    err:    ['No pude conectar en este momento. Escríbenos directo por WhatsApp y te respondemos en minutos →', 'I couldn’t connect right now. Message us on WhatsApp and we’ll reply in minutes →'],
+    err:    ['No pude conectar en este momento. Escríbanos directo por WhatsApp y le respondemos en minutos →', 'I couldn’t connect right now. Message us on WhatsApp and we’ll reply in minutes →'],
     wa:     ['Abrir WhatsApp', 'Open WhatsApp'],
     close:  ['Cerrar chat', 'Close chat']
   };
@@ -42,7 +42,7 @@
       '<div class="nv-log" id="nvLog" role="log" aria-live="polite"></div>' +
       '<div class="nv-chips" id="nvChips"></div>' +
       '<form class="nv-input" id="nvForm">' +
-        '<input id="nvText" autocomplete="off" maxlength="600" aria-label="Escribe tu mensaje para Nova">' +
+        '<input id="nvText" autocomplete="off" maxlength="600" aria-label="Escriba su mensaje para Nova">' +
         '<button type="submit" class="nv-send mono" id="nvSend"></button>' +
       '</form>' +
     '</div>';
@@ -122,7 +122,7 @@
       hintEl.className = 'nv-hint';
       hintEl.type = 'button';
       hintEl.innerHTML = '<b>' + (lang() ? 'Questions? I\u2019m Nova' : '\u00bfHablamos? Soy Nova') + '</b>' +
-        (lang() ? 'Ask me about agents \u0026 pricing' : 'Preg\u00fantame por agentes y precios');
+        (lang() ? 'Ask me about agents \u0026 pricing' : 'Preg\u00fanteme por agentes y precios');
       hintEl.addEventListener('click', function () { hideHint(); toggle(true); });
       root.appendChild(hintEl);
       requestAnimationFrame(function () { hintEl && hintEl.classList.add('on'); });

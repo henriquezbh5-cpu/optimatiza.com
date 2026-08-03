@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#F6F1E8">
   <title>Asesoría Bitcoin de operador a operador | Optimatiza</title>
   <meta name="description" content="Asesoría Bitcoin desde 2017: aprende a operar, acompañamiento mensual o gestión de portafolio bajo mandato. Sin custodia, sin promesas de rendimiento. El Salvador.">
   <link rel="canonical" href="https://optimatiza.com/bitcoin/">
@@ -11,6 +16,8 @@
   <meta property="og:description" content="Aprende, te acompaño o gestiono bajo mandato. Sin custodia, sin promesas de rendimiento.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/bitcoin/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
   <link rel="preload" href="../fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -31,14 +38,16 @@
     .btcm{padding-top:0}
     .btcm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:8px}
     .btcm-card{background:var(--paper-1);border:1px solid var(--line);border-radius:var(--r-0);padding:20px 22px}
-    .btcm-card h3{font-family:var(--ff-display);color:var(--amber-ink);font-size:16px;margin:0 0 8px}
+    .btcm-card h3,.btcm-card h2{font-family:var(--ff-display);color:var(--amber-ink);font-size:16px;margin:0 0 8px}
     .btcm-card p{color:var(--ink-body);font-size:13.8px;margin:0}
-    .btcm-list{margin:10px 0 0;padding-left:18px;color:var(--ink-dim);font-size:13px}
+    .btcm-card p a{text-decoration:underline;text-underline-offset:2px}
+    .btcm-list{margin:10px 0 0;padding-left:18px;color:#5B6B60;font-size:13px}
     .btcm-list li{margin:3px 0}
     .btcm-proximamente{margin-top:20px;background:rgba(247,147,26,.07);border:1px solid rgba(247,147,26,.25);border-radius:var(--r-0);padding:18px 22px}
     .btcm-proximamente h3{font-family:var(--ff-display);color:var(--ink);font-size:16px;margin:0 0 6px}
     .btcm-proximamente p{color:var(--ink-body);font-size:13.5px;margin:0}
-    .btcm-aviso{margin-top:16px;color:var(--ink-dim);font-size:12px;max-width:90ch;line-height:1.6}
+    .btcm-aviso{margin-top:16px;color:#5B6B60;font-size:12.5px;max-width:90ch;line-height:1.6}
+    .btc-annex .btc-note{color:#5B6B60 !important;font-size:12px !important}
 
   </style>
 </head>
@@ -54,7 +63,7 @@
         <div class="container">
             <div class="ch-head rv"><span class="ch-index" data-i18n="ch-btc">ASESORÍA BITCOIN · OPTIMATIZA</span><span class="ch-rule rule-x"></span></div>
             <header class="section-header rv">
-                <h2 class="section-title"><span class="line-mask"><span class="line" data-i18n="btc-title">Asesoría Bitcoin, de operador a operador.</span></span></h2>
+                <h1 class="section-title"><span class="line-mask"><span class="line" data-i18n="btc-title">Asesoría Bitcoin, de operador a operador.</span></span></h1>
                 <p class="section-subtitle" data-i18n="btc-sub">Opero Bitcoin desde 2017 — y sigo operando activamente. Gestiono portafolio propio y más de 30 carteras de clientes bajo mandato privado, con indicadores automatizados que estudian el comportamiento histórico del mercado para proyectar escenarios. Elige cuánto quieres delegar: aprender, acompañarte o que opere por ti.</p>
             </header>
 
@@ -67,11 +76,11 @@
             </aside>
 
             <!-- Cómo empezar (embudo real) -->
-            <div class="btcm-grid rv" style="margin:22px 0 26px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))" aria-label="Cómo empezar">
-                <article class="btcm-card"><h3>1 · Certifícate gratis</h3><p>Completa los módulos y quizzes de <a href="https://bitcoinacademy.tech" target="_blank" rel="noopener" style="color:var(--steel)">bitcoinacademy.tech</a>. Es gratis y a tu ritmo — ahí aprendes lo básico que ningún asesor serio debería saltarse.</p></article>
-                <article class="btcm-card"><h3>2 · Envíame tu captura</h3><p>Mándame por WhatsApp la captura de tu avance o certificado. Con eso sé desde dónde partimos y la conversación vale el doble.</p></article>
-                <article class="btcm-card"><h3>3 · Agendamos la llamada</h3><p>Revisamos tu situación, el momento del ciclo y qué plan te conviene — o si te conviene esperar. Sin compromiso.</p></article>
-            </div>
+            <section class="btcm-grid rv" style="margin:22px 0 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))" aria-label="Cómo empezar">
+                <article class="btcm-card"><h2>1 · Certifícate gratis</h2><p>Completa los módulos y quizzes de <a href="https://bitcoinacademy.tech" target="_blank" rel="noopener" style="color:var(--steel)">bitcoinacademy.tech</a>. Es gratis y a tu ritmo — ahí aprendes lo básico que ningún asesor serio debería saltarse.</p></article>
+                <article class="btcm-card"><h2>2 · Envíame tu captura</h2><p>Mándame <a href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fbitcoin%20%E2%80%94%20aqu%C3%AD%20est%C3%A1%20mi%20captura%20de%20Bitcoin%20Academy%20y%20quiero%20agendar%20la%20llamada." target="_blank" rel="noopener" style="color:var(--steel)">por WhatsApp</a> la captura de tu avance o certificado. Con eso sé desde dónde partimos y la conversación vale el doble.</p></article>
+                <article class="btcm-card"><h2>3 · Agendamos la llamada</h2><p>Revisamos tu situación, el momento del ciclo y qué plan te conviene — o si te conviene esperar. Sin compromiso.</p></article>
+            </section>
 
             <div class="btc-grid">
                 <article class="btc-card rv">
@@ -88,7 +97,7 @@
                         <li data-i18n="btc-p1-f4">Estudio del mercado en vivo sobre el panel automatizado</li>
                         <li data-i18n="btc-p1-f5">Plan de ciclo: zonas de suelo para comprar y posible techo histórico para vender</li>
                     </ul>
-                    <a class="btn btn-btc btn-btc-ghost mono" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%20y%20quiero%20reservar%20la%20Inmersi%C3%B3n%20Bitcoin%20de%203%20horas%20%28%24200%29." target="_blank" rel="noopener" data-i18n="btc-p1-cta">Reservar inmersión →</a>
+                    <a class="btn btn-btc btn-btc-ghost mono" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fbitcoin%20y%20quiero%20reservar%20la%20Inmersi%C3%B3n%20Bitcoin%20de%203%20horas%20%28%24200%29." target="_blank" rel="noopener" data-i18n="btc-p1-cta">Reservar inmersión →</a>
                 </article>
 
                 <article class="btc-card btc-featured rv">
@@ -106,7 +115,7 @@
                         <li data-i18n="btc-p2-f3">Ajuste de tu plan: acumular, esperar o tomar ganancia</li>
                         <li data-i18n="btc-p2-f4">Tú mantienes el control: compras y vendes con tu propio criterio</li>
                     </ul>
-                    <a class="btn btn-btc mono" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%20y%20me%20interesa%20el%20acompa%C3%B1amiento%20Bitcoin%20%28%24100%2Fmes%20o%20%24900%2Fa%C3%B1o%29." target="_blank" rel="noopener" data-i18n="btc-p2-cta">Empezar acompañamiento →</a>
+                    <a class="btn btn-btc mono" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fbitcoin%20y%20me%20interesa%20el%20acompa%C3%B1amiento%20Bitcoin%20%28%24100%2Fmes%20o%20%24900%2Fa%C3%B1o%29." target="_blank" rel="noopener" data-i18n="btc-p2-cta">Empezar acompañamiento →</a>
                 </article>
 
                 <article class="btc-card btc-fund rv">
@@ -127,7 +136,7 @@
                     </ul>
                     <p class="btc-example mono" data-i18n="btc-p3-example">EJEMPLO: INVIERTES $10,000 Y EL CICLO RINDE +100% → GANANCIA $10,000. TÚ RECIBES $7,500 (TOTAL $17,500); LA GESTIÓN, $2,500.</p>
                     <p class="btc-example btc-rule mono" data-i18n="btc-p3-rule">REGLA DE LA CASA: SI EL CICLO ESTÁ EN ZONA DE RIESGO, ESTA OPCIÓN SE DESACTIVA. NO RECIBO CAPITAL CUANDO EL MERCADO NO OFRECE UNA ENTRADA RAZONABLE — TU DINERO ESPERA MEJOR MOMENTO, NO LO CONTRARIO.</p>
-                    <a class="btn btn-btc mono" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%20y%20quiero%20aplicar%20a%20la%20Gesti%C3%B3n%20de%20Portafolio%20Bitcoin%20%2875%2F25%29." target="_blank" rel="noopener" data-i18n="btc-p3-cta">Aplicar a gestión →</a>
+                    <a class="btn btn-btc mono" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20optimatiza.com%2Fbitcoin%20y%20quiero%20aplicar%20a%20la%20Gesti%C3%B3n%20de%20Portafolio%20Bitcoin%20%2875%2F25%29." target="_blank" rel="noopener" data-i18n="btc-p3-cta">Aplicar a gestión →</a>
                 </article>
             </div>
 

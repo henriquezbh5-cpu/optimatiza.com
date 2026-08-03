@@ -70,11 +70,11 @@
       if (!r.ok) throw new Error(r.status);
       cform.reset();
       btn.textContent = '✓ Enviado';
-      note.textContent = '¡Recibido! Te respondemos en horas por el medio que dejaste.';
+      note.textContent = 'Recibido. Le respondemos en horario hábil por el medio que indicó.';
       note.classList.add('ok');
     }).catch(function () {
-      btn.disabled = false; btn.textContent = 'Enviar — te respondemos en horas';
-      note.textContent = 'No se pudo enviar. Escríbenos directo por WhatsApp: +503 7192 8070.';
+      btn.disabled = false; btn.textContent = 'Enviar solicitud';
+      note.textContent = 'No se pudo enviar. Escríbanos directo por WhatsApp: +503 7192 8070.';
     });
   });
 
@@ -112,7 +112,7 @@
     rng.textContent = fmt(lo) + ' – ' + fmt(hi);
     var msg = 'Hola, arme mi equipo en el cotizador: ' + names.join(' + ') +
       ' (rango publicado ' + fmt(lo) + '–' + fmt(hi) +
-      '). Quiero el diagnostico gratis para la cotizacion exacta.';
+      '). Quiero el diagnóstico ejecutivo para la cotización exacta.';
     wa.href = 'https://wa.me/50371928070?text=' + encodeURIComponent(msg);
   }
   boxes.forEach(function (b) { b.addEventListener('change', upd); });
@@ -165,7 +165,7 @@
         document.getElementById('aiWhy').textContent = why;
         document.getElementById('aiRes').hidden = false;
         var msg = 'Hola, simulé mi caso en el cotizador: "' + desc.slice(0, 220) + '"' +
-          ' (estimado ' + label + ', ' + fmt(band.lo) + '–' + fmt(band.hi) + '). Quiero el diagnóstico gratis.';
+          ' (estimado ' + label + ', ' + fmt(band.lo) + '–' + fmt(band.hi) + '). Quiero el diagnóstico ejecutivo.';
         wa.href = 'https://wa.me/50371928070?text=' + encodeURIComponent(msg);
       }
     });
