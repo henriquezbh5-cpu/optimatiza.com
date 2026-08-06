@@ -31,7 +31,7 @@
   root.id = 'nova';
   root.innerHTML =
     '<button class="nv-fab" id="nvFab" aria-label="' + t('open') + '" aria-expanded="false">' +
-      '<img src="img/logo-badge-96.png" alt="" width="46" height="46"><span class="nv-dot" aria-hidden="true"></span>' +
+      '<img src="/img/logo-badge-96.png" alt="" width="46" height="46"><span class="nv-dot" aria-hidden="true"></span>' +
     '</button>' +
     '<div class="nv-panel" id="nvPanel" role="dialog" aria-label="Nova" hidden>' +
       '<header class="nv-head mono">' +
