@@ -179,15 +179,15 @@
     <h2 id="t-flow">Así ataca el problema un recordatorio con confirmación</h2>
     <p class="h2sub">La inasistencia casi nunca es mala intención: es olvido y falta de un canal fácil para avisar. El flujo completo, sin que su recepción haga una sola llamada:</p>
     <div class="flow">
-      <div class="chip"><span class="i">📅</span>Cita agendada en su sistema</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3.5v4M16 3.5v4"/></svg></span>Cita agendada en su sistema</div>
       <span class="arrow" aria-hidden="true">→</span>
-      <div class="chip"><span class="i">⏰</span>Recordatorio automático por WhatsApp 24–48 h antes</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span>Recordatorio automático por WhatsApp 24–48 h antes</div>
       <span class="arrow" aria-hidden="true">→</span>
-      <div class="chip"><span class="i">💬</span>El paciente responde con un toque</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>El paciente responde con un toque</div>
     </div>
     <div class="branch">
-      <div class="br br-ok"><b>✅ «Sí llego»</b>La cita queda confirmada y su agenda del día es confiable. Su equipo se entera sin perseguir a nadie.</div>
-      <div class="br br-re"><b>🔄 «No puedo»</b>El flujo ofrece reagendar ahí mismo y avisa a su recepción: el espacio se libera con horas de anticipación, cuando todavía se puede reasignar.</div>
+      <div class="br br-ok"><b>«Sí llego»</b>La cita queda confirmada y su agenda del día es confiable. Su equipo se entera sin perseguir a nadie.</div>
+      <div class="br br-re"><b>«No puedo»</b>El flujo ofrece reagendar ahí mismo y avisa a su recepción: el espacio se libera con horas de anticipación, cuando todavía se puede reasignar.</div>
     </div>
     <p class="note">¿Quiere verlo en movimiento? Hay un demo del recordatorio anti-inasistencia en <a href="../../casos/">nuestra página de demos</a> — es una animación ilustrativa; su flujo se construye a medida sobre su agenda real. Más contexto para su sector en <a href="../../clinicas/">la página para clínicas</a>.</p>
   </section>
@@ -195,13 +195,13 @@
   <section aria-labelledby="t-pasos">
     <h2 id="t-pasos">Cómo lo implementamos</h2>
     <div class="pasos">
-      <div class="chip"><span class="i">💬</span>Diagnóstico ejecutivo sin costo (20–30 min)</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span>Diagnóstico ejecutivo sin costo (20–30 min)</div>
       <span class="arrow" aria-hidden="true">→</span>
-      <div class="chip"><span class="i">🔧</span>Conectamos su agenda y armamos los mensajes con su tono</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4.5 4.5 0 0 0 6.5.4l2.5-2.5a4.5 4.5 0 0 0-6.4-6.4L11.4 6"/><path d="M14 11a4.5 4.5 0 0 0-6.5-.4L5 13.1a4.5 4.5 0 0 0 6.4 6.4L12.6 18"/></svg></span>Conectamos su agenda y armamos los mensajes con su tono</div>
       <span class="arrow" aria-hidden="true">→</span>
-      <div class="chip"><span class="i">👀</span>Lo prueba con pacientes reales</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg></span>Lo prueba con pacientes reales</div>
       <span class="arrow" aria-hidden="true">→</span>
-      <div class="chip"><span class="i">✅</span>Corre solo; su equipo conserva las decisiones</div>
+      <div class="chip"><span class="i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.4"/><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.6"/><path d="M4 20v-4.6h4.6M20 4v4.6h-4.6"/></svg></span>Corre solo; su equipo conserva las decisiones</div>
     </div>
     <p class="note">El flujo se encarga del trabajo repetitivo de recordar y confirmar; su equipo conserva las decisiones, las relaciones con los pacientes y todo lo que requiere criterio clínico.</p>
   </section>
@@ -224,7 +224,7 @@
   <section aria-labelledby="t-precio">
     <h2 id="t-precio">Cómo se dimensiona la solución</h2>
     <div class="price">
-      <div class="ph"><b>🔔 Recordatorio Anti-Inasistencia (unidad simple)</b><span class="pp">1–2 semanas</span></div>
+      <div class="ph"><b>Recordatorio Anti-Inasistencia (unidad simple)</b><span class="pp">1–2 semanas</span></div>
       <p>Recordatorio con confirmación conectado a su agenda, mensajes con el tono de su clínica, pruebas con pacientes reales y entrega documentada.</p>
       <ul>
         <li>Pagos por hitos: al iniciar, en demo funcional y en producción.</li>

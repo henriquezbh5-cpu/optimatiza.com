@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>La IA como colaboradora del analista | Optimatiza</title>
+  <meta name="description" content="Cómo aplicamos IA en inteligencia competitiva: qué hace bien, qué no debe hacer, verificación obligatoria de cada dato y firma humana en todo entregable.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/inteligencia-competitiva/ia-analista/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/corp.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="La IA como colaboradora del analista | Optimatiza">
+  <meta property="og:description" content="La IA multiplica al analista de inteligencia competitiva; no lo sustituye. Verificación obligatoria, biblioteca de prompts y firma humana en cada entregable.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/inteligencia-competitiva/ia-analista/">
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="La IA como colaboradora del analista | Optimatiza">
+  <meta name="twitter:description" content="La IA multiplica al analista de inteligencia competitiva; no lo sustituye. Verificación obligatoria, biblioteca de prompts y firma humana en cada entregable.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Inteligencia competitiva", "item": "https://optimatiza.com/inteligencia-competitiva/"},
+      {"@type": "ListItem", "position": 3, "name": "La IA como colaboradora del analista", "item": "https://optimatiza.com/inteligencia-competitiva/ia-analista/"}
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Soluciones</button>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Inteligencia competitiva</button>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true" aria-expanded="false">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
+
+<main id="contenido">
+
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  <a href="/inteligencia-competitiva/">Inteligencia competitiva</a><span aria-hidden="true">/</span>
+  La IA como colaboradora del analista
+</nav></div>
+
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> Inteligencia competitiva · Método</p>
+  <h1>La IA como colaboradora del analista</h1>
+  <p class="lead"><b>La inteligencia artificial multiplica la capacidad de lectura, ordenamiento y redacción de un equipo de inteligencia. No reemplaza el criterio de quien firma la recomendación.</b> Aquí está qué le encargamos a un modelo, qué nunca le encargamos y cómo se verifica lo que produce.</p>
+  <p class="lead">No vendemos un oráculo: vendemos un proceso con responsables, evidencia trazable y un paso de verificación presupuestado como trabajo.</p>
+</div></div>
+
+<!-- 1. LA POSTURA -->
+<section><div class="wrap">
+  <p class="sec-k">La postura</p>
+  <h2>La IA multiplica al analista; no lo sustituye</h2>
+  <p class="sec-sub">Un modelo lee en horas lo que un equipo no alcanza en semanas, y lo ordena siempre en la misma plantilla. Eso es valioso y medible. Lo que un modelo no tiene es responsabilidad: no rinde cuentas por una decisión de inversión, de precio o de entrada a un mercado.</p>
+  <p class="quote">La recomendación se firma con nombre humano. Si nadie está dispuesto a poner su nombre, el hallazgo no está listo para salir.</p>
+  <ul class="checks">
+    <li><b>Ningún entregable sale con firma de máquina.</b> Cada informe, battlecard o alerta lleva nombre del analista y fecha de revisión.</li>
+    <li><b>La IA no predice lo que hará su competidor.</b> Propone hipótesis a partir de señales observables; el analista decide cuáles resisten contraste.</li>
+    <li><b>La productividad se gana en el volumen, no en el criterio.</b> El tiempo ahorrado en lectura y formato se reinvierte en verificar y en pensar la recomendación.</li>
+    <li><b>Un hallazgo sin evidencia no se publica.</b> Se publica el vacío: "no lo sabemos todavía" es un resultado legítimo de un ciclo.</li>
+  </ul>
+</div></section>
+
+<!-- 2. QUÉ HACE BIEN Y QUÉ NO -->
+<section class="band"><div class="wrap">
+  <p class="sec-k">Reparto de trabajo</p>
+  <h2>Lo que la IA hace bien y lo que no debe hacer</h2>
+  <p class="sec-sub">La frontera no es filosófica, es operativa: se define por tarea y queda escrita en el procedimiento del programa de inteligencia.</p>
+  <div class="cols2">
+    <div>
+      <h3>Lo que hace bien</h3>
+      <ul class="checks">
+        <li><b>Leer volumen.</b> Reportes sectoriales, boletines de reguladores, prensa y portales de licitaciones en cantidades que ningún equipo cubre a mano.</li>
+        <li><b>Normalizar a formato fijo.</b> Llevar información desordenada a la misma estructura de battlecard o ficha, campo por campo, sin cambiar de criterio.</li>
+        <li><b>Trabajar en varios idiomas.</b> Leer la fuente en su idioma original y entregar en español, sin traducción intermedia.</li>
+        <li><b>Proponer hipótesis.</b> Señalar coincidencias entre movimientos dispersos para que una persona las verifique o las descarte.</li>
+        <li><b>Redactar el primer borrador.</b> Ahorrar la página en blanco, con la estructura del entregable ya puesta.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Lo que no hace y no debe hacer</h3>
+      <ul class="dots">
+        <li><b>Decidir.</b> No aprueba inversiones ni fija el semáforo de una recomendación. Eso corresponde a quien responde por el resultado.</li>
+        <li><b>Dar por cierta una fuente.</b> Que un dato esté publicado no lo vuelve verificado. La jerarquía la fija el plan de fuentes, no el modelo.</li>
+        <li><b>Inventar cifras.</b> Ninguna estimación, ningún redondeo, ninguna analogía con otra empresa para completar un campo vacío.</li>
+        <li><b>Actuar por su cuenta.</b> No envía correos, no contacta prospectos, no publica ni ejecuta acciones fuera del sistema.</li>
+        <li><b>Mezclar hecho e interpretación.</b> La lectura del analista se marca como tal y se separa de la evidencia.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tbl-wrap"><table class="tbl">
+    <thead><tr><th>Paso del ciclo</th><th>Lo ejecuta la IA</th><th>Lo aprueba una persona</th></tr></thead>
+    <tbody>
+      <tr><td><b>Barrido de fuentes y lectura de volumen</b></td><td class="y">Sí</td><td class="n">No es necesario</td></tr>
+      <tr><td><b>Normalización a la plantilla del entregable</b></td><td class="y">Sí</td><td class="n">No es necesario</td></tr>
+      <tr><td><b>Contraste de cada dato contra su fuente</b></td><td class="y">Propone el contraste</td><td class="y">Sí, obligatorio</td></tr>
+      <tr><td><b>Redacción del primer borrador</b></td><td class="y">Sí</td><td class="y">Sí, antes de circular</td></tr>
+      <tr><td><b>Nivel de confianza y semáforo de la recomendación</b></td><td class="n">No lo define</td><td class="y">Sí, siempre</td></tr>
+      <tr><td><b>Envío al decisor</b></td><td class="n">Nunca automático</td><td class="y">Sí, con nombre y fecha</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<!-- 3. VERIFICACIÓN -->
+<section><div class="wrap">
+  <p class="sec-k">Verificación</p>
+  <h2>La verificación es un paso del proceso, no una buena intención</h2>
+  <p class="sec-sub">En un programa serio la verificación tiene horas asignadas, responsable y evidencia de que ocurrió. Si depende de que alguien "revise cuando pueda", no existe.</p>
+  <div class="steps">
+    <div class="step">
+      <h3>Origen por dato</h3>
+      <p>Toda cifra lleva fuente, fecha de consulta y referencia recuperable. Un dato sin origen no entra al entregable, aunque parezca correcto.</p>
+    </div>
+    <div class="step">
+      <h3>Contraste de fuente</h3>
+      <p>Cada afirmación relevante se contrasta contra otra fuente independiente. Si solo existe una, queda etiquetada como fuente única y eso viaja con el dato.</p>
+    </div>
+    <div class="step">
+      <h3>Etiqueta de confianza</h3>
+      <p>Verificado, fuente única o no verificado. La etiqueta se mantiene en el documento final: el decisor debe ver con qué solidez se le habla.</p>
+    </div>
+    <div class="step">
+      <h3>Revisión y firma</h3>
+      <p>El analista revisa antes de que el material salga, corrige y firma. Sin esa firma el entregable no se distribuye.</p>
+    </div>
+  </div>
+  <div class="note"><b>Regla operativa:</b> cuando falta evidencia, el entregable dice "no verificado" y describe qué haría falta para cerrarlo. Un vacío declarado es información útil; un vacío rellenado con una cifra plausible es un riesgo que llega hasta la mesa de dirección.</div>
+  <div class="note demo"><b>Ejemplo ilustrativo</b>, sin relación con ningún cliente ni empresa real. Campo 7 de una battlecard: "Talento y capacidad instalada: <b>no verificado</b>. La empresa no publica número de personal. Para cerrarlo habría que revisar registros públicos del mercado destino." El campo queda abierto; no se estima.</div>
+</div></section>
+
+<!-- 4. BIBLIOTECA DE PROMPTS -->
+<section class="band"><div class="wrap">
+  <p class="sec-k">Biblioteca de prompts</p>
+  <h2>El prompt es un activo de la empresa, no del analista</h2>
+  <p class="sec-sub">Si cada persona improvisa su instrucción, la calidad depende de quién estuvo disponible ese día. Por eso cada entregable tiene su prompt versionado, con marcadores para los datos variables, en una biblioteca con dueño y fecha de revisión. Si rota el analista, el estándar se queda en la empresa.</p>
+
+  <div class="prompt-box">
+    <div class="prompt-head">
+      <b>P-01 · Battlecard de competidor</b>
+      <span class="light light-watch">Revisión humana obligatoria</span>
+    </div>
+<pre>
+ROL
+Actúe como analista de inteligencia competitiva. Trabaje únicamente con
+la evidencia entregada en este hilo. No complete con conocimiento general
+ni con supuestos del sector.
+
+TAREA
+Elabore la battlecard del competidor <span class="ph">[EMPRESA]</span> en el segmento
+<span class="ph">[SEGMENTO]</span>, para el mercado <span class="ph">[MERCADO]</span>.
+
+FUENTES PERMITIDAS
+- Los documentos adjuntos y las fuentes públicas listadas en el plan de
+  fuentes del tema (sitio corporativo, comunicados, registros públicos,
+  prensa sectorial, portales de licitaciones).
+- Prohibido: memoria del modelo, rumores, foros anónimos, inferencia no
+  marcada como tal.
+
+SALIDA — nueve campos, en este orden, sin agregar ni omitir ninguno
+1. Identificación y tamaño
+2. Propuesta de valor declarada (cite la frase textual y su origen)
+3. Portafolio y especialización
+4. Mercados y cuentas visibles
+5. Modelo de precios observable
+6. Certificaciones y cumplimiento
+7. Talento y capacidad instalada
+8. Movimientos de los últimos 12 meses (fecha + hecho + fuente)
+9. Cómo les ganamos: tres argumentos verificables para la mesa de venta
+
+REGLAS
+- Cada dato cierra con [fuente | fecha de consulta].
+- Si un campo no tiene evidencia, escriba exactamente: no verificado.
+  Nunca estime, nunca redondee, nunca complete por analogía.
+- Separe hecho de interpretación: la interpretación va precedida de
+  "Lectura del analista:".
+- Termine con la lista de vacíos de información pendientes de cerrar.
+</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-head">
+      <b>P-02 · Ficha de prospecto</b>
+      <span class="light light-watch">Revisión humana antes de cualquier contacto</span>
+    </div>
+<pre>
+ROL
+Actúe como analista de inteligencia comercial. No es redactor de ventas:
+describa, no persuada.
+
+TAREA
+Construya la ficha del prospecto <span class="ph">[EMPRESA]</span>, del sector
+<span class="ph">[SEGMENTO]</span>, para nuestra entrada al mercado <span class="ph">[MERCADO]</span>.
+
+FUENTES PERMITIDAS
+Sitio corporativo, comunicados oficiales, registros públicos, portales de
+licitaciones, prensa sectorial y perfiles profesionales publicados por su
+titular. Prohibido: datos personales no publicados, información obtenida
+por canales no autorizados, capturas de sistemas de terceros.
+
+SALIDA — seis campos
+1. Empresa y sector: qué hace, tamaño observable, presencia geográfica.
+2. Necesidad detectada: el problema evidenciado y la señal que lo
+   sustenta (convocatoria, vacante, cambio normativo, comunicado).
+3. Proveedor actual: solo si es visible; si no, escriba no verificado.
+4. Criterio de compra dominante: precio, cumplimiento, plazo,
+   especialización o cercanía. Justifique con la evidencia observada.
+5. Puerta de entrada: persona, gremio, evento o convocatoria.
+6. Acción concreta: qué se hace, con fecha propuesta y responsable.
+
+REGLAS
+- Cada campo cierra con [fuente | fecha de consulta].
+- Sin evidencia: no verificado. No infiera facturación, presupuesto ni
+  intención de compra a partir del tamaño o del sector.
+- El campo 6 nunca queda vacío: si no procede avanzar, escriba
+  "descartar por ahora" y el motivo verificable.
+</pre>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-head">
+      <b>P-03 · Resumen ejecutivo con semáforo</b>
+      <span class="light light-stop">No sale sin firma del analista</span>
+    </div>
+<pre>
+ROL
+Actúe como redactor de inteligencia para dirección. Escribe para quien
+dispone de diez minutos y tiene que decidir.
+
+TAREA
+Redacte el resumen ejecutivo del ciclo de vigilancia de <span class="ph">[EMPRESA]</span>
+sobre el mercado <span class="ph">[MERCADO]</span>, a partir de los hallazgos adjuntos.
+
+FUENTES PERMITIDAS
+Solo los hallazgos ya marcados como verificados en el expediente del
+ciclo. Un hallazgo sin verificar no entra al resumen, ni como mención.
+
+SALIDA
+1. Una página. Decisiones primero, evidencia después.
+2. Entre tres y cinco recomendaciones. Cada una con esta estructura:
+   - Recomendación: una frase en imperativo.
+   - Semáforo: avanzar / vigilar / detener.
+   - Por qué ahora: dos líneas.
+   - Evidencia: dos o tres hallazgos con fuente y fecha.
+   - Responsable propuesto y plazo.
+3. Sección "Lo que no sabemos": los vacíos que cambiarían la
+   recomendación si se resolvieran.
+4. Sección "Qué se revisa en el próximo ciclo".
+
+REGLAS
+- Sin adjetivos de venta: nada de líder, revolucionario o estratégico
+  usado como relleno.
+- Ninguna cifra sin origen. Si falta, escriba no verificado y explique
+  qué haría falta para verificarla.
+- No firme el documento. El analista responsable coloca su nombre y la
+  fecha de revisión antes de circularlo.
+</pre>
+  </div>
+
+  <div class="note"><b>Gobierno de la biblioteca:</b> cada prompt tiene número, dueño, versión y fecha de revisión. Cuando un entregable falla, se corrige el prompt, no solo el documento; así el error no se repite en el siguiente ciclo.</div>
+</div></section>
+
+<!-- 5. AGENTE ORQUESTADOR -->
+<section class="forest"><div class="wrap">
+  <p class="sec-k">Arquitectura</p>
+  <h2>El agente orquestador: varios especialistas, reglas fijas, una sola firma</h2>
+  <p class="sec-sub">Cuando el volumen lo justifica, la biblioteca de prompts se vuelve un sistema de agentes coordinados. Cada agente tiene una sola responsabilidad y no invade la del siguiente. El orquestador impone el orden y corta el proceso si un paso no cumple su regla.</p>
+  <div class="cycle">
+    <div class="cycle-step">
+      <h3>Recolector</h3>
+      <p>Recorre las fuentes autorizadas, registra qué consultó y cuándo, y descarta lo que está fuera de la lista blanca.</p>
+    </div>
+    <div class="cycle-step">
+      <h3>Verificador</h3>
+      <p>Contrasta cada dato contra su origen, marca contradicciones y etiqueta la confianza del hallazgo.</p>
+    </div>
+    <div class="cycle-step">
+      <h3>Analista</h3>
+      <p>Cruza hallazgos, propone hipótesis y escenarios, y señala los vacíos que impiden concluir.</p>
+    </div>
+    <div class="cycle-step">
+      <h3>Redactor</h3>
+      <p>Arma el entregable en la plantilla acordada, con la etiqueta de confianza visible en cada campo.</p>
+    </div>
+    <div class="cycle-step">
+      <h3>Revisión y firma</h3>
+      <p>Una persona revisa, corrige y firma. Es el único paso que autoriza la salida del material.</p>
+    </div>
+  </div>
+  <ul class="dots">
+    <li><b>Lista blanca de fuentes.</b> El recolector no navega libremente: consulta lo que el plan autoriza para ese tema.</li>
+    <li><b>Presupuesto de pasos y tiempo.</b> Cada corrida tiene límite; si no termina, se detiene y avisa en lugar de improvisar.</li>
+    <li><b>Sin acciones hacia afuera.</b> Ningún agente envía correos, publica ni escribe en sistemas del cliente.</li>
+    <li><b>Bitácora completa.</b> Queda registro de qué agente hizo qué y con qué fuente, para auditar cualquier afirmación después.</li>
+    <li><b>Nada sale del sistema sin firma humana.</b> Es la regla que no se negocia, ni por urgencia ni por volumen.</li>
+  </ul>
+</div></section>
+
+<!-- 6. TRAZABILIDAD Y GOBIERNO -->
+<section><div class="wrap">
+  <p class="sec-k">Trazabilidad y gobierno</p>
+  <h2>Qué queda registrado y qué información nunca entra al modelo</h2>
+  <p class="sec-sub">Un programa asistido por IA debe poder reconstruir, meses después, de dónde salió cada afirmación; y demostrar qué información de su empresa nunca fue expuesta.</p>
+  <div class="cols2">
+    <div>
+      <h3>Lo que queda registrado</h3>
+      <ul class="checks">
+        <li>Qué fuente se consultó, en qué fecha y con qué resultado.</li>
+        <li>Qué prompt y qué versión produjeron cada entregable.</li>
+        <li>Qué modelo se empleó, por si un hallazgo debe reproducirse.</li>
+        <li>Quién revisó, qué corrigió y cuándo firmó.</li>
+        <li>Período de retención del expediente, acordado por escrito.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Lo que nunca entra al modelo</h3>
+      <ul class="dots">
+        <li>Datos personales de clientes, empleados o prospectos no publicados por su titular.</li>
+        <li>Información confidencial que no sea imprescindible para el análisis contratado.</li>
+        <li>Credenciales, contratos o precios internos bajo acuerdo de confidencialidad, salvo autorización expresa por escrito.</li>
+        <li>Contenido obtenido por accesos no autorizados o suplantación. La restricción queda en el acuerdo de servicio.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">Las reglas de uso de modelos, supervisión y límites éticos están en <a href="/responsabilidad-ia/">Responsabilidad de IA</a>. Los controles de acceso, cifrado, retención y auditoría, en <a href="/seguridad-gobierno/">Seguridad y gobierno</a>. La arquitectura supervisada que sostiene este esquema, en <a href="/agentes-ia/">Agentes de IA</a>.</div>
+</div></section>
+
+<!-- 7. TENDENCIAS -->
+<section class="band"><div class="wrap">
+  <p class="sec-k">Tendencias</p>
+  <h2>Hacia dónde se está moviendo la práctica</h2>
+  <p class="sec-sub">Tres desplazamientos que ya cambian la forma de trabajar de los equipos de inteligencia, y que asumimos al diseñar un programa nuevo.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="cnum">01</div>
+      <h3>Del benchmarking al foresight</h3>
+      <p>Compararse con el pasado del competidor explica lo que ya ocurrió. Construir escenarios con respuestas preparadas cambia lo que va a ocurrir. La comparación es insumo; el entregable es el escenario.</p>
+    </div>
+    <div class="card">
+      <div class="cnum">02</div>
+      <h3>De informes anuales a cadencia continua</h3>
+      <p>Un estudio anual queda desactualizado antes de circular. La vigilancia se vuelve ritmo: alerta cuando se cruza el umbral, brief periódico y análisis de fondo por ciclo.</p>
+    </div>
+    <div class="card">
+      <div class="cnum">03</div>
+      <h3>Del analista solitario al equipo asistido</h3>
+      <p>El único responsable que "sabe del mercado" es un punto de falla. Método, prompts y fuentes quedan documentados; la IA absorbe el volumen y el equipo conserva el criterio.</p>
+    </div>
+  </div>
+  <p class="sec-sub" style="max-width:78ch">Los tres se operan dentro del ciclo y las líneas descritas en <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>, con la disciplina de fases y responsables de nuestra <a href="/metodologia/">metodología</a>.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Dónde encaja esto</p>
+  <h2>El resto del programa</h2>
+  <p class="sec-sub">La asistencia de la IA no se contrata suelta: es la cuarta fase de un programa que empieza por entender el terreno y termina por gobernarlo.</p>
+  <div class="cards">
+    <a class="card" href="/inteligencia-competitiva/estudio-base/">
+      <h3>El estudio base</h3>
+      <p>Las ocho secciones que componen la fotografía inicial, la anatomía de una battlecard y la de una ficha de prospecto.</p>
+      <span class="link-more">Ver el estudio base &rarr;</span>
+    </a>
+    <a class="card" href="/inteligencia-competitiva/alertas-tempranas/">
+      <h3>Alertas tempranas</h3>
+      <p>Cómo un tema vigilado se convierte en un disparador con umbral, acción pre-acordada y responsable con nombre.</p>
+      <span class="link-more">Ver el sistema de alertas &rarr;</span>
+    </a>
+    <a class="card" href="/inteligencia-competitiva/implantacion/">
+      <h3>Implantación</h3>
+      <p>Las cinco fases, el equipo que se forma, qué necesitamos de su organización y cómo se mide que el programa sirve.</p>
+      <span class="link-more">Ver la hoja de ruta &rarr;</span>
+    </a>
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>Ponga a prueba el método antes de contratarlo</h2>
+  <p class="sec-sub" style="margin:0 auto 6px">Tomamos un tema real de vigilancia con su equipo, mostramos el prompt, la fuente y la verificación, y usted juzga el resultado.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Centro de recursos</a>
+      <a href="/agentes/">Demos interactivos</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+      <a href="/bitcoin/">Bitcoin — línea personal</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
+</div></footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+</body>
+</html>

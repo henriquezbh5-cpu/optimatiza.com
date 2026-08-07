@@ -204,3 +204,80 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none !important;animation:none !important}}
 @media print{.chead,.cfoot,.cta-band,.mnav{display:none}}
+
+/* ============================================================
+   INTELIGENCIA COMPETITIVA — componentes del sistema
+   ============================================================ */
+
+/* --- ciclo de inteligencia: pasos encadenados --- */
+.cycle{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:24px;counter-reset:cy}
+.cycle-step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 16px;position:relative}
+.cycle-step::before{counter-increment:cy;content:counter(cy);position:absolute;top:-11px;left:16px;width:24px;height:24px;border-radius:50%;background:var(--forest);color:#F6F1E8;font-family:var(--ffd);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.cycle-step h3{font-size:15px;margin:6px 0 5px}
+.cycle-step p{font-size:13.2px;color:var(--body);line-height:1.55}
+section.forest .cycle-step{background:rgba(246,241,232,.06);border-color:rgba(246,241,232,.16)}
+section.forest .cycle-step::before{background:var(--ochre);color:#12251F}
+
+/* --- semáforo de decisión --- */
+.light{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;letter-spacing:.02em;border-radius:999px;padding:5px 13px;white-space:nowrap}
+.light::before{content:"";width:9px;height:9px;border-radius:50%;flex:none}
+.light-go{background:#E3EDE2;color:#14603F}      .light-go::before{background:#159A4E}
+.light-watch{background:#F7EEDC;color:#8A5D14}   .light-watch::before{background:#C9913B}
+.light-stop{background:#F6E3E3;color:#8E2B2B}    .light-stop::before{background:#B4232C}
+
+/* --- battlecard de competidor --- */
+.battlecard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:0;overflow:hidden;box-shadow:var(--sh)}
+.battlecard-head{background:var(--alt);padding:16px 20px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.battlecard-head h3{font-size:17px;margin:0}
+.battlecard-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0}
+.bc-field{padding:14px 20px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.bc-field b{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);margin-bottom:5px;font-family:var(--ffd)}
+.bc-field span{font-size:13.8px;color:var(--ink);line-height:1.5}
+.bc-field.full{grid-column:1/-1;border-right:none}
+.bc-field.action{background:#F7EEDC;border-top:2px solid var(--ochre)}
+
+/* --- tripwires: indicador + umbral + acción --- */
+.tripwire{display:grid;grid-template-columns:1.1fr .9fr 1.4fr auto;gap:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:10px}
+@media(max-width:820px){.tripwire{grid-template-columns:1fr}}
+.tw-cell{padding:14px 16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px;justify-content:center}
+.tripwire .tw-cell:last-child{border-right:none}
+@media(max-width:820px){.tw-cell{border-right:none;border-bottom:1px solid var(--line)}}
+.tw-cell b{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim);font-family:var(--ffd)}
+.tw-cell span{font-size:13.8px;color:var(--ink);line-height:1.45}
+.tw-cell.umbral span{font-family:var(--ffd);color:var(--petrol);font-weight:700}
+
+/* --- prompt reutilizable --- */
+.prompt-box{background:#12251F;border-radius:14px;padding:0;overflow:hidden;margin-top:16px;box-shadow:var(--sh)}
+.prompt-head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:11px 18px;background:rgba(246,241,232,.06);border-bottom:1px solid rgba(246,241,232,.12)}
+.prompt-head b{font-family:var(--ffd);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:#A9C6B8}
+.prompt-box pre{margin:0;padding:18px;overflow-x:auto;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.8px;line-height:1.7;color:#DCE9DF;white-space:pre-wrap;word-break:break-word}
+.prompt-box .ph{color:var(--ochre);font-weight:700}
+
+/* --- niveles macro / meso / micro --- */
+.levels{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:20px}
+.level{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;border-top:3px solid var(--petrol)}
+.level:nth-child(2){border-top-color:var(--teal2)}
+.level:nth-child(3){border-top-color:var(--ochre)}
+.level h3{font-size:16.5px;margin-bottom:4px}
+.level .lv-sub{font-size:12.5px;color:var(--dim);margin-bottom:12px;display:block}
+
+/* --- comparativa de disciplinas --- */
+.disciplines{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.disc{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+.disc .q{font-family:var(--ffd);color:var(--petrol);font-size:13px;letter-spacing:.04em;display:block;margin-bottom:8px}
+.disc h3{font-size:16.5px;margin-bottom:8px}
+.disc p{font-size:13.8px}
+.disc.own{border-color:var(--teal2);background:linear-gradient(160deg,#E9EFE2,#FFFDF8)}
+
+/* --- módulo del estudio base --- */
+.module{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--sh);margin-bottom:18px}
+.module-head{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+.module-num{font-family:var(--ffd);font-size:12.5px;letter-spacing:.1em;color:var(--ochre);font-weight:700}
+.module h3{font-size:19px}
+.module-what{font-size:14.5px;color:var(--body);margin-bottom:14px;max-width:70ch}
+
+/* --- fila de entregable --- */
+.deliverables{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
+.deliverable{background:var(--alt);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.deliverable b{display:block;font-size:13.5px;color:var(--ink);font-family:var(--ffd);margin-bottom:3px}
+.deliverable span{font-size:12.5px;color:var(--dim);line-height:1.5}
