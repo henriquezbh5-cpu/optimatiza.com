@@ -37,9 +37,9 @@ img,svg{max-width:100%}
 .cta-nav{background:var(--forest);color:#F6F1E8;font-weight:700;padding:10px 18px;border-radius:10px;font-size:14px;white-space:nowrap;box-shadow:var(--sh)}
 .cta-nav:hover{background:#1E5645}
 .dd{position:relative}
-.dd>button{background:none;border:none;font:inherit;font-weight:500;color:var(--body);cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
-.dd>button::after{content:"\25BE";font-size:10px;color:var(--dim)}
-.dd>button:hover{color:var(--teal)}
+.dd>button,.dd>.dd-trigger{background:none;border:none;font:inherit;font-weight:500;color:var(--body);cursor:pointer;padding:0;display:flex;align-items:center;gap:4px}
+.dd>button::after,.dd>.dd-trigger::after{content:"\25BE";font-size:10px;color:var(--dim)}
+.dd>button:hover,.dd>.dd-trigger:hover{color:var(--teal)}
 .dd-menu{position:absolute;top:calc(100% + 12px);left:-14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh2);padding:8px;min-width:250px;display:none;z-index:60}
 .dd-menu::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
 .dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
