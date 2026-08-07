@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Política de privacidad | Optimatiza</title>
   <meta name="description" content="Cómo trata Optimatiza sus datos personales: qué recopilamos, con qué finalidad, con quién no los compartimos y cómo ejercer sus derechos de acceso y borrado.">
@@ -100,7 +100,7 @@
     <p class="kicker"><i></i>Legal · Privacidad</p>
     <h1>Política de privacidad</h1>
     <p class="lead">Optimatiza es una firma de automatización empresarial e inteligencia competitiva. Esta política explica, en lenguaje claro, <b>qué datos tratamos, con qué finalidad y cómo puede usted ejercer sus derechos</b>, incluyendo lo relativo a nuestras integraciones con plataformas de terceros.</p>
-    <p style="color:#5F6E66;font-size:14px;margin-top:12px">Última actualización: 2 de agosto de 2026</p>
+    <p style="color:#5F6E66;font-size:14px;margin-top:12px">Última actualización: 6 de agosto de 2026</p>
   </div></section>
 
   <!-- RESPONSABLE -->
@@ -132,13 +132,29 @@
 
   <!-- NO COMPARTIMOS -->
   <section class="band"><div class="wrap">
-    <p class="sec-k">4 · Terceros</p>
+    <p class="sec-k">4 · Seguridad del formulario</p>
+    <h2>Tratamiento de su dirección IP y protección contra envíos automatizados</h2>
+    <p class="sec-sub">El formulario de contacto de este sitio está protegido contra el envío automatizado. Para lograrlo, su solicitud se entrega primero a un servicio propio de Optimatiza alojado en la red de Cloudflare, que aplica las medidas descritas a continuación antes de hacernos llegar su mensaje.</p>
+    <ul class="dots">
+      <li><b>Qué dato se trata.</b> Al enviar el formulario, ese servicio recibe la dirección IP desde la que usted se conecta, junto con los datos técnicos habituales de cualquier conexión a internet.</li>
+      <li><b>Con qué finalidad.</b> Una sola: limitar el número de envíos que pueden realizarse desde un mismo origen en un intervalo de tiempo y bloquear el envío masivo automatizado. No utilizamos su dirección IP para identificarle, para perfilarle ni para ninguna finalidad publicitaria.</li>
+      <li><b>Retención mínima.</b> Su dirección IP no se almacena junto con el contenido de su solicitud ni se incorpora a nuestro registro de contactos: se guarda cifrada mediante un resumen criptográfico y únicamente como contador temporal de envíos, que se elimina de forma automática en un plazo máximo de veinticuatro horas. Tampoco la enviamos a nuestras herramientas de analítica.</li>
+      <li><b>Por qué podemos hacerlo.</b> Por el interés legítimo de Optimatiza en mantener operativo su canal de contacto y en proteger su infraestructura y la de sus proveedores frente a envíos fraudulentos o masivos.</li>
+      <li><b>Cloudflare como subencargado.</b> Este servicio se ejecuta sobre la infraestructura de Cloudflare, Inc., que actúa como subencargado del tratamiento por cuenta de Optimatiza y procesa la dirección IP y los metadatos de la conexión únicamente para prestar ese servicio y para la seguridad de su propia red.</li>
+      <li><b>Verificación con Cloudflare Turnstile.</b> Antes de aceptar el envío, el formulario ejecuta Cloudflare Turnstile, una verificación cuya única función es distinguir a una persona de un programa automatizado. Analiza señales técnicas de su navegador y de su conexión —entre ellas la dirección IP— y devuelve un resultado de un solo uso, válido exclusivamente para ese envío. <b>No instala cookies de seguimiento, no sigue su navegación entre sitios web y no construye perfiles publicitarios.</b> En la mayoría de los casos no le pedirá resolver ningún acertijo. Si su navegador o una extensión bloquean Turnstile, el formulario no podrá enviarse; en ese caso puede escribirnos por <a href="https://wa.me/50371928070">WhatsApp</a>.</li>
+    </ul>
+  </div></section>
+
+  <!-- TERCEROS -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">5 · Terceros</p>
     <h2>No vendemos ni compartimos sus datos</h2>
     <p class="sec-sub">No vendemos, alquilamos ni compartimos datos personales con terceros para su comercialización. Solo utilizamos los proveedores tecnológicos estrictamente necesarios para operar, cada uno bajo sus propios términos de servicio:</p>
     <ul class="checks">
       <li><b>Formspree</b>, para el procesamiento del formulario de contacto.</li>
       <li><b>Google Analytics 4 y Cloudflare Web Analytics</b>, para la medición de uso del sitio descrita en la <a href="/cookies/">política de cookies</a>.</li>
       <li><b>API oficial de LinkedIn</b>, para la publicación de contenido propio en nuestra página de empresa.</li>
+      <li><b>Cloudflare</b>, para la protección del formulario frente a envíos automatizados (limitación por dirección IP y verificación Turnstile) y para la medición sin cookies descrita en la <a href="/cookies/">política de cookies</a>.</li>
     </ul>
   </div></section>
 
@@ -149,7 +165,7 @@
     <ul class="dots">
       <li><b>Tokens y credenciales.</b> Los tokens de acceso a nuestras integraciones se almacenan de forma segura y se utilizan únicamente para mantener la sesión y publicar contenido propio.</li>
       <li><b>Medidas de protección.</b> Aplicamos medidas razonables de seguridad, con acceso restringido y privilegio mínimo, para proteger la información que tratamos.</li>
-      <li><b>Conservación.</b> Conservamos la correspondencia comercial mientras exista una conversación o relación activa, o hasta que usted solicite su eliminación.</li>
+      <li><b>Conservación.</b> Conservamos la correspondencia comercial mientras exista una conversación o relación activa, o hasta que usted solicite su eliminación. Las direcciones IP tratadas para proteger el formulario se eliminan en un plazo máximo de veinticuatro horas.</li>
     </ul>
   </div></section>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#F6F1E8">
     <link rel="manifest" href="/site.webmanifest">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://quote-ai.henriquezbh5.workers.dev https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://contact-relay.henriquezbh5.workers.dev; frame-src https://challenges.cloudflare.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Cat&aacute;logo de agentes de IA con simuladores en vivo | Optimatiza</title>
     <meta name="description" content="Veinte agentes de IA con simulaciones en vivo: ventas, operaciones, finanzas, soporte, datos, marketing, RRHH y legal. Alcances y plazos por unidad.">
@@ -1521,7 +1521,9 @@
                     <p class="ag-contact-reply mono"><span class="live-dot" aria-hidden="true"></span> <span data-i18n="ag-contact-reply">RESPUESTA &lt; 24H &middot; GMT-6</span> <span class="clock" data-clock>14:32:07</span></p>
                 </div>
                 <div class="ag-contact-right rv">
-                    <form id="agContactForm" class="ag-form" action="https://formspree.io/f/xeevjelz" method="POST">
+                    <form id="agContactForm" class="ag-form" method="POST" data-secure-form
+                          data-relay="https://contact-relay.henriquezbh5.workers.dev" data-turnstile="0x4AAAAAAEI3jvC_au0fkFnn" novalidate>
+                        <input type="hidden" name="formType" value="agentes">
                         <input type="hidden" name="_subject" id="agFormSubject" value="Optimatiza — consulta desde Catálogo de Flota">
                         <input type="hidden" name="agent" id="agFormAgent" value="">
                         <input type="text" name="_gotcha" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1820,6 +1822,7 @@
     <script defer src="agents-data.js"></script>
     <script defer src="agentes.js"></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script><!-- End GA4 -->
+<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/contact-form.js" defer></script>
+    <script src="/ga-init.js" defer></script><!-- End GA4 -->
 </body>
 </html>

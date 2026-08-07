@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://formspree.io https://cloudflareinsights.com; form-action https://formspree.io 'self'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://contact-relay.henriquezbh5.workers.dev; frame-src https://challenges.cloudflare.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contacto | Optimatiza — Solicite una evaluación ejecutiva</title>
   <meta name="description" content="Cuéntenos el proceso, la decisión o el mercado que necesita transformar. Respondemos en horario hábil de El Salvador, normalmente dentro de un día hábil.">
@@ -117,7 +117,8 @@
     <h2>Escríbanos por el canal que prefiera</h2>
     <p class="sec-sub">El formulario es la vía más completa: nos permite dirigir su solicitud al frente correcto y llegar preparados a la primera conversación. Si prefiere algo más directo, WhatsApp funciona igual de bien.</p>
     <div class="cols2">
-      <form action="https://formspree.io/f/xeevjelz" method="POST" id="cform" class="cform">
+      <form method="POST" id="cform" class="cform" data-secure-form
+            data-relay="https://contact-relay.henriquezbh5.workers.dev" data-turnstile="0x4AAAAAAEI3jvC_au0fkFnn" novalidate>
         <input type="hidden" name="_subject" value="Solicitud de evaluación — optimatiza.com">
         <div class="cf-row">
           <label>Nombre y apellido <span class="req">*</span>
@@ -187,7 +188,7 @@
           <span>Autorizo el uso de estos datos únicamente para responder esta solicitud (<a href="/privacidad/">política de privacidad</a>). <span class="req">*</span></span>
         </label>
         <button class="btn-primary" type="submit">Enviar solicitud</button>
-        <p class="cf-note">Respondemos en horario hábil de El Salvador, normalmente dentro de un día hábil.</p>
+        <p class="cf-note" role="status" aria-live="polite">Respondemos en horario hábil de El Salvador, normalmente dentro de un día hábil.</p>
       </form>
       <div>
         <h3>¿Prefiere una conversación directa?</h3>
@@ -297,6 +298,7 @@
   <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
+<script src="/contact-form.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
 </body>
