@@ -806,3 +806,5 @@ h1 {
 @supports (height: 100dvh) {
   .mob-nav-panel { max-height: calc(100dvh - 120px) }
 }
+/* el lema de la marca no debe partirse cuando el nav crece */
+.brand small { white-space: nowrap }
