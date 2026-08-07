@@ -1094,3 +1094,8 @@ html.js-anim .stage-stamp:not([hidden]) { animation: stampIn .26s var(--ease-tex
 @media (prefers-reduced-motion: reduce){
   #flota .ag-card.octa .ag-turno .ag-live-dot{ animation:none; }
 }
+
+/* Aviso del formulario: contact-form.js escribe aqui el resultado del envio. */
+.ag-form .cf-note{margin:10px 0 0;font-size:13.5px;line-height:1.55;color:#5f6e66}
+.ag-form .cf-note.ok{color:#159a4e;font-weight:600}
+.ag-form .cf-note.err{color:#b4232c;font-weight:600}

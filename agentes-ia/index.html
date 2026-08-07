@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=08e86219">
+  <link rel="stylesheet" href="/corp.css?v=4671b186">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Agentes de IA empresariales gobernados">
   <meta property="og:description" content="Agentes de IA que consultan sus sistemas y ejecutan procesos con límites definidos, registro de decisiones y supervisión humana. Diseño y operación.">
@@ -56,22 +56,12 @@
       {
         "@type": "Question",
         "name": "¿En qué se diferencia un agente de IA de un chatbot?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Un chatbot conversa: recibe una pregunta y devuelve una respuesta. Un agente de proceso, además de conversar, consulta sus sistemas (ERP, CRM, SharePoint, bases de datos) y ejecuta pasos definidos del proceso: registra, valida, notifica o escala. La diferencia práctica es que el agente completa trabajo, no solo responde texto."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué decide un agente por sí solo y qué requiere autorización?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Eso se define por escrito antes de implementar. Como criterio general, el agente ejecuta solo acciones reversibles y de bajo impacto dentro de límites acordados; las excepciones, los casos sensibles y las comunicaciones fuera de plantilla pasan siempre a una persona responsable. Los límites quedan documentados y se ajustan con la operación."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué pasa cuando el agente se equivoca o no tiene la información?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Se detiene y escala. Cada agente se diseña con un protocolo de error: ante datos incompletos, resultados ambiguos o fallas de un sistema, registra el evento en la bitácora y lo deriva a una persona en lugar de improvisar una respuesta. Ese registro permite auditar decisiones y corregir el diseño."}
+        "acceptedAnswer": {"@type": "Answer", "text": "El chatbot responde texto. El agente consulta sus sistemas —ERP, CRM, SharePoint, bases de datos— y ejecuta pasos del proceso: registra, valida, notifica o escala. Completa trabajo, no solo conversa."}
       },
       {
         "@type": "Question",
         "name": "¿Con qué sistemas se integran los agentes?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Trabajamos sobre Power Platform (Power Automate, Power Apps, Power BI), n8n, APIs, SQL, SharePoint y Microsoft 365, con modelos de lenguaje (LLMs) para las capacidades de comprensión y redacción. Cuando un sistema no expone API, usamos RPA para operar su interfaz. La integración concreta se detalla en la evaluación inicial."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Power Platform, n8n, APIs, SQL, SharePoint y Microsoft 365, con modelos de lenguaje para comprender y redactar. Si un sistema no expone API, operamos su interfaz con RPA."}
       }
     ]
   }
@@ -152,37 +142,34 @@
   <section class="phero band"><div class="wrap">
     <p class="kicker"><i aria-hidden="true"></i>Soluciones · Agentes de IA</p>
     <h1>Agentes de IA empresariales</h1>
-    <p class="lead">Un chatbot responde texto. Un <b>agente de proceso</b> consulta sus sistemas, ejecuta pasos definidos de la operación y escala a una persona cuando el caso lo exige. Diseñamos, implementamos y operamos agentes con límites explícitos, bitácora de decisiones y supervisión humana desde el primer día.</p>
+    <p class="lead">Un chatbot responde texto. Un <b>agente de proceso</b> consulta sus sistemas, ejecuta los pasos que usted autoriza y escala a una persona cuando el caso lo exige.</p>
     <div class="cta-row">
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
       <a class="btn-secondary" href="/agentes/">Ver demos interactivos</a>
       <a class="btn-wa" href="https://wa.me/50371928070">Escribir por WhatsApp</a>
     </div>
-    <div class="pills plain">
-      <span>Power Automate</span><span>Power Apps</span><span>Power BI</span><span>n8n</span><span>APIs</span><span>RPA</span><span>SQL</span><span>SharePoint</span><span>M365</span><span>LLMs</span>
-    </div>
   </div></section>
 
   <!-- CICLO DEL AGENTE -->
   <section><div class="wrap">
-    <p class="sec-k">Qué hace un agente de proceso</p>
+    <p class="sec-k">Cómo opera</p>
     <h2>Consulta, ejecuta y escala — en ese orden y con reglas</h2>
-    <p class="sec-sub">Cada agente opera un ciclo cerrado: obtiene información de fuentes autorizadas, actúa dentro de límites acordados y deriva a una persona todo lo que sale de esos límites. Nada ocurre fuera de la bitácora.</p>
+    <p class="sec-sub">Fuentes autorizadas, límites acordados y una persona para todo lo demás.</p>
     <div class="flow3">
-      <div class="fcol">
+      <div class="fcol reveal">
         <div class="fh">1 · Consulta</div>
-        <p>Lee datos únicamente de los sistemas que usted autoriza.</p>
+        <p>Lee solo los sistemas que usted autoriza.</p>
         <div class="chips"><span>ERP</span><span>CRM</span><span>SQL</span><span>SharePoint</span><span>Correo</span><span>Documentos</span></div>
       </div>
       <div class="farrow" aria-hidden="true">→</div>
-      <div class="fcol hub">
+      <div class="fcol hub reveal reveal-2">
         <div class="fh">2 · Ejecuta con límites</div>
-        <p>Realiza solo las acciones aprobadas en el diseño: registrar, validar, notificar, dar seguimiento.</p>
+        <p>Registra, valida, notifica y da seguimiento. Nada más.</p>
       </div>
       <div class="farrow" aria-hidden="true">→</div>
-      <div class="fcol">
+      <div class="fcol reveal reveal-3">
         <div class="fh">3 · Escala y registra</div>
-        <p>Las excepciones pasan a una persona designada. Cada decisión queda en una bitácora auditable.</p>
+        <p>La excepción pasa a una persona designada y queda en bitácora.</p>
       </div>
     </div>
   </div></section>
@@ -190,79 +177,47 @@
   <!-- TIPOLOGIAS -->
   <section class="band"><div class="wrap">
     <p class="sec-k">Tipologías</p>
-    <h2>Ocho tipos de agente, según lo que consultan y lo que ejecutan</h2>
-    <p class="sec-sub">La tipología correcta depende del proceso, no de la moda. Estas son las familias que diseñamos con mayor frecuencia:</p>
+    <h2>Ocho agentes según lo que consultan y lo que ejecutan</h2>
+    <p class="sec-sub">La tipología correcta depende del proceso, no de la moda.</p>
     <div class="cards">
-      <div class="card">
-        <h3>Agentes de conocimiento</h3>
-        <p>Responden preguntas del equipo con la información oficial de la empresa, citando la fuente.</p>
-        <ul>
-          <li><b>Consultan:</b> políticas, manuales, contratos marco y documentación en SharePoint.</li>
-          <li><b>Ejecutan:</b> respuestas con referencia al documento y derivación al responsable del tema.</li>
-        </ul>
+      <div class="card reveal">
+        <h3>De conocimiento</h3>
+        <p>Responden con la documentación oficial y citan la fuente.</p>
         <a class="link-more" href="/agentes/">Ver demo →</a>
       </div>
-      <div class="card">
-        <h3>Agentes operativos</h3>
-        <p>Sostienen tareas repetitivas del día a día de la operación dentro de límites definidos.</p>
-        <ul>
-          <li><b>Consultan:</b> pedidos, inventario y estados de orden en ERP o bases SQL.</li>
-          <li><b>Ejecutan:</b> registros, actualizaciones de estado y notificaciones a las áreas involucradas.</li>
-        </ul>
+      <div class="card reveal reveal-2">
+        <h3>Operativos</h3>
+        <p>Sostienen el registro y el seguimiento diario en ERP o SQL.</p>
         <a class="link-more" href="/automatizacion-empresarial/">Automatización empresarial →</a>
       </div>
-      <div class="card">
-        <h3>Agentes de análisis</h3>
-        <p>Convierten datos dispersos en lecturas periódicas para decidir con contexto.</p>
-        <ul>
-          <li><b>Consultan:</b> bases de datos, indicadores operativos e históricos de venta o servicio.</li>
-          <li><b>Ejecutan:</b> reportes programados, alertas por umbral y resúmenes ejecutivos.</li>
-        </ul>
+      <div class="card reveal reveal-3">
+        <h3>De análisis</h3>
+        <p>Convierten datos dispersos en reportes y alertas por umbral.</p>
         <a class="link-more" href="/data-business-intelligence/">Data &amp; BI →</a>
       </div>
-      <div class="card">
-        <h3>Agentes comerciales</h3>
-        <p>Atienden la conversación de venta por WhatsApp o web sin perder trazabilidad.</p>
-        <ul>
-          <li><b>Consultan:</b> catálogo, precios vigentes e historial del cliente.</li>
-          <li><b>Ejecutan:</b> cotizaciones preliminares, registro del pedido para confirmación y seguimiento.</li>
-        </ul>
+      <div class="card reveal reveal-4">
+        <h3>Comerciales</h3>
+        <p>Atienden la venta por WhatsApp o web, con trazabilidad.</p>
         <a class="link-more" href="/agente-ia-whatsapp/">Agente en WhatsApp →</a>
       </div>
-      <div class="card">
-        <h3>Agentes documentales</h3>
-        <p>Transforman documentos recibidos en registros estructurados y validados.</p>
-        <ul>
-          <li><b>Consultan:</b> facturas, formularios y contratos que llegan por correo o mensajería.</li>
-          <li><b>Ejecutan:</b> extracción de campos, validación contra reglas y registro en el sistema destino.</li>
-        </ul>
+      <div class="card reveal">
+        <h3>Documentales</h3>
+        <p>Convierten facturas y formularios en registros validados.</p>
         <a class="link-more" href="/procesamiento-automatico-facturas/">Procesamiento de facturas →</a>
       </div>
-      <div class="card">
-        <h3>Agentes de seguimiento</h3>
-        <p>Mantienen vivos los compromisos que hoy dependen de la memoria de alguien.</p>
-        <ul>
-          <li><b>Consultan:</b> cuentas por cobrar, vencimientos y compromisos registrados.</li>
-          <li><b>Ejecutan:</b> recordatorios programados por etapas y escalamiento cuando no hay respuesta.</li>
-        </ul>
+      <div class="card reveal reveal-2">
+        <h3>De seguimiento</h3>
+        <p>Mantienen vivos los compromisos que hoy dependen de alguien.</p>
         <a class="link-more" href="/cobranza-automatizada/">Cobranza automatizada →</a>
       </div>
-      <div class="card">
-        <h3>Agentes de inteligencia competitiva</h3>
-        <p>Observan el mercado de forma sistemática, solo con fuentes públicas y autorizadas.</p>
-        <ul>
-          <li><b>Consultan:</b> precios publicados, catálogos, noticias y registros de acceso público.</li>
-          <li><b>Ejecutan:</b> informes comparativos periódicos y alertas de cambios relevantes.</li>
-        </ul>
+      <div class="card reveal reveal-3">
+        <h3>De inteligencia competitiva</h3>
+        <p>Observan el mercado con fuentes públicas y avisan del cambio.</p>
         <a class="link-more" href="/inteligencia-competitiva/">Inteligencia competitiva →</a>
       </div>
-      <div class="card">
-        <h3>Agentes de soporte interno</h3>
-        <p>Resuelven solicitudes frecuentes de TI o administración sin filas de espera.</p>
-        <ul>
-          <li><b>Consultan:</b> base de conocimiento interna y estado de solicitudes abiertas.</li>
-          <li><b>Ejecutan:</b> respuestas a casos frecuentes, creación de tickets y escalamiento al responsable.</li>
-        </ul>
+      <div class="card reveal reveal-4">
+        <h3>De soporte interno</h3>
+        <p>Resuelven solicitudes frecuentes de TI y administración sin filas.</p>
         <a class="link-more" href="/aplicaciones-empresariales/">Aplicaciones empresariales →</a>
       </div>
     </div>
@@ -271,37 +226,56 @@
   <!-- GOBIERNO -->
   <section><div class="wrap">
     <p class="sec-k">Gobierno</p>
-    <h2>Las reglas del agente se definen antes que la tecnología</h2>
-    <p class="sec-sub">Ningún agente entra en producción sin un marco de gobierno documentado. Estas son las nueve definiciones que acordamos con usted por escrito:</p>
-    <div class="cols2">
+    <h2>Las reglas del agente se firman antes que la tecnología</h2>
+    <div class="split reveal">
       <div>
-        <h3>Alcance y autonomía</h3>
+        <h3>Ninguno entra en producción sin marco escrito</h3>
+        <p>Usted aprueba qué mira, qué hace solo y dónde se detiene.</p>
         <ul class="checks">
-          <li><b>Información que consulta:</b> lista cerrada de sistemas y fuentes autorizadas; nada fuera de ella.</li>
-          <li><b>Acciones que ejecuta solo:</b> operaciones reversibles y de bajo impacto, dentro de límites de monto, horario y volumen.</li>
-          <li><b>Acciones que requieren autorización:</b> excepciones, casos sensibles y comunicaciones fuera de plantilla pasan a una persona designada.</li>
-          <li><b>Límites de autonomía:</b> presupuesto de acciones por ciclo y detención automática al alcanzarlo.</li>
-          <li><b>Intervención humana:</b> el responsable del proceso puede pausar el agente y tomar el control en cualquier momento.</li>
+          <li><b>Fuentes autorizadas:</b> lista cerrada, nada fuera de ella.</li>
+          <li><b>Autonomía acotada:</b> solo acciones reversibles.</li>
+          <li><b>Persona al mando:</b> pausa disponible siempre.</li>
         </ul>
       </div>
-      <div>
-        <h3>Trazabilidad y control</h3>
-        <ul class="checks">
-          <li><b>Registro de decisiones:</b> bitácora de cada consulta y acción, con fecha, datos de entrada, resultado y motivo de escalamiento.</li>
-          <li><b>Gestión de errores:</b> ante datos incompletos o respuestas ambiguas, el agente se detiene y escala; no improvisa.</li>
-          <li><b>Protección de datos:</b> credenciales propias con mínimos privilegios; la información permanece en los sistemas de su organización.</li>
-          <li><b>Medición de resultados:</b> indicadores por proceso — volumen atendido, tiempos y escalamientos — revisados en cortes acordados.</li>
-        </ul>
-      </div>
+      <figure class="plate">
+        <img src="/img/vig-applied-ai.svg" alt="Engranajes de un proceso con un sello de verificación en el último paso.">
+        <figcaption>La IA mueve el volumen; el control se queda en el paso final.</figcaption>
+      </figure>
     </div>
-    <p style="margin-top:24px">El marco completo se describe en <a class="link-more" href="/seguridad-gobierno/">Seguridad y gobierno</a>, y los principios que lo sustentan, en <a class="link-more" href="/responsabilidad-ia/">Responsabilidad de IA</a>.</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Qué consulta y qué ejecuta por sí solo</b></summary>
+        <div class="ex-body"><p>Lee solo de los sistemas autorizados y ejecuta operaciones reversibles, con límites de monto, horario y volumen.</p></div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Qué exige siempre la firma de una persona</b></summary>
+        <div class="ex-body"><p>Excepciones, casos sensibles y comunicaciones fuera de plantilla. La frontera se acuerda antes de implementar.</p></div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Límite de autonomía y parada de emergencia</b></summary>
+        <div class="ex-body"><p>Tiene un presupuesto de acciones por ciclo y se detiene al agotarlo. El responsable puede pausarlo cuando quiera.</p></div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Bitácora auditable y protocolo de error</b></summary>
+        <div class="ex-body"><p>Cada consulta y acción se registran con fecha, entrada, resultado y motivo. Ante un dato ambiguo se detiene y avisa: no improvisa.</p></div>
+      </details>
+      <details>
+        <summary><i>05</i><b>Datos, credenciales y permisos</b></summary>
+        <div class="ex-body"><p>Credenciales propias con mínimos privilegios. Sus datos permanecen en sus sistemas.</p></div>
+      </details>
+      <details>
+        <summary><i>06</i><b>Cómo se mide que está funcionando</b></summary>
+        <div class="ex-body"><p>Volumen atendido, tiempos y escalamientos, revisados con usted en cortes acordados.</p></div>
+      </details>
+    </div>
+    <div class="note reveal">Marco completo en <a class="link-more" href="/seguridad-gobierno/">Seguridad y gobierno</a> y <a class="link-more" href="/responsabilidad-ia/">Responsabilidad de IA</a>.</div>
   </div></section>
 
   <!-- MATRIZ -->
   <section class="band"><div class="wrap">
     <p class="sec-k">Arquitectura</p>
     <h2>Qué capa resuelve cada capacidad</h2>
-    <p class="sec-sub">La IA generativa comprende y redacta; no ejecuta transacciones ni aprueba excepciones. Las acciones sobre sus sistemas corren por reglas de negocio y automatización deterministas, y las decisiones sensibles quedan en manos de personas.</p>
+    <p class="sec-sub">La IA generativa comprende y redacta; no ejecuta transacciones ni aprueba excepciones.</p>
     <div class="tbl-wrap">
       <table class="tbl">
         <thead>
@@ -316,36 +290,44 @@
         </tbody>
       </table>
     </div>
-    <div class="note">Lectura: el símbolo ✓ indica la capa que sostiene cada capacidad en un diseño típico. La columna de supervisión humana marca dónde decide una persona, no el sistema. Esta separación es la razón por la que un error del modelo de lenguaje no se traduce en una transacción equivocada.</div>
+    <div class="note reveal">Por esa separación, un error del modelo no se vuelve una transacción equivocada.</div>
   </div></section>
 
   <!-- LO QUE NO PROMETEMOS -->
   <section><div class="wrap">
     <p class="sec-k">Compromisos honestos</p>
     <h2>Lo que no prometemos</h2>
-    <p class="sec-sub">Tres límites que declaramos de entrada, porque un agente bien diseñado los asume desde la arquitectura:</p>
-    <div class="note"><b>No reemplaza a su equipo.</b> Absorbe volumen repetitivo — consultas, registros, seguimientos — para que las personas se concentren en criterio, excepciones y relación con clientes. El diseño parte de qué conserva cada rol, no de a quién sustituye.</div>
-    <div class="note"><b>No opera sin supervisión en procesos sensibles.</b> Pagos, aprobaciones, comunicaciones fuera de plantilla y datos personales pasan por autorización humana. Esa fricción es deliberada: evita que un error de software se convierta en un problema de negocio.</div>
-    <div class="note"><b>No es infalible.</b> Ningún sistema con componentes de IA lo es. Por eso cada agente incluye protocolo de error, bitácora auditable y vías de escalamiento: cuando algo falla, se detiene y avisa en lugar de improvisar. Diseñar para el fallo es lo que vuelve confiable la operación diaria.</div>
+    <div class="split reveal">
+      <figure class="plate">
+        <img src="/img/crew-mini.svg" alt="Un agente pequeño con una señal activa, trabajando junto al equipo.">
+        <figcaption>El agente absorbe el volumen repetitivo. El criterio sigue siendo de su gente.</figcaption>
+      </figure>
+      <div>
+        <div class="note"><b>No reemplaza a su equipo.</b> Absorbe consultas, registros y seguimientos; las personas quedan para el criterio y el cliente.</div>
+        <div class="note"><b>No opera solo en procesos sensibles.</b> Pagos, aprobaciones y datos personales pasan por autorización humana. Esa fricción es deliberada.</div>
+        <div class="note"><b>No es infalible.</b> Por eso se detiene y avisa en lugar de improvisar.</div>
+      </div>
+    </div>
   </div></section>
 
   <!-- EVIDENCIA -->
   <section class="band"><div class="wrap">
     <p class="sec-k">Evidencia</p>
     <h2>Demostrado en operación, no en diapositivas</h2>
-    <div class="cols2">
+    <div class="split reveal">
       <div>
         <h3>Un caso medido: Capturista Digital</h3>
-        <p>Agente documental que recibe una factura por fotografía, extrae los campos y los registra: alrededor de 4 segundos por factura, con el proceso completo grabado en video. Es el patrón que aplicamos al <a href="/procesamiento-automatico-facturas/">procesamiento automático de facturas</a> y a otros flujos documentales.</p>
-        <p><a class="link-more" href="/casos/">Ver casos →</a></p>
-        <p><a class="link-more" href="/agentes/">Probar los demos interactivos →</a></p>
-      </div>
-      <div>
+        <p>Recibe la factura por fotografía, extrae los campos y los registra: alrededor de 4 segundos por factura, grabado en video.</p>
+        <p><a class="link-more" href="/casos/">Ver casos →</a> &nbsp; <a class="link-more" href="/agentes/">Probar los demos →</a></p>
         <h3>Quién dirige la práctica</h3>
-        <p>Humberto Henríquez, fundador de Optimatiza: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence, con más de 8 años automatizando operaciones empresariales. <a class="link-more" href="/nosotros/">Conocer la firma →</a></p>
-        <p>Los agentes suelen implementarse junto a la <a href="/automatizacion-empresarial/">automatización empresarial</a> y la <a href="/integracion-sistemas/">integración de sistemas</a>, y se mantienen bajo <a href="/operacion-administrada/">operación administrada</a>. Trabajamos con <a href="/distribuidoras/">distribuidoras</a>, <a href="/clinicas/">clínicas</a> y <a href="/servicios-profesionales/">firmas de servicios profesionales</a>, siguiendo la <a href="/metodologia/">metodología</a> documentada de la firma.</p>
+        <p>Humberto Henríquez, fundador: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence. <a class="link-more" href="/nosotros/">Conocer la firma →</a></p>
       </div>
+      <figure class="plate">
+        <img src="/img/crew-inspecting.svg" alt="Un robot revisa un tablero de indicadores del proceso.">
+        <figcaption>Cada agente se revisa contra sus indicadores en cortes acordados con usted.</figcaption>
+      </figure>
     </div>
+    <p class="sec-sub">Se implementan junto a la <a href="/automatizacion-empresarial/">automatización empresarial</a> y la <a href="/integracion-sistemas/">integración de sistemas</a>, bajo <a href="/operacion-administrada/">operación administrada</a>, con la <a href="/metodologia/">metodología</a> de la firma, en <a href="/distribuidoras/">distribuidoras</a>, <a href="/clinicas/">clínicas</a> y <a href="/servicios-profesionales/">servicios profesionales</a>.</p>
   </div></section>
 
   <!-- FAQ -->
@@ -355,19 +337,11 @@
     <div class="faq">
       <details>
         <summary>¿En qué se diferencia un agente de IA de un chatbot?</summary>
-        <p class="fa">Un chatbot conversa: recibe una pregunta y devuelve una respuesta. Un agente de proceso, además de conversar, consulta sus sistemas (ERP, CRM, SharePoint, bases de datos) y ejecuta pasos definidos del proceso: registra, valida, notifica o escala. La diferencia práctica es que el agente completa trabajo, no solo responde texto.</p>
-      </details>
-      <details>
-        <summary>¿Qué decide un agente por sí solo y qué requiere autorización?</summary>
-        <p class="fa">Eso se define por escrito antes de implementar. Como criterio general, el agente ejecuta solo acciones reversibles y de bajo impacto dentro de límites acordados; las excepciones, los casos sensibles y las comunicaciones fuera de plantilla pasan siempre a una persona responsable. Los límites quedan documentados y se ajustan con la operación.</p>
-      </details>
-      <details>
-        <summary>¿Qué pasa cuando el agente se equivoca o no tiene la información?</summary>
-        <p class="fa">Se detiene y escala. Cada agente se diseña con un protocolo de error: ante datos incompletos, resultados ambiguos o fallas de un sistema, registra el evento en la bitácora y lo deriva a una persona en lugar de improvisar una respuesta. Ese registro permite auditar decisiones y corregir el diseño.</p>
+        <p class="fa">El chatbot responde texto. El agente consulta sus sistemas —ERP, CRM, SharePoint, bases de datos— y ejecuta pasos del proceso: registra, valida, notifica o escala. Completa trabajo.</p>
       </details>
       <details>
         <summary>¿Con qué sistemas se integran los agentes?</summary>
-        <p class="fa">Trabajamos sobre Power Platform (Power Automate, Power Apps, Power BI), n8n, APIs, SQL, SharePoint y Microsoft 365, con modelos de lenguaje (LLMs) para las capacidades de comprensión y redacción. Cuando un sistema no expone API, usamos RPA para operar su interfaz. La integración concreta se detalla en la evaluación inicial.</p>
+        <p class="fa">Power Platform, n8n, APIs, SQL, SharePoint y Microsoft 365, con modelos de lenguaje para comprender y redactar. Si un sistema no expone API, operamos su interfaz con RPA.</p>
       </details>
     </div>
   </div></section>
@@ -426,5 +400,6 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
 </body>
 </html>

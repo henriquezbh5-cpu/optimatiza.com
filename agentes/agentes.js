@@ -2178,6 +2178,11 @@
   function initForm() {
     var form = $('#agContactForm');
     if (!form || !window.fetch) return;
+    // Este formulario lo gobierna contact-form.js (relay del Worker, honeypot, nonce
+    // y Turnstile). Si ambos escuchan el submit, el lead se envia dos veces —una de
+    // ellas a la propia pagina, porque el form no tiene action— y la interfaz informa
+    // de un resultado que no corresponde al envio real. Un solo duenio.
+    if (form.hasAttribute('data-secure-form')) return;
     var okEl = $('#agFormOk');
     var fbEl = $('#agFormFallback');
 

@@ -46,7 +46,26 @@
     relay_sin_configurar: 'El formulario está en mantenimiento. Escríbanos por WhatsApp mientras tanto.'
   };
 
-  function q(form, name) { return form.querySelector('[name="' + name + '"]'); }
+  /* No todos los formularios del sitio nombran igual sus campos: /contacto/ usa
+     nombre/correo/mensaje y /agentes/ usa name/_replyto/message. El Worker ya acepta
+     ambos juegos; el cliente debe hacer lo mismo o la validacion falla siempre y el
+     formulario nunca llega a enviarse. */
+  var ALIAS = {
+    nombre: ['nombre', 'name'],
+    correo: ['correo', '_replyto', 'email'],
+    mensaje: ['mensaje', 'message'],
+    empresa: ['empresa', 'company'],
+    telefono: ['telefono', 'phone'],
+    consentimiento: ['consentimiento', 'consent']
+  };
+  function q(form, name) {
+    var nombres = ALIAS[name] || [name];
+    for (var i = 0; i < nombres.length; i++) {
+      var el = form.querySelector('[name="' + nombres[i] + '"]');
+      if (el) return el;
+    }
+    return null;
+  }
   function val(form, name) { var el = q(form, name); return el ? String(el.value || '').trim() : ''; }
 
   function setNote(note, text, kind) {
@@ -73,7 +92,8 @@
     if (nombre.length < 3 || !/[a-záéíóúñü]{2,}/i.test(nombre) || SEQ_NAME.test(nombre)) {
       return { campo: 'nombre', motivo: 'Indique su nombre completo.' };
     }
-    if (empresa.length < 2) {
+    // Solo se exige si el formulario realmente tiene el campo: /agentes/ no lo pide.
+    if (q(form, 'empresa') && empresa.length < 2) {
       return { campo: 'empresa', motivo: 'Indique el nombre de su empresa.' };
     }
     if (!EMAIL_RE.test(correo)) {
@@ -100,7 +120,10 @@
   function collect(form) {
     var data = {};
     Array.prototype.forEach.call(form.elements, function (el) {
-      if (!el.name || el.type === 'submit' || el.name.charAt(0) === '_') return;
+      // Los campos con guion bajo son internos y no se envian, salvo la trampa
+      // _gotcha: el Worker la comprueba, asi que tiene que viajar.
+      if (!el.name || el.type === 'submit') return;
+      if (el.name.charAt(0) === '_' && el.name !== '_gotcha') return;
       if (el.type === 'checkbox') { data[el.name] = el.checked; return; }
       data[el.name] = String(el.value || '').trim();
     });
@@ -226,6 +249,10 @@
           var msg = ERRORS[code] || (d.motivo || 'No pudimos enviar su solicitud. Escríbanos por WhatsApp.');
           setNote(note, msg, 'err');
           if (d.campo) focusField(form, d.campo);
+          // El token de Turnstile es de un solo uso y el servidor ya lo canjeó: si no
+          // se reinicia, el segundo intento muere con 'timeout-or-duplicate' y el
+          // formulario queda inservible hasta recargar la página.
+          if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
           if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Enviar solicitud'; }
           sending = false;
           // El nonce se consume aunque falle: pedimos otro para el siguiente intento.
@@ -238,6 +265,8 @@
         })
         .catch(function () {
           setNote(note, 'No hubo conexión con el servidor. Escríbanos por WhatsApp: +503 7192 8070.', 'err');
+          // No se sabe si el servidor llegó a canjear el token: se reinicia por si acaso.
+          if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
           if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Enviar solicitud'; }
           sending = false;
         });

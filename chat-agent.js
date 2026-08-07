@@ -77,7 +77,7 @@
   function msg(side, text, html) {
     var d = document.createElement('div');
     d.className = 'nv-msg nv-' + side;
-    if (side === 'bot') d.innerHTML = '<img class="nv-ava" src="img/logo-badge-48.png" alt="" width="24" height="24"><p></p>';
+    if (side === 'bot') d.innerHTML = '<img class="nv-ava" src="/img/logo-badge-48.png" alt="" width="24" height="24"><p></p>';
     else d.innerHTML = '<p></p>';
     var p = d.querySelector('p');
     if (html) p.innerHTML = text; else p.textContent = text;
@@ -89,7 +89,7 @@
     if (on && !el) {
       var d = document.createElement('div');
       d.className = 'nv-msg nv-bot'; d.id = 'nvTyping';
-      d.innerHTML = '<img class="nv-ava" src="img/logo-badge-48.png" alt="" width="24" height="24"><p><span class="nv-dots"><i></i><i></i><i></i></span></p>';
+      d.innerHTML = '<img class="nv-ava" src="/img/logo-badge-48.png" alt="" width="24" height="24"><p><span class="nv-dots"><i></i><i></i><i></i></span></p>';
       log.appendChild(d); log.scrollTop = log.scrollHeight;
     } else if (!on && el) el.remove();
   }
@@ -166,7 +166,9 @@
       .then(function (d) {
         typing(false);
         msg('bot', d.reply);
-        history.push({ role: 'model', content: d.reply });
+        // Se guarda la firma que emitio el Worker: es lo que le permite reconocer
+        // este turno como suyo cuando se le devuelva el historial.
+        history.push({ role: 'model', content: d.reply, sig: d.sig });
       })
       .catch(function () {
         typing(false);

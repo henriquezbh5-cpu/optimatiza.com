@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=08e86219">
+  <link rel="stylesheet" href="/corp.css?v=4671b186">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Operación administrada: monitoreo, soporte y mejora continua">
   <meta property="og:description" content="Operamos sus automatizaciones como servicio: monitoreo y alertas, atención de incidencias, gestión de cambios, mejoras incrementales y reportes de operación.">
@@ -56,17 +56,12 @@
       {
         "@type": "Question",
         "name": "¿Pueden operar automatizaciones que no construyó Optimatiza?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Sí, previa evaluación técnica. Durante la transición levantamos el inventario, documentamos cada flujo y establecemos la línea base de monitoreo. Si algo no es operable de forma segura, se lo decimos antes de asumir el servicio, con las correcciones necesarias identificadas."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, previa evaluación técnica. Si algo no es operable con seguridad, se lo decimos antes de asumir el servicio."}
       },
       {
         "@type": "Question",
         "name": "¿Qué pasa si decidimos internalizar la operación?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Puede hacerlo cuando quiera. Los activos, los accesos y la documentación son suyos desde el inicio, así que la transferencia consiste en una salida ordenada: sesiones de capacitación a su equipo, entrega de la documentación viva actualizada y un período de acompañamiento acordado."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo se define el nivel de servicio?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Por evaluación. Analizamos la criticidad de cada automatización, el volumen que procesa y las ventanas en que el negocio la necesita, y con eso definimos severidades, tiempos de atención y frecuencia de reportes. Todo queda por escrito en un acuerdo de operación que se revisa periódicamente."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Puede hacerlo cuando quiera: la salida incluye capacitación, documentación al día y acompañamiento acordado."}
       }
     ]
   }
@@ -147,7 +142,7 @@
   <section class="phero band"><div class="wrap">
     <p class="kicker"><i></i>Solución · Operación administrada</p>
     <h1>Monitoreo, soporte y evolución continua para sus automatizaciones</h1>
-    <p class="lead">Una automatización sin operación <b>se degrada</b>: los sistemas de origen cambian, las credenciales caducan y los errores se acumulan en silencio hasta que alguien los descubre tarde. Nosotros operamos sus automatizaciones como un servicio: las vigilamos, las corregimos y las mejoramos de forma continua.</p>
+    <p class="lead">Una automatización sin operación <b>se degrada en silencio</b>. La vigilamos, la corregimos y la mejoramos, con niveles de atención y reporte por escrito.</p>
     <div class="cta-row">
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
       <a class="btn-secondary" href="/metodologia/">Conocer la metodología</a>
@@ -156,105 +151,146 @@
 
   <!-- POR QUÉ -->
   <section><div class="wrap">
-    <p class="sec-k">Por qué existe este servicio</p>
+    <p class="sec-k">Por qué existe</p>
     <h2>Ninguna automatización sobrevive sola al paso del tiempo</h2>
-    <p class="sec-sub">Un flujo que hoy funciona perfecto opera sobre un terreno que se mueve. Cuando nadie lo vigila, el deterioro no avisa: la automatización deja de procesar o, peor, procesa mal y nadie lo nota a tiempo.</p>
-    <ul class="dots">
-      <li><b>Los sistemas de origen cambian.</b> El ERP se actualiza, un API se depreca, un portal rediseña su interfaz y el flujo deja de encontrar lo que buscaba.</li>
-      <li><b>Los accesos caducan.</b> Credenciales que expiran, permisos que alguien retira, certificados que vencen: causas frecuentes de fallas silenciosas.</li>
-      <li><b>El negocio evoluciona.</b> Nuevos productos, nuevos formatos de factura, nuevas reglas de aprobación: la automatización debe evolucionar al mismo ritmo.</li>
-      <li><b>El volumen crece.</b> Lo que procesaba cien registros al día puede comportarse distinto con mil; sin medición, los cuellos de botella aparecen sin aviso.</li>
-    </ul>
+    <div class="split">
+      <div>
+        <p>Lo que hoy funciona opera sobre terreno que se mueve.</p>
+        <ul class="dots">
+          <li><b>Los sistemas de origen cambian.</b> Un API se depreca y el flujo se rompe.</li>
+          <li><b>Los accesos caducan.</b> Credenciales y certificados vencidos causan fallas silenciosas.</li>
+          <li><b>El volumen crece.</b> Sin medición, los cuellos de botella no avisan.</li>
+        </ul>
+      </div>
+      <div class="reveal"><figure class="plate">
+        <img src="/img/crew-mini.svg" alt="Un robot pequeño levanta una señal de aviso">
+        <figcaption>El costo no es la falla: es enterarse tarde.</figcaption>
+      </figure></div>
+    </div>
   </div></section>
 
   <!-- QUÉ INCLUYE -->
   <section class="band"><div class="wrap">
-    <p class="sec-k">Alcance del servicio</p>
-    <h2>Qué incluye la operación administrada</h2>
-    <p class="sec-sub">Ocho frentes de trabajo permanentes. La combinación exacta y su intensidad se definen por evaluación, según la criticidad de cada automatización.</p>
+    <p class="sec-k">Alcance</p>
+    <h2>Seis frentes permanentes</h2>
     <div class="cards">
-      <div class="card"><h3>Monitoreo y alertas de fallas</h3><p>Vigilamos cada ejecución y configuramos alertas que nos avisan a nosotros antes de que el problema llegue a su operación.</p></div>
-      <div class="card"><h3>Atención de incidencias</h3><p>Canal de reporte definido, diagnóstico de causa raíz, corrección y comunicación de lo ocurrido, con tiempos de atención acordados.</p></div>
-      <div class="card"><h3>Gestión de cambios y versiones</h3><p>Cada modificación se versiona, se prueba y se documenta antes de llegar a producción. Siempre es posible saber qué cambió y cuándo.</p></div>
-      <div class="card"><h3>Ajustes por cambios en sistemas de origen</h3><p>Cuando el ERP, un API o un formato de archivo cambian, adaptamos la automatización para que el proceso no se detenga.</p></div>
-      <div class="card"><h3>Mejoras incrementales</h3><p>Mantenemos un backlog priorizado con su equipo y entregamos mejoras pequeñas y frecuentes, en lugar de reconstrucciones traumáticas.</p></div>
-      <div class="card"><h3>Reportes de operación</h3><p>Informes periódicos con volumen procesado, incidencias atendidas, cambios aplicados y estado general de cada automatización.</p></div>
-      <div class="card"><h3>Capacitación continua</h3><p>Su equipo entiende cómo funciona lo que opera para el negocio. Cada cambio relevante viene acompañado de sesiones de transferencia.</p></div>
-      <div class="card"><h3>Documentación viva</h3><p>La documentación se actualiza con cada cambio, no una vez al año. Es la misma que le permitiría internalizar la operación mañana.</p></div>
+      <div class="card reveal"><div class="cnum">01</div><h3>Monitoreo y alertas</h3><p>La falla nos llega antes que a su operación.</p></div>
+      <div class="card reveal reveal-2"><div class="cnum">02</div><h3>Atención de incidencias</h3><p>Canal definido, causa raíz y corrección.</p></div>
+      <div class="card reveal reveal-3"><div class="cnum">03</div><h3>Gestión de cambios</h3><p>Se versiona, se prueba y se documenta.</p></div>
+      <div class="card reveal"><div class="cnum">04</div><h3>Cambios de origen</h3><p>Si el ERP o un API cambian, el proceso sigue.</p></div>
+      <div class="card reveal reveal-2"><div class="cnum">05</div><h3>Mejoras incrementales</h3><p>Backlog priorizado, sin reconstrucciones.</p></div>
+      <div class="card reveal reveal-3"><div class="cnum">06</div><h3>Reportes de operación</h3><p>Volumen, incidencias, cambios y estado.</p></div>
     </div>
   </div></section>
 
-  <!-- MODELO DE TRABAJO -->
-  <section><div class="wrap">
-    <p class="sec-k">Modelo de trabajo</p>
-    <h2>Un ciclo que no termina en la entrega</h2>
-    <p class="sec-sub">Operamos con un ciclo explícito de cuatro fases. Las tres últimas se repiten de forma permanente mientras el servicio esté activo.</p>
-    <div class="steps">
-      <div class="step"><h3>Transición</h3><p>Inventario de automatizaciones, levantamiento o recepción de documentación, accesos con privilegio mínimo y línea base de métricas de operación.</p></div>
-      <div class="step"><h3>Operación</h3><p>Monitoreo diario, atención de incidencias, gestión de cambios y reportes, bajo el nivel de servicio acordado por escrito.</p></div>
-      <div class="step"><h3>Revisión periódica</h3><p>Reunión de operación con su equipo: métricas del período, incidencias y causas, riesgos detectados y backlog de mejoras.</p></div>
-      <div class="step"><h3>Mejora</h3><p>Priorizamos con usted las mejoras de mayor impacto, las entregamos de forma incremental y el ciclo vuelve a operación.</p></div>
-    </div>
-  </div></section>
-
-  <!-- QUÉ NO ES -->
-  <section class="band"><div class="wrap">
-    <p class="sec-k">Condiciones claras</p>
-    <h2>Lo que este servicio no es</h2>
-    <div class="note"><b>No es un contrato cerrado con permanencia forzosa.</b> Los flujos, el código, la documentación y los accesos son suyos desde el primer día. Si decide internalizar la operación, la transferencia es ordenada precisamente porque la entrega documentada que exige nuestra <a href="/metodologia/">metodología</a> ya existe y está al día.</div>
-    <ul class="checks">
-      <li><b>Activos a nombre del cliente.</b> Los ambientes, licencias y repositorios quedan bajo su titularidad, no bajo la nuestra.</li>
-      <li><b>Accesos gobernados.</b> Operamos con privilegio mínimo y trazabilidad, según los controles descritos en <a href="/seguridad-gobierno/">Seguridad y gobierno</a>.</li>
-      <li><b>Sin dependencia artificial.</b> No ocultamos configuración ni conocimiento para retener el servicio: la documentación viva es parte del entregable.</li>
-      <li><b>Salida ordenada.</b> Si internaliza la operación, acordamos capacitación, entrega de documentación actualizada y un período de acompañamiento.</li>
-    </ul>
-  </div></section>
-
-  <!-- ALCANCE POR EVALUACIÓN -->
+  <!-- NIVELES DE SERVICIO Y CADENCIA -->
   <section><div class="wrap">
     <p class="sec-k">Nivel de servicio</p>
-    <h2>El alcance se define por evaluación, no por catálogo</h2>
-    <p class="sec-sub">No publicamos paquetes genéricos porque operar una conciliación bancaria crítica no es lo mismo que operar un reporte semanal. Antes de asumir el servicio, evaluamos con usted:</p>
-    <ul class="dots">
-      <li><b>Inventario y criticidad:</b> qué automatizaciones existen, qué procesos sostienen y cuál es el impacto de que fallen.</li>
-      <li><b>Severidades y ventanas de atención:</b> qué se atiende de inmediato, qué puede esperar y en qué horarios opera el negocio.</li>
-      <li><b>Canal de reporte y responsables:</b> quién reporta, quién autoriza cambios y quién recibe los reportes de operación.</li>
-      <li><b>Entregables y frecuencia:</b> qué contiene el reporte de operación y con qué periodicidad se revisa en conjunto.</li>
-      <li><b>Controles de acceso:</b> cómo se otorgan, auditan y revocan las credenciales con las que operamos.</li>
-    </ul>
-    <p style="margin-top:18px">El resultado es un acuerdo de operación por escrito, que se revisa en las reuniones periódicas y se ajusta cuando el negocio cambia.</p>
-  </div></section>
-
-  <!-- TECNOLOGÍAS -->
-  <section class="band"><div class="wrap">
-    <p class="sec-k">Cobertura técnica</p>
-    <h2>Tecnologías que operamos</h2>
-    <p class="sec-sub">Operamos automatizaciones construidas por nosotros y, previa evaluación técnica, también las construidas por terceros sobre estas plataformas.</p>
-    <div class="pills plain">
-      <span>Power Automate</span><span>Power Apps</span><span>Power BI</span><span>n8n</span><span>RPA</span><span>APIs</span><span>SQL</span><span>SharePoint</span><span>Microsoft 365</span><span>IA (LLMs)</span>
+    <h2>Tres niveles de atención, acordados por escrito</h2>
+    <p class="sec-sub">No publicamos tiempos genéricos: cada automatización tiene su criticidad.</p>
+    <div class="levels">
+      <div class="level reveal">
+        <h3>Atención inmediata</h3><span class="lv-sub">La operación está detenida</span>
+        <p>Se atiende al detectarla y usted recibe el aviso.</p>
+      </div>
+      <div class="level reveal reveal-2">
+        <h3>Atención programada</h3><span class="lv-sub">Dentro de la ventana acordada</span>
+        <p>Se resuelve en el horario acordado.</p>
+      </div>
+      <div class="level reveal reveal-3">
+        <h3>Mejora planificada</h3><span class="lv-sub">Backlog priorizado con usted</span>
+        <p>Entra al backlog y se entrega incremental.</p>
+      </div>
     </div>
-    <p style="margin-top:22px;max-width:70ch">La operación está dirigida por Humberto Henríquez, fundador de Optimatiza — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — con más de 8 años automatizando operaciones empresariales.</p>
-    <p style="margin-top:14px"><a class="link-more" href="/automatizacion-empresarial/">¿Aún no tiene automatizaciones en producción? Empiece por Automatización empresarial</a></p>
+    <div class="split">
+      <div>
+        <h3>La cadencia de reporte</h3>
+        <p>El estado del servicio llega solo, con ritmo fijo.</p>
+      </div>
+      <div class="reveal"><figure class="plate">
+        <img src="/img/crew-inspecting.svg" alt="Un robot revisa un tablero con los indicadores de las automatizaciones">
+        <figcaption>Lo que no se mide cada día se descubre tarde.</figcaption>
+      </figure></div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th scope="col">Ritmo</th><th scope="col">Qué ocurre</th><th scope="col">Qué recibe usted</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Diario</b></td><td>Monitoreo y alertas de falla</td><td>Aviso solo si requiere su decisión</td></tr>
+          <tr><td><b>Cada incidencia</b></td><td>Causa raíz y corrección</td><td>Qué pasó y cómo se evita</td></tr>
+          <tr><td><b>Cada cambio</b></td><td>Versionado, prueba y documentación</td><td>Qué cambió y cuándo</td></tr>
+          <tr><td><b>Reporte</b></td><td>Volumen, incidencias, cambios, estado</td><td>Informe en la periodicidad acordada</td></tr>
+          <tr><td><b>Revisión</b></td><td>Reunión con su equipo</td><td>Métricas, riesgos y backlog</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note reveal">Severidades, tiempos y periodicidad quedan por escrito en el acuerdo de operación.</div>
   </div></section>
 
-  <!-- FAQ -->
+  <!-- CICLO + ACUERDO -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Modelo de trabajo</p>
+    <h2>Un ciclo que no termina en la entrega</h2>
+    <div class="steps">
+      <div class="step reveal"><h3>Transición</h3><p>Inventario, documentación, accesos mínimos, línea base.</p></div>
+      <div class="step reveal reveal-2"><h3>Operación</h3><p>Monitoreo diario, incidencias y cambios.</p></div>
+      <div class="step reveal reveal-3"><h3>Revisión</h3><p>Métricas del período, causas y riesgos.</p></div>
+      <div class="step reveal reveal-4"><h3>Mejora</h3><p>Priorizamos con usted y entregamos incremental.</p></div>
+    </div>
+    <p>Se define por escrito, antes de empezar:</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Inventario y criticidad</b></summary>
+        <div class="ex-body"><p>Qué existe, qué sostiene y qué pasa si falla.</p></div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Severidades y ventanas</b></summary>
+        <div class="ex-body"><p>Qué se atiende de inmediato, qué espera y en qué horarios.</p></div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Canal y responsables</b></summary>
+        <div class="ex-body"><p>Quién reporta, quién autoriza cambios, quién recibe reportes.</p></div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Entregables y accesos</b></summary>
+        <div class="ex-body"><p>Qué contiene el reporte y cómo se auditan nuestras credenciales: <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p></div>
+      </details>
+    </div>
+  </div></section>
+
+  <!-- CONDICIONES -->
   <section><div class="wrap">
-    <p class="sec-k">Preguntas frecuentes</p>
-    <h2>Preguntas frecuentes sobre la operación administrada</h2>
-    <div class="faq" style="margin-top:20px">
+    <p class="sec-k">Condiciones claras</p>
+    <h2>Sin permanencia forzosa ni dependencia artificial</h2>
+    <div class="note">Los flujos, el código, la documentación y los accesos son suyos desde el primer día, documentados según nuestra <a href="/metodologia/">metodología</a>.</div>
+    <ul class="checks reveal">
+      <li><b>Activos a su nombre.</b> Ambientes, licencias y repositorios.</li>
+      <li><b>Accesos gobernados.</b> Privilegio mínimo y trazabilidad.</li>
+      <li><b>Documentación viva.</b> Se actualiza con cada cambio.</li>
+      <li><b>Salida ordenada.</b> Capacitación y acompañamiento acordado.</li>
+    </ul>
+  </div></section>
+
+  <!-- FAQ + COBERTURA -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Antes de contratar</p>
+    <h2>Dos preguntas frecuentes</h2>
+    <div class="faq">
       <details>
         <summary>¿Pueden operar automatizaciones que no construyó Optimatiza?</summary>
-        <p class="fa">Sí, previa evaluación técnica. Durante la transición levantamos el inventario, documentamos cada flujo y establecemos la línea base de monitoreo. Si algo no es operable de forma segura, se lo decimos antes de asumir el servicio, con las correcciones necesarias identificadas.</p>
+        <p class="fa">Sí, previa evaluación técnica. Si algo no es operable con seguridad, se lo decimos antes de asumir el servicio.</p>
       </details>
       <details>
         <summary>¿Qué pasa si decidimos internalizar la operación?</summary>
-        <p class="fa">Puede hacerlo cuando quiera. Los activos, los accesos y la documentación son suyos desde el inicio, así que la transferencia consiste en una salida ordenada: sesiones de capacitación a su equipo, entrega de la documentación viva actualizada y un período de acompañamiento acordado.</p>
-      </details>
-      <details>
-        <summary>¿Cómo se define el nivel de servicio?</summary>
-        <p class="fa">Por evaluación. Analizamos la criticidad de cada automatización, el volumen que procesa y las ventanas en que el negocio la necesita, y con eso definimos severidades, tiempos de atención y frecuencia de reportes. Todo queda por escrito en un acuerdo de operación que se revisa periódicamente.</p>
+        <p class="fa">Puede hacerlo cuando quiera: la salida incluye capacitación, documentación al día y acompañamiento acordado.</p>
       </details>
     </div>
+    <div class="pills plain">
+      <span>Power Automate</span><span>Power Apps</span><span>Power BI</span><span>n8n</span><span>RPA</span><span>APIs</span><span>SQL</span><span>SharePoint</span><span>IA (LLMs)</span>
+    </div>
+    <p>Dirige la operación Humberto Henríquez, fundador de Optimatiza: Ingeniero en Sistemas, MSc en Data Science y en Business Intelligence.</p>
   </div></section>
 
   <!-- CTA FINAL -->
@@ -311,5 +347,6 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
 </body>
 </html>

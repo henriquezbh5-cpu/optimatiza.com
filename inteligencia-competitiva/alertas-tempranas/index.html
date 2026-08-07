@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=08e86219">
+  <link rel="stylesheet" href="/corp.css?v=4671b186">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sistema de alerta temprana | Optimatiza">
   <meta property="og:description" content="Tripwires con indicador, umbral, acción pre-acordada y responsable: el sistema que convierte una señal del mercado en una decisión con dueño y fecha.">
@@ -126,14 +126,14 @@
   <h2>Las empresas no se sorprenden por falta de información</h2>
   <p class="sec-sub">La señal casi siempre estaba disponible: el competidor lo anunció, el regulador lo publicó, la rotación venía subiendo. Lo que faltó no fue el dato, fue el disparador que obligaba a hacer algo con él.</p>
   <div class="cols2">
-    <div>
+    <div class="reveal">
       <ul class="dots">
         <li>La noticia se comenta en un grupo de mensajería y ahí muere: nadie tenía el mandato de convertirla en decisión.</li>
         <li>El indicador se sigue, pero nunca se acordó a partir de qué número se considera grave.</li>
         <li>El aviso llega a una lista de once personas, que es la forma más elegante de que no llegue a nadie.</li>
       </ul>
     </div>
-    <div>
+    <div class="reveal reveal-2">
       <p class="quote">Sin umbral no hay alerta, hay ansiedad. Sin acción pre-acordada no hay alerta, hay reunión. Sin responsable no hay alerta, hay correo.</p>
       <div class="note"><b>La diferencia práctica.</b> Vigilar produce conocimiento; alertar produce movimiento.</div>
     </div>
@@ -145,31 +145,41 @@
   <h2>Los cinco elementos de un tripwire</h2>
   <p class="sec-sub">Cada tema que su organización decide vigilar se convierte en un tripwire escrito. Si le falta uno de estos cinco elementos, no entra al sistema.</p>
   <div class="cards">
-    <div class="card">
+    <div class="card reveal">
       <div class="cnum">01</div>
       <h3>Indicador</h3>
       <p>Qué se observa, de forma que dos personas midan lo mismo. No "la competencia se está moviendo", sino un hecho verificable: un anuncio, una publicación, un porcentaje.</p>
     </div>
-    <div class="card">
+    <div class="card reveal reveal-2">
       <div class="cnum">02</div>
       <h3>Umbral</h3>
       <p>El número o el evento exacto que enciende la alerta. Se acuerda en frío: un umbral discutido el día del incidente es negociación, no umbral.</p>
     </div>
-    <div class="card">
+    <div class="card reveal reveal-3">
       <div class="cnum">03</div>
       <h3>Acción pre-acordada</h3>
       <p>Qué se hace cuando dispara, decidido antes y con plazo: revisar una propuesta, convocar al comité, congelar un compromiso. Nunca "evaluar la situación".</p>
     </div>
-    <div class="card">
+    <div class="card reveal reveal-2">
       <div class="cnum">04</div>
       <h3>Responsable</h3>
       <p>Una persona, no un área: las áreas no responden correos ni asisten a comités. El responsable delega la ejecución, nunca la respuesta ante la dirección.</p>
     </div>
-    <div class="card">
+    <div class="card reveal reveal-3">
       <div class="cnum">05</div>
       <h3>Cadencia</h3>
       <p>Cada cuánto se revisa el indicador: continuo cuando la fuente lo permite, semanal o mensual cuando depende de publicaciones. Define cuánta anticipación es posible.</p>
     </div>
+  </div>
+
+  <div class="tripsim" data-umbral="18" data-unidad="%"
+       data-accion="Se activa el plan de retención en perfiles críticos y se suspenden nuevos compromisos de capacidad."
+       data-responsable="Gestión humana">
+    <div class="tripsim-head"><b>Rotación voluntaria trimestral en perfiles críticos</b><span class="tripsim-val" data-valor>10%</span></div>
+    <input type="range" min="0" max="30" step="1" value="10" aria-label="Rotación voluntaria trimestral en perfiles críticos">
+    <div class="tripsim-scale"><span>0%</span><span>umbral 18%</span><span>30%</span></div>
+    <div class="tripsim-out" data-estado></div>
+    <p class="tripsim-hint">Ejemplo ilustrativo: mueva el indicador y vea el momento exacto en que la vigilancia deja de ser observación y se convierte en una acción con responsable. Sus umbrales se fijan con su dirección, en el taller de umbrales y por escrito.</p>
   </div>
 </div></section>
 
@@ -178,33 +188,38 @@
   <h2>Cómo se ve un disparador escrito</h2>
   <p class="sec-sub">Así queda documentado cada tripwire en el plan de vigilancia: cuatro columnas que cualquier miembro del comité lee en diez segundos.</p>
 
-  <div class="tripwire">
+  <div class="tripwire reveal">
     <div class="tw-cell"><b>Indicador</b><span>Competidor abre operación en el mismo huso horario que su mercado destino</span></div>
     <div class="tw-cell umbral"><b>Umbral</b><span>Anuncio público confirmado</span></div>
     <div class="tw-cell"><b>Acción pre-acordada</b><span>Revisar el diferencial de precio y la propuesta de valor en las tres cuentas principales, en diez días hábiles</span></div>
     <div class="tw-cell"><b>Responsable</b><span>Dirección comercial</span></div>
   </div>
 
-  <div class="tripwire">
+  <div class="tripwire reveal reveal-2">
     <div class="tw-cell"><b>Indicador</b><span>Nueva exigencia de certificación en el mercado destino</span></div>
     <div class="tw-cell umbral"><b>Umbral</b><span>Publicación en el diario oficial del bloque</span></div>
     <div class="tw-cell"><b>Acción pre-acordada</b><span>Evaluar la brecha y el costo de cierre; llevar la decisión al comité del mes siguiente</span></div>
     <div class="tw-cell"><b>Responsable</b><span>Gerencia de calidad</span></div>
   </div>
 
-  <div class="tripwire">
+  <div class="tripwire reveal reveal-3">
     <div class="tw-cell"><b>Indicador</b><span>Rotación voluntaria trimestral en perfiles críticos de entrega</span></div>
     <div class="tw-cell umbral"><b>Umbral</b><span>18 % trimestral</span></div>
     <div class="tw-cell"><b>Acción pre-acordada</b><span>Activar el plan de retención y suspender nuevos compromisos de capacidad hasta la revisión</span></div>
     <div class="tw-cell"><b>Responsable</b><span>Gestión humana</span></div>
   </div>
 
-  <div class="tripwire">
+  <div class="tripwire reveal reveal-4">
     <div class="tw-cell"><b>Indicador</b><span>Vacantes publicadas por un competidor en un perfil o idioma que hoy no atiende</span></div>
     <div class="tw-cell umbral"><b>Umbral</b><span>Tres vacantes del mismo perfil en 30 días</span></div>
     <div class="tw-cell"><b>Acción pre-acordada</b><span>Actualizar la ficha de ese competidor y avisar a preventa antes de la siguiente ronda de propuestas</span></div>
     <div class="tw-cell"><b>Responsable</b><span>Analista de inteligencia</span></div>
   </div>
+
+  <div class="reveal"><figure class="plate">
+    <img src="/img/crew-mini.svg" alt="Un agente pequeño emite una señal luminosa desde su puesto de vigilancia">
+    <figcaption>Un disparador escrito cabe en cuatro columnas: por eso puede repartirse, auditarse y exigirse.</figcaption>
+  </figure></div>
 
   <div class="note demo"><b>Ejemplos ilustrativos.</b> Muestran el formato, no la configuración de ningún cliente: los suyos se definen en el taller de umbrales, con su dirección en la mesa y por escrito.</div>
 </div></section>
@@ -213,28 +228,39 @@
   <p class="sec-k">Selección</p>
   <h2>Cómo se decide qué se vigila</h2>
   <p class="sec-sub">Todo es observable y casi nada importa. El trabajo difícil no es encontrar qué mirar, es descartar. Un tema entra al sistema solo si pasa los cuatro filtros.</p>
-  <div class="cols2">
-    <div>
-      <ul class="checks">
-        <li><b>Mueve una decisión.</b> Si el resultado no cambia nada de lo que su empresa haría igual, es curiosidad.</li>
-        <li><b>Es observable desde fuente pública o autorizada.</b> Si exige información que nadie puede obtener legítimamente, no es operable.</li>
-        <li><b>Tiene umbral definible.</b> Debe existir un número o un evento que separe "normal" de "actúe". Lo meramente preocupante no dispara nada.</li>
-        <li><b>Tiene dueño dispuesto.</b> Alguien con autoridad acepta el nombre y la acción antes de publicarlo. Un dueño impuesto es una alerta muerta.</li>
-      </ul>
-    </div>
-    <div>
-      <p>La lista útil es corta. Si el comité no puede enumerar de memoria lo que vigila, no tiene un sistema de alerta: tiene un catálogo de intereses.</p>
-      <p style="margin-top:12px">Por eso el diseño va en sentido inverso: primero las decisiones que la dirección debe tomar, después las preguntas que las alimentan y solo al final los indicadores. Ese recorrido completo está en la <a href="/inteligencia-competitiva/implantacion/">hoja de ruta de implantación</a>.</p>
-      <div class="note"><b>Regla de descarte.</b> Un tema que nadie quiere firmar no queda pendiente: se elimina. Dejarlo sin dueño solo produce la ilusión de estar vigilando.</div>
-    </div>
+  <div class="explore">
+    <details open>
+      <summary><i>01</i><b>Mueve una decisión</b></summary>
+      <div class="ex-body"><p>Si el resultado no cambia nada de lo que su empresa haría igual, es curiosidad.</p></div>
+    </details>
+    <details>
+      <summary><i>02</i><b>Es observable desde fuente pública o autorizada</b></summary>
+      <div class="ex-body"><p>Si exige información que nadie puede obtener legítimamente, no es operable.</p></div>
+    </details>
+    <details>
+      <summary><i>03</i><b>Tiene umbral definible</b></summary>
+      <div class="ex-body"><p>Debe existir un número o un evento que separe "normal" de "actúe". Lo meramente preocupante no dispara nada.</p></div>
+    </details>
+    <details>
+      <summary><i>04</i><b>Tiene dueño dispuesto</b></summary>
+      <div class="ex-body"><p>Alguien con autoridad acepta el nombre y la acción antes de publicarlo. Un dueño impuesto es una alerta muerta.</p></div>
+    </details>
+    <details>
+      <summary><i>05</i><b>La lista útil es corta, y se diseña en sentido inverso</b></summary>
+      <div class="ex-body">
+        <p>Si el comité no puede enumerar de memoria lo que vigila, no tiene un sistema de alerta: tiene un catálogo de intereses.</p>
+        <p>Por eso el diseño empieza por el final: primero las decisiones que la dirección debe tomar, después las preguntas que las alimentan y solo al final los indicadores. Ese recorrido completo está en la <a href="/inteligencia-competitiva/implantacion/">hoja de ruta de implantación</a>.</p>
+      </div>
+    </details>
   </div>
+  <div class="note reveal"><b>Regla de descarte.</b> Un tema que nadie quiere firmar no queda pendiente: se elimina. Dejarlo sin dueño solo produce la ilusión de estar vigilando.</div>
 </div></section>
 
 <section><div class="wrap">
   <p class="sec-k">El tablero</p>
   <h2>Lo que la dirección ve en una pantalla</h2>
   <p class="sec-sub">El tablero no muestra noticias. Muestra el estado de cada tema vigilado, cuándo disparó por última vez, qué acción quedó abierta y quién responde por ella. Es la agenda del comité, y se construye sobre la práctica de <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>.</p>
-  <div class="tbl-wrap">
+  <div class="tbl-wrap reveal">
     <table class="tbl">
       <thead>
         <tr><th>Tema vigilado</th><th>Estado</th><th>Último disparo</th><th>Acción abierta</th><th>Responsable</th></tr>
@@ -272,6 +298,11 @@
     </table>
   </div>
   <div class="note demo"><b>Tablero de ejemplo.</b> Temas, estados y responsables son ilustrativos: muestran la estructura de la vista ejecutiva. El suyo se arma con sus propios temas en el taller de umbrales.</div>
+
+  <div class="reveal"><figure class="plate">
+    <img src="/img/crew-inspecting.svg" alt="Un agente revisa un tablero de estado con indicadores en verde, ámbar y rojo">
+    <figcaption>El estado de cada tema está resuelto antes de la reunión, no durante ella: el comité discute decisiones, no el dato.</figcaption>
+  </figure></div>
 </div></section>
 
 <section class="forest"><div class="wrap">
@@ -279,15 +310,15 @@
   <h2>Quién recibe qué, cuándo y con qué obligación</h2>
   <p class="sec-sub">La diseminación es donde mueren la mayoría de los programas de vigilancia. El sistema entrega en tres ritmos, cada uno con destinatario y propósito propios.</p>
   <div class="steps">
-    <div class="step">
+    <div class="step reveal">
       <h3>Alerta crítica</h3>
       <p>Inmediata, cuando un tripwire dispara. Va al responsable y a la dirección en un mensaje corto: qué ocurrió, qué umbral se cruzó, cuál es la acción acordada y para cuándo. El análisis viene después.</p>
     </div>
-    <div class="step">
+    <div class="step reveal reveal-2">
       <h3>Brief periódico</h3>
       <p>Con la cadencia acordada, normalmente semanal. Reúne las señales que no cruzaron umbral pero la dirección debe conocer, y el avance de las acciones abiertas.</p>
     </div>
-    <div class="step">
+    <div class="step reveal reveal-3">
       <h3>Informe estratégico</h3>
       <p>Mensual o trimestral, según el ciclo de decisión. Análisis, escenarios y recomendaciones con semáforo de avanzar, vigilar o detener. Sustenta las decisiones del comité.</p>
     </div>
@@ -295,27 +326,33 @@
 
   <h3 style="margin-top:34px">Qué ocurre cuando un tripwire dispara</h3>
   <div class="cycle">
-    <div class="cycle-step">
+    <div class="cycle-step reveal">
       <h3>Detección</h3>
       <p>La revisión registra que el indicador cruzó el umbral y deja constancia del origen del dato.</p>
     </div>
-    <div class="cycle-step">
+    <div class="cycle-step reveal reveal-2">
       <h3>Verificación</h3>
       <p>Un analista confirma el hecho en la fuente. Ninguna alerta sale del sistema sin verificación humana.</p>
     </div>
-    <div class="cycle-step">
+    <div class="cycle-step reveal reveal-3">
       <h3>Notificación</h3>
       <p>Llega al responsable con nombre, dentro del plazo del tema y con la acción pre-acordada incluida.</p>
     </div>
-    <div class="cycle-step">
+    <div class="cycle-step reveal reveal-2">
       <h3>Ejecución</h3>
       <p>El responsable ejecuta, o escala si el contexto cambió, dejando registrada la razón del cambio.</p>
     </div>
-    <div class="cycle-step">
+    <div class="cycle-step reveal reveal-3">
       <h3>Cierre</h3>
       <p>Alguien distinto confirma que se actuó y el disparo queda en el historial del tablero.</p>
     </div>
   </div>
+
+  <div class="reveal"><figure class="plate">
+    <img src="/img/vig-applied-ai.svg" alt="Engranajes en marcha con una marca de verificación sobre el último paso">
+    <figcaption>La detección y el orden del expediente se automatizan; la confirmación del hecho y la decisión sobre qué hacer con él siguen siendo humanas.</figcaption>
+  </figure></div>
+
   <p style="margin-top:22px">El cierre sostiene todo lo demás: sin confirmación independiente de que se actuó, el sistema degrada en pocos meses hasta volverse un archivo de avisos que nadie abre.</p>
 </div></section>
 
@@ -323,25 +360,34 @@
   <p class="sec-k">Ajuste</p>
   <h2>Falsos positivos, silencios y recalibración</h2>
   <p class="sec-sub">Los umbrales se fijan con la mejor información disponible el día del taller, y esa información envejece. Por eso cada ciclo de gobernanza los revisa formalmente.</p>
-  <div class="cols2">
-    <div>
-      <h3>El tripwire que dispara siempre</h3>
-      <ul class="dots">
-        <li>Su umbral quedó demasiado cerca del comportamiento normal del indicador y captura ruido.</li>
-        <li>El costo no es el trabajo extra: el equipo aprende a ignorar la alerta y el hábito contamina a las demás.</li>
-        <li>Corrección: subir el umbral, exigir confirmación en dos fuentes o cambiar a un indicador estable.</li>
-      </ul>
-    </div>
-    <div>
-      <h3>El tripwire que nunca dispara</h3>
-      <ul class="dots">
-        <li>O el umbral quedó tan alto que solo se activaría cuando ya es tarde, o el indicador no mueve la decisión.</li>
-        <li>El silencio prolongado no es tranquilidad: suele ser evidencia de que el disparador está mal puesto.</li>
-        <li>Corrección: bajar el umbral, sustituirlo por un indicador anticipado o retirar el tema.</li>
-      </ul>
-    </div>
+  <div class="explore">
+    <details open>
+      <summary><i>01</i><b>El tripwire que dispara siempre</b></summary>
+      <div class="ex-body">
+        <ul class="dots">
+          <li>Su umbral quedó demasiado cerca del comportamiento normal del indicador y captura ruido.</li>
+          <li>El costo no es el trabajo extra: el equipo aprende a ignorar la alerta y el hábito contamina a las demás.</li>
+          <li>Corrección: subir el umbral, exigir confirmación en dos fuentes o cambiar a un indicador estable.</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary><i>02</i><b>El tripwire que nunca dispara</b></summary>
+      <div class="ex-body">
+        <ul class="dots">
+          <li>O el umbral quedó tan alto que solo se activaría cuando ya es tarde, o el indicador no mueve la decisión.</li>
+          <li>El silencio prolongado no es tranquilidad: suele ser evidencia de que el disparador está mal puesto.</li>
+          <li>Corrección: bajar el umbral, sustituirlo por un indicador anticipado o retirar el tema.</li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary><i>03</i><b>Cómo se recalibra, revisión tras revisión</b></summary>
+      <div class="ex-body">
+        <p>Cada revisión compara los disparos del período contra las decisiones que provocaron. Un tripwire que disparó sin cambiar ninguna conducta se ajusta o se retira; un evento que sorprendió a la dirección se convierte en uno nuevo.</p>
+      </div>
+    </details>
   </div>
-  <div class="note"><b>Cómo se recalibra.</b> Cada revisión compara los disparos del período contra las decisiones que provocaron. Un tripwire que disparó sin cambiar ninguna conducta se ajusta o se retira; un evento que sorprendió a la dirección se convierte en uno nuevo.</div>
   <div class="note demo"><b>Siguiente lectura.</b> Dónde encaja la alerta temprana dentro del programa completo: <a href="/inteligencia-competitiva/implantacion/">hoja de ruta de implantación</a>. Qué parte de la vigilancia se automatiza y qué se mantiene siempre en manos humanas: <a href="/inteligencia-competitiva/ia-analista/">la IA como analista</a>.</div>
 </div></section>
 
@@ -399,5 +445,6 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
 </body>
 </html>

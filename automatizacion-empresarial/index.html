@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=08e86219">
+  <link rel="stylesheet" href="/corp.css?v=4671b186">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Automatización empresarial de punta a punta | Optimatiza">
   <meta property="og:description" content="Procesos completos de finanzas, compras, operaciones y RR. HH., automatizados con controles, trazabilidad y supervisión humana.">
@@ -57,22 +57,12 @@
       {
         "@type": "Question",
         "name": "¿Cuánto tiempo toma implementar una automatización empresarial?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Depende del alcance. Un flujo acotado, como la captura de facturas, suele resolverse en semanas; un proceso que cruza varias áreas se entrega por fases, cada una con hitos verificables. En la evaluación inicial definimos el plan de fases y el orden de implementación, empezando por el punto de mayor impacto."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Depende del alcance. Un flujo acotado, como la captura de facturas, se resuelve en semanas; un proceso que cruza áreas se entrega por fases, cada una con hitos verificables. El plan de fases sale de la evaluación inicial."}
       },
       {
         "@type": "Question",
         "name": "¿Necesitamos cambiar de ERP o de sistemas para automatizar?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No. Diseñamos las automatizaciones sobre los sistemas que su organización ya opera, conectándolos por APIs, bases de datos SQL o, cuando no existe otra vía, mediante RPA sobre la interfaz de usuario. Cambiar de sistema es una decisión de negocio independiente; la automatización no debe forzarla."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué pasa con los casos que la automatización no puede resolver sola?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Se dirigen a una cola de excepciones con toda la información recopilada, para que una persona decida con contexto completo. Desde el diseño, cada flujo define qué se resuelve de forma automática, qué requiere aprobación humana y qué se escala. Ningún flujo nuestro ejecuta pagos ni decisiones críticas sin intervención humana."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Quién queda como dueño de la automatización después de la entrega?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Su organización. Entregamos los flujos, la documentación técnica y funcional, y la capacitación del equipo que los operará; los activos quedan en sus cuentas, no en las nuestras. Si prefiere delegar el monitoreo y la mejora continua, ofrecemos un esquema de operación administrada."}
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Conectamos lo que ya opera por API, por base de datos SQL o, cuando no hay otra vía, por RPA. Cambiar de sistema es una decisión de negocio aparte."}
       }
     ]
   }
@@ -153,7 +143,7 @@
   <section class="phero band"><div class="wrap">
     <p class="kicker"><i></i>Automatización empresarial</p>
     <h1>Procesos completos automatizados de punta a punta, con controles y trazabilidad</h1>
-    <p class="lead">No automatizamos tareas sueltas. Diseñamos el proceso completo — <b>captura, validación, aprobación, registro y reporte</b> — para que corra sin digitación manual, con manejo de excepciones, evidencia de cada paso y las decisiones críticas siempre en manos de su equipo. Todo construido sobre los sistemas que su organización ya opera.</p>
+    <p class="lead">No automatizamos tareas sueltas: dejamos corriendo el proceso entero — <b>captura, validación, aprobación, registro y reporte</b> — sobre los sistemas que ya opera. Las decisiones críticas las firma su equipo.</p>
     <div class="cta-row">
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
       <a class="btn-secondary" href="/metodologia/">Conocer la metodología</a>
@@ -164,232 +154,317 @@
   <section><div class="wrap">
     <span class="sec-k">Dominios de proceso</span>
     <h2>Dónde una automatización cambia la operación</h2>
-    <p class="sec-sub">Concentramos la práctica en seis dominios. Cada uno combina captura de información, reglas de negocio, aprobaciones y registro auditable — el mismo patrón, aplicado al proceso de su área.</p>
+    <p class="sec-sub">Capturar, validar, aprobar, registrar: el mismo patrón, aplicado a su área.</p>
     <div class="cards">
-      <article class="card">
+      <article class="card reveal">
         <h3>Finanzas</h3>
-        <p>El dominio con retorno más inmediato: volumen alto, reglas claras y costo de error medible.</p>
         <ul>
-          <li>Captura y registro de facturas de proveedores</li>
-          <li>Cuentas por cobrar y recordatorios de vencimiento</li>
-          <li>Conciliaciones contra bancos y ERP</li>
+          <li>Facturas de proveedores registradas solas</li>
+          <li>Cobranza con recordatorios y conciliación</li>
           <li>Aprobaciones de pago por niveles</li>
-          <li>Presupuestos y reportes financieros recurrentes</li>
         </ul>
-        <a class="link-more" href="/procesamiento-automatico-facturas/">Procesamiento automático de facturas →</a>
-        <a class="link-more" href="/cobranza-automatizada/">Cobranza automatizada →</a>
+        <a class="link-more" href="/procesamiento-automatico-facturas/">Facturas →</a>
+        <a class="link-more" href="/cobranza-automatizada/">Cobranza →</a>
       </article>
-      <article class="card">
+      <article class="card reveal reveal-2">
         <h3>Compras</h3>
-        <p>Del requerimiento interno a la orden emitida, con expediente completo de cada compra.</p>
         <ul>
-          <li>Solicitudes internas estructuradas</li>
-          <li>Recepción y comparación de cotizaciones</li>
-          <li>Aprobaciones según monto y categoría</li>
-          <li>Emisión de órdenes y alta de proveedores</li>
-          <li>Evidencia documental de cada decisión</li>
+          <li>Solicitud interna estructurada</li>
+          <li>Cotizaciones comparadas en una tabla</li>
+          <li>Orden con expediente completo</li>
         </ul>
       </article>
-      <article class="card">
+      <article class="card reveal reveal-3">
         <h3>Operaciones</h3>
-        <p>Casos y órdenes de trabajo que avanzan solos y escalan cuando algo se sale del cauce.</p>
         <ul>
-          <li>Gestión de casos y tickets con SLA</li>
-          <li>Órdenes de trabajo y asignaciones automáticas</li>
-          <li>Escalamientos por vencimiento o prioridad</li>
-          <li>Manejo de excepciones con registro</li>
+          <li>Casos y órdenes con SLA</li>
+          <li>Asignación y escalamiento automáticos</li>
+          <li>Excepciones registradas, no perdidas</li>
         </ul>
       </article>
-      <article class="card">
+      <article class="card reveal">
         <h3>Recursos humanos</h3>
-        <p>Los ciclos de personal, ejecutados igual cada vez, sin depender de la memoria de nadie.</p>
         <ul>
-          <li>Onboarding y offboarding con listas verificables</li>
-          <li>Solicitudes de vacaciones y permisos</li>
-          <li>Altas y bajas de accesos coordinadas con TI</li>
-          <li>Documentos y recordatorios de cumplimiento</li>
+          <li>Onboarding y offboarding verificables</li>
+          <li>Vacaciones, permisos y accesos</li>
+          <li>Recordatorios de cumplimiento</li>
         </ul>
       </article>
-      <article class="card">
+      <article class="card reveal reveal-2">
         <h3>Control documental</h3>
-        <p>Documentos que se clasifican, validan y archivan solos, con historial completo.</p>
         <ul>
-          <li>Clasificación y extracción de datos con IA</li>
-          <li>Validación contra reglas de negocio</li>
-          <li>Versionado y flujos de aprobación</li>
-          <li>Archivo estructurado y pista de auditoría</li>
+          <li>Clasificación y extracción con IA</li>
+          <li>Validación contra sus reglas</li>
+          <li>Archivo versionado y auditable</li>
         </ul>
       </article>
-      <article class="card">
+      <article class="card reveal reveal-3">
         <h3>Reportería</h3>
-        <p>La información que la dirección necesita, generada y distribuida sin trabajo manual.</p>
         <ul>
-          <li>Extracción y transformación desde los sistemas de origen</li>
-          <li>Consolidación de múltiples fuentes</li>
-          <li>Distribución programada a cada audiencia</li>
-          <li>Alertas cuando una carga falla o un dato no cuadra</li>
+          <li>Consolidación de varias fuentes</li>
+          <li>Distribución programada por audiencia</li>
+          <li>Alerta cuando un dato no cuadra</li>
         </ul>
-        <a class="link-more" href="/data-business-intelligence/">Data &amp; Business Intelligence →</a>
+        <a class="link-more" href="/data-business-intelligence/">Data &amp; BI →</a>
       </article>
     </div>
-    <p class="note">Guía práctica para empezar: <a class="link-more" href="/blog/automatizar-procesos-pyme/">cómo automatizar procesos en una pyme →</a></p>
   </div></section>
 
-  <!-- EN DETALLE: FINANZAS -->
+  <!-- EL PROCESO, CORRIENDO -->
   <section class="band"><div class="wrap">
-    <span class="sec-k">En detalle: finanzas</span>
-    <h2>De la factura recibida al cobro conciliado</h2>
-
-    <h3>Situación inicial</h3>
-    <p class="sec-sub" style="margin-bottom:12px">Las facturas llegan por correo, WhatsApp y papel. Alguien las digita en el ERP, otra persona las revisa, y las cuentas por cobrar se persiguen con memoria y hojas de cálculo. Cada cierre exige horas de conciliación, y los vencimientos se detectan cuando ya son mora.</p>
-
-    <h3 style="margin-top:26px">Flujo automatizado</h3>
-    <div class="flow3">
-      <div class="fcol">
-        <div class="fh">Captura</div>
-        <div class="chips"><span>Correo</span><span>WhatsApp</span><span>Portal</span><span>Extracción con IA</span></div>
+    <span class="sec-k">El proceso, corriendo</span>
+    <h2>Del correo de entrada al registro conciliado</h2>
+    <div class="split">
+      <div>
+        <p>Entra por donde ya entra hoy, se valida contra sus reglas y llega al registro con evidencia de cada paso.</p>
+        <ul class="checks">
+          <li><b>Sin digitación:</b> el dato se captura una vez.</li>
+          <li><b>Sin puntos ciegos:</b> lo que no cuadra va a la cola de excepciones.</li>
+          <li><b>Sin sorpresas:</b> aviso al responsable si algo falla.</li>
+        </ul>
       </div>
-      <div class="farrow" aria-hidden="true">→</div>
-      <div class="fcol hub">
-        <div class="fh">Validación</div>
-        <div class="chips"><span>Reglas de negocio</span><span>Duplicados</span><span>Cotejo contra orden</span><span>Cola de excepciones</span></div>
-      </div>
-      <div class="farrow" aria-hidden="true">→</div>
-      <div class="fcol">
-        <div class="fh">Registro y seguimiento</div>
-        <div class="chips"><span>Asiento en ERP</span><span>Aprobación de pago</span><span>Recordatorios de cobro</span><span>Conciliación</span></div>
+      <div class="reveal">
+        <figure class="plate">
+          <img src="/img/crew-pipeline.svg" alt="Cinta de proceso en la que las piezas avanzan de una estación a la siguiente">
+          <figcaption>Una sola línea de trabajo donde hoy hay cinco bandejas.</figcaption>
+        </figure>
       </div>
     </div>
 
-    <div class="cols2" style="margin-top:30px">
-      <div>
-        <h3>Integraciones</h3>
-        <ul class="dots">
-          <li>ERP o sistema contable, vía API o base de datos SQL</li>
-          <li>SharePoint como repositorio documental con versionado</li>
-          <li>Correo y WhatsApp como canales de entrada y notificación</li>
-          <li>Tablero de cartera y vencimientos para la dirección financiera</li>
-        </ul>
+    <div class="tabs">
+      <div role="tablist" aria-label="Procesos en detalle">
+        <button role="tab" aria-controls="t-fin" type="button">Finanzas</button>
+        <button role="tab" aria-controls="t-com" type="button">Compras</button>
       </div>
-      <div>
-        <h3>Controles</h3>
-        <ul class="dots">
-          <li>Registro por documento: qué entró, qué se validó, quién aprobó y cuándo</li>
-          <li>Detección de duplicados antes del registro, no después del pago</li>
-          <li>Alerta inmediata al responsable si un paso del flujo falla</li>
-          <li>Excepciones a revisión humana con el contexto completo adjunto</li>
+      <div id="t-fin" role="tabpanel">
+        <p>Hoy llegan por correo, WhatsApp y papel; alguien las digita y la mora se descubre tarde.</p>
+        <div class="flow3">
+          <div class="fcol">
+            <div class="fh">Captura</div>
+            <div class="chips"><span>Correo</span><span>WhatsApp</span><span>Portal</span><span>Extracción con IA</span></div>
+          </div>
+          <div class="farrow" aria-hidden="true">→</div>
+          <div class="fcol hub">
+            <div class="fh">Validación</div>
+            <div class="chips"><span>Reglas</span><span>Duplicados</span><span>Cotejo contra orden</span><span>Excepciones</span></div>
+          </div>
+          <div class="farrow" aria-hidden="true">→</div>
+          <div class="fcol">
+            <div class="fh">Registro</div>
+            <div class="chips"><span>Asiento en ERP</span><span>Aprobación de pago</span><span>Cobro</span><span>Conciliación</span></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <figure class="plate">
+            <img src="/img/fig-process-machine.svg" alt="Máquina de proceso que recibe documentos por un extremo y entrega registros ordenados por el otro">
+            <figcaption>La máquina prepara el caso; la firma del pago sigue siendo suya.</figcaption>
+          </figure>
+        </div>
+        <div class="note demo"><b>Caso medido, no prometido:</b> nuestro Capturista Digital procesa una factura en unos 4 segundos, y está grabado en video. <a class="link-more" href="/casos/">Ver el caso →</a></div>
+      </div>
+      <div id="t-com" role="tabpanel">
+        <p>Hoy la solicitud llega por chat y reconstruir un expediente para auditoría toma días.</p>
+        <div class="steps">
+          <div class="step">
+            <h3>Solicitud estructurada</h3>
+            <p>Qué se necesita, para qué centro de costo y por qué.</p>
+          </div>
+          <div class="step">
+            <h3>Cotizaciones comparables</h3>
+            <p>El flujo las pide y las vuelca en una tabla homogénea.</p>
+          </div>
+          <div class="step">
+            <h3>Aprobación por niveles</h3>
+            <p>Monto y categoría eligen al aprobador; hay escalamiento.</p>
+          </div>
+          <div class="step">
+            <h3>Orden y expediente</h3>
+            <p>Solicitud, cotizaciones y decisión quedan archivadas juntas.</p>
+          </div>
+        </div>
+        <ul class="checks">
+          <li>La comparación se automatiza; la elección del proveedor, no.</li>
         </ul>
       </div>
     </div>
-
-    <h3 style="margin-top:26px">Supervisión humana</h3>
-    <p class="sec-sub" style="margin-bottom:12px">Ningún pago se ejecuta ni se compromete de forma automática. Las aprobaciones quedan en las personas que hoy las firman; la automatización les entrega el caso ya validado, con la evidencia lista para decidir.</p>
-
-    <div class="note demo"><b>Caso medido, no prometido:</b> nuestro Capturista Digital procesa una factura en aproximadamente 4 segundos — captura, extracción y registro — y el resultado está grabado en video, no descrito en una lámina. <a class="link-more" href="/casos/">Ver el caso →</a></div>
   </div></section>
 
-  <!-- EN DETALLE: COMPRAS -->
+  <!-- ORQUESTACIÓN / FÁBRICA -->
   <section><div class="wrap">
-    <span class="sec-k">En detalle: compras</span>
-    <h2>De la solicitud a la orden, con expediente completo</h2>
+    <span class="sec-k">Sobre lo que ya tiene</span>
+    <h2>Sus sistemas no se sustituyen: se conectan</h2>
+    <p class="sec-sub">La herramienta se elige por el proceso: Power Platform si su operación ya vive en M365, n8n en su propia infraestructura, RPA donde no hay API.</p>
 
-    <h3>Situación inicial</h3>
-    <p class="sec-sub" style="margin-bottom:12px">Las solicitudes llegan por chat o de palabra. Las cotizaciones viven en el correo de quien las pidió, la comparación se hace de memoria y, cuando auditoría pregunta por qué se eligió a un proveedor, reconstruir el expediente toma días.</p>
+    <figure class="factory" aria-labelledby="factory-cap">
+      <svg viewBox="0 0 900 440" role="img" aria-label="Un robot en el centro conecta n8n, Power Automate, Copilot, Power BI, SharePoint, Dataverse, SQL Server y APIs REST en un solo proceso.">
+        <defs>
+          <pattern id="fx-hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#183f35" stroke-width="1.1" opacity=".22"/>
+          </pattern>
+          <radialGradient id="fx-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c9913b" stop-opacity=".28"/>
+            <stop offset="100%" stop-color="#c9913b" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
 
-    <h3 style="margin-top:26px">Flujo automatizado</h3>
-    <div class="steps">
-      <div class="step">
-        <h3>Solicitud estructurada</h3>
-        <p>Un formulario único captura qué se necesita, para qué centro de costo y con qué justificación. Nada entra al proceso por chat.</p>
-      </div>
-      <div class="step">
-        <h3>Cotizaciones comparables</h3>
-        <p>El flujo solicita cotizaciones a los proveedores, las recibe y extrae los datos clave en una tabla comparativa homogénea.</p>
-      </div>
-      <div class="step">
-        <h3>Aprobación por niveles</h3>
-        <p>Según monto y categoría, la decisión llega al aprobador correcto, con recordatorios y escalamiento si no responde a tiempo.</p>
-      </div>
-      <div class="step">
-        <h3>Orden y expediente</h3>
-        <p>Aprobada la compra, se emite la orden y se notifica al proveedor. Solicitud, cotizaciones y decisión quedan archivadas juntas.</p>
-      </div>
-    </div>
+        <!-- marco de plano tecnico -->
+        <rect class="fx-frame" x="14" y="14" width="872" height="412" rx="6"/>
+        <text class="fx-tag" x="450" y="36" text-anchor="middle">FIG. 1 — ORQUESTACIÓN</text>
 
-    <div class="cols2" style="margin-top:30px">
-      <div>
-        <h3>Integraciones</h3>
-        <ul class="dots">
-          <li>ERP para órdenes de compra y maestro de proveedores</li>
-          <li>SharePoint para el expediente documental de cada compra</li>
-          <li>Correo para solicitud y recepción de cotizaciones</li>
-          <li>Teams o WhatsApp para aprobar desde el teléfono</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Controles</h3>
-        <ul class="dots">
-          <li>Montos y categorías definen la ruta de aprobación, sin atajos</li>
-          <li>Ninguna orden se emite sin aprobación registrada</li>
-          <li>Evidencia completa por compra, lista para auditoría</li>
-          <li>Alertas cuando una cotización o una aprobación se estanca</li>
-        </ul>
-      </div>
-    </div>
+        <!-- anillo punteado que gira -->
+        <ellipse class="fx-ring" cx="450" cy="238" rx="298" ry="150"/>
+        <ellipse class="fx-ring fx-ring-2" cx="450" cy="238" rx="252" ry="122"/>
 
-    <h3 style="margin-top:26px">Supervisión humana</h3>
-    <p class="sec-sub" style="margin-bottom:0">La comparación se automatiza; la decisión, no. El flujo presenta las opciones con datos homogéneos, y la elección del proveedor queda siempre en el aprobador designado — con su decisión firmada y fechada en el expediente.</p>
+        <!-- conectores: cada linea lleva un pulso hacia el centro -->
+        <g class="fx-wires">
+          <path class="fx-wire" d="M748 238 H556"/>
+          <path class="fx-wire" d="M661 136 L570 196"/>
+          <path class="fx-wire" d="M450 88 V178"/>
+          <path class="fx-wire" d="M239 136 L330 196"/>
+          <path class="fx-wire" d="M152 238 H344"/>
+          <path class="fx-wire" d="M239 340 L330 280"/>
+          <path class="fx-wire" d="M450 388 V298"/>
+          <path class="fx-wire" d="M661 340 L570 280"/>
+        </g>
+
+        <!-- halo del nucleo -->
+        <circle cx="450" cy="238" r="118" fill="url(#fx-glow)"/>
+
+        <!-- ROBOT: construye en el centro -->
+        <g class="fx-bot">
+          <!-- banco de trabajo -->
+          <line class="fx-ink" x1="366" y1="316" x2="534" y2="316"/>
+          <line class="fx-ink fx-thin" x1="388" y1="316" x2="388" y2="338"/>
+          <line class="fx-ink fx-thin" x1="512" y1="316" x2="512" y2="338"/>
+
+          <!-- pieza que se construye sobre el banco -->
+          <g class="fx-build">
+            <rect class="fx-brick fx-b1" x="496" y="300" width="30" height="15" rx="2"/>
+            <rect class="fx-brick fx-b2" x="496" y="284" width="30" height="15" rx="2"/>
+            <rect class="fx-brick fx-b3" x="496" y="268" width="30" height="15" rx="2"/>
+          </g>
+
+          <!-- cuerpo -->
+          <rect class="fx-body" x="404" y="228" width="70" height="76" rx="10"/>
+          <rect class="fx-panel" x="416" y="244" width="46" height="26" rx="3"/>
+          <line class="fx-ink fx-thin" x1="422" y1="252" x2="456" y2="252"/>
+          <line class="fx-ink fx-thin" x1="422" y1="260" x2="446" y2="260"/>
+          <text class="fx-code" x="439" y="292" text-anchor="middle">OPZ-01</text>
+
+          <!-- cabeza -->
+          <rect class="fx-body" x="414" y="186" width="50" height="38" rx="8"/>
+          <circle class="fx-eye" cx="428" cy="205" r="5"/>
+          <circle class="fx-eye fx-eye-2" cx="450" cy="205" r="5"/>
+          <line class="fx-ink fx-thin" x1="439" y1="186" x2="439" y2="172"/>
+          <circle class="fx-ant" cx="439" cy="168" r="4"/>
+
+          <!-- brazo que trabaja -->
+          <g class="fx-arm">
+            <line class="fx-ink" x1="474" y1="250" x2="504" y2="262"/>
+            <rect class="fx-tool" x="500" y="256" width="14" height="12" rx="2"/>
+          </g>
+          <!-- brazo de apoyo -->
+          <line class="fx-ink" x1="404" y1="250" x2="382" y2="272"/>
+
+          <!-- ruedas -->
+          <circle class="fx-wheel" cx="418" cy="308" r="7"/>
+          <circle class="fx-wheel" cx="439" cy="308" r="7"/>
+          <circle class="fx-wheel" cx="460" cy="308" r="7"/>
+
+          <!-- engranaje que gira -->
+          <g class="fx-gear">
+            <circle class="fx-ink" cx="368" cy="196" r="13" fill="none"/>
+            <circle class="fx-ink" cx="368" cy="196" r="4.5" fill="none"/>
+            <line class="fx-ink fx-thin" x1="368" y1="179" x2="368" y2="213"/>
+            <line class="fx-ink fx-thin" x1="351" y1="196" x2="385" y2="196"/>
+            <line class="fx-ink fx-thin" x1="356" y1="184" x2="380" y2="208"/>
+            <line class="fx-ink fx-thin" x1="380" y1="184" x2="356" y2="208"/>
+          </g>
+        </g>
+
+        <!-- CONECTORES DE TECNOLOGIA -->
+        <g class="fx-chips">
+          <g class="fx-chip" style="--i:0"><rect x="679" y="220" width="140" height="36" rx="8"/><text x="749" y="243" text-anchor="middle">Power Automate</text></g>
+          <g class="fx-chip" style="--i:1"><rect x="606" y="118" width="112" height="36" rx="8"/><text x="662" y="141" text-anchor="middle">SharePoint</text></g>
+          <g class="fx-chip" style="--i:2"><rect x="402" y="70" width="96" height="36" rx="8"/><text x="450" y="93" text-anchor="middle">Copilot</text></g>
+          <g class="fx-chip" style="--i:3"><rect x="186" y="118" width="106" height="36" rx="8"/><text x="239" y="141" text-anchor="middle">Power BI</text></g>
+          <g class="fx-chip" style="--i:4"><rect x="94" y="220" width="116" height="36" rx="8"/><text x="152" y="243" text-anchor="middle">SQL Server</text></g>
+          <g class="fx-chip" style="--i:5"><rect x="186" y="322" width="106" height="36" rx="8"/><text x="239" y="345" text-anchor="middle">Dataverse</text></g>
+          <g class="fx-chip" style="--i:6"><rect x="404" y="370" width="92" height="36" rx="8"/><text x="450" y="393" text-anchor="middle">n8n</text></g>
+          <g class="fx-chip" style="--i:7"><rect x="602" y="322" width="118" height="36" rx="8"/><text x="661" y="345" text-anchor="middle">API REST</text></g>
+        </g>
+
+        <!-- etiquetas de esquina, como en un plano -->
+        <text class="fx-tag fx-tag-s" x="34" y="410">ENTRADAS HETEROGÉNEAS</text>
+        <text class="fx-tag fx-tag-s" x="866" y="410" text-anchor="end">UN SOLO PROCESO</text>
+      </svg>
+      <figcaption id="factory-cap">Cada sistema se queda donde está. Lo que cambia es que el proceso pasa a gobernarse en un solo lugar.</figcaption>
+    </figure>
+
+    <p class="note">Si el reto es que dos sistemas no se hablan, es <a class="link-more" href="/integracion-sistemas/">integración de sistemas</a>; si exige criterio sobre documentos, <a class="link-more" href="/agentes-ia/">agentes de IA</a> gobernados.</p>
   </div></section>
 
-  <!-- QUÉ DISTINGUE -->
+  <!-- CRITERIO DE FIRMA -->
   <section class="band"><div class="wrap">
     <span class="sec-k">Criterio de firma</span>
     <h2>Qué distingue una automatización empresarial de un script</h2>
-    <p class="sec-sub">Un script resuelve el caso feliz. Una automatización empresarial sobrevive al caso real: el archivo que no llegó, el aprobador de vacaciones, el dato que no cuadra. En cada proyecto entregamos:</p>
-    <ul class="checks">
-      <li><b>Manejo de excepciones:</b> cada flujo define qué pasa cuando el dato no cuadra o la fuente falla, y quién debe enterarse.</li>
-      <li><b>Aprobaciones estructuradas:</b> decisiones dirigidas a la persona correcta según reglas, con recordatorios y escalamiento.</li>
-      <li><b>Trazabilidad:</b> registro de cada ejecución — qué entró, qué se decidió, quién aprobó y cuándo.</li>
-      <li><b>Documentación:</b> diagramas y manuales técnico y funcional, para que el proceso no dependa de quien lo construyó.</li>
-      <li><b>Capacitación:</b> su equipo aprende a operar, monitorear y ajustar los flujos antes del cierre del proyecto.</li>
-      <li><b>Entrega de activos:</b> flujos, repositorios y credenciales quedan en las cuentas de su organización, no en las nuestras.</li>
-    </ul>
-    <p class="note">Así trabajamos cada fase — del diagnóstico a la entrega — en nuestra <a class="link-more" href="/metodologia/">metodología</a>, y así gobernamos accesos y datos en <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>. Si prefiere delegar el monitoreo y la mejora continua, ofrecemos <a class="link-more" href="/operacion-administrada/">operación administrada</a>.</p>
-  </div></section>
-
-  <!-- TECNOLOGÍAS -->
-  <section><div class="wrap">
-    <span class="sec-k">Tecnologías</span>
-    <h2>La herramienta se elige por el proceso, no al revés</h2>
-    <p class="sec-sub">Trabajamos con el ecosistema Microsoft cuando su operación vive en M365 — <a class="link-more" href="/power-automate/">Power Automate</a>, Power Apps, SharePoint — y con <a class="link-more" href="/n8n/">n8n</a> cuando conviene una plataforma abierta desplegada en su propia infraestructura. Donde no hay API, aplicamos RPA; donde hay datos, SQL; donde el proceso exige criterio sobre texto o documentos, IA con supervisión humana. Y cuando los sistemas no se hablan entre sí, lo resolvemos como <a class="link-more" href="/integracion-sistemas/">integración de sistemas</a> o con <a class="link-more" href="/agentes-ia/">agentes de IA</a> gobernados.</p>
-    <div class="pills plain">
-      <span>Power Automate</span><span>n8n</span><span>Power Apps</span><span>Power BI</span><span>RPA</span><span>APIs</span><span>SQL</span><span>SharePoint</span><span>M365</span><span>IA (LLMs)</span>
+    <p class="sec-sub">Un script resuelve el caso feliz. Esto sobrevive al real: el archivo que no llegó, el aprobador de vacaciones, el dato que no cuadra.</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Las excepciones tienen cola propia y responsable</b></summary>
+        <div class="ex-body"><p>Cada flujo define qué se resuelve solo, qué requiere aprobación y qué se escala. Ninguno ejecuta pagos ni decisiones críticas sin intervención humana.</p></div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Las aprobaciones siguen sus reglas, no la buena voluntad</b></summary>
+        <div class="ex-body"><p>Monto, categoría y área dirigen cada decisión al aprobador correcto, con recordatorio y escalamiento.</p></div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Cada ejecución deja rastro auditable</b></summary>
+        <div class="ex-body"><p>Qué entró, qué se validó, quién aprobó y cuándo: el expediente se arma solo.</p></div>
+      </details>
+      <details>
+        <summary><i>04</i><b>El proceso no depende de quien lo construyó</b></summary>
+        <div class="ex-body"><p>Diagramas, manual técnico y funcional, y su equipo capacitado antes del cierre.</p></div>
+      </details>
+      <details>
+        <summary><i>05</i><b>Los activos quedan en las cuentas de su organización</b></summary>
+        <div class="ex-body"><p>Flujos, repositorios y credenciales viven en su entorno, no en el nuestro. Si prefiere delegar el monitoreo, existe <a href="/operacion-administrada/">operación administrada</a>.</p></div>
+      </details>
     </div>
-    <div class="note" style="margin-top:26px"><b>Quién responde por esto:</b> la práctica la dirige Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — con más de 8 años automatizando operaciones empresariales. <a class="link-more" href="/nosotros/">Conozca la firma →</a></div>
+
+    <div class="plate-row">
+      <div class="reveal">
+        <figure class="plate">
+          <img src="/img/crew-inspecting.svg" alt="Robot revisando un tablero de control con indicadores del proceso">
+          <figcaption>Lo que corre solo se vigila igual: cada ejecución queda a la vista.</figcaption>
+        </figure>
+      </div>
+      <div class="reveal reveal-2">
+        <figure class="plate">
+          <img src="/img/crew-delivering.svg" alt="Robot entregando el trabajo terminado a su destinatario">
+          <figcaption>Al cierre, el proceso y su documentación pasan a su equipo.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <p class="note">Fase por fase en la <a class="link-more" href="/metodologia/">metodología</a>; accesos y datos, en <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p>
   </div></section>
 
   <!-- FAQ -->
-  <section class="band"><div class="wrap">
+  <section><div class="wrap">
     <span class="sec-k">Preguntas frecuentes</span>
-    <h2>Lo que las direcciones nos preguntan antes de empezar</h2>
-    <div class="faq" style="margin-top:20px">
+    <h2>Lo que las direcciones preguntan antes de empezar</h2>
+    <div class="faq">
       <details>
         <summary>¿Cuánto tiempo toma implementar una automatización empresarial?</summary>
-        <p class="fa">Depende del alcance. Un flujo acotado, como la captura de facturas, suele resolverse en semanas; un proceso que cruza varias áreas se entrega por fases, cada una con hitos verificables. En la evaluación inicial definimos el plan de fases y el orden de implementación, empezando por el punto de mayor impacto.</p>
+        <p class="fa">Depende del alcance. Un flujo acotado, como la captura de facturas, se resuelve en semanas; un proceso que cruza áreas se entrega por fases con hitos verificables. El plan sale de la evaluación inicial.</p>
       </details>
       <details>
         <summary>¿Necesitamos cambiar de ERP o de sistemas para automatizar?</summary>
-        <p class="fa">No. Diseñamos las automatizaciones sobre los sistemas que su organización ya opera, conectándolos por APIs, bases de datos SQL o, cuando no existe otra vía, mediante RPA sobre la interfaz de usuario. Cambiar de sistema es una decisión de negocio independiente; la automatización no debe forzarla.</p>
-      </details>
-      <details>
-        <summary>¿Qué pasa con los casos que la automatización no puede resolver sola?</summary>
-        <p class="fa">Se dirigen a una cola de excepciones con toda la información recopilada, para que una persona decida con contexto completo. Desde el diseño, cada flujo define qué se resuelve de forma automática, qué requiere aprobación humana y qué se escala. Ningún flujo nuestro ejecuta pagos ni decisiones críticas sin intervención humana.</p>
-      </details>
-      <details>
-        <summary>¿Quién queda como dueño de la automatización después de la entrega?</summary>
-        <p class="fa">Su organización. Entregamos los flujos, la documentación técnica y funcional, y la capacitación del equipo que los operará; los activos quedan en sus cuentas, no en las nuestras. Si prefiere delegar el monitoreo y la mejora continua, ofrecemos un esquema de operación administrada.</p>
+        <p class="fa">No. Conectamos lo que ya opera por API, por base de datos SQL o, cuando no hay otra vía, por RPA. Cambiar de sistema es una decisión de negocio aparte.</p>
       </details>
     </div>
+    <p class="note"><b>Quién responde:</b> dirige la práctica Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — con más de 8 años automatizando operaciones. <a class="link-more" href="/nosotros/">Conozca la firma →</a></p>
   </div></section>
 
   <!-- CTA FINAL -->
@@ -399,6 +474,7 @@
       <h2>Empiece por el proceso que más le cuesta cada mes</h2>
       <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador (GMT-6).</p>
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
     </div>
   </div></section>
 </main>
@@ -445,6 +521,7 @@
 </div></footer>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script src="/interact.js?v=c47c7829" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
 </body>
 </html>

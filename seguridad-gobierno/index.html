@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=08e86219">
+  <link rel="stylesheet" href="/corp.css?v=4671b186">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Seguridad y gobierno: controles verificables, no promesas">
   <meta property="og:description" content="Controles verificables para la automatización empresarial: acceso mínimo, datos en las cuentas del cliente, gobierno de agentes de IA y entrega documentada.">
@@ -44,17 +44,17 @@
       {
         "@type": "Question",
         "name": "¿Dónde quedan alojados nuestros datos durante y después del proyecto?",
-        "acceptedAnswer": {"@type": "Answer", "text": "En las cuentas y sistemas del cliente: su Microsoft 365, su ERP, sus bases de datos y sus suscripciones de nube. Trabajamos con acceso delegado y revocable, y no trasladamos información a entornos propios salvo lo estrictamente necesario para el servicio acordado. La retención y la eliminación de las copias operativas que ese servicio requiera se pactan por escrito al inicio."}
+        "acceptedAnswer": {"@type": "Answer", "text": "En sus propias cuentas y sistemas, con acceso delegado y revocable. Nada se traslada a entornos nuestros salvo lo indispensable, y la retención de esas copias se pacta por escrito."}
       },
       {
         "@type": "Question",
         "name": "¿Firman acuerdos de confidencialidad (NDA)?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Sí. Firmamos acuerdos de confidencialidad cuando el cliente lo solicita y, cuando el proyecto involucra datos sensibles, lo proponemos nosotros como parte del arranque. Además, los proveedores y servicios de terceros que participan en la solución se declaran de forma explícita, para que usted sepa qué componentes procesan su información y bajo qué términos."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, cuando el cliente lo solicita; con datos sensibles lo proponemos nosotros al arrancar. Declaramos además qué terceros participan y qué datos procesan."}
       },
       {
         "@type": "Question",
         "name": "¿Qué sucede con los accesos cuando termina el proyecto?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Se revocan de forma verificable. Los accesos se otorgan en los sistemas del cliente, con menor privilegio e identidades nominales, precisamente para que puedan retirarse en cualquier momento sin depender de nosotros. Al cierre entregamos la lista de accesos utilizados para que su equipo confirme la revocación en sus propios sistemas."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Se revocan de forma verificable: viven en sus sistemas, con menor privilegio e identidades nominales. Al cierre entregamos la lista de accesos usados para que su equipo confirme el retiro."}
       }
     ]
   }
@@ -135,7 +135,7 @@
   <section class="phero band"><div class="wrap">
     <p class="kicker"><i></i>Firma · Seguridad y gobierno</p>
     <h1>Seguridad y gobierno</h1>
-    <p class="lead">Automatizar un proceso es darle a un sistema acceso a datos, aplicaciones y decisiones de su empresa. Eso exige <b>controles verificables, no promesas</b>: quién accede y con qué privilegio, dónde viven los datos, qué puede hacer un agente sin una persona y qué queda registrado. Esta página describe los controles con los que diseñamos y operamos cada solución.</p>
+    <p class="lead">Automatizar es dar a un sistema acceso a los datos y decisiones de su empresa. Exige <b>controles verificables, no promesas</b>: cada uno se comprueba en sus sistemas.</p>
     <div class="cta-row">
       <a class="btn-primary" href="/contacto/">Solicitar revisión de seguridad</a>
       <a class="btn-secondary" href="/responsabilidad-ia/">Ver responsabilidad de IA</a>
@@ -146,54 +146,87 @@
   <section><div class="wrap">
     <p class="sec-k">Nuestra tesis</p>
     <h2>Un control que no se puede verificar es solo una promesa</h2>
-    <p class="sec-sub">"Sus datos están seguros" no es un control: es una frase. Preferimos afirmaciones que usted puede comprobar en una revisión conjunta, sobre sus propios sistemas:</p>
-    <ul class="dots">
-      <li><b>Quién accede se puede listar.</b> Identidades nominales, roles y privilegios asignados, visibles en la administración de sus plataformas, no en un documento nuestro.</li>
-      <li><b>Qué cambió se puede rastrear.</b> Versiones, aprobaciones y fechas de cada modificación que llegó a producción.</li>
-      <li><b>Qué ocurrió se puede auditar.</b> Registros de ejecución, errores y acciones de los agentes, con retención acordada.</li>
-      <li><b>Qué decide una persona está por escrito.</b> Los límites de autonomía de cada automatización y de cada agente se definen antes de operar, no después del primer incidente.</li>
-    </ul>
-    <div class="note" style="margin-top:24px"><b>Sobre certificaciones.</b> No afirmamos certificaciones que no poseemos. Diseñamos cada solución según los requisitos de seguridad, privacidad, infraestructura y cumplimiento acordados con el cliente.</div>
-  </div></section>
-
-  <!-- IDENTIDAD Y ACCESO -->
-  <section class="band"><div class="wrap">
-    <p class="sec-k">Identidad y acceso</p>
-    <h2>Menor privilegio, roles definidos y revocación verificable</h2>
-    <p class="sec-sub">El acceso es el primer control: si está mal otorgado, todo lo demás llega tarde.</p>
-    <ul class="checks">
-      <li><b>Menor privilegio.</b> Solicitamos únicamente los permisos que la solución necesita para operar. Si un acceso amplio no es necesario, no lo pedimos; si deja de ser necesario, pedimos que se retire.</li>
-      <li><b>Identidades nominales y cuentas de servicio.</b> Las personas acceden con identidades propias y las automatizaciones con cuentas de servicio dedicadas. Nada opera con credenciales personales prestadas ni compartidas por chat.</li>
-      <li><b>Roles separados.</b> Quién desarrolla, quién aprueba y quién opera son roles distintos con permisos distintos, acordados al inicio del proyecto.</li>
-      <li><b>Revocación en sus manos.</b> Los accesos se otorgan en los sistemas del cliente, de modo que usted puede revocarlos en cualquier momento sin depender de nosotros. Al cierre entregamos la lista de accesos utilizados para confirmar su retiro.</li>
-    </ul>
-  </div></section>
-
-  <!-- DATOS -->
-  <section><div class="wrap">
-    <p class="sec-k">Datos</p>
-    <h2>Sus datos permanecen en sus cuentas y sistemas</h2>
-    <p class="sec-sub">Configuramos y operamos sobre la infraestructura del cliente: su Microsoft 365, su ERP, sus bases de datos, sus suscripciones de nube. No trasladamos información a entornos propios salvo lo estrictamente necesario para el servicio acordado.</p>
-    <div class="cards">
-      <div class="card"><h3>Residencia en sus sistemas</h3><p>Las automatizaciones se instalan sobre cuentas de titularidad del cliente. Si mañana deja de trabajar con nosotros, los datos, los flujos y los accesos siguen en su casa.</p></div>
-      <div class="card"><h3>Cifrado en tránsito</h3><p>La comunicación entre sus sistemas, las automatizaciones y los servicios de terceros viaja cifrada (TLS). Las credenciales se gestionan como secretos: nunca en código fuente ni en repositorios.</p></div>
-      <div class="card"><h3>Retención y eliminación acordadas</h3><p>Qué copias operativas existen, cuánto tiempo se conservan y cuándo se eliminan se pacta por escrito. Al cierre del servicio, la eliminación de nuestros entornos de trabajo es parte de la entrega.</p></div>
-      <div class="card"><h3>Sin entrenamiento con sus datos</h3><p>No entrenamos modelos con datos del cliente. En los flujos que usan IA empleamos servicios en modalidades empresariales cuyos términos excluyen el uso de sus datos para entrenamiento.</p></div>
+    <div class="split">
+      <div>
+        <p class="sec-sub">"Sus datos están seguros" es una frase, no un control. Estas cuatro se comprueban.</p>
+        <ul class="dots">
+          <li><b>Quién accede se puede listar.</b> En la administración de sus propias plataformas.</li>
+          <li><b>Qué cambió se puede rastrear.</b> Versión, aprobación y fecha de cada cambio.</li>
+          <li><b>Qué ocurrió se puede auditar.</b> Ejecuciones, errores y acciones, con retención acordada.</li>
+          <li><b>Qué decide una persona está por escrito.</b> Antes de operar, no tras el primer incidente.</li>
+        </ul>
+      </div>
+      <figure class="plate">
+        <img src="/img/crew-inspecting.svg" alt="Robot revisando un tablero de indicadores">
+        <figcaption>Se revisa en su consola de administración, no en un documento nuestro.</figcaption>
+      </figure>
     </div>
+    <div class="note reveal"><b>Sobre certificaciones.</b> No afirmamos certificaciones que no poseemos. Diseñamos según los requisitos de seguridad y cumplimiento de su empresa.</div>
   </div></section>
 
-  <!-- OPERACIÓN -->
+  <!-- CONTROLES POR FAMILIA -->
   <section class="band"><div class="wrap">
-    <p class="sec-k">Operación</p>
-    <h2>Disciplina de operación: lo que sostiene la seguridad en el tiempo</h2>
-    <p class="sec-sub">La mayoría de los incidentes no nacen de un ataque sofisticado sino de operación descuidada: cambios sin control, errores silenciosos, respaldos que nadie probó. Estos son los controles operativos de cada solución.</p>
-    <div class="cards">
-      <div class="card"><h3>Ambientes separados</h3><p>Desarrollo y pruebas ocurren fuera de producción. Nada se prueba sobre los datos y procesos con los que su negocio opera.</p></div>
-      <div class="card"><h3>Gestión de cambios y versiones</h3><p>Cada modificación se versiona, se prueba y se documenta antes de desplegarse. Siempre es posible saber qué cambió, cuándo y quién lo aprobó.</p></div>
-      <div class="card"><h3>Manejo de errores y reintentos</h3><p>Los flujos se diseñan asumiendo que las fallas ocurren: reintentos controlados, rutas de excepción definidas y ninguna falla que muera en silencio.</p></div>
-      <div class="card"><h3>Respaldo y recuperación</h3><p>Los componentes de la solución quedan respaldados y el procedimiento de recuperación queda documentado y acordado con su equipo.</p></div>
-      <div class="card"><h3>Monitoreo y alertas</h3><p>Las ejecuciones se vigilan y las alertas avisan cuando algo se desvía, antes de que el problema llegue a su operación. Es la base de la <a href="/operacion-administrada/">operación administrada</a>.</p></div>
-      <div class="card"><h3>Logs y auditoría</h3><p>Las ejecuciones, los errores y las acciones relevantes quedan registrados con retención acordada, de modo que una revisión posterior pueda reconstruir qué pasó.</p></div>
+    <p class="sec-k">Los controles</p>
+    <h2>Cuatro familias de control, abiertas a su auditoría</h2>
+    <p class="sec-sub">Abra la que su comité necesite revisar.</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Identidad y acceso: menor privilegio y revocación verificable</b></summary>
+        <div class="ex-body">
+          <ul class="checks">
+            <li><b>Menor privilegio.</b> Solo los permisos que la solución necesita; si sobran, pedimos retirarlos.</li>
+            <li><b>Identidades nominales y cuentas de servicio.</b> Nada opera con credenciales prestadas ni compartidas por chat.</li>
+            <li><b>Roles separados.</b> Quién desarrolla, quién aprueba y quién opera son roles distintos.</li>
+            <li><b>Revocación sin depender de nosotros.</b> Los accesos viven en sus sistemas; al cierre entregamos la lista.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Datos: permanecen en sus cuentas y sistemas</b></summary>
+        <div class="ex-body">
+          <ul class="checks">
+            <li><b>Residencia en sus sistemas.</b> Su Microsoft 365, su ERP, sus bases. Si nos vamos, todo sigue en su casa.</li>
+            <li><b>Cifrado y secretos.</b> Tráfico cifrado (TLS) y credenciales como secretos, nunca en código.</li>
+            <li><b>Retención acordada.</b> Qué copias existen, cuánto duran y cuándo se eliminan, por escrito.</li>
+            <li><b>Sin entrenamiento con sus datos.</b> Servicios de IA en modalidades empresariales cuyos términos lo excluyen.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Operación: lo que sostiene la seguridad en el tiempo</b></summary>
+        <div class="ex-body">
+          <ul class="checks">
+            <li><b>Ambientes separados.</b> Desarrollo y pruebas ocurren fuera de producción.</li>
+            <li><b>Cambios versionados.</b> Cada cambio se versiona, se prueba y se documenta antes de desplegarse.</li>
+            <li><b>Errores y reintentos.</b> Rutas de excepción definidas: ninguna falla muere en silencio.</li>
+            <li><b>Respaldo y recuperación.</b> Componentes respaldados y procedimiento de recuperación documentado.</li>
+            <li><b>Monitoreo y alertas.</b> La desviación avisa antes de llegar a su operación (<a href="/operacion-administrada/">operación administrada</a>).</li>
+            <li><b>Logs y auditoría.</b> Ejecuciones, errores y acciones quedan registrados con retención acordada.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Entrega: queda usted en control, no atado al proveedor</b></summary>
+        <div class="ex-body">
+          <ul class="checks">
+            <li><b>Activos a nombre del cliente.</b> Ambientes, licencias, repositorios y flujos bajo su titularidad desde el inicio.</li>
+            <li><b>Documentación completa.</b> Arquitectura, flujos, credenciales, puntos de falla y procedimientos de operación.</li>
+            <li><b>Capacitación al equipo.</b> Transferencia para monitorear la solución y actuar ante un error.</li>
+            <li><b>Confidencialidad (NDA).</b> La firmamos a solicitud; con datos sensibles, la proponemos nosotros.</li>
+            <li><b>Proveedores declarados.</b> Cada servicio de terceros, con su rol y los datos que procesa.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+    <div class="plate-row">
+      <figure class="plate reveal">
+        <img src="/img/vig-integrations.svg" alt="Dos sistemas unidos por un punto de control intermedio">
+        <figcaption>Cada integración declara qué dato viaja y con qué credencial.</figcaption>
+      </figure>
+      <figure class="plate reveal reveal-2">
+        <img src="/img/crew-delivering.svg" alt="Robot entregando una pieza terminada">
+        <figcaption>Al cierre, los activos quedan a nombre de su empresa.</figcaption>
+      </figure>
     </div>
   </div></section>
 
@@ -201,47 +234,41 @@
   <section><div class="wrap">
     <p class="sec-k">Gobierno de agentes</p>
     <h2>Los agentes de IA operan con límites explícitos</h2>
-    <p class="sec-sub">Un <a href="/agentes-ia/">agente de IA</a> sin límites definidos no es innovación: es un riesgo operativo. Antes de que un agente toque un proceso real, su gobierno queda definido por escrito.</p>
-    <ul class="dots">
-      <li><b>Límites de autonomía.</b> Qué puede hacer el agente por sí mismo y qué tiene prohibido queda documentado y configurado, no sobreentendido.</li>
-      <li><b>Aprobaciones humanas.</b> Las acciones irreversibles o con impacto económico —pagos, compromisos comerciales, comunicaciones masivas— requieren la aprobación de una persona designada.</li>
-      <li><b>Human-in-the-loop.</b> En los puntos críticos del flujo, una persona revisa antes de que el proceso continúe. La automatización prepara el trabajo; la persona conserva la decisión.</li>
-      <li><b>Escalamiento con contexto.</b> Cuando el agente no puede o no debe resolver, el caso pasa a su equipo con el historial completo, no se pierde ni se improvisa.</li>
-      <li><b>Evaluación de riesgos previa.</b> Antes de producción analizamos qué puede salir mal, con qué impacto y qué control lo mitiga; ese análisis se revisa con usted y condiciona el diseño.</li>
-    </ul>
-    <p style="margin-top:18px"><a class="link-more" href="/responsabilidad-ia/">Cómo usamos la IA de forma responsable</a></p>
-  </div></section>
-
-  <!-- ENTREGA -->
-  <section class="band"><div class="wrap">
-    <p class="sec-k">Entrega</p>
-    <h2>La entrega también es un control de seguridad</h2>
-    <p class="sec-sub">Una solución que solo su proveedor entiende es una dependencia, no un activo. Nuestra <a href="/metodologia/">metodología</a> exige una entrega que deje al cliente en control.</p>
-    <ul class="checks">
-      <li><b>Documentación completa.</b> Arquitectura, flujos, credenciales requeridas, puntos de falla conocidos y procedimientos de operación, actualizados a la versión entregada.</li>
-      <li><b>Capacitación al equipo.</b> Sesiones de transferencia para que su equipo entienda qué hace la solución, cómo se monitorea y cómo actuar ante un error.</li>
-      <li><b>Activos a nombre del cliente.</b> Ambientes, licencias, repositorios y flujos quedan bajo titularidad del cliente desde el inicio, no bajo la nuestra.</li>
-      <li><b>Confidencialidad (NDA).</b> Firmamos acuerdos de confidencialidad cuando usted lo solicita; con datos sensibles, lo proponemos nosotros primero.</li>
-      <li><b>Proveedores declarados.</b> Los servicios de terceros que participan en la solución —plataformas, APIs, servicios de IA— se declaran de forma explícita, con el rol que cumplen y los datos que procesan.</li>
-    </ul>
+    <div class="split">
+      <div>
+        <p class="sec-sub">Un <a href="/agentes-ia/">agente</a> sin límites no es innovación: es riesgo operativo.</p>
+        <ul class="dots">
+          <li><b>Límites de autonomía.</b> Qué puede hacer solo y qué tiene prohibido queda configurado.</li>
+          <li><b>Aprobación humana en lo irreversible.</b> Pagos, compromisos y comunicaciones masivas los autoriza una persona designada.</li>
+          <li><b>Persona en los puntos críticos.</b> El agente prepara el trabajo; la decisión sigue siendo suya.</li>
+          <li><b>Escalamiento con contexto.</b> Si no debe resolver, el caso pasa con el historial completo.</li>
+          <li><b>Evaluación de riesgos previa.</b> Qué puede salir mal y qué lo mitiga, revisado con usted antes de producción.</li>
+        </ul>
+        <p><a class="link-more" href="/responsabilidad-ia/">Cómo usamos la IA de forma responsable</a></p>
+      </div>
+      <figure class="plate reveal">
+        <img src="/img/vig-applied-ai.svg" alt="Engranajes de IA con una marca de verificación">
+        <figcaption>Ninguna acción del agente llega a su operación sin control previo.</figcaption>
+      </figure>
+    </div>
   </div></section>
 
   <!-- FAQ -->
-  <section><div class="wrap">
+  <section class="band"><div class="wrap">
     <p class="sec-k">Preguntas frecuentes</p>
-    <h2>Preguntas frecuentes sobre seguridad y gobierno</h2>
-    <div class="faq" style="margin-top:20px">
+    <h2>Lo que suele preguntar un comité de compras</h2>
+    <div class="faq reveal">
       <details>
         <summary>¿Dónde quedan alojados nuestros datos durante y después del proyecto?</summary>
-        <p class="fa">En las cuentas y sistemas del cliente: su Microsoft 365, su ERP, sus bases de datos y sus suscripciones de nube. Trabajamos con acceso delegado y revocable, y no trasladamos información a entornos propios salvo lo estrictamente necesario para el servicio acordado. La retención y la eliminación de las copias operativas que ese servicio requiera se pactan por escrito al inicio.</p>
+        <p class="fa">En sus propias cuentas y sistemas, con acceso delegado y revocable. Nada se traslada a entornos nuestros salvo lo indispensable, y la retención de esas copias se pacta por escrito.</p>
       </details>
       <details>
         <summary>¿Firman acuerdos de confidencialidad (NDA)?</summary>
-        <p class="fa">Sí. Firmamos acuerdos de confidencialidad cuando el cliente lo solicita y, cuando el proyecto involucra datos sensibles, lo proponemos nosotros como parte del arranque. Además, los proveedores y servicios de terceros que participan en la solución se declaran de forma explícita, para que usted sepa qué componentes procesan su información y bajo qué términos.</p>
+        <p class="fa">Sí, cuando el cliente lo solicita; con datos sensibles lo proponemos nosotros al arrancar. Declaramos además qué terceros participan y qué datos procesan.</p>
       </details>
       <details>
         <summary>¿Qué sucede con los accesos cuando termina el proyecto?</summary>
-        <p class="fa">Se revocan de forma verificable. Los accesos se otorgan en los sistemas del cliente, con menor privilegio e identidades nominales, precisamente para que puedan retirarse en cualquier momento sin depender de nosotros. Al cierre entregamos la lista de accesos utilizados para que su equipo confirme la revocación en sus propios sistemas.</p>
+        <p class="fa">Se revocan de forma verificable: viven en sus sistemas, con menor privilegio e identidades nominales. Al cierre entregamos la lista de accesos usados para que su equipo confirme el retiro.</p>
       </details>
     </div>
   </div></section>
@@ -251,7 +278,7 @@
     <div class="cta-band">
       <span class="ck">Próximo paso</span>
       <h2>Solicitar revisión de seguridad</h2>
-      <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador (GMT-6).</p>
+      <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil (GMT-6).</p>
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
     </div>
   </div></section>
@@ -300,5 +327,6 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
 </body>
 </html>

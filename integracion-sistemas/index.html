@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=08e86219">
+  <link rel="stylesheet" href="/corp.css?v=4671b186">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Integración de Sistemas Empresariales | Optimatiza">
   <meta property="og:description" content="Conectamos ERP, CRM, SharePoint y sistemas legacy para eliminar la doble digitación y operar con información consistente. APIs, RPA y automatización.">
@@ -55,23 +55,13 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Qué pasa si uno de nuestros sistemas no tiene API?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Usamos RPA: un robot de software opera la interfaz del sistema igual que lo haría una persona, con selectores robustos, controles de error y bitácora de cada operación. Lo documentamos como una pieza de transición, de modo que pueda sustituirse por una conexión directa cuando el sistema evolucione o se migre."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Necesitamos reemplazar nuestro ERP o CRM para integrarnos?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No. La integración conecta los sistemas que ya tiene y protege la inversión realizada en ellos. Definimos qué sistema es la fuente de verdad de cada dato y hacemos que los demás la respeten, sin migraciones forzadas ni cambios de plataforma como requisito."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo nos enteramos si una integración falla?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Porque la diseñamos para avisar. Cada transacción queda registrada en una bitácora, los errores transitorios se reintentan de forma automática y los fallos persistentes generan una alerta al responsable con el detalle del registro afectado. El criterio de diseño es que ninguna integración falle en silencio."}
+        "name": "¿Necesitamos reemplazar nuestro ERP o CRM?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Se conecta lo que ya tiene y se protege esa inversión. Definimos qué sistema manda sobre cada dato y los demás lo respetan."}
       },
       {
         "@type": "Question",
         "name": "¿Quién opera la integración después de la entrega?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Usted decide. Entregamos documentación técnica y de operación para que su equipo la administre, y también ofrecemos operación administrada: monitoreamos las ejecuciones, atendemos incidentes y aplicamos mejoras continuas como un servicio mensual."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Usted decide. Entregamos la documentación para que su equipo la administre, o la operamos nosotros: monitoreo, incidentes y mejoras."}
       }
     ]
   }
@@ -152,7 +142,7 @@
   <section class="phero band"><div class="wrap">
     <p class="kicker"><i></i>Solución · Integración de sistemas</p>
     <h1>Sistemas conectados, información consistente</h1>
-    <p class="lead">Cuando el ERP, el CRM, las hojas de cálculo y el correo no se hablan entre sí, cada área trabaja con su propia versión de los datos. Diseñamos integraciones que <b>mueven la información una sola vez, con validación y trazabilidad</b>, para que sus equipos decidan sobre cifras que sí cuadran.</p>
+    <p class="lead">Cuando el ERP, el CRM y las hojas de cálculo no se hablan, cada área decide con cifras distintas. Conectamos lo que ya tiene para que <b>el dato se capture una vez, validado y con rastro</b>.</p>
     <div class="cta-row">
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
       <a class="btn-secondary" href="/metodologia/">Conocer la metodología</a>
@@ -163,114 +153,121 @@
   <section><div class="wrap">
     <p class="sec-k">El punto de partida</p>
     <h2>El costo silencioso de los sistemas desconectados</h2>
-    <p class="sec-sub">Casi ninguna empresa decide operar con sistemas aislados: llega ahí por acumulación. Un ERP heredado, un CRM que se compró después, hojas de cálculo que nacieron como solución temporal. Los síntomas son reconocibles:</p>
+    <p class="sec-sub">Nadie decide operar así: se llega por acumulación.</p>
     <div class="cols2">
       <ul class="dots">
-        <li><b>Doble digitación:</b> la misma orden, factura o cliente se captura dos o tres veces en sistemas distintos, con los errores que eso introduce.</li>
-        <li><b>Datos duplicados o desactualizados:</b> cada sistema guarda su propia versión del cliente, del precio o del inventario, y nadie sabe cuál es la vigente.</li>
-        <li><b>Reportes que no cuadran:</b> ventas, finanzas y operaciones presentan cifras distintas del mismo período porque salen de fuentes distintas.</li>
-        <li><b>Dependencia de hojas individuales:</b> información crítica vive en archivos de Excel que solo una persona entiende y mantiene.</li>
-        <li><b>Procesos sin trazabilidad:</b> cuando algo sale mal, no hay forma de reconstruir quién capturó qué, cuándo y en qué sistema.</li>
+        <li><b>Doble digitación:</b> la misma factura se captura dos y tres veces.</li>
+        <li><b>Datos en desacuerdo:</b> cada sistema guarda su versión del cliente.</li>
+        <li><b>Reportes que no cuadran:</b> ventas y finanzas dan cifras distintas del mismo mes.</li>
+        <li><b>Hojas de cálculo críticas:</b> datos que solo una persona entiende.</li>
+        <li><b>Sin trazabilidad:</b> nadie reconstruye quién capturó qué y cuándo.</li>
       </ul>
       <div>
-        <p>Los cinco síntomas tienen el mismo origen: la información viaja entre sistemas a mano. Y todo lo que viaja a mano llega tarde, llega incompleto o no llega.</p>
-        <p style="margin-top:14px">Nuestro trabajo es que los datos se muevan solos, una sola vez y con reglas explícitas: qué sistema manda sobre cada dato, qué se valida antes de escribir y qué queda registrado en cada paso. Sobre esa base se construyen después la automatización de procesos y la analítica.</p>
-        <div class="note"><b>Antes de integrar, mapeamos.</b> El primer entregable de cualquier proyecto es un mapa de sistemas y flujos de datos: dónde nace cada información, quién la transforma y en qué punto se rompe la cadena. Sobre ese mapa se decide qué integrar primero. <a class="link-more" href="/metodologia/">Ver metodología</a></div>
+        <div class="note reveal"><b>Antes de integrar, mapeamos.</b> El primer entregable es el mapa de sus sistemas: dónde nace cada dato y dónde se rompe la cadena. <a class="link-more" href="/metodologia/">Cómo trabajamos</a></div>
       </div>
     </div>
   </div></section>
 
-  <!-- PATRONES -->
+  <!-- UNA SOLA CAPTURA -->
   <section class="band"><div class="wrap">
-    <p class="sec-k">Patrones de integración</p>
-    <h2>Seis formas probadas de conectar sistemas</h2>
-    <p class="sec-sub">No existe una integración universal. Elegimos el patrón según la frecuencia del dato, la criticidad del proceso y las capacidades reales de cada sistema.</p>
-    <div class="cards">
-      <div class="card"><div class="cnum">01</div><h3>Sincronización programada</h3><p>Catálogos de clientes, precios o inventario se copian entre sistemas en horarios definidos, con detección de cambios y escrituras idempotentes: si el proceso se repite, no duplica registros.</p></div>
-      <div class="card"><div class="cnum">02</div><h3>Orquestación por eventos</h3><p>Un hecho de negocio — una orden aprobada, un pago recibido — dispara en cadena las acciones que corresponden en los demás sistemas, en segundos y sin intervención manual.</p></div>
-      <div class="card"><div class="cnum">03</div><h3>APIs y webhooks</h3><p>Cuando los sistemas ofrecen conexión directa, la usamos: autenticación segura, control de límites de consumo y manejo de versiones para que la integración sobreviva a las actualizaciones.</p></div>
-      <div class="card"><div class="cnum">04</div><h3>RPA para sistemas legacy</h3><p>Si un sistema no tiene API, un robot de software opera su pantalla igual que una persona: mismo resultado, sin modificar el sistema de origen y con bitácora de cada operación.</p></div>
-      <div class="card"><div class="cnum">05</div><h3>Capa de datos común</h3><p>Un repositorio central — típicamente SQL — consolida y depura los datos de varios sistemas para servirlos a reportes, dashboards y otras aplicaciones desde una sola fuente.</p></div>
-      <div class="card"><div class="cnum">06</div><h3>Integración documental</h3><p>Facturas, órdenes y comprobantes que llegan por correo o portal se leen con IA, se validan contra reglas de negocio y se registran en el sistema destino sin captura manual.</p></div>
+    <p class="sec-k">El principio de diseño</p>
+    <h2>El dato se captura una vez y viaja solo</h2>
+    <div class="split">
+      <div>
+        <p>Las reglas se concentran en una capa intermedia: el dato entra una vez, se valida y se reparte.</p>
+        <ul class="checks">
+          <li>Un solo sistema manda sobre cada dato.</li>
+          <li>Nada se escribe sin pasar la validación acordada.</li>
+          <li>Cada movimiento queda registrado y es auditable.</li>
+          <li><a class="link-more" href="/data-business-intelligence/">Data &amp; BI</a> y la <a class="link-more" href="/automatizacion-empresarial/">automatización</a> leen datos ya limpios.</li>
+        </ul>
+      </div>
+      <div class="reveal"><figure class="plate">
+        <img src="/img/vig-integrations.svg" alt="Un sistema de origen envía el dato a un punto de control que lo entrega al sistema de destino">
+        <figcaption>Una captura, un punto de control, un destino válido.</figcaption>
+      </figure></div>
     </div>
-    <div class="note demo"><b>Caso medido:</b> nuestro Capturista Digital lee y registra los datos de una factura en aproximadamente 4 segundos por documento, medido y grabado en video. <a class="link-more" href="/procesamiento-automatico-facturas/">Ver procesamiento automático de facturas</a></div>
-  </div></section>
-
-  <!-- ARQUITECTURA -->
-  <section><div class="wrap">
-    <p class="sec-k">Arquitectura típica</p>
-    <h2>De fuentes dispersas a un flujo gobernado</h2>
-    <p class="sec-sub">En lugar de conectar cada sistema con todos los demás, concentramos las reglas en una capa de integración. Cada dato entra una vez, se valida una vez y se distribuye a donde haga falta.</p>
     <div class="flow3">
-      <div class="fcol"><div class="fh">Fuentes</div><div class="chips"><span>ERP</span><span>CRM</span><span>SQL</span><span>SharePoint</span><span>Excel</span><span>Correo</span><span>Portales web</span></div></div>
+      <div class="fcol"><div class="fh">Fuentes</div><div class="chips"><span>ERP</span><span>CRM</span><span>SQL</span><span>SharePoint</span><span>Excel</span><span>Correo</span></div></div>
       <div class="farrow" aria-hidden="true">&rarr;</div>
-      <div class="fcol hub"><div class="fh">Capa de integración</div><div class="chips"><span>Validación</span><span>Reglas de negocio</span><span>Transformación</span><span>Deduplicación</span><span>Bitácora</span></div></div>
+      <div class="fcol hub"><div class="fh">Capa de integración</div><div class="chips"><span>Validación</span><span>Reglas</span><span>Deduplicación</span><span>Bitácora</span></div></div>
       <div class="farrow" aria-hidden="true">&rarr;</div>
       <div class="fcol"><div class="fh">Destinos</div><div class="chips"><span>Dashboards</span><span>Alertas</span><span>Registros maestros</span><span>Aprobaciones</span></div></div>
     </div>
-    <p style="margin-top:22px;max-width:70ch">Con la capa de integración en medio, los destinos dejan de depender de cada fuente: los tableros de <a class="link-more" href="/data-business-intelligence/">Data &amp; Business Intelligence</a> leen datos ya validados, y los procesos de <a class="link-more" href="/automatizacion-empresarial/">automatización empresarial</a> operan sobre registros consistentes.</p>
   </div></section>
 
-  <!-- CONFIABILIDAD -->
-  <section class="band"><div class="wrap">
-    <p class="sec-k">Confiabilidad operativa</p>
-    <h2>Una integración se juzga por su peor día</h2>
-    <p class="sec-sub">El día que el servidor no responde, el archivo llega corrupto o el API cambia sin aviso. Diseñamos para ese día: cada integración que entregamos incluye estos controles.</p>
-    <div class="cols2">
-      <ul class="checks">
-        <li><b>Reintentos con respaldo:</b> los errores transitorios — un servicio caído, una red lenta — se reintentan de forma automática con espera creciente antes de escalar.</li>
-        <li><b>Colas de trabajo:</b> si un sistema destino no está disponible, las transacciones esperan en cola y se procesan al restablecerse, sin pérdida de datos.</li>
-        <li><b>Bitácora por transacción:</b> cada registro que cruza la integración deja rastro: origen, transformación aplicada, destino y resultado.</li>
-      </ul>
-      <ul class="checks">
-        <li><b>Manejo de errores explícito:</b> distinguimos errores recuperables de permanentes; los permanentes se apartan para revisión humana en lugar de bloquear el flujo.</li>
-        <li><b>Ambientes separados:</b> todo cambio se prueba en un ambiente de pruebas antes de tocar producción.</li>
-        <li><b>Alertas de falla:</b> cuando algo requiere intervención, el responsable recibe una alerta con el contexto necesario para actuar. Ninguna falla queda en silencio.</li>
-      </ul>
-    </div>
-    <p style="margin-top:24px;max-width:70ch">Para las integraciones que operamos nosotros, estos controles se monitorean de forma continua como parte de la <a class="link-more" href="/operacion-administrada/">operación administrada</a>. Los criterios de acceso y manejo de datos están descritos en <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p>
-  </div></section>
-
-  <!-- TECNOLOGÍAS -->
+  <!-- PATRONES -->
   <section><div class="wrap">
-    <p class="sec-k">Herramientas</p>
-    <h2>La tecnología según el problema, no al revés</h2>
-    <p class="sec-sub">No partimos de una herramienta favorita: partimos de los sistemas que su empresa ya tiene y del volumen real que deben mover. En el ecosistema Microsoft trabajamos con Power Platform; fuera de él, con n8n y desarrollo directo sobre APIs.</p>
-    <div class="pills plain">
-      <a href="/power-automate/"><span>Power Automate</span></a>
-      <a href="/n8n/"><span>n8n</span></a>
-      <span>APIs REST y webhooks</span>
-      <span>RPA</span>
-      <span>SQL</span>
-      <span>SharePoint</span>
-      <span>Microsoft 365</span>
-      <a href="/power-bi/"><span>Power BI</span></a>
-      <span>Power Apps</span>
-      <span>IA aplicada (LLMs)</span>
+    <p class="sec-k">Patrones de integración</p>
+    <h2>Cinco formas probadas de conectar sistemas</h2>
+    <p class="sec-sub">El patrón se elige por la criticidad del proceso y por lo que cada sistema permite.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="cnum">01</div><h3>Sincronización programada</h3><p>Clientes, precios e inventario se copian en horarios fijos, sin duplicar.</p></div>
+      <div class="card reveal reveal-2"><div class="cnum">02</div><h3>Orquestación por eventos</h3><p>Una orden aprobada dispara en segundos lo que toca en cada sistema.</p></div>
+      <div class="card reveal reveal-3"><div class="cnum">03</div><h3>API directa o RPA</h3><p>Si el sistema ofrece API, la usamos; si no, un robot opera su pantalla.</p></div>
+      <div class="card reveal"><div class="cnum">04</div><h3>Capa de datos común</h3><p>Un repositorio central sirve a reportes y apps desde una sola fuente.</p></div>
+      <div class="card reveal reveal-2"><div class="cnum">05</div><h3>Documentos leídos con IA</h3><p>Las facturas del correo se leen, se validan y se registran solas.</p></div>
     </div>
-    <div class="note"><b>Quién responde por el trabajo:</b> la práctica la dirige Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — con más de ocho años automatizando operaciones empresariales. <a class="link-more" href="/nosotros/">Conocer la firma</a></div>
+    <div class="split">
+      <div class="reveal"><figure class="plate">
+        <img src="/img/fig-process-machine.svg" alt="Máquina de proceso que recibe documentos por un extremo y entrega registros por el otro">
+        <figcaption>Del documento al registro, sin que nadie transcriba.</figcaption>
+      </figure></div>
+      <div class="note demo reveal"><b>Caso medido:</b> el Capturista Digital registra una factura en unos 4 segundos, grabado en video. <a class="link-more" href="/procesamiento-automatico-facturas/">Ver el caso</a></div>
+    </div>
+  </div></section>
+
+  <!-- CONSTRUCCION Y CONTROLES -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Construcción y controles</p>
+    <h2>Una integración se juzga por su peor día</h2>
+    <p class="sec-sub">El servidor cae, el archivo llega corrupto, el API cambia sin aviso: se diseña para ese día.</p>
+    <div class="split">
+      <div>
+        <p>Construimos sobre lo que usted ya tiene: ningún sistema se reemplaza y nada llega a producción sin probarse antes.</p>
+        <ul class="checks">
+          <li>Cada cambio se prueba en un ambiente aparte.</li>
+          <li>Los controles se entregan con la integración.</li>
+        </ul>
+      </div>
+      <div class="reveal"><figure class="plate">
+        <img src="/img/crew-assembling.svg" alt="Dos robots montan una pieza sobre un banco de trabajo">
+        <figcaption>Se arma por piezas verificables, no de un solo golpe.</figcaption>
+      </figure></div>
+    </div>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Los errores pasajeros se resuelven solos</b></summary>
+        <div class="ex-body"><p>Un servicio caído se reintenta con espera creciente. Solo lo que persiste llega a una persona.</p></div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Si el destino no responde, nada se pierde</b></summary>
+        <div class="ex-body"><p>Las transacciones esperan en cola y entran cuando el sistema vuelve.</p></div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Cada transacción deja rastro</b></summary>
+        <div class="ex-body"><p>Origen, transformación, destino y resultado quedan en bitácora. Lo que falla en firme se aparta para revisión humana.</p></div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Ninguna falla queda en silencio</b></summary>
+        <div class="ex-body"><p>El responsable recibe la alerta con contexto. Si la operamos nosotros, se vigila a diario dentro de la <a class="link-more" href="/operacion-administrada/">operación administrada</a>, bajo <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p></div>
+      </details>
+    </div>
+    <div class="note reveal"><b>Quién responde:</b> la práctica la dirige Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — sobre <a class="link-more" href="/power-automate/">Power Automate</a>, <a class="link-more" href="/n8n/">n8n</a>, <a class="link-more" href="/power-bi/">Power BI</a>, APIs, RPA y SQL. <a class="link-more" href="/nosotros/">Conocer la firma</a></div>
   </div></section>
 
   <!-- FAQ -->
-  <section class="band"><div class="wrap">
+  <section><div class="wrap">
     <p class="sec-k">Preguntas frecuentes</p>
-    <h2>Lo que las empresas nos preguntan antes de integrar</h2>
-    <div class="faq" style="margin-top:18px">
+    <h2>Lo que nos preguntan antes de integrar</h2>
+    <div class="faq">
       <details>
-        <summary>¿Qué pasa si uno de nuestros sistemas no tiene API?</summary>
-        <div class="fa">Usamos RPA: un robot de software opera la interfaz del sistema igual que lo haría una persona, con selectores robustos, controles de error y bitácora de cada operación. Lo documentamos como una pieza de transición, de modo que pueda sustituirse por una conexión directa cuando el sistema evolucione o se migre.</div>
-      </details>
-      <details>
-        <summary>¿Necesitamos reemplazar nuestro ERP o CRM para integrarnos?</summary>
-        <div class="fa">No. La integración conecta los sistemas que ya tiene y protege la inversión realizada en ellos. Definimos qué sistema es la fuente de verdad de cada dato y hacemos que los demás la respeten, sin migraciones forzadas ni cambios de plataforma como requisito.</div>
-      </details>
-      <details>
-        <summary>¿Cómo nos enteramos si una integración falla?</summary>
-        <div class="fa">Porque la diseñamos para avisar. Cada transacción queda registrada en una bitácora, los errores transitorios se reintentan de forma automática y los fallos persistentes generan una alerta al responsable con el detalle del registro afectado. El criterio de diseño es que ninguna integración falle en silencio.</div>
+        <summary>¿Necesitamos reemplazar nuestro ERP o CRM?</summary>
+        <div class="fa">No. Se conecta lo que ya tiene y se protege esa inversión. Definimos qué sistema manda sobre cada dato y los demás lo respetan.</div>
       </details>
       <details>
         <summary>¿Quién opera la integración después de la entrega?</summary>
-        <div class="fa">Usted decide. Entregamos documentación técnica y de operación para que su equipo la administre, y también ofrecemos operación administrada: monitoreamos las ejecuciones, atendemos incidentes y aplicamos mejoras continuas como un servicio mensual.</div>
+        <div class="fa">Usted decide. Entregamos la documentación para que su equipo la administre, o la operamos nosotros: monitoreo, incidentes y mejoras.</div>
       </details>
     </div>
   </div></section>
@@ -282,6 +279,7 @@
       <h2>Conecte sus sistemas y trabaje con una sola versión de la información</h2>
       <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador (GMT-6).</p>
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-wa" href="https://wa.me/50371928070">Escribir por WhatsApp</a>
     </div>
   </div></section>
 </main>
@@ -328,6 +326,7 @@
 </div></footer>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script src="/interact.js?v=c47c7829" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
 </body>
 </html>
