@@ -1,197 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
-  <title>ASSY-01</title>
+  <title>FIG. 3 = ASSY-01 : montaje por fases</title>
+  <!-- ============================================================
+       ASSY-01 = MONTAJE POR FASES
+       Dos robots en un banco montan una torre de modulos.
+       Un modulo baja, encaja con destello, queda sellado y con su
+       visto bueno; luego baja el siguiente y se monta encima.
+       Con la torre completa se hace la pasada de verificacion y el
+       ciclo reinicia. R=01 posiciona, R=02 fija y sella.
+       Al cerrar, la pila terminada sube por el carril y se disuelve:
+       no se apaga en seco y el banco nunca queda vacio en el vacio.
+       Todo rotulo va sobre placa oscura con texto claro, y las lineas
+       auxiliares usan un verde medio legible sobre crema y sobre verde.
+       Ciclo maestro: 15 s. Sin JavaScript. Fondo transparente.
+       ============================================================ -->
   <style>
-    @keyframes asm-pulse{0%,100%{opacity:.35}50%{opacity:1}}
-    @keyframes asm-tighten{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
-    @keyframes asm-spin{to{transform:rotate(360deg)}}
-    @keyframes asm-blink{0%,70%,100%{opacity:0}12%,42%{opacity:1}}
-    .ill-live{animation:asm-pulse 2.4s ease-in-out infinite}
-    .asm-arm1{transform-box:fill-box;transform-origin:0% 100%;animation:asm-tighten 3s ease-in-out infinite}
-    .asm-gear{transform-box:fill-box;transform-origin:50% 50%;animation:asm-spin 12s linear infinite}
-    .asm-spark{animation:asm-blink 2.6s ease-in-out infinite}
-    .asm-s2{animation-delay:.35s}
-    .asm-s3{animation-delay:.7s}
-    @media (prefers-reduced-motion: reduce){*{animation:none !important}}
+    text { font-family:'IBM Plex Mono', ui-monospace, monospace }
+
+    /* ==== rotulos: placa oscura + texto claro ====
+       Sobre crema la placa es masa oscura y el texto claro recorta;
+       sobre verde la placa se funde con el fondo y manda el texto.
+       Ningun rotulo queda en gris medio sobre transparente. */
+    .pn { fill:#183f35; stroke:#d3ded6; stroke-width:1.75 }
+    .pl { fill:#183f35; stroke:#d3ded6; stroke-width:1.2 }
+    .lb { fill:#d3ded6; stroke:none }
+    .lbm{ fill:#d3ded6; stroke:none; text-anchor:middle }
+    /* linea auxiliar de tono medio: 3.0:1 sobre crema y 3.4:1 sobre verde */
+    .aux{ stroke:#4E9880; fill:none }
+
+    /* ==== paleta del robot canonico ==== */
+    .b-cyan  { fill:#20C8E4 }
+    .b-shell { fill:#FFFDF8; stroke:#183F35; stroke-width:2.4 }
+    .b-screen{ fill:#0C1A2B }
+    .b-metal { fill:#E3E9EC; stroke:#183F35; stroke-width:2.2 }
+    .b-ring  { fill:#C2CCD2; stroke:#183F35; stroke-width:1.8 }
+    .b-limb-o{ fill:none; stroke:#183F35; stroke-width:17;   stroke-linecap:round }
+    .b-limb-i{ fill:none; stroke:#E3E9EC; stroke-width:12.5; stroke-linecap:round }
+    .b-rod-o { fill:none; stroke:#183F35; stroke-width:12;   stroke-linecap:round }
+    .b-rod-i { fill:none; stroke:#C2CCD2; stroke-width:8;    stroke-linecap:round }
+
+    /* flotacion suave, distinta en cada robot */
+    .bf-a { animation:bFloat 5.6s ease-in-out infinite }
+    .bf-b { animation:bFloat 6.6s ease-in-out infinite; animation-delay:-2.1s }
+    @keyframes bFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+
+    .b-aura { fill:#20C8E4; opacity:.10; animation:bAura 4.6s ease-in-out infinite }
+    @keyframes bAura {
+      0%,100%{ opacity:.07; transform:translate(120px,140px) scale(1)    translate(-120px,-140px) }
+      50%    { opacity:.15; transform:translate(120px,140px) scale(1.04) translate(-120px,-140px) }
+    }
+
+    .b-ballglow { fill:#20C8E4; opacity:.4; animation:bPing 2.6s ease-out infinite }
+    @keyframes bPing {
+      0%     { opacity:.6; transform:translate(100px,16px) scale(.65) translate(-100px,-16px) }
+      70%,100%{ opacity:0; transform:translate(100px,16px) scale(1.8) translate(-100px,-16px) }
+    }
+
+    .b-eyeL { animation:bBlinkL 4.2s ease-in-out infinite }
+    .b-eyeR { animation:bBlinkR 4.2s ease-in-out infinite; animation-delay:.06s }
+    @keyframes bBlinkL {
+      0%,45%,55%,100%{ transform:translate(74px,115px)  scaleY(1)   translate(-74px,-115px) }
+      48%,51%        { transform:translate(74px,115px)  scaleY(.12) translate(-74px,-115px) }
+    }
+    @keyframes bBlinkR {
+      0%,45%,55%,100%{ transform:translate(126px,115px) scaleY(1)   translate(-126px,-115px) }
+      48%,51%        { transform:translate(126px,115px) scaleY(.12) translate(-126px,-115px) }
+    }
+    .b-glowL,.b-glowR { fill:#20C8E4; opacity:.26 }
+    .b-glowL { animation:bGlowL 3s ease-in-out infinite }
+    .b-glowR { animation:bGlowR 3s ease-in-out infinite }
+    @keyframes bGlowL {
+      0%,100%{ opacity:.18; transform:translate(74px,115px) scale(1)    translate(-74px,-115px) }
+      50%    { opacity:.32; transform:translate(74px,115px) scale(1.07) translate(-74px,-115px) }
+    }
+    @keyframes bGlowR {
+      0%,100%{ opacity:.18; transform:translate(126px,115px) scale(1)    translate(-126px,-115px) }
+      50%    { opacity:.32; transform:translate(126px,115px) scale(1.07) translate(-126px,-115px) }
+    }
+
+    .b-led { fill:#20C8E4; animation:bLed 2.4s ease-in-out infinite }
+    .b-led-2 { animation-delay:.35s }
+    .b-led-3 { animation-delay:.7s }
+    @keyframes bLed { 0%,100%{opacity:.25} 50%{opacity:1} }
+
+    .b-bar { fill:#20C8E4; opacity:.8; animation-duration:3.2s;
+             animation-timing-function:ease-in-out; animation-iteration-count:infinite }
+    .b-bar-1 { animation-name:bBar1 }
+    .b-bar-2 { animation-name:bBar2; animation-delay:.4s }
+    .b-bar-3 { animation-name:bBar3; animation-delay:.8s }
+    .b-bar-4 { animation-name:bBar4; animation-delay:1.2s }
+    @keyframes bBar1 { 0%,100%{transform:translate(99.5px,180px) scaleY(.35) translate(-99.5px,-180px)}  50%{transform:translate(99.5px,180px) scaleY(1) translate(-99.5px,-180px)} }
+    @keyframes bBar2 { 0%,100%{transform:translate(113.5px,180px) scaleY(.35) translate(-113.5px,-180px)} 50%{transform:translate(113.5px,180px) scaleY(1) translate(-113.5px,-180px)} }
+    @keyframes bBar3 { 0%,100%{transform:translate(127.5px,180px) scaleY(.35) translate(-127.5px,-180px)} 50%{transform:translate(127.5px,180px) scaleY(1) translate(-127.5px,-180px)} }
+    @keyframes bBar4 { 0%,100%{transform:translate(141.5px,180px) scaleY(.35) translate(-141.5px,-180px)} 50%{transform:translate(141.5px,180px) scaleY(1) translate(-141.5px,-180px)} }
+
+    /* brazo libre = balanceo canonico */
+    .b-armL { animation:bArmL 4.8s ease-in-out infinite }
+    .b-armR { animation:bArmR 5.4s ease-in-out infinite }
+    @keyframes bArmL { 0%,100%{transform:translate(72px,130px)  rotate(0deg) translate(-72px,-130px)}  50%{transform:translate(72px,130px)  rotate(-11deg) translate(-72px,-130px)} }
+    @keyframes bArmR { 0%,100%{transform:translate(168px,130px) rotate(0deg) translate(-168px,-130px)} 50%{transform:translate(168px,130px) rotate(9deg)   translate(-168px,-130px)} }
+
+    .b-wheel { animation:bWheel 5.6s ease-in-out infinite }
+    @keyframes bWheel { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+
+    /* ============ CICLO MAESTRO DE MONTAJE : 15 s ============
+       m1 asienta 16% | m2 42.7% | m3 69.3% | torre completa 70=92%
+       ========================================================= */
+
+    /* La pila terminada NO se apaga: sube por el carril y se disuelve
+       al salir de cuadro, con la placa base vacia menos de medio segundo. */
+    .mLift { animation:mLift 15s cubic-bezier(.4,0,.25,1) infinite, mOut 15s ease-in infinite }
+    @keyframes mLift {
+      0%,92%     { transform:translateY(0) }
+      99.4%      { transform:translateY(-96px) }
+      99.5%,100% { transform:translateY(0) }
+    }
+    @keyframes mOut {
+      0%,93%     { opacity:1 }
+      98.2%,100% { opacity:0 }
+    }
+
+    .mDrop1,.mDrop2,.mDrop3 { animation-duration:15s; animation-timing-function:cubic-bezier(.45,.05,.3,1); animation-iteration-count:infinite }
+    .mDrop1 { animation-name:mDrop1 }
+    .mDrop2 { animation-name:mDrop2 }
+    .mDrop3 { animation-name:mDrop3 }
+    @keyframes mDrop1 {
+      0%        { transform:translateY(-190px); opacity:0 }
+      1.5%      { transform:translateY(-184px); opacity:1 }
+      13%       { transform:translateY(-7px);   opacity:1 }
+      16%       { transform:translateY(0) }
+      18.5%     { transform:translateY(-4px) }
+      21%,100%  { transform:translateY(0);      opacity:1 }
+    }
+    @keyframes mDrop2 {
+      0%,25.2%  { transform:translateY(-144px); opacity:0 }
+      28.2%     { transform:translateY(-139px); opacity:1 }
+      39.7%     { transform:translateY(-7px);   opacity:1 }
+      42.7%     { transform:translateY(0) }
+      45.2%     { transform:translateY(-4px) }
+      47.7%,100%{ transform:translateY(0);      opacity:1 }
+    }
+    @keyframes mDrop3 {
+      0%,51.8%  { transform:translateY(-98px);  opacity:0 }
+      54.8%     { transform:translateY(-94px);  opacity:1 }
+      66.3%     { transform:translateY(-7px);   opacity:1 }
+      69.3%     { transform:translateY(0) }
+      71.8%     { transform:translateY(-4px) }
+      74.3%,100%{ transform:translateY(0);      opacity:1 }
+    }
+
+    /* destello de encastre en la junta */
+    .fx { opacity:.28; animation-duration:15s; animation-timing-function:ease-out; animation-iteration-count:infinite }
+    .fx1 { animation-name:fx1 }
+    .fx2 { animation-name:fx2 }
+    .fx3 { animation-name:fx3 }
+    @keyframes fx1 { 0%,13.5%{opacity:0} 16.5%{opacity:1} 22%{opacity:.8} 30%,100%{opacity:.28} }
+    @keyframes fx2 { 0%,40.2%{opacity:0} 43.2%{opacity:1} 48.7%{opacity:.8} 57%,100%{opacity:.28} }
+    @keyframes fx3 { 0%,66.8%{opacity:0} 69.8%{opacity:1} 75.3%{opacity:.8} 84%,100%{opacity:.28} }
+
+    /* visto bueno de cada fase */
+    .bg1,.bg2,.bg3 { animation-duration:15s; animation-timing-function:cubic-bezier(.3,1.5,.5,1); animation-iteration-count:infinite }
+    .bg1 { animation-name:bg1 }
+    .bg2 { animation-name:bg2 }
+    .bg3 { animation-name:bg3 }
+    @keyframes bg1 {
+      0%,19%   { opacity:0; transform:translate(496px,314px) scale(.3)  translate(-496px,-314px) }
+      23%      { opacity:1; transform:translate(496px,314px) scale(1.22) translate(-496px,-314px) }
+      27%,100% { opacity:1; transform:translate(496px,314px) scale(1)   translate(-496px,-314px) }
+    }
+    @keyframes bg2 {
+      0%,45.7% { opacity:0; transform:translate(496px,268px) scale(.3)  translate(-496px,-268px) }
+      49.7%    { opacity:1; transform:translate(496px,268px) scale(1.22) translate(-496px,-268px) }
+      53.7%,100%{ opacity:1; transform:translate(496px,268px) scale(1)  translate(-496px,-268px) }
+    }
+    @keyframes bg3 {
+      0%,72.3% { opacity:0; transform:translate(496px,222px) scale(.3)  translate(-496px,-222px) }
+      76.3%    { opacity:1; transform:translate(496px,222px) scale(1.22) translate(-496px,-222px) }
+      80.3%,100%{ opacity:1; transform:translate(496px,222px) scale(1)  translate(-496px,-222px) }
+    }
+
+    /* brazo de trabajo R=01 : posiciona */
+    .r1-arm { animation:r1rot 15s ease-in-out infinite }
+    .r1-ext { animation:r1ext 15s ease-in-out infinite }
+    @keyframes r1rot {
+      0%           { transform:translate(168px,130px) rotate(0deg)      translate(-168px,-130px) }
+      16%,19%      { transform:translate(168px,130px) rotate(-30.9deg)  translate(-168px,-130px) }
+      25%,26.7%    { transform:translate(168px,130px) rotate(0deg)      translate(-168px,-130px) }
+      42.7%,45.7%  { transform:translate(168px,130px) rotate(-56.5deg)  translate(-168px,-130px) }
+      51.7%,53.3%  { transform:translate(168px,130px) rotate(0deg)      translate(-168px,-130px) }
+      69.3%,88%    { transform:translate(168px,130px) rotate(-74.4deg)  translate(-168px,-130px) }
+      93%          { transform:translate(168px,130px) rotate(-88deg)    translate(-168px,-130px) }
+      100%         { transform:translate(168px,130px) rotate(0deg)      translate(-168px,-130px) }
+    }
+    @keyframes r1ext {
+      0%,26.7%     { transform:translateX(0px) }
+      42.7%,45.7%  { transform:translateX(11.8px) }
+      51.7%,53.3%  { transform:translateX(0px) }
+      69.3%,72.3%  { transform:translateX(40.2px) }
+      79%,100%     { transform:translateX(0px) }
+    }
+
+    /* brazo de trabajo R=02 : fija y sella */
+    .r2-arm { animation:r2rot 15s ease-in-out infinite }
+    .r2-ext { animation:r2ext 15s ease-in-out infinite }
+    @keyframes r2rot {
+      0%,3%        { transform:translate(72px,130px) rotate(0deg)     translate(-72px,-130px) }
+      17%,22%      { transform:translate(72px,130px) rotate(30.9deg)  translate(-72px,-130px) }
+      28%,29.5%    { transform:translate(72px,130px) rotate(0deg)     translate(-72px,-130px) }
+      43.7%,48.7%  { transform:translate(72px,130px) rotate(56.5deg)  translate(-72px,-130px) }
+      54%,55.5%    { transform:translate(72px,130px) rotate(0deg)     translate(-72px,-130px) }
+      70.3%,89%    { transform:translate(72px,130px) rotate(74.4deg)  translate(-72px,-130px) }
+      94%          { transform:translate(72px,130px) rotate(88deg)    translate(-72px,-130px) }
+      100%         { transform:translate(72px,130px) rotate(0deg)     translate(-72px,-130px) }
+    }
+    @keyframes r2ext {
+      0%,29.5%     { transform:translateX(0px) }
+      43.7%,48.7%  { transform:translateX(11.8px) }
+      54%,55.5%    { transform:translateX(0px) }
+      70.3%,75.3%  { transform:translateX(40.2px) }
+      81%,100%     { transform:translateX(0px) }
+    }
+    .r2-spark { opacity:.55; animation:r2spark 15s steps(1,end) infinite }
+    @keyframes r2spark {
+      0%,16%   { opacity:.14 }
+      17%,22%  { opacity:1 }
+      23%,42.7%{ opacity:.14 }
+      43.7%,48.7%{ opacity:1 }
+      50%,69.3%{ opacity:.14 }
+      70.3%,75.3%{ opacity:1 }
+      77%,100% { opacity:.14 }
+    }
+
+    /* barra de avance por fases */
+    .gfill { animation-duration:15s; animation-timing-function:cubic-bezier(.3,.7,.2,1); animation-iteration-count:infinite }
+    .gf1 { animation-name:gf1 }
+    .gf2 { animation-name:gf2 }
+    .gf3 { animation-name:gf3 }
+    @keyframes gf1 { 0%,17%{transform:translateX(750px) scaleX(.004) translateX(-750px)} 23%,95%{transform:translateX(750px) scaleX(1) translateX(-750px)} 98%,100%{transform:translateX(750px) scaleX(.004) translateX(-750px)} }
+    @keyframes gf2 { 0%,43.7%{transform:translateX(750px) scaleX(.004) translateX(-750px)} 49.7%,95%{transform:translateX(750px) scaleX(1) translateX(-750px)} 98%,100%{transform:translateX(750px) scaleX(.004) translateX(-750px)} }
+    @keyframes gf3 { 0%,70.3%{transform:translateX(750px) scaleX(.004) translateX(-750px)} 76.3%,95%{transform:translateX(750px) scaleX(1) translateX(-750px)} 98%,100%{transform:translateX(750px) scaleX(.004) translateX(-750px)} }
+
+    /* pasada de verificacion sobre la torre terminada */
+    .scan { opacity:.22; animation:scan 15s ease-in-out infinite }
+    @keyframes scan {
+      0%,71%   { opacity:0;   transform:translateY(0) }
+      74%      { opacity:.95; transform:translateY(-6px) }
+      88%      { opacity:.95; transform:translateY(-142px) }
+      92%,100% { opacity:0;   transform:translateY(-142px) }
+    }
+
+    /* sello COMPLETO : va anclado en el pie del tablero AVANCE */
+    .stamp { animation:stamp 15s cubic-bezier(.3,1.4,.5,1) infinite }
+    @keyframes stamp {
+      0%,71%   { opacity:0; transform:translate(805px,220px) scale(.75) translate(-805px,-220px) }
+      75%      { opacity:1; transform:translate(805px,220px) scale(1.07) translate(-805px,-220px) }
+      79%,93%  { opacity:1; transform:translate(805px,220px) scale(1) translate(-805px,-220px) }
+      98%,100% { opacity:0; transform:translate(805px,220px) scale(1) translate(-805px,-220px) }
+    }
+
+    /* detalle B : la misma junta, en pequeno */
+    .detb { animation:detb 15s cubic-bezier(.45,.05,.3,1) infinite }
+    @keyframes detb {
+      0%       { transform:translateY(-11px) }
+      12%,25%  { transform:translateY(0) }
+      28%      { transform:translateY(-11px) }
+      39%,52%  { transform:translateY(0) }
+      55%      { transform:translateY(-11px) }
+      66%,94%  { transform:translateY(0) }
+      99%,100% { transform:translateY(-11px) }
+    }
+
+    /* capa de fondo : trazos que recorren y luces en secuencia */
+    .run { stroke-dasharray:6 7; animation:run 3.4s linear infinite }
+    .run-b { animation-duration:4.6s; animation-direction:reverse }
+    @keyframes run { to { stroke-dashoffset:-26 } }
+
+    .ill-live { animation:live 2.4s ease-in-out infinite }
+    @keyframes live { 0%,100%{opacity:.35} 50%{opacity:1} }
+    .seq { animation:seq 2.8s ease-in-out infinite }
+    .s2 { animation-delay:.28s } .s3 { animation-delay:.56s }
+    .s4 { animation-delay:.84s } .s5 { animation-delay:1.12s } .s6 { animation-delay:1.4s }
+    @keyframes seq { 0%,100%{opacity:.2} 40%{opacity:1} 70%{opacity:.2} }
+
+    @media (prefers-reduced-motion: reduce) { * { animation:none !important } }
   </style>
+
   <defs>
     <pattern id="aH" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
       <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
     </pattern>
-    <pattern id="aHd" patternUnits="userSpaceOnUse" width="3.5" height="3.5" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="3.5" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
+    <pattern id="aA" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#4E9880" stroke-opacity=".6" stroke-width="1"/>
     </pattern>
-    <g id="aBot" stroke="#d3ded6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="-34" y="-24" width="68" height="24" rx="12" fill="url(#aHd)" stroke-width="1.75"/>
-      <circle cx="-18" cy="-12" r="6.5" fill="#12251f" stroke-width="1"/>
-      <circle cx="0" cy="-12" r="6.5" fill="#12251f" stroke-width="1"/>
-      <circle cx="18" cy="-12" r="6.5" fill="#12251f" stroke-width="1"/>
-      <rect x="-12" y="-34" width="24" height="10" fill="#183f35" stroke-width="1.75"/>
-      <rect x="-36" y="-104" width="72" height="70" rx="12" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-      <rect x="16" y="-100" width="17" height="62" fill="url(#aH)" stroke="none"/>
-      <path d="M14 -102 V-36" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-      <path d="M-36 -58 H14" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-      <circle cx="-30" cy="-98" r="1.6" stroke-width="1"/>
-      <circle cx="-30" cy="-42" r="1.6" stroke-width="1"/>
-      <circle cx="8" cy="-98" r="1.6" stroke-width="1"/>
-      <circle cx="8" cy="-42" r="1.6" stroke-width="1"/>
-      <circle cx="24" cy="-70" r="1.6" stroke-width="1"/>
-      <rect x="-28" y="-66" width="34" height="15" rx="2" fill="#12251f" stroke-width="1"/>
-      <rect x="-9" y="-114" width="18" height="10" fill="#183f35" stroke-width="1.75"/>
-      <rect x="-29" y="-150" width="58" height="38" rx="9" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-      <rect x="-21" y="-143" width="42" height="25" rx="4" fill="#12251f" stroke-width="1.75"/>
-      <g fill="#d3ded6" stroke="none">
-        <circle cx="-13" cy="-134" r="1.7"/><circle cx="-8" cy="-134" r="1.7"/>
-        <circle cx="-13" cy="-129" r="1.7"/><circle cx="-8" cy="-129" r="1.7"/>
-        <circle cx="8" cy="-134" r="1.7"/><circle cx="13" cy="-134" r="1.7"/>
-        <circle cx="8" cy="-129" r="1.7"/><circle cx="13" cy="-129" r="1.7"/>
-        <circle cx="-4" cy="-123" r="1"/><circle cx="0" cy="-123" r="1"/><circle cx="4" cy="-123" r="1"/>
-      </g>
-      <circle cx="-29" cy="-131" r="3" fill="#12251f" stroke-width="1"/>
-      <circle cx="29" cy="-131" r="3" fill="#12251f" stroke-width="1"/>
-      <path d="M0 -150 V-166" stroke-width="1.75"/>
-      <circle cx="0" cy="-170" r="6" stroke="#3e9c82" stroke-width="1" class="ill-live"/>
-      <circle cx="0" cy="-170" r="3.5" fill="#2C7A63" stroke="none" class="ill-live"/>
-      <circle cx="-36" cy="-88" r="5.5" fill="#183f35" stroke-width="1.75"/>
-      <circle cx="36" cy="-88" r="5.5" fill="#183f35" stroke-width="1.75"/>
-    </g>
   </defs>
 
+  <!-- ============ LINEA TECNICA ============ -->
   <g stroke="#d3ded6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- patent frame -->
-    <rect x="16" y="16" width="868" height="488" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <rect x="24" y="24" width="852" height="472" stroke-width="1"/>
-    <text x="450" y="52" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="4" fill="#d3ded6" stroke="none">FIG. 1 — ASSY-01</text>
-    <path d="M380 60 H520" stroke-width="1"/>
 
-    <!-- DETAIL A callout (exploded head) -->
-    <text x="98" y="80" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="2" fill="#d3ded6" stroke="none">DETAIL A</text>
-    <path d="M150 88 V182" stroke="rgba(196,209,224,.45)" stroke-width="1" stroke-dasharray="4 3"/>
-    <circle cx="150" cy="96" r="4" stroke-width="1.75"/>
-    <path d="M150 104 V118" stroke-width="1.75"/>
-    <rect x="122" y="122" width="56" height="38" rx="8" fill="#183f35" stroke-width="1.75" class="ill-draw"/>
-    <rect x="132" y="130" width="36" height="22" rx="4" stroke-width="1"/>
-    <circle cx="143" cy="140" r="1.7" fill="#d3ded6" stroke="none"/>
-    <circle cx="157" cy="140" r="1.7" fill="#d3ded6" stroke="none"/>
-    <path d="M122 164 V178 M178 164 V178" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <path d="M122 174 H178" stroke-width="1"/>
-    <path d="M122 174 l6 -3 M122 174 l6 3 M178 174 l-6 -3 M178 174 l-6 3" stroke-width="1"/>
-    <text x="150" y="169" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">56</text>
-    <path d="M158 96 H200" stroke-width="1"/>
-    <circle cx="158" cy="96" r="1.3" fill="#d3ded6" stroke="none"/>
-    <text x="204" y="99" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">A-1</text>
-    <path d="M182 141 H210" stroke-width="1"/>
-    <circle cx="182" cy="141" r="1.3" fill="#d3ded6" stroke="none"/>
-    <text x="214" y="144" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">A-2</text>
-    <text x="98" y="202" font-family="IBM Plex Mono, monospace" font-size="8" fill="rgba(196,209,224,.45)" stroke="none">TOL ±0.5</text>
+    <!-- marco de plano -->
+    <rect class="aux" x="16.5" y="16.5" width="867" height="487" stroke-opacity=".6" stroke-width="1"/>
+    <rect class="aux" x="24.5" y="24.5" width="851" height="471" stroke-width="1"/>
+    <path class="aux" d="M24.5 44.5 H44 M24.5 44.5 V24 M875.5 44.5 H856 M875.5 44.5 V24" stroke-width="1.2"/>
+    <path class="aux" d="M24.5 475.5 H44 M24.5 475.5 V496 M875.5 475.5 H856 M875.5 475.5 V496" stroke-width="1.2"/>
 
-    <!-- ground -->
-    <path d="M60 470 H840" stroke-width="1.75"/>
-    <rect x="60" y="471" width="780" height="8" fill="url(#aH)" stroke="none"/>
-    <ellipse cx="180" cy="472" rx="52" ry="6" fill="url(#aH)" stroke="none"/>
-    <ellipse cx="700" cy="472" rx="52" ry="6" fill="url(#aH)" stroke="none"/>
+    <!-- ==== CARTELA DE TITULO ==== -->
+    <rect class="pn" x="330" y="32" width="240" height="48" rx="3"/>
+    <text class="lbm" x="450" y="54" font-size="13" letter-spacing="4">FIG. 3 — ASSY-01</text>
+    <path d="M356 61 H544" stroke="#d3ded6" stroke-opacity=".45" stroke-width="1"/>
+    <text class="lbm" x="450" y="74" font-size="8" letter-spacing="4">MONTAJE POR FASES</text>
 
-    <!-- workbench -->
-    <rect x="315" y="346" width="12" height="124" fill="#183f35" stroke-width="1.75"/>
-    <rect x="613" y="346" width="12" height="124" fill="#183f35" stroke-width="1.75"/>
-    <path d="M327 452 L613 372 M327 372 L613 452" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <rect x="315" y="430" width="310" height="8" fill="#183f35" stroke-width="1"/>
-    <rect x="295" y="330" width="350" height="16" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-    <rect x="296" y="338" width="348" height="7" fill="url(#aH)" stroke="none"/>
-    <!-- toolbox on shelf -->
-    <rect x="370" y="406" width="64" height="24" rx="2" fill="#183f35" stroke-width="1.75"/>
-    <path d="M370 414 H434" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <path d="M392 406 Q402 394 412 406" stroke-width="1.75"/>
-    <rect x="399" y="412" width="6" height="6" stroke-width="1"/>
+    <!-- ==== DETALLE B : la junta de encastre ==== -->
+    <rect class="pn" x="48" y="74" width="130" height="34" rx="3"/>
+    <text class="lb" x="58" y="90" font-size="10" letter-spacing="2">DETALLE B</text>
+    <text class="lb" x="58" y="103" font-size="7.5" letter-spacing="1">ENCASTRE DE FASE</text>
+    <g class="detb">
+      <rect x="92" y="128" width="104" height="26" rx="3" fill="#183f35" stroke-width="1.75"/>
+      <rect x="93" y="147" width="102" height="6" fill="url(#aH)" stroke="none"/>
+      <rect x="112" y="148" width="16" height="6" fill="#12251f" stroke-width="1"/>
+      <rect x="160" y="148" width="16" height="6" fill="#12251f" stroke-width="1"/>
+    </g>
+    <rect x="112" y="154" width="16" height="6" fill="#183f35" stroke-width="1.5"/>
+    <rect x="160" y="154" width="16" height="6" fill="#183f35" stroke-width="1.5"/>
+    <rect x="92" y="160" width="104" height="26" rx="3" fill="#183f35" stroke-width="1.75"/>
+    <rect x="93" y="179" width="102" height="6" fill="url(#aH)" stroke="none"/>
+    <path class="aux" d="M204.5 128 V186" stroke-width="1.2"/>
+    <path class="aux" d="M204.5 157 h-8 M204.5 128 l-3 5 M204.5 128 l3 5 M204.5 186 l-3 -5 M204.5 186 l3 -5" stroke-width="1.4"/>
+    <rect class="pl" x="208" y="150" width="27" height="15" rx="2"/>
+    <text class="lb" x="213" y="161" font-size="8" letter-spacing="1">B-1</text>
+    <rect class="pl" x="48" y="192" width="64" height="16" rx="2"/>
+    <text class="lb" x="56" y="204" font-size="8" letter-spacing="1">TOL ±0.5</text>
+    <circle class="pl" cx="232" cy="118" r="9.5"/>
+    <text class="lbm" x="232" y="121.5" font-size="9">B</text>
+    <path class="aux" d="M239 124 L344 218 L376 292" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <circle cx="376" cy="292" r="2.2" fill="#4E9880" stroke="none"/>
 
-    <!-- blueprint sheet on bench -->
-    <g transform="translate(305,298) rotate(-3)">
-      <rect x="0" y="0" width="92" height="34" fill="#183f35" stroke-width="1"/>
-      <path d="M84 0 L92 8" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-      <g stroke="#c9913b" stroke-width="1">
-        <rect x="8" y="10" width="14" height="9"/>
-        <path d="M22 14.5 H32 l-3 -2 M32 14.5 l-3 2"/>
-        <path d="M43 8 L52 14.5 L43 21 L34 14.5 Z"/>
-        <path d="M52 14.5 H62 l-3 -2 M62 14.5 l-3 2"/>
-        <rect x="62" y="10" width="14" height="9"/>
+    <!-- ==== TABLERO DE AVANCE (con el sello COMPLETO al pie) ==== -->
+    <rect class="pn" x="704" y="82" width="168" height="158" rx="3"/>
+    <text class="lb" x="716" y="100" font-size="10" letter-spacing="2">AVANCE</text>
+    <path d="M716 106 H860" stroke="#d3ded6" stroke-opacity=".45" stroke-width="1"/>
+    <g>
+      <text class="lb" x="716" y="124.5" font-size="9" letter-spacing="1">F-01</text>
+      <rect x="748" y="114" width="114" height="14" fill="#12251f" stroke="#d3ded6" stroke-width="1"/>
+      <rect class="gfill gf1" x="750" y="116" width="110" height="10" fill="#2C7A63" stroke="none"/>
+      <text class="lb" x="716" y="150.5" font-size="9" letter-spacing="1">F-02</text>
+      <rect x="748" y="140" width="114" height="14" fill="#12251f" stroke="#d3ded6" stroke-width="1"/>
+      <rect class="gfill gf2" x="750" y="142" width="110" height="10" fill="#2C7A63" stroke="none"/>
+      <text class="lb" x="716" y="176.5" font-size="9" letter-spacing="1">F-03</text>
+      <rect x="748" y="166" width="114" height="14" fill="#12251f" stroke="#d3ded6" stroke-width="1"/>
+      <rect class="gfill gf3" x="750" y="168" width="110" height="10" fill="#2C7A63" stroke="none"/>
+    </g>
+    <text class="lb" x="716" y="196" font-size="7.5" letter-spacing=".9">CADA FASE QUEDA OPERATIVA</text>
+    <g class="stamp">
+      <rect x="748" y="206" width="114" height="28" rx="3" stroke="#c9913b" stroke-width="1.75"/>
+      <rect x="752" y="210" width="106" height="20" rx="2" stroke="rgba(201,145,59,.5)" stroke-width="1"/>
+      <text x="805" y="224" text-anchor="middle" font-size="10.5" letter-spacing="2.6" fill="#c9913b" stroke="none">COMPLETO</text>
+    </g>
+
+    <!-- ==== VIGA DE ALIMENTACION Y CARRILES ==== -->
+    <rect x="330" y="86" width="240" height="10" fill="#183f35" stroke-width="1.75"/>
+    <rect x="331" y="90" width="238" height="5" fill="url(#aH)" stroke="none"/>
+    <circle class="seq"    cx="352" cy="91" r="2.4" fill="#2C7A63" stroke="none"/>
+    <circle class="seq s3" cx="450" cy="91" r="2.4" fill="#2C7A63" stroke="none"/>
+    <circle class="seq s5" cx="548" cy="91" r="2.4" fill="#2C7A63" stroke="none"/>
+    <!-- carriles: masa oscura continua con la marcha clara encima,
+         asi el modulo se ve colgado de la viga sobre los dos fondos -->
+    <path d="M380 96 V202 M520 96 V202" stroke="#183f35" stroke-width="2.6"/>
+    <path class="run" d="M380 96 V202" stroke="#d3ded6" stroke-width="1.4"/>
+    <path class="run run-b" d="M520 96 V202" stroke="#d3ded6" stroke-width="1.4"/>
+    <path class="aux" d="M450.5 100 V196" stroke-width="1.2" stroke-dasharray="10 5 2 5"/>
+    <path class="aux" d="M444.5 186 l6 8 6 -8" stroke-width="1.5"/>
+    <rect class="pl" x="526" y="110" width="29" height="15" rx="2"/>
+    <text class="lb" x="531" y="121.5" font-size="8" letter-spacing="1">EJE</text>
+
+    <!-- ==== SUELO ==== -->
+    <rect x="60" y="468" width="780" height="4" fill="#183f35" stroke-width="1"/>
+    <rect x="60" y="473" width="780" height="8" fill="url(#aA)" stroke="none"/>
+    <ellipse cx="225" cy="468" rx="96" ry="6" fill="url(#aA)" stroke="none"/>
+    <ellipse cx="675" cy="468" rx="96" ry="6" fill="url(#aA)" stroke="none"/>
+    <ellipse cx="450" cy="468" rx="104" ry="6" fill="url(#aA)" stroke="none"/>
+
+    <!-- ==== BANCO DE TRABAJO ==== -->
+    <rect x="380" y="362" width="12" height="108" fill="#183f35" stroke-width="1.75"/>
+    <rect x="508" y="362" width="12" height="108" fill="#183f35" stroke-width="1.75"/>
+    <path class="aux" d="M392 466 L508 376 M392 376 L508 466" stroke-opacity=".8" stroke-width="1.4"/>
+    <rect x="380" y="436" width="140" height="8" fill="#183f35" stroke-width="1"/>
+    <rect x="360" y="346" width="180" height="16" fill="#183f35" stroke-width="2.5"/>
+    <rect x="361" y="354" width="178" height="7" fill="url(#aH)" stroke="none"/>
+    <rect x="404" y="396" width="92" height="26" rx="2" fill="#12251f" stroke-width="1"/>
+    <text class="lbm" x="450" y="407" font-size="7.5" letter-spacing="2">LINEA 01</text>
+    <g fill="#2C7A63" stroke="none">
+      <circle class="seq"    cx="416" cy="414" r="2.6"/>
+      <circle class="seq s2" cx="430" cy="414" r="2.6"/>
+      <circle class="seq s3" cx="444" cy="414" r="2.6"/>
+      <circle class="seq s4" cx="458" cy="414" r="2.6"/>
+      <circle class="seq s5" cx="472" cy="414" r="2.6"/>
+      <circle class="seq s6" cx="486" cy="414" r="2.6"/>
+    </g>
+
+    <!-- placa base : sobre ella se apoya la fase 1 -->
+    <rect x="372" y="340" width="156" height="6" fill="#183f35" stroke-width="1.75"/>
+    <rect x="406" y="334" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+    <rect x="476" y="334" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+
+    <!-- ==== PILA DE FASES : sube por el carril al cerrar el ciclo ==== -->
+    <g class="mLift">
+
+    <!-- ==== FASE 1 ==== -->
+    <g class="mDrop1">
+      <rect x="406" y="288" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+      <rect x="476" y="288" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+      <rect x="380" y="294" width="140" height="46" rx="3" fill="#183f35" stroke-width="2.5"/>
+      <rect x="381" y="331" width="138" height="8" fill="url(#aH)" stroke="none"/>
+      <path d="M380 331 H520" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
+      <circle cx="387" cy="301" r="1.6" stroke-width="1"/>
+      <circle cx="513" cy="301" r="1.6" stroke-width="1"/>
+      <text x="394" y="319" font-size="12" letter-spacing="2" fill="#d3ded6" stroke="none">FASE 1</text>
+      <circle class="ill-live" cx="466" cy="314" r="3.5" fill="#2C7A63" stroke="none"/>
+      <g class="bg1">
+        <circle cx="496" cy="314" r="11" fill="#12251f" stroke="#2C7A63" stroke-width="1.75"/>
+        <path d="M490.5 314 l4 4.5 l7.5 -9" stroke="#2C7A63" stroke-width="2.2"/>
       </g>
     </g>
-
-    <!-- detached small arm, part A-2 -->
-    <path d="M415 326 L431 314" stroke-width="2.5"/>
-    <circle cx="423" cy="320" r="3" fill="#183f35" stroke-width="1"/>
-    <path d="M431 314 l5 -6 M431 314 l7 2" stroke-width="1.75"/>
-    <text x="440" y="304" font-family="IBM Plex Mono, monospace" font-size="7" fill="#d3ded6" stroke="none">A-2</text>
-
-    <!-- gear -->
-    <g class="asm-gear">
-      <circle cx="470" cy="314" r="12" fill="#183f35" stroke-width="1.75"/>
-      <circle cx="470" cy="314" r="3" stroke-width="1"/>
-      <path d="M482 314 H486 M470 302 V298 M458 314 H454 M470 326 V330 M478.5 305.5 L481.3 302.7 M461.5 305.5 L458.7 302.7 M461.5 322.5 L458.7 325.3 M478.5 322.5 L481.3 325.3" stroke-width="1.75"/>
+    <g class="fx fx1" stroke="#c9913b">
+      <path d="M376 340 H524" stroke-width="3"/>
+      <path d="M376 340 l-11 -8 M376 340 l-11 8 M524 340 l11 -8 M524 340 l11 8" stroke-width="1.75"/>
+      <path d="M402 332 l-6 -13 M450 330 V316 M498 332 l6 -13" stroke-width="1.5"/>
     </g>
-    <!-- spring -->
-    <path d="M496 328 L500 320 L504 328 L508 320 L512 328 L516 320 L520 328" stroke-width="1.75"/>
-    <!-- screws -->
-    <path d="M530 324 V330" stroke-width="1.75"/><circle cx="530" cy="322" r="2" stroke-width="1"/>
-    <path d="M540 326 l4 4" stroke-width="1.75"/><circle cx="538" cy="325" r="2" stroke-width="1"/>
 
-    <!-- small bot under assembly -->
-    <rect x="543" y="318" width="34" height="12" rx="6" fill="url(#aHd)" stroke-width="1.75"/>
-    <rect x="538" y="280" width="44" height="38" rx="7" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-    <path d="M570 282 V316" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <circle cx="544" cy="286" r="1.2" stroke-width="1"/>
-    <circle cx="544" cy="312" r="1.2" stroke-width="1"/>
-    <rect x="546" y="296" width="20" height="10" rx="1.5" fill="#12251f" stroke-width="1"/>
-    <text x="556" y="303.5" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="6" fill="#d3ded6" stroke="none">R-08</text>
-    <rect x="544" y="254" width="32" height="26" rx="5" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-    <rect x="549" y="259" width="22" height="16" rx="3" fill="#12251f" stroke-width="1"/>
-    <circle cx="556" cy="267" r="2" fill="#d3ded6" stroke="none"/>
-    <circle cx="566" cy="267" r="2" fill="#2C7A63" stroke="none" class="ill-live"/>
-    <path d="M560 254 V242" stroke-width="1.75"/>
-    <circle cx="560" cy="239" r="3" fill="#2C7A63" stroke="none" class="ill-live"/>
-    <circle cx="538" cy="288" r="3.5" fill="#183f35" stroke-width="1.75"/>
-    <path d="M538 288 L524 300 L528 312" stroke-width="2.5"/>
-    <path d="M528 312 l-5 5 M528 312 l6 4" stroke-width="1.75"/>
-    <circle cx="582" cy="288" r="4.5" stroke-width="1" stroke-dasharray="3 2"/>
-    <path d="M582 283 L586.3 285.5 L586.3 290.5 L582 293 L577.7 290.5 L577.7 285.5 Z" fill="#183f35" stroke-width="1.75"/>
-    <!-- callout A -->
-    <circle cx="606" cy="246" r="9" stroke-width="1"/>
-    <text x="606" y="249.5" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#d3ded6" stroke="none">A</text>
-    <path d="M598 251 L586 262" stroke="rgba(196,209,224,.45)" stroke-width="1" stroke-dasharray="3 3"/>
-
-    <!-- ROBOT R-01 : inspecting part -->
-    <use href="#aBot" transform="translate(180,470)"/>
-    <text x="169" y="415" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#d3ded6" stroke="none">R-01</text>
-    <g class="asm-arm1">
-      <path d="M216 382 L250 350 L262 324" stroke-width="2.5"/>
-      <circle cx="250" cy="350" r="4" fill="#183f35" stroke-width="1.75"/>
-      <path d="M254 322 L258 310 M270 322 L266 310" stroke-width="2.5"/>
-      <rect x="256" y="286" width="12" height="32" rx="6" fill="#183f35" stroke-width="1.75"/>
-      <path d="M258 286 L254 278 M266 286 L270 278" stroke-width="1.75"/>
+    <!-- ==== FASE 2 ==== -->
+    <g class="mDrop2">
+      <rect x="406" y="242" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+      <rect x="476" y="242" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+      <rect x="380" y="248" width="140" height="46" rx="3" fill="#183f35" stroke-width="2.5"/>
+      <rect x="381" y="285" width="138" height="8" fill="url(#aH)" stroke="none"/>
+      <path d="M380 285 H520" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
+      <circle cx="387" cy="255" r="1.6" stroke-width="1"/>
+      <circle cx="513" cy="255" r="1.6" stroke-width="1"/>
+      <text x="394" y="273" font-size="12" letter-spacing="2" fill="#d3ded6" stroke="none">FASE 2</text>
+      <circle class="ill-live" cx="466" cy="268" r="3.5" fill="#2C7A63" stroke="none"/>
+      <g class="bg2">
+        <circle cx="496" cy="268" r="11" fill="#12251f" stroke="#2C7A63" stroke-width="1.75"/>
+        <path d="M490.5 268 l4 4.5 l7.5 -9" stroke="#2C7A63" stroke-width="2.2"/>
+      </g>
     </g>
-    <path d="M144 382 L120 352 L118 332" stroke-width="2.5"/>
-    <circle cx="120" cy="352" r="4" fill="#183f35" stroke-width="1.75"/>
-    <path d="M110 328 L110 318 M126 328 L126 318" stroke-width="2.5"/>
-    <rect x="112" y="312" width="12" height="20" rx="5" fill="#183f35" stroke-width="1.75"/>
-    <path d="M118 332 V354 M115 354 l3 6 3 -6" stroke-width="1.75"/>
+    <g class="fx fx2" stroke="#c9913b">
+      <path d="M376 294 H524" stroke-width="3"/>
+      <path d="M376 294 l-11 -8 M376 294 l-11 8 M524 294 l11 -8 M524 294 l11 8" stroke-width="1.75"/>
+      <path d="M402 286 l-6 -13 M450 284 V270 M498 286 l6 -13" stroke-width="1.5"/>
+    </g>
 
-    <!-- ROBOT R-02 : tightening bolt -->
-    <use href="#aBot" transform="translate(700,470)"/>
-    <text x="689" y="415" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#d3ded6" stroke="none">R-02</text>
-    <path d="M664 382 L618 344 L596 306" stroke-width="2.5"/>
-    <circle cx="618" cy="344" r="4" fill="#183f35" stroke-width="1.75"/>
-    <path d="M600 310 L588 294" stroke-width="2.5"/>
-    <path d="M575 295 A10.5 10.5 0 1 1 590 281" stroke-width="2.5"/>
-    <path class="asm-spark" d="M600 276 l4 -8" stroke-width="1"/>
-    <path class="asm-spark asm-s2" d="M607 283 l7 -5" stroke-width="1"/>
-    <path class="asm-spark asm-s3" d="M594 272 l1 -8" stroke-width="1"/>
-    <path d="M736 382 L766 368 L740 398" stroke-width="2.5"/>
-    <circle cx="766" cy="368" r="4" fill="#183f35" stroke-width="1.75"/>
+    <!-- ==== FASE 3 ==== -->
+    <g class="mDrop3">
+      <rect x="406" y="196" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+      <rect x="476" y="196" width="18" height="6" rx="1" fill="#183f35" stroke-width="1.5"/>
+      <rect x="380" y="202" width="140" height="46" rx="3" fill="#183f35" stroke-width="2.5"/>
+      <rect x="381" y="239" width="138" height="8" fill="url(#aH)" stroke="none"/>
+      <path d="M380 239 H520" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
+      <circle cx="387" cy="209" r="1.6" stroke-width="1"/>
+      <circle cx="513" cy="209" r="1.6" stroke-width="1"/>
+      <text x="394" y="227" font-size="12" letter-spacing="2" fill="#d3ded6" stroke="none">FASE 3</text>
+      <circle class="ill-live" cx="466" cy="222" r="3.5" fill="#2C7A63" stroke="none"/>
+      <g class="bg3">
+        <circle cx="496" cy="222" r="11" fill="#12251f" stroke="#2C7A63" stroke-width="1.75"/>
+        <path d="M490.5 222 l4 4.5 l7.5 -9" stroke="#2C7A63" stroke-width="2.2"/>
+      </g>
+    </g>
+    <g class="fx fx3" stroke="#c9913b">
+      <path d="M376 248 H524" stroke-width="3"/>
+      <path d="M376 248 l-11 -8 M376 248 l-11 8 M524 248 l11 -8 M524 248 l11 8" stroke-width="1.75"/>
+      <path d="M402 240 l-6 -13 M450 238 V224 M498 240 l6 -13" stroke-width="1.5"/>
+    </g>
 
-    <!-- title block -->
+    <!-- pasada de verificacion -->
+    <g class="scan">
+      <path d="M368 338 H532" stroke="#2C7A63" stroke-width="2"/>
+      <path d="M368 338 l-7 -5 M368 338 l-7 5 M532 338 l7 -5 M532 338 l7 5" stroke="#2C7A63" stroke-width="1.25"/>
+    </g>
+
+    </g>
+
+    <!-- rotulos de los robots -->
+    <rect class="pl" x="161" y="190" width="128" height="17" rx="2"/>
+    <text class="lbm" x="225" y="202.5" font-size="9" letter-spacing="1.6">R-01 · POSICIONA</text>
+    <rect class="pl" x="558" y="190" width="134" height="17" rx="2"/>
+    <text class="lbm" x="625" y="202.5" font-size="9" letter-spacing="1.6">R-02 · FIJA Y SELLA</text>
+
+    <!-- cajetin -->
     <rect x="620" y="474" width="256" height="22" fill="#12251f" stroke-width="1"/>
-    <path d="M700 474 V496 M790 474 V496" stroke-width="1"/>
-    <text x="628" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">ASSY-01</text>
-    <text x="708" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">SCALE 1:2</text>
-    <text x="798" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">SHT 1/6</text>
+    <path d="M700 474 V496 M792 474 V496" stroke-width="1"/>
+    <text class="lb" x="628" y="489" font-size="8" letter-spacing="1">ASSY-01</text>
+    <text class="lb" x="708" y="489" font-size="8" letter-spacing="1">ESCALA 1:2</text>
+    <text class="lb" x="800" y="489" font-size="8" letter-spacing="1">HOJA 3/6</text>
+  </g>
+
+  <!-- ============ R-01 : POSICIONA ============ -->
+  <g transform="translate(111 218) scale(0.95)">
+    <g class="bf-a">
+      <ellipse class="b-aura" cx="120" cy="140" rx="108" ry="132"/>
+
+      <g class="b-wheel">
+        <rect class="b-metal" x="82" y="218" width="76" height="24" rx="11"/>
+        <circle class="b-metal" cx="98"  cy="252" r="13"/>
+        <circle class="b-metal" cx="120" cy="252" r="13"/>
+        <circle class="b-metal" cx="142" cy="252" r="13"/>
+        <circle class="b-ring"  cx="98"  cy="252" r="5"/>
+        <circle class="b-ring"  cx="120" cy="252" r="5"/>
+        <circle class="b-ring"  cx="142" cy="252" r="5"/>
+      </g>
+
+      <g class="b-armL">
+        <path class="b-limb-o" d="M72 130 q-32 8 -38 42 q-5 22 4 34"/>
+        <path class="b-limb-i" d="M72 130 q-32 8 -38 42 q-5 22 4 34"/>
+        <circle class="b-shell" cx="40" cy="210" r="13"/>
+        <circle class="b-cyan"  cx="40" cy="210" r="5"/>
+      </g>
+
+      <!-- brazo util telescopico con pastilla de alineacion -->
+      <g class="r1-arm">
+        <g transform="rotate(30 168 130)">
+          <g class="r1-ext">
+            <path class="b-rod-o" d="M176 130 H262"/>
+            <path class="b-rod-i" d="M176 130 H262"/>
+            <rect class="b-metal" x="238" y="117" width="24" height="26" rx="6"/>
+            <rect class="b-cyan"  x="261" y="123" width="7"  height="14" rx="3"/>
+            <path d="M240 122 H258" fill="none" stroke="#183F35" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M240 138 H258" fill="none" stroke="#183F35" stroke-width="1.4" stroke-linecap="round"/>
+          </g>
+          <path class="b-limb-o" d="M168 130 H228"/>
+          <path class="b-limb-i" d="M168 130 H228"/>
+          <circle class="b-shell" cx="168" cy="130" r="14"/>
+          <circle class="b-cyan"  cx="168" cy="130" r="5"/>
+        </g>
+      </g>
+
+      <rect class="b-shell" x="68" y="104" width="104" height="120" rx="34"/>
+      <rect class="b-screen" x="86" y="132" width="68" height="56" rx="14"/>
+      <circle class="b-led"         cx="98"  cy="146" r="3.6"/>
+      <circle class="b-led b-led-2" cx="109" cy="146" r="3.6"/>
+      <circle class="b-led b-led-3" cx="120" cy="146" r="3.6"/>
+      <rect class="b-bar b-bar-1" x="95"  y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-2" x="109" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-3" x="123" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-4" x="137" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-ring" x="96" y="200" width="48" height="8" rx="4"/>
+
+      <g transform="translate(53 2) scale(0.56)">
+        <rect class="b-metal" x="2"   y="94" width="38" height="54" rx="18"/>
+        <rect class="b-metal" x="160" y="94" width="38" height="54" rx="18"/>
+        <circle class="b-ring" cx="17"  cy="121" r="11"/>
+        <circle class="b-ring" cx="183" cy="121" r="11"/>
+        <circle class="b-cyan" cx="17"  cy="121" r="6.5"/>
+        <circle class="b-cyan" cx="183" cy="121" r="6.5"/>
+
+        <rect class="b-shell" x="24" y="44" width="152" height="150" rx="70"/>
+        <rect class="b-screen" x="72" y="44" width="56" height="24" rx="10"/>
+        <path d="M90 46 q10 -13 20 0 z" fill="#B6C1C7"/>
+        <line x1="100" y1="42" x2="100" y2="27" stroke="#B6C1C7" stroke-width="3.6" stroke-linecap="round"/>
+        <circle class="b-ballglow" cx="100" cy="16" r="11"/>
+        <circle class="b-cyan" cx="100" cy="16" r="11"/>
+        <circle cx="96.5" cy="12.5" r="3.4" fill="#EAFAFF"/>
+
+        <rect class="b-screen" x="40" y="70" width="120" height="98" rx="35"/>
+        <circle class="b-glowL" cx="74"  cy="115" r="24"/>
+        <circle class="b-glowR" cx="126" cy="115" r="24"/>
+        <g class="b-eyeL">
+          <circle class="b-cyan" cx="74" cy="115" r="17"/>
+          <circle cx="74" cy="115" r="9" fill="#06131F"/>
+          <circle cx="78.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <g class="b-eyeR">
+          <circle class="b-cyan" cx="126" cy="115" r="17"/>
+          <circle cx="126" cy="115" r="9" fill="#06131F"/>
+          <circle cx="130.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <path d="M85 145 q15 13 30 0" fill="none" stroke="#20C8E4" stroke-width="4.2" stroke-linecap="round"/>
+        <rect class="b-metal" x="74" y="176" width="52" height="18" rx="7"/>
+        <rect class="b-cyan" x="86" y="183" width="28" height="4" rx="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ R-02 : FIJA Y SELLA ============ -->
+  <g transform="translate(561 218) scale(0.95)">
+    <g class="bf-b">
+      <ellipse class="b-aura" cx="120" cy="140" rx="108" ry="132"/>
+
+      <g class="b-wheel">
+        <rect class="b-metal" x="82" y="218" width="76" height="24" rx="11"/>
+        <circle class="b-metal" cx="98"  cy="252" r="13"/>
+        <circle class="b-metal" cx="120" cy="252" r="13"/>
+        <circle class="b-metal" cx="142" cy="252" r="13"/>
+        <circle class="b-ring"  cx="98"  cy="252" r="5"/>
+        <circle class="b-ring"  cx="120" cy="252" r="5"/>
+        <circle class="b-ring"  cx="142" cy="252" r="5"/>
+      </g>
+
+      <!-- brazo util telescopico con soplete de sellado -->
+      <g class="r2-arm">
+        <g transform="rotate(150 72 130)">
+          <g class="r2-ext">
+            <path class="b-rod-o" d="M80 130 H166"/>
+            <path class="b-rod-i" d="M80 130 H166"/>
+            <rect class="b-metal" x="138" y="117" width="24" height="26" rx="6"/>
+            <path class="b-metal" d="M162 122 L174 128 V132 L162 138 Z"/>
+            <g class="r2-spark" stroke="#c9913b" fill="none" stroke-linecap="round">
+              <path d="M176 130 l15 -10" stroke-width="1.75"/>
+              <path d="M176 130 l17 3"  stroke-width="1.5"/>
+              <path d="M176 130 l11 13" stroke-width="1.5"/>
+              <circle cx="196" cy="130" r="2.4" fill="#c9913b" stroke="none"/>
+            </g>
+          </g>
+          <path class="b-limb-o" d="M72 130 H132"/>
+          <path class="b-limb-i" d="M72 130 H132"/>
+          <circle class="b-shell" cx="72" cy="130" r="14"/>
+          <circle class="b-cyan"  cx="72" cy="130" r="5"/>
+        </g>
+      </g>
+
+      <g class="b-armR">
+        <path class="b-limb-o" d="M168 130 q32 8 38 42 q5 22 -4 34"/>
+        <path class="b-limb-i" d="M168 130 q32 8 38 42 q5 22 -4 34"/>
+        <circle class="b-shell" cx="200" cy="210" r="13"/>
+        <circle class="b-cyan"  cx="200" cy="210" r="5"/>
+      </g>
+
+      <rect class="b-shell" x="68" y="104" width="104" height="120" rx="34"/>
+      <rect class="b-screen" x="86" y="132" width="68" height="56" rx="14"/>
+      <circle class="b-led"         cx="98"  cy="146" r="3.6"/>
+      <circle class="b-led b-led-2" cx="109" cy="146" r="3.6"/>
+      <circle class="b-led b-led-3" cx="120" cy="146" r="3.6"/>
+      <rect class="b-bar b-bar-1" x="95"  y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-2" x="109" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-3" x="123" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-4" x="137" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-ring" x="96" y="200" width="48" height="8" rx="4"/>
+
+      <g transform="translate(53 2) scale(0.56)">
+        <rect class="b-metal" x="2"   y="94" width="38" height="54" rx="18"/>
+        <rect class="b-metal" x="160" y="94" width="38" height="54" rx="18"/>
+        <circle class="b-ring" cx="17"  cy="121" r="11"/>
+        <circle class="b-ring" cx="183" cy="121" r="11"/>
+        <circle class="b-cyan" cx="17"  cy="121" r="6.5"/>
+        <circle class="b-cyan" cx="183" cy="121" r="6.5"/>
+
+        <rect class="b-shell" x="24" y="44" width="152" height="150" rx="70"/>
+        <rect class="b-screen" x="72" y="44" width="56" height="24" rx="10"/>
+        <path d="M90 46 q10 -13 20 0 z" fill="#B6C1C7"/>
+        <line x1="100" y1="42" x2="100" y2="27" stroke="#B6C1C7" stroke-width="3.6" stroke-linecap="round"/>
+        <circle class="b-ballglow" cx="100" cy="16" r="11"/>
+        <circle class="b-cyan" cx="100" cy="16" r="11"/>
+        <circle cx="96.5" cy="12.5" r="3.4" fill="#EAFAFF"/>
+
+        <rect class="b-screen" x="40" y="70" width="120" height="98" rx="35"/>
+        <circle class="b-glowL" cx="74"  cy="115" r="24"/>
+        <circle class="b-glowR" cx="126" cy="115" r="24"/>
+        <g class="b-eyeL">
+          <circle class="b-cyan" cx="74" cy="115" r="17"/>
+          <circle cx="74" cy="115" r="9" fill="#06131F"/>
+          <circle cx="78.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <g class="b-eyeR">
+          <circle class="b-cyan" cx="126" cy="115" r="17"/>
+          <circle cx="126" cy="115" r="9" fill="#06131F"/>
+          <circle cx="130.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <path d="M85 145 q15 13 30 0" fill="none" stroke="#20C8E4" stroke-width="4.2" stroke-linecap="round"/>
+        <rect class="b-metal" x="74" y="176" width="52" height="18" rx="7"/>
+        <rect class="b-cyan" x="86" y="183" width="28" height="4" rx="2"/>
+      </g>
+    </g>
   </g>
 </svg>

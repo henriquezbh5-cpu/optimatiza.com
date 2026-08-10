@@ -1,140 +1,461 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520">
-  <title>QA-04</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" role="img" aria-labelledby="qaTitle">
+  <title id="qaTitle">Un robot revisa fila por fila un tablero de indicadores y marca en ocre el que cruzo su umbral</title>
+  <!-- ============================================================
+       QA-04  =  REVISAR Y CORREGIR
+       El robot recorre las filas del tablero con la lupa. Cada fila
+       se vuelve a medir contra su fuente y queda con visto bueno;
+       la fila 4 pasa su umbral, se marca en ocre y el robot vuelve
+       a ella, la amplia con la lupa y la senala.
+       Ciclo maestro: 9s. Ritmos independientes: robot 5.6s / 4.4s /
+       4.2s / 3.2s / 2.4s, barrido vertical 7s, leds 2.8s, alerta 2.6s.
+       Estado de reposo (sin animacion) = ciclo terminado.
+       ============================================================ -->
   <style>
-    .ill-live{animation:ciPulse 2.4s ease-in-out infinite}
-    @keyframes ciPulse{0%,100%{opacity:.35}50%{opacity:1}}
-    .ci-arm{transform-origin:504px 382px;animation:ciSweep 5s ease-in-out infinite}
-    @keyframes ciSweep{0%,100%{transform:rotate(4.5deg)}50%{transform:rotate(-4.5deg)}}
-    .ci-ck1,.ci-ck2,.ci-ck3{animation:ciCheck 6s linear infinite}
-    .ci-ck2{animation-delay:-5.2s}
-    .ci-ck3{animation-delay:-4.4s}
-    @keyframes ciCheck{0%{opacity:0}8%,72%{opacity:1}80%,100%{opacity:0}}
-    @media (prefers-reduced-motion: reduce){*{animation:none !important}}
+    .qa-mono { font-family:'IBM Plex Mono', ui-monospace, monospace }
+
+    /* ===== capa 1 : brazo y lupa ===== */
+    .qa-float { animation:qaFloat 5.6s ease-in-out infinite }
+    @keyframes qaFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5.28px)} }
+
+    /* giros calculados para que la lupa (reposo en 279,307) caiga en el eje
+       de cada fila: 157 / 207 / 257 / 307 / 357, pivote en el hombro 515,350 */
+    .qa-arm { transform-origin:515px 350px; animation:qaSweep 9s ease-in-out infinite }
+    @keyframes qaSweep {
+      0%,6%    { transform:rotate(43.24deg) }
+      12%,18%  { transform:rotate(26.27deg) }
+      24%,30%  { transform:rotate(12.48deg) }
+      36%,42%  { transform:rotate(0deg) }
+      48%,54%  { transform:rotate(-12deg) }
+      62%      { transform:rotate(0deg) }
+      68%      { transform:rotate(-1.9deg) }
+      72%      { transform:rotate(0deg) }
+      76%      { transform:rotate(-1.9deg) }
+      80%,86%  { transform:rotate(0deg) }
+      100%     { transform:rotate(43.24deg) }
+    }
+    /* contrarrotacion: el vidrio de la lupa no se inclina */
+    .qa-lens-in { transform-origin:279px 307px;
+                  animation:qaSweepInv 9s ease-in-out infinite, qaDetail 9s ease-in-out infinite }
+    @keyframes qaSweepInv {
+      0%,6%    { transform:rotate(-43.24deg) }
+      12%,18%  { transform:rotate(-26.27deg) }
+      24%,30%  { transform:rotate(-12.48deg) }
+      36%,42%  { transform:rotate(0deg) }
+      48%,54%  { transform:rotate(12deg) }
+      62%      { transform:rotate(0deg) }
+      68%      { transform:rotate(1.9deg) }
+      72%      { transform:rotate(0deg) }
+      76%      { transform:rotate(1.9deg) }
+      80%,86%  { transform:rotate(0deg) }
+      100%     { transform:rotate(-43.24deg) }
+    }
+    @keyframes qaDetail { 0%,60%{opacity:0} 67%,86%{opacity:1} 92%,100%{opacity:0} }
+
+    /* ===== capa 2 : el tablero responde ===== */
+    .qa-band { animation:qaBand 9s ease-in-out infinite }
+    @keyframes qaBand {
+      0%,6%    { transform:translateY(-150px) }
+      12%,18%  { transform:translateY(-100px) }
+      24%,30%  { transform:translateY(-50px) }
+      36%,42%  { transform:translateY(0) }
+      48%,54%  { transform:translateY(50px) }
+      62%,86%  { transform:translateY(0) }
+      100%     { transform:translateY(-150px) }
+    }
+
+    /* cada indicador se vuelve a medir contra su fuente cuando la lupa llega */
+    .qa-b1,.qa-b2,.qa-b3,.qa-b5 { animation-duration:9s; animation-timing-function:ease-in-out; animation-iteration-count:infinite }
+    .qa-b1 { transform-origin:220px 157px; animation-name:qaBar1 }
+    .qa-b2 { transform-origin:220px 207px; animation-name:qaBar2 }
+    .qa-b3 { transform-origin:220px 257px; animation-name:qaBar3 }
+    .qa-b5 { transform-origin:220px 357px; animation-name:qaBar5 }
+    .qa-b4 { transform-origin:220px 307px;
+             animation:qaBar4 9s ease-in-out infinite, qaBar4Fill 9s ease-in-out infinite }
+    @keyframes qaBar1 { 0%,1%{transform:scaleX(1)} 3%{transform:scaleX(.5)} 6%,100%{transform:scaleX(1)} }
+    @keyframes qaBar2 { 0%,13%{transform:scaleX(1)} 15%{transform:scaleX(.5)} 18%,100%{transform:scaleX(1)} }
+    @keyframes qaBar3 { 0%,25%{transform:scaleX(1)} 27%{transform:scaleX(.5)} 30%,100%{transform:scaleX(1)} }
+    @keyframes qaBar5 { 0%,49%{transform:scaleX(1)} 51%{transform:scaleX(.5)} 54%,100%{transform:scaleX(1)} }
+    /* IND-04 arranca por debajo del umbral y lo cruza al remedirse */
+    @keyframes qaBar4 { 0%,37%{transform:scaleX(.6)} 39%{transform:scaleX(.46)} 43%,92%{transform:scaleX(1)} 96%,100%{transform:scaleX(.6)} }
+    @keyframes qaBar4Fill { 0%,40%{fill:#2C7A63} 44%,93%{fill:#C9913B} 97%,100%{fill:#2C7A63} }
+
+    .qa-m1,.qa-m2,.qa-m3,.qa-m4,.qa-m5 { animation-duration:9s; animation-timing-function:ease-out; animation-iteration-count:infinite }
+    .qa-m1 { animation-name:qaMark1 }
+    .qa-m2 { animation-name:qaMark2 }
+    .qa-m3 { animation-name:qaMark3 }
+    .qa-m4 { animation-name:qaMark4 }
+    .qa-m5 { animation-name:qaMark5 }
+    @keyframes qaMark1 { 0%,4%{opacity:0} 7%,89%{opacity:1} 92%,100%{opacity:0} }
+    @keyframes qaMark2 { 0%,16%{opacity:0} 19%,90%{opacity:1} 93%,100%{opacity:0} }
+    @keyframes qaMark3 { 0%,28%{opacity:0} 31%,91%{opacity:1} 94%,100%{opacity:0} }
+    @keyframes qaMark4 { 0%,40%{opacity:0} 43%,92%{opacity:1} 95%,100%{opacity:0} }
+    @keyframes qaMark5 { 0%,52%{opacity:0} 55%,93%{opacity:1} 96%,100%{opacity:0} }
+
+    .qa-prog { transform-origin:330px 118px; animation:qaProg 9s ease-in-out infinite }
+    @keyframes qaProg {
+      0%,2%{transform:scaleX(.02)} 7%,13%{transform:scaleX(.2)} 19%,25%{transform:scaleX(.4)}
+      31%,37%{transform:scaleX(.6)} 43%,49%{transform:scaleX(.8)} 55%,92%{transform:scaleX(1)}
+      96%,100%{transform:scaleX(.02)}
+    }
+
+    /* ===== capa 3 : detalles de fondo, otros ritmos ===== */
+    .qa-scanx { animation:qaScanX 7s linear infinite }
+    @keyframes qaScanX {
+      0%{transform:translateX(0);opacity:0} 8%{opacity:.5}
+      88%{opacity:.5} 100%{transform:translateX(282px);opacity:0}
+    }
+    .qa-led { animation:qaLed 2.8s ease-in-out infinite }
+    .qa-led-2 { animation-delay:.4s }
+    .qa-led-3 { animation-delay:.8s }
+    @keyframes qaLed { 0%,100%{opacity:.22} 50%{opacity:1} }
+
+    .qa-glow { animation:qaGlow 2.6s ease-in-out infinite }
+    @keyframes qaGlow { 0%,100%{opacity:1} 50%{opacity:.62} }
+
+    /* ===== robot canonico ===== */
+    .b-cyan  { fill:#20C8E4 }
+    .b-shell { fill:#FFFDF8; stroke:#183F35; stroke-width:2.4 }
+    .b-screen{ fill:#0C1A2B }
+    .b-metal { fill:#E3E9EC; stroke:#183F35; stroke-width:2.2 }
+    .b-ring  { fill:#C2CCD2; stroke:#183F35; stroke-width:1.8 }
+    .b-limb-o{ fill:none; stroke:#183F35; stroke-width:17; stroke-linecap:round }
+    .b-limb-i{ fill:none; stroke:#E3E9EC; stroke-width:12.5; stroke-linecap:round }
+    .q-limb-o{ fill:none; stroke:#183F35; stroke-width:15; stroke-linecap:round }
+    .q-limb-i{ fill:none; stroke:#E3E9EC; stroke-width:11; stroke-linecap:round }
+
+    .b-float { animation:bFloat 5.6s ease-in-out infinite }
+    @keyframes bFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    .b-aura { fill:#20C8E4; opacity:.10; transform-origin:120px 140px;
+              animation:bBreathe 4.6s ease-in-out infinite }
+    @keyframes bBreathe { 0%,100%{opacity:.07;transform:scale(1)} 50%{opacity:.15;transform:scale(1.04)} }
+
+    .b-ballglow { fill:#20C8E4; opacity:.4; transform-origin:120px 11px;
+                  animation:bPing 2.2s ease-out infinite }
+    @keyframes bPing { 0%{transform:scale(.65);opacity:.6} 70%,100%{transform:scale(1.8);opacity:0} }
+
+    .b-eyeL,.b-eyeR { animation:bBlink 4.2s ease-in-out infinite }
+    .b-eyeL { transform-origin:94px 66px }
+    .b-eyeR { transform-origin:124px 66px; animation-delay:.06s }
+    @keyframes bBlink { 0%,45%,100%{transform:scaleY(1)} 48%,51%{transform:scaleY(.12)} }
+    .b-glowL,.b-glowR { fill:#20C8E4; opacity:.26; animation:bBreathe 3s ease-in-out infinite }
+    .b-glowL { transform-origin:94px 66px }
+    .b-glowR { transform-origin:124px 66px }
+
+    .b-led { fill:#20C8E4; animation:bLed 2.4s ease-in-out infinite }
+    .b-led-2 { animation-delay:.35s }
+    .b-led-3 { animation-delay:.7s }
+    @keyframes bLed { 0%,100%{opacity:.25} 50%{opacity:1} }
+
+    .b-bar { fill:#20C8E4; opacity:.8; animation:bBar 3.2s ease-in-out infinite }
+    .b-bar-1 { transform-origin:99px 180px }
+    .b-bar-2 { transform-origin:113px 180px; animation-delay:.4s }
+    .b-bar-3 { transform-origin:127px 180px; animation-delay:.8s }
+    .b-bar-4 { transform-origin:141px 180px; animation-delay:1.2s }
+    @keyframes bBar { 0%,100%{transform:scaleY(.35)} 50%{transform:scaleY(1)} }
+
+    .b-armR { transform-origin:168px 130px; animation:bArmR 4.4s ease-in-out infinite }
+    @keyframes bArmR { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(6deg)} }
+
+    .b-wheel { animation:bWheel 5.6s ease-in-out infinite }
+    @keyframes bWheel { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+
+    @media (prefers-reduced-motion: reduce) { * { animation:none !important } }
   </style>
+
   <defs>
-    <pattern id="cH" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
+    <pattern id="qHm" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#2C7A63" stroke-opacity=".8" stroke-width="1"/>
     </pattern>
-    <pattern id="cHd" patternUnits="userSpaceOnUse" width="3.5" height="3.5" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="3.5" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    </pattern>
-    <g id="cBot" stroke="#d3ded6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="-34" y="-24" width="68" height="24" rx="12" fill="url(#cHd)" stroke-width="1.75"/>
-      <circle cx="-18" cy="-12" r="6.5" fill="#12251f" stroke-width="1"/>
-      <circle cx="0" cy="-12" r="6.5" fill="#12251f" stroke-width="1"/>
-      <circle cx="18" cy="-12" r="6.5" fill="#12251f" stroke-width="1"/>
-      <rect x="-12" y="-34" width="24" height="10" fill="#183f35" stroke-width="1.75"/>
-      <rect x="-36" y="-104" width="72" height="70" rx="12" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-      <rect x="16" y="-100" width="17" height="62" fill="url(#cH)" stroke="none"/>
-      <path d="M14 -102 V-36" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-      <path d="M-36 -58 H14" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-      <circle cx="-30" cy="-98" r="1.6" stroke-width="1"/>
-      <circle cx="-30" cy="-42" r="1.6" stroke-width="1"/>
-      <circle cx="8" cy="-98" r="1.6" stroke-width="1"/>
-      <circle cx="8" cy="-42" r="1.6" stroke-width="1"/>
-      <circle cx="24" cy="-70" r="1.6" stroke-width="1"/>
-      <rect x="-28" y="-66" width="34" height="15" rx="2" fill="#12251f" stroke-width="1"/>
-      <rect x="-9" y="-114" width="18" height="10" fill="#183f35" stroke-width="1.75"/>
-      <rect x="-29" y="-150" width="58" height="38" rx="9" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-      <rect x="-21" y="-143" width="42" height="25" rx="4" fill="#12251f" stroke-width="1.75"/>
-      <g fill="#d3ded6" stroke="none">
-        <circle cx="-13" cy="-134" r="1.7"/><circle cx="-8" cy="-134" r="1.7"/>
-        <circle cx="-13" cy="-129" r="1.7"/><circle cx="-8" cy="-129" r="1.7"/>
-        <circle cx="8" cy="-134" r="1.7"/><circle cx="13" cy="-134" r="1.7"/>
-        <circle cx="8" cy="-129" r="1.7"/><circle cx="13" cy="-129" r="1.7"/>
-        <circle cx="-4" cy="-123" r="1"/><circle cx="0" cy="-123" r="1"/><circle cx="4" cy="-123" r="1"/>
-      </g>
-      <circle cx="-29" cy="-131" r="3" fill="#12251f" stroke-width="1"/>
-      <circle cx="29" cy="-131" r="3" fill="#12251f" stroke-width="1"/>
-      <path d="M0 -150 V-166" stroke-width="1.75"/>
-      <circle cx="0" cy="-170" r="6" stroke="#3e9c82" stroke-width="1" class="ill-live"/>
-      <circle cx="0" cy="-170" r="3.5" fill="#2C7A63" stroke="none" class="ill-live"/>
-      <circle cx="-36" cy="-88" r="5.5" fill="#183f35" stroke-width="1.75"/>
-      <circle cx="36" cy="-88" r="5.5" fill="#183f35" stroke-width="1.75"/>
-    </g>
+    <clipPath id="qLens"><circle cx="279" cy="307" r="32.5"/></clipPath>
   </defs>
 
-  <g stroke="#d3ded6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- frame -->
-    <rect x="16" y="16" width="668" height="488" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <rect x="24" y="24" width="652" height="472" stroke-width="1"/>
-    <text x="350" y="52" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="4" fill="#d3ded6" stroke="none">FIG. 3 — QA-04</text>
-    <path d="M285 60 H415" stroke-width="1"/>
+  <!-- ===== marco de plano ===== -->
+  <rect x="16" y="16" width="668" height="488" fill="none" stroke="#2C7A63" stroke-opacity=".45" stroke-width="1"/>
+  <rect x="24" y="24" width="652" height="472" fill="none" stroke="#2C7A63" stroke-width="1.2"/>
+  <path d="M186 49 H246 M454 49 H514" fill="none" stroke="#2C7A63" stroke-opacity=".6" stroke-width="1"/>
+  <rect x="252" y="38" width="196" height="23" rx="2" fill="#12251F" stroke="#2C7A63" stroke-width="1"/>
+  <text class="qa-mono" x="350" y="53.5" text-anchor="middle" font-size="12" letter-spacing="3.2" fill="#D3DED6">FIG. 5 &#8212; QA-04</text>
 
-    <!-- ground -->
-    <path d="M60 470 H640" stroke-width="1.75"/>
-    <rect x="60" y="471" width="580" height="8" fill="url(#cH)" stroke="none"/>
-    <ellipse cx="540" cy="472" rx="52" ry="6" fill="url(#cH)" stroke="none"/>
+  <!-- ===== suelo ===== -->
+  <path d="M56 470 H648" fill="none" stroke="#2C7A63" stroke-width="1.75"/>
+  <rect x="56" y="471" width="592" height="8" fill="url(#qHm)"/>
+  <ellipse cx="557" cy="472" rx="60" ry="6" fill="url(#qHm)"/>
 
-    <!-- hanging framed dashboard -->
-    <circle cx="270" cy="72" r="2.5" fill="#d3ded6" stroke="none"/>
-    <path d="M270 74 L118 96 M270 74 L422 96" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <rect x="110" y="94" width="320" height="258" fill="#183f35" stroke-width="2.5" class="ill-draw"/>
-    <rect x="124" y="108" width="292" height="230" stroke-width="1"/>
-    <rect x="124" y="108" width="292" height="26" fill="url(#cH)" stroke-width="1"/>
-    <text x="132" y="125" font-family="IBM Plex Mono, monospace" font-size="8" letter-spacing="1" fill="#d3ded6" stroke="none">DASH-01</text>
-    <circle cx="394" cy="121" r="1.5" fill="#d3ded6" stroke="none"/>
-    <circle cx="402" cy="121" r="1.5" fill="#d3ded6" stroke="none"/>
-    <circle cx="410" cy="121" r="1.5" fill="#d3ded6" stroke="none"/>
-    <!-- chart -->
-    <path d="M140 150 V320 H400" stroke-width="1.75"/>
-    <path d="M140 190 H400 M140 230 H400 M140 270 H400" stroke="rgba(196,209,224,.45)" stroke-width="1" stroke-dasharray="2 4"/>
-    <rect x="155" y="250" width="30" height="70" fill="url(#cH)" stroke-width="1.75"/>
-    <rect x="205" y="220" width="30" height="100" fill="url(#cH)" stroke-width="1.75"/>
-    <rect x="255" y="270" width="30" height="50" fill="url(#cH)" stroke-width="1.75"/>
-    <rect x="305" y="190" width="30" height="130" fill="#c9913b" stroke-width="1.75"/>
-    <rect x="355" y="230" width="30" height="90" fill="url(#cH)" stroke-width="1.75"/>
-    <path d="M150 262 L200 240 L250 246 L300 204 L350 216 L392 186" stroke-width="1.75" class="ill-draw"/>
-    <circle cx="150" cy="262" r="2.2" fill="#d3ded6" stroke="none"/>
-    <circle cx="200" cy="240" r="2.2" fill="#d3ded6" stroke="none"/>
-    <circle cx="250" cy="246" r="2.2" fill="#d3ded6" stroke="none"/>
-    <circle cx="300" cy="204" r="2.2" fill="#d3ded6" stroke="none"/>
-    <circle cx="350" cy="216" r="2.2" fill="#d3ded6" stroke="none"/>
-    <circle cx="392" cy="186" r="4" fill="#2C7A63" stroke="none" class="ill-live"/>
-    <g font-family="IBM Plex Mono, monospace" font-size="7" fill="#d3ded6" stroke="none" text-anchor="middle">
-      <text x="170" y="332">01</text><text x="220" y="332">02</text><text x="270" y="332">03</text>
-      <text x="320" y="332">04</text><text x="370" y="332">05</text>
-    </g>
-    <!-- red inspection stamp (single red use) -->
-    <g transform="translate(388,136) rotate(-14)" stroke="#B4232C">
-      <circle r="19" stroke-width="1.75"/>
-      <circle r="13.5" stroke-width="1"/>
-      <text y="3.5" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7.5" letter-spacing="1" fill="#B4232C" stroke="none">PASS</text>
-    </g>
-    <!-- plate -->
-    <rect x="220" y="360" width="100" height="16" rx="2" fill="#12251f" stroke-width="1"/>
-    <text x="270" y="371" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7" fill="#d3ded6" stroke="none">DASH-01 REV C</text>
+  <!-- ===== tablero colgado ===== -->
+  <circle cx="242" cy="74" r="3" fill="#2C7A63"/>
+  <path d="M242 76 L80 98 M242 76 L404 98" fill="none" stroke="#2C7A63" stroke-opacity=".7" stroke-width="1"/>
 
-    <!-- ROBOT R-04 : inspector -->
-    <use href="#cBot" transform="translate(540,470)"/>
-    <text x="529" y="415" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#d3ded6" stroke="none">R-04</text>
-    <!-- left arm + magnifier -->
-    <path class="ci-arm" d="M504 382 L462 344 L442 306" stroke-width="2.5"/>
-    <circle class="ci-arm" cx="462" cy="344" r="4" fill="#183f35" stroke-width="1.75"/>
-    <path class="ci-arm" d="M412 267 L440 304" stroke-width="2.5"/>
-    <circle class="ci-arm ill-draw" cx="395" cy="245" r="28" stroke-width="2.5"/>
-    <circle class="ci-arm" cx="395" cy="245" r="24" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <path class="ci-arm" d="M384 230 l-8 10 M392 226 l-4 5" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <path class="ci-arm" d="M378 250 L395 234 L412 242" stroke="#c9913b" stroke-width="2.5"/>
-    <circle class="ci-arm" cx="395" cy="234" r="3" fill="#d3ded6" stroke="none"/>
-    <!-- right arm + clipboard -->
-    <path d="M576 382 L600 352 L592 332" stroke-width="2.5"/>
-    <circle cx="600" cy="352" r="4" fill="#183f35" stroke-width="1.75"/>
-    <rect x="566" y="296" width="50" height="66" rx="3" fill="#183f35" stroke-width="1.75"/>
-    <rect x="583" y="290" width="16" height="10" rx="3" fill="#183f35" stroke-width="1.75"/>
-    <path d="M578 316 H606 M578 326 H606 M578 336 H598" stroke="rgba(196,209,224,.45)" stroke-width="1"/>
-    <rect x="571" y="312" width="6" height="6" stroke-width="1"/>
-    <rect x="571" y="322" width="6" height="6" stroke-width="1"/>
-    <rect x="571" y="332" width="6" height="6" stroke-width="1"/>
-    <path class="ci-ck1" d="M571.5 315 l2 2 l3.5 -4.5" stroke="#c9913b" stroke-width="1.75"/>
-    <path class="ci-ck2" d="M571.5 325 l2 2 l3.5 -4.5" stroke="#c9913b" stroke-width="1.75"/>
-    <path class="ci-ck3" d="M571.5 335 l2 2 l3.5 -4.5" stroke="#c9913b" stroke-width="1.75"/>
+  <rect x="64" y="100" width="356" height="300" rx="3" fill="#183F35" stroke="#D3DED6" stroke-width="2.5"/>
 
-    <!-- title block -->
-    <rect x="420" y="474" width="256" height="22" fill="#12251f" stroke-width="1"/>
-    <path d="M500 474 V496 M590 474 V496" stroke-width="1"/>
-    <text x="428" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">QA-04</text>
-    <text x="508" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">SCALE 1:2</text>
-    <text x="598" y="489" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6" stroke="none">SHT 3/6</text>
+  <!-- cabecera -->
+  <rect x="64" y="100" width="356" height="28" fill="#12251F"/>
+  <path d="M64 128 H420" fill="none" stroke="#D3DED6" stroke-opacity=".55" stroke-width="1"/>
+  <text class="qa-mono" x="76" y="119" font-size="8.5" letter-spacing=".6" fill="#D3DED6">TABLERO DE INDICADORES</text>
+  <circle class="qa-led"          cx="252" cy="115" r="2.3" fill="#D3DED6"/>
+  <circle class="qa-led qa-led-2" cx="262" cy="115" r="2.3" fill="#D3DED6"/>
+  <circle class="qa-led qa-led-3" cx="272" cy="115" r="2.3" fill="#D3DED6"/>
+  <rect x="330" y="114" width="74" height="9" rx="4.5" fill="#183F35" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+  <rect class="qa-prog" x="330" y="114" width="74" height="9" rx="4.5" fill="#2C7A63"/>
+
+  <!-- regla lateral -->
+  <path d="M70 140 H64 M70 165 H64 M70 190 H64 M70 215 H64 M70 240 H64 M70 265 H64 M70 290 H64 M70 315 H64 M70 340 H64 M70 365 H64"
+        fill="none" stroke="#D3DED6" stroke-opacity=".35" stroke-width="1"/>
+  <path d="M70 132 V378" fill="none" stroke="#D3DED6" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- separadores de fila -->
+  <path d="M76 182 H408 M76 232 H408 M76 282 H408 M76 332 H408"
+        fill="none" stroke="#D3DED6" stroke-opacity=".22" stroke-width="1"/>
+
+  <!-- linea de refresco: recorre el tablero, ritmo propio de 7s -->
+  <g class="qa-scanx" opacity=".5">
+    <line x1="126" y1="132" x2="126" y2="378" stroke="#D3DED6" stroke-width="1"/>
   </g>
+
+  <!-- banda de lectura: marca la fila que el robot esta mirando -->
+  <g class="qa-band">
+    <rect x="70" y="286" width="342" height="42" rx="4" fill="#D3DED6" fill-opacity=".11"/>
+    <path d="M70 286 H412 M70 328 H412" fill="none" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+  </g>
+
+  <!-- ============ FILA 1 ============ -->
+  <rect x="76" y="149" width="16" height="16" rx="4" fill="#12251F" stroke="#D3DED6" stroke-opacity=".6" stroke-width="1"/>
+  <g class="qa-m1">
+    <rect x="76" y="149" width="16" height="16" rx="4" fill="#2C7A63"/>
+    <path d="M79.6 157.2 l2.9 3.3 l5.9 -7.6" fill="none" stroke="#D3DED6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text class="qa-mono" x="100" y="160.5" font-size="9" fill="#D3DED6">IND-01</text>
+  <rect x="220" y="151" width="170" height="12" rx="6" fill="#12251F" stroke="#D3DED6" stroke-opacity=".45" stroke-width="1"/>
+  <rect class="qa-b1" x="220" y="151" width="105" height="12" rx="6" fill="#2C7A63" stroke="#D3DED6" stroke-opacity=".8" stroke-width="1.2"/>
+  <line x1="356" y1="146" x2="356" y2="168" stroke="#D3DED6" stroke-width="1.6" stroke-dasharray="3 2.5"/>
+  <rect x="140" y="148" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+  <g fill="#D3DED6" opacity=".3"><circle cx="166" cy="157" r="1.5"/><circle cx="174" cy="157" r="1.5"/><circle cx="182" cy="157" r="1.5"/></g>
+  <g class="qa-m1">
+    <rect x="140" y="148" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+    <text class="qa-mono" x="174" y="160.5" text-anchor="middle" font-size="8" fill="#D3DED6">EN RANGO</text>
+  </g>
+
+  <!-- ============ FILA 2 ============ -->
+  <rect x="76" y="199" width="16" height="16" rx="4" fill="#12251F" stroke="#D3DED6" stroke-opacity=".6" stroke-width="1"/>
+  <g class="qa-m2">
+    <rect x="76" y="199" width="16" height="16" rx="4" fill="#2C7A63"/>
+    <path d="M79.6 207.2 l2.9 3.3 l5.9 -7.6" fill="none" stroke="#D3DED6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text class="qa-mono" x="100" y="210.5" font-size="9" fill="#D3DED6">IND-02</text>
+  <rect x="220" y="201" width="170" height="12" rx="6" fill="#12251F" stroke="#D3DED6" stroke-opacity=".45" stroke-width="1"/>
+  <rect class="qa-b2" x="220" y="201" width="75" height="12" rx="6" fill="#2C7A63" stroke="#D3DED6" stroke-opacity=".8" stroke-width="1.2"/>
+  <line x1="348" y1="196" x2="348" y2="218" stroke="#D3DED6" stroke-width="1.6" stroke-dasharray="3 2.5"/>
+  <rect x="140" y="198" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+  <g fill="#D3DED6" opacity=".3"><circle cx="166" cy="207" r="1.5"/><circle cx="174" cy="207" r="1.5"/><circle cx="182" cy="207" r="1.5"/></g>
+  <g class="qa-m2">
+    <rect x="140" y="198" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+    <text class="qa-mono" x="174" y="210.5" text-anchor="middle" font-size="8" fill="#D3DED6">EN RANGO</text>
+  </g>
+
+  <!-- ============ FILA 3 ============ -->
+  <rect x="76" y="249" width="16" height="16" rx="4" fill="#12251F" stroke="#D3DED6" stroke-opacity=".6" stroke-width="1"/>
+  <g class="qa-m3">
+    <rect x="76" y="249" width="16" height="16" rx="4" fill="#2C7A63"/>
+    <path d="M79.6 257.2 l2.9 3.3 l5.9 -7.6" fill="none" stroke="#D3DED6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text class="qa-mono" x="100" y="260.5" font-size="9" fill="#D3DED6">IND-03</text>
+  <rect x="220" y="251" width="170" height="12" rx="6" fill="#12251F" stroke="#D3DED6" stroke-opacity=".45" stroke-width="1"/>
+  <rect class="qa-b3" x="220" y="251" width="119" height="12" rx="6" fill="#2C7A63" stroke="#D3DED6" stroke-opacity=".8" stroke-width="1.2"/>
+  <line x1="364" y1="246" x2="364" y2="268" stroke="#D3DED6" stroke-width="1.6" stroke-dasharray="3 2.5"/>
+  <rect x="140" y="248" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+  <g fill="#D3DED6" opacity=".3"><circle cx="166" cy="257" r="1.5"/><circle cx="174" cy="257" r="1.5"/><circle cx="182" cy="257" r="1.5"/></g>
+  <g class="qa-m3">
+    <rect x="140" y="248" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+    <text class="qa-mono" x="174" y="260.5" text-anchor="middle" font-size="8" fill="#D3DED6">EN RANGO</text>
+  </g>
+
+  <!-- ============ FILA 4 : la que cruza el umbral ============ -->
+  <rect x="76" y="299" width="16" height="16" rx="4" fill="#12251F" stroke="#D3DED6" stroke-opacity=".6" stroke-width="1"/>
+  <g class="qa-m4">
+    <rect x="76" y="299" width="16" height="16" rx="4" fill="#C9913B"/>
+    <path d="M84 302.6 V308.6" fill="none" stroke="#12251F" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="84" cy="312" r="1.5" fill="#12251F"/>
+  </g>
+  <text class="qa-mono" x="100" y="310.5" font-size="9" fill="#D3DED6">IND-04</text>
+  <rect x="220" y="301" width="170" height="12" rx="6" fill="#12251F" stroke="#D3DED6" stroke-opacity=".45" stroke-width="1"/>
+  <rect class="qa-b4" x="220" y="301" width="163" height="12" rx="6" fill="#C9913B" stroke="#D3DED6" stroke-opacity=".8" stroke-width="1.2"/>
+  <line x1="336" y1="296" x2="336" y2="318" stroke="#D3DED6" stroke-width="1.8" stroke-dasharray="3 2.5"/>
+  <rect x="140" y="298" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+  <g fill="#D3DED6" opacity=".3"><circle cx="166" cy="307" r="1.5"/><circle cx="174" cy="307" r="1.5"/><circle cx="182" cy="307" r="1.5"/></g>
+  <g class="qa-m4">
+    <rect x="140" y="298" width="68" height="18" rx="3" fill="#C9913B"/>
+    <text class="qa-mono" x="174" y="310.5" text-anchor="middle" font-size="8" font-weight="700" fill="#12251F">REVISAR</text>
+  </g>
+  <g class="qa-m4">
+    <rect class="qa-glow" x="70" y="286" width="342" height="42" rx="4" fill="none" stroke="#C9913B" stroke-width="2"/>
+  </g>
+  <g class="qa-m4">
+    <path class="qa-glow" d="M60 307 L44 299 L44 315 Z" fill="#C9913B"/>
+  </g>
+
+  <!-- ============ FILA 5 ============ -->
+  <rect x="76" y="349" width="16" height="16" rx="4" fill="#12251F" stroke="#D3DED6" stroke-opacity=".6" stroke-width="1"/>
+  <g class="qa-m5">
+    <rect x="76" y="349" width="16" height="16" rx="4" fill="#2C7A63"/>
+    <path d="M79.6 357.2 l2.9 3.3 l5.9 -7.6" fill="none" stroke="#D3DED6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text class="qa-mono" x="100" y="360.5" font-size="9" fill="#D3DED6">IND-05</text>
+  <rect x="220" y="351" width="170" height="12" rx="6" fill="#12251F" stroke="#D3DED6" stroke-opacity=".45" stroke-width="1"/>
+  <rect class="qa-b5" x="220" y="351" width="86" height="12" rx="6" fill="#2C7A63" stroke="#D3DED6" stroke-opacity=".8" stroke-width="1.2"/>
+  <line x1="342" y1="346" x2="342" y2="368" stroke="#D3DED6" stroke-width="1.6" stroke-dasharray="3 2.5"/>
+  <rect x="140" y="348" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".3" stroke-width="1" stroke-dasharray="3 3"/>
+  <g fill="#D3DED6" opacity=".3"><circle cx="166" cy="357" r="1.5"/><circle cx="174" cy="357" r="1.5"/><circle cx="182" cy="357" r="1.5"/></g>
+  <g class="qa-m5">
+    <rect x="140" y="348" width="68" height="18" rx="3" fill="#12251F" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+    <text class="qa-mono" x="174" y="360.5" text-anchor="middle" font-size="8" fill="#D3DED6">EN RANGO</text>
+  </g>
+
+  <!-- pie del tablero -->
+  <rect x="64" y="382" width="356" height="18" fill="#12251F"/>
+  <path d="M64 382 H420" fill="none" stroke="#D3DED6" stroke-opacity=".4" stroke-width="1"/>
+  <text class="qa-mono" x="76" y="394.5" font-size="7.5" letter-spacing=".4" fill="#D3DED6">5 INDICADORES &#183; 1 UMBRAL POR FILA</text>
+  <text class="qa-mono" x="408" y="394.5" text-anchor="end" font-size="7.5" fill="#D3DED6">REV D</text>
+
+  <!-- placas bajo el tablero -->
+  <rect x="64" y="410" width="168" height="19" rx="2" fill="#12251F" stroke="#2C7A63" stroke-width="1"/>
+  <text class="qa-mono" x="74" y="423" font-size="7.5" fill="#D3DED6">FUENTE: SISTEMA &#183; CORTE 08:00</text>
+  <g class="qa-m4">
+    <rect x="246" y="410" width="174" height="19" rx="2" fill="#C9913B"/>
+    <text class="qa-mono" x="256" y="423" font-size="7.5" font-weight="700" fill="#12251F">UMBRAL SUPERADO &#183; IND-04</text>
+  </g>
+
+  <!-- ===== brazo largo del robot con la lupa ===== -->
+  <g class="qa-float">
+    <g class="qa-arm">
+      <path class="q-limb-o" d="M515 350 C502 366 480 366 462 356 C450 349 440 343 431 335"/>
+      <path class="q-limb-i" d="M515 350 C502 366 480 366 462 356 C450 349 440 343 431 335"/>
+      <path d="M431 335 L314 313.5" fill="none" stroke="#183F35" stroke-width="9.5" stroke-linecap="round"/>
+      <path d="M431 335 L314 313.5" fill="none" stroke="#D3DED6" stroke-width="4.4" stroke-linecap="round"/>
+      <circle cx="399" cy="329" r="4.6" fill="#183F35"/>
+      <circle class="b-shell" cx="431" cy="335" r="11.4"/>
+      <circle class="b-cyan"  cx="431" cy="335" r="4.4"/>
+
+      <circle cx="279" cy="307" r="32.5" fill="#D3DED6" fill-opacity=".10"/>
+      <g class="qa-lens-in" opacity="1" clip-path="url(#qLens)">
+        <circle cx="279" cy="307" r="33" fill="#12251F"/>
+        <text class="qa-mono" x="279" y="293.5" text-anchor="middle" font-size="8.5" fill="#D3DED6">IND-04</text>
+        <rect x="255" y="300" width="48" height="13" rx="6.5" fill="#183F35" stroke="#D3DED6" stroke-opacity=".5" stroke-width="1"/>
+        <rect x="255" y="300" width="46" height="13" rx="6.5" fill="#C9913B"/>
+        <line x1="287" y1="295" x2="287" y2="318" stroke="#D3DED6" stroke-width="1.6" stroke-dasharray="3 2.5"/>
+        <text class="qa-mono" x="279" y="327" text-anchor="middle" font-size="8.5" font-weight="700" fill="#C9913B">+28%</text>
+      </g>
+      <path d="M258 293 a30 30 0 0 1 15 -9.5" fill="none" stroke="#D3DED6" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="279" cy="307" r="36" fill="none" stroke="#183F35" stroke-width="7.5"/>
+      <circle cx="279" cy="307" r="36" fill="none" stroke="#D3DED6" stroke-width="3.2"/>
+      <circle cx="279" cy="307" r="31.8" fill="none" stroke="#D3DED6" stroke-opacity=".45" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- ===== ROBOT R-04 ===== -->
+  <g transform="translate(452 236) scale(0.88)">
+    <g class="b-float">
+      <ellipse class="b-aura" cx="120" cy="140" rx="108" ry="132"/>
+
+      <g class="b-wheel">
+        <rect class="b-metal" x="82" y="218" width="76" height="24" rx="11"/>
+        <circle class="b-metal" cx="98"  cy="252" r="13"/>
+        <circle class="b-metal" cx="120" cy="252" r="13"/>
+        <circle class="b-metal" cx="142" cy="252" r="13"/>
+        <circle class="b-ring"  cx="98"  cy="252" r="5"/>
+        <circle class="b-ring"  cx="120" cy="252" r="5"/>
+        <circle class="b-ring"  cx="142" cy="252" r="5"/>
+      </g>
+
+      <!-- Brazo derecho: la tablilla va primero y el antebrazo se dibuja
+           encima, bajando por el pasillo libre entre el torso (x=172) y el
+           canto izquierdo de la tablilla (x=184 a 192). Asi el miembro se ve
+           entero y la mano agarra la esquina inferior izquierda. -->
+      <g class="b-armR">
+        <g transform="rotate(-5 214 142)">
+          <rect x="188" y="98" width="52" height="88" rx="5" fill="#183F35" stroke="#D3DED6" stroke-width="2.2"/>
+          <rect x="194" y="104" width="40" height="13" rx="2" fill="#12251F"/>
+          <text class="qa-mono" x="198" y="114" font-size="8.5" fill="#D3DED6">R-04</text>
+
+          <rect x="194" y="124" width="8" height="8" rx="1.6" fill="none" stroke="#D3DED6" stroke-opacity=".7" stroke-width="1.2"/>
+          <path d="M208 128 H232" stroke="#D3DED6" stroke-opacity=".4" stroke-width="1.2"/>
+          <path class="qa-m1" d="M195.6 128 l2 2.2 l3.4 -4.6" fill="none" stroke="#D3DED6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <rect x="194" y="136" width="8" height="8" rx="1.6" fill="none" stroke="#D3DED6" stroke-opacity=".7" stroke-width="1.2"/>
+          <path d="M208 140 H227" stroke="#D3DED6" stroke-opacity=".4" stroke-width="1.2"/>
+          <path class="qa-m2" d="M195.6 140 l2 2.2 l3.4 -4.6" fill="none" stroke="#D3DED6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <rect x="194" y="148" width="8" height="8" rx="1.6" fill="none" stroke="#D3DED6" stroke-opacity=".7" stroke-width="1.2"/>
+          <path d="M208 152 H233" stroke="#D3DED6" stroke-opacity=".4" stroke-width="1.2"/>
+          <path class="qa-m3" d="M195.6 152 l2 2.2 l3.4 -4.6" fill="none" stroke="#D3DED6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <rect x="194" y="160" width="8" height="8" rx="1.6" fill="none" stroke="#C9913B" stroke-width="1.4"/>
+          <path d="M208 164 H230" stroke="#D3DED6" stroke-opacity=".4" stroke-width="1.2"/>
+          <g class="qa-m4">
+            <rect x="194" y="160" width="8" height="8" rx="1.6" fill="#C9913B"/>
+            <path d="M208 164 H230" stroke="#C9913B" stroke-width="1.6"/>
+          </g>
+
+          <rect x="194" y="172" width="8" height="8" rx="1.6" fill="none" stroke="#D3DED6" stroke-opacity=".7" stroke-width="1.2"/>
+          <path d="M208 176 H225" stroke="#D3DED6" stroke-opacity=".4" stroke-width="1.2"/>
+          <path class="qa-m5" d="M195.6 176 l2 2.2 l3.4 -4.6" fill="none" stroke="#D3DED6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <path class="b-limb-o" d="M168 130 q14 26 12 44 q-1 12 10 23"/>
+        <path class="b-limb-i" d="M168 130 q14 26 12 44 q-1 12 10 23"/>
+        <circle class="b-shell" cx="190" cy="197" r="13"/>
+        <circle class="b-cyan"  cx="190" cy="197" r="5"/>
+      </g>
+
+      <rect class="b-shell" x="68" y="104" width="104" height="120" rx="34"/>
+      <rect class="b-screen" x="86" y="132" width="68" height="56" rx="14"/>
+      <circle class="b-led"         cx="98"  cy="146" r="3.6"/>
+      <circle class="b-led b-led-2" cx="109" cy="146" r="3.6"/>
+      <circle class="b-led b-led-3" cx="120" cy="146" r="3.6"/>
+      <rect class="b-bar b-bar-1" x="95"  y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-2" x="109" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-3" x="123" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-4" x="137" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-ring" x="96" y="200" width="48" height="8" rx="4"/>
+
+      <g transform="translate(53 2) scale(0.56)">
+        <rect class="b-metal" x="2"   y="94" width="38" height="54" rx="18"/>
+        <rect class="b-metal" x="160" y="94" width="38" height="54" rx="18"/>
+        <circle class="b-ring" cx="17"  cy="121" r="11"/>
+        <circle class="b-ring" cx="183" cy="121" r="11"/>
+        <circle class="b-cyan" cx="17"  cy="121" r="6.5"/>
+        <circle class="b-cyan" cx="183" cy="121" r="6.5"/>
+
+        <rect class="b-shell" x="24" y="44" width="152" height="150" rx="70"/>
+        <rect class="b-screen" x="72" y="44" width="56" height="24" rx="10"/>
+        <path d="M90 46 q10 -13 20 0 z" fill="#B6C1C7"/>
+        <line x1="100" y1="42" x2="100" y2="27" stroke="#B6C1C7" stroke-width="3.6" stroke-linecap="round"/>
+        <circle class="b-ballglow" cx="100" cy="16" r="11"/>
+        <circle class="b-cyan" cx="100" cy="16" r="11"/>
+        <circle cx="96.5" cy="12.5" r="3.4" fill="#EAFAFF"/>
+
+        <rect class="b-screen" x="40" y="70" width="120" height="98" rx="35"/>
+        <circle class="b-glowL" cx="74"  cy="115" r="24"/>
+        <circle class="b-glowR" cx="126" cy="115" r="24"/>
+        <g class="b-eyeL">
+          <circle class="b-cyan" cx="74" cy="115" r="17"/>
+          <circle cx="74" cy="115" r="9" fill="#06131F"/>
+          <circle cx="78.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <g class="b-eyeR">
+          <circle class="b-cyan" cx="126" cy="115" r="17"/>
+          <circle cx="126" cy="115" r="9" fill="#06131F"/>
+          <circle cx="130.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <path d="M85 145 q15 13 30 0" fill="none" stroke="#20C8E4" stroke-width="4.2" stroke-linecap="round"/>
+        <rect class="b-metal" x="74" y="176" width="52" height="18" rx="7"/>
+        <rect class="b-cyan" x="86" y="183" width="28" height="4" rx="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== cajetin ===== -->
+  <rect x="420" y="474" width="256" height="22" fill="#12251F" stroke="#2C7A63" stroke-width="1"/>
+  <path d="M500 474 V496 M590 474 V496" fill="none" stroke="#2C7A63" stroke-width="1"/>
+  <text class="qa-mono" x="428" y="489" font-size="8" fill="#D3DED6">QA-04</text>
+  <text class="qa-mono" x="508" y="489" font-size="8" fill="#D3DED6">ESC 1:2</text>
+  <text class="qa-mono" x="598" y="489" font-size="8" fill="#D3DED6">HOJA 5/6</text>
 </svg>

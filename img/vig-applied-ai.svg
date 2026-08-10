@@ -1,73 +1,374 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" role="img" aria-label="Punched paper tape feeds an analytical gear unit; a verified output chit exits through a guarded slot">
-<title>FIG. 3D — APPLIED AI</title>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" role="img" aria-labelledby="ctrlT ctrlD">
+<title id="ctrlT">FIG. 3D · CTRL · Verificar antes de avanzar</title>
+<desc id="ctrlD">Plano tecnico apaisado. Por la izquierda entra un flujo de documentos a un bloque rotulado VOLUMEN con cuatro engranajes encadenados. El tren empuja una pieza por el carril hasta la estacion CONTROL. El robot, de pie a la derecha sobre el archivador, baja con su brazo la palanca de la prensa: la prensa cae sobre la pieza, aparece el sello y la marca de verificacion, y sus ojos destellan al confirmar. Solo entonces la compuerta se levanta y la pieza baja por la rampa hasta el primer hueco del archivador de registros verificados.</desc>
+
 <style>
-.vigai-g1,.vigai-g2,.vigai-g3{transform-box:fill-box;transform-origin:50% 50%}
-.vigai-g1{animation:vigai-cw 11s linear infinite}
-.vigai-g2{animation:vigai-ccw 14s linear infinite}
-.vigai-g3{animation:vigai-cw 10s linear infinite}
-@keyframes vigai-cw{to{transform:rotate(360deg)}}
-@keyframes vigai-ccw{to{transform:rotate(-360deg)}}
-.vigai-chit{animation:vigai-pulse 3s ease-in-out infinite}
-@keyframes vigai-pulse{0%,100%{opacity:1}50%{opacity:.75}}
-.vigai-tape{animation:vigai-drift 2.8s linear infinite}
-@keyframes vigai-drift{0%{transform:translate(-3px,-2px);opacity:0}20%{opacity:1}80%{opacity:1}100%{transform:translate(3px,2px);opacity:0}}
-@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+/* ============================================================
+   CTRL = el ciclo maestro dura 8 s.
+   Fases: 0=30 % avance del tren, 32=66 % el robot baja la
+   palanca y la pieza recibe sello y marca, 62=96 % la
+   compuerta abre y la pieza cae al archivador.
+   Capas con ritmos propios: 8 s (ciclo), 3.2 s (entrada),
+   6.4 s (barrido), 2.4 s (testigos), 5.6 / 4.2 / 3.2 / 2.2 s
+   (respiracion, parpadeo, barras y baliza del robot).
+   Regla de lectura: toda linea clara #D3DED6 va encima de masa
+   #183F35, para que la escena tenga silueta sobre crema y
+   contorno sobre verde bosque.
+   ============================================================ */
+text{font-family:'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace}
+.mass  {fill:#183F35;stroke:#D3DED6;stroke-width:1.8}
+.mass-s{fill:#183F35;stroke:#D3DED6;stroke-width:1.2}
+.deep  {fill:#12251F;stroke:#D3DED6;stroke-width:1.2}
+.tool  {fill:#D3DED6;stroke:#183F35;stroke-width:1.4}
+.tool-s{fill:#D3DED6;stroke:#183F35;stroke-width:1}
+.t     {fill:#D3DED6}
+.oc    {fill:none;stroke:#C9913B;stroke-width:1}
+
+/* ==== capa 1: tren de engranajes, avanza y se retiene ==== */
+.ctrl-g1{transform-origin:56px 62px;  animation:ctrlG1 8s linear infinite}
+.ctrl-g2{transform-origin:95px 72px;  animation:ctrlG2 8s linear infinite}
+.ctrl-g3{transform-origin:131px 58px; animation:ctrlG3 8s linear infinite}
+.ctrl-g4{transform-origin:136px 90px; animation:ctrlG4 8s linear infinite}
+@keyframes ctrlG1{0%{transform:rotate(0deg)}30%{transform:rotate(96deg)}72%{transform:rotate(106deg)}100%{transform:rotate(240deg)}}
+@keyframes ctrlG2{0%{transform:rotate(0deg)}30%{transform:rotate(-72deg)}72%{transform:rotate(-80deg)}100%{transform:rotate(-180deg)}}
+@keyframes ctrlG3{0%{transform:rotate(0deg)}30%{transform:rotate(115deg)}72%{transform:rotate(127deg)}100%{transform:rotate(288deg)}}
+@keyframes ctrlG4{0%{transform:rotate(0deg)}30%{transform:rotate(144deg)}72%{transform:rotate(159deg)}100%{transform:rotate(360deg)}}
+.ctrl-belt{stroke-dasharray:6 4;animation:ctrlBelt 8s linear infinite}
+@keyframes ctrlBelt{0%{stroke-dashoffset:0}30%{stroke-dashoffset:-40}72%{stroke-dashoffset:-44}100%{stroke-dashoffset:-100}}
+.ctrl-latch{transform-origin:146px 36px;animation:ctrlLatch 8s ease-in-out infinite}
+@keyframes ctrlLatch{0%,26%{transform:rotate(0deg)}34%,68%{transform:rotate(-18deg)}78%,100%{transform:rotate(0deg)}}
+
+/* ==== capa 2: la pieza, la prensa, el sello y la compuerta ==== */
+.ctrl-piece{animation:ctrlPiece 8s ease-in-out infinite}
+@keyframes ctrlPiece{
+  0%  {transform:translate(-46px,0);opacity:0}
+  9%  {transform:translate(-34px,0);opacity:0}
+  13% {transform:translate(-30px,0);opacity:1}
+  30% {transform:translate(0,0);opacity:1}
+  72% {transform:translate(0,0);opacity:1}
+  80% {transform:translate(20px,2px);opacity:1}
+  90% {transform:translate(47px,21px);opacity:1}
+  99% {transform:translate(47px,21px);opacity:1}
+  99.6%{transform:translate(47px,21px);opacity:0}
+  100%{transform:translate(-46px,0);opacity:0}
+}
+.ctrl-press{animation:ctrlPress 8s ease-in-out infinite}
+@keyframes ctrlPress{0%,32%{transform:translateY(0)}48%,58%{transform:translateY(21px)}68%,100%{transform:translateY(0)}}
+.ctrl-arm{transform-origin:72px 130px;animation:ctrlArm 8s ease-in-out infinite}
+@keyframes ctrlArm{0%,32%{transform:rotate(0deg)}48%,58%{transform:rotate(-47deg)}68%,100%{transform:rotate(0deg)}}
+.ctrl-check{transform-origin:199px 89px;animation:ctrlCheck 8s linear infinite}
+@keyframes ctrlCheck{0%,52%{opacity:0;transform:scale(.4)}56%{opacity:1;transform:scale(1.3)}60%{opacity:1;transform:scale(1)}95%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+.ctrl-seal{transform-origin:199px 89px;animation:ctrlSeal 8s linear infinite}
+@keyframes ctrlSeal{0%,50%{opacity:0;transform:scale(.5)}54%{opacity:1;transform:scale(.8)}64%{opacity:0;transform:scale(1.7)}100%{opacity:0;transform:scale(1.7)}}
+.ctrl-gate{animation:ctrlGate 8s ease-in-out infinite}
+@keyframes ctrlGate{0%,62%{transform:translateY(0)}70%,88%{transform:translateY(-20px)}96%,100%{transform:translateY(0)}}
+
+/* ==== capa 3: la entrada, siempre corriendo (3.2 s) ==== */
+.ctrl-in{animation:ctrlIn 3.2s linear infinite}
+.ctrl-in-2{animation-delay:.8s}
+.ctrl-in-3{animation-delay:1.6s}
+.ctrl-in-4{animation-delay:2.4s}
+@keyframes ctrlIn{0%{transform:translateX(-5px);opacity:0}20%{opacity:1}76%{opacity:1}100%{transform:translateX(7px);opacity:0}}
+
+/* ==== capa 4: barrido interno (6.4 s) y testigos (2.4 s) ==== */
+.ctrl-scan{animation:ctrlScan 6.4s ease-in-out infinite}
+@keyframes ctrlScan{0%,100%{transform:translateY(0)}50%{transform:translateY(58px)}}
+.ctrl-led{animation:ctrlLed 2.4s ease-in-out infinite}
+.ctrl-led-2{animation-delay:.3s}
+.ctrl-led-3{animation-delay:.6s}
+@keyframes ctrlLed{0%,100%{opacity:.3}50%{opacity:1}}
+.ctrl-bal{animation:ctrlBal 4.8s ease-in-out infinite}
+.ctrl-bal-2{animation-delay:1.6s}
+.ctrl-bal-3{animation-delay:3.2s}
+@keyframes ctrlBal{0%,100%{opacity:1}50%{opacity:.65}}
+
+/* ==== capa 5: el robot canonico =====================
+   Dos juegos de trazo: .b-* para el cuerpo (escala 0.33)
+   y .h-* para la cabeza (escala 0.33 x 0.56 = 0.185).
+   Asi el contorno mide ~1.4 px en ambos y no se pierde. */
+.b-cyan {fill:#20C8E4}
+.b-shell{fill:#FFFDF8;stroke:#183F35;stroke-width:4.5}
+.b-metal{fill:#E3E9EC;stroke:#183F35;stroke-width:4.2}
+.b-ring {fill:#C2CCD2;stroke:#183F35;stroke-width:3.4}
+.b-screen{fill:#0C1A2B}
+.b-limb-o{fill:none;stroke:#183F35;stroke-width:18;stroke-linecap:round}
+.b-limb-i{fill:none;stroke:#E3E9EC;stroke-width:12;stroke-linecap:round}
+.h-shell{fill:#FFFDF8;stroke:#183F35;stroke-width:8}
+.h-metal{fill:#E3E9EC;stroke:#183F35;stroke-width:7.5}
+.h-ring {fill:#C2CCD2;stroke:#183F35;stroke-width:6}
+
+.b-float{animation:bFloat 5.6s ease-in-out infinite}
+@keyframes bFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.2px)}}
+.b-wheel{animation:bWheel 5.6s ease-in-out infinite}
+@keyframes bWheel{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.5px)}}
+.b-armR{transform-origin:168px 130px;animation:bArmR 4.4s ease-in-out infinite}
+@keyframes bArmR{0%,100%{transform:rotate(0deg)}50%{transform:rotate(7deg)}}
+.b-led{fill:#20C8E4;animation:bLed 2.4s ease-in-out infinite}
+.b-led-2{animation-delay:.35s}
+.b-led-3{animation-delay:.7s}
+@keyframes bLed{0%,100%{opacity:.3}50%{opacity:1}}
+.b-bar{fill:#20C8E4;opacity:.85;animation:bBar 3.2s ease-in-out infinite}
+.b-bar-1{transform-origin:99px 180px}
+.b-bar-2{transform-origin:113px 180px;animation-delay:.4s}
+.b-bar-3{transform-origin:127px 180px;animation-delay:.8s}
+.b-bar-4{transform-origin:141px 180px;animation-delay:1.2s}
+@keyframes bBar{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+.b-ballglow{fill:#20C8E4;opacity:.4;transform-origin:100px 16px;animation:bPing 2.2s ease-out infinite}
+@keyframes bPing{0%{transform:scale(.65);opacity:.6}70%,100%{transform:scale(1.8);opacity:0}}
+.b-eyeL,.b-eyeR{animation:bBlink 4.2s ease-in-out infinite}
+.b-eyeL{transform-origin:74px 115px}
+.b-eyeR{transform-origin:126px 115px;animation-delay:.06s}
+@keyframes bBlink{0%,45%{transform:scaleY(1)}47.5%,49.5%{transform:scaleY(.12)}52.5%,100%{transform:scaleY(1)}}
+/* el destello de confirmacion vive dentro de la cuenca: r=22
+   contra ojos de r=17 y centros a 52 px, asi nunca se funden */
+.b-glowL,.b-glowR{fill:#20C8E4;opacity:.24;animation:ctrlGlow 8s ease-in-out infinite}
+.b-glowL{transform-origin:74px 115px}
+.b-glowR{transform-origin:126px 115px;animation-delay:.05s}
+@keyframes ctrlGlow{0%,50%{opacity:.2;transform:scale(.9)}57%{opacity:.5;transform:scale(1)}70%{opacity:.34;transform:scale(.96)}88%,100%{opacity:.2;transform:scale(.9)}}
+.ctrl-ping{fill:none;stroke:#20C8E4;stroke-width:6;opacity:0;transform-origin:100px 16px;animation:ctrlPing 8s ease-out infinite}
+@keyframes ctrlPing{0%,54%{opacity:0;transform:scale(.6)}58%{opacity:.85;transform:scale(1)}74%,100%{opacity:0;transform:scale(2.8)}}
+.ctrl-smile{animation:ctrlSmile 8s ease-in-out infinite}
+@keyframes ctrlSmile{0%,52%{opacity:.55}60%,76%{opacity:1}90%,100%{opacity:.55}}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important}
+  .ctrl-piece{transform:translate(0,0);opacity:1}
+  .ctrl-check{opacity:1;transform:scale(1)}
+  .ctrl-seal{opacity:0}
+  .ctrl-smile{opacity:1}
+  .b-glowL,.b-glowR{opacity:.3}
+}
 </style>
-<!-- punched tape feeding in -->
-<path class="ill-draw" d="M8,34 C40,34 60,44 78,60 C88,68 94,72 104,74" fill="none" stroke="#d3ded6" stroke-width="1.75"/>
-<path class="ill-draw" d="M8,52 C40,52 58,60 74,74 C84,82 92,86 104,88" fill="none" stroke="#d3ded6" stroke-width="1.75"/>
-<line x1="8" y1="34" x2="8" y2="52" stroke="#d3ded6" stroke-width="1.75"/>
-<!-- feed holes + data punches -->
-<g class="vigai-tape" fill="none" stroke="#d3ded6" stroke-width="1">
-  <circle cx="20" cy="43" r="1.8"/><circle cx="34" cy="44" r="1.8"/><circle cx="48" cy="48" r="1.8"/><circle cx="62" cy="55" r="1.8"/><circle cx="76" cy="65" r="1.8"/><circle cx="90" cy="75" r="1.8"/>
-  <circle cx="26" cy="38.5" r="1.2"/><circle cx="42" cy="40.5" r="1.2"/><circle cx="30" cy="48" r="1.2"/><circle cx="52" cy="54" r="1.2"/><circle cx="58" cy="49" r="1.2"/><circle cx="68" cy="62" r="1.2"/><circle cx="82" cy="72" r="1.2"/><circle cx="86" cy="66.5" r="1.2"/>
+
+<!-- ===== rotulo de figura ===== -->
+<rect class="mass-s" x="6" y="6" width="84" height="14" rx="2"/>
+<text class="t" x="48" y="16.4" text-anchor="middle" font-size="7" letter-spacing="1">FIG. 9 — CTRL</text>
+
+<!-- ===== entrada: canal de masa y flujo de documentos ===== -->
+<path class="mass-s" d="M26,46 H4 a2,2 0 0 0 -2,2 V90 a2,2 0 0 0 2,2 H26 V86 H8 V52 H26 Z"/>
+<g class="ctrl-in"><rect class="tool-s" x="9" y="54" width="9" height="8" rx="1"/><path class="oc" d="M11,58.2 h5"/></g>
+<g class="ctrl-in ctrl-in-2"><rect class="tool-s" x="9" y="63" width="9" height="8" rx="1"/><path class="oc" d="M11,67.2 h5"/></g>
+<g class="ctrl-in ctrl-in-3"><rect class="tool-s" x="9" y="72" width="9" height="8" rx="1"/><path class="oc" d="M11,76.2 h5"/></g>
+<g class="ctrl-in ctrl-in-4"><rect class="tool-s" x="9" y="81" width="9" height="8" rx="1"/><path class="oc" d="M11,85.2 h5"/></g>
+
+<!-- ===== bloque de proceso: el volumen ===== -->
+<rect class="mass" x="26" y="32" width="124" height="74" rx="3"/>
+<rect class="oc" x="30" y="36" width="116" height="66" opacity=".55"/>
+<line class="ctrl-scan" x1="31" y1="38" x2="145" y2="38" stroke="#C9913B" stroke-width="1" opacity=".55"/>
+
+<!-- boca de entrada, seccionada -->
+<rect class="deep" x="20" y="52" width="10" height="32" rx="1.5"/>
+<path class="oc" d="M20,60 l8,-8 M20,70 l8,-8 M20,80 l8,-8"/>
+
+<!-- correa de transmision al pinon de salida -->
+<g class="ctrl-belt" fill="none" stroke="#C9913B" stroke-width="1.2">
+  <path d="M119.1,59.9 L129.1,91.1 M142.9,56.2 L142.9,88.9"/>
 </g>
-<!-- housing (cutaway) -->
-<rect class="ill-draw" x="104" y="32" width="124" height="96" fill="none" stroke="#d3ded6" stroke-width="2.5"/>
-<rect x="109" y="37" width="114" height="86" fill="none" stroke="#c9913b" stroke-width="1"/>
-<text x="166" y="47" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="7" letter-spacing="2" fill="rgba(196,209,224,.45)">UNIT 04</text>
-<!-- intake port, sectioned -->
-<rect x="100" y="58" width="9" height="34" fill="#183f35" stroke="#d3ded6" stroke-width="1.75"/>
-<path d="M100,68 l8,-8 M100,78 l8,-8 M100,88 l8,-8" stroke="#c9913b" stroke-width="1" fill="none"/>
-<!-- gear train: pitch circle solid + dashed addendum + hub -->
-<g fill="none" stroke="#d3ded6">
-  <circle class="ill-draw" cx="140" cy="66" r="14" stroke-width="1.75"/>
-  <circle class="vigai-g1" cx="140" cy="66" r="17.5" stroke-width="1" stroke-dasharray="3.5 2.6"/>
-  <circle cx="140" cy="66" r="3" stroke-width="1"/>
-  <circle class="ill-draw" cx="171" cy="89" r="18" stroke-width="1.75"/>
-  <circle class="vigai-g2" cx="171" cy="89" r="21.5" stroke-width="1" stroke-dasharray="3.5 2.6"/>
-  <circle cx="171" cy="89" r="3.5" stroke-width="1"/>
-  <circle class="ill-draw" cx="196" cy="62" r="11" stroke-width="1.75"/>
-  <circle class="vigai-g3" cx="196" cy="62" r="14" stroke-width="1" stroke-dasharray="3.5 2.6"/>
-  <circle cx="196" cy="62" r="2.5" stroke-width="1"/>
+
+<!-- tren de engranajes encadenados -->
+<g fill="none" stroke="#D3DED6">
+  <circle cx="56"  cy="62" r="15" stroke-width="1.7"/>
+  <circle cx="95"  cy="72" r="20" stroke-width="1.7"/>
+  <circle cx="131" cy="58" r="12" stroke-width="1.7"/>
+  <circle cx="136" cy="90" r="7"  stroke-width="1.4"/>
 </g>
-<path class="vigai-g1" d="M135,66 h10 M140,61 v10" stroke="#c9913b" stroke-width="1" fill="none"/>
-<path class="vigai-g2" d="M166,89 h10 M171,84 v10" stroke="#c9913b" stroke-width="1" fill="none"/>
-<path class="vigai-g3" d="M192,62 h8 M196,58 v8" stroke="#c9913b" stroke-width="1" fill="none"/>
-<!-- guarded output slot with grille -->
-<rect x="223" y="62" width="11" height="36" fill="#183f35" stroke="#d3ded6" stroke-width="1.75"/>
-<path d="M226,65 v30 M228.5,65 v30 M231,65 v30" stroke="#c9913b" stroke-width="1" fill="none"/>
-<!-- exit motion marks -->
-<path d="M236,72 h5 M236,86 h5" stroke="#c9913b" stroke-width="1" fill="none"/>
-<!-- verified output chit (teal) -->
-<g class="vigai-chit" transform="rotate(6 253 79)">
-  <rect class="ill-draw" x="240" y="70" width="26" height="18" fill="#183f35" stroke="#3e9c82" stroke-width="1.75"/>
-  <path d="M246,79 l4,4 l8,-8" fill="none" stroke="#3e9c82" stroke-width="1.75"/>
+<g class="ctrl-g1" fill="none">
+  <circle cx="56" cy="62" r="17" stroke="#D3DED6" stroke-width="4" stroke-dasharray="4.4 4.5"/>
+  <path d="M48,62 h16 M56,54 v16" stroke="#C9913B" stroke-width="1"/>
+  <path d="M56,62 L56,47" stroke="#C9913B" stroke-width="1.6"/>
 </g>
-<!-- dimension line -->
-<g stroke="#c9913b" stroke-width="1" fill="none">
-  <line x1="8" y1="58" x2="8" y2="148"/>
-  <line x1="266" y1="96" x2="266" y2="148"/>
-  <line x1="8" y1="144" x2="266" y2="144"/>
+<g class="ctrl-g2" fill="none">
+  <circle cx="95" cy="72" r="22" stroke="#D3DED6" stroke-width="4" stroke-dasharray="4.3 4.34"/>
+  <path d="M84,72 h22 M95,61 v22" stroke="#C9913B" stroke-width="1"/>
+  <path d="M95,72 L95,52" stroke="#C9913B" stroke-width="1.6"/>
 </g>
-<path d="M8,144 l8,-2.5 v5 Z M266,144 l-8,-2.5 v5 Z" fill="#c9913b"/>
-<rect x="64" y="136.5" width="146" height="15" fill="#183f35"/>
-<text x="137" y="147" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.5" fill="#d3ded6">GROUNDED IN YOUR DOCS</text>
-<!-- reference balloons -->
-<circle cx="24" cy="18" r="7" fill="#183f35" stroke="#d3ded6" stroke-width="1"/>
-<text x="24" y="21" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6">1</text>
-<line x1="27" y1="24.5" x2="32" y2="33" stroke="#c9913b" stroke-width="1"/>
-<circle cx="288" cy="44" r="7" fill="#183f35" stroke="#d3ded6" stroke-width="1"/>
-<text x="288" y="47" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8" fill="#d3ded6">2</text>
-<line x1="283" y1="49" x2="262" y2="66" stroke="#c9913b" stroke-width="1"/>
+<g class="ctrl-g3" fill="none">
+  <circle cx="131" cy="58" r="14" stroke="#D3DED6" stroke-width="4" stroke-dasharray="4.4 4.4"/>
+  <path d="M124,58 h14 M131,51 v14" stroke="#C9913B" stroke-width="1"/>
+  <path d="M131,58 L131,46" stroke="#C9913B" stroke-width="1.6"/>
+</g>
+<g class="ctrl-g4" fill="none">
+  <circle cx="136" cy="90" r="8.5" stroke="#D3DED6" stroke-width="3" stroke-dasharray="3.3 3.38"/>
+  <path d="M131,90 h10 M136,85 v10" stroke="#C9913B" stroke-width=".9"/>
+</g>
+<g fill="none" stroke="#D3DED6" stroke-width="1">
+  <circle cx="56" cy="62" r="3"/><circle cx="95" cy="72" r="3.5"/><circle cx="131" cy="58" r="2.5"/><circle cx="136" cy="90" r="2"/>
+</g>
+
+<!-- trinquete que retiene el tren mientras se verifica -->
+<g class="ctrl-latch" fill="none" stroke="#C9913B" stroke-width="1.7" stroke-linecap="round">
+  <path d="M146,36 L138,46"/>
+</g>
+<circle cx="146" cy="36" r="1.8" fill="#C9913B"/>
+
+<!-- placa: VOLUMEN -->
+<rect class="mass-s" x="62" y="24" width="52" height="13" rx="2"/>
+<text class="t" x="88" y="33.2" text-anchor="middle" font-size="7" letter-spacing="1">VOLUMEN</text>
+
+<!-- ===== archivador de registros verificados ===== -->
+<rect class="mass" x="232" y="96" width="76" height="28" rx="2"/>
+<rect class="deep" x="236" y="105" width="21" height="15" rx="1.5"/>
+<rect class="deep" x="260" y="105" width="21" height="15" rx="1.5"/>
+<rect class="deep" x="284" y="105" width="21" height="15" rx="1.5"/>
+<g>
+  <rect class="tool-s" x="262" y="107" width="17" height="11" rx="1.5"/>
+  <path d="M265,112.5 l2.4,2.6 l5.6,-6" fill="none" stroke="#2C7A63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect class="tool-s" x="286" y="107" width="17" height="11" rx="1.5"/>
+  <path d="M289,112.5 l2.4,2.6 l5.6,-6" fill="none" stroke="#2C7A63" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text class="t" x="270" y="102.6" text-anchor="middle" font-size="5.6" letter-spacing=".8">VERIFICADOS</text>
+
+<!-- ===== carril de transporte y rampa de bajada ===== -->
+<rect class="mass-s" x="150" y="96" width="84" height="5"/>
+<path class="oc" opacity=".8" d="M166,101 v4 M186,101 v4 M206,101 v4"/>
+<path class="mass-s" d="M220,95 L241,109 L241,115 L220,101 Z"/>
+
+<!-- ===== estacion de control ===== -->
+<rect class="mass" x="162" y="40" width="62" height="56" rx="3"/>
+<rect class="oc" x="166" y="44" width="54" height="48" opacity=".5"/>
+<circle class="ctrl-led"            cx="170" cy="50" r="2" fill="#C9913B"/>
+<circle class="ctrl-led ctrl-led-2" cx="170" cy="58" r="2" fill="#C9913B"/>
+<circle class="ctrl-led ctrl-led-3" cx="170" cy="66" r="2" fill="#C9913B"/>
+<path class="oc" d="M182,44 v42 M214,44 v42"/>
+
+<!-- compuerta: solo sube cuando el sello ya cayo -->
+<g class="ctrl-gate">
+  <rect class="tool-s" x="215" y="74" width="8" height="22" rx="1"/>
+  <path d="M216,80 l6,-4 M216,88 l6,-4 M216,94 l6,-4" fill="none" stroke="#C9913B" stroke-width="1"/>
+</g>
+
+<!-- prensa de sello: la baja el brazo del robot -->
+<g class="ctrl-press">
+  <rect class="tool" x="180" y="44" width="36" height="13" rx="2"/>
+  <rect class="tool-s" x="214" y="48" width="25" height="6" rx="3"/>
+  <rect x="192" y="57" width="12" height="5" rx="1" fill="#C9913B"/>
+</g>
+
+<!-- pieza en proceso: viaja, se detiene, recibe el sello -->
+<g class="ctrl-piece">
+  <rect class="tool" x="189" y="83" width="20" height="13" rx="2"/>
+  <path class="oc" opacity=".85" d="M192,87 h6"/>
+  <circle class="ctrl-seal" cx="199" cy="89" r="10" fill="none" stroke="#C9913B" stroke-width="1.5"/>
+  <path class="ctrl-check" d="M194,89.5 l3,3.2 l6.6,-7" fill="none" stroke="#2C7A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<!-- boca de salida del bloque: tapa a la pieza cuando aun no ha salido -->
+<rect class="deep" x="146" y="76" width="10" height="24" rx="1.5"/>
+<path class="oc" d="M147,81 h8 M147,88 h8 M147,95 h8"/>
+
+<!-- ===== EL ROBOT: baja la palanca y confirma =====
+     canonico completo a escala 0.33, de pie sobre el archivador.
+     Hombro izquierdo en (254.4, 51.5) global; la mano agarra el
+     tirante de la prensa en (226, 51.5) y lo empuja 21 px. -->
+<g class="b-float">
+  <g transform="translate(230.6 8.55) scale(0.33)">
+
+    <g class="b-wheel">
+      <rect class="b-metal" x="82" y="218" width="76" height="24" rx="11"/>
+      <circle class="b-metal" cx="98"  cy="252" r="13"/>
+      <circle class="b-metal" cx="120" cy="252" r="13"/>
+      <circle class="b-metal" cx="142" cy="252" r="13"/>
+      <circle class="b-ring"  cx="98"  cy="252" r="5"/>
+      <circle class="b-ring"  cx="120" cy="252" r="5"/>
+      <circle class="b-ring"  cx="142" cy="252" r="5"/>
+    </g>
+
+    <g class="b-armR">
+      <path class="b-limb-o" d="M168 130 q32 8 38 42 q5 22 -4 34"/>
+      <path class="b-limb-i" d="M168 130 q32 8 38 42 q5 22 -4 34"/>
+      <circle class="b-shell" cx="200" cy="210" r="13"/>
+      <circle class="b-cyan"  cx="200" cy="210" r="5"/>
+    </g>
+
+    <rect class="b-shell" x="68" y="104" width="104" height="120" rx="34"/>
+    <rect class="b-screen" x="86" y="132" width="68" height="56" rx="14"/>
+    <circle class="b-led"         cx="98"  cy="146" r="3.6"/>
+    <circle class="b-led b-led-2" cx="109" cy="146" r="3.6"/>
+    <circle class="b-led b-led-3" cx="120" cy="146" r="3.6"/>
+    <rect class="b-bar b-bar-1" x="95"  y="160" width="9" height="20" rx="3"/>
+    <rect class="b-bar b-bar-2" x="109" y="160" width="9" height="20" rx="3"/>
+    <rect class="b-bar b-bar-3" x="123" y="160" width="9" height="20" rx="3"/>
+    <rect class="b-bar b-bar-4" x="137" y="160" width="9" height="20" rx="3"/>
+    <rect class="b-ring" x="96" y="200" width="48" height="8" rx="4"/>
+
+    <!-- brazo de trabajo: un solo pivote, el hombro -->
+    <g class="ctrl-arm">
+      <path class="b-limb-o" d="M72 130 C 54 116, 30 110, 8 116 C -2 119, -10 124, -14 130"/>
+      <path class="b-limb-i" d="M72 130 C 54 116, 30 110, 8 116 C -2 119, -10 124, -14 130"/>
+      <circle class="b-shell" cx="-14" cy="130" r="13"/>
+      <circle class="b-cyan"  cx="-14" cy="130" r="5"/>
+    </g>
+
+    <g transform="translate(53 2) scale(0.56)">
+      <rect class="h-metal" x="2"   y="94" width="38" height="54" rx="18"/>
+      <rect class="h-metal" x="160" y="94" width="38" height="54" rx="18"/>
+      <circle class="h-ring" cx="17"  cy="121" r="11"/>
+      <circle class="h-ring" cx="183" cy="121" r="11"/>
+      <circle class="b-cyan" cx="17"  cy="121" r="6.5"/>
+      <circle class="b-cyan" cx="183" cy="121" r="6.5"/>
+
+      <rect class="h-shell" x="24" y="44" width="152" height="150" rx="70"/>
+      <rect class="b-screen" x="72" y="44" width="56" height="24" rx="10"/>
+      <path d="M90 46 q10 -13 20 0 z" fill="#B6C1C7"/>
+      <line x1="100" y1="42" x2="100" y2="27" stroke="#B6C1C7" stroke-width="6" stroke-linecap="round"/>
+      <circle class="ctrl-ping" cx="100" cy="16" r="13"/>
+      <circle class="b-ballglow" cx="100" cy="16" r="11"/>
+      <circle class="b-cyan" cx="100" cy="16" r="11"/>
+      <circle cx="96.5" cy="12.5" r="3.4" fill="#EAFAFF"/>
+
+      <rect class="b-screen" x="40" y="70" width="120" height="98" rx="35"/>
+      <circle class="b-glowL" cx="74"  cy="115" r="22"/>
+      <circle class="b-glowR" cx="126" cy="115" r="22"/>
+      <g class="b-eyeL">
+        <circle class="b-cyan" cx="74" cy="115" r="17"/>
+        <circle cx="70" cy="115" r="9" fill="#06131F"/>
+        <circle cx="74.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+      </g>
+      <g class="b-eyeR">
+        <circle class="b-cyan" cx="126" cy="115" r="17"/>
+        <circle cx="122" cy="115" r="9" fill="#06131F"/>
+        <circle cx="126.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+      </g>
+      <path class="ctrl-smile" d="M85 145 q15 13 30 0" fill="none" stroke="#20C8E4" stroke-width="7" stroke-linecap="round"/>
+      <rect class="h-metal" x="74" y="176" width="52" height="18" rx="7"/>
+      <rect class="b-cyan" x="86" y="183" width="28" height="4" rx="2"/>
+    </g>
+  </g>
+</g>
+
+<!-- placa: CONTROL -->
+<rect class="mass-s" x="166" y="30" width="54" height="13" rx="2"/>
+<text class="t" x="193" y="39.2" text-anchor="middle" font-size="7" letter-spacing="1">CONTROL</text>
+
+<!-- ===== globos de referencia ===== -->
+<g class="ctrl-bal">
+  <path class="oc" d="M60,106.5 V113"/>
+  <circle class="mass-s" cx="60" cy="119" r="6.5"/>
+  <text class="t" x="60" y="121.6" text-anchor="middle" font-size="7.5">1</text>
+</g>
+<g class="ctrl-bal ctrl-bal-2">
+  <path class="oc" d="M186,96 L152,113"/>
+  <circle class="mass-s" cx="148" cy="119" r="6.5"/>
+  <text class="t" x="148" y="121.6" text-anchor="middle" font-size="7.5">2</text>
+</g>
+<g class="ctrl-bal ctrl-bal-3">
+  <path class="oc" d="M232,112 H214"/>
+  <circle class="mass-s" cx="207" cy="112" r="6.5"/>
+  <text class="t" x="207" y="114.6" text-anchor="middle" font-size="7.5">3</text>
+</g>
+
+<!-- ===== cota y cajetin ===== -->
+<g class="oc">
+  <path d="M14,126 V137 M312,126 V137 M14,132 H312"/>
+</g>
+<path d="M14,132 l8,-2.5 v5 Z M312,132 l-8,-2.5 v5 Z" fill="#C9913B"/>
+
+<rect x="36" y="138" width="170" height="16" fill="#183F35"/>
+<text class="t" x="121" y="149.4" text-anchor="middle" font-size="8" letter-spacing="1.2">VERIFICAR ANTES DE AVANZAR</text>
+
+<rect class="mass-s" x="210" y="138" width="94" height="16"/>
+<line x1="257" y1="138" x2="257" y2="154" stroke="#D3DED6" stroke-width=".9"/>
+<text class="t" x="213" y="149.4" font-size="6.5" letter-spacing=".4">CTRL-04</text>
+<text class="t" x="260" y="149.4" font-size="6.5" letter-spacing=".4">ESC 1:2</text>
 </svg>

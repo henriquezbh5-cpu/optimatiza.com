@@ -1,245 +1,705 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 820" font-family="IBM Plex Mono, monospace" role="img" aria-labelledby="hbT hbD">
-  <title id="hbT">FIG. 1 — The Process Machine</title>
-  <desc id="hbD">Isometric cutaway engineering drawing: unstructured inputs enter an engineered machine (trigger, validate, integrate, notify) and exit as ordered output; rejected items route through an exception chute to a bin.</desc>
-  <style>#hb-fig1 path,#hb-fig1 line,#hb-fig1 rect,#hb-fig1 circle,#hb-fig1 polygon{vector-effect:non-scaling-stroke}</style>
-  <g id="hb-fig1">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 820" font-family="IBM Plex Mono, ui-monospace, monospace" role="img" aria-labelledby="pmT pmD">
+  <title id="pmT">FIG. 1 = PRC-02 · Maquina de proceso vertical</title>
+  <desc id="pmD">Plano tecnico vertical. Por arriba entran documentos desordenados: una fotografia, un correo, un papel y un ticket. Bajan por una tolva a una maquina de cuatro etapas visibles: captura, validacion, cruce contra los sistemas y registro. Por abajo salen registros validados apilados, listos para la firma humana. A la izquierda, un robot operador conectado a la maquina por un cable de control atiende el puesto de excepciones: mete el brazo en la bandeja, agarra con la pinza el documento apartado, lo levanta a la altura de su tableta, lo sella y lo devuelve a la bandeja, donde un reinyector lo empuja de vuelta dentro de la maquina.</desc>
 
-    <!-- ================= PLATE FURNITURE (static) ================= -->
-    <g fill="none" stroke="#d3ded6">
-      <rect x="8" y="8" width="704" height="804" stroke-width="1"/>
-      <rect x="14" y="14" width="692" height="792" stroke-width="0.5" opacity="0.45"/>
-      <path stroke-width="0.75" opacity="0.6" d="M18 26H34M26 18V34 M686 26H702M694 18V34 M18 794H34M26 786V802 M686 794H702M694 786V802"/>
-    </g>
-    <text x="28" y="46" font-size="8" fill="#c9913b" letter-spacing="1.6">SECTION A-A · AXON. 30°</text>
-    <!-- axis triad -->
-    <g fill="none" stroke="#c9913b" stroke-width="1">
-      <path d="M48 92V66 M48 92L72.2 78 M48 92L23.8 78"/>
-      <path d="M48 92H78" stroke-dasharray="3 3" opacity="0.7"/>
-      <path d="M70 92A22 22 0 0 0 67.4 79.8" opacity="0.8"/>
-    </g>
-    <text x="82" y="88" font-size="7" fill="#c9913b" letter-spacing="1">30°</text>
-    <!-- REV stamp -->
-    <g transform="rotate(-8 642 72)">
-      <circle cx="642" cy="72" r="30" fill="none" stroke="#c9913b" stroke-width="1.75"/>
-      <circle cx="642" cy="72" r="24" fill="none" stroke="#c9913b" stroke-width="0.9"/>
-      <text x="642" y="69" font-size="9" fill="#c9913b" text-anchor="middle" letter-spacing="1.5">REV A</text>
-      <text x="642" y="83" font-size="7.5" fill="#c9913b" text-anchor="middle" letter-spacing="1">2026.07</text>
-    </g>
+  <style>
+    text { font-family:'IBM Plex Mono', ui-monospace, monospace }
 
-    <!-- ================= GROUND-GRID SHADOW ================= -->
-    <g stroke="#c9913b" stroke-width="0.8" opacity="0.32" fill="none">
-      <path d="M372 578L606 443 M348.2 564.3L582.2 429.3 M324.4 550.5L558.4 415.5 M300.6 536.8L534.6 401.8 M276.7 523L510.7 388"/>
-      <path d="M372 578L276.7 523 M430.5 544.3L335.2 489.3 M488.9 510.5L393.6 455.5 M547.4 476.8L452.1 421.8 M605.8 443L510.5 388"/>
-    </g>
+    /* ==== capa 1: entrada desordenada, cuatro ritmos distintos ==== */
+    .in-a { transform-origin:306px 116px; animation:inA 6.4s ease-in-out infinite }
+    @keyframes inA { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(2px,8px) rotate(1.8deg)} }
+    .in-b { transform-origin:434px 124px; animation:inB 7.8s ease-in-out infinite }
+    @keyframes inB { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(-3px,10px) rotate(-2deg)} }
+    .in-c { transform-origin:357px 192px; animation:inC 5.6s ease-in-out infinite }
+    @keyframes inC { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(1px,7px) rotate(1.2deg)} }
+    .in-d { transform-origin:205px 136px; animation:inD 8.6s ease-in-out infinite }
+    @keyframes inD { 0%,100%{transform:translate(0,0) rotate(0deg)} 50%{transform:translate(6px,10px) rotate(-2.6deg)} }
 
-    <!-- ================= INPUT FIELD ================= -->
-    <g class="ill-draw">
-      <!-- sheet 1: spreadsheet -->
-      <g transform="rotate(-8 145 160)">
-        <rect x="85" y="120" width="120" height="80" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-        <rect x="85" y="120" width="120" height="20" fill="#c9913b" opacity="0.08"/>
-        <path d="M85 140H205 M85 160H205 M85 180H205 M115 120V200 M145 120V200 M175 120V200" fill="none" stroke="#c9913b" stroke-width="0.8"/>
-        <text x="93" y="134" font-size="7" fill="#c9913b" letter-spacing="1">CSV</text>
-      </g>
-      <!-- sheet 2: envelope -->
-      <g transform="rotate(6 210 214)">
-        <rect x="155" y="178" width="110" height="72" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-        <path d="M155 178L210 216L265 178" fill="none" stroke="#d3ded6" stroke-width="1"/>
-        <text x="210" y="241" font-size="10" fill="#c9913b" text-anchor="middle">@</text>
-        <path d="M250 251l7 7 M230 251l7 7 M210 251l7 7" stroke="#c9913b" stroke-width="0.8"/>
-      </g>
-      <!-- sheet 3: form -->
-      <g transform="rotate(-5 130 250)">
-        <rect x="72" y="208" width="116" height="84" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-        <path d="M84 232H176 M84 248H168 M84 264H172" fill="none" stroke="#c9913b" stroke-width="0.8"/>
-        <rect x="84" y="274" width="8" height="8" fill="none" stroke="#d3ded6" stroke-width="0.9"/>
-        <rect x="97" y="274" width="8" height="8" fill="none" stroke="#d3ded6" stroke-width="0.9"/>
-        <path d="M85.5 278l2.2 2.6 4-5.2" fill="none" stroke="#d3ded6" stroke-width="1"/>
-        <path d="M90 293l7 7 M112 293l7 7 M134 293l7 7 M156 293l7 7" stroke="#c9913b" stroke-width="0.8"/>
-      </g>
-    </g>
-    <text x="198" y="354" font-size="9" fill="#c9913b" text-anchor="end" letter-spacing="1">IN</text>
-    <path d="M204 351H230" stroke="#c9913b" stroke-width="0.9"/>
-    <polygon points="238,351 230,347.8 230,354.2" fill="#c9913b"/>
+    /* ==== capa 2: el documento recorre la maquina de arriba a abajo (9 s) ==== */
+    .tok { animation:tokRun 9s cubic-bezier(.55,0,.45,1) infinite }
+    @keyframes tokRun {
+      0%   { transform:translateY(-300px); opacity:0 }
+      4%   { opacity:1 }
+      14%  { transform:translateY(-160px) }
+      23%  { transform:translateY(-160px) }
+      33%  { transform:translateY(-80px) }
+      42%  { transform:translateY(-80px) }
+      53%  { transform:translateY(0) }
+      61%  { transform:translateY(0) }
+      71%  { transform:translateY(88px) }
+      80%  { transform:translateY(88px) }
+      91%  { transform:translateY(168px); opacity:1 }
+      96%,100% { transform:translateY(168px); opacity:0 }
+    }
+    .tok-check { animation:tokCheck 9s linear infinite }
+    @keyframes tokCheck { 0%,40%{opacity:0} 46%,100%{opacity:1} }
+    /* origen en coordenadas locales del grupo trasladado, no del lienzo */
+    .tok-seal { transform-origin:8px -11px; animation:tokSeal 9s ease-out infinite }
+    @keyframes tokSeal { 0%,76%{opacity:0;transform:scale(1.6)} 82%{opacity:1;transform:scale(1)} 100%{opacity:1;transform:scale(1)} }
 
-    <!-- ================= MACHINE SHELL ================= -->
-    <g class="ill-draw">
-      <!-- faces -->
-      <path d="M355 545L606.1 400L606.1 250L355 395Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M355 545L264.1 492.5L264.1 342.5L355 395Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M355 395L606.1 250L515.2 197.5L264.1 342.5Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <!-- shadowed left face: wash + 45deg hatch -->
-      <path d="M355 545L264.1 492.5L264.1 342.5L355 395Z" fill="#c9913b" opacity="0.08" stroke="none"/>
-      <path d="M272 470l20 20 M288 462l20 20 M304 454l20 20 M320 446l20 20 M272 430l20 20 M288 422l20 20 M304 414l20 20 M320 406l20 20" stroke="#c9913b" stroke-width="0.8" fill="none"/>
-      <!-- top-face furniture: access hatch + vent slots -->
-      <path d="M400 318L451.9 288L425.9 273L374 303Z" fill="none" stroke="#d3ded6" stroke-width="0.9"/>
-      <circle cx="403" cy="314.5" r="1.5" fill="#d3ded6"/><circle cx="447" cy="289" r="1.5" fill="#d3ded6"/>
-      <circle cx="424" cy="276.5" r="1.5" fill="#d3ded6"/><circle cx="379" cy="302" r="1.5" fill="#d3ded6"/>
-      <path d="M470 272L504.6 252 M463.9 268.5L498.5 248.5 M457.8 265L492.4 245" stroke="#d3ded6" stroke-width="0.9" fill="none"/>
-      <!-- cutaway opening: cut-section band, hatched -->
-      <path d="M365 525.7L596.1 392.3L596.1 278.3L365 411.7Z" fill="#183f35" stroke="#d3ded6" stroke-width="1.75"/>
-      <g stroke="#c9913b" stroke-width="0.8" fill="none">
-        <path d="M380.9 397.6l6 6 M402.9 384.9l6 6 M425 372.1l6 6 M447.1 359.4l6 6 M469.2 346.6l6 6 M491.3 333.9l6 6 M513.4 321.1l6 6 M535.5 308.3l6 6 M557.6 295.6l6 6 M579.7 282.8l6 6"/>
-        <path d="M364.5 428l6-6 M364.5 448l6-6 M364.5 468l6-6 M364.5 488l6-6 M364.5 508l6-6"/>
-      </g>
-      <path d="M370.1 518.3L591 390.7L591 285.7L370.1 413.3Z" fill="#183f35" stroke="#d3ded6" stroke-width="1"/>
-      <circle cx="368" cy="521.5" r="2.2" fill="#12251f" stroke="#d3ded6" stroke-width="0.8"/>
-      <circle cx="593" cy="388.5" r="2.2" fill="#12251f" stroke="#d3ded6" stroke-width="0.8"/>
-      <circle cx="593" cy="282" r="2.2" fill="#12251f" stroke="#d3ded6" stroke-width="0.8"/>
-      <circle cx="368" cy="415" r="2.2" fill="#12251f" stroke="#d3ded6" stroke-width="0.8"/>
-      <!-- interior floor line -->
-      <path d="M372 507L589 383" stroke="#c9913b" stroke-width="0.8" fill="none"/>
-      <!-- nameplate -->
-      <path d="M460.5 481.1L510.7 452.1L510.7 442.1L460.5 471.1Z" fill="#12251f" stroke="#d3ded6" stroke-width="0.9"/>
-      <path d="M465 474.5L500 454.3 M465 477.8L492 462.2" stroke="#c9913b" stroke-width="0.7" fill="none"/>
-      <!-- inlet / outlet ports -->
-      <circle cx="306" cy="452" r="7" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <circle cx="306" cy="452" r="3.5" fill="none" stroke="#d3ded6" stroke-width="0.8"/>
-      <circle cx="600" cy="352" r="6" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <circle cx="600" cy="352" r="3" fill="none" stroke="#d3ded6" stroke-width="0.8"/>
-      <!-- bold silhouette + visible edges -->
-      <path d="M355 545L606.1 400L606.1 250L515.2 197.5L264.1 342.5L264.1 492.5Z" fill="none" stroke="#d3ded6" stroke-width="2.5" stroke-linejoin="round"/>
-      <path d="M355 545V395 M355 395L606.1 250 M355 395L264.1 342.5" fill="none" stroke="#d3ded6" stroke-width="1.75"/>
-    </g>
+    /* ==== capa 3: la excepcion, del desvio a la bandeja y de vuelta a la linea (12 s) ==== */
+    .exc-carry { animation:excFloat 5.6s ease-in-out infinite }
+    @keyframes excFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+    .exc { animation:excRun 12s ease-in-out infinite }
+    @keyframes excRun {
+      0%,3%    { transform:translate(174px,-206px); opacity:0 }
+      6%       { transform:translate(174px,-206px); opacity:1 }
+      12%      { transform:translate(66px,-198px) }
+      20%      { transform:translate(22px,-96px) }
+      26%      { transform:translate(-2px,-46px) }
+      32%,44%  { transform:translate(0px,0px) }
+      49%      { transform:translate(-12px,-28px) }
+      55%,64%  { transform:translate(-36px,-44px) }
+      69%      { transform:translate(-13px,-29px) }
+      74%,78%  { transform:translate(-2px,0px) }
+      84%      { transform:translate(26px,-5px) }
+      90%      { transform:translate(60px,-11px); opacity:1 }
+      93%,100% { transform:translate(60px,-11px); opacity:0 }
+    }
+    .exc-check { animation:excCheck 12s linear infinite }
+    @keyframes excCheck { 0%,56%{opacity:0} 62%,100%{opacity:1} }
+    .exc-warn { animation:excWarn 12s linear infinite }
+    @keyframes excWarn { 0%,54%{opacity:1} 60%,100%{opacity:0} }
 
-    <!-- ================= PROCESS PATH (teal) ================= -->
-    <!-- continuous motion rail for the traveling dot (invisible) -->
-    <path id="hb-flow-path" data-role="flow-motion" fill="none" stroke="none"
-      d="M168 262C232 316 262 380 306 450C330 455 350 457 372 456C398 454 425 437 452 421C472 407 490 394 508 385C528 374 548 358 572 347C588 340 602 344 616 358C640 386 668 440 656 502C646 545 600 566 560 588"/>
-    <g fill="none" stroke="#3e9c82" stroke-linecap="round">
-      <path class="ill-draw" stroke-width="1.75" d="M168 262C232 316 262 380 306 450"/>
-      <path class="ill-draw" stroke-width="1.4" stroke-dasharray="4 3" d="M306 450C330 455 350 457 372 456"/>
-      <path class="ill-draw" stroke-width="1.75" d="M372 456C398 454 425 437 452 421C472 407 490 394 508 385C528 374 548 358 572 347"/>
-      <path class="ill-draw" stroke-width="1.4" stroke-dasharray="4 3" d="M572 347C588 340 602 344 616 358"/>
-      <path class="ill-draw" stroke-width="1.75" d="M616 358C640 386 668 440 656 502C646 545 600 566 560 588"/>
-    </g>
-    <polygon points="560,588 566,580.2 569.8,587.2" fill="#3e9c82"/>
+    /* compuerta desviadora: aparta la excepcion en el mismo compas */
+    .gate { transform-origin:380px 392px; animation:gateSwing 12s ease-in-out infinite }
+    @keyframes gateSwing { 0%,2%{transform:rotate(0deg)} 6%,13%{transform:rotate(52deg)} 22%,100%{transform:rotate(0deg)} }
 
-    <!-- ================= STATIONS ================= -->
-    <g class="ill-draw">
-      <!-- 01 TRIGGER : cam + follower lever on pivot -->
-      <circle cx="388" cy="460" r="8.5" fill="none" stroke="#c9913b" stroke-width="0.8" stroke-dasharray="3 2"/>
-      <path d="M376.5 456A12.5 12.5 0 1 0 397 450.5C401.5 443 396 435.5 389 439C383.5 441.8 379 448.5 376.5 456Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <circle cx="388" cy="460" r="2" fill="#d3ded6"/>
-      <path d="M384 460H392 M388 456V464" stroke="#d3ded6" stroke-width="0.8" fill="none"/>
-      <circle cx="402.5" cy="442.5" r="4" fill="#12251f" stroke="#d3ded6" stroke-width="1.4"/>
-      <path d="M406 440.5L432 430" stroke="#d3ded6" stroke-width="1.4" fill="none"/>
-      <path d="M432 430L426.5 438.5H437.5Z" fill="#12251f" stroke="#d3ded6" stroke-width="1"/>
-      <path d="M426 441l-4 4 M431 441l-4 4 M436 441l-4 4" stroke="#d3ded6" stroke-width="0.8" fill="none"/>
-      <path d="M382.5 469L378 502 M394 470L396.5 494" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <path d="M373.5 504.5L383.5 500 M391.5 496.5L401.5 492" stroke="#d3ded6" stroke-width="1" fill="none"/>
+    /* reinyector: empuja el corregido de vuelta a la maquina, y la maquina acusa recibo */
+    .pusher { animation:pushOut 12s ease-in-out infinite }
+    @keyframes pushOut { 0%,79%{transform:translate(0px,0px)} 88%{transform:translate(32px,-5px)} 96%,100%{transform:translate(0px,0px)} }
+    .rejoin { animation:rejoinIn 12s ease-out infinite }
+    @keyframes rejoinIn { 0%,84%{opacity:.2} 90%,96%{opacity:1} 100%{opacity:.2} }
+    .ramp { animation:rampRun 3.2s linear infinite }
+    @keyframes rampRun { to{stroke-dashoffset:-24} }
 
-      <!-- 02 VALIDATE : gate funnel + stencil check, reject drop -->
-      <path d="M443 399V372 M463 399V361" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <path d="M436 399H470" stroke="#d3ded6" stroke-width="1.75" fill="none"/>
-      <path d="M438 399L448 417 M468 399L458 417" stroke="#d3ded6" stroke-width="1.75" fill="none"/>
-      <path d="M448 417L462 424" stroke="#d3ded6" stroke-width="1.4" fill="none"/>
-      <circle cx="448" cy="417" r="1.8" fill="#d3ded6"/>
-      <rect x="445" y="376" width="16" height="14" fill="#12251f" stroke="#d3ded6" stroke-width="1"/>
-      <path d="M449 383.5L452.5 387.5L458.5 379" fill="none" stroke="#3e9c82" stroke-width="1.75" stroke-linecap="round"/>
-      <path d="M451 430L447.5 489" stroke="#c9913b" stroke-width="0.8" stroke-dasharray="3 2.5" fill="none"/>
+    /* ==== capa 4: mecanismos de la maquina, ritmos independientes ==== */
+    .scan { animation:scanSweep 3.4s ease-in-out infinite }
+    @keyframes scanSweep { 0%,100%{transform:translateX(0)} 50%{transform:translateX(118px)} }
 
-      <!-- 03 INTEGRATE : meshing gear pair, dashed pitch circles -->
-      <circle cx="508" cy="386" r="12" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M520 386L523.2 386 M517.7 378.9L520.3 377.1 M511.7 374.6L512.7 371.5 M504.3 374.6L503.3 371.5 M498.3 378.9L495.7 377.1 M496 386L492.8 386 M498.3 393.1L495.7 394.9 M504.3 397.4L503.3 400.5 M511.7 397.4L512.7 400.5 M517.7 393.1L520.3 394.9" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <circle cx="508" cy="386" r="13.8" fill="none" stroke="#c9913b" stroke-width="0.8" stroke-dasharray="3 2"/>
-      <circle cx="508" cy="386" r="2" fill="#d3ded6"/>
-      <path d="M503.5 386H512.5 M508 381.5V390.5" stroke="#d3ded6" stroke-width="0.8" fill="none"/>
-      <circle cx="524.8" cy="374.2" r="8.5" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M533.3 374.2L536.3 374.2 M530.8 368.2L532.9 366.1 M524.8 365.7L524.8 362.7 M518.8 368.2L516.7 366.1 M516.3 374.2L513.3 374.2 M518.8 380.2L516.7 382.3 M524.8 382.7L524.8 385.7 M530.8 380.2L532.9 382.3" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <circle cx="524.8" cy="374.2" r="9.6" fill="none" stroke="#c9913b" stroke-width="0.8" stroke-dasharray="3 2"/>
-      <circle cx="524.8" cy="374.2" r="1.6" fill="#d3ded6"/>
-      <path d="M493 377A16 16 0 0 1 510 368" fill="none" stroke="#c9913b" stroke-width="0.8"/>
-      <polygon points="512,367.5 505.8,366.8 509,372.5" fill="#c9913b"/>
-      <path d="M508 398V428" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <path d="M501.5 430.5L514.5 425" stroke="#d3ded6" stroke-width="1" fill="none"/>
+    .gearA { transform-origin:318px 472px; animation:spinF 8s linear infinite }
+    .gearB { transform-origin:348px 448px; animation:spinR 5.4s linear infinite }
+    @keyframes spinF { to{transform:rotate(360deg)} }
+    @keyframes spinR { to{transform:rotate(-360deg)} }
 
-      <!-- 04 NOTIFY : bell + pennant on bracket, sound arcs -->
-      <path d="M568 337V300" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <path d="M568 302L583 306.5L568 311Z" fill="#12251f" stroke="#d3ded6" stroke-width="1"/>
-      <path d="M556 353C556 339 580 339 580 353L583.5 357.5H552.5Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <circle cx="568" cy="339.5" r="2.5" fill="none" stroke="#d3ded6" stroke-width="0.9"/>
-      <circle cx="568" cy="361.5" r="2.2" fill="#d3ded6"/>
-      <path d="M587 346a9 9 0 0 1 0 12 M592.5 342a13.5 13.5 0 0 1 0 20" fill="none" stroke="#c9913b" stroke-width="0.8"/>
-    </g>
+    .ram { animation:ramPress 9s ease-in-out infinite }
+    @keyframes ramPress { 0%,68%{transform:translateY(0)} 76%,82%{transform:translateY(16px)} 90%,100%{transform:translateY(0)} }
 
-    <!-- ================= REJECT CHUTE + BIN ================= -->
-    <g class="ill-draw">
-      <path d="M444 490L398 598 M460 486L414 594" stroke="#d3ded6" stroke-width="1.4" fill="none"/>
-      <path d="M425.6 533.2L441.6 529.2 M411.8 565.6L427.8 561.6" stroke="#c9913b" stroke-width="0.8" fill="none"/>
-      <path d="M359 598L416 598L404 610L347 610Z" fill="#183f35" stroke="#d3ded6" stroke-width="1.4"/>
-      <path d="M347 610L351 652L400 652L404 610" fill="#12251f" stroke="#d3ded6" stroke-width="1.4"/>
-      <path d="M404 610L416 598L412 640L400 652Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.4"/>
-      <path d="M404 610L416 598L412 640L400 652Z" fill="#c9913b" opacity="0.08" stroke="none"/>
-      <path d="M372 610L371 617" stroke="#d3ded6" stroke-width="0.8" fill="none"/>
-      <g transform="rotate(-5 372 623)">
-        <rect x="352" y="617" width="40" height="13" rx="1" fill="#12251f" stroke="#B4232C" stroke-width="1"/>
-        <text x="372" y="626.5" font-size="6" fill="#B4232C" text-anchor="middle" letter-spacing="0.5">RECHAZADO</text>
-      </g>
-    </g>
+    .write { transform-origin:436px 556px; animation:writeIn 9s ease-out infinite }
+    @keyframes writeIn { 0%,78%{transform:scaleX(.04)} 88%,100%{transform:scaleX(1)} }
 
-    <!-- ================= OUTPUT ================= -->
-    <g class="ill-draw">
-      <path d="M505 668L591.6 618L544 590.5L457.4 640.5Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M505 660L591.6 610L544 582.5L457.4 632.5Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M505 652L591.6 602L544 574.5L457.4 624.5Z" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <path d="M505 668V652 M591.6 618V602 M457.4 640.5V624.5" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <path d="M478 624L538.6 589 M471.1 620L531.7 585 M464.2 616L524.8 581" stroke="#c9913b" stroke-width="0.9" fill="none"/>
-      <!-- dashboard panel -->
-      <path d="M630 656V668 M674 656V668" stroke="#d3ded6" stroke-width="1.4" fill="none"/>
-      <path d="M624 669H636 M668 669H680" stroke="#d3ded6" stroke-width="1" fill="none"/>
-      <rect x="616" y="596" width="72" height="60" fill="#12251f" stroke="#d3ded6" stroke-width="1.75"/>
-      <rect x="621" y="601" width="62" height="50" fill="none" stroke="#c9913b" stroke-width="0.8"/>
-      <path d="M634 640A16 16 0 0 1 666 640" fill="none" stroke="#d3ded6" stroke-width="1.4"/>
-      <path d="M634 640H666" stroke="#c9913b" stroke-width="0.8" fill="none"/>
-      <path d="M638.7 628.7L636.6 626.6 M650 624V621 M661.3 628.7L663.4 626.6" stroke="#d3ded6" stroke-width="0.8" fill="none"/>
-      <path d="M650 640L659.5 628.5" stroke="#d3ded6" stroke-width="1.4" fill="none"/>
-      <circle cx="650" cy="640" r="2" fill="#d3ded6"/>
-      <path d="M628 610H640 M628 615H635" stroke="#c9913b" stroke-width="0.8" fill="none"/>
-    </g>
-    <circle class="ill-live" cx="672" cy="608" r="4.5" fill="#2C7A63" stroke="#d3ded6" stroke-width="1"/>
-    <text x="505" y="703" font-size="9" fill="#c9913b" text-anchor="middle" letter-spacing="1">OUT</text>
+    .ck { animation:ckIn 4.2s ease-in-out infinite }
+    .ck2 { animation-delay:.55s }
+    .ck3 { animation-delay:1.1s }
+    @keyframes ckIn { 0%,16%{opacity:.12} 32%,84%{opacity:1} 100%{opacity:.12} }
 
-    <!-- ================= LEADERS + CALLOUT RAIL ================= -->
-    <g class="ill-draw" stroke="#c9913b" stroke-width="0.9" fill="none">
-      <path d="M401 444L599 132 M617 132H696"/>
-      <path d="M462 411L599 172 M617 172H696"/>
-      <path d="M531 367L599 212 M617 212H696"/>
-      <path d="M577 343L599 252 M617 252H696"/>
-    </g>
-    <circle cx="401" cy="444" r="2" fill="#c9913b"/>
-    <circle cx="462" cy="411" r="2" fill="#c9913b"/>
-    <circle cx="531" cy="367" r="2" fill="#c9913b"/>
-    <circle cx="577" cy="343" r="2" fill="#c9913b"/>
-    <g fill="#12251f" stroke="#c9913b" stroke-width="1">
-      <circle cx="608" cy="132" r="9"/><circle cx="608" cy="172" r="9"/>
-      <circle cx="608" cy="212" r="9"/><circle cx="608" cy="252" r="9"/>
-    </g>
-    <g font-size="8" fill="#d3ded6" text-anchor="middle">
-      <text x="608" y="135">01</text><text x="608" y="175">02</text>
-      <text x="608" y="215">03</text><text x="608" y="255">04</text>
-    </g>
-    <g font-size="9" fill="#d3ded6" text-anchor="end" letter-spacing="1.5">
-      <text x="696" y="126">TRIGGER</text>
-      <text x="696" y="166">VALIDATE</text>
-      <text x="696" y="206">INTEGRATE</text>
-      <text x="696" y="246">NOTIFY</text>
-    </g>
+    .det { animation:detIn 5.2s ease-in-out infinite }
+    .det2 { animation-delay:.6s }
+    .det3 { animation-delay:1.2s }
+    @keyframes detIn { 0%,14%{opacity:.14} 30%,88%{opacity:1} 100%{opacity:.14} }
 
-    <!-- ================= DIMENSION LINE ================= -->
-    <g class="ill-draw">
-      <path d="M185 714V736 M635 714V736" stroke="#c9913b" stroke-width="0.8" fill="none"/>
-      <path d="M185 730H635" stroke="#c9913b" stroke-width="0.9" fill="none"/>
-      <polygon points="185,730 194,726.8 194,733.2" fill="#c9913b"/>
-      <polygon points="635,730 626,726.8 626,733.2" fill="#c9913b"/>
-    </g>
-    <text x="410" y="724" font-size="9.5" fill="#d3ded6" text-anchor="middle" letter-spacing="1.5">SCALE: WEEKS, NOT MONTHS</text>
+    .mled { fill:#C9913B; animation:mLed 2.6s ease-in-out infinite }
+    .ml2{animation-delay:.32s} .ml3{animation-delay:.64s} .ml4{animation-delay:.96s}
+    .ml5{animation-delay:1.28s} .ml6{animation-delay:1.6s} .ml7{animation-delay:1.92s} .ml8{animation-delay:2.24s}
+    @keyframes mLed { 0%,100%{opacity:.2} 50%{opacity:1} }
 
-    <!-- ================= CAPTION BLOCK ================= -->
-    <text x="360" y="769" font-size="12.5" fill="#d3ded6" text-anchor="middle" letter-spacing="2.5">FIG. 1 — THE PROCESS MACHINE</text>
-    <text x="360" y="787" font-size="8.5" fill="#c9913b" text-anchor="middle" letter-spacing="1.5">DWG OPTZ-2026 · REV A · NOT TO SCALE — SIN ESCALA</text>
+    .spine { stroke-dasharray:9 7; animation:spineRun 4.6s linear infinite }
+    @keyframes spineRun { to{stroke-dashoffset:-32} }
+    .linkL { stroke-dasharray:6 6; animation:linkRun 3.8s linear infinite }
+    .linkR { stroke-dasharray:6 6; animation:linkRun 5.4s linear infinite }
+    @keyframes linkRun { to{stroke-dashoffset:-24} }
+    .cordsig { stroke-dasharray:4 8; animation:cordRun 4.4s linear infinite }
+    @keyframes cordRun { to{stroke-dashoffset:-24} }
 
-    <!-- traveling dot: parked at VALIDATE gate (reduced-motion end-state) -->
-    <circle class="ill-live" data-role="flow-dot" cx="452" cy="421" r="4" fill="#2C7A63" stroke="#183f35" stroke-width="1"/>
+    .outck { transform-origin:432px 638px; animation:outPulse 9s ease-out infinite }
+    @keyframes outPulse { 0%,84%{opacity:.5;transform:scale(1)} 90%{opacity:1;transform:scale(1.22)} 96%,100%{opacity:.95;transform:scale(1)} }
+    .outtop { animation:outSettle 9s ease-out infinite }
+    @keyframes outSettle { 0%,86%{transform:translateY(0)} 89%{transform:translateY(-5px)} 95%,100%{transform:translateY(0)} }
+
+    .live { animation:liveBlink 3.1s ease-in-out infinite }
+    @keyframes liveBlink { 0%,100%{opacity:.35} 50%{opacity:1} }
+
+    /* ==== ROBOT CANONICO ==== */
+    .b-cyan  { fill:#20C8E4 }
+    .b-shell { fill:#FFFDF8; stroke:#183F35; stroke-width:2.4 }
+    .b-screen{ fill:#0C1A2B }
+    .b-metal { fill:#E3E9EC; stroke:#183F35; stroke-width:2.2 }
+    .b-ring  { fill:#C2CCD2; stroke:#183F35; stroke-width:1.8 }
+    .b-limb-o{ fill:none; stroke:#183F35; stroke-width:17; stroke-linecap:round }
+    .b-limb-i{ fill:none; stroke:#E3E9EC; stroke-width:12.5; stroke-linecap:round }
+
+    .b-float { animation:bFloat 5.6s ease-in-out infinite }
+    @keyframes bFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    .b-aura { fill:#20C8E4; opacity:.10; transform-origin:120px 140px;
+              animation:bBreathe 4.6s ease-in-out infinite }
+    @keyframes bBreathe { 0%,100%{opacity:.07;transform:scale(1)} 50%{opacity:.15;transform:scale(1.04)} }
+
+    /* origenes en coordenadas LOCALES del grupo de la cabeza, no del cuerpo */
+    .b-ballglow { fill:#20C8E4; opacity:.4; transform-origin:100px 16px;
+                  animation:bPing 2.2s ease-out infinite }
+    @keyframes bPing { 0%{transform:scale(.65);opacity:.6} 70%,100%{transform:scale(1.8);opacity:0} }
+
+    .b-eyeL,.b-eyeR { animation:bBlink 4.2s ease-in-out infinite }
+    .b-eyeL { transform-origin:74px 115px }
+    .b-eyeR { transform-origin:126px 115px; animation-delay:.06s }
+    @keyframes bBlink { 0%,45%,100%{transform:scaleY(1)} 48%,51%{transform:scaleY(.12)} }
+    .b-glowL,.b-glowR { fill:#20C8E4; opacity:.26; animation:bBreathe 3s ease-in-out infinite }
+    .b-glowL { transform-origin:74px 115px }
+    .b-glowR { transform-origin:126px 115px }
+
+    .b-led { fill:#20C8E4; animation:bLed 2.4s ease-in-out infinite }
+    .b-led-2 { animation-delay:.35s }
+    .b-led-3 { animation-delay:.7s }
+    @keyframes bLed { 0%,100%{opacity:.25} 50%{opacity:1} }
+
+    .b-bar { fill:#20C8E4; opacity:.8; animation:bBar 3.2s ease-in-out infinite }
+    .b-bar-1 { transform-origin:99px 180px }
+    .b-bar-2 { transform-origin:113px 180px; animation-delay:.4s }
+    .b-bar-3 { transform-origin:127px 180px; animation-delay:.8s }
+    .b-bar-4 { transform-origin:141px 180px; animation-delay:1.2s }
+    @keyframes bBar { 0%,100%{transform:scaleY(.35)} 50%{transform:scaleY(1)} }
+
+    .b-wheel { animation:bWheel 5.6s ease-in-out infinite }
+    @keyframes bWheel { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+
+    /* brazo izquierdo: sostiene la tableta de control, ritmo propio de 6.8 s */
+    .b-armL { transform-origin:72px 130px; animation:bArmL 6.8s ease-in-out infinite }
+    @keyframes bArmL { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(-7deg)} }
+    .b-tab { animation:bTab 5.8s ease-in-out infinite }
+    .b-tab-2 { animation-delay:.7s }
+    .b-tab-3 { animation-delay:1.4s }
+    @keyframes bTab { 0%,20%{opacity:.15} 36%,82%{opacity:1} 100%{opacity:.15} }
+    .b-fix { opacity:1; transform-origin:46px 196px; animation:bFix 12s ease-out infinite }
+    @keyframes bFix { 0%,52%{opacity:0;transform:scale(.5)} 60%,90%{opacity:1;transform:scale(1)} 96%,100%{opacity:0;transform:scale(1)} }
+
+    /* brazo derecho: dos articulaciones. El antebrazo pivota DENTRO del grupo
+       del hombro, asi que su origen viaja con el codo y no se despega.
+       Cuatro fases en los mismos 12 s de la excepcion: bajar a la bandeja =
+       agarrar y subir = sellar = devolver, y remate con el brazo en alto. */
+    .b-armR { transform-origin:168px 130px; animation:bArmExc 12s ease-in-out infinite }
+    @keyframes bArmExc {
+      0%,26%   { transform:rotate(-22deg) }
+      38%,44%  { transform:rotate(0deg) }
+      49%      { transform:rotate(-22deg) }
+      55%,64%  { transform:rotate(-45deg) }
+      69%      { transform:rotate(-24deg) }
+      74%,78%  { transform:rotate(7deg) }
+      84%      { transform:rotate(-50deg) }
+      94%,100% { transform:rotate(-22deg) }
+    }
+    .b-foreR { transform-origin:216px 136px; animation:bForeExc 12s ease-in-out infinite }
+    @keyframes bForeExc {
+      0%,26%   { transform:rotate(-4deg) }
+      38%,44%  { transform:rotate(17deg) }
+      49%      { transform:rotate(0deg) }
+      55%,64%  { transform:rotate(-16deg) }
+      69%      { transform:rotate(2deg) }
+      74%,78%  { transform:rotate(3deg) }
+      84%      { transform:rotate(-18deg) }
+      94%,100% { transform:rotate(-4deg) }
+    }
+    .b-clawA { transform-origin:252px 112px; animation:clawA 12s ease-in-out infinite }
+    .b-clawB { transform-origin:252px 112px; animation:clawB 12s ease-in-out infinite }
+    @keyframes clawA { 0%,36%{transform:rotate(12deg)} 44%,78%{transform:rotate(-13deg)} 86%,100%{transform:rotate(12deg)} }
+    @keyframes clawB { 0%,36%{transform:rotate(-12deg)} 44%,78%{transform:rotate(13deg)} 86%,100%{transform:rotate(-12deg)} }
+
+    @media (prefers-reduced-motion: reduce) { * { animation:none !important } }
+  </style>
+
+  <!-- ============ MOBILIARIO DE PLANO ============ -->
+  <g fill="none" stroke="#C9913B">
+    <rect x="8" y="8" width="704" height="804" stroke-width="1.1"/>
+    <rect x="14" y="14" width="692" height="708" stroke-width="0.5" opacity="0.5"/>
+    <path stroke-width="0.75" opacity="0.65" d="M18 26H34M26 18V34 M686 26H702M694 18V34 M18 704H34M26 696V714 M686 704H702M694 696V714"/>
   </g>
+  <text x="26" y="42" font-size="8" fill="#C9913B" letter-spacing="1.5">CORTE A-A · MAQUINA VERTICAL</text>
+
+  <g stroke="#C9913B" stroke-width="1" fill="none"><path d="M34 58V94"/></g>
+  <polygon points="34,102 30.2,92 37.8,92" fill="#C9913B"/>
+  <text x="44" y="82" font-size="7" fill="#C9913B" letter-spacing="1.2">FLUJO</text>
+
+  <!-- sello de revision -->
+  <g transform="rotate(-8 648 76)">
+    <circle cx="648" cy="76" r="29" fill="none" stroke="#C9913B" stroke-width="1.7"/>
+    <circle cx="648" cy="76" r="23" fill="none" stroke="#C9913B" stroke-width="0.9"/>
+    <text x="648" y="73" font-size="9" fill="#C9913B" text-anchor="middle" letter-spacing="1.5">REV A</text>
+    <text x="648" y="87" font-size="7.5" fill="#C9913B" text-anchor="middle" letter-spacing="1">2026.08</text>
+  </g>
+
+  <!-- leyenda -->
+  <rect x="528" y="128" width="166" height="102" fill="#183F35" stroke="#C9913B" stroke-width="1"/>
+  <text x="538" y="145" font-size="8" fill="#D3DED6" letter-spacing="1.6">LEYENDA</text>
+  <path d="M538 160H564" stroke="#2C7A63" stroke-width="2.6" fill="none"/>
+  <text x="570" y="163" font-size="6.5" fill="#D3DED6" letter-spacing="0.8">RECORRIDO DEL DOCUMENTO</text>
+  <path d="M538 178H564" stroke="#C9913B" stroke-width="1.3" stroke-dasharray="4 3" fill="none"/>
+  <text x="570" y="181" font-size="6.5" fill="#D3DED6" letter-spacing="0.8">DESVIO A EXCEPCION</text>
+  <path d="M538 199l7 -7 M546 199l7 -7 M554 199l7 -7" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <text x="570" y="199" font-size="6.5" fill="#D3DED6" letter-spacing="0.8">PARED SECCIONADA</text>
+  <path d="M538 217H564" stroke="#2C7A63" stroke-width="2.6" stroke-dasharray="6 5" fill="none"/>
+  <text x="570" y="220" font-size="6.5" fill="#D3DED6" letter-spacing="0.8">REINGRESO CORREGIDO</text>
+
+  <!-- cota vertical: el recorrido completo -->
+  <g stroke="#C9913B" stroke-width="0.9" fill="none">
+    <path d="M704 214V604"/>
+    <path d="M696 214H712 M696 604H712" stroke-width="0.7" opacity="0.8"/>
+  </g>
+  <polygon points="704,214 700.6,224 707.4,224" fill="#C9913B"/>
+  <polygon points="704,604 700.6,594 707.4,594" fill="#C9913B"/>
+  <text x="692" y="409" font-size="7.5" fill="#C9913B" text-anchor="middle" letter-spacing="1" transform="rotate(-90 692 409)">RECORRIDO DEL DOCUMENTO</text>
+
+  <!-- ============ ENTRADA: DOCUMENTOS DESORDENADOS ============ -->
+  <path d="M228 152C266 170 288 188 300 204 M306 160C330 178 352 190 372 204 M436 162C424 178 402 190 388 204"
+        fill="none" stroke="#2C7A63" stroke-width="1.4" opacity="0.85" stroke-dasharray="4 4"/>
+
+  <g transform="rotate(-14 205 136)"><g class="in-d">
+    <rect x="170" y="118" width="70" height="34" fill="#12251F" stroke="#D3DED6" stroke-width="1.6"/>
+    <path d="M178 130H228 M178 140H214" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+    <text x="178" y="164" font-size="6.5" fill="#C9913B" letter-spacing="1">TICKET</text>
+  </g></g>
+
+  <g transform="rotate(-9 306 116)"><g class="in-a">
+    <rect x="258" y="78" width="96" height="76" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+    <rect x="265" y="85" width="82" height="52" fill="#183F35" stroke="#D3DED6" stroke-width="0.9"/>
+    <path d="M265 130L288 106L305 122L322 100L347 130Z" fill="none" stroke="#C9913B" stroke-width="1.1"/>
+    <circle cx="331" cy="97" r="6" fill="none" stroke="#C9913B" stroke-width="1.1"/>
+    <text x="265" y="149" font-size="7" fill="#C9913B" letter-spacing="1">FOTOGRAFIA</text>
+  </g></g>
+
+  <g transform="rotate(8 434 124)"><g class="in-b">
+    <rect x="386" y="92" width="96" height="64" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+    <path d="M386 92L434 128L482 92" fill="none" stroke="#D3DED6" stroke-width="1.1"/>
+    <text x="434" y="149" font-size="7" fill="#C9913B" text-anchor="middle" letter-spacing="1">CORREO</text>
+  </g></g>
+
+  <g transform="rotate(-5 357 192)"><g class="in-c">
+    <rect x="312" y="158" width="90" height="68" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+    <path d="M322 176H392 M322 188H386 M322 200H392 M322 212H366" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+    <path d="M384 158L402 176H384Z" fill="#183F35" stroke="#D3DED6" stroke-width="0.9"/>
+  </g></g>
+
+  <rect x="96" y="186" width="104" height="20" fill="#183F35" stroke="#C9913B" stroke-width="0.9"/>
+  <text x="148" y="200" font-size="9" fill="#D3DED6" text-anchor="middle" letter-spacing="1.6">ENTRADA</text>
+  <path d="M204 198L240 208" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <polygon points="248,210 238,205.4 236.6,212.8" fill="#C9913B"/>
+
+  <!-- ============ TOLVA ============ -->
+  <path d="M268 208L492 208L438 250L322 250Z" fill="#183F35" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M278 214l14 14 M296 212l16 16 M314 212l16 16 M332 212l14 14" stroke="#C9913B" stroke-width="0.8" fill="none"/>
+  <path d="M268 208H492" stroke="#D3DED6" stroke-width="2.5" fill="none"/>
+
+  <!-- ============ DETALLE B: LO QUE LA MAQUINA LEE ============ -->
+  <circle cx="122" cy="322" r="60" fill="#12251F" stroke="#D3DED6" stroke-width="2"/>
+  <circle cx="122" cy="322" r="54" fill="none" stroke="#C9913B" stroke-width="0.7" opacity="0.55"/>
+  <rect x="74" y="294" width="42" height="56" fill="#183F35" stroke="#D3DED6" stroke-width="1.3"/>
+  <rect x="79" y="299" width="32" height="23" fill="#12251F" stroke="#D3DED6" stroke-width="0.9"/>
+  <path d="M79 322L88 311L94 316L102 305L111 322Z" fill="none" stroke="#C9913B" stroke-width="1"/>
+  <path d="M79 331H111 M79 338H105 M79 345H109" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <path d="M120 322H130" stroke="#C9913B" stroke-width="1" fill="none"/>
+  <polygon points="136,322 128,319.2 128,324.8" fill="#C9913B"/>
+  <g fill="#183F35" stroke="#D3DED6" stroke-width="0.9">
+    <rect x="140" y="300" width="36" height="12"/>
+    <rect x="140" y="316" width="36" height="12"/>
+    <rect x="140" y="332" width="36" height="12"/>
+  </g>
+  <g stroke="#C9913B" stroke-width="0.9" fill="none">
+    <path d="M144 306H162 M144 322H162 M144 338H162"/>
+  </g>
+  <g fill="none" stroke="#2C7A63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="det"      d="M165 306.5l2.2 2.4 4 -5"/>
+    <path class="det det2" d="M165 322.5l2.2 2.4 4 -5"/>
+    <path class="det det3" d="M165 338.5l2.2 2.4 4 -5"/>
+  </g>
+  <text x="122" y="398" font-size="7" fill="#C9913B" text-anchor="middle" letter-spacing="1">DETALLE B · ESC. 4:1</text>
+  <path d="M180 302L262 292" stroke="#C9913B" stroke-width="0.9" stroke-dasharray="4 3" fill="none"/>
+  <polygon points="270,291 260,288.4 261,295.6" fill="#C9913B"/>
+
+  <!-- ============ CARCASA DE LA MAQUINA ============ -->
+  <rect x="262" y="248" width="236" height="358" rx="10" fill="#12251F" stroke="#D3DED6" stroke-width="2.5"/>
+  <g stroke="#C9913B" stroke-width="0.8" fill="none" opacity="0.75">
+    <path d="M262 276l18 -18 M262 308l18 -18 M262 340l18 -18 M262 372l18 -18 M262 468l18 -18 M262 500l18 -18 M262 532l18 -18 M262 600l18 -18"/>
+  </g>
+  <path d="M280 248V606" stroke="#D3DED6" stroke-width="1" fill="none"/>
+  <path d="M480 248V606" stroke="#D3DED6" stroke-width="1" fill="none"/>
+
+  <path d="M489 276V566" stroke="#C9913B" stroke-width="0.7" fill="none" opacity="0.6"/>
+  <rect class="mled"     x="484" y="284" width="10" height="8" rx="2"/>
+  <rect class="mled ml2" x="484" y="322" width="10" height="8" rx="2"/>
+  <rect class="mled ml3" x="484" y="360" width="10" height="8" rx="2"/>
+  <rect class="mled ml4" x="484" y="398" width="10" height="8" rx="2"/>
+  <rect class="mled ml5" x="484" y="436" width="10" height="8" rx="2"/>
+  <rect class="mled ml6" x="484" y="474" width="10" height="8" rx="2"/>
+  <rect class="mled ml7" x="484" y="512" width="10" height="8" rx="2"/>
+  <rect class="mled ml8" x="484" y="550" width="10" height="8" rx="2"/>
+
+  <rect x="280" y="266" width="200" height="322" fill="#183F35" stroke="#D3DED6" stroke-width="1.5"/>
+
+  <!-- eje del recorrido -->
+  <path class="spine" d="M380 208V266" fill="none" stroke="#2C7A63" stroke-width="2.4"/>
+  <path class="spine" d="M380 266V588" fill="none" stroke="#2C7A63" stroke-width="2"/>
+  <path class="spine" d="M380 606V630" fill="none" stroke="#2C7A63" stroke-width="2.4"/>
+
+  <g stroke="#D3DED6" stroke-width="1" fill="none">
+    <path d="M280 348H480 M280 428H480 M280 508H480"/>
+  </g>
+  <g stroke="#C9913B" stroke-width="0.8" fill="none" opacity="0.7">
+    <path d="M284 352H360 M400 352H476 M284 432H360 M400 432H476 M284 512H360 M400 512H476"/>
+  </g>
+
+  <!-- ==== ETAPA 01 CAPTURA ==== -->
+  <path d="M308 280H452" stroke="#D3DED6" stroke-width="1.2" fill="none"/>
+  <rect x="308" y="322" width="144" height="12" rx="2" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M322 334V342 M438 334V342" stroke="#D3DED6" stroke-width="1.1" fill="none"/>
+  <g stroke="#C9913B" stroke-width="1" fill="none">
+    <path d="M312 296V288H326 M448 296V288H434 M312 314V320H326 M448 314V320H434"/>
+  </g>
+  <text x="398" y="344" font-size="6.5" fill="#C9913B" letter-spacing="1">LECTURA</text>
+
+  <!-- ==== ETAPA 02 VALIDACION ==== -->
+  <path d="M306 356L368 388 M454 356L392 388" stroke="#D3DED6" stroke-width="1.75" fill="none"/>
+  <path d="M368 396V424 M392 396V424" stroke="#D3DED6" stroke-width="1.1" fill="none"/>
+  <!-- conducto de rechazo hacia la pared izquierda -->
+  <path d="M368 390L286 382L286 406L366 412Z" fill="#12251F" stroke="#D3DED6" stroke-width="1.2"/>
+  <path d="M300 387l7 7 M318 389l7 7 M336 391l7 7 M354 393l7 7" stroke="#C9913B" stroke-width="0.8" fill="none"/>
+  <g class="gate">
+    <path d="M380 392V416" stroke="#D3DED6" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+  </g>
+  <circle cx="380" cy="392" r="2.8" fill="#D3DED6"/>
+  <rect x="416" y="402" width="56" height="20" rx="2" fill="#12251F" stroke="#D3DED6" stroke-width="1.1"/>
+  <g fill="none" stroke="#C9913B" stroke-width="0.9">
+    <rect x="422" y="407" width="9" height="9"/>
+    <rect x="438" y="407" width="9" height="9"/>
+    <rect x="454" y="407" width="9" height="9"/>
+  </g>
+  <g fill="none" stroke="#2C7A63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="ck"     d="M423.5 411.5l2.6 2.8 4.4 -5.6"/>
+    <path class="ck ck2" d="M439.5 411.5l2.6 2.8 4.4 -5.6"/>
+    <path class="ck ck3" d="M455.5 411.5l2.6 2.8 4.4 -5.6"/>
+  </g>
+  <text x="418" y="436" font-size="6.5" fill="#C9913B" letter-spacing="1">REGLAS</text>
+
+  <!-- ==== ETAPA 03 CRUCE ==== -->
+  <g class="gearA">
+    <circle cx="318" cy="472" r="20" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+    <g stroke="#D3DED6" stroke-width="1.6" fill="none" stroke-linecap="round">
+      <path d="M338 472L342 472 M335.3 482L338.8 484 M328 489.3L330 492.8 M318 492L318 496 M308 489.3L306 492.8 M300.7 482L297.2 484 M298 472L294 472 M300.7 462L297.2 460 M308 454.7L306 451.2 M318 452L318 448 M328 454.7L330 451.2 M335.3 462L338.8 460"/>
+    </g>
+    <circle cx="318" cy="472" r="4" fill="none" stroke="#D3DED6" stroke-width="1.2"/>
+  </g>
+  <circle cx="318" cy="472" r="23" fill="none" stroke="#C9913B" stroke-width="0.8" stroke-dasharray="3 2.5"/>
+  <g class="gearB">
+    <circle cx="348" cy="448" r="13" fill="#12251F" stroke="#D3DED6" stroke-width="1.6"/>
+    <g stroke="#D3DED6" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <path d="M361 448L364.5 448 M357.2 457.2L359.7 459.7 M348 461L348 464.5 M338.8 457.2L336.3 459.7 M335 448L331.5 448 M338.8 438.8L336.3 436.3 M348 435L348 431.5 M357.2 438.8L359.7 436.3"/>
+    </g>
+    <circle cx="348" cy="448" r="3" fill="none" stroke="#D3DED6" stroke-width="1.1"/>
+  </g>
+  <circle cx="348" cy="448" r="16" fill="none" stroke="#C9913B" stroke-width="0.8" stroke-dasharray="3 2.5"/>
+  <g fill="#12251F" stroke="#D3DED6" stroke-width="1.4">
+    <path d="M420 456a20 8 0 0 1 40 0v26a20 8 0 0 1 -40 0Z"/>
+    <ellipse cx="440" cy="456" rx="20" ry="8"/>
+  </g>
+  <path d="M420 468a20 8 0 0 0 40 0" fill="none" stroke="#C9913B" stroke-width="0.9"/>
+  <text x="440" y="500" font-size="6.5" fill="#C9913B" text-anchor="middle" letter-spacing="1">SISTEMAS</text>
+  <path class="linkR" d="M418 468H394" fill="none" stroke="#2C7A63" stroke-width="2"/>
+  <path class="linkL" d="M340 468H366" fill="none" stroke="#2C7A63" stroke-width="2"/>
+
+  <!-- ==== ETAPA 04 REGISTRO ==== -->
+  <path d="M348 516V578 M412 516V578" stroke="#D3DED6" stroke-width="1.2" fill="none"/>
+  <rect x="336" y="572" width="88" height="10" rx="2" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <rect x="306" y="530" width="22" height="40" rx="3" fill="#12251F" stroke="#D3DED6" stroke-width="1.2"/>
+  <path d="M311 540H323 M311 550H323 M311 560H319" stroke="#C9913B" stroke-width="0.8" fill="none"/>
+  <rect x="430" y="524" width="44" height="46" rx="2" fill="#12251F" stroke="#D3DED6" stroke-width="1.4"/>
+  <path d="M436 536H468 M436 546H468 M436 566H462" stroke="#C9913B" stroke-width="0.8" fill="none"/>
+  <path class="write" d="M436 556H468" stroke="#2C7A63" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <text x="452" y="582" font-size="6.5" fill="#C9913B" text-anchor="middle" letter-spacing="1">REGISTRO</text>
+
+  <!-- zocalo y salida de la maquina -->
+  <g stroke="#C9913B" stroke-width="0.8" fill="none" opacity="0.8">
+    <path d="M290 606l18 -18 M314 606l18 -18 M338 606l18 -18 M422 606l18 -18 M446 606l18 -18 M470 606l18 -18"/>
+  </g>
+  <rect x="350" y="588" width="60" height="18" fill="#12251F" stroke="#D3DED6" stroke-width="1.2"/>
+  <rect x="272" y="606" width="216" height="13" rx="3" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M346 619L416 619L406 631L356 631Z" fill="#12251F" stroke="#D3DED6" stroke-width="1.4"/>
+
+  <!-- ============ CANAL DE EXCEPCION + BANDEJA ============ -->
+  <rect x="262" y="386" width="18" height="30" fill="#183F35" stroke="#D3DED6" stroke-width="1.2"/>
+  <g fill="none" stroke="#183F35" stroke-width="5.5" stroke-linecap="round">
+    <path d="M262 390L182 573"/>
+    <path d="M262 416L210 562"/>
+  </g>
+  <g fill="none" stroke="#D3DED6" stroke-width="2.4" stroke-linecap="round">
+    <path d="M262 390L182 573"/>
+    <path d="M262 416L210 562"/>
+  </g>
+  <g stroke="#C9913B" stroke-width="1" fill="none" opacity="0.9">
+    <path d="M240 440L252 445 M227 470L241 475 M214 500L230 505 M201 530L220 535"/>
+  </g>
+
+  <!-- bandeja -->
+  <path d="M168 580L262 568L262 606L172 624Z" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M176 588L256 578" stroke="#D3DED6" stroke-width="0.9" fill="none"/>
+  <path class="ramp" d="M196 598L256 588" fill="none" stroke="#2C7A63" stroke-width="1.8" stroke-dasharray="6 5"/>
+  <g class="pusher">
+    <rect x="177" y="581" width="11" height="31" rx="2" fill="#12251F" stroke="#D3DED6" stroke-width="1.4"/>
+    <path d="M180 590H185 M180 598H185 M180 606H185" stroke="#C9913B" stroke-width="0.8" fill="none"/>
+  </g>
+  <path d="M190 638V622" stroke="#C9913B" stroke-width="0.8" fill="none"/>
+  <text x="176" y="648" font-size="7" fill="#C9913B" letter-spacing="1">EXCEPCIONES</text>
+
+  <!-- boca de reingreso a la maquina -->
+  <rect x="262" y="566" width="18" height="28" fill="#183F35" stroke="#D3DED6" stroke-width="1.2"/>
+  <g class="rejoin">
+    <rect x="264" y="568" width="14" height="24" fill="#C9913B" opacity="0.45"/>
+    <path d="M284 578L310 568" stroke="#C9913B" stroke-width="1.2" fill="none"/>
+    <polygon points="318,565 308,563.4 310.6,570.6" fill="#C9913B"/>
+  </g>
+
+  <!-- ============ SALIDA: REGISTROS VALIDADOS ============ -->
+  <rect x="300" y="684" width="162" height="16" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M312 692H396" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <rect x="300" y="666" width="162" height="16" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M312 674H396" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <rect x="300" y="648" width="162" height="16" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+  <path d="M312 656H396" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <g class="outtop">
+    <rect x="300" y="630" width="162" height="16" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+    <path d="M312 638H396" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+    <g class="outck">
+      <circle cx="432" cy="638" r="8" fill="none" stroke="#2C7A63" stroke-width="1.7"/>
+      <path d="M428 638l2.8 3 5 -6" fill="none" stroke="#2C7A63" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <path d="M18 702H486" stroke="#C9913B" stroke-width="0.8" stroke-dasharray="6 5" fill="none" opacity="0.75"/>
+
+  <path d="M462 650H482" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <rect x="486" y="640" width="92" height="20" fill="#183F35" stroke="#C9913B" stroke-width="0.9"/>
+  <text x="532" y="654" font-size="9" fill="#D3DED6" text-anchor="middle" letter-spacing="1.6">SALIDA</text>
+  <rect x="486" y="666" width="204" height="20" fill="#183F35" stroke="#C9913B" stroke-width="0.9"/>
+  <text x="496" y="680" font-size="8.5" fill="#D3DED6" letter-spacing="1.2">REGISTROS VALIDADOS</text>
+
+  <!-- la firma sigue siendo humana -->
+  <path d="M498 592H510" stroke="#C9913B" stroke-width="0.9" fill="none"/>
+  <rect x="512" y="570" width="172" height="46" fill="#12251F" stroke="#C9913B" stroke-width="1.1" stroke-dasharray="5 3"/>
+  <text x="522" y="588" font-size="8.5" fill="#D3DED6" letter-spacing="1.2">FIRMA HUMANA</text>
+  <path d="M522 604q9 -11 17 -1 t17 -1 t16 -3" fill="none" stroke="#C9913B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M584 606l18 -14 4 5 -18 14Z" fill="#183F35" stroke="#C9913B" stroke-width="1"/>
+  <text x="614" y="608" font-size="6.5" fill="#C9913B" letter-spacing="0.8">USTED</text>
+
+  <!-- ============ GLOBOS DE REFERENCIA ============ -->
+  <g stroke="#C9913B" stroke-width="0.9" fill="none">
+    <path d="M472 307H508 M472 388H508 M472 468H508 M472 548H508"/>
+    <path d="M520 317V372 M520 398V452 M520 478V532"/>
+  </g>
+  <g fill="#12251F" stroke="#C9913B" stroke-width="1.1">
+    <circle cx="520" cy="307" r="10"/><circle cx="520" cy="388" r="10"/>
+    <circle cx="520" cy="468" r="10"/><circle cx="520" cy="548" r="10"/>
+  </g>
+  <g font-size="8.5" fill="#D3DED6" text-anchor="middle">
+    <text x="520" y="310">01</text><text x="520" y="391">02</text>
+    <text x="520" y="471">03</text><text x="520" y="551">04</text>
+  </g>
+  <g fill="#183F35" stroke="#C9913B" stroke-width="0.9">
+    <rect x="536" y="291" width="142" height="32"/>
+    <rect x="536" y="372" width="142" height="32"/>
+    <rect x="536" y="452" width="142" height="32"/>
+    <rect x="536" y="532" width="142" height="32"/>
+  </g>
+  <g font-size="9" fill="#D3DED6" letter-spacing="1.4">
+    <text x="546" y="306">CAPTURA</text>
+    <text x="546" y="387">VALIDACION</text>
+    <text x="546" y="467">CRUCE DE DATOS</text>
+    <text x="546" y="547">REGISTRO</text>
+  </g>
+  <g font-size="6.5" fill="#C9913B" letter-spacing="0.8">
+    <text x="546" y="318">FOTO, CORREO, PAPEL</text>
+    <text x="546" y="399">REGLAS DEL NEGOCIO</text>
+    <text x="546" y="479">CONTRA SUS SISTEMAS</text>
+    <text x="546" y="559">SIN TRANSCRIBIR</text>
+  </g>
+
+  <!-- ============ DOCUMENTO EN RECORRIDO ============ -->
+  <g transform="translate(380 468)">
+    <g class="tok">
+      <rect x="-12" y="-15" width="24" height="30" rx="2" fill="#D3DED6" stroke="#183F35" stroke-width="1.6"/>
+      <path d="M-6 -8H6 M-6 -3H6 M-6 2H2" stroke="#183F35" stroke-width="1" fill="none" opacity="0.55"/>
+      <path class="tok-check" d="M-6.5 6l3.5 3.8 6.5 -8" fill="none" stroke="#2C7A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <g class="tok-seal">
+        <circle cx="8" cy="-11" r="6.4" fill="#183F35" stroke="#C9913B" stroke-width="1.5"/>
+        <path d="M5 -11.4l2.2 2.4 3.9 -4.6" fill="none" stroke="#C9913B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- prensa de sellado: por delante del documento -->
+  <rect x="344" y="508" width="72" height="10" rx="2" fill="#12251F" stroke="#D3DED6" stroke-width="1.4"/>
+  <g class="ram">
+    <rect x="366" y="518" width="28" height="20" rx="3" fill="#12251F" stroke="#D3DED6" stroke-width="1.75"/>
+    <path d="M372 538H388" stroke="#C9913B" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- cabezal de lectura: por delante del documento -->
+  <g class="scan">
+    <rect x="312" y="272" width="20" height="14" rx="3" fill="#12251F" stroke="#D3DED6" stroke-width="1.4"/>
+    <path d="M316 286V292" stroke="#D3DED6" stroke-width="1" fill="none"/>
+    <rect x="314" y="292" width="16" height="30" fill="#2C7A63" opacity="0.55"/>
+    <path d="M314 322H330" stroke="#2C7A63" stroke-width="2.6" fill="none"/>
+  </g>
+
+  <!-- ============ EXCEPCION ============ -->
+  <g transform="translate(206 596)">
+    <g class="exc-carry">
+      <g class="exc">
+        <rect x="-11" y="-14" width="22" height="28" rx="2" fill="#D3DED6" stroke="#183F35" stroke-width="1.5"/>
+        <path d="M-5 -6H5 M-5 -1H3" stroke="#183F35" stroke-width="1" fill="none" opacity="0.55"/>
+        <g class="exc-warn">
+          <circle cx="8.5" cy="-11.5" r="6" fill="#183F35" stroke="#C9913B" stroke-width="1.4"/>
+          <path d="M8.5 -14.6V-10.4" stroke="#C9913B" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+          <circle cx="8.5" cy="-8.2" r="0.95" fill="#C9913B"/>
+        </g>
+        <path class="exc-check" d="M-6 4.5l3.2 3.5 6 -7.4" fill="none" stroke="#2C7A63" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ ENLACE FISICO ROBOT = MAQUINA ============ -->
+  <path d="M148 676C190 692 246 684 278 616" fill="none" stroke="#183F35" stroke-width="6" stroke-linecap="round"/>
+  <path d="M148 676C190 692 246 684 278 616" fill="none" stroke="#D3DED6" stroke-width="2.4" stroke-linecap="round"/>
+  <path class="cordsig" d="M148 676C190 692 246 684 278 616" fill="none" stroke="#C9913B" stroke-width="1.3"/>
+  <rect x="268" y="606" width="14" height="13" rx="2" fill="#183F35" stroke="#D3DED6" stroke-width="1.2"/>
+  <text x="188" y="694" font-size="6" fill="#C9913B" letter-spacing="0.9">ENLACE DE CONTROL</text>
+
+  <!-- ============ ROBOT OPERADOR ============ -->
+  <ellipse cx="124" cy="702" rx="58" ry="8" fill="none" stroke="#C9913B" stroke-width="0.8" opacity="0.55"/>
+  <g transform="translate(44 526) scale(0.66)">
+    <g class="b-float">
+      <ellipse class="b-aura" cx="120" cy="140" rx="108" ry="132"/>
+
+      <g class="b-wheel">
+        <rect class="b-metal" x="82" y="218" width="76" height="24" rx="11"/>
+        <circle class="b-metal" cx="98"  cy="252" r="13"/>
+        <circle class="b-metal" cx="120" cy="252" r="13"/>
+        <circle class="b-metal" cx="142" cy="252" r="13"/>
+        <circle class="b-ring"  cx="98"  cy="252" r="5"/>
+        <circle class="b-ring"  cx="120" cy="252" r="5"/>
+        <circle class="b-ring"  cx="142" cy="252" r="5"/>
+      </g>
+
+      <!-- brazo izquierdo: la mano va DETRAS del canto de la tableta -->
+      <g class="b-armL">
+        <path class="b-limb-o" d="M72 130 q-34 14 -46 42 q-10 24 -22 42"/>
+        <path class="b-limb-i" d="M72 130 q-34 14 -46 42 q-10 24 -22 42"/>
+        <circle class="b-shell" cx="4" cy="214" r="13"/>
+        <circle class="b-cyan"  cx="1" cy="217" r="4.6"/>
+        <g transform="rotate(-13 32 190)">
+          <rect class="b-metal" x="2" y="166" width="60" height="44" rx="6"/>
+          <rect x="8" y="172" width="48" height="32" rx="3" fill="#12251F" stroke="#183F35" stroke-width="1.4"/>
+          <g stroke="#C9913B" stroke-width="1.4" fill="none">
+            <path d="M23 180H50 M23 188H38"/>
+          </g>
+          <g fill="#20C8E4">
+            <rect class="b-tab"         x="13" y="177" width="6" height="6" rx="1"/>
+            <rect class="b-tab b-tab-2" x="13" y="185" width="6" height="6" rx="1"/>
+            <rect class="b-tab b-tab-3" x="13" y="193" width="6" height="6" rx="1"/>
+          </g>
+          <path class="b-fix" d="M41 196l4 4.4 8 -9.4" fill="none" stroke="#20C8E4" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <!-- pulgar por encima del canto: la mano agarra, no se pega -->
+        <path d="M1 203 q11 -3 19 3" fill="none" stroke="#183F35" stroke-width="7.6" stroke-linecap="round"/>
+        <path d="M1 203 q11 -3 19 3" fill="none" stroke="#FFFDF8" stroke-width="4.4" stroke-linecap="round"/>
+      </g>
+
+      <!-- brazo derecho: hombro + antebrazo + pinza de dos dedos -->
+      <g class="b-armR">
+        <path class="b-limb-o" d="M168 130 q26 8 48 6"/>
+        <path class="b-limb-i" d="M168 130 q26 8 48 6"/>
+        <g class="b-foreR">
+          <path class="b-limb-o" d="M216 136 q22 -4 36 -24"/>
+          <path class="b-limb-i" d="M216 136 q22 -4 36 -24"/>
+          <circle class="b-ring" cx="216" cy="136" r="6.5"/>
+          <g class="b-clawA">
+            <path d="M257.8 108.1L248.9 94.8" fill="none" stroke="#183F35" stroke-width="8" stroke-linecap="round"/>
+            <path d="M257.8 108.1L248.9 94.8" fill="none" stroke="#FFFDF8" stroke-width="4.2" stroke-linecap="round"/>
+          </g>
+          <g class="b-clawB">
+            <path d="M246.2 115.9L237.3 102.6" fill="none" stroke="#183F35" stroke-width="8" stroke-linecap="round"/>
+            <path d="M246.2 115.9L237.3 102.6" fill="none" stroke="#FFFDF8" stroke-width="4.2" stroke-linecap="round"/>
+          </g>
+          <circle class="b-shell" cx="252" cy="112" r="12"/>
+          <circle class="b-cyan"  cx="252" cy="112" r="4.6"/>
+        </g>
+      </g>
+
+      <rect class="b-shell" x="68" y="104" width="104" height="120" rx="34"/>
+      <rect class="b-screen" x="86" y="132" width="68" height="56" rx="14"/>
+      <circle class="b-led"         cx="98"  cy="146" r="3.6"/>
+      <circle class="b-led b-led-2" cx="109" cy="146" r="3.6"/>
+      <circle class="b-led b-led-3" cx="120" cy="146" r="3.6"/>
+      <rect class="b-bar b-bar-1" x="95"  y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-2" x="109" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-3" x="123" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-bar b-bar-4" x="137" y="160" width="9" height="20" rx="3"/>
+      <rect class="b-ring" x="96" y="200" width="48" height="8" rx="4"/>
+
+      <g transform="translate(53 2) scale(0.56)">
+        <rect class="b-metal" x="2"   y="94" width="38" height="54" rx="18"/>
+        <rect class="b-metal" x="160" y="94" width="38" height="54" rx="18"/>
+        <circle class="b-ring" cx="17"  cy="121" r="11"/>
+        <circle class="b-ring" cx="183" cy="121" r="11"/>
+        <circle class="b-cyan" cx="17"  cy="121" r="6.5"/>
+        <circle class="b-cyan" cx="183" cy="121" r="6.5"/>
+
+        <rect class="b-shell" x="24" y="44" width="152" height="150" rx="70"/>
+        <rect class="b-screen" x="72" y="44" width="56" height="24" rx="10"/>
+        <path d="M90 46 q10 -13 20 0 z" fill="#B6C1C7"/>
+        <line x1="100" y1="42" x2="100" y2="27" stroke="#B6C1C7" stroke-width="3.6" stroke-linecap="round"/>
+        <circle class="b-ballglow" cx="100" cy="16" r="11"/>
+        <circle class="b-cyan" cx="100" cy="16" r="11"/>
+        <circle cx="96.5" cy="12.5" r="3.4" fill="#EAFAFF"/>
+
+        <rect class="b-screen" x="40" y="70" width="120" height="98" rx="35"/>
+        <circle class="b-glowL" cx="74"  cy="115" r="24"/>
+        <circle class="b-glowR" cx="126" cy="115" r="24"/>
+        <g class="b-eyeL">
+          <circle class="b-cyan" cx="74" cy="115" r="17"/>
+          <circle cx="74" cy="115" r="9" fill="#06131F"/>
+          <circle cx="78.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <g class="b-eyeR">
+          <circle class="b-cyan" cx="126" cy="115" r="17"/>
+          <circle cx="126" cy="115" r="9" fill="#06131F"/>
+          <circle cx="130.5" cy="110.5" r="3.6" fill="#EAFAFF"/>
+        </g>
+        <path d="M85 145 q15 13 30 0" fill="none" stroke="#20C8E4" stroke-width="4.2" stroke-linecap="round"/>
+        <rect class="b-metal" x="74" y="176" width="52" height="18" rx="7"/>
+        <rect class="b-cyan" x="86" y="183" width="28" height="4" rx="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- canto delantero de la bandeja: la mano entra DENTRO, no encima -->
+  <path d="M172 624L262 606L262 597L172 615Z" fill="#183F35" stroke="#D3DED6" stroke-width="1.5"/>
+
+  <!-- ============ COTA HORIZONTAL ============ -->
+  <g stroke="#C9913B" stroke-width="0.85" fill="none">
+    <path d="M100 706V726 M470 706V726"/>
+    <path d="M100 716H470"/>
+  </g>
+  <polygon points="100,716 110,712.6 110,719.4" fill="#C9913B"/>
+  <polygon points="470,716 460,712.6 460,719.4" fill="#C9913B"/>
+  <rect x="197" y="706" width="176" height="20" fill="#183F35" stroke="#C9913B" stroke-width="0.8"/>
+  <text x="285" y="720" font-size="8.5" fill="#D3DED6" text-anchor="middle" letter-spacing="1.2">UNA SOLA LINEA DE TRABAJO</text>
+
+  <!-- ============ CAJETIN ============ -->
+  <rect x="8" y="730" width="704" height="82" fill="#183F35" stroke="#C9913B" stroke-width="1.1"/>
+  <g stroke="#C9913B" stroke-width="0.9" fill="none">
+    <path d="M430 730V812 M570 730V812 M430 771H712"/>
+  </g>
+  <text x="26" y="768" font-size="14" fill="#D3DED6" letter-spacing="2.4">FIG. 1 — PRC-02</text>
+  <text x="26" y="790" font-size="8" fill="#C9913B" letter-spacing="1.2">MAQUINA DE PROCESO · DEL DOCUMENTO AL REGISTRO</text>
+  <text x="440" y="757" font-size="8.5" fill="#D3DED6" letter-spacing="1.2">PLANO OPTZ-2026</text>
+  <text x="440" y="797" font-size="8.5" fill="#C9913B" letter-spacing="1.2">REV A · 2026.08</text>
+  <text x="584" y="757" font-size="8.5" fill="#D3DED6" letter-spacing="1.2">ESC. SIN ESCALA</text>
+  <text x="584" y="797" font-size="8.5" fill="#C9913B" letter-spacing="2">OPTIMATIZA</text>
+  <circle class="live" cx="698" cy="744" r="4.5" fill="#2C7A63" stroke="#D3DED6" stroke-width="0.9"/>
 </svg>
