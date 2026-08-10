@@ -3,380 +3,482 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Atención de alto volumen con agentes gobernados | Optimatiza</title>
+  <meta name="description" content="Agentes de IA que absorben el volumen de consultas en WhatsApp y otros canales: responden con sus reglas, registran en sus sistemas y escalan a una persona.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/agente-ia-whatsapp/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Agente de IA para WhatsApp: alto volumen 24/7 | Optimatiza</title>
-  <meta name="description" content="Un agente de IA atiende el WhatsApp de su empresa 24/7: cotiza con su catálogo, registra pedidos en su CRM o ERP y escala con historial completo.">
-  <link rel="canonical" href="https://optimatiza.com/agente-ia-whatsapp/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Agente de IA para WhatsApp: alto volumen 24/7 | Optimatiza">
-  <meta property="og:description" content="Cientos de conversaciones diarias atendidas en segundos, registradas en sus sistemas y con handoff trazable al ejecutivo asignado.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Atención de alto volumen con agentes gobernados">
+  <meta property="og:description" content="El volumen de consultas se absorbe con agentes de IA de límites definidos: responden con su catálogo y sus reglas, dejan registro en sus sistemas y traspasan a una persona lo que exige criterio.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/agente-ia-whatsapp/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;--blue:#3F6F8A;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    .hero{padding:60px 0 36px;max-width:820px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.1;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17.5px;max-width:62ch}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
-    section{padding:34px 0}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    .note a{color:var(--teal);font-weight:600}
-    /* dolores / resultados */
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .card{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .card-i{font-size:26px}
-    .card h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
-    .card p{font-size:13.5px}
-    .card.solid{background:#FFFDF8;box-shadow:var(--sh)}
-    /* audiencia */
-    .aud-lead{max-width:64ch;font-size:15px;margin-bottom:16px}
-    .aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .aud-c{display:block;background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
-    .aud-c b{font-family:var(--ffd);color:var(--ink);font-size:15.5px;display:block;margin-bottom:5px}
-    .aud-c p{font-size:13.5px}
-    .aud-c .go{color:var(--teal);font-weight:600;font-size:13px;display:inline-block;margin-top:8px}
-    /* mockup WhatsApp */
-    .demo{display:grid;grid-template-columns:minmax(0,400px) 1fr;gap:32px;align-items:start}
-    @media(max-width:820px){.demo{grid-template-columns:1fr}}
-    .phone{max-width:400px;border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:var(--sh);background:#F0EAE2}
-    .ph-top{display:flex;align-items:center;gap:10px;background:#FFFDF8;border-bottom:1px solid var(--line);padding:10px 14px}
-    .ph-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:var(--ffd)}
-    .ph-top b{color:var(--ink);font-size:14px;display:block;line-height:1.2}
-    .ph-top small{color:var(--teal);font-size:11.5px;font-weight:600}
-    .ph-chat{padding:14px 12px 18px;display:flex;flex-direction:column;gap:8px}
-    .day{align-self:center;background:#FFFDF8;border:1px solid var(--line);color:var(--dim);font-size:11px;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:4px}
-    .msg{max-width:86%;padding:8px 12px 6px;border-radius:12px;font-size:13.5px;line-height:1.45;color:#111B21;box-shadow:0 1px 1px rgba(24,63,53,.08)}
-    .msg .t{display:block;text-align:right;font-size:10.5px;color:#667781;margin-top:3px}
-    .msg .t .ck{color:#53BDEB;letter-spacing:-2px}
-    .in{align-self:flex-start;background:#FFFDF8;border-top-left-radius:4px}
-    .out{align-self:flex-end;background:#D9FDD3;border-top-right-radius:4px}
-    .demo-txt h3{font-family:var(--ffd);color:var(--ink);font-size:17px;margin:0 0 8px}
-    .demo-txt p{font-size:14.5px;margin-bottom:14px}
-    .demo-txt ul{margin:0 0 14px 18px;padding:0;font-size:14px}
-    .demo-txt li{margin-bottom:6px}
-    /* pasos */
-    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
-    .paso-n{width:22px;height:22px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .arrow{color:var(--teal)}
-    /* chips */
-    .chips{display:flex;flex-wrap:wrap;gap:9px}
-    .chip{background:#FFFDF8;border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13.5px;color:var(--ink);font-weight:500;box-shadow:var(--sh)}
-    /* precio */
-    .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .pr{background:#FFFDF8;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh)}
-    .pr.hl{border:1.5px solid var(--teal);background:linear-gradient(180deg,var(--teal-soft),#fff 45%)}
-    .pr b{font-family:var(--ffd);color:var(--ink);font-size:16px}
-    .pr .amt{font-family:var(--ffd);color:var(--teal);font-size:26px;font-weight:700;display:block;margin:6px 0 2px}
-    .pr small{color:var(--dim);font-size:12.5px;font-weight:600}
-    .pr p{font-size:13.5px;margin-top:10px}
-    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
-    .guar b{color:var(--ink)}
-    .guar a{color:var(--teal);font-weight:600}
-    /* evidencia */
-    .evi{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .ev{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .ev b{font-family:var(--ffd);color:var(--ink);font-size:15.5px;display:block;margin-bottom:6px}
-    .ev p{font-size:13.5px}
-    .ev a{color:var(--teal);font-weight:600}
-    .ev .tag{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:999px;margin-bottom:10px}
-    /* faq */
-    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:0 20px;margin-bottom:10px;box-shadow:var(--sh)}
-    .faq summary{cursor:pointer;font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;padding:16px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:'+';color:var(--teal);font-size:20px;font-weight:400;flex-shrink:0}
-    .faq details[open] summary::after{content:'–'}
-    .faq details p{font-size:14px;padding:0 0 16px}
-    .faq details p a{color:var(--teal);font-weight:600}
-    /* final */
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Atención de alto volumen con agentes gobernados">
+  <meta name="twitter:description" content="El volumen de consultas se absorbe con agentes de IA de límites definidos: responden con su catálogo y sus reglas, dejan registro en sus sistemas y traspasan a una persona lo que exige criterio.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Agentes de IA", "item": "https://optimatiza.com/agentes-ia/"},
+      {"@type": "ListItem", "position": 3, "name": "Atención de alto volumen", "item": "https://optimatiza.com/agente-ia-whatsapp/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Atención de alto volumen con agentes de IA gobernados",
+    "serviceType": "Diseño, implementación y operación de agentes de atención en canales conversacionales, con límites definidos y supervisión humana",
+    "description": "Agentes de IA que atienden el volumen conversacional de la organización —WhatsApp, chat del sitio, correo y portales—, responden con el catálogo y las reglas de la empresa, registran en ERP o CRM y traspasan a una persona lo que exige criterio.",
+    "url": "https://optimatiza.com/agente-ia-whatsapp/",
+    "provider": {"@type": "Organization", "name": "Optimatiza", "url": "https://optimatiza.com/"},
+    "areaServed": ["El Salvador", "Latinoamérica", "Estados Unidos"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿El agente sustituye al equipo de atención o de ventas?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Absorbe el trabajo repetitivo y de volumen —responder, cotizar, registrar, agendar— y el equipo conserva las decisiones, la relación con el cliente y los casos que exigen criterio."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre cuando el agente no sabe responder?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Traspasa la conversación a la persona asignada con el historial completo. Las reglas se acuerdan con su equipo: qué responde solo, qué requiere aprobación y qué pasa directo a una persona. Fuera de esas reglas el agente se detiene, no improvisa."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto volumen puede atender?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Atiende conversaciones en paralelo, de modo que la cola deja de depender de cuántas personas estén conectadas. Los límites reales los imponen las políticas del canal y la capacidad de los sistemas integrados; ambos se dimensionan en la evaluación ejecutiva, antes de comprometer nada."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Funciona con el número de WhatsApp que la empresa ya utiliza?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Depende de cómo opera hoy el canal: aplicación estándar, WhatsApp Business o API. En la evaluación ejecutiva se revisa el caso y se indica qué opción aplica, qué implica la migración y si conviene conservar el número actual o habilitar uno de atención."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Solo funciona en WhatsApp?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. WhatsApp suele concentrar el volumen en la región, pero el mismo agente puede atender el chat del sitio, el correo corporativo o un portal interno. El canal es una decisión de diseño; el agente, las reglas y la integración con los sistemas son los mismos."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede ver un agente funcionando antes de contratar?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí. El asistente de este sitio es un agente en operación y puede probarlo en esta misma página con sus propias preguntas."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../casos/">Demostraciones</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola.%20Quiero%20evaluar%20un%20agente%20de%20IA%20para%20el%20WhatsApp%20de%20nuestra%20operaci%C3%B3n%3B%20manejamos%20un%20volumen%20alto%20de%20consultas%20diarias.%20%C2%BFPodemos%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%3F" target="_blank" rel="noopener">Diagnóstico ejecutivo</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <span class="k">Para operaciones con alto volumen en WhatsApp</span>
-    <h1>Agente de IA para WhatsApp: absorbe el volumen de consultas de su operación</h1>
-    <p class="sub">Cientos de conversaciones al día, entradas a toda hora y un equipo que responde más lento de lo que crece la cola. Un agente de IA contesta en segundos con su catálogo y sus reglas, registra pedidos y citas en sus sistemas, y entrega al ejecutivo asignado — con el historial completo — lo que exige criterio.</p>
+<main id="contenido">
+  <div class="wrap"><nav class="crumbs" aria-label="Ruta">
+    <a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/agentes-ia/">Agentes de IA</a><span aria-hidden="true">/</span> Atención de alto volumen
+  </nav></div>
+
+  <div class="phero band"><div class="wrap">
+    <p class="kicker"><i aria-hidden="true"></i>Soluciones · Atención de alto volumen</p>
+    <h1>Atención de alto volumen con agentes gobernados</h1>
+    <p class="lead">Cientos de conversaciones al día, entradas a toda hora y una cola que crece más rápido que el equipo. Un <b>agente de IA con límites definidos</b> responde con el catálogo y las reglas de su empresa, deja el registro en sus sistemas y traspasa a la persona asignada lo que exige criterio. WhatsApp suele ser donde se concentra ese volumen; es un canal, no el producto.</p>
     <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Hola.%20Quiero%20evaluar%20un%20agente%20de%20IA%20para%20el%20WhatsApp%20de%20nuestra%20operaci%C3%B3n%3B%20manejamos%20un%20volumen%20alto%20de%20consultas%20diarias.%20%C2%BFPodemos%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%3F" target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
-      <a class="ghost" href="../casos/">o revise las demostraciones</a>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-secondary" href="/agentes-ia/">Ver la práctica de agentes de IA</a>
+      <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
     </div>
-  </div>
+  </div></div>
 
-  <section>
-    <h2>El canal de WhatsApp de su operación, hoy</h2>
+  <section><div class="wrap">
+    <p class="sec-k">Punto de partida</p>
+    <h2>El canal conversacional se saturó antes que la plantilla</h2>
+    <p class="sec-sub">Cuatro síntomas que aparecen juntos cuando el volumen supera la capacidad de atención.</p>
     <div class="cards">
-      <div class="card"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span><h3>Cola que crece más rápido que el equipo</h3><p>Sus ejecutivos atienden mostrador, despacho y teléfono. Los mensajes se acumulan por cientos y el tiempo de primera respuesta se degrada justo en las horas de mayor demanda.</p></div>
-      <div class="card"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span><h3>Demanda fuera de horario</h3><p>Una parte relevante de las consultas entra de noche, en fin de semana y en feriados, cuando no hay nadie en el canal. Esa demanda no desaparece: se atiende tarde o se atiende en otro proveedor.</p></div>
-      <div class="card"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.4"/><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.6"/><path d="M4 20v-4.6h4.6M20 4v4.6h-4.6"/></svg></span><h3>El mismo bloque de preguntas repetidas</h3><p>Disponibilidad, condiciones comerciales, horarios, estado de pedido. Los perfiles con más criterio de su equipo dedican la jornada a lo que un catálogo bien conectado responde solo.</p></div>
-      <div class="card"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Conversaciones que no llegan al sistema</h3><p>El pedido quedó en un hilo de hace tres días, nadie lo transcribió al ERP y la trazabilidad se rompe exactamente donde empieza el reclamo.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Lo que cambia cuando el canal está automatizado</h2>
-    <div class="cards">
-      <div class="card solid"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M12 15V5m0 0 3.5 3.5M12 5 8.5 8.5"/></svg></span><h3>Respuesta en segundos, en paralelo</h3><p>El agente atiende muchas conversaciones a la vez, de día, de noche y en fin de semana. El tiempo de primera respuesta deja de depender de cuánta gente esté conectada.</p></div>
-      <div class="card solid"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Cotiza con su catálogo y sus reglas</h3><p>Precios de lista, condiciones por cliente y disponibilidad salen de sus sistemas y de sus políticas, no de la memoria de quien esté de turno.</p></div>
-      <div class="card solid"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 8.5 12 4 3.5 8.5v7L12 20l8.5-4.5Z"/><path d="M3.5 8.5 12 13m0 0 8.5-4.5M12 13v7"/></svg></span><h3>Registra en su sistema, no en el chat</h3><p>Pedidos, citas y solicitudes quedan con número de orden en el CRM, el ERP o el calendario corporativo, listos para que la operación los ejecute.</p></div>
-      <div class="card solid"><span class="card-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12.5 5 9.5a2 2 0 0 1 0-2.8l1-1a2 2 0 0 1 2.8 0L12 8.5l3.2-3.3a2 2 0 0 1 2.8 0l1 1a2 2 0 0 1 0 2.8l-3 3"/><path d="m9 14 2 2 2-2 2 2 2-2"/></svg></span><h3>Trazabilidad y handoff a ejecutivos</h3><p>Reclamos, negociaciones y excepciones pasan al ejecutivo asignado con el historial completo. Queda registrado qué se respondió, con qué dato y en qué momento.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Así se ve una reposición a las 9 de la noche</h2>
-    <div class="demo">
-      <div class="phone" role="img" aria-label="Demostración ilustrativa de una conversación de WhatsApp donde un cliente corporativo solicita una reposición a las 9 de la noche y el agente de IA confirma disponibilidad, reserva el inventario y genera la orden en el sistema">
-        <div class="ph-top">
-          <div class="ph-av" aria-hidden="true">C</div>
-          <div><b>Canal corporativo — Pedidos</b><small>en línea</small></div>
-        </div>
-        <div class="ph-chat">
-          <span class="day">Hoy</span>
-          <div class="msg in">Buenas noches. Necesito reponer aceite de 900 ml para las tres sucursales. ¿Hay disponibilidad para la ruta de mañana?<span class="t">9:14 p. m.</span></div>
-          <div class="msg out">Buenas noches, Sr. Marroquín. Sí hay disponibilidad. La caja de 12 unidades se factura con el precio vigente de su convenio. ¿Cuántas cajas reservo por sucursal?<span class="t">9:14 p. m. <span class="ck"></span></span></div>
-          <div class="msg in">10 cajas por sucursal, 30 en total.<span class="t">9:15 p. m.</span></div>
-          <div class="msg out">Listo. Reservé <b>30 cajas de aceite 900 ml</b> distribuidas en sus tres sucursales. Generé la orden <b>#4218</b> en el sistema y quedó asignada a la ruta de mañana. Le confirmo la ventana de entrega al cerrar la programación.<span class="t">9:15 p. m. <span class="ck"></span></span></div>
-          <div class="msg in">Perfecto. Envíe la orden al correo de compras, por favor.<span class="t">9:16 p. m.</span></div>
-          <div class="msg out">Enviada al correo de compras registrado en su ficha. Su ejecutivo asignado ve esta conversación completa y cualquier cambio queda en el mismo hilo.<span class="t">9:16 p. m. <span class="ck"></span></span></div>
-        </div>
+      <div class="card reveal">
+        <h3>La cola crece más rápido que el equipo</h3>
+        <p>Los ejecutivos atienden mostrador, despacho y teléfono. Los mensajes se acumulan y el tiempo de primera respuesta se degrada justo en las horas de mayor demanda.</p>
       </div>
-      <div class="demo-txt">
-        <h3>Qué ocurrió en esos dos minutos</h3>
-        <ul>
-          <li><b>9:14 p. m.</b> — la consulta entra fuera de horario. El agente confirma disponibilidad y condiciones desde el catálogo y el convenio del cliente, sin esperar al turno de la mañana.</li>
-          <li><b>9:15 p. m.</b> — el inventario queda reservado y la orden generada en el sistema, con número, sucursal y ruta. No queda en un hilo de chat.</li>
-          <li><b>Al día siguiente</b> — la operación abre el día con la orden ya en su sistema y solo confirma la entrega.</li>
+      <div class="card reveal reveal-2">
+        <h3>Demanda fuera de horario</h3>
+        <p>Parte de las consultas entra de noche, en fin de semana y en feriados, cuando nadie está en el canal. Esa demanda no desaparece: se atiende tarde o se atiende en otro proveedor.</p>
+      </div>
+      <div class="card reveal reveal-3">
+        <h3>El mismo bloque de preguntas repetidas</h3>
+        <p>Disponibilidad, condiciones comerciales, horarios, estado del pedido. Los perfiles con más criterio dedican la jornada a lo que un catálogo bien conectado responde solo.</p>
+      </div>
+      <div class="card reveal reveal-4">
+        <h3>Conversaciones que no llegan al sistema</h3>
+        <p>El pedido quedó en un hilo de hace tres días, nadie lo trasladó al ERP y la trazabilidad se rompe exactamente donde empieza el reclamo.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Lo que cambia</p>
+    <h2>Volumen absorbido, registro en el sistema, criterio en manos de su gente</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Respuesta en paralelo</h3>
+        <p>El agente sostiene muchas conversaciones a la vez, en cualquier franja horaria. El tiempo de primera respuesta deja de depender de cuánta gente esté conectada.</p>
+      </div>
+      <div class="card reveal reveal-2">
+        <h3>Responde con su catálogo y sus reglas</h3>
+        <p>Precios de lista, condiciones por cliente y disponibilidad salen de sus sistemas y de sus políticas, no de la memoria de quien esté de turno.</p>
+      </div>
+      <div class="card reveal reveal-3">
+        <h3>Registra en el sistema, no en el chat</h3>
+        <p>Pedidos, citas y solicitudes quedan con número en el CRM, el ERP o el calendario corporativo, listos para que la operación los ejecute.</p>
+        <a class="link-more" href="/integracion-sistemas/">Integración de sistemas →</a>
+      </div>
+      <div class="card reveal reveal-4">
+        <h3>Traspaso trazable a una persona</h3>
+        <p>Reclamos, negociaciones y excepciones pasan al ejecutivo asignado con el historial completo. Queda registrado qué se respondió, con qué dato y en qué momento.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <p class="sec-k">Canales</p>
+    <h2>El canal es una decisión de diseño, no el producto</h2>
+    <div class="split reveal">
+      <div>
+        <h3>El mismo agente, donde esté el volumen</h3>
+        <p>En Latinoamérica el volumen conversacional se concentra en WhatsApp, y por eso suele ser el primer canal en atenderse. El agente, sus reglas y su conexión con los sistemas no cambian si mañana el mismo tráfico llega por otra vía.</p>
+        <ul class="checks">
+          <li><b>WhatsApp Business:</b> el canal donde hoy entra la mayor parte de la demanda.</li>
+          <li><b>Chat del sitio corporativo:</b> el mismo agente atendiendo a quien llega por la web.</li>
+          <li><b>Correo y portales internos:</b> solicitudes que hoy se resuelven a mano en una bandeja.</li>
         </ul>
-        <p>Si el cliente solicita crédito, reclama o negocia condiciones, el agente no improvisa: transfiere la conversación al ejecutivo asignado con el historial completo.</p>
-        <p class="note">Conversación simulada, con fines ilustrativos. Cada agente se construye sobre el catálogo, las condiciones comerciales y las reglas de su empresa. Las piezas de <a href="../casos/">demostraciones</a> también son animaciones ilustrativas; el agente real que puede probar hoy es <a href="../">Nova, el chat de nuestra página de inicio</a>.</p>
+        <p>La conexión con los sistemas de operación —ERP, CRM, agenda, hojas de cálculo corporativas, APIs propias o heredadas— se define en el levantamiento y es la parte que sostiene el resultado.</p>
+      </div>
+      <figure class="plate">
+        <img src="/img/vig-integrations.svg" alt="Un sistema entrega un dato a un punto intermedio y este lo traslada a un segundo sistema.">
+        <figcaption>El dato se captura una vez en la conversación y viaja al sistema donde la operación lo ejecuta.</figcaption>
+      </figure>
+    </div>
+    <div class="pills plain">
+      <span>WhatsApp Business</span>
+      <span>Chat del sitio</span>
+      <span>Correo corporativo</span>
+      <span>CRM</span>
+      <span>ERP</span>
+      <span>Microsoft 365</span>
+      <span>Google Workspace</span>
+      <span>Power Automate</span>
+      <span>n8n</span>
+      <span>APIs a medida</span>
+    </div>
+    <div class="note">Estas son las herramientas con las que se construye, no el entregable: lo que se entrega es el flujo completo operando dentro de su organización.</div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Cómo se ve en operación</p>
+    <h2>Una reposición a las nueve de la noche, paso por paso</h2>
+    <p class="sec-sub">La secuencia que sigue el agente cuando entra un pedido fuera de horario, y dónde queda constancia de cada paso.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th scope="col">Momento</th><th scope="col">Qué ocurre en el canal</th><th scope="col">Dónde queda registrado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>21:14</b></td><td>Un cliente corporativo pide reposición para tres sucursales. El agente confirma disponibilidad y las condiciones de su convenio.</td><td>Catálogo y condiciones comerciales de la empresa</td></tr>
+          <tr><td><b>21:15</b></td><td>Se reserva el inventario y se genera la orden con número, sucursal y ruta asignada.</td><td>ERP o sistema de pedidos</td></tr>
+          <tr><td><b>21:16</b></td><td>El documento se envía al correo de compras registrado en la ficha del cliente.</td><td>Correo corporativo y ficha del cliente</td></tr>
+          <tr><td><b>Día siguiente</b></td><td>La operación abre la jornada con la orden ya cargada y solo confirma la ventana de entrega.</td><td>Programación de rutas</td></tr>
+          <tr><td><b>Excepción</b></td><td>Si el cliente solicita crédito, reclama o negocia condiciones, el agente no improvisa: traspasa al ejecutivo asignado con el historial completo.</td><td>Bitácora y bandeja del ejecutivo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note demo">Secuencia ilustrativa, no un caso de cliente. Cada agente se construye sobre el catálogo, las condiciones comerciales y las reglas de la organización que lo implanta.</div>
+  </div></section>
+
+  <section><div class="wrap">
+    <p class="sec-k">Gobierno</p>
+    <h2>Los límites del agente se acuerdan antes que la tecnología</h2>
+    <p class="sec-sub">Atender volumen sin gobierno no es eficiencia: es exposición. Esta es la frontera que se firma antes de conectar el canal.</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Qué responde por sí solo</b></summary>
+        <div class="ex-body"><p>Disponibilidad, condiciones vigentes, estado de una solicitud y registro de pedidos o citas, siempre desde fuentes autorizadas. Fuera de esa lista, el agente no contesta de memoria.</p></div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Qué exige siempre a una persona</b></summary>
+        <div class="ex-body"><p>Crédito, excepciones de precio, reclamos y casos delicados pasan al ejecutivo asignado. Esa fricción es deliberada y se acuerda por escrito con su equipo.</p></div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Cómo es el traspaso a una persona</b></summary>
+        <div class="ex-body"><p>La conversación se entrega completa —con el historial, el dato consultado y el momento— a quien corresponde según su estructura comercial. El cliente no repite lo que ya contó.</p></div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Bitácora y protocolo de error</b></summary>
+        <div class="ex-body"><p>Cada consulta y cada acción quedan con fecha, entrada y resultado. Ante un dato ambiguo el agente se detiene y avisa, en lugar de completar la frase por su cuenta.</p></div>
+      </details>
+      <details>
+        <summary><i>05</i><b>Datos, accesos y permisos</b></summary>
+        <div class="ex-body"><p>Las conversaciones y los datos de sus clientes son suyos: se procesan solo para operar el agente, con credenciales propias de mínimos privilegios y accesos acordados por escrito.</p></div>
+      </details>
+      <details>
+        <summary><i>06</i><b>Cómo se mide que está funcionando</b></summary>
+        <div class="ex-body"><p>Volumen atendido, tiempo de primera respuesta, tasa de traspaso a persona y casos que el agente detuvo, revisados con la dirección en cortes acordados.</p></div>
+      </details>
+    </div>
+    <div class="note reveal">El marco completo está en <a class="link-more" href="/agentes-ia/">Agentes de IA</a>, <a class="link-more" href="/seguridad-gobierno/">Seguridad y gobierno</a> y <a class="link-more" href="/responsabilidad-ia/">Responsabilidad de IA</a>.</div>
+  </div></section>
+
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Dónde aplica</p>
+    <h2>Operaciones donde el canal ya concentra volumen sostenido</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Distribuidoras y mayoristas</h3>
+        <p>Pedidos recurrentes de decenas de clientes, listas de precios por convenio y rutas de entrega. El agente toma el pedido y lo deja registrado en el sistema.</p>
+        <a class="link-more" href="/distribuidoras/">Distribuidoras →</a>
+      </div>
+      <div class="card reveal reveal-2">
+        <h3>Redes de clínicas y centros médicos</h3>
+        <p>Agenda de varios especialistas, confirmaciones y recordatorios a escala, y consultas frecuentes de pacientes sin saturar a recepción.</p>
+        <a class="link-more" href="/clinicas/">Clínicas →</a>
+      </div>
+      <div class="card reveal reveal-3">
+        <h3>Retail multisucursal y servicios</h3>
+        <p>Cotizaciones, disponibilidad por sucursal, reservas y seguimiento de solicitudes, respondidos al momento aunque la sucursal esté cerrada.</p>
+        <a class="link-more" href="/industrias/">Industrias →</a>
       </div>
     </div>
-  </section>
+  </div></section>
 
-  <section>
-    <h2>¿Para quién es?</h2>
-    <p class="aud-lead">Para operaciones donde WhatsApp ya concentra un volumen sostenido de consultas y pedidos, y el equipo no alcanza a responderlos dentro del tiempo comprometido:</p>
-    <div class="aud">
-      <a class="aud-c" href="../distribuidoras/"><b>Distribuidoras y mayoristas</b><p>Pedidos recurrentes de decenas de clientes, listas de precios por convenio, rutas de entrega. El agente toma el pedido y lo deja registrado en el sistema.</p><span class="go">Ver la página para distribuidoras →</span></a>
-      <a class="aud-c" href="../clinicas/"><b>Redes de clínicas y centros médicos</b><p>Agenda de varios especialistas, confirmaciones y recordatorios a escala, y preguntas frecuentes de pacientes sin saturar a recepción.</p><span class="go">Ver la página para clínicas →</span></a>
-      <div class="aud-c"><b>Retail multisucursal y servicios</b><p>Cotizaciones, disponibilidad por sucursal, reservas y seguimiento de solicitudes, respondidos al momento aunque la sucursal esté cerrada.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Cómo funciona</h2>
-    <div class="pasos">
-      <div class="paso"><span class="paso-n">1</span>Diagnóstico ejecutivo (45–60 min): revisamos volumen, picos y flujo real de mensajes</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-n">2</span>Construimos el agente con su catálogo, sus sistemas y sus reglas</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-n">3</span>Su equipo lo valida con conversaciones reales antes de salir</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-n">4</span>Producción: atiende 24/7, registra en sus sistemas y escala lo crítico</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Se conecta con los sistemas que ya operan</h2>
-    <div class="chips">
-      <span class="chip">WhatsApp Business</span>
-      <span class="chip">Google Sheets</span>
-      <span class="chip">Google Calendar</span>
-      <span class="chip">Google Workspace</span>
-      <span class="chip">Microsoft 365</span>
-      <span class="chip">Excel</span>
-      <span class="chip">CRM</span>
-      <span class="chip">ERP</span>
-      <span class="chip">Power Automate</span>
-      <span class="chip">n8n</span>
-      <span class="chip">APIs a medida</span>
-    </div>
-    <p class="note">Estas son las herramientas con las que trabajamos, no el producto: lo que entregamos es el flujo completo funcionando dentro de su operación. Si necesita conectar un sistema propio o heredado, revise <a href="/integracion-sistemas/">integraciones con APIs</a>.</p>
-  </section>
-
-  <section>
-    <h2>Alcance y modalidades</h2>
-    <div class="price">
-      <div class="pr hl">
-        <b>Agente de WhatsApp conectado</b>
-        <span class="amt">Unidad simple</span>
-        <small>alcance típico: 1–2 semanas</small>
-        <p>Un agente sobre su catálogo o su agenda: responde, cotiza, reserva o agenda y escala al ejecutivo asignado. Incluye construcción, pruebas con su equipo, entrega documentada y 30 días de acompañamiento.</p>
+  <section><div class="wrap">
+    <p class="sec-k">Implantación</p>
+    <h2>De la evaluación a producción, por hitos verificables</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Evaluación ejecutiva</h3>
+        <p>Se revisa el volumen real del canal, los picos, las reglas comerciales y los sistemas involucrados. De ahí sale el alcance, no de un catálogo cerrado.</p>
       </div>
-      <div class="pr">
-        <b>Con integración a CRM/ERP</b>
-        <span class="amt">Célula multi-agente</span>
-        <small>alcance típico: 2–4 semanas</small>
-        <p>El mismo canal, pero además escribe en sus sistemas: órdenes en el ERP, cuentas y oportunidades en el CRM, registros en su contabilidad. Integraciones de mayor complejidad se estiman entre 4 y 8 semanas.</p>
+      <div class="step reveal reveal-2">
+        <h3>Construcción</h3>
+        <p>El agente se arma sobre su catálogo, sus sistemas y sus políticas, con la frontera de autonomía ya acordada.</p>
       </div>
-      <div class="pr">
-        <b>Operación gestionada</b>
-        <span class="amt">Servicio continuo</span>
-        <small>acuerdo mensual por niveles</small>
-        <p>Monitoreo, ajuste de reglas y mejoras para que el agente siga alineado con su operación conforme cambian catálogo, políticas y volumen. <a class="ghost" href="../metodologia/">Ver modelos de contratación</a>.</p>
+      <div class="step reveal reveal-3">
+        <h3>Validación con su equipo</h3>
+        <p>Quienes hoy atienden el canal lo prueban con conversaciones reales y corrigen respuestas antes de que vea a un cliente.</p>
+      </div>
+      <div class="step reveal reveal-4">
+        <h3>Producción y ajuste</h3>
+        <p>Atiende el canal, registra en sus sistemas y escala lo crítico. Los indicadores se revisan en cortes acordados y las reglas se afinan.</p>
       </div>
     </div>
-    <p class="note">Pagos por hitos: al arrancar, al validar el agente funcionando y al recibirlo en producción. La inversión se define según el alcance acordado. <a href="../metodologia/">Ver modelos de contratación</a>.</p>
-    <div class="guar"><b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a href="../contacto/">Solicitar evaluación ejecutiva →</a></div>
-  </section>
+    <div class="note">La secuencia completa, con criterios de aceptación y entregables por fase, está en la <a class="link-more" href="/metodologia/">metodología de la firma</a>.</div>
+  </div></section>
 
-  <section>
-    <h2>Evidencia verificable hoy</h2>
-    <div class="evi">
-      <div class="ev"><span class="tag">Agente real en vivo</span><b>Converse con Nova ahora mismo</b><p>El chat de <a href="../">optimatiza.com</a> es un agente de IA en producción, no un video ni un guion. Entre a la página de inicio y hágale las preguntas difíciles.</p></div>
-      <div class="ev"><span class="tag">Sistema propio en producción</span><b>Nuestras redes las publica un sistema</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. Usamos lo que implementamos.</p></div>
-      <div class="ev"><span class="tag">Métrica medida</span><b>Una factura en ~4 segundos</b><p>La única cifra de desempeño que publicamos es medida: nuestro Capturista Digital procesa una factura en ~4 segundos, en una grabación del sistema real disponible en <a href="../casos/">demostraciones</a>. No publicamos testimonios ni resultados que no podamos demostrar.</p></div>
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Modalidades</p>
+    <h2>Tres formas de contratar el mismo marco</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Agente sobre un canal</h3>
+        <p>Responde, cotiza, reserva o agenda con su catálogo y sus reglas, y escala a la persona asignada. Incluye construcción, pruebas con su equipo y entrega documentada.</p>
+      </div>
+      <div class="card reveal reveal-2">
+        <h3>Agente integrado a sus sistemas</h3>
+        <p>El mismo canal, pero además escribe: órdenes en el ERP, cuentas y oportunidades en el CRM, registros en su administración.</p>
+        <a class="link-more" href="/integracion-sistemas/">Integración de sistemas →</a>
+      </div>
+      <div class="card reveal reveal-3">
+        <h3>Operación administrada</h3>
+        <p>Monitoreo, ajuste de reglas y mejora continua para que el agente siga alineado conforme cambian catálogo, políticas y volumen.</p>
+        <a class="link-more" href="/operacion-administrada/">Operación administrada →</a>
+      </div>
     </div>
-  </section>
+    <div class="note">El alcance, el plazo y la modalidad se definen tras una evaluación ejecutiva, según complejidad, integraciones, volumen, seguridad y soporte. El avance se estructura por hitos verificables desde las primeras semanas.</div>
+  </div></section>
 
-  <section class="faq">
-    <h2>Preguntas frecuentes</h2>
-    <details>
-      <summary>¿El agente sustituye a su equipo de ventas o atención?</summary>
-      <p>No. El agente absorbe el trabajo repetitivo y de volumen — responder al instante, cotizar, registrar pedidos, agendar — y su equipo conserva las decisiones, las relaciones y los casos que exigen criterio. En la práctica, sus ejecutivos dejan de transcribir chats y dedican la jornada a vender y a atender excepciones.</p>
-    </details>
-    <details>
-      <summary>¿Qué pasa cuando el agente no sabe responder?</summary>
-      <p>Escala al ejecutivo asignado con el historial completo de la conversación. Las reglas se definen con su equipo: qué responde solo, qué requiere aprobación y qué pasa directo a una persona (reclamos, negociación de condiciones, casos delicados). El agente no improvisa respuestas fuera de sus reglas.</p>
-    </details>
-    <details>
-      <summary>¿Cuánto volumen puede atender?</summary>
-      <p>El agente responde conversaciones en paralelo, así que la cola no depende de cuántas personas estén conectadas. Los límites reales los imponen las políticas de la API de WhatsApp Business y la capacidad de los sistemas con los que se integra; ambos se revisan y se dimensionan en el diagnóstico, antes de comprometer nada.</p>
-    </details>
-    <details>
-      <summary>¿Funciona con el número de WhatsApp que ya usa la empresa?</summary>
-      <p>Depende de cómo opera hoy el canal (aplicación estándar, WhatsApp Business o API). En el diagnóstico ejecutivo revisamos su caso y le decimos con claridad qué opción aplica, qué implica en migración y si conviene conservar el número actual o habilitar uno de atención.</p>
-    </details>
-    <details>
-      <summary>¿Cuál es el alcance típico y cuánto tarda?</summary>
-      <p>Un agente conectado a su catálogo o a su agenda es una unidad simple, con alcance típico de 1 a 2 semanas. Si además debe escribir en su CRM o ERP, se trabaja como célula multi-agente, con alcance típico de 2 a 4 semanas; las integraciones de mayor complejidad se estiman entre 4 y 8 semanas. El pago se estructura por hitos y cada proyecto se cotiza tras una <a href="../contacto/">evaluación de alcance</a> según complejidad, integraciones, volumen, seguridad y soporte.</p>
-    </details>
-    <details>
-      <summary>¿Podemos ver un agente funcionando antes de contratar?</summary>
-      <p>Sí, hoy mismo: el chat de optimatiza.com (Nova) es un agente en producción y puede probarlo con sus propias preguntas. Las piezas de la sección de demostraciones son animaciones ilustrativas de otros casos, y así están etiquetadas.</p>
-    </details>
-    <details>
-      <summary>¿Qué pasa con los datos de sus clientes?</summary>
-      <p>Las conversaciones y los datos de sus clientes son suyos: se procesan solo para operar el agente, con accesos limitados y acordados por escrito. Publicamos cómo manejamos los datos en <a href="/seguridad-gobierno/">optimatiza.com/seguridad-gobierno</a>.</p>
-    </details>
-  </section>
+  <section><div class="wrap">
+    <p class="sec-k">Evidencia</p>
+    <h2>Lo que se puede comprobar hoy</h2>
+    <div class="split reveal">
+      <div>
+        <h3>Un agente en operación, en esta misma página</h3>
+        <p>El asistente de este sitio es un agente de IA, no un video ni un guion. Puede abrirlo ahora y hacerle las preguntas difíciles.</p>
+        <h3>Una cifra medida, no estimada</h3>
+        <p>El Capturista Digital procesa una factura en alrededor de cuatro segundos, en una grabación del sistema real. Es la única cifra de desempeño que la firma publica. <a class="link-more" href="/casos/">Ver casos →</a></p>
+        <h3>Quién dirige la práctica</h3>
+        <p>Humberto Henríquez, fundador: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence. <a class="link-more" href="/nosotros/">Conocer la firma →</a></p>
+      </div>
+      <figure class="plate">
+        <img src="/img/crew-inspecting.svg" alt="Un robot revisa un tablero con los indicadores del canal de atención.">
+        <figcaption>El agente se revisa contra sus indicadores en cortes acordados con la dirección.</figcaption>
+      </figure>
+    </div>
+    <p class="sec-sub">El mismo marco de agentes gobernados sostiene la práctica de <a href="/inteligencia-competitiva/">inteligencia competitiva</a> de la firma: fuentes autorizadas, <a href="/inteligencia-competitiva/alertas-tempranas/">alertas por umbral</a> con acción pre-acordada y <a href="/inteligencia-competitiva/ia-analista/">verificación humana</a> antes de que la información llegue al comité.</p>
+  </div></section>
 
-  <div class="final">
+  <section><div class="wrap">
+    <p class="sec-k">Preguntas frecuentes</p>
+    <h2>Preguntas frecuentes sobre atención de alto volumen</h2>
+    <div class="faq">
+      <details>
+        <summary>¿El agente sustituye al equipo de atención o de ventas?</summary>
+        <p class="fa">No. Absorbe el trabajo repetitivo y de volumen —responder, cotizar, registrar, agendar— y el equipo conserva las decisiones, la relación con el cliente y los casos que exigen criterio.</p>
+      </details>
+      <details>
+        <summary>¿Qué ocurre cuando el agente no sabe responder?</summary>
+        <p class="fa">Traspasa la conversación a la persona asignada con el historial completo. Las reglas se acuerdan con su equipo: qué responde solo, qué requiere aprobación y qué pasa directo a una persona. Fuera de esas reglas se detiene, no improvisa.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto volumen puede atender?</summary>
+        <p class="fa">Atiende conversaciones en paralelo, de modo que la cola deja de depender de cuántas personas estén conectadas. Los límites reales los imponen las políticas del canal y la capacidad de los sistemas integrados; ambos se dimensionan en la evaluación ejecutiva, antes de comprometer nada.</p>
+      </details>
+      <details>
+        <summary>¿Funciona con el número de WhatsApp que la empresa ya utiliza?</summary>
+        <p class="fa">Depende de cómo opera hoy el canal: aplicación estándar, WhatsApp Business o API. En la evaluación ejecutiva se revisa el caso y se indica qué opción aplica, qué implica la migración y si conviene conservar el número actual o habilitar uno de atención.</p>
+      </details>
+      <details>
+        <summary>¿Solo funciona en WhatsApp?</summary>
+        <p class="fa">No. WhatsApp suele concentrar el volumen en la región, pero el mismo agente puede atender el chat del sitio, el correo corporativo o un portal interno. El canal es una decisión de diseño; el agente, las reglas y la integración con los sistemas son los mismos.</p>
+      </details>
+      <details>
+        <summary>¿Se puede ver un agente funcionando antes de contratar?</summary>
+        <p class="fa">Sí. El asistente de este sitio es un agente en operación y puede probarlo en esta misma página con sus propias preguntas.</p>
+      </details>
+    </div>
+  </div></section>
+
+  <section class="cta-band"><div class="wrap">
     <h2>¿Cuánto volumen quedó sin atender esta semana?</h2>
-    <p>Diagnóstico ejecutivo sin costo, de 45 minutos: revisamos el volumen real del canal, los picos y los sistemas involucrados, y le decimos qué puede resolver un agente de IA en su WhatsApp y qué no.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola.%20Necesitamos%20absorber%20el%20volumen%20de%20conversaciones%20de%20WhatsApp%20e%20integrarlo%20con%20nuestro%20CRM.%20%C2%BFPodemos%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%3F" target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
-  </div>
+    <p class="sec-sub" style="margin:0 auto 6px">La evaluación ejecutiva revisa el volumen real del canal, los picos y los sistemas involucrados, y delimita qué resuelve un agente gobernado y qué no.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+    </div>
+  </div></section>
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
-  <a href="../">Inicio</a><a href="../metodologia/">Metodología</a><a href="../casos/">Demostraciones</a><a href="/agentes-ia/">Agentes de IA</a><a href="../cobranza-automatizada/">Cobranza automatizada</a><a href="/seguridad-gobierno/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿El agente sustituye a su equipo de ventas o atención?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. El agente absorbe el trabajo repetitivo y de volumen — responder al instante, cotizar, registrar pedidos, agendar — y su equipo conserva las decisiones, las relaciones y los casos que exigen criterio. En la práctica, sus ejecutivos dejan de transcribir chats y dedican la jornada a vender y a atender excepciones."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa cuando el agente no sabe responder?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Escala al ejecutivo asignado con el historial completo de la conversación. Las reglas se definen con su equipo: qué responde solo, qué requiere aprobación y qué pasa directo a una persona (reclamos, negociación de condiciones, casos delicados). El agente no improvisa respuestas fuera de sus reglas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto volumen puede atender?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El agente responde conversaciones en paralelo, así que la cola no depende de cuántas personas estén conectadas. Los límites reales los imponen las políticas de la API de WhatsApp Business y la capacidad de los sistemas con los que se integra; ambos se revisan y se dimensionan en el diagnóstico, antes de comprometer nada."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Funciona con el número de WhatsApp que ya usa la empresa?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende de cómo opera hoy el canal (aplicación estándar, WhatsApp Business o API). En el diagnóstico ejecutivo revisamos su caso y le decimos con claridad qué opción aplica, qué implica en migración y si conviene conservar el número actual o habilitar uno de atención."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es el alcance típico y cuánto tarda?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un agente conectado a su catálogo o a su agenda es una unidad simple, con alcance típico de 1 a 2 semanas. Si además debe escribir en su CRM o ERP, se trabaja como célula multi-agente, con alcance típico de 2 a 4 semanas; las integraciones de mayor complejidad se estiman entre 4 y 8 semanas. El pago se estructura por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Podemos ver un agente funcionando antes de contratar?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, hoy mismo: el chat de optimatiza.com (Nova) es un agente en producción y puede probarlo con sus propias preguntas. Las piezas de la sección de demostraciones son animaciones ilustrativas de otros casos, y así están etiquetadas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa con los datos de sus clientes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Las conversaciones y los datos de sus clientes son suyos: se procesan solo para operar el agente, con accesos limitados y acordados por escrito. Publicamos cómo manejamos los datos en optimatiza.com/seguridad-gobierno."
-      }
-    }
-  ]
-}
-</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

@@ -3,174 +3,402 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Redes de clínicas: agenda multi-especialista y confirmación a escala | Optimatiza</title>
+  <meta name="description" content="Automatización para redes de clínicas y centros médicos con varias sedes: agenda multi-especialista, confirmación a escala, seguimiento de controles y expediente conectado.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/clinicas/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Automatización de agenda para clínicas y hospitales | Optimatiza</title>
-  <meta name="description" content="Agentes de IA que confirman citas, gestionan controles y atienden WhatsApp 24/7 en redes de clínicas y hospitales de El Salvador. Diagnóstico ejecutivo.">
-  <link rel="canonical" href="https://optimatiza.com/clinicas/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Automatización de agenda para clínicas y hospitales | Optimatiza">
-  <meta property="og:description" content="Agentes de IA para redes de clínicas, hospitales y centros médicos: confirmación de citas, controles y atención 24/7 sobre la agenda y los sistemas que ya operan.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Redes de clínicas: agenda multi-especialista y confirmación a escala">
+  <meta property="og:description" content="Cuando el volumen se reparte entre varias sedes y decenas de especialistas, la confirmación manual deja de escalar. Automatizamos agenda, confirmación y seguimiento sobre los sistemas que su institución ya opera.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/clinicas/">
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Automatización de agenda para clínicas y hospitales | Optimatiza">
-  <meta name="twitter:description" content="Agentes de IA para redes de clínicas, hospitales y centros médicos: confirmación de citas, controles y atención 24/7 sobre la agenda y los sistemas que ya operan.">
+  <meta name="twitter:title" content="Redes de clínicas: agenda multi-especialista y confirmación a escala">
+  <meta name="twitter:description" content="Cuando el volumen se reparte entre varias sedes y decenas de especialistas, la confirmación manual deja de escalar. Automatizamos agenda, confirmación y seguimiento sobre los sistemas que su institución ya opera.">
   <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    .hero{padding:60px 0 36px;max-width:800px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.1;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17.5px;max-width:60ch}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
-    section{padding:34px 0}
-    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .dol-i{font-size:26px}
-    .dol h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
-    .dol p{font-size:13.5px}
-    .vids{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    @media(max-width:760px){.vids{grid-template-columns:1fr}}
-    .vid{background:#FFFDF8;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
-    .vid video{width:100%;aspect-ratio:16/9;display:block;background:#000}
-    .vid .vb{padding:14px 18px}
-    .vid b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
-    .vid p{font-size:13.5px;margin-top:4px}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    .ags{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .ag{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .ag-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-    .ag-h b{font-family:var(--ffd);color:var(--ink);font-size:16px}
-    .ag-p{color:var(--teal);font-size:13px;font-weight:700;white-space:nowrap}
-    .ag p{font-size:13.5px;margin-top:8px}
-    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
-    .paso-i{font-size:19px}
-    .arrow{color:var(--teal)}
-    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px}
-    .guar b{color:var(--ink)}
-    .guar a{color:var(--teal);font-weight:600}
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Industrias", "item": "https://optimatiza.com/industrias/"},
+      {"@type": "ListItem", "position": 3, "name": "Redes de clínicas y centros médicos", "item": "https://optimatiza.com/clinicas/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Sustituye nuestro sistema de citas o el expediente?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. La agenda y el expediente siguen siendo la fuente de verdad de la institución. El circuito automatizado lee y escribe sobre ellos por la vía que cada sistema exponga, y no crea un maestro de pacientes paralelo."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Podemos empezar en una sola sede?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Es lo que recomendamos. Un piloto en una sede y una especialidad valida el circuito con datos reales y criterios de éxito por escrito, antes de extenderlo al resto de la red."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre con la información del paciente?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Se define por escrito antes de construir: qué campo mínimo necesita cada mensaje, qué queda registrado, quién accede según sede y rol, cuánto tiempo se conserva y qué se elimina. El alcance del tratamiento de datos se acuerda con la dirección de la institución."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../casos/">Demos en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Buen%20d%C3%ADa.%20Dirijo%20la%20operaci%C3%B3n%20de%20una%20red%20de%20cl%C3%ADnicas%20y%20quiero%20revisar%20la%20automatizaci%C3%B3n%20de%20agenda%20y%20atenci%C3%B3n." target="_blank" rel="noopener">WhatsApp</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <span class="k">Para redes de clínicas, hospitales y centros médicos</span>
-    <h1>Cada espacio perdido en la agenda es capacidad instalada que no se recupera</h1>
-    <p class="sub">Cuando la operación mueve miles de citas al mes en varias sedes, la confirmación manual deja de escalar. Un agente de IA confirma cada cita por WhatsApp, gestiona los controles que hoy dependen de que alguien se acuerde y responde a sus pacientes al instante, también fuera del horario de recepción. Su equipo dedica el tiempo a lo que exige criterio clínico; el agente sostiene el volumen.</p>
-    <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Buen%20d%C3%ADa.%20Quiero%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%20sobre%20la%20agenda%20y%20la%20atenci%C3%B3n%20de%20nuestras%20sedes." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
-      <a class="ghost" href="../contacto/">Solicitar evaluación ejecutiva</a>
+<main id="contenido">
+
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  <a href="/industrias/">Industrias</a><span aria-hidden="true">/</span>
+  Redes de clínicas y centros médicos
+</nav></div>
+
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> Salud · Redes con varias sedes</p>
+  <h1>En una red con varias sedes, la agenda deja de sostenerse a mano</h1>
+  <p class="lead"><b>Cada espacio no confirmado es capacidad instalada que ya se pagó y que no se recupera.</b> La sala, el equipo y el personal del bloque corren igual, y la lista de espera se entera cuando el paciente ya no llegó.</p>
+  <p class="lead">Cuando el volumen se reparte entre varias sedes y decenas de especialistas, confirmar por teléfono deja de escalar y el seguimiento de controles depende de que alguien lo recuerde. Automatizamos ese circuito sobre la agenda y el expediente que su institución ya opera, sin sustituirlos.</p>
+</div></div>
+
+<section><div class="wrap">
+  <p class="sec-k">El problema real</p>
+  <h2>Lo que se rompe cuando el volumen se reparte entre sedes</h2>
+  <p class="sec-sub">No es un problema de recepción, es un problema de escala: lo que funciona en una sede con un especialista deja de funcionar cuando se multiplica.</p>
+  <div class="cards">
+    <article class="card reveal">
+      <h3>La inasistencia se paga completa</h3>
+      <p>El bloque consume sala, equipo y personal aunque el paciente no llegue. A escala de red deja de ser una molestia de agenda y se vuelve capacidad instalada que nunca se factura.</p>
+    </article>
+    <article class="card reveal reveal-2">
+      <h3>Agenda multi-especialista con reglas propias</h3>
+      <p>Duración de bloque, preparación previa, sobrecupo y bloqueos por sala o quirófano cambian con cada especialidad. Mantener esas reglas a mano, en varias sedes, produce huecos y choques que se descubren el mismo día.</p>
+    </article>
+    <article class="card reveal reveal-3">
+      <h3>Confirmación que no escala</h3>
+      <p>Llamar una por una funciona hasta cierto volumen. Pasado ese punto se confirma lo que alcanzó el turno, no lo que estaba en riesgo.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Controles y recitas sin seguimiento</h3>
+      <p>El control a los seis meses, la recita anual, el seguimiento posoperatorio. Con miles de pacientes activos nadie alcanza a perseguirlos uno por uno y la recurrencia se pierde sin aparecer en ningún reporte.</p>
+    </article>
+    <article class="card reveal reveal-2">
+      <h3>Agenda, expediente y facturación desconectados</h3>
+      <p>Alguien concilia a mano lo que debería viajar solo entre sistemas, y la ocupación por sede llega a la dirección cuando ya no admite corrección.</p>
+    </article>
+    <article class="card reveal reveal-3">
+      <h3>La misma consulta, repetida todo el día</h3>
+      <p>Horarios por sede, convenios vigentes, preparación de estudios, ubicación. El personal responde lo mismo en lugar de atender al paciente que ya está enfrente.</p>
+    </article>
+  </div>
+</div></section>
+
+<section class="forest"><div class="wrap">
+  <p class="sec-k">Cómo se sostiene</p>
+  <h2>El circuito completo: reglas, confirmación y escritura de vuelta</h2>
+  <div class="split">
+    <div>
+      <h3>Un circuito con estados, no un mensaje suelto</h3>
+      <p>Un recordatorio que solo avisa no recupera nada. Lo que recupera capacidad es el circuito que sigue el estado de cada cita, decide cuándo liberar el bloque y ofrece el espacio a quien corresponde antes de que se pierda.</p>
+      <p>Esa lógica se construye sobre las reglas clínicas y administrativas que su institución ya tiene escritas, no sobre supuestos nuestros.</p>
     </div>
+    <div class="reveal"><figure class="plate">
+      <img src="/img/crew-pipeline.svg" alt="Una cinta transporta piezas de un extremo al otro mientras un robot las revisa.">
+      <figcaption>De la reserva a la confirmación, la liberación del bloque y el registro de vuelta en el sistema.</figcaption>
+    </figure></div>
   </div>
 
-  <section>
-    <h2>Lo que se rompe cuando la agenda crece</h2>
-    <div class="dols">
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3.5v4M16 3.5v4"/></svg></span><h3>Inasistencias que nadie confirmó</h3><p>El paciente reservó hace dos semanas, la confirmación quedó pendiente y el espacio se perdió. El costo fijo de la sede corre igual, y a escala de miles de citas al mes ese porcentaje deja de ser marginal.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span><h3>Volumen que supera a recepción</h3><p>Mientras el personal atiende ventanilla y teléfono, la fila de WhatsApp sigue creciendo. Lo que no se responde a tiempo se agenda en otra institución.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 0 1-13.7 5.6L4 15.4"/><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.6"/><path d="M4 20v-4.6h4.6M20 4v4.6h-4.6"/></svg></span><h3>Controles sin seguimiento sistemático</h3><p>El control a los seis meses, la recita anual, el seguimiento posoperatorio. Con una base de miles de pacientes, ningún equipo alcanza a perseguirlos uno por uno, y la recurrencia se pierde en silencio.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4.5 4.5 0 0 0 6.5.4l2.5-2.5a4.5 4.5 0 0 0-6.4-6.4L11.4 6"/><path d="M14 11a4.5 4.5 0 0 0-6.5-.4L5 13.1a4.5 4.5 0 0 0 6.4 6.4L12.6 18"/></svg></span><h3>Sistemas que se sincronizan a mano</h3><p>Agenda, expediente, facturación y CRM viven en plataformas distintas. Alguien de su equipo pasa horas conciliando lo que debería moverse solo entre sistemas.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span><h3>La misma consulta, repetida sin fin</h3><p>Horarios por sede, cobertura de seguros, requisitos de preparación, ubicación. El personal de todas sus sedes responde lo mismo todo el día en lugar de atender al paciente que ya está enfrente.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Véalo explicado en video</h2>
-    <div class="vids">
-      <div class="vid">
-        <video controls preload="none" playsinline poster="../casos/videos/recordatorio-anti-inasistencia.jpg">
-          <source src="../casos/videos/recordatorio-anti-inasistencia.mp4" type="video/mp4">
-        </video>
-        <div class="vb"><b>Recordatorio Anti-Inasistencia</b><p>Confirma la cita, recuerda el día antes y ofrece reagendar antes de que el espacio se pierda.</p></div>
-      </div>
-      <div class="vid">
-        <video controls preload="none" playsinline poster="../casos/videos/agente-soporte-faq.jpg">
-          <source src="../casos/videos/agente-soporte-faq.mp4" type="video/mp4">
-        </video>
-        <div class="vb"><b>Agente de Preguntas Frecuentes</b><p>Resuelve horarios por sede, cobertura y preparación de exámenes al instante, y agenda en el mismo hilo.</p></div>
-      </div>
-    </div>
-    <p class="note">Demostraciones ilustrativas animadas: representan el comportamiento del agente, no una grabación de una implementación de un cliente. Cada agente se construye a la medida sobre la agenda y los sistemas de su institución — <a class="ghost" href="../casos/">ver todas las demostraciones →</a></p>
-  </section>
-
-  <section>
-    <h2>Los agentes para su red, por alcance</h2>
-    <div class="ags">
-      <div class="ag"><div class="ag-h"><b>Agenda Inteligente</b><span class="ag-p">1–2 semanas</span></div><p>Unidad simple. Reserva, confirma, recuerda y recupera espacios con lista de espera, conectada al calendario o al sistema de citas que ya usa la institución.</p></div>
-      <div class="ag"><div class="ag-h"><b>Atención 24/7</b><span class="ag-p">1–2 semanas</span></div><p>Unidad simple. Atiende WhatsApp e Instagram al instante: horarios por sede, cobertura, preparación de exámenes. Escala al personal solo lo que exige criterio.</p></div>
-      <div class="ag"><div class="ag-h"><b>Seguimiento y Controles</b><span class="ag-p">2–4 semanas</span></div><p>Identifica a quién le corresponde control o recita, lo comunica con el tono de la institución y reactiva pacientes inactivos, sin que nadie tenga que perseguirlos.</p></div>
-      <div class="ag"><div class="ag-h"><b>Célula clínica multi-agente</b><span class="ag-p">4–8 semanas</span></div><p>Agenda, atención, seguimiento y reportes operando como un solo sistema de punta a punta, con visibilidad consolidada entre sedes.</p></div>
-    </div>
-    <p class="note">Plazos de referencia. La inversión depende del alcance, del número de sedes y de las integraciones requeridas; se estructura por hitos — <a class="ghost" href="../metodologia/">Ver modelos de contratación</a>. Todo alcance incluye construcción, pruebas, entrega documentada y 30 días de soporte.</p>
-  </section>
-
-  <section>
-    <h2>Cómo funciona</h2>
-    <div class="pasos">
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>Diagnóstico ejecutivo (20 min)</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 5.2 5.2L21 12l-9 9-3-3 9-9Z"/><path d="m8.5 8.5-3.6 3.6a2.5 2.5 0 0 0 0 3.5"/></svg></span>Construcción sobre su agenda y sus sistemas</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg></span>Piloto controlado en una sede</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg></span>Opera 24/7; su equipo decide lo crítico</div>
-    </div>
-  </section>
-
-  <section>
-    <div class="guar"><b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a href="../contacto/">Solicitar evaluación ejecutiva →</a></div>
-  </section>
-
-  <div class="final">
-    <h2>¿Cuánta capacidad de agenda perdió su red este mes?</h2>
-    <p>Diagnóstico ejecutivo de 20 minutos: revisamos el flujo real de citas entre sus sedes y le decimos con precisión qué puede automatizarse, con qué alcance, y qué conviene dejar en manos de su equipo.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Buen%20d%C3%ADa.%20Quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo%20de%2020%20minutos%20para%20nuestra%20red%20de%20cl%C3%ADnicas." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
+  <div class="explore">
+    <details open>
+      <summary><i>01</i><b>Las reglas de la agenda viven en un solo lugar</b></summary>
+      <div class="ex-body"><p>Duración por procedimiento, ventana de preparación, sobrecupo permitido, bloqueo por recurso compartido y disponibilidad real de cada especialista por sede. Escritas una vez, aplicadas igual en toda la red, en lugar de vivir en la memoria de cada recepción.</p></div>
+    </details>
+    <details>
+      <summary><i>02</i><b>La confirmación tiene estados y ventanas, no un solo envío</b></summary>
+      <div class="ex-body"><p>Cada cita atraviesa estados explícitos: pendiente, confirmada, reagendada, sin respuesta. Las ventanas de contacto se escalonan según la antelación de la reserva y el tipo de procedimiento, y la regla de liberación del bloque se acuerda con la dirección médica, no se improvisa.</p></div>
+    </details>
+    <details>
+      <summary><i>03</i><b>La lista de espera se ofrece por criterio, no por orden de llegada</b></summary>
+      <div class="ex-body"><p>Cuando un bloque queda libre, el espacio se ofrece según la prioridad clínica definida por la institución, la especialidad que corresponde y la sede alcanzable en ese horario. El criterio lo fija la institución; el circuito lo ejecuta sin excepciones.</p></div>
+    </details>
+    <details>
+      <summary><i>04</i><b>La integración se hace con lo que cada sistema exponga</b></summary>
+      <div class="ex-body"><p>API del sistema de citas o del expediente cuando existe; consulta a base de datos o archivo intermedio cuando no la hay. No se sustituye el expediente ni se crea un maestro de pacientes paralelo: la agenda institucional sigue siendo la fuente de verdad y todo cambio se escribe de vuelta en ella. El enfoque está en <a href="/integracion-sistemas/">integración de sistemas</a>.</p></div>
+    </details>
+    <details>
+      <summary><i>05</i><b>Todo movimiento queda trazado</b></summary>
+      <div class="ex-body"><p>Quién o qué movió cada cita, a qué hora y con qué resultado. Esa bitácora permite conciliar contra facturación, auditar un reclamo y medir la ocupación real por sede sin consolidar archivos a mano.</p></div>
+    </details>
+    <details>
+      <summary><i>06</i><b>Lo clínico siempre escala a una persona</b></summary>
+      <div class="ex-body"><p>El agente responde únicamente sobre el guion aprobado por la institución: horarios, cobertura, preparación, ubicación y gestión de la cita. Cualquier consulta sobre síntomas, medicación o interpretación de resultados se deriva a una persona identificada. No interpreta cuadros clínicos ni emite indicaciones médicas.</p></div>
+    </details>
   </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Frentes de trabajo</p>
+  <h2>Por dónde se entra, según lo que más duela</h2>
+  <p class="sec-sub">Cada frente es un alcance delimitado que se contrata solo o se encadena con los demás. El orden lo decide su operación, no un catálogo.</p>
+  <div class="cards">
+    <article class="card reveal">
+      <h3>Agenda multi-especialista</h3>
+      <p>Reserva y reprogramación con las reglas de cada especialidad, control de recursos compartidos entre sedes y gestión de lista de espera sobre el sistema de citas vigente.</p>
+      <a class="link-more" href="/automatizacion-empresarial/">Automatización de procesos &rarr;</a>
+    </article>
+    <article class="card reveal reveal-2">
+      <h3>Confirmación a escala</h3>
+      <p>Confirmación y recordatorio por los canales que la institución ya usa, con reagendamiento en el mismo hilo y escalamiento a recepción cuando el caso lo exige.</p>
+      <a class="link-more" href="/agentes-ia/">Agentes de IA gobernados &rarr;</a>
+    </article>
+    <article class="card reveal reveal-3">
+      <h3>Seguimiento de controles y recitas</h3>
+      <p>Las cohortes a las que corresponde control, recita o seguimiento posoperatorio se identifican según el criterio clínico que defina la institución y se contactan en el tono acordado.</p>
+      <a class="link-more" href="/agentes-ia/">Cómo se gobierna un agente &rarr;</a>
+    </article>
+    <article class="card reveal">
+      <h3>Expediente y sistemas conectados</h3>
+      <p>Agenda, expediente, facturación y CRM conectados para que el dato se registre una vez y viaje al resto, en lugar de digitación cruzada.</p>
+      <a class="link-more" href="/integracion-sistemas/">Integración de sistemas &rarr;</a>
+    </article>
+    <article class="card reveal reveal-2">
+      <h3>Indicadores por sede</h3>
+      <p>Ocupación, inasistencia, recuperación de bloques liberados y recurrencia, consolidados entre sedes y actualizados solos, para discutir el mes en curso y no el anterior.</p>
+      <a class="link-more" href="/data-business-intelligence/">Data &amp; Business Intelligence &rarr;</a>
+    </article>
+    <article class="card reveal reveal-3">
+      <h3>Operación continua</h3>
+      <p>Ya en marcha, el circuito se monitorea y se ajusta conforme cambian especialidades, convenios y sedes.</p>
+      <a class="link-more" href="/operacion-administrada/">Operación administrada &rarr;</a>
+    </article>
+  </div>
+  <div class="note">Todo alcance incluye construcción, pruebas con casos reales de su operación, entrega documentada y 30 días de soporte. La duración depende del número de sedes, del volumen y de las integraciones disponibles: se define tras una evaluación de alcance y se estructura por hitos verificables — <a href="/metodologia/">ver la metodología</a>.</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Datos del paciente</p>
+  <h2>Lo que se acuerda antes de escribir una sola línea</h2>
+  <div class="split">
+    <div>
+      <p>En salud el gobierno del dato no es un anexo del proyecto: es la condición para que exista. Se define por escrito, con la dirección de la institución, antes de construir.</p>
+      <ul class="checks">
+        <li><b>Campo mínimo necesario:</b> cada mensaje lleva solo lo indispensable para gestionar la cita</li>
+        <li><b>Acceso por sede y por rol:</b> quién ve qué, con revisión periódica de los permisos</li>
+        <li><b>Bitácora completa:</b> qué se envió, a quién, cuándo y con qué resultado</li>
+        <li><b>Retención definida:</b> cuánto se conserva cada registro y qué se elimina</li>
+        <li><b>Guion aprobado:</b> el agente responde dentro del alcance autorizado y deriva el resto</li>
+        <li><b>Supervisión humana:</b> el criterio clínico no se delega en ningún sistema</li>
+      </ul>
+      <p>El marco completo está en <a href="/seguridad-gobierno/">seguridad y gobierno</a> y en <a href="/responsabilidad-ia/">responsabilidad de IA</a>.</p>
+    </div>
+    <div class="reveal"><figure class="plate">
+      <img src="/img/vig-applied-ai.svg" alt="Engranajes en movimiento con una marca de verificación al centro.">
+      <figcaption>La IA acelera el circuito; la decisión clínica y la aprobación siguen siendo humanas.</figcaption>
+    </figure></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Implantación</p>
+  <h2>De una sede al resto de la red</h2>
+  <p class="sec-sub">La red no se interviene completa el primer día. Se prueba donde el riesgo es controlable y se extiende con evidencia.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <h3>Evaluación ejecutiva</h3>
+      <p>Revisamos el flujo real de citas entre sedes, los sistemas que intervienen y las reglas por especialidad. Salida: qué conviene automatizar, con qué alcance y qué debe quedarse en manos de su equipo.</p>
+    </div>
+    <div class="step reveal reveal-2">
+      <h3>Construcción sobre sus sistemas</h3>
+      <p>El circuito se arma contra la agenda y el expediente vigentes, con las reglas y el tono de la institución, y se prueba con casos reales antes de tocar a un solo paciente.</p>
+    </div>
+    <div class="step reveal reveal-3">
+      <h3>Piloto en una sede</h3>
+      <p>Una sede y una especialidad, con criterios de éxito escritos de antemano. Si no se cumplen, se documenta qué falló y por qué; la dirección decide con esa evidencia si ajustar, corregir o detener.</p>
+    </div>
+    <div class="step reveal reveal-4">
+      <h3>Extensión y operación</h3>
+      <p>Se replica al resto de sedes y especialidades con lo aprendido, con entrega documentada, capacitación del personal y seguimiento de los indicadores acordados.</p>
+    </div>
+  </div>
+  <div class="note demo"><b>Demostraciones ilustrativas.</b> En <a href="/casos/">Casos</a> puede ver animado el <a href="/casos/#recordatorio-anti-inasistencia">recordatorio anti-inasistencia</a> y el <a href="/casos/#agente-soporte-faq">agente de preguntas frecuentes</a>. Representan el comportamiento del circuito, no la grabación de una implementación de un cliente: cada institución se construye sobre su propia agenda y sus propios sistemas.</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Inteligencia competitiva</p>
+  <h2>La agenda explica su ocupación; no explica por qué el paciente eligió otra institución</h2>
+  <p class="sec-sub">Recuperar bloques perdidos protege la capacidad que ya tiene. Decidir dónde abrir, qué especialidad reforzar y qué convenio defender exige mirar hacia afuera, con la misma disciplina.</p>
+  <div class="cols2">
+    <div>
+      <p>Es la pregunta que decide el año en una red de salud: qué servicios, convenios y horarios está agregando la competencia en la misma zona de captación de sus sedes, y con cuánta anticipación se entera usted.</p>
+      <p>Para eso montamos departamentos de <a href="/inteligencia-competitiva/">inteligencia competitiva</a>: temas de vigilancia definidos con la dirección, indicadores con umbral escrito y una acción decidida de antemano. La fotografía inicial del mercado es el <a href="/inteligencia-competitiva/estudio-base/">estudio base</a>; el mecanismo que avisa a tiempo son las <a href="/inteligencia-competitiva/alertas-tempranas/">alertas tempranas</a>.</p>
+    </div>
+    <div class="reveal">
+      <div class="note demo"><b>Ejemplo ilustrativo:</b> muestra la forma del instrumento, no el resultado de un cliente. Sus umbrales se fijan con su dirección.</div>
+      <div class="tripwire">
+        <div class="tw-cell"><b>Indicador</b><span>Apertura de sede o de especialidad por parte de un competidor dentro de la zona de captación de una de sus sedes</span></div>
+        <div class="tw-cell umbral"><b>Umbral</b><span>Anuncio público confirmado en dos fuentes independientes</span></div>
+        <div class="tw-cell"><b>Acción pre-acordada</b><span>Revisar cobertura horaria, convenios y capacidad instalada de la sede afectada, y llevar la decisión al comité de operaciones</span></div>
+        <div class="tw-cell"><b>Responsable</b><span>Dirección médica y dirección comercial</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Preguntas frecuentes</p>
+  <h2>Lo que pregunta un comité antes de aprobar</h2>
+  <div class="faq">
+    <details class="faq">
+      <summary>¿Sustituye nuestro sistema de citas o el expediente?</summary>
+      <p class="fa">No. La agenda y el expediente siguen siendo la fuente de verdad de la institución. El circuito automatizado lee y escribe sobre ellos por la vía que cada sistema exponga, y no crea un maestro de pacientes paralelo.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Podemos empezar en una sola sede?</summary>
+      <p class="fa">Es lo que recomendamos. Un piloto en una sede y una especialidad valida el circuito con datos reales y criterios de éxito por escrito, antes de extenderlo al resto de la red.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué ocurre con la información del paciente?</summary>
+      <p class="fa">Se define por escrito antes de construir: qué campo mínimo necesita cada mensaje, qué queda registrado, quién accede según sede y rol, cuánto tiempo se conserva y qué se elimina. El alcance del tratamiento de datos se acuerda con la dirección de la institución.</p>
+    </details>
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>Ponga número a la capacidad que su red no factura</h2>
+  <p class="sec-sub" style="margin:0 auto 6px">La evaluación ejecutiva revisa el flujo real de citas entre sus sedes y delimita qué se automatiza primero.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización de procesos para empresas.</span>
-  <a href="../">Inicio</a><a href="../metodologia/">Metodología</a><a href="../casos/">Demos</a><a href="../distribuidoras/">Distribuidoras</a><a href="/seguridad-gobierno/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

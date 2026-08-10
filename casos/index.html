@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F6F1E8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Casos y demostraciones de automatización | Optimatiza</title>
   <meta name="description" content="Casos y demostraciones de automatización con IA: un caso real medido en video y cápsulas ilustrativas de procesos empresariales en El Salvador y Latinoamérica.">
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=b68c6a9a">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Casos y demostraciones | Optimatiza">
   <meta property="og:description" content="Un caso real medido en video —captura de facturas en unos 4 segundos— y cápsulas ilustrativas de automatización empresarial con IA.">
@@ -287,7 +287,63 @@
 
   <!-- CTA FINAL -->
   <section class="band"><div class="wrap">
-    <p class="note">Las demostraciones de esta página muestran automatización. El equivalente en vigilancia del entorno es el <a href="/recursos/informe-muestra/">informe de muestra</a> de nuestra <a href="/inteligencia-competitiva/">práctica de inteligencia competitiva</a>.</p>
+    <p class="note">Las demostraciones de esta página muestran automatización. El equivalente en vigilancia del entorno es el <a href="/inteligencia-competitiva/informe-muestra/">informe de muestra</a> de nuestra <a href="/inteligencia-competitiva/">práctica de inteligencia competitiva</a>.</p>
+  </div></section>
+
+  
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Trabajo entregado</p>
+    <h2>Cinco implementaciones documentadas</h2>
+    <p class="sec-sub">Proyectos de integración, reportería y automatización sobre sistemas corporativos. Se describe el problema, lo que se construyó y qué cambió en la operación.</p>
+    <div class="explore reveal">
+    <details open>
+      <summary><i>01</i><b>Dashboard Ejecutivo Multi-Fuente — Service Desk Regional</b></summary>
+      <div class="ex-body">
+      <p class="sec-k" style="margin-bottom:8px">Unificando datos de 3 service desks en un solo dashboard</p>
+      <p><b>El problema.</b> Tres fuentes de datos distintas (una herramienta de monitoreo, un sistema de tickets y una base de datos SQL Server) sin vista unificada. Para ver el panorama completo, había que entrar a tres portales diferentes. La gerencia tomaba decisiones con información parcial.</p>
+      <p><b>Lo que construimos.</b> Dashboard ejecutivo en Power BI conectando las tres fuentes. Queries M con paginación dinámica (List.Generate) para APIs, gateway on-premises para SQL Server, modelo dimensional unificado y refresh automático.</p>
+      <p><b>Lo que cambió.</b> Vista consolidada de toda la operación de soporte Eliminó preparación manual de reportes ejecutivos Identificó patrones de carga por país y técnico Visibilidad en tiempo real para toma de decisiones</p>
+      <p class="pills plain"><span>Power BI · Power Query (M) · DAX · REST APIs · SQL Server</span></p>
+      </div>
+    </details>
+    <details>
+      <summary><i>02</i><b>Automatización RPA para Sistemas Legacy — Operaciones Internas — LATAM</b></summary>
+      <div class="ex-body">
+      <p class="sec-k" style="margin-bottom:8px">Bots que procesan lo que nadie quiere procesar</p>
+      <p><b>El problema.</b> Procesos manuales repetitivos con archivos Excel: importaciones masivas de casos para múltiples países LATAM, formatos de fecha inconsistentes, archivos bloqueados por OneDrive sync.</p>
+      <p><b>Lo que construimos.</b> Suite de bots en Power Automate Desktop con manejo de OneDrive sync, validación automática de formatos por país, procesamiento batch de 500 registros, orquestación desde cloud flows.</p>
+      <p><b>Lo que cambió.</b> Horas semanales de trabajo manual eliminadas Errores de formato y datos eliminados por completo Procesos independientes de personas específicas Personal redirigido a actividades de mayor valor</p>
+      <p class="pills plain"><span>Power Automate Desktop · Power Automate Cloud · PowerShell · ExcelScript</span></p>
+      </div>
+    </details>
+    <details>
+      <summary><i>03</i><b>Control Documental Automatizado — Servicios IT Gestionados — Regional LATAM</b></summary>
+      <div class="ex-body">
+      <p class="sec-k" style="margin-bottom:8px">Un listado maestro gobernado en lugar de una hoja mantenida a mano</p>
+      <p><b>El problema.</b> Los documentos controlados se llevaban en un listado maestro mantenido a mano. Las versiones se desfasaban, las fechas de revisión pasaban inadvertidas y preparar una auditoría implicaba días persiguiendo archivos y cruzando hojas de cálculo.</p>
+      <p><b>Lo que construimos.</b> Un sistema automatizado de control documental sobre SharePoint: listado maestro gobernado con control de versiones, flujos de aprobación para documentos nuevos y actualizados, recordatorios automáticos de fechas de revisión y una vista en vivo del estado de toda la biblioteca.</p>
+      <p><b>Lo que cambió.</b> El listado maestro se mantiene solo — las auditorías se preparan desde un registro vivo y confiable, no como una misión de rescate.</p>
+      </div>
+    </details>
+    <details>
+      <summary><i>04</i><b>Portal de Solicitudes y Aprobaciones — Operaciones Corporativas — Multipaís</b></summary>
+      <div class="ex-body">
+      <p class="sec-k" style="margin-bottom:8px">Solicitudes de viaje con aprobación digital multinivel</p>
+      <p><b>El problema.</b> Las solicitudes y aprobaciones de viaje corrían por correo. Sin formulario estándar, sin visibilidad de dónde estaba detenida una solicitud, y cada país manejaba el proceso de forma ligeramente distinta.</p>
+      <p><b>Lo que construimos.</b> Un portal digital que reemplazó las aprobaciones por correo con un formulario estandarizado, flujo de aprobación multinivel automático, notificaciones en tiempo real y seguimiento de estado — estandarizado para todos los países de operación.</p>
+      <p><b>Lo que cambió.</b> Cada solicitud es trazable desde el envío hasta la aprobación, y ya nadie persigue firmas por correo.</p>
+      </div>
+    </details>
+    <details>
+      <summary><i>05</i><b>Ciclo de Compras Automatizado — Compras — LATAM</b></summary>
+      <div class="ex-body">
+      <p class="sec-k" style="margin-bottom:8px">De la solicitud a la orden de compra aprobada sin redigitar</p>
+      <p><b>El problema.</b> Las órdenes de compra se armaban a mano desde correos y hojas de cálculo: datos redigitados, aprobaciones faltantes y ningún registro claro de quién autorizó qué ni cuándo.</p>
+      <p><b>Lo que construimos.</b> Un flujo automatizado de órdenes de compra: captura estandarizada de solicitudes, ruteo de aprobaciones por monto y categoría, generación automática de documentos y una traza de auditoría completa en cada orden.</p>
+      <p><b>Lo que cambió.</b> Las órdenes avanzan solas de la solicitud a la aprobación, con un registro completo que resiste cualquier auditoría.</p>
+      </div>
+    </details>
+    </div>
   </div></section>
 
   <section><div class="wrap">
@@ -330,13 +386,11 @@
       <a href="/insights/">Insights</a>
     </div>
     <div><b>Recursos y legal</b>
-      <a href="/recursos/">Centro de recursos</a>
-      <a href="/agentes/">Demos interactivos</a>
+      <a href="/recursos/">Publicaciones</a>
       <a href="/contacto/">Contacto</a>
       <a href="/privacidad/">Privacidad</a>
       <a href="/terminos/">Términos</a>
       <a href="/cookies/">Cookies</a>
-      <a href="/bitcoin/">Bitcoin — línea personal</a>
     </div>
   </div>
   <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
@@ -345,5 +399,6 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
 <script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>
