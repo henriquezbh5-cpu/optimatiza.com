@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/inicio.css?v=a11ecef3">
+  <link rel="stylesheet" href="/inicio.css?v=1b981daa">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Optimatiza | Inteligencia Competitiva e IA">
   <meta property="og:description" content="Inteligencia competitiva, consultoría en IA aplicada y formación para equipos. Este es el momento de crear tu propio departamento de inteligencia competitiva.">
@@ -247,51 +247,66 @@
 
           <circle cx="260" cy="235" r="104" fill="url(#tv-glow)"/>
 
-          <!-- NÚCLEO: el robot ensambla un conector -->
-          <g class="tv-bot">
-            <line class="tv-ink" x1="196" y1="300" x2="324" y2="300"/>
-            <line class="tv-ink tv-thin" x1="214" y1="300" x2="214" y2="318"/>
-            <line class="tv-ink tv-thin" x1="306" y1="300" x2="306" y2="318"/>
-
-            <!-- el conector que se arma pieza a pieza -->
-            <g class="tv-piece">
-              <rect class="tv-plug tv-p1" x="286" y="286" width="34" height="13" rx="3"/>
-              <rect class="tv-plug tv-p2" x="286" y="271" width="34" height="13" rx="3"/>
-              <path class="tv-pin tv-p3" d="M296 271 v-12 M310 271 v-12"/>
-            </g>
-
-            <rect class="tv-body" x="226" y="222" width="68" height="72" rx="11"/>
-            <rect class="tv-screen" x="238" y="236" width="44" height="24" rx="3"/>
-            <path class="tv-scan" d="M244 244 h32 M244 252 h22"/>
-            <text class="tv-code" x="260" y="284" text-anchor="middle">OPZ·01</text>
-
-            <rect class="tv-body" x="235" y="182" width="50" height="36" rx="9"/>
-            <circle class="tv-eye" cx="249" cy="200" r="5"/>
-            <circle class="tv-eye tv-eye2" cx="271" cy="200" r="5"/>
-            <line class="tv-ink tv-thin" x1="260" y1="182" x2="260" y2="169"/>
-            <circle class="tv-ant" cx="260" cy="165" r="4.5"/>
-            <circle class="tv-spark" cx="260" cy="165" r="9"/>
-
-            <g class="tv-armR">
-              <line class="tv-ink" x1="294" y1="244" x2="322" y2="256"/>
-              <rect class="tv-tool" x="318" y="250" width="15" height="13" rx="3"/>
-            </g>
-            <g class="tv-armL">
-              <line class="tv-ink" x1="226" y1="244" x2="200" y2="262"/>
-              <rect class="tv-tool tv-tool2" x="192" y="256" width="13" height="13" rx="3"/>
-            </g>
-
-            <circle class="tv-wheel" cx="240" cy="298" r="7"/>
-            <circle class="tv-wheel" cx="260" cy="298" r="7"/>
-            <circle class="tv-wheel" cx="280" cy="298" r="7"/>
-
-            <g class="tv-gear">
-              <circle class="tv-ink" cx="186" cy="196" r="13" fill="none"/>
-              <circle class="tv-ink" cx="186" cy="196" r="4.5" fill="none"/>
-              <line class="tv-ink tv-thin" x1="186" y1="179" x2="186" y2="213"/>
-              <line class="tv-ink tv-thin" x1="169" y1="196" x2="203" y2="196"/>
-              <line class="tv-ink tv-thin" x1="174" y1="184" x2="198" y2="208"/>
-              <line class="tv-ink tv-thin" x1="198" y1="184" x2="174" y2="208"/>
+          <!-- NÚCLEO: el agente -->
+          <g class="rb" transform="translate(140 118) scale(1.2)">
+            <!-- ROBOT — personaje. Se inserta dentro de un <svg> mayor con
+                 <g class="rb" transform="translate(x,y) scale(s)">. Ocupa 200 x 216. -->
+            <g class="rb-float">
+              <circle class="rb-aura" cx="100" cy="119" r="94"/>
+            
+              <!-- audifonos laterales, por detras del casco -->
+              <rect class="rb-ear" x="2"   y="94" width="38" height="54" rx="18"/>
+              <rect class="rb-ear" x="160" y="94" width="38" height="54" rx="18"/>
+              <circle class="rb-earring" cx="17"  cy="121" r="11"/>
+              <circle class="rb-earring" cx="183" cy="121" r="11"/>
+              <circle class="rb-glowlight" cx="17"  cy="121" r="6.5"/>
+              <circle class="rb-glowlight rb-glowlight-2" cx="183" cy="121" r="6.5"/>
+            
+              <!-- casco -->
+              <rect class="rb-shell" x="24" y="44" width="152" height="150" rx="70"/>
+              <path class="rb-hi" d="M50 86q15-29 51-32 -32 12-43 39z"/>
+            
+              <!-- placa superior y antena montada sobre ella -->
+              <rect class="rb-brow" x="72" y="44" width="56" height="24" rx="10"/>
+              <path class="rb-cone" d="M90 46 q10-13 20 0 z"/>
+              <line class="rb-stalk" x1="100" y1="42" x2="100" y2="27"/>
+              <circle class="rb-ballglow" cx="100" cy="16" r="11"/>
+              <circle class="rb-ball" cx="100" cy="16" r="11"/>
+              <circle class="rb-ballhi" cx="96.5" cy="12.5" r="3.4"/>
+            
+              <!-- pantalla de la cara -->
+              <rect class="rb-screen" x="40" y="70" width="120" height="98" rx="35"/>
+            
+              <!-- circuitos que recorren la cara -->
+              <path class="rb-trace"            d="M56 92 h14 l7-7 h13"/>
+              <path class="rb-trace rb-trace-2" d="M144 92 h-14 l-7-7 h-11"/>
+              <path class="rb-trace rb-trace-3" d="M54 141 h13 l8 8 h9"/>
+              <path class="rb-trace rb-trace-4" d="M146 141 h-13 l-8 8 h-7"/>
+              <circle class="rb-dot" cx="56"  cy="92"  r="2.4"/>
+              <circle class="rb-dot" cx="144" cy="92"  r="2.4"/>
+              <circle class="rb-dot" cx="54"  cy="141" r="2.4"/>
+              <circle class="rb-dot" cx="146" cy="141" r="2.4"/>
+            
+              <!-- ojos -->
+              <circle class="rb-eyeglow" cx="74"  cy="115" r="24"/>
+              <circle class="rb-eyeglow" cx="126" cy="115" r="24"/>
+              <g class="rb-eye">
+                <circle class="rb-iris"  cx="74" cy="115" r="17"/>
+                <circle class="rb-pupil" cx="74" cy="115" r="9"/>
+                <circle class="rb-eyehi" cx="78.5" cy="110.5" r="3.6"/>
+              </g>
+              <g class="rb-eye rb-eye-2">
+                <circle class="rb-iris"  cx="126" cy="115" r="17"/>
+                <circle class="rb-pupil" cx="126" cy="115" r="9"/>
+                <circle class="rb-eyehi" cx="130.5" cy="110.5" r="3.6"/>
+              </g>
+            
+              <!-- sonrisa -->
+              <path class="rb-smile" d="M85 145 q15 13 30 0"/>
+            
+              <!-- barbilla con luz -->
+              <rect class="rb-chin" x="74" y="176" width="52" height="18" rx="7"/>
+              <rect class="rb-glowlight" x="86" y="183" width="28" height="4" rx="2"/>
             </g>
           </g>
 
@@ -407,7 +422,7 @@
             </div>
             <div class="fline"></div>
             <div class="fnode" data-run="extrayendo monto, NIT y vencimiento…" data-done="✓ $1,240.50 · NIT 0614-… · vence 15/08">
-              <span class="fic"><img src="/img/logo-badge-96.png" alt=""></span>
+              <span class="fic"><img width="96" height="96" src="/img/logo-badge-96.png" alt=""></span>
               <div><b>El agente de IA captura los datos</b><span class="fst">en espera</span></div>
             </div>
             <div class="fline"></div>

@@ -6,3 +6,14 @@
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), midi=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=()
   X-Permitted-Cross-Domain-Policies: none
+
+# Estos activos se invalidan por el hash de contenido en ?v=, no por caducidad,
+# asi que pueden cachearse indefinidamente sin riesgo de servir version vieja.
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
