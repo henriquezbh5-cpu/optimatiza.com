@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/inicio.css?v=15398a25">
+  <link rel="stylesheet" href="/inicio.css?v=a11ecef3">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Optimatiza | Inteligencia Competitiva e IA">
   <meta property="og:description" content="Inteligencia competitiva, consultoría en IA aplicada y formación para equipos. Este es el momento de crear tu propio departamento de inteligencia competitiva.">
@@ -209,19 +209,189 @@
 
   <!-- DEMOSTRACIÓN EN VIVO -->
   <section class="demo-section section-pad" id="demostracion">
+    <div class="section-shell">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Así se ve en producción</p>
+          <h2>Sus sistemas, conectados en un solo proceso.</h2>
+        </div>
+        <p>La demostración de la derecha ejecuta el ciclo real de una factura de proveedor, de principio a fin y con constancia de cada paso.</p>
+      </div>
+    </div>
     <div class="section-shell demo-grid">
-      <div class="demo-copy">
-        <p class="section-kicker">Así se ve en producción</p>
-        <h2>Un proceso completo, corriendo de punta a punta.</h2>
-        <p>La demostración ejecuta el ciclo real de una factura de proveedor: recepción, extracción de datos, validación contra la orden de compra, aprobación humana, registro y confirmación — con constancia de cada paso.</p>
-        <ul class="demo-checks">
-          <li>Procesos más consistentes, con menor intervención manual</li>
-          <li>Aprobaciones estructuradas y mayor trazabilidad</li>
-          <li>Alertas oportunas e información centralizada</li>
-          <li>Mejor visibilidad operativa y capacidad de respuesta</li>
-          <li>Detección anticipada de riesgos y oportunidades</li>
-        </ul>
-        <a class="button button-secondary" href="/casos/">Ver casos y demostraciones <span aria-hidden="true">→</span></a>
+      <div class="techviz">
+        <svg class="tv-hub" viewBox="0 0 520 470" role="img" aria-label="Un robot ensambla conectores en el centro mientras Outlook, Teams, SharePoint, Excel, Power BI, SQL Server, Google Workspace y n8n quedan enlazados en un solo proceso.">
+          <defs>
+            <radialGradient id="tv-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#c9913b" stop-opacity=".26"/>
+              <stop offset="100%" stop-color="#c9913b" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="tv-cop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2AA5F0"/><stop offset="1" stop-color="#8C5BF0"/>
+            </linearGradient>
+          </defs>
+
+          <ellipse class="tv-ring" cx="260" cy="235" rx="196" ry="176"/>
+          <ellipse class="tv-ring tv-ring-b" cx="260" cy="235" rx="150" ry="134"/>
+
+          <g class="tv-wires">
+            <path class="tv-wire" d="M260 74 V150"/>
+            <path class="tv-wire" d="M399 122 L318 172"/>
+            <path class="tv-wire" d="M456 235 H352"/>
+            <path class="tv-wire" d="M399 348 L318 298"/>
+            <path class="tv-wire" d="M260 396 V320"/>
+            <path class="tv-wire" d="M121 348 L202 298"/>
+            <path class="tv-wire" d="M64 235 H168"/>
+            <path class="tv-wire" d="M121 122 L202 172"/>
+          </g>
+
+          <circle cx="260" cy="235" r="104" fill="url(#tv-glow)"/>
+
+          <!-- NÚCLEO: el robot ensambla un conector -->
+          <g class="tv-bot">
+            <line class="tv-ink" x1="196" y1="300" x2="324" y2="300"/>
+            <line class="tv-ink tv-thin" x1="214" y1="300" x2="214" y2="318"/>
+            <line class="tv-ink tv-thin" x1="306" y1="300" x2="306" y2="318"/>
+
+            <!-- el conector que se arma pieza a pieza -->
+            <g class="tv-piece">
+              <rect class="tv-plug tv-p1" x="286" y="286" width="34" height="13" rx="3"/>
+              <rect class="tv-plug tv-p2" x="286" y="271" width="34" height="13" rx="3"/>
+              <path class="tv-pin tv-p3" d="M296 271 v-12 M310 271 v-12"/>
+            </g>
+
+            <rect class="tv-body" x="226" y="222" width="68" height="72" rx="11"/>
+            <rect class="tv-screen" x="238" y="236" width="44" height="24" rx="3"/>
+            <path class="tv-scan" d="M244 244 h32 M244 252 h22"/>
+            <text class="tv-code" x="260" y="284" text-anchor="middle">OPZ·01</text>
+
+            <rect class="tv-body" x="235" y="182" width="50" height="36" rx="9"/>
+            <circle class="tv-eye" cx="249" cy="200" r="5"/>
+            <circle class="tv-eye tv-eye2" cx="271" cy="200" r="5"/>
+            <line class="tv-ink tv-thin" x1="260" y1="182" x2="260" y2="169"/>
+            <circle class="tv-ant" cx="260" cy="165" r="4.5"/>
+            <circle class="tv-spark" cx="260" cy="165" r="9"/>
+
+            <g class="tv-armR">
+              <line class="tv-ink" x1="294" y1="244" x2="322" y2="256"/>
+              <rect class="tv-tool" x="318" y="250" width="15" height="13" rx="3"/>
+            </g>
+            <g class="tv-armL">
+              <line class="tv-ink" x1="226" y1="244" x2="200" y2="262"/>
+              <rect class="tv-tool tv-tool2" x="192" y="256" width="13" height="13" rx="3"/>
+            </g>
+
+            <circle class="tv-wheel" cx="240" cy="298" r="7"/>
+            <circle class="tv-wheel" cx="260" cy="298" r="7"/>
+            <circle class="tv-wheel" cx="280" cy="298" r="7"/>
+
+            <g class="tv-gear">
+              <circle class="tv-ink" cx="186" cy="196" r="13" fill="none"/>
+              <circle class="tv-ink" cx="186" cy="196" r="4.5" fill="none"/>
+              <line class="tv-ink tv-thin" x1="186" y1="179" x2="186" y2="213"/>
+              <line class="tv-ink tv-thin" x1="169" y1="196" x2="203" y2="196"/>
+              <line class="tv-ink tv-thin" x1="174" y1="184" x2="198" y2="208"/>
+              <line class="tv-ink tv-thin" x1="198" y1="184" x2="174" y2="208"/>
+            </g>
+          </g>
+
+          <!-- SATÉLITES: las tecnologías, con su color de marca -->
+          <g class="tv-sats">
+            <g class="tv-sat" style="--i:0" transform="translate(260 74)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><rect x="0" y="2" width="20" height="16" rx="3" fill="#0F6CBD"/><circle cx="7.5" cy="10" r="4.4" fill="none" stroke="#fff" stroke-width="2.1"/><rect x="13" y="5" width="9" height="10" rx="1.4" fill="#28A8EA"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">Outlook</text>
+            </g>
+            <g class="tv-sat" style="--i:1" transform="translate(399 122)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><rect x="1" y="2" width="18" height="18" rx="4.5" fill="#6264A7"/><path d="M5.5 7.5h9M10 7.5v9" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="18" cy="7.2" r="3.4" fill="#8B8CC7"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">Teams</text>
+            </g>
+            <g class="tv-sat" style="--i:2" transform="translate(456 235)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><rect x="1" y="1" width="20" height="20" rx="4" fill="#038387"/><path d="M6 11.5a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0z" fill="none" stroke="#fff" stroke-width="2"/><path d="M11.5 6v11" stroke="#fff" stroke-width="2"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">SharePoint</text>
+            </g>
+            <g class="tv-sat" style="--i:3" transform="translate(399 348)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><rect x="1" y="1" width="20" height="20" rx="4" fill="#107C41"/><path d="M6.5 6.5l9 9M15.5 6.5l-9 9" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">Excel</text>
+            </g>
+            <g class="tv-sat" style="--i:4" transform="translate(260 396)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><rect x="2" y="12" width="4.6" height="9" rx="1.2" fill="#F2C811"/><rect x="8.7" y="7" width="4.6" height="14" rx="1.2" fill="#F2C811"/><rect x="15.4" y="2" width="4.6" height="19" rx="1.2" fill="#E8A600"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">Power BI</text>
+            </g>
+            <g class="tv-sat" style="--i:5" transform="translate(121 348)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><ellipse cx="11" cy="5" rx="7.6" ry="2.9" fill="#5B7086"/><path d="M3.4 5v12c0 1.6 3.4 2.9 7.6 2.9s7.6-1.3 7.6-2.9V5" fill="#7C93A8"/><ellipse cx="11" cy="11.4" rx="7.6" ry="2.9" fill="#5B7086" opacity=".65"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">SQL Server</text>
+            </g>
+            <g class="tv-sat" style="--i:6" transform="translate(64 235)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><path d="M7.6 3h6.8l6.6 11.4-3.4 5.9H4.4L1 14.4z" fill="#fff"/><path d="M7.6 3h6.8l3.4 5.9H4.2z" fill="#4285F4"/><path d="M1 14.4 4.4 8.5l3.4 5.9-3.4 5.9z" fill="#0F9D58"/><path d="M21 14.4 17.6 20.3H10.8l3.4-5.9z" fill="#FFCD40"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">Google</text>
+            </g>
+            <g class="tv-sat" style="--i:7" transform="translate(121 122)">
+              <rect class="tv-tile" x="-25" y="-25" width="50" height="50" rx="14"/>
+              <g transform="translate(-11 -11) scale(.92)"><circle cx="4.4" cy="11" r="3.3" fill="#EA4B71"/><circle cx="17.6" cy="5.5" r="3.3" fill="#EA4B71"/><circle cx="17.6" cy="16.5" r="3.3" fill="#EA4B71"/><path d="M7.4 10.2 14.7 6M7.4 11.8l7.3 4.2" stroke="#EA4B71" stroke-width="1.7"/></g>
+              <text class="tv-lab" x="0" y="42" text-anchor="middle">n8n</text>
+            </g>
+          </g>
+        </svg>
+
+        <div class="tv-mq" aria-hidden="true"><div class="tv-track">
+          <span class="tv-chip"><i class="tv-d" style="background:#0F6CBD"></i>Power Automate</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#038387"></i>SharePoint</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#6264A7"></i>Teams</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#107C41"></i>Excel</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#F2C811"></i>Power BI</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#8C5BF0"></i>Copilot</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0078D4"></i>Dataverse</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#5B7086"></i>SQL Server</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#EA4B71"></i>n8n</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#4285F4"></i>Google Workspace</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0F9D58"></i>Sheets</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#EA4335"></i>Gmail</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#FBBC04"></i>Drive</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#00A1E0"></i>Salesforce</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#FF7A59"></i>HubSpot</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#4A154B"></i>Slack</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0052CC"></i>Jira</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#635BFF"></i>Stripe</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#008CC9"></i>Dynamics 365</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0089D6"></i>Azure</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#336791"></i>PostgreSQL</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#25D366"></i>WhatsApp Business</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#3f6f8a"></i>API REST · Webhooks</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#183f35"></i>Su ERP a medida</span>
+        
+          <span class="tv-chip"><i class="tv-d" style="background:#0F6CBD"></i>Power Automate</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#038387"></i>SharePoint</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#6264A7"></i>Teams</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#107C41"></i>Excel</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#F2C811"></i>Power BI</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#8C5BF0"></i>Copilot</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0078D4"></i>Dataverse</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#5B7086"></i>SQL Server</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#EA4B71"></i>n8n</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#4285F4"></i>Google Workspace</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0F9D58"></i>Sheets</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#EA4335"></i>Gmail</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#FBBC04"></i>Drive</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#00A1E0"></i>Salesforce</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#FF7A59"></i>HubSpot</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#4A154B"></i>Slack</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0052CC"></i>Jira</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#635BFF"></i>Stripe</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#008CC9"></i>Dynamics 365</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#0089D6"></i>Azure</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#336791"></i>PostgreSQL</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#25D366"></i>WhatsApp Business</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#3f6f8a"></i>API REST · Webhooks</span>
+          <span class="tv-chip"><i class="tv-d" style="background:#183f35"></i>Su ERP a medida</span>
+        </div></div>
+        <p class="tv-note">Todo lo que su organización ya usa, enlazado en un solo proceso. No se sustituye ningún sistema.</p>
       </div>
       <div class="flowin" aria-hidden="true">
         <div class="fwin">
