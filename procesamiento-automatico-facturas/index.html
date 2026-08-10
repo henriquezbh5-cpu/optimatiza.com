@@ -17,14 +17,14 @@
   <link rel="stylesheet" href="/corp.css?v=89dccb0d">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Procesamiento automático de facturas: del documento al asiento, con controles">
-  <meta property="og:description" content="Cuentas por pagar sin digitación: el documento entra por correo, DTE o imagen, se valida contra la orden de compra y se registra en el ERP. Las excepciones se enrutan a una persona.">
+  <meta property="og:description" content="Cuentas por pagar sin digitación: el documento entra por correo, DTE o imagen, se coteja contra la orden de compra y se registra en el ERP. Las excepciones se enrutan a una persona.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/procesamiento-automatico-facturas/">
   <meta property="og:site_name" content="Optimatiza">
   <meta property="og:locale" content="es_LA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Procesamiento automático de facturas: del documento al asiento, con controles">
-  <meta name="twitter:description" content="Cuentas por pagar sin digitación: el documento entra por correo, DTE o imagen, se valida contra la orden de compra y se registra en el ERP. Las excepciones se enrutan a una persona.">
+  <meta name="twitter:description" content="Cuentas por pagar sin digitación: el documento entra por correo, DTE o imagen, se coteja contra la orden de compra y se registra en el ERP. Las excepciones se enrutan a una persona.">
   <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
   <script type="application/ld+json">
   {
@@ -45,32 +45,32 @@
       {
         "@type": "Question",
         "name": "¿Funciona con los documentos tributarios electrónicos de El Salvador?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Sí. El DTE viaja como JSON estructurado del Ministerio de Hacienda, de modo que se lee directamente, sin OCR ni interpretación, y se validan NIT, IVA y totales contra el documento oficial. Para papel, PDF escaneado o imagen se usa extracción con IA de visión."}
+        "acceptedAnswer": {"@type": "Answer", "text": "El DTE viaja como JSON del Ministerio de Hacienda: se lee de forma directa, sin OCR, y se validan NIT, IVA y totales contra el documento oficial. Para papel, PDF escaneado o imagen se usa extracción con IA de visión."}
       },
       {
         "@type": "Question",
         "name": "¿Qué volumen justifica automatizar cuentas por pagar?",
-        "acceptedAnswer": {"@type": "Answer", "text": "El caso se sostiene cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de documentos al mes en adelante, o menos volumen pero con varios sistemas que hoy se sincronizan a mano. Por debajo de ese punto, la implantación rara vez compensa, y así se indica en la evaluación."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de documentos al mes, o menos volumen con varios sistemas que hoy se sincronizan a mano. Por debajo de ese punto rara vez compensa, y así se indica en la evaluación."}
       },
       {
         "@type": "Question",
         "name": "¿Qué ocurre cuando una factura llega ilegible o incompleta?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No se adivina el dato. El documento se marca como excepción y se enruta a la persona responsable con la imagen original para que decida. Nada se registra en el sistema sin pasar la validación."}
+        "acceptedAnswer": {"@type": "Answer", "text": "No se adivina el dato. El documento se marca como excepción y se enruta a la persona responsable con la imagen original. Nada se registra sin pasar la validación."}
       },
       {
         "@type": "Question",
         "name": "¿Cómo se evitan los duplicados y los pagos dobles?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Antes de registrar se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si el documento ya existe, no se duplica el registro y se notifica al responsable."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Antes de registrar se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si el documento ya existe, no se duplica y se notifica al responsable."}
       },
       {
         "@type": "Question",
         "name": "¿Se integra con nuestro ERP o sistema contable?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Por API, por base de datos o por conectores de Power Automate y n8n. Cuando el sistema no expone interfaz, la vía se define en la evaluación. Si parte del proceso vive todavía en hojas de cálculo, el registro también puede llegar ahí, ordenado y con respaldo, mientras se completa la integración."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Por API, por base de datos o por conectores de Power Automate y n8n. Cuando el sistema no expone interfaz, la vía se define en la evaluación; entretanto el registro puede llegar a la hoja de cálculo que hoy se usa, ordenado y con respaldo."}
       },
       {
         "@type": "Question",
         "name": "¿Cuánto tarda la implantación?",
-        "acceptedAnswer": {"@type": "Answer", "text": "La captura y el registro tienen un horizonte típico de una a dos semanas. Con cotejo contra orden de compra, aprobaciones e integración con el ERP, de dos a cuatro semanas. Se contrata por hitos verificables y el alcance definitivo se fija tras la evaluación."}
+        "acceptedAnswer": {"@type": "Answer", "text": "La captura y el registro tienen un horizonte típico de una a dos semanas; con cotejo contra orden de compra, aprobaciones e integración con el ERP, de dos a cuatro. Se contrata por hitos verificables."}
       },
       {
         "@type": "Question",
@@ -160,7 +160,7 @@
 <div class="phero band"><div class="wrap">
   <p class="kicker"><i></i> Automatización empresarial · Cuentas por pagar</p>
   <h1>Procesamiento automático de facturas: de la recepción al registro en su ERP, con controles y trazabilidad</h1>
-  <p class="lead"><b>El documento entra por donde ya entra hoy —correo, documento tributario electrónico o imagen—, los datos se extraen, se cotejan contra la orden de compra y se registran en el sistema contable.</b> El área deja de teclear y pasa a resolver excepciones, que es donde su criterio vale.</p>
+  <p class="lead"><b>El documento entra por donde ya entra hoy —correo, documento tributario electrónico o imagen—, se extrae, se coteja contra la orden de compra y se registra en el sistema contable.</b> El área deja de teclear y pasa a resolver excepciones, que es donde su criterio vale.</p>
   <div class="cta-row">
     <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
     <a class="btn-secondary" href="/casos/">Ver el caso medido</a>
@@ -170,23 +170,23 @@
 <section><div class="wrap">
   <p class="sec-k">El costo a escala</p>
   <h2>Qué consume la digitación manual cuando el volumen es sostenido</h2>
-  <p class="sec-sub">A partir de cientos de documentos al mes, capturar deja de ser una tarea del área y pasa a ser tres cosas a la vez: una restricción de capacidad, una debilidad de control interno y una causa recurrente de cierre tardío.</p>
+  <p class="sec-sub">A partir de cientos de documentos al mes, capturar deja de ser una tarea del área y pasa a ser tres cosas a la vez: restricción de capacidad, debilidad de control interno y causa recurrente de cierre tardío.</p>
   <div class="cards">
     <article class="card reveal">
       <h3>Capacidad dedicada a teclear</h3>
-      <p>Cada factura que llega por correo, PDF, DTE o imagen la transcribe una persona al sistema contable. A volumen sostenido, una parte medible de la plantilla del área se destina a un trabajo que no aporta criterio ni control.</p>
+      <p>Cada documento que llega por correo, PDF, DTE o imagen lo transcribe una persona. A volumen sostenido, una parte medible de la plantilla del área se destina a un trabajo que no aporta criterio.</p>
     </article>
     <article class="card reveal reveal-2">
       <h3>Errores de transcripción</h3>
-      <p>Un dígito del NIT, un decimal del IVA, un monto invertido. El error de captura aparece semanas después, cuando conciliar y corregir cuesta varias veces más que haber registrado bien la primera vez.</p>
+      <p>Un dígito del NIT, un decimal del IVA, un monto invertido. El error aparece semanas después, cuando corregirlo cuesta varias veces más que haber registrado bien.</p>
     </article>
     <article class="card reveal reveal-3">
       <h3>Duplicados que llegan a pago</h3>
-      <p>El mismo documento entra por correo, se reenvía desde otra sede y vuelve en físico. Sin control automático de duplicados, se registra dos veces y puede llegar a pagarse dos veces.</p>
+      <p>El mismo documento entra por correo, se reenvía desde otra sede y vuelve en físico. Sin control automático, se registra dos veces y puede pagarse dos veces.</p>
     </article>
     <article class="card reveal reveal-4">
       <h3>Cierre contable comprometido</h3>
-      <p>El cierre se atrasa por el rezago de la última semana. Contabilidad trabaja contra reloj y la información financiera llega tarde a la mesa donde se decide.</p>
+      <p>El cierre se atrasa por el rezago de la última semana y la información financiera llega tarde a la mesa donde se decide.</p>
     </article>
   </div>
 </div></section>
@@ -198,9 +198,9 @@
     <div>
       <p>Entra por donde ya entra hoy, se valida contra sus reglas y llega al registro con evidencia de cada paso.</p>
       <ul class="checks">
-        <li><b>El dato se captura una vez:</b> proveedor, NIT, fecha, detalle línea a línea, IVA y totales se leen del documento.</li>
-        <li><b>Nada entra sin validar:</b> cotejo contra la orden de compra, aritmética del IVA y tolerancias acordadas con contraloría.</li>
-        <li><b>Lo que no cuadra no se adivina:</b> se marca como excepción y se enruta al responsable con el documento original.</li>
+        <li><b>El dato se captura una vez:</b> proveedor, NIT, fecha, detalle línea a línea, IVA y totales.</li>
+        <li><b>Nada entra sin validar:</b> cotejo contra la orden de compra, aritmética del IVA y tolerancias de contraloría.</li>
+        <li><b>Lo que no cuadra no se adivina:</b> se marca como excepción y se enruta al responsable con el original.</li>
       </ul>
     </div>
     <figure class="plate">
@@ -226,7 +226,7 @@
     </div>
   </div>
 
-  <div class="note"><b>La excepción es parte del diseño, no una falla.</b> El documento ilegible, el monto que excede la tolerancia contra la orden de compra y el proveedor no registrado no se fuerzan al sistema: se marcan, se enrutan a la persona responsable y quedan en cola con su respaldo. Ninguna transacción llega al ERP sin pasar la validación.</div>
+  <div class="note"><b>La excepción es parte del diseño, no una falla.</b> El documento ilegible, el monto fuera de tolerancia y el proveedor no registrado se marcan, se enrutan a un responsable y quedan en cola con su respaldo. Ninguna transacción llega al ERP sin pasar la validación.</div>
 </div></section>
 
 <section><div class="wrap">
@@ -239,20 +239,20 @@
         <div class="figure reveal">
           <span class="fig-k">Capturista Digital · Finanzas</span>
           <b class="count" data-to="4" data-prefix="~" data-suffix=" seg">~4 seg</b>
-          <p>por factura, desde la imagen recibida hasta el registro validado. Es tiempo medido sobre una grabación continua del sistema y usted puede cronometrarlo por su cuenta.</p>
+          <p>por factura, desde la imagen recibida hasta el registro validado. Tiempo medido sobre una grabación continua que usted puede cronometrar.</p>
         </div>
       </div>
     </div>
     <div>
       <h3>Lo que no va a encontrar aquí</h3>
       <ul class="dots">
-        <li>Testimonios y porcentajes de ahorro que no hayamos medido nosotros.</li>
-        <li>Demostraciones ilustrativas presentadas como casos: la galería distingue una cosa de la otra pieza por pieza.</li>
-        <li>Cifras de su operación antes de la evaluación. Esas salen de sus documentos y sus volúmenes, no de un promedio de industria.</li>
+        <li>Testimonios ni porcentajes de ahorro que no hayamos medido.</li>
+        <li>Demostraciones ilustrativas presentadas como casos: la galería distingue una cosa de la otra.</li>
+        <li>Cifras de su operación antes de la evaluación; esas salen de sus documentos, no de un promedio de industria.</li>
       </ul>
     </div>
   </div>
-  <div class="note demo"><b>Caso medido, no prometido.</b> La grabación completa, sin cortes, está en la galería junto con la ficha del proceso anterior, los controles aplicados y el alcance real de esa implantación. <a class="link-more" href="/casos/">Ver el caso →</a></div>
+  <div class="note demo"><b>Caso medido, no prometido.</b> La grabación sin cortes está en la galería, con la ficha del proceso anterior y los controles aplicados. <a class="link-more" href="/casos/">Ver el caso →</a></div>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -261,28 +261,27 @@
   <div class="steps">
     <div class="step">
       <h3>Evaluación ejecutiva</h3>
-      <p>Se revisa una muestra representativa de sus documentos y sus volúmenes mensuales. De ahí sale qué conviene automatizar, qué no y con qué precisión esperable.</p>
+      <p>Se revisa una muestra de sus documentos y sus volúmenes. De ahí sale qué conviene automatizar, qué no y con qué precisión esperable.</p>
     </div>
     <div class="step">
       <h3>Construcción con documentos reales</h3>
-      <p>El flujo se arma sobre sus formatos, sus reglas de validación y su catálogo de proveedores, no sobre un ejemplo genérico de laboratorio.</p>
+      <p>El flujo se arma sobre sus formatos, sus reglas de validación y su catálogo de proveedores.</p>
     </div>
     <div class="step">
       <h3>Marcha en paralelo</h3>
-      <p>Corre junto al proceso actual durante el período acordado y se compara registro contra registro antes de sustituir nada.</p>
+      <p>Corre junto al proceso actual el período acordado y se compara registro contra registro antes de sustituir nada.</p>
     </div>
     <div class="step">
       <h3>Entrega y operación</h3>
       <p>Documentación funcional y técnica, equipo capacitado y activos alojados en las cuentas de su organización.</p>
     </div>
   </div>
-  <p class="note">Los criterios de aceptación se fijan por escrito antes de construir, y si el piloto no los cumple no se escala. Fase por fase, en la <a class="link-more" href="/metodologia/">metodología</a>.</p>
+  <p class="note">Los criterios de aceptación se fijan por escrito antes de construir; si el piloto no los cumple, no se escala. Fase por fase, en la <a class="link-more" href="/metodologia/">metodología</a>.</p>
 </div></section>
 
 <section><div class="wrap">
   <p class="sec-k">Sobre lo que ya opera</p>
   <h2>Sus sistemas no se sustituyen: se conectan</h2>
-  <p class="sec-sub">La vía de entrada y la de registro se eligen por el proceso, no por preferencia de herramienta.</p>
   <div class="pills">
     <span>Outlook y Microsoft 365</span>
     <span>Gmail</span>
@@ -297,7 +296,7 @@
     <span>n8n</span>
     <span>APIs REST</span>
   </div>
-  <p class="note">Con los documentos tributarios electrónicos se lee el JSON del Ministerio de Hacienda de forma directa, sin OCR y sin ambigüedad, y se validan NIT, IVA y totales contra el documento oficial. Cuando un sistema no expone interfaz, la alternativa se define en la evaluación: <a class="link-more" href="/integracion-sistemas/">integración de sistemas →</a></p>
+  <p class="note">Con los documentos tributarios electrónicos se lee el JSON del Ministerio de Hacienda de forma directa, sin OCR, y se validan NIT, IVA y totales contra el documento oficial. Cuando un sistema no expone interfaz, la alternativa se define en la evaluación: <a class="link-more" href="/integracion-sistemas/">integración de sistemas →</a></p>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -310,49 +309,40 @@
         <tr><th scope="col">Alcance</th><th scope="col">Qué comprende</th><th scope="col">Horizonte típico</th></tr>
       </thead>
       <tbody>
-        <tr><td><b>Captura y registro</b></td><td>Recepción por correo, DTE o imagen; extracción de datos; validación de NIT, IVA y duplicados; registro en el destino que su contabilidad ya utiliza.</td><td>1 a 2 semanas</td></tr>
-        <tr><td><b>Con orden de compra y aprobaciones</b></td><td>Lo anterior más cotejo contra la orden de compra con tolerancias, aprobación por monto y centro de costo, e integración por API con el ERP o el sistema contable.</td><td>2 a 4 semanas</td></tr>
-        <tr><td><b>Operación administrada</b></td><td>Monitoreo del flujo, ajuste cuando cambian los formatos de sus proveedores, atención de incidencias y evolución de las reglas de validación.</td><td>Servicio continuo</td></tr>
+        <tr><td><b>Captura y registro</b></td><td>Recepción por correo, DTE o imagen, extracción, validación de NIT, IVA y duplicados, y registro en el destino que su contabilidad ya utiliza.</td><td>1 a 2 semanas</td></tr>
+        <tr><td><b>Con orden de compra y aprobaciones</b></td><td>Lo anterior más cotejo con tolerancias, aprobación por monto y centro de costo, e integración por API con el ERP.</td><td>2 a 4 semanas</td></tr>
+        <tr><td><b>Operación administrada</b></td><td>Monitoreo del flujo, ajuste cuando cambian los formatos de sus proveedores, incidencias y evolución de las reglas.</td><td>Servicio continuo</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="note">La contratación es por hitos verificables y cada proyecto se cotiza tras la evaluación de alcance. Si prefiere delegar el monitoreo posterior, existe <a class="link-more" href="/operacion-administrada/">operación administrada</a>.</p>
+  <p class="note">La contratación es por hitos verificables y el proyecto se cotiza tras la evaluación de alcance. <a class="link-more" href="/operacion-administrada/">Operación administrada →</a></p>
 </div></section>
 
 <section><div class="wrap">
   <p class="sec-k">Criterio de firma</p>
   <h2>Qué distingue esto de un extractor de documentos</h2>
-  <p class="sec-sub">Un extractor resuelve el documento limpio. Un proceso de cuentas por pagar tiene que sobrevivir al real: el proveedor que cambió de formato, el duplicado que vuelve por otra vía, el aprobador de vacaciones.</p>
+  <p class="sec-sub">Un extractor resuelve el documento limpio. Un proceso de cuentas por pagar sobrevive al real: el proveedor que cambió de formato, el monto que roza la tolerancia, el aprobador de vacaciones.</p>
   <div class="explore">
     <details open>
-      <summary><i>01</i><b>El control de duplicados ocurre antes de escribir en el sistema</b></summary>
-      <div class="ex-body"><p>Se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si el documento ya existe, no se duplica el registro y se notifica al responsable con la referencia del asiento previo.</p></div>
-    </details>
-    <details>
-      <summary><i>02</i><b>El DTE se lee como dato estructurado, no como imagen</b></summary>
-      <div class="ex-body"><p>El documento tributario electrónico viaja como JSON del Ministerio de Hacienda: se lee de forma directa, sin OCR ni interpretación, con lo cual el margen de error de lectura desaparece en ese canal. La extracción con IA de visión queda reservada para papel, PDF escaneado e imagen.</p></div>
-    </details>
-    <details>
-      <summary><i>03</i><b>Las tolerancias las fija su contraloría y quedan por escrito</b></summary>
+      <summary><i>01</i><b>Las tolerancias las fija su contraloría y quedan por escrito</b></summary>
       <div class="ex-body"><p>El cotejo contra la orden de compra opera con márgenes definidos por tipo de gasto y por proveedor. Fuera del margen no hay registro automático: hay excepción con responsable asignado.</p></div>
     </details>
     <details>
-      <summary><i>04</i><b>Cada ejecución deja expediente auditable</b></summary>
-      <div class="ex-body"><p>Qué documento entró, qué se validó, qué regla lo detuvo, quién aprobó y cuándo. El respaldo se archiva junto al registro, de modo que el expediente para auditoría se arma solo en lugar de reconstruirse a mano.</p></div>
+      <summary><i>02</i><b>Un cambio de formato del proveedor no se convierte en un dato erróneo</b></summary>
+      <div class="ex-body"><p>Los formatos cambian sin aviso. Cuando la extracción queda incompleta, el documento va a excepción en lugar de registrarse a medias; ajustar la regla forma parte de la operación posterior.</p></div>
     </details>
     <details>
-      <summary><i>05</i><b>Los activos quedan en las cuentas de su organización</b></summary>
-      <div class="ex-body"><p>Flujos, repositorios y credenciales viven en su entorno, no en el nuestro. La documentación técnica y funcional y la capacitación del equipo forman parte de la entrega, no de un anexo posterior.</p></div>
+      <summary><i>03</i><b>Cada ejecución deja expediente auditable</b></summary>
+      <div class="ex-body"><p>Qué documento entró, qué se validó, qué regla lo detuvo, quién aprobó y cuándo. El expediente para auditoría se arma solo, y los flujos, repositorios y credenciales quedan en las cuentas de su organización.</p></div>
     </details>
   </div>
-  <p class="note">Cómo se tratan accesos, datos y retención, en <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>; los límites de lo que decide un modelo, en <a class="link-more" href="/responsabilidad-ia/">responsabilidad de IA</a>.</p>
+  <p class="note">Accesos, datos y retención, en <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>; los límites de lo que decide un modelo, en <a class="link-more" href="/responsabilidad-ia/">responsabilidad de IA</a>.</p>
 </div></section>
 
 <section class="band"><div class="wrap">
   <p class="sec-k">Dentro y fuera</p>
   <h2>El mismo mecanismo, aplicado al entorno</h2>
-  <p class="sec-sub">Automatizar cuentas por pagar ordena lo que ocurre <b>dentro</b> de su operación. Lo que ocurre <b>fuera</b> —un proveedor que concentra su cadena, un cambio en la regla tributaria, un competidor que mueve condiciones de crédito— exige el mismo tipo de disciplina.</p>
-  <p class="note">Esa vigilancia es la <a href="/inteligencia-competitiva/">práctica de inteligencia competitiva</a> de la firma, y funciona con el patrón que aquí gobierna las excepciones: un umbral definido, una acción acordada de antemano y un responsable con nombre, como se describe en el <a href="/inteligencia-competitiva/alertas-tempranas/">sistema de alerta temprana</a>.</p>
+  <p class="sec-sub">Automatizar cuentas por pagar ordena lo que ocurre <b>dentro</b> de su operación. Lo que ocurre <b>fuera</b> —un proveedor que concentra su cadena, un cambio en la regla tributaria, un competidor que mueve condiciones de crédito— se vigila desde la <a href="/inteligencia-competitiva/">práctica de inteligencia competitiva</a> de la firma, con el patrón que aquí gobierna las excepciones: umbral definido, acción acordada de antemano y responsable con nombre, como en el <a href="/inteligencia-competitiva/alertas-tempranas/">sistema de alerta temprana</a>.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -361,27 +351,27 @@
   <div class="faq">
     <details>
       <summary>¿Funciona con los documentos tributarios electrónicos de El Salvador?</summary>
-      <p class="fa">Sí. El DTE viaja como JSON estructurado del Ministerio de Hacienda, de modo que se lee directamente, sin OCR ni interpretación, y se validan NIT, IVA y totales contra el documento oficial. Para papel, PDF escaneado o imagen se usa extracción con IA de visión.</p>
+      <p class="fa">El DTE viaja como JSON del Ministerio de Hacienda: se lee de forma directa, sin OCR, y se validan NIT, IVA y totales contra el documento oficial. Para papel, PDF escaneado o imagen se usa extracción con IA de visión.</p>
     </details>
     <details>
       <summary>¿Qué volumen justifica automatizar cuentas por pagar?</summary>
-      <p class="fa">El caso se sostiene cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de documentos al mes en adelante, o menos volumen pero con varios sistemas que hoy se sincronizan a mano. Por debajo de ese punto, la implantación rara vez compensa, y así se indica en la evaluación.</p>
+      <p class="fa">Cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de documentos al mes, o menos volumen con varios sistemas que hoy se sincronizan a mano. Por debajo de ese punto rara vez compensa, y así se indica en la evaluación.</p>
     </details>
     <details>
       <summary>¿Qué ocurre cuando una factura llega ilegible o incompleta?</summary>
-      <p class="fa">No se adivina el dato. El documento se marca como excepción y se enruta a la persona responsable con la imagen original para que decida. Nada se registra en el sistema sin pasar la validación.</p>
+      <p class="fa">No se adivina el dato. El documento se marca como excepción y se enruta a la persona responsable con la imagen original. Nada se registra sin pasar la validación.</p>
     </details>
     <details>
       <summary>¿Cómo se evitan los duplicados y los pagos dobles?</summary>
-      <p class="fa">Antes de registrar se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si el documento ya existe, no se duplica el registro y se notifica al responsable.</p>
+      <p class="fa">Antes de registrar se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Si el documento ya existe, no se duplica y se notifica al responsable.</p>
     </details>
     <details>
       <summary>¿Se integra con nuestro ERP o sistema contable?</summary>
-      <p class="fa">Por API, por base de datos o por conectores de Power Automate y n8n. Cuando el sistema no expone interfaz, la vía se define en la evaluación. Si parte del proceso vive todavía en hojas de cálculo, el registro también puede llegar ahí, ordenado y con respaldo, mientras se completa la integración.</p>
+      <p class="fa">Por API, por base de datos o por conectores de Power Automate y n8n. Cuando el sistema no expone interfaz, la vía se define en la evaluación; entretanto el registro puede llegar a la hoja de cálculo que hoy se usa, ordenado y con respaldo.</p>
     </details>
     <details>
       <summary>¿Cuánto tarda la implantación?</summary>
-      <p class="fa">La captura y el registro tienen un horizonte típico de una a dos semanas. Con cotejo contra orden de compra, aprobaciones e integración con el ERP, de dos a cuatro semanas. Se contrata por hitos verificables y el alcance definitivo se fija tras la evaluación.</p>
+      <p class="fa">La captura y el registro tienen un horizonte típico de una a dos semanas; con cotejo contra orden de compra, aprobaciones e integración con el ERP, de dos a cuatro. Se contrata por hitos verificables.</p>
     </details>
     <details>
       <summary>¿Esto sustituye al equipo de contabilidad?</summary>
@@ -389,7 +379,7 @@
     </details>
   </div>
   <p class="note"><b>Quién responde:</b> dirige la práctica Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence. <a class="link-more" href="/nosotros/">Conozca la firma →</a></p>
-  <p class="note"><b>Procesos relacionados:</b> <a class="link-more" href="/cobranza-automatizada/">cobranza automatizada</a>, <a class="link-more" href="/automatizacion-empresarial/">automatización empresarial</a>, <a class="link-more" href="/integracion-sistemas/">integración de sistemas</a> y la <a class="link-more" href="/recursos/calculadora-roi/">calculadora de retorno</a>.</p>
+  <p class="note"><b>Procesos relacionados:</b> <a class="link-more" href="/cobranza-automatizada/">cobranza automatizada</a>, <a class="link-more" href="/automatizacion-empresarial/">automatización empresarial</a> e <a class="link-more" href="/integracion-sistemas/">integración de sistemas</a>.</p>
 </div></section>
 
 <section class="cta-band"><div class="wrap">

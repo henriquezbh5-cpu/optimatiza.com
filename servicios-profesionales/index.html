@@ -3,343 +3,556 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Servicios profesionales: aprobaciones trazables y reportes verificables | Optimatiza</title>
+  <meta name="description" content="Para firmas legales, contables y de ingeniería: aprobaciones con trazabilidad, reportes que se arman solos, sistemas integrados y vigilancia del entorno.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/servicios-profesionales/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Automatización para Servicios Profesionales | Optimatiza</title>
-  <meta name="description" content="Flujos de aprobación, reportes automáticos e integraciones para direcciones de operaciones, finanzas y tecnología en empresas de servicios.">
-  <link rel="canonical" href="https://optimatiza.com/servicios-profesionales/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Automatización para Servicios Profesionales | Optimatiza">
-  <meta property="og:description" content="Flujos de aprobación, reportes automáticos e integraciones para direcciones de operaciones, finanzas y tecnología en empresas de servicios.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Servicios profesionales | Optimatiza">
+  <meta property="og:description" content="Firmas legales, contables y de ingeniería: aprobaciones con trazabilidad, reportes verificables, sistemas integrados y un departamento de inteligencia competitiva.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/servicios-profesionales/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#3F6F8A;--violet:#C9913B;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    .hero{padding:60px 0 36px;max-width:820px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17.5px;max-width:62ch}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
-    section{padding:34px 0}
-    .lead{max-width:70ch;margin-bottom:18px}
-    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .dol-i{font-size:26px}
-    .dol h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
-    .dol p{font-size:13.5px}
-    .outs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .out{display:block;background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
-    .out b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
-    .out p{font-size:13.5px;margin-top:6px}
-    .out .more{display:inline-block;margin-top:8px;color:var(--teal);font-weight:600;font-size:13px}
-    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin-top:6px}
-    .fstep{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--sh)}
-    .fstep b{font-family:var(--ffd);color:var(--ink);font-size:14.5px;display:block;margin-top:4px}
-    .fstep p{font-size:13px;margin-top:4px}
-    .fi{font-size:22px}
-    .farr{align-self:center;color:var(--teal);font-weight:700;font-size:18px}
-    .farr.down{grid-column:1/-1;justify-self:center;transform:rotate(90deg)}
-    .fbranch{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .fcase{border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:13.5px;background:#FFFDF8;box-shadow:var(--sh)}
-    .fcase.ok{border-left:3px solid var(--teal)}
-    .fcase.wait{border-left:3px solid var(--blue)}
-    .fcase b{color:var(--ink)}
-    @media(max-width:820px){.flow{grid-template-columns:1fr}.farr{justify-self:center;transform:rotate(90deg)}.fbranch{grid-template-columns:1fr}}
-    .vids{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:start;margin-top:26px}
-    @media(max-width:760px){.vids{grid-template-columns:1fr}}
-    .vid{background:#FFFDF8;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
-    .vid video{width:100%;aspect-ratio:16/9;display:block;background:#000}
-    .vid .vb{padding:14px 18px}
-    .vid b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
-    .vid p{font-size:13.5px;margin-top:4px}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    .note a{color:var(--teal);font-weight:600}
-    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
-    .paso-i{font-size:19px}
-    .arrow{color:var(--teal)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
-    a.chip{color:var(--teal);font-weight:600;border-color:rgba(29,92,77,.35);background:var(--teal-soft)}
-    .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .pr{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--sh)}
-    .pr b{font-family:var(--ffd);color:var(--ink);font-size:15.5px}
-    .pr .amt{color:var(--teal);font-weight:700;font-size:17px;display:block;margin:6px 0 2px}
-    .pr .tm{color:var(--dim);font-size:12.5px}
-    .pr p{font-size:13.5px;margin-top:8px}
-    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
-    .guar b{color:var(--ink)}
-    .guar a{color:var(--teal);font-weight:600}
-    .evs{display:grid;gap:10px}
-    .ev{display:flex;gap:12px;background:var(--alt);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:14px}
-    .ev-i{font-size:20px;flex:none}
-    .ev b{color:var(--ink)}
-    .ev a{color:var(--teal);font-weight:600}
-    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:0;margin-bottom:10px;box-shadow:var(--sh)}
-    .faq summary{cursor:pointer;list-style:none;padding:15px 18px;font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;display:flex;justify-content:space-between;gap:12px;align-items:center}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";color:var(--teal);font-size:19px;font-weight:700;flex:none}
-    .faq details[open] summary::after{content:"–"}
-    .faq .fa{padding:0 18px 16px;font-size:14px;max-width:75ch}
-    .faq .fa a{color:var(--teal);font-weight:600}
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:58ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Servicios profesionales | Optimatiza">
+  <meta name="twitter:description" content="Firmas legales, contables y de ingeniería: aprobaciones con trazabilidad, reportes verificables, sistemas integrados y un departamento de inteligencia competitiva.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Industrias", "item": "https://optimatiza.com/industrias/"},
+      {"@type": "ListItem", "position": 3, "name": "Servicios profesionales", "item": "https://optimatiza.com/servicios-profesionales/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué proceso conviene automatizar primero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El de mayor volumen y menor criterio profesional: aprobaciones internas, reportes consolidados a mano, captura de documentos y seguimiento de solicitudes. La evaluación ejecutiva identifica cuál consume más horas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay que cambiar los sistemas que la firma ya usa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Se trabaja sobre lo que ya está en uso: Microsoft 365, Google Workspace, el CRM, el ERP y las APIs propias. El enfoque está en integración de sistemas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué ocurre cuando un caso exige criterio profesional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El flujo lo escala a la persona designada con todo el contexto: qué se solicitó, qué ocurrió y qué falta. La firma conserva el juicio técnico y las relaciones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se define la inversión de un proyecto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Por alcance, no por hora. Se cierra por escrito antes de construir y se paga por hitos; la propuesta se define tras una evaluación, según complejidad, integraciones, volumen y soporte."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde quedan los datos de la firma y de sus clientes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En las cuentas de la firma, sobre sus licencias y sus sistemas, con registro de cada ejecución. El detalle está en seguridad y gobierno."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿La vigilancia del entorno es un servicio separado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es una práctica con método propio, implantada con la misma disciplina: temas definidos con la dirección, umbrales con responsable y cadencia fija. Ver inteligencia competitiva."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../casos/">Demostraciones</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20dirijo%20la%20operaci%C3%B3n%20de%20una%20empresa%20de%20servicios%20profesionales%20y%20quiero%20agendar%20un%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">WhatsApp</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <span class="k">Para direcciones de operaciones, finanzas y tecnología</span>
-    <h1>Automatización para empresas de servicios profesionales que mueven cientos de aprobaciones, reportes y solicitudes al mes</h1>
-    <p class="sub">Construimos flujos y agentes de IA que reciben cada solicitud, arman el expediente, piden la aprobación al responsable, actualizan sus sistemas y notifican a quien corresponde — con registro auditable de cada paso. El resultado es una operación ordenada, con reportes que se arman solos y un radar que vigila su mercado. Su equipo conserva las decisiones que exigen criterio; el sistema se encarga del trabajo repetitivo.</p>
-    <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20ejecutivo%20para%20los%20procesos%20de%20aprobaci%C3%B3n%20y%20reporte%20de%20nuestra%20empresa%20de%20servicios%20profesionales." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
-      <a class="ghost" href="../casos/">o revise las demostraciones en video</a>
+<main id="contenido">
+
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  <a href="/industrias/">Industrias</a><span aria-hidden="true">/</span>
+  Servicios profesionales
+</nav></div>
+
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> Industrias · Servicios profesionales</p>
+  <h1>Firmas de servicios profesionales: aprobaciones trazables, reportes verificables y sistemas integrados</h1>
+  <p class="lead"><b>Para firmas con estructura —legal, contable, ingeniería— donde cada semana cruzan cientos de aprobaciones, reportes y solicitudes entre varias áreas.</b> Se construyen los flujos, las integraciones y la vigilancia del entorno que permiten decidir con evidencia y no con memoria.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-secondary" href="/inteligencia-competitiva/">Ver la práctica de inteligencia competitiva</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <p class="sec-k">Diagnóstico</p>
+  <h2>Dónde se rompe la operación cuando el volumen ya no cabe en el correo</h2>
+  <p class="sec-sub">Ninguno de estos síntomas aparece en el estado de resultados con nombre propio: aparecen como horas facturables que se fueron en coordinación y como decisiones tomadas sin la información completa.</p>
+  <div class="explore">
+    <details open>
+      <summary><i>01</i><b>Aprobaciones que se pierden en un hilo de correo</b></summary>
+      <div class="ex-body"><p>La compra o el descuento de honorarios quedó en un hilo con catorce respuestas y nadie puede afirmar si el responsable ya lo revisó. Se aprueba tarde, o dos veces.</p></div>
+    </details>
+    <details>
+      <summary><i>02</i><b>Reportes que un analista arma a mano cada semana</b></summary>
+      <div class="ex-body"><p>Alguien consolida horas, avance de proyectos y facturación de tres fuentes en una hoja de cálculo. Si esa persona falta, el comité sesiona sin cifras.</p></div>
+    </details>
+    <details>
+      <summary><i>03</i><b>Sistemas que no se hablan entre sí</b></summary>
+      <div class="ex-body"><p>El CRM dice una cosa, la facturación otra y el control de proyectos una tercera. Cada consolidación manual es un error posible que se descubre al cierre.</p></div>
+    </details>
+    <details>
+      <summary><i>04</i><b>Documentos que se transcriben a mano</b></summary>
+      <div class="ex-body"><p>Facturas, órdenes y anexos llegan por correo; alguien los descarga, los digita y archiva el PDF. Cientos al mes, convertidos en horas que nadie factura.</p></div>
+    </details>
+    <details>
+      <summary><i>05</i><b>Solicitudes sin dueño y sin fecha</b></summary>
+      <div class="ex-body"><p>Un cliente o un área interna pide algo por correo. Sin registro central, nadie sabe qué está pendiente, de quién es y desde cuándo.</p></div>
+    </details>
+    <details>
+      <summary><i>06</i><b>El entorno se mira una vez al año</b></summary>
+      <div class="ex-body"><p>Una firma comparable abrió una práctica nueva o se adjudicó un mandato, y la dirección se enteró semanas después. Esa brecha la cierra la práctica de <a href="/inteligencia-competitiva/">inteligencia competitiva</a>.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Resultado</p>
+  <h2>Qué queda instalado en la firma</h2>
+  <p class="sec-sub">Cada pieza resuelve uno de esos puntos. Se construyen por separado y terminan operando como un solo sistema, con un único registro.</p>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Aprobaciones con trazabilidad</h3>
+      <p>Compras, contrataciones, descuentos de honorarios: la solicitud entra por un canal único y queda registrado quién autorizó y con qué justificación.</p>
+      <a class="link-more" href="/automatizacion-empresarial/">Automatización empresarial &rarr;</a>
+    </div>
+    <div class="card reveal reveal-2">
+      <h3>Reportes que se arman solos</h3>
+      <p>El tablero del comité y el resumen de cartera se actualizan en la cadencia acordada, sin copiar información entre sistemas.</p>
+      <a class="link-more" href="/data-business-intelligence/">Data &amp; Business Intelligence &rarr;</a>
+    </div>
+    <div class="card reveal reveal-3">
+      <h3>Sistemas que por fin se hablan</h3>
+      <p>CRM, ERP, facturación y control de proyectos sincronizados por API: un dato de referencia en lugar de tres versiones en disputa.</p>
+      <a class="link-more" href="/integracion-sistemas/">Integración de sistemas &rarr;</a>
+    </div>
+    <div class="card reveal">
+      <h3>Captura documental sin digitación</h3>
+      <p>El documento llega, se lee y sus datos quedan en el sistema contable, con el original referenciado.</p>
+      <a class="link-more" href="/procesamiento-automatico-facturas/">Procesamiento documental &rarr;</a>
+    </div>
+    <div class="card reveal reveal-2">
+      <h3>Solicitudes con dueño y estado</h3>
+      <p>Cada requerimiento queda registrado, asignado y con seguimiento hasta su cierre; la excepción escala a una persona.</p>
+      <a class="link-more" href="/agentes-ia/">Agentes de IA &rarr;</a>
+    </div>
+    <div class="card reveal reveal-3">
+      <h3>Vigilancia del entorno</h3>
+      <p>Temas definidos con la dirección, con umbral, acción pre-acordada y responsable, en la cadencia del comité.</p>
+      <a class="link-more" href="/inteligencia-competitiva/">Inteligencia competitiva &rarr;</a>
     </div>
   </div>
+</div></section>
 
-  <section>
-    <h2>Lo que frena a una operación con volumen sostenido</h2>
-    <p class="lead">Los síntomas aparecen cuando el proceso ya no cabe en el correo ni en una hoja de cálculo compartida.</p>
-    <div class="dols">
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span><h3>Aprobaciones que se pierden en el correo</h3><p>La solicitud de compra quedó en un hilo con catorce respuestas. Nadie sabe si la gerencia ya la revisó y el proveedor sigue esperando. Se aprueba tarde o se aprueba dos veces.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><path d="m7.5 15 3.5-4 3 2.5 4.5-6"/></svg></span><h3>Reportes armados a mano cada semana</h3><p>Un analista dedica el viernes a consolidar datos de tres sistemas en un Excel para la reunión de dirección. Si esa persona falta, la dirección se queda sin cifras.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Sistemas que no se hablan entre sí</h3><p>El CRM dice una cosa, la facturación otra y el archivo de control una tercera. Cada consolidación manual es una oportunidad de error que se descubre al cierre.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Documentos digitados a mano</h3><p>Facturas y órdenes llegan por correo, alguien las descarga, las transcribe al sistema y archiva el PDF. Cientos de documentos al mes convertidos en horas de digitación.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5V7a1.5 1.5 0 0 1 1.5-1.5h14A1.5 1.5 0 0 1 20.5 7v2.5a2.5 2.5 0 0 0 0 5V17a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 17v-2.5a2.5 2.5 0 0 0 0-5Z"/><path d="M13 6v2M13 11v2M13 16v2"/></svg></span><h3>Solicitudes sin dueño ni seguimiento</h3><p>Un cliente o un área interna pide algo por correo o WhatsApp. Sin un registro central, nadie sabe qué está pendiente, de quién es y desde cuándo.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg></span><h3>Sin inteligencia de mercado</h3><p>Un competidor cambió precios, publicó un servicio nuevo o ganó una licitación, y su equipo se enteró semanas después y por casualidad.</p></div>
+<section class="forest"><div class="wrap">
+  <p class="sec-k">Trazabilidad</p>
+  <h2>Así opera una aprobación cuando queda registrada</h2>
+  <p class="sec-sub">El mismo esquema sirve para una compra, una contratación o una excepción de honorarios: cambia el formulario y cambia el responsable, no la disciplina.</p>
+  <div class="flow3">
+    <div class="fcol reveal">
+      <div class="fh">1 · Entra la solicitud</div>
+      <p>Por el canal que la firma ya usa, con los campos mínimos obligatorios.</p>
+      <div class="chips"><span>Formulario</span><span>Correo</span><span>Teams</span><span>ERP</span></div>
     </div>
-  </section>
-
-  <section>
-    <h2>El resultado: una operación ordenada y auditable</h2>
-    <p class="lead">Cada pieza resuelve uno de esos puntos. Se construyen por separado y funcionan como un solo sistema.</p>
-    <div class="outs">
-      <a class="out" href="/automatizacion-empresarial/"><b>Flujos de aprobación con trazabilidad</b><p>Compras, vacaciones, descuentos, viáticos: la solicitud entra por un solo canal, se aprueba con un clic y queda registrado quién autorizó, cuándo y con qué justificación.</p><span class="more">Automatización de procesos →</span></a>
-      <a class="out" href="../power-bi/"><b>Reportes que llegan solos</b><p>Cada mañana o cada lunes, el tablero y el resumen ejecutivo se actualizan sin que nadie copie ni pegue información.</p><span class="more">Reportes con Power BI →</span></a>
-      <a class="out" href="/integracion-sistemas/"><b>Sistemas que por fin se hablan</b><p>CRM, ERP, facturación y hojas de cálculo sincronizados por API: un solo dato verdadero en lugar de tres versiones en disputa.</p><span class="more">Integraciones por API →</span></a>
-      <a class="out" href="../procesamiento-automatico-facturas/"><b>Documentos capturados sin digitar</b><p>La factura llega, el sistema la lee, extrae los datos y los deja en su sistema contable con el PDF archivado y referenciado.</p><span class="more">Procesamiento de facturas →</span></a>
-      <a class="out" href="../inteligencia-competitiva/"><b>Radar de mercado</b><p>Un sistema vigila precios, lanzamientos y movimientos de su competencia y de su sector, y entrega solo lo relevante a la dirección.</p><span class="more">Inteligencia competitiva →</span></a>
-      <a class="out" href="/agentes-ia/"><b>Solicitudes con dueño y estado</b><p>Cada requerimiento interno o de cliente queda registrado, asignado y con seguimiento automático hasta su cierre.</p><span class="more">Agentes de IA →</span></a>
+    <div class="farrow" aria-hidden="true">&rarr;</div>
+    <div class="fcol hub reveal reveal-2">
+      <div class="fh">2 · Se arma el expediente y se decide</div>
+      <p>El flujo registra quién pide y qué pide, adjunta cotizaciones y anexos, y lo presenta al responsable, que aprueba o rechaza sin buscar el hilo.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>Así se ve un flujo de aprobación automatizado</h2>
-    <div class="flow">
-      <div class="fstep"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M12 4v10m0 0 3.5-3.5M12 14l-3.5-3.5"/></svg></span><b>1. Llega la solicitud</b><p>Por formulario, correo o WhatsApp: una compra, un descuento, unas vacaciones.</p></div>
-      <span class="farr" aria-hidden="true">→</span>
-      <div class="fstep"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><b>2. Se arma el expediente</b><p>El flujo registra quién pide, qué pide, y adjunta cotizaciones o documentos.</p></div>
-      <span class="farr" aria-hidden="true">→</span>
-      <div class="fstep"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg></span><b>3. Aprobación con un clic</b><p>El responsable aprueba o rechaza desde Teams, correo o WhatsApp, sin buscar hilos.</p></div>
-      <span class="farr down" aria-hidden="true">→</span>
-      <div class="fbranch">
-        <div class="fcase ok"><b>Si se aprueba:</b> el flujo actualiza su sistema, genera el documento y notifica al solicitante. Nadie transcribe nada.</div>
-        <div class="fcase wait"><b>Si no hay respuesta:</b> recordatorio automático a las 24 horas; si sigue pendiente, escala al siguiente responsable.</div>
-      </div>
+    <div class="farrow" aria-hidden="true">&rarr;</div>
+    <div class="fcol reveal reveal-3">
+      <div class="fh">3 · Se ejecuta y queda en bitácora</div>
+      <p>Se actualiza el sistema, se genera el documento y se notifica al solicitante. Si nadie responde, el recordatorio y el escalamiento ya están por escrito.</p>
     </div>
-    <p class="note">Cada paso queda registrado: quién aprobó, cuándo y con qué comentario. La discusión sobre quién vio qué correo deja de existir.</p>
-
-    <div class="vids">
-      <div class="vid">
-        <video controls preload="none" playsinline poster="../casos/videos/captura-facturas-sin-digitar.jpg">
-          <source src="../casos/videos/captura-facturas-sin-digitar.mp4" type="video/mp4">
-        </video>
-        <div class="vb"><b>Captura de facturas sin digitar</b><p>Demostración ilustrativa animada: cómo una factura entra por correo y termina registrada en su sistema sin que nadie la transcriba.</p></div>
-      </div>
-      <div>
-        <h2 style="font-size:19px">¿Prefiere verlo en movimiento?</h2>
-        <p style="font-size:14.5px;max-width:48ch">En la página de casos hay demostraciones en video de captura de facturas, cotizador exprés, resumen ejecutivo diario y otros procesos. Son animaciones ilustrativas: su flujo se construye a medida sobre los sistemas reales de su operación.</p>
-        <p style="margin-top:12px"><a class="ghost" href="../casos/">Ver todas las demostraciones →</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Cómo funciona</h2>
-    <div class="pasos">
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>Diagnóstico ejecutivo (30 min, sin costo)</div>
-      <span class="arrow" aria-hidden="true">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span>Priorizamos el proceso de mayor fricción y volumen</div>
-      <span class="arrow" aria-hidden="true">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 5.2 5.2L21 12l-9 9-3-3 9-9Z"/><path d="m8.5 8.5-3.6 3.6a2.5 2.5 0 0 0 0 3.5"/></svg></span>Lo construimos y su equipo lo valida en piloto</div>
-      <span class="arrow" aria-hidden="true">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg></span>Entra en producción; pagos por hitos</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Trabajamos sobre los sistemas que su operación ya utiliza</h2>
-    <p class="lead">No vendemos migraciones ni licencias: conectamos lo que ya tiene instalado y en uso.</p>
-    <div class="chips">
-      <span class="chip">Microsoft 365 · Outlook · Teams · SharePoint</span>
-      <span class="chip">Google Workspace</span>
-      <a class="chip" href="../power-automate/">Power Automate</a>
-      <a class="chip" href="../n8n/">n8n</a>
-      <a class="chip" href="../power-bi/">Power BI</a>
-      <span class="chip">WhatsApp Business</span>
-      <span class="chip">CRM</span>
-      <span class="chip">ERP y facturación</span>
-      <span class="chip">Bases de datos SQL</span>
-      <span class="chip">APIs propias</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Modalidades de trabajo y alcance típico</h2>
-    <p class="lead">Definimos el alcance en el diagnóstico y lo cerramos por escrito antes de construir. La inversión depende del alcance y se define tras una evaluación.</p>
-    <div class="prices">
-      <div class="pr"><b>Unidad simple</b><span class="amt">1–2 semanas</span><span class="tm">alcance típico</span><p>Un flujo puntual: un reporte automático diario, una alerta operativa o la captura de documentos hacia su sistema.</p></div>
-      <div class="pr"><b>Proceso estándar</b><span class="amt">2–4 semanas</span><span class="tm">alcance típico</span><p>Un proceso completo: flujo de aprobaciones con recordatorios, escalamiento y registro de punta a punta.</p></div>
-      <div class="pr"><b>Célula multi-agente</b><span class="amt">4–8 semanas</span><span class="tm">alcance típico</span><p>Varios flujos y agentes operando juntos: aprobaciones, reportes, integraciones y radar de mercado como un solo sistema.</p></div>
-      <div class="pr"><b>Operación continua</b><span class="amt">Mensual</span><span class="tm">según nivel de servicio</span><p>Monitoreo, ajustes y soporte para que los flujos sigan corriendo cuando algo cambie en sus sistemas.</p></div>
-    </div>
-    <p class="note">Inversión según alcance, con pagos por hitos. <a href="../metodologia/">Ver modelos de contratación</a></p>
-    <div class="guar"><b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. Pagos por hitos. <a href="../contacto/">Solicitar evaluación ejecutiva →</a></div>
-  </section>
-
-  <section>
-    <h2>Evidencia verificable, sin humo</h2>
-    <div class="evs">
-      <div class="ev"><span class="ev-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span><p><b>Una métrica medida, no una promesa:</b> nuestro Capturista Digital procesa una factura en ~4 segundos. Es una grabación del sistema real. <a href="../casos/">Puede verla aquí</a>.</p></div>
-      <div class="ev"><span class="ev-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="12" rx="2.5"/><path d="M12 7.5V4M9 12.5h.01M15 12.5h.01M9.5 16h5"/></svg></span><p><b>Operamos con nuestra propia tecnología:</b> las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. El chat Nova de este sitio es un agente en producción, no un guion.</p></div>
-      <div class="ev"><span class="ev-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5Z"/></svg></span><p><b>Las demostraciones de <a href="../casos/">la página de casos</a> son animaciones ilustrativas</b> y así están etiquetadas. Su flujo se construye a medida sobre sus sistemas.</p></div>
-      <div class="ev"><span class="ev-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m6.5 6.5 11 11"/></svg></span><p><b>No publicamos testimonios ni porcentajes de mejora que no podamos demostrar.</b> Cuando existan cifras medidas de clientes, aparecerán aquí con nombre y contexto.</p></div>
-    </div>
-  </section>
-
-  <section class="faq">
-    <h2>Preguntas frecuentes</h2>
-    <details>
-      <summary>¿Qué procesos conviene automatizar primero en una empresa de servicios?</summary>
-      <div class="fa"><p>Los de mayor volumen y menor criterio involucrado: aprobaciones internas (compras, vacaciones, descuentos), reportes que alguien consolida a mano cada semana, captura de documentos y seguimiento de solicitudes. En el <a href="https://wa.me/50371928070?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20ejecutivo%20para%20identificar%20qu%C3%A9%20proceso%20automatizar%20primero%20en%20nuestra%20operaci%C3%B3n%20de%20servicios%20profesionales." target="_blank" rel="noopener">diagnóstico ejecutivo</a> identificamos cuál consume más horas de su equipo y por dónde conviene empezar.</p></div>
-    </details>
-    <details>
-      <summary>¿Cómo se determina la inversión de un proyecto?</summary>
-      <div class="fa"><p>Por alcance, no por hora. Una unidad simple toma de 1 a 2 semanas, un proceso estándar de 2 a 4 semanas y una célula multi-agente de 4 a 8 semanas; la operación continua se contrata de forma mensual según el nivel de servicio. El alcance se cierra por escrito antes de construir y los pagos van por hitos: cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a href="../metodologia/">Vea los modelos de contratación</a>.</p></div>
-    </details>
-    <details>
-      <summary>¿Tenemos que cambiar nuestros sistemas actuales?</summary>
-      <div class="fa"><p>No. Trabajamos sobre lo que su operación ya usa: Microsoft 365, Google Workspace, su CRM, su ERP o sistema de facturación, y APIs propias. Herramientas como Power Automate o n8n conectan lo que ya tiene; no vendemos migraciones ni licencias. Puede ver el enfoque en <a href="/integracion-sistemas/">integraciones por API</a>.</p></div>
-    </details>
-    <details>
-      <summary>¿Qué pasa cuando un caso necesita criterio humano?</summary>
-      <div class="fa"><p>El flujo lo escala a una persona de su equipo con todo el contexto: qué se solicitó, qué ocurrió y qué falta. El sistema se encarga del trabajo repetitivo; su equipo conserva las decisiones, las relaciones y las tareas que exigen criterio.</p></div>
-    </details>
-    <details>
-      <summary>¿Y si el primer flujo no funciona?</summary>
-      <div class="fa"><p>El alcance se cierra por escrito antes de construir y los pagos van por hitos: cada fase se valida en operación antes de continuar, y lo que no funcione como se acordó se corrige dentro del alcance antes de dar por entregado el proyecto. El proceso completo está descrito en <a href="../metodologia/">la metodología de trabajo</a>.</p></div>
-    </details>
-    <details>
-      <summary>¿Dónde quedan nuestros datos?</summary>
-      <div class="fa"><p>En las cuentas de su empresa. Los flujos corren sobre sus licencias y sus sistemas; no almacenamos su información en servidores nuestros. El detalle está en <a href="/seguridad-gobierno/">cómo cuidamos su información</a>.</p></div>
-    </details>
-  </section>
-
-  <div class="final">
-    <h2>¿Cuántas horas consumió su operación esta semana persiguiendo aprobaciones y consolidando reportes?</h2>
-    <p>Diagnóstico ejecutivo de 30 minutos, sin costo: revisamos sus procesos reales y le indicamos qué conviene automatizar primero, qué no conviene tocar y cuál sería el alcance de cada etapa.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo%20de%20nuestros%20procesos%20de%20servicios%20profesionales." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
   </div>
+  <p class="sec-sub">Cada paso deja rastro: quién aprobó, cuándo y con qué comentario. Ante una auditoría, una revisión de socios o un reclamo de cliente, el expediente ya está armado. El método por fases que lo sostiene está en <a href="/metodologia/">la metodología</a>.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Sistemas</p>
+  <h2>Se trabaja sobre lo que la firma ya tiene instalado</h2>
+  <p class="sec-sub">No se venden migraciones ni licencias: se conecta lo que está en uso y la orquestación queda gobernada en un solo lugar, con registro de cada ejecución.</p>
+  <div class="pills">
+    <span>Microsoft 365</span>
+    <span>Outlook y Teams</span>
+    <span>SharePoint</span>
+    <span>Google Workspace</span>
+    <span>Power Automate</span>
+    <span>n8n</span>
+    <span>Power BI</span>
+    <span>CRM</span>
+    <span>ERP y facturación</span>
+    <span>Bases de datos SQL</span>
+    <span>APIs propias</span>
+  </div>
+  <figure class="factory" aria-labelledby="factory-cap">
+    <svg viewBox="0 0 900 440" role="img" aria-label="Un robot en el centro conecta n8n, Power Automate, Copilot, Power BI, SharePoint, Dataverse, SQL Server y APIs REST en un solo proceso.">
+      <defs>
+        <pattern id="fx-hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="#183f35" stroke-width="1.1" opacity=".22"/>
+        </pattern>
+        <radialGradient id="fx-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c9913b" stop-opacity=".28"/>
+          <stop offset="100%" stop-color="#c9913b" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- marco de plano tecnico -->
+      <rect class="fx-frame" x="14" y="14" width="872" height="412" rx="6"/>
+      <text class="fx-tag" x="450" y="36" text-anchor="middle">FIG. 1 — ORQUESTACIÓN</text>
+
+      <!-- anillo punteado que gira -->
+      <ellipse class="fx-ring" cx="450" cy="238" rx="298" ry="150"/>
+      <ellipse class="fx-ring fx-ring-2" cx="450" cy="238" rx="252" ry="122"/>
+
+      <!-- conectores: cada linea lleva un pulso hacia el centro -->
+      <g class="fx-wires">
+        <path class="fx-wire" d="M748 238 H556"/>
+        <path class="fx-wire" d="M661 136 L570 196"/>
+        <path class="fx-wire" d="M450 88 V178"/>
+        <path class="fx-wire" d="M239 136 L330 196"/>
+        <path class="fx-wire" d="M152 238 H344"/>
+        <path class="fx-wire" d="M239 340 L330 280"/>
+        <path class="fx-wire" d="M450 388 V298"/>
+        <path class="fx-wire" d="M661 340 L570 280"/>
+      </g>
+
+      <!-- halo del nucleo -->
+      <circle cx="450" cy="238" r="118" fill="url(#fx-glow)"/>
+
+      <!-- ROBOT: ensambla un conector en el centro -->
+      <g class="fx-bot">
+        <!-- banco de trabajo, con chispas del soldado -->
+        <line class="fx-ink" x1="366" y1="316" x2="534" y2="316"/>
+        <line class="fx-ink fx-thin" x1="388" y1="316" x2="388" y2="338"/>
+        <line class="fx-ink fx-thin" x1="512" y1="316" x2="512" y2="338"/>
+
+        <!-- el conector se arma pieza a pieza: cuerpo, carcasa y pines -->
+        <g class="fx-build">
+          <rect class="fx-brick fx-b1" x="492" y="300" width="38" height="15" rx="3"/>
+          <rect class="fx-brick fx-b2" x="492" y="284" width="38" height="15" rx="3"/>
+          <path class="fx-pins fx-b3" d="M501 284 v-13 M511 284 v-13 M521 284 v-13"/>
+          <circle class="fx-weld" cx="511" cy="282" r="5"/>
+        </g>
+
+        <!-- cuerpo -->
+        <rect class="fx-body" x="404" y="228" width="70" height="76" rx="10"/>
+        <rect class="fx-panel" x="416" y="244" width="46" height="26" rx="3"/>
+        <path class="fx-scan" d="M422 252 h34 M422 260 h22"/>
+        <text class="fx-code" x="439" y="292" text-anchor="middle">OPZ-01</text>
+
+        <!-- cabeza -->
+        <rect class="fx-body" x="414" y="186" width="50" height="38" rx="8"/>
+        <circle class="fx-eye" cx="428" cy="205" r="5"/>
+        <circle class="fx-eye fx-eye-2" cx="450" cy="205" r="5"/>
+        <line class="fx-ink fx-thin" x1="439" y1="186" x2="439" y2="172"/>
+        <circle class="fx-ant" cx="439" cy="168" r="4"/>
+        <circle class="fx-spark" cx="439" cy="168" r="9"/>
+
+        <!-- brazo derecho: suelda -->
+        <g class="fx-arm">
+          <line class="fx-ink" x1="474" y1="250" x2="506" y2="264"/>
+          <rect class="fx-tool" x="502" y="258" width="15" height="13" rx="3"/>
+        </g>
+        <!-- brazo izquierdo: sostiene la pieza -->
+        <g class="fx-arm2">
+          <line class="fx-ink" x1="404" y1="250" x2="378" y2="270"/>
+          <rect class="fx-tool fx-tool-b" x="370" y="264" width="13" height="13" rx="3"/>
+        </g>
+
+        <!-- ruedas -->
+        <circle class="fx-wheel" cx="418" cy="308" r="7"/>
+        <circle class="fx-wheel" cx="439" cy="308" r="7"/>
+        <circle class="fx-wheel" cx="460" cy="308" r="7"/>
+
+        <!-- engranaje que gira -->
+        <g class="fx-gear">
+          <circle class="fx-ink" cx="352" cy="196" r="13" fill="none"/>
+          <circle class="fx-ink" cx="352" cy="196" r="4.5" fill="none"/>
+          <line class="fx-ink fx-thin" x1="352" y1="179" x2="352" y2="213"/>
+          <line class="fx-ink fx-thin" x1="335" y1="196" x2="369" y2="196"/>
+          <line class="fx-ink fx-thin" x1="340" y1="184" x2="364" y2="208"/>
+          <line class="fx-ink fx-thin" x1="364" y1="184" x2="340" y2="208"/>
+        </g>
+      </g>
+
+      <!-- CONECTORES DE TECNOLOGIA -->
+      <g class="fx-chips">
+        <g class="fx-chip" style="--i:0"><rect x="679" y="220" width="140" height="36" rx="8"/><text x="749" y="243" text-anchor="middle">Power Automate</text></g>
+        <g class="fx-chip" style="--i:1"><rect x="606" y="118" width="112" height="36" rx="8"/><text x="662" y="141" text-anchor="middle">SharePoint</text></g>
+        <g class="fx-chip" style="--i:2"><rect x="402" y="70" width="96" height="36" rx="8"/><text x="450" y="93" text-anchor="middle">Copilot</text></g>
+        <g class="fx-chip" style="--i:3"><rect x="186" y="118" width="106" height="36" rx="8"/><text x="239" y="141" text-anchor="middle">Power BI</text></g>
+        <g class="fx-chip" style="--i:4"><rect x="94" y="220" width="116" height="36" rx="8"/><text x="152" y="243" text-anchor="middle">SQL Server</text></g>
+        <g class="fx-chip" style="--i:5"><rect x="186" y="322" width="106" height="36" rx="8"/><text x="239" y="345" text-anchor="middle">Dataverse</text></g>
+        <g class="fx-chip" style="--i:6"><rect x="404" y="370" width="92" height="36" rx="8"/><text x="450" y="393" text-anchor="middle">n8n</text></g>
+        <g class="fx-chip" style="--i:7"><rect x="602" y="322" width="118" height="36" rx="8"/><text x="661" y="345" text-anchor="middle">API REST</text></g>
+      </g>
+
+      <!-- etiquetas de esquina, como en un plano -->
+      <text class="fx-tag fx-tag-s" x="34" y="410">ENTRADAS HETEROGÉNEAS</text>
+      <text class="fx-tag fx-tag-s" x="866" y="410" text-anchor="end">UN SOLO PROCESO</text>
+    </svg>
+    <figcaption id="factory-cap">Los sistemas de la firma no se sustituyen: se conectan. El expediente queda gobernado en un solo lugar, con trazabilidad de punta a punta.</figcaption>
+  </figure>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Inteligencia competitiva</p>
+  <h2>El mismo rigor, aplicado a lo que ocurre fuera de la firma</h2>
+  <p class="sec-sub">Una firma de servicios profesionales compite por mandatos, por talento y por reputación técnica: las tres cosas se mueven fuera de sus sistemas y ninguna aparece en su tablero de operación.</p>
+  <div class="cols2" style="margin-top:26px">
+    <div>
+      <h3>Qué se vigila</h3>
+      <ul class="dots">
+        <li>Movimientos de firmas comparables: prácticas nuevas, incorporación de socios y alianzas.</li>
+        <li>Cambios regulatorios y de normativa técnica que obligan a mover la oferta o a certificar al equipo.</li>
+        <li>Convocatorias donde la firma compite, con el criterio de adjudicación declarado.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Qué recibe la dirección</h3>
+      <ul class="checks">
+        <li><b>Estudio base</b>: el entorno levantado con origen y fecha en cada afirmación. Ver <a href="/inteligencia-competitiva/estudio-base/">el estudio base</a>.</li>
+        <li><b>Alertas con dueño</b>: cada tema con umbral, acción pre-acordada y responsable. Ver <a href="/inteligencia-competitiva/alertas-tempranas/">alertas tempranas</a>.</li>
+        <li><b>Brief periódico</b> en el ritmo del comité, ordenado por impacto sobre las decisiones abiertas.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tripwire reveal">
+    <div class="tw-cell"><b>Indicador</b><span>Firma comparable anuncia práctica nueva donde usted concentra honorarios</span></div>
+    <div class="tw-cell umbral"><b>Umbral</b><span>Anuncio público confirmado</span></div>
+    <div class="tw-cell"><b>Acción pre-acordada</b><span>Revisar propuesta y diferencial en las cuentas expuestas, en diez días hábiles</span></div>
+    <div class="tw-cell"><b>Responsable</b><span>Comité de socios</span></div>
+  </div>
+  <div class="note demo"><b>Ejemplo ilustrativo.</b> Los temas, umbrales y responsables se fijan con su dirección durante <a href="/inteligencia-competitiva/implantacion/">la implantación</a>.</div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Modelos de contratación</p>
+  <h2>Puntos de entrada según cuánto necesite validar antes</h2>
+  <p class="sec-sub">El alcance se cierra por escrito antes de construir y ningún hito se da por cumplido sin un entregable verificable sobre su ambiente.</p>
+  <div class="cards">
+    <div class="card reveal"><h3>Evaluación ejecutiva</h3><p>Sesión inicial sin costo: prioridades, riesgos y una recomendación.</p></div>
+    <div class="card reveal reveal-2"><h3>Discovery y arquitectura</h3><p>El diseño y los criterios de éxito por escrito, que puede implementar con quien decida.</p></div>
+    <div class="card reveal reveal-3"><h3>Piloto controlado</h3><p>Un proceso acotado, con datos reales, antes de comprometer la operación en marcha.</p></div>
+    <div class="card reveal"><h3>Implementación por hitos</h3><p>Hasta producción, con manual, capacitación y accesos a nombre de la firma.</p></div>
+    <div class="card reveal reveal-2"><h3>Operación administrada</h3><p>Monitoreo y soporte cuando cambian los sistemas: <a href="/operacion-administrada/">operación administrada</a>.</p></div>
+    <div class="card reveal reveal-3"><h3>Departamento de inteligencia competitiva</h3><p>Temas vigilados, umbrales con dueño y cadencia fija: <a href="/inteligencia-competitiva/">inteligencia competitiva</a>.</p></div>
+  </div>
+  <p class="note">Cada propuesta se define tras una evaluación de alcance, según complejidad, integraciones, volumen, seguridad y soporte.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Qué se afirma y qué no</p>
+  <h2>Evidencia y límites, por escrito</h2>
+  <div class="split">
+    <div>
+      <ul class="checks">
+        <li><b>El criterio profesional no se automatiza.</b> Pagos, aprobaciones y comunicaciones a clientes se preparan; una persona decide. Ver <a href="/responsabilidad-ia/">Responsabilidad de IA</a>.</li>
+        <li><b>Los datos quedan en las cuentas de la firma</b>, sobre sus licencias y sus sistemas. Ver <a href="/seguridad-gobierno/">Seguridad y gobierno</a>.</li>
+        <li><b>Cada ejecución deja rastro</b>: qué se procesó, cuándo y bajo qué credenciales.</li>
+        <li><b>Las demostraciones publicadas son animaciones ilustrativas</b> y están etiquetadas como tales.</li>
+        <li><b>No se publican testimonios ni porcentajes de mejora que no se puedan demostrar.</b></li>
+      </ul>
+    </div>
+    <div class="reveal"><figure class="plate">
+      <img src="/img/crew-inspecting.svg" alt="Robot revisando un tablero con el registro de cada ejecución">
+      <figcaption>Lo que no deja registro no se puede auditar, y lo que no se audita no se lleva a un comité.</figcaption>
+    </figure></div>
+  </div>
+  <div class="note demo"><b>El método, medido:</b> el Capturista Digital registra una factura en unos 4 segundos, grabado en video. <a class="link-more" href="/casos/">Ver el caso</a></div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Preguntas frecuentes</p>
+  <h2>Lo que el comité pregunta antes de empezar</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Qué proceso conviene automatizar primero?</summary>
+      <p class="fa">El de mayor volumen y menor criterio profesional: aprobaciones internas, reportes consolidados a mano, captura de documentos y seguimiento de solicitudes. La evaluación ejecutiva identifica cuál consume más horas.</p>
+    </details>
+    <details>
+      <summary>¿Hay que cambiar los sistemas que la firma ya usa?</summary>
+      <p class="fa">No. Se trabaja sobre lo que ya está en uso: Microsoft 365, Google Workspace, el CRM, el ERP y las APIs propias. El enfoque está en <a href="/integracion-sistemas/">integración de sistemas</a>.</p>
+    </details>
+    <details>
+      <summary>¿Qué ocurre cuando un caso exige criterio profesional?</summary>
+      <p class="fa">El flujo lo escala a la persona designada con todo el contexto: qué se solicitó, qué ocurrió y qué falta. La firma conserva el juicio técnico y las relaciones.</p>
+    </details>
+    <details>
+      <summary>¿Cómo se define la inversión de un proyecto?</summary>
+      <p class="fa">Por alcance, no por hora. Se cierra por escrito antes de construir y se paga por hitos; la propuesta se define tras una evaluación, según complejidad, integraciones, volumen y soporte.</p>
+    </details>
+    <details>
+      <summary>¿Dónde quedan los datos de la firma y de sus clientes?</summary>
+      <p class="fa">En las cuentas de la firma, sobre sus licencias y sus sistemas, con registro de cada ejecución. El detalle está en <a href="/seguridad-gobierno/">seguridad y gobierno</a>.</p>
+    </details>
+    <details>
+      <summary>¿La vigilancia del entorno es un servicio separado?</summary>
+      <p class="fa">Es una práctica con método propio, implantada con la misma disciplina: temas definidos con la dirección, umbrales con responsable y cadencia fija. Ver <a href="/inteligencia-competitiva/">inteligencia competitiva</a>.</p>
+    </details>
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>Su operación interna debería ser tan verificable como el trabajo que factura</h2>
+  <p class="sec-sub" style="margin:0 auto 6px">Una conversación inicial basta para acotar el primer proceso y el alcance de la vigilancia del entorno.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresa mediana y grande.</span>
-  <a href="../">Inicio</a><a href="../metodologia/">Metodología</a><a href="../casos/">Demostraciones</a><a href="../clinicas/">Clínicas</a><a href="../distribuidoras/">Distribuidoras</a><a href="/seguridad-gobierno/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué procesos conviene automatizar primero en una empresa de servicios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los de mayor volumen y menor criterio involucrado: aprobaciones internas (compras, vacaciones, descuentos), reportes que alguien consolida a mano cada semana, captura de documentos y seguimiento de solicitudes. En el diagnóstico ejecutivo identificamos cuál consume más horas de su equipo y por dónde conviene empezar."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo se determina la inversión de un proyecto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Por alcance, no por hora. Una unidad simple toma de 1 a 2 semanas, un proceso estándar de 2 a 4 semanas y una célula multi-agente de 4 a 8 semanas; la operación continua se contrata de forma mensual según el nivel de servicio. El alcance se cierra por escrito antes de construir y los pagos van por hitos: cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Tenemos que cambiar nuestros sistemas actuales?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Trabajamos sobre lo que su operación ya usa: Microsoft 365, Google Workspace, su CRM, su ERP o sistema de facturación, y APIs propias. Herramientas como Power Automate o n8n conectan lo que ya tiene; no vendemos migraciones ni licencias."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa cuando un caso necesita criterio humano?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El flujo lo escala a una persona de su equipo con todo el contexto: qué se solicitó, qué ocurrió y qué falta. El sistema se encarga del trabajo repetitivo; su equipo conserva las decisiones, las relaciones y las tareas que exigen criterio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Y si el primer flujo no funciona?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El alcance se cierra por escrito antes de construir y los pagos van por hitos: cada fase se valida en operación antes de continuar, y lo que no funcione como se acordó se corrige dentro del alcance antes de dar por entregado el proyecto. El proceso completo está descrito en optimatiza.com/metodologia/."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Dónde quedan nuestros datos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En las cuentas de su empresa. Los flujos corren sobre sus licencias y sus sistemas; Optimatiza no almacena su información en servidores propios. El detalle está publicado en optimatiza.com/seguridad-gobierno."
-      }
-    }
-  ]
-}
-</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

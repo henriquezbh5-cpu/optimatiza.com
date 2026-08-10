@@ -3,266 +3,233 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Publicaciones | Optimatiza</title>
+  <meta name="description" content="Biblioteca técnica de la firma: el informe de inteligencia competitiva de muestra, la comparativa de plataformas de orquestación y la calculadora de retorno.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/recursos/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Recursos: calculadoras y guías de automatización | Optimatiza</title>
-  <meta name="description" content="Calculadoras, guías y comparativas gratuitas para decidir con sus propios números qué automatizar en su empresa. Sin registro ni formularios: use y comparta.">
-  <link rel="canonical" href="https://optimatiza.com/recursos/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Recursos: calculadoras y guías de automatización | Optimatiza">
-  <meta property="og:description" content="Calculadoras, guías y comparativas gratuitas para decidir con sus propios números qué automatizar. Sin registro ni formularios.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Publicaciones | Optimatiza">
+  <meta property="og:description" content="El informe de inteligencia competitiva de muestra, la comparativa de plataformas de orquestación y la calculadora de retorno.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/recursos/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#3F6F8A;--blue-soft:#E7EDF1;--violet:#C9913B;--violet-soft:#F6EEDD;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    .hero{padding:56px 0 30px;max-width:800px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17px;max-width:62ch}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 6px}
-    .h2sub{font-size:14.5px;color:var(--dim);margin:0 0 18px;max-width:64ch}
-    section{padding:30px 0}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-    .card{display:flex;flex-direction:column;background:#FFFDF8;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh);transition:transform .15s ease,border-color .15s ease}
-    .card:hover{transform:translateY(-2px);border-color:var(--teal2)}
-    .card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
-    .badge{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px}
-    .b-teal{background:var(--teal-soft)}
-    .b-blue{background:var(--blue-soft)}
-    .b-violet{background:var(--violet-soft)}
-    .tag{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-    .t-teal{background:var(--teal-soft);color:var(--teal)}
-    .t-blue{background:var(--blue-soft);color:var(--blue)}
-    .t-violet{background:var(--violet-soft);color:var(--violet)}
-    .card h3{font-family:var(--ffd);color:var(--ink);font-size:17px;line-height:1.3;margin:0 0 8px}
-    .card p{font-size:14px;flex:1}
-    .card .go{margin-top:14px;color:var(--teal);font-weight:700;font-size:14px}
-    .note{font-size:12.5px;color:var(--dim);margin-top:14px}
-    .open-strip{display:flex;flex-wrap:wrap;gap:10px 22px;background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:16px 20px;font-size:13.5px}
-    .open-strip b{color:var(--ink)}
-    .open-strip span{display:flex;align-items:center;gap:8px}
-    .soon{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .soon-card{background:var(--alt);border:1px dashed var(--line);border-radius:14px;padding:18px 20px}
-    .soon-card .tag{background:#EDF2F7;color:var(--dim)}
-    .soon-card h3{font-family:var(--ffd);color:var(--ink);font-size:15.5px;margin:10px 0 6px}
-    .soon-card p{font-size:13.5px}
-    .evi{background:linear-gradient(135deg,rgba(37,211,102,.07),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.35);border-radius:16px;padding:22px 24px}
-    .evi h2{font-size:20px;margin-bottom:10px}
-    .evi ul{margin:0;padding-left:20px;font-size:14px}
-    .evi li{margin-bottom:6px}
-    .evi li:last-child{margin-bottom:0}
-    .evi a{color:var(--teal);font-weight:600}
-    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:var(--sh)}
-    .faq summary{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";color:var(--teal);font-size:19px;font-weight:700;flex-shrink:0}
-    .faq details[open] summary::after{content:"–"}
-    .faq details p{font-size:14px;margin-top:10px}
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:58ch;margin:0 auto 20px;font-size:15px}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Publicaciones | Optimatiza">
+  <meta name="twitter:description" content="El informe de inteligencia competitiva de muestra, la comparativa de plataformas de orquestación y la calculadora de retorno.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Publicaciones", "item": "https://optimatiza.com/recursos/"}
+    ]
+  }
+  </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../casos/">Demos en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20los%20recursos%20de%20Optimatiza%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">WhatsApp</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <span class="k">Centro de recursos · todo abierto, nada a cambio</span>
-    <h1>Recursos gratuitos de automatización: decida con sus propios números</h1>
-    <p class="sub">Antes de invertir un dólar en automatizar, dimensione el problema: cuánto le cuesta la cartera vencida, las inasistencias o el trabajo repetitivo de su equipo. Estas calculadoras, guías y comparativas son gratis, sin registro y sin pedirle el correo.</p>
+<main id="contenido">
+
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  Publicaciones
+</nav></div>
+
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> Biblioteca de la firma</p>
+  <h1>Lo que publicamos, abierto y sin registro</h1>
+  <p class="lead"><b>Nada de esto pide su correo.</b> Son las piezas con las que una dirección puede juzgar cómo trabajamos antes de hablar con nosotros: el formato real de un informe de inteligencia, la comparativa técnica que usamos para decidir plataforma y la aritmética con la que dimensionamos un caso.</p>
+</div></div>
+
+<section><div class="wrap">
+  <p class="sec-k">El entregable</p>
+  <h2>Vea el informe antes de contratarlo</h2>
+  <p class="sec-sub">Es la pieza más útil de esta página: el formato completo de un brief de inteligencia competitiva, con hallazgos, fuentes, nivel de confianza y la acción que cada uno dispara.</p>
+  <div class="cards">
+    <a class="card reveal" href="/inteligencia-competitiva/informe-muestra/">
+      <div class="cnum">01</div>
+      <h3>Informe de inteligencia competitiva — muestra completa</h3>
+      <p>La estructura, las secciones y el nivel de detalle con datos de ejemplo. Es el mismo formato que recibiría su comité, no un resumen comercial.</p>
+      <span class="link-more">Ver el informe &rarr;</span>
+    </a>
+    <a class="card reveal reveal-2" href="/inteligencia-competitiva/estudio-base/">
+      <div class="cnum">02</div>
+      <h3>Anatomía del estudio base</h3>
+      <p>Las ocho secciones que componen la fotografía inicial del entorno, con una battlecard de competidor rellena campo por campo.</p>
+      <span class="link-more">Ver la anatomía &rarr;</span>
+    </a>
+    <a class="card reveal reveal-3" href="/inteligencia-competitiva/ia-analista/">
+      <div class="cnum">03</div>
+      <h3>Biblioteca de prompts</h3>
+      <p>Los prompts con los que un analista produce una battlecard, una ficha de prospecto o un resumen ejecutivo. Con sus marcadores, listos para copiar.</p>
+      <span class="link-more">Ver los prompts &rarr;</span>
+    </a>
   </div>
+</div></section>
 
-  <section aria-labelledby="t-recursos">
-    <h2 id="t-recursos">Elija su recurso</h2>
-    <p class="h2sub">Tres calculadoras, una comparativa técnica, una muestra de informe y una guía en PDF. Todo abre directo, sin formularios.</p>
-    <div class="cards">
-      <a class="card" href="/recursos/calculadora-roi/">
-        <div class="card-top"><span class="badge b-teal"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><circle cx="16.5" cy="14" r="1.3"/></svg></span><span class="tag t-teal">Calculadora</span></div>
-        <h3>Calculadora de cartera vencida</h3>
-        <p>¿Cuánto capital tiene congelado en cuentas por cobrar? Ingrese sus facturas pendientes y estime el monto atrapado y lo que cuesta perseguirlo a mano.</p>
-        <span class="go">Abrir calculadora →</span>
-      </a>
-      <a class="card" href="calculadora-roi/">
-        <div class="card-top"><span class="badge b-teal"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg></span><span class="tag t-teal">Calculadora</span></div>
-        <h3>Calculadora de retorno de automatización</h3>
-        <p>Estime cuántas horas al mes consume un proceso repetitivo, cuánto le cuesta a su empresa y en cuánto tiempo se pagaría automatizarlo.</p>
-        <span class="go">Abrir calculadora →</span>
-      </a>
-      <a class="card" href="calculadora-inasistencias/">
-        <div class="card-top"><span class="badge b-teal"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3.5v4M16 3.5v4"/></svg></span><span class="tag t-teal">Calculadora</span></div>
-        <h3>Calculadora de pérdidas por inasistencia</h3>
-        <p>Para clínicas y negocios con agenda: estime cuánto deja de facturar cada mes por citas confirmadas a las que nadie llegó.</p>
-        <span class="go">Abrir calculadora →</span>
-      </a>
-      <a class="card" href="informe-muestra/">
-        <div class="card-top"><span class="badge b-violet"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg></span><span class="tag t-violet">Muestra</span></div>
-        <h3>Muestra de informe de inteligencia competitiva</h3>
-        <p>Vea la estructura, secciones y nivel de detalle del informe de monitoreo de competidores, con datos de ejemplo, antes de contratar nada.</p>
-        <span class="go">Ver la muestra →</span>
-      </a>
-      <a class="card" href="power-automate-vs-n8n/">
-        <div class="card-top"><span class="badge b-blue"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M7 20h10"/><path d="M12 7 5 9l-1.5 4a3 3 0 0 0 6 0L8 9M12 7l7 2 1.5 4a3 3 0 0 1-6 0L16 9"/></svg></span><span class="tag t-blue">Comparativa</span></div>
-        <h3>Power Automate vs n8n</h3>
-        <p>Comparativa honesta de las dos plataformas que más usamos: cuándo conviene cada una, licencias, costos y limitaciones reales.</p>
-        <span class="go">Leer comparativa →</span>
-      </a>
-      <a class="card" href="/metodologia/">
-        <div class="card-top"><span class="badge b-blue"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><span class="tag t-blue">Metodología</span></div>
-        <h3>Cómo abordamos un proyecto de automatización</h3>
-        <p>Las siete fases de nuestra metodología y los modelos de contratación, explicados por escrito. La guía descargable está en actualización.</p>
-        <span class="go">Ver metodología →</span>
-      </a>
-    </div>
-    <p class="note">Los resultados de las calculadoras son una estimación orientativa según sus propios números — sirven para dimensionar el problema, no son una promesa de resultados.</p>
-  </section>
-
-  <section aria-label="Recursos abiertos">
-    <div class="open-strip">
-      <span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 7.5-2"/></svg> <b>Sin registro:</b>&nbsp;ningún recurso pide correo ni datos</span>
-      <span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg> <b>Todo corre en su navegador:</b>&nbsp;sus números no se envían a ningún servidor</span>
-      <span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a4.5 4.5 0 0 0 6.5.4l2.5-2.5a4.5 4.5 0 0 0-6.4-6.4L11.4 6"/><path d="M14 11a4.5 4.5 0 0 0-6.5-.4L5 13.1a4.5 4.5 0 0 0 6.4 6.4L12.6 18"/></svg> <b>Comparta libre:</b>&nbsp;envíe el enlace a su equipo o a su jefe</span>
-    </div>
-  </section>
-
-  <section aria-labelledby="t-soon">
-    <h2 id="t-soon">Próximamente</h2>
-    <p class="h2sub">En preparación. Los publicaremos aquí mismo cuando estén listos — no prometemos fecha, y no hay lista de espera que le llene el correo.</p>
-    <div class="soon">
-      <div class="soon-card"><span class="tag">En preparación</span><h3>Guías por industria</h3><p>Qué automatizar primero en distribuidoras, clínicas y servicios profesionales, con ejemplos concretos por área.</p></div>
-      <div class="soon-card"><span class="tag">En preparación</span><h3>Plantilla de mapa de procesos</h3><p>Formato simple para dibujar su proceso actual, detectar los pasos repetitivos y priorizar qué automatizar.</p></div>
-      <div class="soon-card"><span class="tag">En preparación</span><h3>Checklist de cobranza</h3><p>Lista de verificación para ordenar su proceso de cobros antes (o en vez) de automatizarlo.</p></div>
-    </div>
-  </section>
-
-  <section aria-labelledby="t-evi">
-    <div class="evi">
-      <h2 id="t-evi">Por qué puede confiar en lo que publicamos</h2>
-      <ul>
-        <li>La única métrica que citamos es medida: nuestro Capturista Digital procesa una factura en <b>~4 segundos</b>, medido en video en <a href="../casos/">los demos</a>. Los demás videos de esa página son animaciones ilustrativas y así los etiquetamos.</li>
-        <li>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana — usamos lo mismo que ofrecemos.</li>
-        <li>El chat Nova de este sitio es un agente de IA real funcionando en vivo, no una maqueta.</li>
-        <li>No publicamos testimonios, logos ni porcentajes de mejora que no podamos demostrar.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section aria-labelledby="t-faq" class="faq">
-    <h2 id="t-faq">Preguntas frecuentes</h2>
-    <details>
-      <summary>¿De verdad son gratis, sin trampa?</summary>
-      <p>Sí. Ninguna calculadora, guía o comparativa pide registro, correo ni tarjeta. Los publicamos abiertos porque preferimos que llegue a la conversación con sus números ya claros.</p>
-    </details>
-    <details>
-      <summary>¿Las calculadoras guardan mis datos?</summary>
-      <p>No. Corren completas en su navegador: los números que ingresa no se envían a ningún servidor ni se almacenan. Puede verificarlo — este sitio es estático.</p>
-    </details>
-    <details>
-      <summary>¿Qué tan exactos son los resultados de las calculadoras?</summary>
-      <p>Son estimaciones orientativas calculadas con los números que usted mismo ingresa. Sirven para dimensionar el problema y comparar escenarios, no son una promesa de resultados financieros.</p>
-    </details>
-    <details>
-      <summary>¿Puedo compartir estos recursos con mi equipo?</summary>
-      <p>Sí. Comparta el enlace directamente: no hay muros de registro, así que cualquiera de su equipo puede abrirlos y usar sus propios números.</p>
-    </details>
-    <details>
-      <summary>¿Y si mi caso no aparece en ningún recurso?</summary>
-      <p>Escríbanos por WhatsApp con una descripción corta de su proceso y le preparamos un análisis personalizado. El diagnóstico de 20–30 minutos es gratis y sin compromiso.</p>
-    </details>
-  </section>
-
-  <div class="final">
-    <h2>¿Prefiere que hagamos los números con usted?</h2>
-    <p>Cuéntenos su proceso por WhatsApp y le enviamos un análisis personalizado: qué automatizar primero, qué esperar y qué no. Diagnóstico ejecutivo sin costo de 20–30 minutos.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20recursos%20y%20quiero%20un%20an%C3%A1lisis%20personalizado%20de%20mi%20operaci%C3%B3n." target="_blank" rel="noopener">Solicitar análisis personalizado →</a>
+<section class="band"><div class="wrap">
+  <p class="sec-k">Criterio técnico</p>
+  <h2>Cómo decidimos, por escrito</h2>
+  <div class="cards">
+    <a class="card reveal" href="/recursos/power-automate-vs-n8n/">
+      <h3>Power Automate frente a n8n</h3>
+      <p>Comparativa de las dos plataformas de orquestación que más implementamos: cuándo conviene cada una, licenciamiento, soberanía del dato y límites reales de ambas.</p>
+      <span class="link-more">Leer la comparativa &rarr;</span>
+    </a>
+    <a class="card reveal reveal-2" href="/recursos/calculadora-roi/">
+      <h3>Aritmética del retorno</h3>
+      <p>Cuántas horas consume un proceso, qué cuesta sostenerlo a mano y en cuánto tiempo se paga automatizarlo. Corre en su navegador; sus números no salen de ahí.</p>
+      <span class="link-more">Abrir la calculadora &rarr;</span>
+    </a>
+    <a class="card reveal reveal-3" href="/metodologia/">
+      <h3>Las siete fases del método</h3>
+      <p>Qué ocurre en cada fase, qué se entrega al final de cada una y qué decide el cliente antes de pasar a la siguiente.</p>
+      <span class="link-more">Ver la metodología &rarr;</span>
+    </a>
   </div>
+  <p class="note">La calculadora produce una estimación orientativa a partir de sus propios datos. Sirve para dimensionar el problema y ordenar la conversación, no es una propuesta ni un compromiso de resultado.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Evidencia</p>
+  <h2>Trabajo entregado, no promesas</h2>
+  <p class="sec-sub">Cinco implementaciones documentadas sobre sistemas corporativos y una demostración grabada sin cortes.</p>
+  <div class="cta-row">
+    <a class="btn-secondary" href="/casos/">Ver casos y demostraciones</a>
+    <a class="btn-secondary" href="/insights/">Leer los análisis publicados</a>
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>¿Prefiere verlo sobre su propia operación?</h2>
+  <p class="sec-sub" style="margin:0 auto 6px">La evaluación inicial no tiene costo ni compromiso. Respondemos en horario hábil de El Salvador.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
-  <a href="../">Inicio</a><a href="../metodologia/">Metodología</a><a href="../casos/">Demos</a><a href="/recursos/calculadora-roi/">Calculadora de cobranza</a><a href="/seguridad-gobierno/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿De verdad son gratis, sin trampa?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Ninguna calculadora, guía o comparativa pide registro, correo ni tarjeta. Los publicamos abiertos porque preferimos que llegue a la conversación con sus números ya claros."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Las calculadoras guardan mis datos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Corren completas en su navegador: los números que ingresa no se envían a ningún servidor ni se almacenan. El sitio es estático."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué tan exactos son los resultados de las calculadoras?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Son estimaciones orientativas calculadas con los números que usted mismo ingresa. Sirven para dimensionar el problema y comparar escenarios, no son una promesa de resultados financieros."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo compartir estos recursos con mi equipo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Comparta el enlace directamente: no hay muros de registro, así que cualquiera de su equipo puede abrirlos y usar sus propios números."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Y si mi caso no aparece en ningún recurso?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Escríbanos por WhatsApp con una descripción corta de su proceso y le preparamos un análisis personalizado. El diagnóstico de 20–30 minutos es gratis y sin compromiso."
-      }
-    }
-  ]
-}
-</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

@@ -3,423 +3,457 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Power Automate frente a n8n: criterio de arquitectura | Optimatiza</title>
+  <meta name="description" content="Comparativa técnica de Power Automate frente a n8n para dirección de TI: licenciamiento, hosting, conectores, RPA, gobernanza, costo a alto volumen y agentes de IA.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/recursos/power-automate-vs-n8n/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Power Automate vs n8n: comparativa honesta | Optimatiza</title>
-  <meta name="description" content="Comparativa honesta Power Automate vs n8n: licenciamiento, hosting, conectores, RPA, gobernanza y costo. Cuándo elegir cada uno y cuándo combinarlos.">
-  <link rel="canonical" href="https://optimatiza.com/recursos/power-automate-vs-n8n/">
-  <link rel="icon" href="../../img/logo-badge-96.png">
-  <meta property="og:title" content="Power Automate vs n8n: comparativa honesta | Optimatiza">
-  <meta property="og:description" content="Licenciamiento, hosting, conectores, RPA y gobernanza comparados sin humo. Cuándo elegir cada uno y cuándo combinarlos.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Power Automate frente a n8n: criterio de arquitectura, no preferencia de herramienta">
+  <meta property="og:description" content="Ocho criterios que un comité de tecnología revisa antes de aprobar una plataforma de automatización, con los escenarios donde cada una pierde.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/recursos/power-automate-vs-n8n/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#3F6F8A;--violet:#C9913B;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    @media(max-width:480px){.nav .ghost{display:none}}
-    .hero{padding:56px 0 24px;max-width:840px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.7rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17px;max-width:64ch}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
-    h3{font-family:var(--ffd);color:var(--ink)}
-    section{padding:30px 0}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;align-items:center}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    .note a,.inline-a{color:var(--teal);font-weight:600}
-
-    /* TL;DR */
-    .tldr{background:linear-gradient(160deg,#F0F5EC,#EFE8D9);border:1.5px solid var(--teal2);border-radius:16px;padding:20px 24px;margin-top:8px}
-    .tldr b{color:var(--ink)}
-    .tldr ul{margin:10px 0 0;padding-left:20px;font-size:14.5px}
-    .tldr li{margin-bottom:6px}
-    .tldr li::marker{color:var(--teal)}
-
-    /* Tabla comparativa */
-    .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);background:#FFFDF8}
-    table{border-collapse:collapse;width:100%;min-width:720px;font-size:13.5px}
-    caption{text-align:left;font-size:12.5px;color:var(--dim);padding:10px 16px;caption-side:bottom;border-top:1px solid var(--line)}
-    th,td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-    tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
-    thead th{background:var(--alt);font-family:var(--ffd);color:var(--ink);font-size:14px;position:sticky;top:0}
-    tbody th{font-weight:600;color:var(--ink);width:172px;background:var(--alt)}
-    td b{color:var(--ink);font-weight:600}
-    .col-pa{box-shadow:inset 3px 0 0 var(--blue)}
-    .col-n8{box-shadow:inset 3px 0 0 var(--violet)}
-    .tool-tag{display:inline-block;font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 10px;text-transform:uppercase;letter-spacing:.04em}
-    .tag-pa{color:var(--blue);background:rgba(63,111,138,.08)}
-    .tag-n8{color:var(--violet);background:rgba(109,40,217,.08)}
-
-    /* Diagrama de decisión */
-    .dec{display:grid;gap:12px}
-    .dec-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:14px 18px;box-shadow:var(--sh)}
-    .dec-q{flex:1 1 300px;font-size:14px;color:var(--ink)}
-    .dec-a{font-family:var(--ffd);font-weight:700;font-size:14px;border-radius:999px;padding:7px 16px;white-space:nowrap}
-    .dec-a.pa{color:var(--blue);background:rgba(63,111,138,.08)}
-    .dec-a.n8{color:var(--violet);background:rgba(109,40,217,.08)}
-    .dec-a.mix{color:var(--teal);background:var(--teal-soft)}
-    .arrow{color:var(--teal);font-weight:700}
-
-    /* Cuándo elegir (cards) */
-    .whens{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-    .when{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .when.pa{border-top:3px solid var(--blue)}
-    .when.n8{border-top:3px solid var(--violet)}
-    .when.mix{border-top:3px solid var(--teal)}
-    .when h3{font-size:16px;margin-bottom:8px}
-    .when ul{padding-left:18px;font-size:13.5px;margin-top:6px}
-    .when li{margin-bottom:5px}
-
-    /* Chips */
-    .chips{display:flex;flex-wrap:wrap;gap:9px}
-    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;color:var(--ink)}
-
-    /* Precios */
-    .prc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .pr{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .pr b{font-family:var(--ffd);color:var(--ink);font-size:15.5px;display:block}
-    .pr .rng{color:var(--teal);font-family:var(--ffd);font-weight:700;font-size:20px;margin:6px 0 2px}
-    .pr .tm{font-size:12.5px;color:var(--dim)}
-    .pr p{font-size:13.5px;margin-top:8px}
-    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
-    .guar b{color:var(--ink)}
-    .guar a{color:var(--teal);font-weight:600}
-
-    /* Evidencia */
-    .evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .ev{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .ev h3{font-size:15.5px;margin-bottom:6px}
-    .ev p{font-size:13.5px}
-    .ev .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--violet);background:rgba(109,40,217,.08);border-radius:999px;padding:3px 10px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
-
-    /* FAQ */
-    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
-    .faq summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:'+';color:var(--teal);font-weight:700;flex:none}
-    .faq details[open] summary::after{content:'–'}
-    .faq details p{font-size:14px;margin-top:10px}
-
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Power Automate frente a n8n: criterio de arquitectura, no preferencia de herramienta">
+  <meta name="twitter:description" content="Ocho criterios que un comité de tecnología revisa antes de aprobar una plataforma de automatización, con los escenarios donde cada una pierde.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Publicaciones", "item": "https://optimatiza.com/recursos/"},
+      {"@type": "ListItem", "position": 3, "name": "Power Automate frente a n8n", "item": "https://optimatiza.com/recursos/power-automate-vs-n8n/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Power Automate está incluido si la organización ya paga Microsoft 365?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Parcialmente. La mayoría de licencias de Microsoft 365 incluyen las capacidades estándar de Power Automate con límites de uso. Los conectores premium, el RPA desatendido y la capacidad de ejecución adicional requieren planes de pago por usuario. Determinar qué incluye exactamente el licenciamiento vigente es una de las verificaciones que se hacen con el área de TI durante la evaluación ejecutiva, antes de fijar el alcance."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿n8n es de uso libre?",
+        "acceptedAnswer": {"@type": "Answer", "text": "n8n se distribuye bajo una licencia fair-code (Sustainable Use License): puede alojarse en servidores propios sin pagar licencia para el uso interno de la organización. No es gratuito en términos de costo total: se paga la infraestructura y se requiere quien la administre, actualice y respalde. Existe además n8n Cloud, una versión administrada por suscripción mensual."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué conviene a una organización que no usa Microsoft 365?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Por lo general n8n. Sin Microsoft 365 se pierde la principal ventaja de Power Automate, la integración nativa con Outlook, Teams y SharePoint, y el licenciamiento por usuario pesa más en el costo total. n8n se conecta a Google Workspace, canales de mensajería, CRM, ERP y cualquier API, y autoalojado no cobra por ejecución. La respuesta definitiva depende del inventario concreto de sistemas y del volumen."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Pueden convivir Power Automate y n8n en la misma organización?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, y es un patrón de arquitectura frecuente: Power Automate para lo que vive dentro de Microsoft 365, como aprobaciones, SharePoint, Teams y correo, y n8n para integraciones por API, alto volumen de ejecuciones y flujos de agentes. Ambas se comunican por webhooks o APIs. La condición es que el criterio de asignación quede documentado."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿n8n sirve para automatizar pantallas de Windows sin API?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. n8n automatiza a través de APIs y webhooks. Si el proceso exige operar una aplicación Windows que no expone API, la pieza indicada es Power Automate Desktop u otra herramienta de RPA, que puede convivir con n8n dentro del mismo proceso."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se dimensiona un proyecto con cualquiera de las dos?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Los alcances no dependen de la plataforma: proceso acotado, proceso con integraciones y proceso de punta a punta por fases, con la operación administrada contratada aparte. La entrega es por hitos verificables y cada programa se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../../"><img src="../../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../../casos/">Demos en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20le%C3%AD%20la%20comparativa%20Power%20Automate%20vs%20n8n%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">WhatsApp</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
 
-<main class="wrap">
-  <!-- 1. Problema + 2. Audiencia + 3. Resultado concreto -->
-  <div class="hero">
-    <span class="k">Guía honesta · Para dueños, gerentes y responsables de TI</span>
-    <h1>Power Automate vs n8n: cuál conviene para automatizar su empresa</h1>
-    <p class="sub">Va a automatizar procesos y aparecen dos nombres: Power Automate y n8n. Elegir mal significa pagar licencias que no necesita, o mantener un servidor que nadie en su equipo puede administrar. Esta comparativa pone lado a lado licenciamiento, hosting, conectores, RPA, curva de aprendizaje y gobernanza — y termina con un criterio simple para decidir en 5 minutos con su propio stack.</p>
+<main id="contenido">
 
-    <div class="tldr">
-      <b>Resumen si tiene prisa:</b>
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  <a href="/recursos/">Publicaciones</a><span aria-hidden="true">/</span>
+  Power Automate frente a n8n
+</nav></div>
+
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> Para dirección de TI y arquitectura</p>
+  <h1>Power Automate frente a n8n: criterio de arquitectura, no preferencia de herramienta</h1>
+  <p class="lead"><b>La decisión no se gana en una demostración: se gana en el licenciamiento, en dónde residen los datos, en el volumen de ejecuciones y en quién queda a cargo del servidor.</b> Esta comparativa pone lado a lado los ocho criterios que un comité de tecnología revisa antes de aprobar una plataforma de automatización, e incluye los escenarios donde cada una pierde.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-secondary" href="/automatizacion-empresarial/">Ver la práctica de automatización</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <span class="sec-k">Lectura rápida</span>
+  <h2>Las tres salidas posibles de esta comparación</h2>
+  <p class="sec-sub">Ninguna de las dos plataformas domina en todos los criterios. La pregunta útil no es cuál es mejor, sino cuál sostiene mejor cada proceso de su organización con el licenciamiento, la gobernanza y el volumen que ese proceso ya tiene.</p>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Power Automate</h3>
+      <p>La operación diaria vive en Microsoft 365 —Outlook, Teams, SharePoint, Excel— y el área de TI exige control formal sobre quién conecta qué. La integración es nativa y una parte del licenciamiento ya está sostenida.</p>
+    </div>
+    <div class="card reveal reveal-2">
+      <h3>n8n</h3>
+      <p>La organización no se apoya en Microsoft 365, integra APIs heterogéneas o ejecuta procesos con volumen alto. Alojado en infraestructura propia no cobra por ejecución y conecta cualquier sistema que exponga API.</p>
+    </div>
+    <div class="card reveal reveal-3">
+      <h3>Las dos, por proceso</h3>
+      <p>Es un escenario frecuente en organizaciones con oficina en Microsoft 365 y a la vez sistemas externos, alto volumen o agentes de IA. No es una guerra de plataformas: es asignar a cada proceso la pieza que le cuesta menos y le queda mejor. La firma implementa ambas.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band" id="comparativa"><div class="wrap">
+  <span class="sec-k">Comparativa técnica</span>
+  <h2>Criterio por criterio, con los puntos débiles incluidos</h2>
+  <p class="sec-sub">Ocho criterios que determinan el costo total y el riesgo operativo de la plataforma, no su atractivo en pantalla. Cada celda declara también la contrapartida: dónde esa opción cobra el precio de su ventaja.</p>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead>
+        <tr><th scope="col">Criterio</th><th scope="col">Power Automate</th><th scope="col">n8n</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Licenciamiento y costo típico</b></td>
+          <td>Las capacidades estándar están incluidas en la mayoría de licencias de Microsoft 365. Los conectores premium, el RPA y la capacidad adicional requieren un <b>plan de pago por usuario</b> según la lista pública de Microsoft. El costo escala con cada usuario que ejecuta flujos premium.</td>
+          <td>Licencia fair-code (Sustainable Use License): <b>alojado en infraestructura propia no tiene costo de licencia</b> para uso interno de la organización; el gasto es el servidor y su administración. Existe además n8n Cloud por suscripción, sin infraestructura a cargo del cliente.</td>
+        </tr>
+        <tr>
+          <td><b>Hosting</b></td>
+          <td><b>SaaS en la nube de Microsoft.</b> Nada que instalar ni mantener; disponibilidad y actualizaciones corren por cuenta de Microsoft. Los datos transitan por la nube de Microsoft.</td>
+          <td><b>Autoalojado</b> —servidor propio, nube privada o Docker— o n8n Cloud. Autoalojado da control total sobre dónde residen los datos, pero alguien debe actualizar, respaldar y vigilar ese servidor.</td>
+        </tr>
+        <tr>
+          <td><b>Conectores e integraciones</b></td>
+          <td>Más de mil conectores, con <b>integración nativa profunda a Microsoft 365</b>: Outlook, Teams, SharePoint, Excel, Dataverse, Approvals y Forms. Fuera del ecosistema Microsoft, varios conectores clave son premium.</td>
+          <td>Cientos de nodos más <b>nodo HTTP y nodo de código</b> para hablar con cualquier API REST, webhooks nativos y transformación de datos con JavaScript. Si el sistema expone API, n8n se conecta.</td>
+        </tr>
+        <tr>
+          <td><b>RPA de escritorio</b></td>
+          <td><b>Sí: Power Automate Desktop</b> automatiza aplicaciones Windows sin API, incluidos sistemas heredados de escritorio. El modo desatendido requiere licenciamiento adicional.</td>
+          <td><b>No dispone de RPA de escritorio.</b> n8n automatiza por APIs y webhooks; para pantallas Windows sin API debe combinarse con otra herramienta de RPA.</td>
+        </tr>
+        <tr>
+          <td><b>Curva de aprendizaje</b></td>
+          <td>Terreno conocido para un equipo que ya opera en Microsoft 365; el diseñador visual es accesible. La complejidad aparece en las <b>expresiones y en entender el licenciamiento</b>: estándar frente a premium y límites de capacidad.</td>
+          <td>Editor visual de nodos muy claro y techo alto para quien programa en JavaScript. Exige un <b>perfil algo más técnico</b>, y el autoalojamiento requiere a alguien que administre infraestructura.</td>
+        </tr>
+        <tr>
+          <td><b>Gobernanza y DLP</b></td>
+          <td><b>Gobernanza corporativa madura:</b> políticas DLP, entornos separados, identidad con Entra ID y auditoría centralizada. Es la opción natural donde TI necesita control formal y trazable.</td>
+          <td>Al autoalojar, <b>los datos no salen del servidor de la organización</b>, con el máximo control de residencia. En contrapartida, la gobernanza —accesos, respaldos, actualizaciones y auditoría— la construye y la opera el cliente.</td>
+        </tr>
+        <tr>
+          <td><b>Costo a alto volumen</b></td>
+          <td>Cada licencia tiene <b>límites de solicitudes</b>; los procesos que se ejecutan miles de veces al día pueden requerir capacidad adicional y encarecer el esquema.</td>
+          <td>Autoalojado, <b>sin costo por ejecución</b>: el límite es la capacidad del servidor. Suele ser la opción más económica cuando el volumen de ejecuciones es alto.</td>
+        </tr>
+        <tr>
+          <td><b>Agentes y flujos con IA</b></td>
+          <td>Integra AI Builder y Copilot dentro del ecosistema Microsoft; el consumo de IA se licencia con créditos adicionales.</td>
+          <td>Nodos nativos para modelos de varios proveedores y flujos de agentes: <b>se elige el modelo y se paga solo su API</b>. Es una vía frecuente para agentes que atienden mensajería y correo.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>Vigencia.</b> Comparativa elaborada por Optimatiza y revisada en julio de 2026. Los planes y las condiciones de licenciamiento de Microsoft y de n8n cambian: conviene verificar la lista vigente de cada proveedor antes de aprobar una decisión.</div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="sec-k">Marco de decisión</span>
+  <h2>Tres preguntas que resuelven la mayor parte de los casos</h2>
+  <p class="sec-sub">El orden importa: primero dónde vive la operación, después qué se integra y con qué volumen, y solo al final la conveniencia de combinar. Un cuarto criterio —si existe una pantalla sin API que alguien opera a mano— decide por sí solo a favor del RPA de escritorio.</p>
+  <div class="steps">
+    <div class="step">
+      <h3>La operación vive en Microsoft 365</h3>
+      <p>Correo en Outlook, archivos en SharePoint, comunicación en Teams y TI que pide gobernanza formal desde el primer día. La pieza indicada es <b>Power Automate</b>.</p>
+    </div>
+    <div class="step">
+      <h3>Las integraciones son APIs y el volumen es alto</h3>
+      <p>Sin licenciamiento de Microsoft 365, con sistemas heterogéneos —mensajería, CRM, ERP, pasarelas— o con procesos que corren miles de veces al día. La pieza indicada es <b>n8n</b>.</p>
+    </div>
+    <div class="step">
+      <h3>Conviven los dos mundos</h3>
+      <p>Aprobaciones y documentos dentro de Microsoft 365, y a la vez sistemas externos, volumen pesado o agentes de IA. La arquitectura correcta es <b>combinarlas</b>, comunicadas por webhooks o APIs.</p>
+    </div>
+  </div>
+  <div class="note">Cada plataforma con su alcance detallado: <a class="link-more" href="/power-automate/">práctica de Power Automate →</a> · <a class="link-more" href="/n8n/">práctica de n8n →</a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="sec-k">Criterio de selección</span>
+  <h2>Cuándo elegir cada una y cuándo combinarlas</h2>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Power Automate, si…</h3>
       <ul>
-        <li><b>Su empresa vive en Microsoft 365</b> (Outlook, Teams, SharePoint, Excel) → <b>Power Automate</b>: integración nativa y gobernanza corporativa que ya tiene pagada en parte.</li>
-        <li><b>No usa M365, integra APIs variadas o mueve alto volumen</b> de ejecuciones → <b>n8n</b>: sin costo de licencia por ejecución si lo aloja usted, y flexibilidad total para conectar cualquier API.</li>
-        <li><b>Muchos casos reales combinan ambos.</b> No es una guerra de herramientas: es elegir la correcta para cada proceso. En Optimatiza implementamos las dos.</li>
+        <li>La organización ya sostiene licenciamiento de Microsoft 365 y busca capitalizarlo.</li>
+        <li>Los procesos son cadenas de aprobación, documentos en SharePoint, avisos en Teams y correo en Outlook.</li>
+        <li>Se requiere RPA de escritorio sobre un sistema Windows sin API.</li>
+        <li>TI exige DLP, entornos separados y auditoría centralizada desde el día uno.</li>
+      </ul>
+    </div>
+    <div class="card reveal reveal-2">
+      <h3>n8n, si…</h3>
+      <ul>
+        <li>No se usa Microsoft 365 —o se opera sobre Google Workspace— y no se desea licenciar por usuario.</li>
+        <li>Las integraciones son APIs: mensajería, CRM, ERP, bases de datos, pasarelas de pago.</li>
+        <li>El volumen de ejecuciones es alto y el costo por licencia deja de cerrar.</li>
+        <li>La política interna exige que los datos no salgan del servidor de la organización.</li>
+      </ul>
+    </div>
+    <div class="card reveal reveal-3">
+      <h3>Las dos, si…</h3>
+      <ul>
+        <li>Las aprobaciones y los documentos viven en Microsoft 365, pero el volumen pesado circula por APIs.</li>
+        <li>Se busca agentes de IA en canales de mensajería que registren su resultado en SharePoint o Teams.</li>
+        <li>Conviene asignar a cada proceso la plataforma que le cuesta menos y le queda mejor, con un solo criterio documentado.</li>
       </ul>
     </div>
   </div>
+  <div class="note">El objetivo no es la plataforma: es que el proceso reciba la información, la procese, escale las aprobaciones, actualice los sistemas de registro y responda, con la pieza correcta en cada tramo. Contexto completo en <a class="link-more" href="/automatizacion-de-procesos/">automatización de procesos →</a></div>
+</div></section>
 
-  <!-- 4. Demostración: tabla comparativa -->
-  <section id="comparativa" aria-label="Tabla comparativa Power Automate vs n8n">
-    <h2>La comparativa, criterio por criterio</h2>
-    <div class="tbl-wrap">
-      <table>
-        <caption>Comparativa elaborada por Optimatiza (revisada en julio 2026). Los precios y planes de Microsoft y n8n cambian: verifique siempre la lista vigente de cada proveedor antes de decidir.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Criterio</th>
-            <th scope="col" class="col-pa"><span class="tool-tag tag-pa">Power Automate</span></th>
-            <th scope="col" class="col-n8"><span class="tool-tag tag-n8">n8n</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Licenciamiento y costo típico</th>
-            <td class="col-pa">Capacidades estándar incluidas con la mayoría de licencias Microsoft 365. Conectores premium, RPA y mayor capacidad requieren un <b>plan de pago por usuario/mes</b> (lista pública de Microsoft). El costo crece con cada usuario que ejecuta flujos premium.</td>
-            <td class="col-n8">Licencia fair-code (Sustainable Use): <b>self-hosted sin costo de licencia</b> para uso interno; paga el servidor y su administración. También existe n8n Cloud por suscripción mensual, sin administrar nada.</td>
-          </tr>
-          <tr>
-            <th scope="row">Hosting</th>
-            <td class="col-pa"><b>SaaS en la nube de Microsoft.</b> Nada que instalar ni mantener; disponibilidad y actualizaciones corren por cuenta de Microsoft. Sus datos pasan por la nube de Microsoft.</td>
-            <td class="col-n8"><b>Self-hosted</b> (su VPS, su servidor, Docker) o n8n Cloud. Self-host = control total de dónde viven sus datos, pero alguien debe actualizar, respaldar y vigilar el servidor.</td>
-          </tr>
-          <tr>
-            <th scope="row">Conectores e integraciones</th>
-            <td class="col-pa">Más de mil conectores, con <b>integración nativa profunda a M365</b>: Outlook, Teams, SharePoint, Excel, Dataverse, Approvals, Forms. Fuera del ecosistema Microsoft, muchos conectores clave son premium.</td>
-            <td class="col-n8">Cientos de nodos + <b>nodo HTTP y nodo de código</b> para hablar con cualquier API REST, webhooks nativos y transformación de datos con JavaScript. Si el sistema tiene API, n8n se conecta.</td>
-          </tr>
-          <tr>
-            <th scope="row">RPA de escritorio</th>
-            <td class="col-pa"><b>Sí: Power Automate Desktop</b> automatiza aplicaciones Windows sin API (sistemas legados, escritorio). El modo desatendido requiere licenciamiento adicional.</td>
-            <td class="col-n8"><b>No tiene RPA de escritorio.</b> n8n automatiza vía APIs y webhooks; para pantallas Windows sin API se combina con otra herramienta RPA.</td>
-          </tr>
-          <tr>
-            <th scope="row">Curva de aprendizaje</th>
-            <td class="col-pa">Familiar si su equipo ya vive en M365; diseñador visual accesible. La complejidad aparece en las <b>expresiones y en entender el licenciamiento</b> (estándar vs premium, límites de capacidad).</td>
-            <td class="col-n8">Editor visual de nodos muy claro; el techo es alto si sabe JavaScript. Requiere un <b>perfil algo más técnico</b>, y el self-host exige a alguien que administre infraestructura.</td>
-          </tr>
-          <tr>
-            <th scope="row">Gobernanza y DLP</th>
-            <td class="col-pa"><b>Gobernanza corporativa madura:</b> políticas DLP, entornos separados, identidad con Entra ID, auditoría centralizada. Ideal donde TI necesita control formal sobre quién conecta qué.</td>
-            <td class="col-n8">Al self-hostear, <b>los datos no salen de su servidor</b> — máximo control de residencia de datos. Pero la gobernanza (accesos, respaldos, actualizaciones, auditoría) la construye y opera usted.</td>
-          </tr>
-          <tr>
-            <th scope="row">Costo a alto volumen</th>
-            <td class="col-pa">Cada licencia tiene <b>límites de solicitudes</b>; procesos que se ejecutan miles de veces al día pueden requerir capacidad adicional y encarecer el esquema.</td>
-            <td class="col-n8">Self-hosted: <b>sin costo por ejecución</b> — el límite es la capacidad de su servidor. Suele ser la opción más económica cuando el volumen de ejecuciones es alto.</td>
-          </tr>
-          <tr>
-            <th scope="row">Agentes y flujos con IA</th>
-            <td class="col-pa">Integra AI Builder y Copilot dentro del ecosistema Microsoft; el consumo de IA se licencia con créditos adicionales.</td>
-            <td class="col-n8">Nodos nativos para modelos de IA de varios proveedores y flujos de agentes; <b>elige el modelo y paga solo su API</b>. Muy usado para agentes que atienden WhatsApp y correo.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- 4b. Diagrama de decisión -->
-  <section aria-label="Diagrama de decisión">
-    <h2>¿Cuál le toca? Decida con tres preguntas</h2>
-    <div class="dec">
-      <div class="dec-row">
-        <span class="dec-q"><b>1.</b> ¿Su operación diaria vive en Microsoft 365 — Outlook, Teams, SharePoint, Excel — y TI pide gobernanza formal?</span>
-        <span class="arrow">→</span>
-        <span class="dec-a pa">Power Automate</span>
-      </div>
-      <div class="dec-row">
-        <span class="dec-q"><b>2.</b> ¿No paga M365, integra APIs variadas (WhatsApp, CRM, ERP, pasarelas) o sus flujos corren miles de veces al día?</span>
-        <span class="arrow">→</span>
-        <span class="dec-a n8">n8n</span>
-      </div>
-      <div class="dec-row">
-        <span class="dec-q"><b>3.</b> ¿Tiene ambos mundos: oficina en M365 y a la vez sistemas externos, alto volumen o agentes de IA?</span>
-        <span class="arrow">→</span>
-        <span class="dec-a mix">Combínelos</span>
-      </div>
-    </div>
-    <p class="note">Profundiza en cada herramienta: <a href="../../power-automate/">qué hacemos con Power Automate →</a> · <a href="../../n8n/">qué hacemos con n8n →</a></p>
-  </section>
-
-  <!-- 5. Cuándo elegir cada uno (cómo lo aplicamos) -->
-  <section aria-label="Cuándo elegir cada herramienta">
-    <h2>Cuándo elegir cada uno — y cuándo combinarlos</h2>
-    <div class="whens">
-      <div class="when pa">
-        <h3>Elija Power Automate si…</h3>
-        <ul>
-          <li>Su empresa ya paga Microsoft 365 y quiere exprimirlo.</li>
-          <li>Los procesos son aprobaciones, documentos en SharePoint, avisos en Teams y correo en Outlook.</li>
-          <li>Necesita RPA de escritorio para un sistema Windows sin API.</li>
-          <li>TI exige DLP, entornos y auditoría centralizada desde el día uno.</li>
-        </ul>
-      </div>
-      <div class="when n8">
-        <h3>Elija n8n si…</h3>
-        <ul>
-          <li>No usa M365 (o usa Google Workspace) y no quiere pagar licencias por usuario.</li>
-          <li>Sus integraciones son APIs: WhatsApp, CRM, ERP, bases de datos, pasarelas de pago.</li>
-          <li>El volumen de ejecuciones es alto y el costo por licencia no cierra.</li>
-          <li>Quiere que los datos no salgan de su propio servidor.</li>
-        </ul>
-      </div>
-      <div class="when mix">
-        <h3>Combínelos si…</h3>
-        <ul>
-          <li>Las aprobaciones y documentos viven en M365, pero el volumen pesado va por APIs.</li>
-          <li>Quiere agentes de IA en WhatsApp (n8n) que registren resultados en SharePoint o Teams (Power Automate).</li>
-          <li>Es un patrón común en implementaciones reales: cada proceso con la herramienta que le cuesta menos y le queda mejor.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note">El objetivo no es la herramienta: es que los flujos reciban información, la procesen, pidan aprobaciones, actualicen sus sistemas y respondan a clientes automáticamente — con la pieza correcta en cada tramo. Más contexto en <a href="../../automatizacion-de-procesos/">automatización de procesos →</a></p>
-  </section>
-
-  <!-- 6. Sistemas compatibles -->
-  <section aria-label="Sistemas compatibles">
-    <h2>Con qué sistemas trabajamos estas herramientas</h2>
-    <div class="chips">
-      <span class="chip">Microsoft 365</span>
-      <span class="chip">Outlook</span>
-      <span class="chip">Teams</span>
-      <span class="chip">SharePoint</span>
-      <span class="chip">Excel</span>
-      <span class="chip">Dataverse</span>
-      <span class="chip">Power BI</span>
-      <span class="chip">Google Workspace</span>
-      <span class="chip">WhatsApp</span>
-      <span class="chip">CRM</span>
-      <span class="chip">ERP</span>
-      <span class="chip">SQL / PostgreSQL / MySQL</span>
-      <span class="chip">APIs REST</span>
-      <span class="chip">Webhooks</span>
-      <span class="chip">Pasarelas de pago</span>
-    </div>
-    <p class="note">¿Su sistema no está en la lista? Si tiene API o exporta archivos, casi seguro se puede conectar — <a href="../../integraciones-api/">así trabajamos las integraciones →</a></p>
-  </section>
-
-  <!-- 7. Alcances publicados -->
-  <section aria-label="Alcances">
-    <h2>Cómo dimensionamos la implementación (con cualquiera de las dos)</h2>
-    <p style="max-width:66ch;margin-bottom:16px">Implementamos Power Automate y n8n por igual; la herramienta se elige en el diagnóstico según su stack, no según nuestra comodidad. Los alcances son los mismos con una u otra; cada proyecto se cotiza tras una <a class="inline-a" href="../../contacto/">evaluación de alcance</a> según complejidad, integraciones, volumen, seguridad y soporte:</p>
-    <div class="prc">
-      <div class="pr"><b>Unidad simple</b><div class="rng">1–2 semanas</div><div class="tm">un flujo concreto</div><p>Una aprobación, un reporte automático, una alerta, una integración puntual.</p></div>
-      <div class="pr"><b>Unidad estándar</b><div class="rng">2–4 semanas</div><div class="tm">un proceso completo</div><p>Varios pasos, aprobaciones y sistemas conectados.</p></div>
-      <div class="pr"><b>Célula multi-agente</b><div class="rng">4–8 semanas</div><div class="tm">un área de punta a punta</div><p>Varios flujos y agentes trabajando juntos — incluso mezclando Power Automate y n8n.</p></div>
-      <div class="pr"><b>Operación mensual</b><div class="rng">Opcional</div><div class="tm">según plan</div><p>Monitoreo, ajustes y mejoras para que lo construido siga corriendo. Pagos de proyecto por hitos.</p></div>
-    </div>
-    <div class="guar"><b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a href="../../metodologia/">Ver modelos de contratación →</a></div>
-  </section>
-
-  <!-- 8. Evidencia honesta -->
-  <section aria-label="Evidencia">
-    <h2>Evidencia honesta, sin humo</h2>
-    <div class="evs">
-      <div class="ev"><span class="tag">Medido en video</span><h3>Una factura en ~4 segundos</h3><p>Nuestro Capturista Digital procesa una factura en aproximadamente 4 segundos, medido en video. Es la única métrica medida que publicamos — <a class="inline-a" href="../../casos/">verla en demos →</a></p></div>
-      <div class="ev"><span class="tag">Nos lo aplicamos</span><h3>Redes sociales sin humanos</h3><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, de principio a fin, sin intervención humana.</p></div>
-      <div class="ev"><span class="tag">En vivo en este sitio</span><h3>Nova es un agente real</h3><p>El chat Nova de optimatiza.com es un agente de IA real funcionando en producción, no una maqueta.</p></div>
-      <div class="ev"><span class="tag">Transparencia</span><h3>Los demos son ilustrativos</h3><p>Las demostraciones de <a class="inline-a" href="../../casos/">/casos/</a> son animaciones ilustrativas de cómo funcionan los flujos; no publicamos testimonios ni cifras que no podamos respaldar.</p></div>
-    </div>
-  </section>
-
-  <!-- 9. FAQ -->
-  <section id="faq" aria-label="Preguntas frecuentes">
-    <h2>Preguntas frecuentes</h2>
-    <div class="faq">
-      <details>
-        <summary>¿Power Automate es gratis si ya tengo Microsoft 365?</summary>
-        <p>En parte. La mayoría de licencias de Microsoft 365 incluyen capacidades estándar de Power Automate con límites de uso. Los conectores premium, el RPA desatendido y mayor capacidad de ejecución requieren planes de pago adicionales por usuario. Antes de decidir, conviene revisar qué incluye exactamente su licencia actual — es parte de lo que vemos en el diagnóstico ejecutivo sin costo.</p>
-      </details>
-      <details>
-        <summary>¿n8n es gratis?</summary>
-        <p>n8n usa una licencia fair-code (Sustainable Use License): puede alojarlo en su propio servidor sin pagar licencia para uso interno de su empresa. No es gratis en total: paga el servidor (VPS o nube) y necesita a alguien que lo administre, actualice y respalde. También existe n8n Cloud, una versión administrada por suscripción mensual.</p>
-      </details>
-      <details>
-        <summary>¿Cuál conviene para una empresa sin Microsoft 365?</summary>
-        <p>Generalmente n8n. Sin M365 pierde la principal ventaja de Power Automate (la integración nativa con Outlook, Teams y SharePoint) y sus licencias por usuario pesan más. n8n se conecta a Google Workspace, WhatsApp, CRM, ERP y cualquier API, y self-hosted no cobra por ejecución. La respuesta final depende de su stack concreto: eso se resuelve en un diagnóstico de 20–30 minutos.</p>
-      </details>
-      <details>
-        <summary>¿Puedo usar Power Automate y n8n a la vez?</summary>
-        <p>Sí, y es un patrón común en implementaciones reales: Power Automate para lo que vive dentro de M365 (aprobaciones, SharePoint, Teams, correo) y n8n para integraciones de API, alto volumen de ejecuciones y agentes de IA. Cada proceso usa la herramienta que le cuesta menos y le queda mejor, y ambas se comunican entre sí por webhooks o APIs.</p>
-      </details>
-      <details>
-        <summary>¿n8n sirve para RPA de escritorio (automatizar pantallas de Windows)?</summary>
-        <p>No. n8n automatiza a través de APIs y webhooks. Si necesita automatizar una aplicación Windows que no tiene API — un sistema legado donde hay que hacer clics y digitar — la pieza indicada es Power Automate Desktop u otra herramienta RPA, que puede convivir con n8n en el mismo proceso.</p>
-      </details>
-      <details>
-        <summary>¿Cuánto cuesta que Optimatiza implemente un flujo con cualquiera de las dos?</summary>
-        <p>Los alcances no dependen de la herramienta: unidad simple (1–2 semanas), unidad estándar (2–4 semanas), célula multi-agente (4–8 semanas) y operación mensual opcional. Pagos por hitos; cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema está descrito en <a href="../../metodologia/">la metodología</a>. El diagnóstico inicial de 20–30 minutos es gratis.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- 10. CTA final -->
-  <div class="final">
-    <h2>¿Todavía con la duda? Resolvámosla con su stack real</h2>
-    <p>Diagnóstico ejecutivo sin costo de 20–30 minutos: revisamos qué sistemas usa, qué licencias ya paga y qué proceso duele más — y le decimos con cuál herramienta empezar, aunque no nos contrate.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20le%C3%AD%20la%20comparativa%20Power%20Automate%20vs%20n8n%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo%20para%20saber%20cu%C3%A1l%20conviene%20en%20mi%20empresa." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo sin costo →</a>
+<section><div class="wrap">
+  <span class="sec-k">Alcance de integración</span>
+  <h2>Con qué sistemas se conectan una y otra</h2>
+  <p class="sec-sub">La lista no es un catálogo cerrado. El criterio operativo es simple: si el sistema expone API, permite exportar archivos o se opera en una pantalla de Windows, existe una vía de integración; lo que cambia es cuál de las dos plataformas la sostiene con menor costo.</p>
+  <div class="pills plain">
+    <span>Microsoft 365</span>
+    <span>Outlook</span>
+    <span>Teams</span>
+    <span>SharePoint</span>
+    <span>Excel</span>
+    <span>Dataverse</span>
+    <span>Power BI</span>
+    <span>Google Workspace</span>
+    <span>Mensajería corporativa</span>
+    <span>CRM</span>
+    <span>ERP</span>
+    <span>SQL Server / PostgreSQL / MySQL</span>
+    <span>APIs REST</span>
+    <span>Webhooks</span>
+    <span>Pasarelas de pago</span>
+    <span>Sistemas heredados de escritorio</span>
   </div>
+  <div class="note">Cuando el inventario incluye sistemas heredados o integraciones a medida, el análisis se hace sobre el mapa real de aplicaciones. <a class="link-more" href="/integracion-sistemas/">Ver integración de sistemas →</a> · <a class="link-more" href="/integraciones-api/">Ver integraciones por API →</a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="sec-k">Alcances de referencia</span>
+  <h2>Cómo se dimensiona la implementación con cualquiera de las dos</h2>
+  <p class="sec-sub">Los alcances no dependen de la plataforma: la herramienta se define en la evaluación según el inventario de sistemas de su organización, no según la comodidad del proveedor. Los horizontes son de referencia y dependen del alcance, de los accesos y de la complejidad de los sistemas.</p>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead>
+        <tr><th scope="col">Alcance</th><th scope="col">Qué comprende</th><th scope="col">Horizonte de referencia</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Proceso acotado</b></td>
+          <td>Un disparador y un resultado: una cadena de aprobación, un reporte recurrente, una alerta o una integración puntual, con pruebas sobre casos reales y entrega documentada.</td>
+          <td>Semanas</td>
+        </tr>
+        <tr>
+          <td><b>Proceso con integraciones</b></td>
+          <td>Varios pasos y sistemas conectados, con lógica de excepciones, reintentos y trazabilidad de cada ejecución.</td>
+          <td>Varias semanas</td>
+        </tr>
+        <tr>
+          <td><b>Proceso de punta a punta</b></td>
+          <td>Conjunto de flujos y agentes coordinados sobre un área completa, incluso combinando Power Automate y n8n, con supervisión y escalamiento a responsables.</td>
+          <td>Por fases, con hitos verificables</td>
+        </tr>
+        <tr>
+          <td><b>Operación administrada</b></td>
+          <td>Monitoreo, ajuste y mejora continua de lo construido, con reporte periódico a la dirección.</td>
+          <td>Servicio continuo, se contrata aparte</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>Cómo se dimensiona.</b> Cada programa se cotiza tras una evaluación de alcance —complejidad, integraciones, volumen, seguridad y soporte— y se entrega por hitos verificables. <a class="link-more" href="/metodologia/">Ver la metodología →</a> · <a class="link-more" href="/operacion-administrada/">Ver operación administrada →</a></div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="sec-k">Dónde encaja en el resto del programa</span>
+  <h2>La misma decisión reaparece al montar el radar del entorno</h2>
+  <div class="split">
+    <div>
+      <p>La elección de plataforma no se agota en los procesos internos. Un departamento de <a href="/inteligencia-competitiva/">inteligencia competitiva</a> necesita recolección continua de fuentes, normalización de lo recogido y notificación al responsable cuando un indicador cruza su umbral; esa cañería se construye con las mismas piezas y se decide con el mismo criterio de este documento.</p>
+      <p>La regla práctica se sostiene: la recolección contra fuentes externas y APIs heterogéneas suele resolverse mejor con n8n, mientras que el aviso al comité, el expediente documental y la trazabilidad de quién leyó qué encajan de forma natural donde ya vive la operación. Lo que no cambia es que un umbral sin responsable y sin acción previamente acordada no es un sistema de alerta, sino una suscripción a noticias.</p>
+      <p class="note">Cómo se define un umbral, su acción pre-acordada y su responsable: <a class="link-more" href="/inteligencia-competitiva/alertas-tempranas/">ver el sistema de alertas tempranas →</a></p>
+    </div>
+    <figure class="plate reveal">
+      <img src="/img/vig-integrations.svg" alt="Un sistema origen conecta con un punto central que a su vez alimenta un sistema destino.">
+      <figcaption>El dato se captura una sola vez y viaja por la cañería que corresponda; la plataforma es el medio, no el fin.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <span class="sec-k">Preguntas frecuentes</span>
+  <h2>Lo que revisa un comité de tecnología antes de aprobar</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Power Automate está incluido si la organización ya paga Microsoft 365?</summary>
+      <p class="fa">Parcialmente. La mayoría de licencias de Microsoft 365 incluyen las capacidades estándar de Power Automate con límites de uso. Los conectores premium, el RPA desatendido y la capacidad de ejecución adicional requieren planes de pago por usuario. Determinar qué incluye exactamente el licenciamiento vigente es una de las verificaciones que se hacen con su área de TI durante la evaluación ejecutiva, antes de fijar el alcance.</p>
+    </details>
+    <details>
+      <summary>¿n8n es de uso libre?</summary>
+      <p class="fa">n8n se distribuye bajo una licencia fair-code (Sustainable Use License): puede alojarse en servidores propios sin pagar licencia para el uso interno de la organización. No es gratuito en términos de costo total: se paga la infraestructura y se requiere quien la administre, actualice y respalde. Existe además n8n Cloud, una versión administrada por suscripción mensual.</p>
+    </details>
+    <details>
+      <summary>¿Qué conviene a una organización que no usa Microsoft 365?</summary>
+      <p class="fa">Por lo general n8n. Sin Microsoft 365 se pierde la principal ventaja de Power Automate —la integración nativa con Outlook, Teams y SharePoint— y el licenciamiento por usuario pesa más en el costo total. n8n se conecta a Google Workspace, canales de mensajería, CRM, ERP y cualquier API, y autoalojado no cobra por ejecución. La respuesta definitiva depende del inventario concreto de sistemas y del volumen, y se resuelve en la evaluación ejecutiva.</p>
+    </details>
+    <details>
+      <summary>¿Pueden convivir Power Automate y n8n en la misma organización?</summary>
+      <p class="fa">Sí, y es un patrón de arquitectura frecuente: Power Automate para lo que vive dentro de Microsoft 365 —aprobaciones, SharePoint, Teams, correo— y n8n para integraciones por API, alto volumen de ejecuciones y flujos de agentes. Cada proceso se asigna a la plataforma que le cuesta menos y le queda mejor, y ambas se comunican entre sí por webhooks o APIs. La condición es que el criterio de asignación quede documentado, para que la convivencia no derive en dos inventarios sin dueño.</p>
+    </details>
+    <details>
+      <summary>¿n8n sirve para automatizar pantallas de Windows sin API?</summary>
+      <p class="fa">No. n8n automatiza a través de APIs y webhooks. Si el proceso exige operar una aplicación Windows que no expone API —un sistema heredado donde hay que navegar pantallas y digitar—, la pieza indicada es Power Automate Desktop u otra herramienta de RPA, que puede convivir con n8n dentro del mismo proceso.</p>
+    </details>
+    <details>
+      <summary>¿Cómo se dimensiona un proyecto con cualquiera de las dos?</summary>
+      <p class="fa">Los alcances no dependen de la plataforma: proceso acotado, proceso con integraciones y proceso de punta a punta por fases, con la operación administrada contratada aparte. La entrega es por hitos verificables y cada programa se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema completo está descrito en la <a href="/metodologia/">metodología</a>.</p>
+    </details>
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>Resuelva la decisión con su inventario real de sistemas</h2>
+  <p class="sec-sub" style="margin:0 auto 6px">Una evaluación ejecutiva revisa qué sistemas opera, qué licenciamiento ya sostiene y qué proceso concentra el costo, y devuelve la recomendación por escrito.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
-  <a href="../../">Inicio</a><a href="../../metodologia/">Metodología</a><a href="../../casos/">Demos</a><a href="../">Recursos</a><a href="../../power-automate/">Power Automate</a><a href="../../n8n/">n8n</a><a href="../calculadora-roi/">Calculadora de ROI</a><a href="../../seguridad/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Power Automate es gratis si ya tengo Microsoft 365?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En parte. La mayoría de licencias de Microsoft 365 incluyen capacidades estándar de Power Automate con límites de uso. Los conectores premium, el RPA desatendido y mayor capacidad de ejecución requieren planes de pago adicionales por usuario. Conviene revisar qué incluye exactamente su licencia actual antes de decidir."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿n8n es gratis?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "n8n usa una licencia fair-code (Sustainable Use License): puede alojarlo en su propio servidor sin pagar licencia para uso interno de su empresa. No es gratis en total: paga el servidor y necesita a alguien que lo administre, actualice y respalde. También existe n8n Cloud, una versión administrada por suscripción mensual."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál conviene para una empresa sin Microsoft 365?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Generalmente n8n. Sin Microsoft 365 pierde la principal ventaja de Power Automate (la integración nativa con Outlook, Teams y SharePoint) y sus licencias por usuario pesan más. n8n se conecta a Google Workspace, WhatsApp, CRM, ERP y cualquier API, y self-hosted no cobra por ejecución. La respuesta final depende de su stack concreto."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo usar Power Automate y n8n a la vez?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, y es un patrón común en implementaciones reales: Power Automate para lo que vive dentro de Microsoft 365 (aprobaciones, SharePoint, Teams, correo) y n8n para integraciones de API, alto volumen de ejecuciones y agentes de IA. Ambas herramientas se comunican entre sí por webhooks o APIs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿n8n sirve para RPA de escritorio (automatizar pantallas de Windows)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. n8n automatiza a través de APIs y webhooks. Si necesita automatizar una aplicación Windows que no tiene API, la pieza indicada es Power Automate Desktop u otra herramienta RPA, que puede convivir con n8n en el mismo proceso."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto cuesta que Optimatiza implemente un flujo con cualquiera de las dos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los alcances no dependen de la herramienta: unidad simple (1–2 semanas), unidad estándar (2–4 semanas), célula multi-agente (4–8 semanas) y operación mensual opcional. Pagos por hitos; cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema está descrito en optimatiza.com/metodologia/. El diagnóstico inicial de 20–30 minutos es gratis."
-      }
-    }
-  ]
-}
-</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

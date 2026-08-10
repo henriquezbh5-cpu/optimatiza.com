@@ -3,124 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Automatización sobre Microsoft 365 con Power Automate | Optimatiza</title>
+  <meta name="description" content="Automatizamos procesos completos sobre el Microsoft 365 que su organización ya paga: Power Automate cloud y RPA, con gobierno, licenciamiento revisado y entornos separados.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/power-automate/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Consultor Power Automate — Empresa Mediana y Grande | Optimatiza</title>
-  <meta name="description" content="Implementamos y damos soporte a flujos de Power Automate (cloud y RPA) sobre su licenciamiento Microsoft 365. Para operaciones con volumen sostenido.">
-  <link rel="canonical" href="https://optimatiza.com/power-automate/">
-  <link rel="icon" href="../img/logo-badge-96.png">
-  <meta property="og:title" content="Consultor Power Automate — Empresa Mediana y Grande | Optimatiza">
-  <meta property="og:description" content="Flujos de Power Automate (cloud y RPA de escritorio) dentro del tenant Microsoft 365 de su empresa, para que su equipo dedique el tiempo a lo que exige criterio.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Automatización sobre Microsoft 365 con Power Automate | Optimatiza">
+  <meta property="og:description" content="Procesos completos corriendo sobre la suscripción Microsoft 365 que su organización ya sostiene, con gobierno, entornos separados y trazabilidad de cada ejecución.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/power-automate/">
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Consultor Power Automate — Empresa Mediana y Grande | Optimatiza">
-  <meta name="twitter:description" content="Flujos de Power Automate (cloud y RPA de escritorio) dentro del tenant Microsoft 365 de su empresa, para que su equipo dedique el tiempo a lo que exige criterio.">
-  <style>
-    @font-face{font-family:'Inter';src:url('../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#3F6F8A;--blue-soft:#E7EDF1;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    .hero{padding:60px 0 36px;max-width:820px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17.5px;max-width:62ch}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;align-items:center}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
-    section{padding:34px 0}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    .note a,.inline-link{color:var(--teal);font-weight:600}
-    .lede{font-size:14.5px;max-width:66ch}
-    /* dolores */
-    .dols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .dol{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .dol-i{font-size:26px}
-    .dol h3{font-family:var(--ffd);color:var(--ink);font-size:16px;margin:8px 0 6px}
-    .dol p{font-size:13.5px}
-    /* diagrama de flujo */
-    .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0;counter-reset:paso;margin-top:8px}
-    .fnode{position:relative;background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;box-shadow:var(--sh);margin:0 10px 26px 10px}
-    .fnode::before{counter-increment:paso;content:counter(paso);position:absolute;top:-13px;left:14px;width:26px;height:26px;border-radius:999px;background:var(--teal);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:var(--ffd)}
-    .fnode::after{content:"→";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:18px;font-weight:700}
-    .fnode:last-child::after{content:""}
-    .fnode .fi{font-size:22px}
-    .fnode b{display:block;font-family:var(--ffd);color:var(--ink);font-size:14px;margin:6px 0 4px;line-height:1.3}
-    .fnode p{font-size:12.5px;line-height:1.5}
-    .fapp{display:inline-block;margin-top:8px;background:var(--blue-soft);color:var(--blue);font-weight:600;font-size:11.5px;padding:3px 9px;border-radius:999px}
-    @media(max-width:640px){.flow{grid-template-columns:1fr}.fnode::after{content:"↓";right:auto;left:24px;top:auto;bottom:-22px;transform:none}.fnode:last-child::after{content:""}}
-    /* cloud vs desktop */
-    .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-    .duo-c{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .duo-c h3{font-family:var(--ffd);color:var(--ink);font-size:16.5px;margin:0 0 8px}
-    .duo-c p{font-size:13.5px}
-    .duo-c ul{margin:10px 0 0;padding-left:18px;font-size:13.5px}
-    .duo-c li{margin-bottom:4px}
-    /* pasos */
-    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
-    .paso-i{font-size:19px}
-    .arrow{color:var(--teal)}
-    /* chips */
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink);font-weight:500}
-    /* precios */
-    .ags{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .ag{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .ag.hl{border:1.5px solid var(--teal);background:linear-gradient(180deg,var(--teal-soft),#fff 55%)}
-    .ag-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-    .ag-h b{font-family:var(--ffd);color:var(--ink);font-size:16px}
-    .ag-p{color:var(--teal);font-size:13px;font-weight:700;white-space:nowrap}
-    .ag .t{font-size:12px;color:var(--dim);margin-top:2px}
-    .ag p{font-size:13.5px;margin-top:8px}
-    /* garantia */
-    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px}
-    .guar b{color:var(--ink)}
-    .guar a{color:var(--teal);font-weight:600}
-    /* evidencia */
-    .evid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .ev{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .ev b{font-family:var(--ffd);color:var(--ink);font-size:14.5px;display:block;margin-bottom:6px}
-    .ev p{font-size:13.5px}
-    /* comparativa callout */
-    .cmp{background:var(--blue-soft);border:1px solid rgba(63,111,138,.25);border-radius:16px;padding:20px 24px;font-size:14.5px}
-    .cmp b{color:var(--ink)}
-    .cmp a{color:var(--blue);font-weight:700}
-    /* FAQ */
-    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
-    .faq summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:15px;position:relative;padding-right:44px}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--teal);font-size:20px;font-weight:400}
-    .faq details[open] summary::after{content:"–"}
-    .faq .fa{padding:0 20px 16px;font-size:14px}
-    .faq .fa a{color:var(--teal);font-weight:600}
-    /* final */
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <meta name="twitter:title" content="Automatización sobre Microsoft 365 con Power Automate | Optimatiza">
+  <meta name="twitter:description" content="Procesos completos corriendo sobre la suscripción Microsoft 365 que su organización ya sostiene, con gobierno, entornos separados y trazabilidad de cada ejecución.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Automatización sobre Microsoft 365", "item": "https://optimatiza.com/power-automate/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Automatización sobre Microsoft 365",
+    "serviceType": "Automatización de procesos sobre Microsoft 365 y Power Platform",
+    "description": "Diseño, construcción y soporte de procesos automatizados sobre la suscripción Microsoft 365 de la organización, con Power Automate cloud y RPA de escritorio, revisión de licenciamiento, entornos separados de desarrollo, pruebas y producción, y trazabilidad de cada ejecución.",
+    "url": "https://optimatiza.com/power-automate/",
+    "provider": {"@type": "Organization", "name": "Optimatiza", "url": "https://optimatiza.com/"},
+    "areaServed": ["El Salvador", "Latinoamérica", "Estados Unidos"],
+    "availableChannel": {"@type": "ServiceChannel", "serviceUrl": "https://optimatiza.com/contacto/"}
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -128,212 +56,360 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Necesitamos comprar licencias adicionales de Power Automate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "En muchos escenarios estándar, no: los flujos que conectan Outlook, SharePoint, Teams, Excel, OneDrive, Forms y Planner corren sobre el licenciamiento Microsoft 365 que su empresa ya sostiene. Los conectores premium (SQL, HTTP, Dataverse), los flujos RPA de escritorio y algunos escenarios avanzados sí pueden requerir licencia adicional de Microsoft. Lo revisamos con su área de TI y se lo confirmamos en el diagnóstico ejecutivo, antes de definir el alcance, sin sorpresas."
-        }
+        "name": "¿Se requieren licencias adicionales de Power Automate?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Depende del escenario. Los flujos que conectan Outlook, SharePoint, Teams, Excel, OneDrive, Forms y Planner se apoyan en el licenciamiento Microsoft 365 que la organización ya sostiene. Los conectores premium, el RPA atendido y desatendido y ciertos escenarios de Dataverse pueden requerir licencia adicional de Microsoft. Esa revisión se hace con su área de TI durante la evaluación ejecutiva, antes de fijar el alcance."}
       },
       {
         "@type": "Question",
-        "name": "¿Son partner certificado de Microsoft?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, y no lo aparentamos. Somos especialistas en el ecosistema Microsoft: el fundador tiene una maestría en Business Intelligence y más de 8 años construyendo soluciones sobre Microsoft 365 y Power Platform. La contratación de licencias sigue siendo directamente con Microsoft o con el proveedor actual de su empresa; nosotros implementamos y damos soporte a los flujos."
-        }
+        "name": "¿Optimatiza es partner certificado de Microsoft?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No, y no lo aparentamos. La firma es especialista en el ecosistema Microsoft; la contratación de licencias sigue siendo directa con Microsoft o con el proveedor actual de su organización. Optimatiza diseña, implementa y da soporte a los procesos."}
       },
       {
         "@type": "Question",
-        "name": "¿Power Automate o n8n: cuál conviene a nuestra operación?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Si su operación vive en Microsoft 365 (correo en Outlook, archivos en SharePoint, comunicación en Teams), Power Automate suele ser el punto de partida natural: menos fricción de accesos y gobierno, y a menudo sin licencias adicionales para escenarios estándar. Si su arquitectura exige muchas integraciones fuera del ecosistema Microsoft o control total de la infraestructura, n8n puede convenir más. Publicamos una comparativa honesta entre ambas en optimatiza.com/recursos/power-automate-vs-n8n/ e implementamos las dos."
-        }
+        "name": "¿Se pueden rescatar flujos existentes que hoy fallan?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí. El trabajo comprende diagnóstico de las causas de falla, manejo de excepciones y reintentos, alertas cuando un flujo se detiene, documentación de lo que hoy no tiene dueño y traspaso ordenado al área de TI. Es un escenario frecuente después de una rotación de personal."}
       },
       {
         "@type": "Question",
-        "name": "¿Qué incluye una unidad simple de automatización?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Un proceso con un disparador y un resultado claro: por ejemplo, una cadena de aprobación de documentos, la captura de adjuntos de correo hacia SharePoint con registro en Excel, o notificaciones automáticas a Teams. Incluye construcción, pruebas con casos reales de su operación, manejo de errores, entrega documentada en producción y 30 días de soporte. Alcance típico: 1 a 2 semanas desde que recibimos accesos. La inversión se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Ya tenemos flujos de Power Automate que fallan, ¿los pueden rescatar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí. Damos soporte a flujos existentes: diagnóstico de por qué fallan, manejo de excepciones y reintentos, alertas cuando algo se detiene, documentación de lo que hoy nadie entiende y traspaso ordenado a su equipo de TI. Es un caso frecuente en operaciones grandes: flujos que alguien armó, funcionaron un tiempo y quedaron sin dueño tras una rotación."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué pasa con nuestros datos y accesos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Los flujos se construyen dentro del propio tenant de Microsoft 365 de su empresa, con cuentas y permisos que su área de TI controla y puede revocar en cualquier momento. Sus datos no salen del entorno Microsoft para funcionar y las políticas DLP vigentes siguen aplicando. Publicamos nuestra política de manejo de datos en optimatiza.com/seguridad-gobierno/."
-        }
+        "name": "¿Dónde quedan los datos y quién controla los accesos?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Los procesos se construyen dentro del propio tenant de Microsoft 365 de la organización, con cuentas y permisos que su área de TI administra y puede revocar en cualquier momento. Las políticas de prevención de pérdida de datos vigentes siguen aplicando. La política de manejo de datos está publicada en la página de seguridad y gobierno."}
       }
     ]
   }
   </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../"><img src="../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../casos/">Demostraciones en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20nuestra%20operaci%C3%B3n%20corre%20sobre%20Microsoft%20365%20y%20evaluamos%20automatizar%20procesos%20con%20Power%20Automate." target="_blank" rel="noopener">WhatsApp</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
 
-<main class="wrap">
-  <div class="hero">
-    <span class="k">Para direcciones de operaciones, finanzas y tecnología</span>
-    <h1>Consultor Power Automate: automatizamos los procesos que sostienen su operación sobre Microsoft 365</h1>
-    <p class="sub">Cuando por su operación pasan cientos o miles de documentos, pedidos y solicitudes al mes, la doble digitación entre correo, Excel y el ERP, las aprobaciones detenidas en hilos de correo y los consolidados armados a mano dejan de ser una molestia y se vuelven un costo estructural. Implementamos y damos soporte a flujos de Power Automate —cloud y RPA de escritorio— dentro del tenant Microsoft 365 que su empresa ya sostiene; en muchos escenarios estándar, sin licencias adicionales. Su equipo conserva las decisiones; el flujo absorbe el trabajo repetitivo.</p>
+<main id="contenido">
+
+  <div class="wrap"><nav class="crumbs" aria-label="Ruta">
+    <a href="/">Inicio</a><span aria-hidden="true">/</span> Automatización sobre Microsoft 365
+  </nav></div>
+
+  <div class="phero band"><div class="wrap">
+    <p class="kicker"><i></i> Automatización empresarial · Entorno Microsoft 365</p>
+    <h1>Automatización de procesos sobre el Microsoft 365 que su organización ya paga</h1>
+    <p class="lead">Dentro de la suscripción que su empresa ya sostiene existe la capacidad de orquestar procesos completos —<b>captura, validación, aprobación, registro y notificación</b>— sin sumar una plataforma más al inventario de TI. La tecnología es <b>Power Automate</b>, en su modalidad cloud y en RPA de escritorio. Lo que se entrega es el proceso corriendo dentro de su propio tenant, con gobierno, entornos separados y registro de cada ejecución.</p>
     <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20nuestra%20operaci%C3%B3n%20corre%20sobre%20Microsoft%20365%20y%20queremos%20evaluar%20la%20automatizaci%C3%B3n%20de%20procesos%20con%20Power%20Automate.%20Solicito%20un%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
-      <a class="ghost" href="../recursos/power-automate-vs-n8n/">¿Power Automate o n8n? Ver comparativa</a>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-secondary" href="/automatizacion-empresarial/">Ver la práctica de automatización</a>
     </div>
-  </div>
+  </div></div>
 
-  <section>
-    <h2>Si esto ocurre en su operación, Power Automate ya puede resolverlo sin intervención</h2>
-    <div class="dols">
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span><h3>Adjuntos procesados a mano</h3><p>Llegan cientos de correos con facturas u órdenes al mes; alguien descarga cada PDF, lo renombra, lo archiva y digita los datos en Excel o en el ERP. Todos los días.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg></span><h3>Aprobaciones sin trazabilidad</h3><p>El estado de una solicitud depende de preguntar. El documento vive en una cadena de correos reenviados y el proceso se detiene sin que exista registro de quién aprobó qué y cuándo.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><path d="m7.5 15 3.5-4 3 2.5 4.5-6"/></svg></span><h3>Consolidados armados a mano</h3><p>Horas de copiar y pegar entre archivos y sistemas para producir el mismo reporte recurrente, con el riesgo operativo de una columna mal pegada en la cifra que se lleva a comité.</p></div>
-      <div class="dol"><span class="dol-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><h3>Sistemas legados sin API</h3><p>El ERP o el sistema de planta no expone integración y el mismo dato se captura dos veces. El RPA de escritorio ejecuta esa captura con registro de cada corrida.</p></div>
+  <section><div class="wrap">
+    <span class="sec-k">Diagnóstico</span>
+    <h2>Dónde el trabajo manual se vuelve costo estructural</h2>
+    <p class="sec-sub">Cuando por la operación pasan cientos o miles de documentos, pedidos y solicitudes al mes, estos cuatro puntos dejan de ser molestias y pasan a consumir horas-persona todos los días.</p>
+    <div class="cards">
+      <article class="card reveal">
+        <h3>Adjuntos procesados a mano</h3>
+        <p>Llegan cientos de correos con facturas u órdenes al mes. Alguien descarga cada PDF, lo renombra, lo archiva y digita los datos en Excel o en el ERP. Todos los días, con la misma secuencia.</p>
+      </article>
+      <article class="card reveal reveal-2">
+        <h3>Aprobaciones sin trazabilidad</h3>
+        <p>El estado de una solicitud depende de preguntar. El documento vive en una cadena de correos reenviados y no existe registro de quién aprobó qué, con qué monto y en qué fecha.</p>
+      </article>
+      <article class="card reveal reveal-3">
+        <h3>Consolidados armados a mano</h3>
+        <p>Horas de copiar y pegar entre archivos y sistemas para producir el mismo reporte recurrente, con el riesgo operativo de una columna mal pegada en la cifra que se lleva a comité.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Sistemas sin interfaz de integración</h3>
+        <p>El ERP o el sistema de planta no expone API y el mismo dato se captura dos veces. El RPA de escritorio ejecuta esa captura con bitácora de cada corrida.</p>
+      </article>
     </div>
-  </section>
+  </div></section>
 
-  <section>
-    <h2>Así opera un flujo en producción: factura que llega por correo</h2>
-    <p class="lede">Un ejemplo del tipo de proceso que construimos — cada paso corre sin intervención, con registro auditable de qué ocurrió, quién decidió y a qué hora:</p>
-    <div class="flow" role="img" aria-label="Diagrama de flujo: llega un correo con factura, el flujo extrae los datos, solicita aprobación en Teams, actualiza el registro y responde al proveedor">
-      <div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M12 4v10m0 0 3.5-3.5M12 14l-3.5-3.5"/></svg></span><b>Llega el correo</b><p>El flujo detecta el correo con la factura adjunta y la toma sin que nadie la busque.</p><span class="fapp">Outlook</span></div>
-      <div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><b>Extrae y archiva</b><p>Lee los datos del documento y guarda el PDF con la nomenclatura y la ubicación que define su política documental.</p><span class="fapp">SharePoint</span></div>
-      <div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg></span><b>Gestiona la aprobación</b><p>El responsable recibe la solicitud con todo el contexto y aprueba con un clic; la decisión queda registrada.</p><span class="fapp">Teams / Approvals</span></div>
-      <div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span><b>Actualiza el registro</b><p>Escribe el asiento en su Excel, lista o sistema contable. Sin doble digitación.</p><span class="fapp">Excel / ERP</span></div>
-      <div class="fnode"><span class="fi"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span><b>Responde y notifica</b><p>Confirma al proveedor y avisa al área responsable. Todo queda trazado.</p><span class="fapp">Correo / WhatsApp</span></div>
+  <section class="band"><div class="wrap">
+    <span class="sec-k">El proceso, corriendo</span>
+    <h2>Del correo de entrada al registro conciliado</h2>
+    <div class="split">
+      <div>
+        <p>Cada paso corre sin intervención y deja constancia de qué ocurrió, quién decidió y a qué hora. El criterio permanece en su equipo: el flujo prepara el caso, la persona responsable firma.</p>
+        <ul class="checks">
+          <li><b>Sin doble digitación:</b> el dato se captura una sola vez.</li>
+          <li><b>Sin puntos ciegos:</b> lo que no cuadra va a la cola de excepciones.</li>
+          <li><b>Sin sorpresas:</b> aviso al responsable cuando un paso falla.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <figure class="plate">
+          <img src="/img/crew-pipeline.svg" alt="Cinta de proceso en la que las piezas avanzan de una estación a la siguiente">
+          <figcaption>Una sola línea de trabajo donde hoy hay varias bandejas de correo.</figcaption>
+        </figure>
+      </div>
     </div>
-    <p class="note">Nuestro Capturista Digital — un flujo de este tipo — procesa una factura en ~4 segundos: es una grabación del sistema real, no una estimación. Las piezas de <a href="../casos/">optimatiza.com/casos</a> son demostraciones ilustrativas; el flujo de su empresa se construye sobre sus sistemas y sus reglas. Si el proceso crítico es específicamente facturación, consulte <a href="../procesamiento-automatico-facturas/">procesamiento automático de facturas</a>.</p>
-  </section>
+    <div class="steps">
+      <div class="step">
+        <h3>Entrada</h3>
+        <p>El proceso detecta el correo con el documento adjunto en Outlook y lo toma sin que nadie lo busque.</p>
+      </div>
+      <div class="step">
+        <h3>Extracción y archivo</h3>
+        <p>Lee los datos del documento y guarda el archivo en SharePoint con la nomenclatura de su política documental.</p>
+      </div>
+      <div class="step">
+        <h3>Aprobación</h3>
+        <p>El responsable recibe la solicitud con el contexto completo en Teams y decide; la decisión queda registrada.</p>
+      </div>
+      <div class="step">
+        <h3>Registro</h3>
+        <p>Escribe el asiento en la lista, el archivo Excel o el sistema contable que corresponda.</p>
+      </div>
+      <div class="step">
+        <h3>Notificación</h3>
+        <p>Confirma al tercero y avisa al área responsable. El expediente queda armado.</p>
+      </div>
+    </div>
+    <div class="note demo"><b>Caso medido, no prometido:</b> nuestro Capturista Digital procesa una factura en unos 4 segundos, y está grabado en video. Si el proceso crítico es específicamente facturación, vea <a href="/procesamiento-automatico-facturas/">procesamiento automático de facturas</a>. <a class="link-more" href="/casos/">Ver el caso →</a></div>
+  </div></section>
 
-  <section>
-    <h2>Cloud y escritorio: cubrimos los dos lados de Power Automate</h2>
-    <div class="duo">
-      <div class="duo-c"><h3>Flujos cloud</h3><p>Conectan las aplicaciones que su empresa ya opera y corren en segundo plano, todos los días:</p>
-        <ul>
+  <section><div class="wrap">
+    <span class="sec-k">Alcance de la tecnología</span>
+    <h2>Cloud y escritorio: los dos lados de Power Automate</h2>
+    <p class="sec-sub">La modalidad se elige por el sistema al que hay que llegar, no por preferencia técnica.</p>
+    <div class="cols2">
+      <div>
+        <h3>Flujos cloud</h3>
+        <p>Conectan las aplicaciones que su organización ya opera y corren en segundo plano.</p>
+        <ul class="checks">
           <li>Aprobaciones con trazabilidad en Teams y correo</li>
           <li>Captura de adjuntos y archivo automático en SharePoint</li>
           <li>Consolidados y alertas programadas, sin armado manual</li>
-          <li>Integraciones con APIs, CRM, ERP y WhatsApp</li>
+          <li>Integraciones con APIs, CRM y ERP</li>
         </ul>
       </div>
-      <div class="duo-c"><h3>RPA de escritorio (Power Automate Desktop)</h3><p>Para sistemas sin API — el robot opera la interfaz como lo haría una persona:</p>
-        <ul>
-          <li>Captura en ERPs y sistemas legados de escritorio</li>
+      <div>
+        <h3>RPA de escritorio</h3>
+        <p>Para sistemas sin API: el robot opera la interfaz como lo haría una persona.</p>
+        <ul class="checks">
+          <li>Captura en ERPs y sistemas de escritorio heredados</li>
           <li>Descarga y carga de archivos en portales de terceros</li>
           <li>Conciliaciones que hoy exigen operar tres aplicaciones a la vez</li>
-          <li>Corre en máquina dedicada, con bitácora de cada ejecución</li>
+          <li>Ejecución en máquina dedicada, con bitácora de cada corrida</li>
         </ul>
       </div>
     </div>
-  </section>
-
-  <section>
-    <h2>Cómo trabajamos</h2>
-    <div class="pasos">
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>Diagnóstico ejecutivo (20–30 min)</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5a4 4 0 0 0 5.2 5.2L21 12l-9 9-3-3 9-9Z"/><path d="m8.5 8.5-3.6 3.6a2.5 2.5 0 0 0 0 3.5"/></svg></span>Construcción dentro de su propio tenant M365</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span>Pruebas con casos reales de su operación</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg></span>Producción, documentación y traspaso a TI</div>
+    <div class="pills">
+      <span>Outlook</span><span>SharePoint</span><span>Teams</span><span>Excel</span><span>OneDrive</span><span>Forms</span><span>Planner</span><span>Approvals</span><span>Dataverse</span><span>Dynamics 365</span><span>SQL Server</span><span>Power BI</span><span>APIs REST</span><span>ERP y CRM de terceros</span>
     </div>
-    <p class="note">En el diagnóstico también le decimos qué conviene <b>no</b> automatizar todavía, y si el escenario exige licencias premium de Microsoft — antes de definir el alcance, no después.</p>
-  </section>
+    <p class="note">Power Automate ofrece cientos de conectores oficiales; lo que no tenga conector se resuelve por API —vea <a class="link-more" href="/integracion-sistemas/">integración de sistemas</a>— o por RPA de escritorio.</p>
+  </div></section>
 
-  <section>
-    <h2>Se conecta con la plataforma que su empresa ya opera</h2>
-    <div class="chips">
-      <span class="chip">Outlook</span><span class="chip">SharePoint</span><span class="chip">Teams</span><span class="chip">Excel</span><span class="chip">OneDrive</span><span class="chip">Microsoft Forms</span><span class="chip">Planner</span><span class="chip">Approvals</span><span class="chip">Dataverse / Dynamics 365</span><span class="chip">SQL Server</span><span class="chip">Power BI</span><span class="chip">APIs REST</span><span class="chip">Google Workspace</span><span class="chip">WhatsApp</span><span class="chip">ERP / CRM</span>
+  <section class="band"><div class="wrap">
+    <span class="sec-k">Gobierno de la plataforma</span>
+    <h2>Lo que distingue una automatización empresarial de un flujo improvisado</h2>
+    <p class="sec-sub">Un flujo armado a la carrera resuelve el caso feliz. Lo que sobrevive al caso real es la disciplina de licenciamiento, entornos y control de accesos.</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>El licenciamiento se revisa antes de fijar el alcance</b></summary>
+        <div class="ex-body"><p>Los conectores estándar se apoyan en el licenciamiento Microsoft 365 que su organización ya sostiene. Los conectores premium, el RPA desatendido y ciertos escenarios de Dataverse pueden requerir licencia adicional de Microsoft. Esa distinción se revisa con su área de TI durante la evaluación, no después de haber construido.</p></div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Desarrollo, pruebas y producción son entornos distintos</b></summary>
+        <div class="ex-body"><p>Nada se construye directamente sobre el entorno productivo. Los flujos se desarrollan y prueban en entornos separados y se promueven a producción empaquetados como solución, de modo que exista una versión conocida y una vía de retorno si algo se comporta distinto.</p></div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Los activos viven en su tenant, bajo sus políticas</b></summary>
+        <div class="ex-body"><p>Flujos, conexiones y repositorios quedan en el tenant de su organización, con cuentas y permisos que su área de TI administra y puede revocar. Las políticas de prevención de pérdida de datos vigentes siguen aplicando. El detalle está en <a href="/seguridad-gobierno/">seguridad y gobierno</a>.</p></div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Las excepciones tienen tratamiento y responsable</b></summary>
+        <div class="ex-body"><p>Cada proceso define qué se resuelve solo, qué requiere aprobación y qué se escala. Reintentos, manejo de errores y aviso al responsable forman parte de la construcción, no de un ajuste posterior.</p></div>
+      </details>
+      <details>
+        <summary><i>05</i><b>El proceso no depende de quien lo construyó</b></summary>
+        <div class="ex-body"><p>Diagramas, documentación técnica y funcional, y traspaso a su equipo antes del cierre. Si prefiere delegar el monitoreo, existe <a href="/operacion-administrada/">operación administrada</a>.</p></div>
+      </details>
     </div>
-    <p class="note">Power Automate trae cientos de conectores oficiales; lo que no tenga conector se integra por API — ver <a href="/integracion-sistemas/">integraciones API</a> — o por RPA de escritorio.</p>
-  </section>
-
-  <section>
-    <h2>Alcances típicos y plazos de entrega</h2>
-    <div class="ags">
-      <div class="ag hl"><div class="ag-h"><b>Unidad simple</b><span class="ag-p">1–2 semanas</span></div><div class="t">Alcance típico · punto de entrada</div><p>Un proceso, un disparador, un resultado: aprobación de documentos, captura de adjuntos con registro, notificaciones automáticas. En producción y documentado.</p></div>
-      <div class="ag"><div class="ag-h"><b>Flujo estándar</b><span class="ag-p">2–4 semanas</span></div><div class="t">Alcance típico</div><p>Varios pasos y sistemas conectados: extracción de datos de documentos, integración con API o ERP, lógica de excepciones y reintentos.</p></div>
-      <div class="ag"><div class="ag-h"><b>Célula multi-agente</b><span class="ag-p">4–8 semanas</span></div><div class="t">Alcance típico</div><p>Varios flujos operando en conjunto sobre un proceso completo de punta a punta, con supervisión, trazabilidad y escalamiento a las personas responsables.</p></div>
+    <div class="reveal">
+      <figure class="plate">
+        <img src="/img/crew-inspecting.svg" alt="Robot revisando un tablero de control con indicadores del proceso">
+        <figcaption>Lo que corre solo se vigila igual: cada ejecución queda a la vista.</figcaption>
+      </figure>
     </div>
-    <p class="note">La inversión se define según el alcance y se paga por hitos; la operación mensual (monitoreo, soporte y ajustes) se contrata aparte. <a href="../metodologia/">Ver modelos de contratación</a>.</p>
-  </section>
+  </div></section>
 
-  <section>
-    <div class="guar"><b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a href="../contacto/">Solicitar evaluación ejecutiva →</a></div>
-  </section>
-
-  <section>
-    <h2>Evidencia honesta: qué podemos demostrar</h2>
-    <div class="evid">
-      <div class="ev"><b>No somos partner de Microsoft</b><p>Y no lo aparentamos. Somos especialistas en el ecosistema Microsoft: la credencial real es la maestría en Business Intelligence del fundador y 8+ años construyendo sobre M365 y Power Platform.</p></div>
-      <div class="ev"><b>Una métrica medida, no inventada</b><p>El Capturista Digital procesa una factura en ~4 segundos: grabación del sistema real, publicada en <a class="inline-link" href="../casos/">nuestros casos</a>. Es la única cifra de desempeño que publicamos, porque es la que podemos demostrar.</p></div>
-      <div class="ev"><b>Operamos lo que implementamos</b><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana. Y el chat Nova de este sitio es un agente en producción, disponible para que lo evalúe.</p></div>
-      <div class="ev"><b>Sin testimonios fabricados</b><p>No publicamos logos, testimonios ni porcentajes de mejora que no podamos respaldar. Preferimos que el diagnóstico ejecutivo dimensione el caso con las cifras propias de su operación.</p></div>
+  <section><div class="wrap">
+    <span class="sec-k">Alcances de referencia</span>
+    <h2>Cómo se estructura un programa por fases</h2>
+    <p class="sec-sub">Los horizontes son de referencia y dependen del alcance, de los accesos y de la complejidad de los sistemas. El plan real sale de la evaluación.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th scope="col">Alcance</th><th scope="col">Qué comprende</th><th scope="col">Horizonte de referencia</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Proceso acotado</b></td>
+            <td>Un disparador y un resultado: una cadena de aprobación, la captura de adjuntos con registro o una notificación estructurada. Construcción, pruebas con casos reales, manejo de errores y entrega documentada en producción.</td>
+            <td>Semanas</td>
+          </tr>
+          <tr>
+            <td><b>Proceso con integraciones</b></td>
+            <td>Varios pasos y sistemas conectados: extracción de datos de documentos, integración con API o ERP, lógica de excepciones y reintentos.</td>
+            <td>Varias semanas</td>
+          </tr>
+          <tr>
+            <td><b>Proceso de punta a punta</b></td>
+            <td>Conjunto de flujos coordinados sobre un proceso completo, con supervisión, trazabilidad y escalamiento a las personas responsables.</td>
+            <td>Por fases, con hitos verificables</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </section>
+    <p class="note">Cada programa se dimensiona tras una evaluación de alcance —complejidad, integraciones, volumen, seguridad y soporte— y se entrega por hitos. La operación mensual se contrata aparte. <a class="link-more" href="/metodologia/">Ver la metodología →</a></p>
+  </div></section>
 
-  <section>
-    <div class="cmp"><b>¿Y si Power Automate no es la herramienta correcta para su arquitectura?</b> Se lo diremos. También implementamos <a href="../n8n/">n8n</a> — y publicamos una <a href="../recursos/power-automate-vs-n8n/">comparativa honesta Power Automate vs n8n</a> para que su área de TI decida con criterio técnico, no con marketing.</div>
-  </section>
+  <section class="band"><div class="wrap">
+    <span class="sec-k">Criterio de tecnología</span>
+    <h2>Cuándo Power Automate y cuándo no</h2>
+    <p class="sec-sub">Si su operación vive en Microsoft 365 —correo en Outlook, archivos en SharePoint, comunicación en Teams—, Power Automate suele ser el punto de partida natural: menos fricción de accesos y de gobierno, y aprovechamiento de licenciamiento ya contratado. Si la arquitectura exige muchas integraciones fuera del ecosistema Microsoft o control total de la infraestructura, <a href="/n8n/">n8n</a> puede convenir más; la <a href="/recursos/power-automate-vs-n8n/">comparativa publicada</a> permite que su área de TI decida con criterio técnico.</p>
+    <p class="note">Automatizar ordena lo que ocurre <b>dentro</b> de su operación. Lo que ocurre <b>fuera</b> —competidores, regulación, tecnología— se vigila con método desde nuestra <a href="/inteligencia-competitiva/">práctica de inteligencia competitiva</a>, cuyas <a href="/inteligencia-competitiva/alertas-tempranas/">alertas tempranas</a> pueden apoyarse en los mismos canales de Microsoft 365 que su equipo ya usa.</p>
+  </div></section>
 
-  <section>
-    <h2>Preguntas frecuentes</h2>
+  <section><div class="wrap">
+    <span class="sec-k">Preguntas frecuentes</span>
+    <h2>Lo que las direcciones preguntan antes de empezar</h2>
     <div class="faq">
       <details>
-        <summary>¿Necesitamos comprar licencias adicionales de Power Automate?</summary>
-        <div class="fa">En muchos escenarios estándar, no: los flujos que conectan Outlook, SharePoint, Teams, Excel, OneDrive, Forms y Planner corren sobre el licenciamiento Microsoft 365 que su empresa ya sostiene. Los conectores premium (SQL, HTTP, Dataverse), los flujos RPA de escritorio y algunos escenarios avanzados sí pueden requerir licencia adicional de Microsoft. Lo revisamos con su área de TI y se lo confirmamos en el diagnóstico ejecutivo, antes de definir el alcance, sin sorpresas.</div>
+        <summary>¿Se requieren licencias adicionales de Power Automate?</summary>
+        <p class="fa">Depende del escenario. Los flujos que conectan Outlook, SharePoint, Teams, Excel, OneDrive, Forms y Planner se apoyan en el licenciamiento Microsoft 365 que la organización ya sostiene. Los conectores premium, el RPA atendido y desatendido y ciertos escenarios de Dataverse pueden requerir licencia adicional de Microsoft. Esa revisión se hace con su área de TI durante la evaluación ejecutiva, antes de fijar el alcance.</p>
       </details>
       <details>
-        <summary>¿Son partner certificado de Microsoft?</summary>
-        <div class="fa">No, y no lo aparentamos. Somos especialistas en el ecosistema Microsoft: el fundador tiene una maestría en Business Intelligence y más de 8 años construyendo soluciones sobre Microsoft 365 y Power Platform. La contratación de licencias sigue siendo directamente con Microsoft o con el proveedor actual de su empresa; nosotros implementamos y damos soporte a los flujos.</div>
+        <summary>¿Optimatiza es partner certificado de Microsoft?</summary>
+        <p class="fa">No, y no lo aparentamos. La firma es especialista en el ecosistema Microsoft; la contratación de licencias sigue siendo directa con Microsoft o con el proveedor actual de su organización. Optimatiza diseña, implementa y da soporte a los procesos.</p>
       </details>
       <details>
-        <summary>¿Power Automate o n8n: cuál conviene a nuestra operación?</summary>
-        <div class="fa">Si su operación vive en Microsoft 365 (correo en Outlook, archivos en SharePoint, comunicación en Teams), Power Automate suele ser el punto de partida natural: menos fricción de accesos y gobierno, y a menudo sin licencias adicionales para escenarios estándar. Si su arquitectura exige muchas integraciones fuera del ecosistema Microsoft o control total de la infraestructura, <a href="../n8n/">n8n</a> puede convenir más. Publicamos una <a href="../recursos/power-automate-vs-n8n/">comparativa honesta</a> e implementamos las dos.</div>
+        <summary>¿Se pueden rescatar flujos existentes que hoy fallan?</summary>
+        <p class="fa">Sí. El trabajo comprende diagnóstico de las causas de falla, manejo de excepciones y reintentos, alertas cuando un flujo se detiene, documentación de lo que hoy no tiene dueño y traspaso ordenado al área de TI. Es un escenario frecuente después de una rotación de personal.</p>
       </details>
       <details>
-        <summary>¿Qué incluye una unidad simple de automatización?</summary>
-        <div class="fa">Un proceso con un disparador y un resultado claro: por ejemplo, una cadena de aprobación de documentos, la captura de adjuntos de correo hacia SharePoint con registro en Excel, o notificaciones automáticas a Teams. Incluye construcción, pruebas con casos reales de su operación, manejo de errores, entrega documentada en producción y 30 días de soporte. Alcance típico: 1 a 2 semanas desde que recibimos accesos. La inversión se cotiza tras una <a href="../contacto/">evaluación de alcance</a> según complejidad, integraciones, volumen, seguridad y soporte.</div>
-      </details>
-      <details>
-        <summary>Ya tenemos flujos de Power Automate que fallan, ¿los pueden rescatar?</summary>
-        <div class="fa">Sí. Damos soporte a flujos existentes: diagnóstico de por qué fallan, manejo de excepciones y reintentos, alertas cuando algo se detiene, documentación de lo que hoy nadie entiende y traspaso ordenado a su equipo de TI. Es un caso frecuente en operaciones grandes: flujos que alguien armó, funcionaron un tiempo y quedaron sin dueño tras una rotación.</div>
-      </details>
-      <details>
-        <summary>¿Qué pasa con nuestros datos y accesos?</summary>
-        <div class="fa">Los flujos se construyen dentro del propio tenant de Microsoft 365 de su empresa, con cuentas y permisos que su área de TI controla y puede revocar en cualquier momento. Sus datos no salen del entorno Microsoft para funcionar y las políticas DLP vigentes siguen aplicando. Publicamos nuestra política de manejo de datos en <a href="/seguridad-gobierno/">optimatiza.com/seguridad-gobierno</a>.</div>
+        <summary>¿Dónde quedan los datos y quién controla los accesos?</summary>
+        <p class="fa">Los procesos se construyen dentro del propio tenant de Microsoft 365 de la organización, con cuentas y permisos que su área de TI administra y puede revocar en cualquier momento. Las políticas de prevención de pérdida de datos vigentes siguen aplicando. La política de manejo de datos está publicada en <a href="/seguridad-gobierno/">seguridad y gobierno</a>.</p>
       </details>
     </div>
-  </section>
+    <p class="note"><b>Quién responde:</b> dirige la práctica Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — con más de 8 años construyendo sobre Microsoft 365 y Power Platform. <a class="link-more" href="/nosotros/">Conozca la firma →</a></p>
+  </div></section>
 
-  <div class="final">
-    <h2>¿Cuántas horas-persona al mes consume la captura entre sistemas?</h2>
-    <p>Diagnóstico ejecutivo de 20–30 minutos, sin costo: revisamos un proceso real de su operación en Microsoft 365 y le decimos qué puede correr sin intervención, qué licencias exigiría (si alguna) y qué no conviene automatizar todavía.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20nuestra%20operaci%C3%B3n%20corre%20sobre%20Microsoft%20365%20y%20queremos%20evaluar%20la%20automatizaci%C3%B3n%20de%20procesos%20con%20Power%20Automate.%20Solicito%20un%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo →</a>
-  </div>
+  <section class="cta-band"><div class="wrap">
+    <h2>¿Cuántas horas-persona al mes consume hoy la captura entre sistemas?</h2>
+    <p class="sec-sub" style="margin:0 auto 6px">La evaluación ejecutiva revisa un proceso real de su operación en Microsoft 365 y define qué puede correr sin intervención, qué licenciamiento exigiría y qué no conviene automatizar todavía.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+    </div>
+  </div></section>
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresa mediana y grande.</span>
-  <a href="../">Inicio</a><a href="../metodologia/">Metodología</a><a href="../casos/">Demostraciones</a><a href="/automatizacion-empresarial/">Automatización de procesos</a><a href="../recursos/power-automate-vs-n8n/">Power Automate vs n8n</a><a href="/seguridad-gobierno/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

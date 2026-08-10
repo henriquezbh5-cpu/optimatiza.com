@@ -3,383 +3,378 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Calculadora de ROI de automatización de procesos | Optimatiza</title>
+  <meta name="description" content="Estime el costo mensual y anual de un proceso que aún se ejecuta a mano, el ahorro al automatizarlo y el alcance de proyecto que corresponde, con los números de su operación.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/recursos/calculadora-roi/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Calculadora de ROI de Automatización de Procesos | Optimatiza</title>
-  <meta name="description" content="Calcule cuánto cuesta su proceso manual al mes y al año, el ahorro estimado y qué alcance de automatización conviene. Con sus propios números.">
-  <link rel="canonical" href="https://optimatiza.com/recursos/calculadora-roi/">
-  <link rel="icon" href="../../img/logo-badge-96.png">
-  <meta property="og:title" content="Calculadora de ROI de Automatización de Procesos | Optimatiza">
-  <meta property="og:description" content="Cuánto cuesta su proceso manual, el ahorro estimado y qué alcance conviene. Estimación orientativa con sus propios números.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de ROI: cuánto cuesta un proceso ejecutado a mano">
+  <meta property="og:description" content="Con las horas, las personas y el costo cargado por hora de su operación: costo mensual y anual del proceso manual, ahorro estimado y alcance de proyecto que corresponde.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/recursos/calculadora-roi/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#3F6F8A;--violet:#C9913B;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:20;background:rgba(246,241,232,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh)}
-    .hero{padding:56px 0 28px;max-width:820px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17px;max-width:62ch}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 16px}
-    h3{font-family:var(--ffd);color:var(--ink)}
-    section{padding:32px 0}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh)}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    .note a{color:var(--teal);font-weight:600}
-
-    /* Calculadora */
-    .calc{display:grid;gap:18px;margin-top:6px}
-    @media(min-width:880px){.calc{grid-template-columns:1fr 1fr;align-items:start}}
-    .card{background:#FFFDF8;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--sh);min-width:0}
-    .card-t{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:16px;margin-bottom:14px}
-    .field{margin-bottom:14px;min-width:0}
-    .field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:5px}
-    .field .hint{font-weight:400;color:var(--dim);font-size:12.5px}
-    .field input{width:100%;min-width:0;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;font-family:var(--ff);color:var(--ink);background:var(--alt)}
-    .field input:focus{outline:2px solid var(--teal2);outline-offset:1px;background:#FFFDF8}
-    .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .opt-t{font-size:12.5px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;margin:16px 0 10px;border-top:1px dashed var(--line);padding-top:14px}
-    .res{background:linear-gradient(160deg,#F0F5EC,#EFE8D9);border:1.5px solid var(--teal2)}
-    .stat{padding:10px 0;border-bottom:1px solid var(--line)}
-    .stat:last-of-type{border-bottom:0}
-    .stat .lbl{font-size:13px;color:var(--dim)}
-    .stat .val{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:26px;line-height:1.2}
-    .stat .val.sm{font-size:19px}
-    .stat .cx{font-size:12.5px;color:var(--dim)}
-    .badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px}
-    .warnbox{display:none;background:#FFF7ED;border:1px solid #FDBA74;border-radius:10px;padding:10px 14px;font-size:13px;color:#7C2D12;margin-top:10px}
-    .assume{background:var(--alt);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:13px;margin-top:14px}
-    .assume b{color:var(--ink)}
-    .res .btn{margin-top:16px;width:100%;text-align:center}
-
-    /* Pasos / diagrama */
-    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
-    .paso-n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12px;flex:none}
-    .arrow{color:var(--teal)}
-    .flow{background:var(--alt);border:1px solid var(--line);border-radius:16px;padding:20px}
-    .flow .paso{background:#FFFDF8}
-    .flow .paso.hito{border-color:var(--blue);color:var(--blue);font-weight:600}
-
-    /* Chips */
-    .chips{display:flex;flex-wrap:wrap;gap:9px}
-    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13.5px;color:var(--ink)}
-
-    /* Precios */
-    .prc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .pr{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .pr b{font-family:var(--ffd);color:var(--ink);font-size:15.5px;display:block}
-    .pr .rng{color:var(--teal);font-family:var(--ffd);font-weight:700;font-size:20px;margin:6px 0 2px}
-    .pr .tm{font-size:12.5px;color:var(--dim)}
-    .pr p{font-size:13.5px;margin-top:8px}
-    .guar{background:linear-gradient(135deg,rgba(37,211,102,.08),rgba(44,122,99,.04));border:1.5px solid rgba(37,211,102,.4);border-radius:16px;padding:20px 24px;font-size:14.5px;margin-top:16px}
-    .guar b{color:var(--ink)}
-
-    /* Evidencia */
-    .evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .ev{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .ev h3{font-size:15.5px;margin-bottom:6px}
-    .ev p{font-size:13.5px}
-    .ev .tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--violet);background:rgba(109,40,217,.08);border-radius:999px;padding:3px 10px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
-
-    /* FAQ */
-    .faq details{background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
-    .faq summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:10px}
-    .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:'+';color:var(--teal);font-weight:700;flex:none}
-    .faq details[open] summary::after{content:'–'}
-    .faq details p{font-size:14px;margin-top:10px}
-
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de ROI: cuánto cuesta un proceso ejecutado a mano">
+  <meta name="twitter:description" content="Con las horas, las personas y el costo cargado por hora de su operación: costo mensual y anual del proceso manual, ahorro estimado y alcance de proyecto que corresponde.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Publicaciones", "item": "https://optimatiza.com/recursos/"},
+      {"@type": "ListItem", "position": 3, "name": "Calculadora de ROI", "item": "https://optimatiza.com/recursos/calculadora-roi/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué tan confiable es el resultado de la calculadora?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Es una estimación orientativa construida con los números que usted ingresa: horas, personas y costo cargado por hora. No es una cotización ni una promesa de resultado. La cifra firme sale de la evaluación ejecutiva, donde se revisa el proceso concreto y sus sistemas."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué el supuesto de 70 % del tiempo?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Porque un flujo bien diseñado absorbe la parte repetitiva, pero las excepciones, las aprobaciones y las decisiones que requieren criterio quedan en su equipo. Se usa 70 % como supuesto conservador y se declara visible en la página; el porcentaje real de su proceso se define en la evaluación."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye el alcance sugerido?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Cada alcance incluye construcción, pruebas y entrega documentada, con hitos verificables. Se paga por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema está descrito en optimatiza.com/metodologia/."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay operación mensual después del proyecto?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Es opcional y se dimensiona según el nivel de monitoreo y mejora continua que la organización requiera. También puede operarlo su propio equipo: la entrega es documentada y los accesos quedan a nombre de su organización."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Y si el retorno no justifica la automatización?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Se dice con franqueza. Si el ahorro estimado no justifica la inversión cotizada, ese proceso no es el primero que conviene automatizar. En la evaluación se busca el proceso donde el retorno sí tiene sentido, y si no lo hay en ninguno, también se informa."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Los datos que ingreso salen de mi navegador?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. El cálculo ocurre en la propia página y los valores que usted escribe no se transmiten a ningún servidor. Las prácticas de manejo de información están descritas en optimatiza.com/seguridad-gobierno/."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<header><div class="wrap nav">
-  <a class="brand" href="../../"><img src="../../img/logo-badge-192.png" alt="">Optimatiza</a>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <a class="ghost" href="../../casos/">Demos en video</a>
-  <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20la%20calculadora%20de%20ROI%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">WhatsApp</a>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
 </div></header>
+<main id="contenido">
+  <div class="wrap"><nav class="crumbs" aria-label="Ruta">
+    <a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/recursos/">Publicaciones</a><span aria-hidden="true">/</span> Calculadora de ROI
+  </nav></div>
 
-<main class="wrap">
-  <!-- 1. Problema + 2. Audiencia + 3. Resultado concreto -->
-  <div class="hero">
-    <span class="k">Recurso gratis · Para dueños y gerentes</span>
-    <h1>Calculadora de ROI de automatización: cuánto le cuesta su proceso manual</h1>
-    <p class="sub">Digitar facturas, perseguir aprobaciones, copiar datos entre Excel y el sistema: cada semana se va tiempo de su equipo en trabajo repetitivo, y nadie lo tiene medido. Ingrese sus números y en 60 segundos obtenga el costo mensual y anual del proceso, el ahorro estimado y el alcance de automatización que conviene.</p>
-  </div>
+  <div class="phero band"><div class="wrap">
+    <p class="kicker"><i></i> Para dirección de finanzas y operaciones</p>
+    <h1>Cuánto cuesta al año un proceso que su organización todavía ejecuta a mano</h1>
+    <p class="lead">Digitación, cotejo de documentos, persecución de aprobaciones y traspaso de datos entre sistemas rara vez aparecen como línea del presupuesto: se pagan como salario. Con las horas, las personas y el costo cargado por hora que su área ya conoce, esta calculadora estima el <b>costo mensual y anual del proceso manual</b>, el ahorro al automatizarlo y el alcance de proyecto que corresponde.</p>
+  </div></div>
 
-  <!-- 4. Demostración: la calculadora -->
-  <section id="calculadora" aria-label="Calculadora de retorno de automatización">
-    <h2>Ingrese sus números</h2>
-    <div class="calc">
-      <div class="card">
-        <p class="card-t">Su proceso manual hoy</p>
-        <div class="field">
-          <label for="in-h">Horas a la semana por persona <span class="hint">— dedicadas a este proceso</span></label>
-          <input id="in-h" type="number" min="0" step="0.5" value="10" inputmode="decimal">
-        </div>
-        <div class="frow">
-          <div class="field">
-            <label for="in-p">Personas involucradas</label>
-            <input id="in-p" type="number" min="1" step="1" value="2" inputmode="numeric">
-          </div>
-          <div class="field">
-            <label for="in-c">Costo por hora (US$)</label>
-            <input id="in-c" type="number" min="0" step="0.5" value="6" inputmode="decimal">
-          </div>
-        </div>
-        <p class="opt-t">Opcional: errores y retrabajos</p>
-        <div class="frow">
-          <div class="field">
-            <label for="in-e">Errores al mes</label>
-            <input id="in-e" type="number" min="0" step="1" placeholder="0" inputmode="numeric">
-          </div>
-          <div class="field">
-            <label for="in-ce">Costo por error (US$)</label>
-            <input id="in-ce" type="number" min="0" step="1" placeholder="0" inputmode="decimal">
-          </div>
-        </div>
-        <div class="assume"><b>Supuesto declarado:</b> asumimos que la automatización cubre ~70% del tiempo manual del proceso; el resto queda en su equipo para excepciones y decisiones que requieren criterio. El ahorro estimado no incluye la reducción de errores (estimación conservadora).</div>
+  <section id="calculadora"><div class="wrap">
+    <p class="sec-k">La calculadora</p>
+    <h2>Ingrese los datos de un proceso</h2>
+    <p class="sec-sub">Los campos parten de valores de ejemplo; sustitúyalos por los de su operación. El cálculo ocurre en esta misma página: los valores que escriba no se transmiten a ningún servidor.</p>
+
+    <div class="cform">
+      <label for="in-h">Horas a la semana, por persona, dedicadas a este proceso
+        <input id="in-h" type="number" min="0" step="0.5" value="10" inputmode="decimal">
+      </label>
+      <div class="cf-row">
+        <label for="in-p">Personas involucradas
+          <input id="in-p" type="number" min="1" step="1" value="2" inputmode="numeric">
+        </label>
+        <label for="in-c">Costo cargado por hora (US$)
+          <input id="in-c" type="number" min="0" step="0.5" value="6" inputmode="decimal">
+        </label>
       </div>
+      <div class="cf-row">
+        <label for="in-e">Errores al mes (opcional)
+          <input id="in-e" type="number" min="0" step="1" placeholder="0" inputmode="numeric">
+        </label>
+        <label for="in-ce">Costo por error (US$, opcional)
+          <input id="in-ce" type="number" min="0" step="1" placeholder="0" inputmode="decimal">
+        </label>
+      </div>
+      <p class="cf-note"><b>Supuesto declarado:</b> se asume que la automatización cubre el 70 % del tiempo manual del proceso; el resto permanece en su equipo para excepciones y decisiones que requieren criterio. El ahorro estimado no acredita la reducción de errores, de modo que la cifra es conservadora.</p>
+    </div>
 
-      <div class="card res" aria-live="polite">
-        <p class="card-t">Su estimación</p>
-        <div id="res-empty" style="display:none;font-size:14px">Complete las horas por semana y el costo por hora para ver su estimación.</div>
-        <div id="res-body">
-          <div class="stat">
-            <div class="lbl">Costo mensual del proceso manual</div>
-            <div class="val" id="o-mes">—</div>
-            <div class="cx" id="o-mes-cx"></div>
-          </div>
-          <div class="stat">
-            <div class="lbl">Costo anual</div>
-            <div class="val sm" id="o-anio">—</div>
-          </div>
-          <div class="stat">
-            <div class="lbl">Alcance sugerido</div>
-            <div style="margin:4px 0 4px"><span class="badge" id="o-banda">—</span></div>
-            <div class="cx" id="o-inv-cx"></div>
-            <div class="cx"><a href="../../metodologia/" style="color:var(--teal);font-weight:600">Ver modelos de contratación →</a></div>
-          </div>
-          <div class="stat">
-            <div class="lbl">Ahorro mensual estimado (70% del tiempo)</div>
-            <div class="val sm" id="o-ahorro">—</div>
-          </div>
-          <div class="stat">
-            <div class="lbl">Recuperación de la inversión</div>
-            <div class="val sm">Se estima en el diagnóstico</div>
-            <div class="cx">Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte; con esa cotización y su ahorro mensual se calcula el plazo de recuperación.</div>
-          </div>
-          <a class="btn" id="wa-result" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20la%20calculadora%20de%20ROI%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo sin costo →</a>
+    <p class="cf-note" id="res-empty" style="display:none">Complete las horas por semana y el costo por hora para ver la estimación.</p>
+    <div id="res-body" aria-live="polite">
+      <div class="figures">
+        <div class="figure">
+          <span class="fig-k">Costo mensual del proceso manual</span>
+          <b class="count" id="o-mes">—</b>
+          <p id="o-mes-cx"></p>
         </div>
-        <p class="note">Estimación orientativa según sus propios números; el número real sale del diagnóstico ejecutivo sin costo de 20–30 minutos.</p>
+        <div class="figure">
+          <span class="fig-k">Costo anual</span>
+          <b class="count" id="o-anio">—</b>
+          <p>Lo que el proceso consume en doce meses al ritmo actual.</p>
+        </div>
+        <div class="figure">
+          <span class="fig-k">Ahorro mensual estimado</span>
+          <b class="count" id="o-ahorro">—</b>
+          <p>Sobre el 70 % del tiempo manual, sin acreditar errores evitados.</p>
+        </div>
+      </div>
+      <div class="deliverables">
+        <div class="deliverable"><b id="o-banda">—</b><span>Alcance sugerido, según las horas totales del equipo</span></div>
+        <div class="deliverable"><b id="o-inv-cx">—</b><span>Duración estimada y esquema de pago</span></div>
+        <div class="deliverable"><b>Se define en la evaluación</b><span>Recuperación de la inversión: se calcula con la cotización del alcance evaluado y el ahorro mensual.</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+        <a class="btn-wa" id="wa-result" href="https://wa.me/50371928070">Enviar esta estimación por WhatsApp</a>
       </div>
     </div>
-  </section>
+    <div class="note"><b>Qué es esta cifra:</b> una estimación orientativa para preparar la conversación interna, no una cotización.</div>
+  </div></section>
 
-  <!-- 5. Cómo funciona el cálculo -->
-  <section>
-    <h2>Cómo calculamos su estimación</h2>
-    <div class="pasos">
-      <div class="paso"><span class="paso-n">1</span>Costo mensual = horas × personas × costo/hora × 4.33 semanas (+ errores × costo por error)</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-n">2</span>Alcance según horas totales del equipo: &lt;10 h/sem unidad simple · 10–25 h unidad estándar · &gt;25 h célula multi-agente</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-n">3</span>Ahorro mensual = 70% del costo del tiempo (supuesto conservador). La recuperación se calcula en el diagnóstico, con la cotización del alcance evaluado</div>
+  <section class="band"><div class="wrap">
+    <p class="sec-k">El cálculo</p>
+    <h2>Qué hace la calculadora con sus números</h2>
+    <p class="sec-sub">Toda la aritmética está a la vista: puede reproducirla en una hoja de cálculo antes de llevarla a un comité.</p>
+    <div class="steps">
+      <div class="step reveal"><h3>Costo del proceso</h3><p>Horas por semana &times; personas &times; costo cargado por hora &times; 4,33 semanas al mes, más errores por su costo unitario cuando se declaran.</p></div>
+      <div class="step reveal reveal-2"><h3>Alcance sugerido</h3><p>Se determina por las horas totales del equipo: menos de 10 h por semana, entre 10 y 25 h, o más de 25 h.</p></div>
+      <div class="step reveal reveal-3"><h3>Ahorro y recuperación</h3><p>El ahorro es el 70 % del costo del tiempo. La recuperación no se estima aquí: se calcula con la cotización del alcance evaluado.</p></div>
     </div>
-  </section>
+  </div></section>
 
-  <!-- Qué automatizamos (diagrama simple) -->
-  <section>
-    <h2>Qué hace el flujo que reemplaza ese trabajo manual</h2>
-    <p class="sub" style="margin-bottom:14px">Construimos flujos y agentes de IA que se encargan del trabajo repetitivo; su equipo conserva las decisiones, relaciones y tareas que requieren criterio.</p>
-    <div class="flow">
-      <div class="pasos">
-        <div class="paso"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/><path d="M12 4v10m0 0 3.5-3.5M12 14l-3.5-3.5"/></svg> Recibe la información</div>
-        <span class="arrow">→</span>
-        <div class="paso"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="12" rx="2.5"/><path d="M12 7.5V4M9 12.5h.01M15 12.5h.01M9.5 16h5"/></svg> La procesa y valida</div>
-        <span class="arrow">→</span>
-        <div class="paso hito"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.3 2.4 2.4 4.6-5"/></svg> Pide aprobación a su equipo</div>
-        <span class="arrow">→</span>
-        <div class="paso"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg> Actualiza sus sistemas</div>
-        <span class="arrow">→</span>
-        <div class="paso"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg> Responde y reporta</div>
+  <section><div class="wrap">
+    <p class="sec-k">Qué sustituye al trabajo manual</p>
+    <h2>Un flujo de punta a punta, con la decisión todavía en su equipo</h2>
+    <p class="sec-sub">Lo que se construye no es una macro ni un asistente suelto: es el proceso completo, con controles y trazabilidad, desde la entrada del dato hasta el registro en sus sistemas.</p>
+    <div class="flow3">
+      <div class="fcol">
+        <div class="fh">Captura</div>
+        <div class="chips"><span>Correo</span><span>Portal</span><span>Documentos</span><span>Extracción con IA</span></div>
+      </div>
+      <div class="farrow" aria-hidden="true">&rarr;</div>
+      <div class="fcol hub">
+        <div class="fh">Validación y aprobación</div>
+        <div class="chips"><span>Reglas de negocio</span><span>Duplicados</span><span>Excepciones</span><span>Aprobador con nombre</span></div>
+      </div>
+      <div class="farrow" aria-hidden="true">&rarr;</div>
+      <div class="fcol">
+        <div class="fh">Registro y reporte</div>
+        <div class="chips"><span>ERP o CRM</span><span>Bitácora auditable</span><span>Notificación</span><span>Indicadores</span></div>
       </div>
     </div>
-    <p class="note">¿Quiere verlo en acción? Vea las <a href="../../casos/">demostraciones en video</a> (animaciones ilustrativas) — incluido el Capturista Digital, que procesa una factura en ~4 segundos, medido en video.</p>
-  </section>
-
-  <!-- 6. Sistemas compatibles -->
-  <section>
-    <h2>Se conecta con lo que ya usa</h2>
-    <div class="chips">
-      <span class="chip">WhatsApp Business</span>
-      <span class="chip">Microsoft 365</span>
-      <span class="chip">Google Workspace</span>
-      <span class="chip">Power Automate</span>
-      <span class="chip">n8n</span>
-      <span class="chip">Power BI</span>
-      <span class="chip">Excel / Google Sheets</span>
-      <span class="chip">Su CRM</span>
-      <span class="chip">Su ERP</span>
-      <span class="chip">Correo electrónico</span>
-      <span class="chip">APIs y bases de datos</span>
+    <div class="reveal"><figure class="plate">
+      <img src="/img/crew-pipeline.svg" alt="Una cinta transportadora en la que las piezas avanzan de una estación a la siguiente">
+      <figcaption>El tiempo que la calculadora cuantifica es el que hoy se gasta empujando el caso de una estación a la siguiente.</figcaption>
+    </figure></div>
+    <div class="pills plain">
+      <span>Microsoft 365</span><span>Power Automate</span><span>Power BI</span><span>SharePoint</span>
+      <span>Dataverse</span><span>n8n</span><span>Google Workspace</span><span>ERP y CRM corporativos</span>
+      <span>APIs y bases de datos</span><span>WhatsApp Business</span>
     </div>
-    <p class="note">Estas son tecnologías, no la propuesta: lo que entregamos es su proceso completo funcionando de punta a punta. Más detalle en <a href="../../automatizacion-de-procesos/">automatización de procesos</a> e <a href="../../integraciones-api/">integraciones API</a>.</p>
-  </section>
+    <div class="note demo"><b>Referencia medida:</b> el Capturista Digital registra una factura en unos 4 segundos, grabado en video. <a class="link-more" href="/casos/">Ver el caso</a></div>
+  </div></section>
 
-  <!-- 7. Alcances publicados -->
-  <section>
-    <h2>Los alcances que usa la calculadora</h2>
-    <div class="prc">
-      <div class="pr"><b>Unidad simple</b><div class="rng">1–2 semanas</div><div class="tm">procesos de &lt;10 h/semana</div><p>Un flujo puntual: una entrada, un proceso, una salida. Ideal como primer paso.</p></div>
-      <div class="pr"><b>Unidad estándar</b><div class="rng">2–4 semanas</div><div class="tm">procesos de 10–25 h/semana</div><p>Flujo con aprobaciones, validaciones y conexión a sus sistemas.</p></div>
-      <div class="pr"><b>Célula multi-agente</b><div class="rng">4–8 semanas</div><div class="tm">procesos de &gt;25 h/semana</div><p>Varios flujos y agentes trabajando juntos sobre un área completa. Se evalúa en el diagnóstico.</p></div>
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Alcances</p>
+    <h2>Los tres alcances que usa la calculadora</h2>
+    <p class="sec-sub">La banda que le devuelve el cálculo depende únicamente de las horas totales del equipo. El costo se cotiza después, tras la evaluación de alcance.</p>
+    <div class="levels">
+      <div class="level"><h3>Unidad simple</h3><span class="lv-sub">Procesos de menos de 10 h por semana &middot; 1 a 2 semanas</span><p>Un flujo puntual: una entrada, un proceso, una salida. Sirve como primer hito verificable antes de comprometer un programa mayor.</p></div>
+      <div class="level"><h3>Unidad estándar</h3><span class="lv-sub">Procesos de 10 a 25 h por semana &middot; 2 a 4 semanas</span><p>Flujo con aprobaciones, validaciones y conexión a los sistemas de registro, con bitácora y manejo de excepciones.</p></div>
+      <div class="level"><h3>Célula multi-agente</h3><span class="lv-sub">Procesos de más de 25 h por semana &middot; 4 a 8 semanas</span><p>Varios flujos y agentes coordinados sobre un área completa. Su viabilidad se confirma en la evaluación, no en esta página.</p></div>
     </div>
-    <p class="note">Pagos por hitos. Operación mensual opcional. Diagnóstico ejecutivo sin costo de 20–30 minutos. <a href="../../metodologia/">Ver modelos de contratación →</a></p>
-    <div class="guar"><b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte.</div>
-  </section>
+    <div class="note">Pagos por hitos y entrega documentada. Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a class="link-more" href="/metodologia/">Ver la metodología</a></div>
+  </div></section>
 
-  <!-- 8. Evidencia honesta -->
-  <section>
-    <h2>Evidencia honesta, sin humo</h2>
-    <div class="evs">
-      <div class="ev"><span class="tag">Medido en video</span><h3>~4 segundos por factura</h3><p>El Capturista Digital procesa una factura en ~4 segundos. Es la única métrica medida que publicamos, y puede verla en <a class="ghost" href="../../casos/">los demos</a>.</p></div>
-      <div class="ev"><span class="tag">En producción real</span><h3>Nuestras redes se publican solas</h3><p>Las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio, sin intervención humana.</p></div>
-      <div class="ev"><span class="tag">En vivo en este sitio</span><h3>Nova, nuestro agente</h3><p>El chat del sitio es un agente de IA real funcionando en vivo, no una simulación. Los demos de video de /casos/ sí son animaciones ilustrativas, y los etiquetamos así.</p></div>
+  <section><div class="wrap">
+    <p class="sec-k">El otro lado del tablero</p>
+    <h2>El costo interno es solo la mitad de la conversación</h2>
+    <p class="sec-sub">Esta calculadora mide lo que su operación gasta hacia adentro. La otra mitad del resultado se decide afuera: un competidor que mueve precios, un entrante nuevo, un cambio regulatorio, un contrato que cambia de manos. Ese frente no se resuelve con un flujo de trabajo, sino con un departamento que lo vigile de forma sistemática.</p>
+    <div class="cards">
+      <a class="card" href="/inteligencia-competitiva/">
+        <h3>Inteligencia competitiva</h3>
+        <p>Montamos el departamento que vigila el entorno de su organización: ciclo de inteligencia, umbrales con acción pre-acordada y responsables con nombre.</p>
+        <span class="link-more">Conocer la práctica &rarr;</span>
+      </a>
+      <a class="card" href="/automatizacion-empresarial/">
+        <h3>Automatización empresarial</h3>
+        <p>El proceso completo de punta a punta, con controles y trazabilidad, y su equipo a cargo de las decisiones que requieren criterio.</p>
+        <span class="link-more">Ver la solución &rarr;</span>
+      </a>
+      <a class="card" href="/inteligencia-competitiva/alertas-tempranas/">
+        <h3>Alertas tempranas</h3>
+        <p>Indicadores del entorno con umbral definido: cuando se cruza, hay una acción acordada y un responsable de ejecutarla.</p>
+        <span class="link-more">Ver cómo operan &rarr;</span>
+      </a>
     </div>
-    <p class="note">No publicamos testimonios, logos ni porcentajes de mejora que no podamos demostrar. Su resultado real sale del diagnóstico, no de esta página.</p>
-  </section>
+  </div></section>
 
-  <!-- 9. FAQ -->
-  <section class="faq">
-    <h2>Preguntas frecuentes</h2>
-    <details>
-      <summary>¿Qué tan confiable es el resultado de la calculadora?</summary>
-      <p>Es una estimación orientativa construida con sus propios números: horas, personas y costo por hora que usted ingresa. No es una promesa de resultados. El número real —qué se puede automatizar y cuánto cuesta— sale del diagnóstico ejecutivo sin costo de 20–30 minutos, donde revisamos su proceso concreto.</p>
-    </details>
-    <details>
-      <summary>¿Por qué asumen que se automatiza el 70% del tiempo?</summary>
-      <p>Porque un flujo bien diseñado se encarga de la parte repetitiva del proceso, pero las excepciones, aprobaciones y decisiones que requieren criterio quedan en su equipo. Usamos 70% como supuesto conservador y lo declaramos visible en la calculadora; el porcentaje real de su proceso se define en el diagnóstico.</p>
-    </details>
-    <details>
-      <summary>¿Qué incluye el alcance sugerido?</summary>
-      <p>Cada alcance (unidad simple, unidad estándar, célula multi-agente) incluye construcción, pruebas y entrega documentada, con plazos de 1–2, 2–4 y 4–8 semanas respectivamente. Se paga por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema está descrito en <a href="../../metodologia/">la metodología</a>.</p>
-    </details>
-    <details>
-      <summary>¿Hay costos mensuales después del proyecto?</summary>
-      <p>La operación mensual es opcional y se dimensiona según el nivel de monitoreo y mejora continua que necesite; el esquema está descrito en <a href="../../metodologia/">la metodología</a>. También puede operar el flujo por su cuenta: la entrega es documentada.</p>
-    </details>
-    <details>
-      <summary>¿Y si el retorno no justifica la automatización?</summary>
-      <p>Se lo decimos con franqueza: si el ahorro estimado no justifica la inversión cotizada, ese proceso probablemente no es el primero que conviene automatizar. En el diagnóstico buscamos el proceso donde el retorno sí tiene sentido, y si no lo hay, también se lo decimos.</p>
-    </details>
-    <details>
-      <summary>¿Con qué sistemas pueden conectar la automatización?</summary>
-      <p>WhatsApp, Microsoft 365, Google Workspace, Power Automate, n8n, Power BI, hojas de cálculo, su CRM, su ERP y APIs en general. Son tecnologías, no la propuesta: lo que recibe es su proceso funcionando de punta a punta, con su equipo a cargo de las decisiones.</p>
-    </details>
-  </section>
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Preguntas frecuentes</p>
+    <h2>Lo que suele preguntar un comité antes de aprobar</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Qué tan confiable es el resultado de la calculadora?</summary>
+        <p class="fa">Es una estimación orientativa construida con los números que usted ingresa. No es una cotización ni una promesa de resultado. La cifra firme sale de la evaluación ejecutiva, donde se revisa el proceso concreto y sus sistemas.</p>
+      </details>
+      <details>
+        <summary>¿Por qué el supuesto de 70 % del tiempo?</summary>
+        <p class="fa">Porque un flujo bien diseñado absorbe la parte repetitiva, pero las excepciones, las aprobaciones y las decisiones que requieren criterio quedan en su equipo. Se usa como supuesto conservador y se declara visible; el porcentaje real de su proceso se define en la evaluación.</p>
+      </details>
+      <details>
+        <summary>¿Qué incluye el alcance sugerido?</summary>
+        <p class="fa">Construcción, pruebas y entrega documentada, con hitos verificables. Se paga por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema está descrito en <a href="/metodologia/">la metodología</a>.</p>
+      </details>
+      <details>
+        <summary>¿Hay operación mensual después del proyecto?</summary>
+        <p class="fa">Es opcional y se dimensiona según el monitoreo y la mejora continua que la organización requiera; el esquema está en <a href="/operacion-administrada/">operación administrada</a>. También puede operarlo su propio equipo: la entrega es documentada y los accesos quedan a nombre de su organización.</p>
+      </details>
+      <details>
+        <summary>¿Y si el retorno no justifica la automatización?</summary>
+        <p class="fa">Se dice con franqueza. Si el ahorro estimado no justifica la inversión cotizada, ese proceso no es el primero que conviene automatizar. En la evaluación se busca aquel donde el retorno sí tiene sentido, y si no lo hay en ninguno, también se informa.</p>
+      </details>
+      <details>
+        <summary>¿Los datos que ingreso salen de mi navegador?</summary>
+        <p class="fa">No. El cálculo ocurre en la propia página y los valores que usted escribe no se transmiten a ningún servidor. Las prácticas de manejo de información están descritas en <a href="/seguridad-gobierno/">seguridad y gobierno</a>.</p>
+      </details>
+    </div>
+  </div></section>
 
-  <!-- 10. CTA final -->
-  <div class="final">
-    <h2>Ya tiene su número. Ahora consiga el real.</h2>
-    <p>Diagnóstico ejecutivo sin costo de 20–30 minutos: revisamos su proceso concreto y le decimos qué conviene automatizar, cuánto cuesta y en cuánto se recupera — y qué no vale la pena automatizar.</p>
-    <a class="btn" id="wa-final" href="https://wa.me/50371928070?text=Hola%2C%20vengo%20de%20la%20calculadora%20de%20ROI%20y%20quiero%20agendar%20el%20diagn%C3%B3stico%20ejecutivo." target="_blank" rel="noopener">Agendar diagnóstico ejecutivo sin costo →</a>
-  </div>
+  <section class="cta-band"><div class="wrap">
+    <h2>Ya tiene el orden de magnitud. Falta la cifra firme.</h2>
+    <p class="sec-sub" style="margin:0 auto 6px">La evaluación ejecutiva revisa el proceso real, sus volúmenes y sus sistemas, y define qué conviene automatizar, qué no y con qué alcance.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-wa" id="wa-final" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+    </div>
+  </div></section>
 </main>
-
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
-  <a href="../../">Inicio</a><a href="../../metodologia/">Metodología</a><a href="../../casos/">Demos</a><a href="../">Recursos</a><a href="../calculadora-inasistencias/">Calculadora de inasistencias</a><a href="../../seguridad/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué tan confiable es el resultado de la calculadora?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Es una estimación orientativa construida con sus propios números: horas, personas y costo por hora que usted ingresa. No es una promesa de resultados. El número real sale del diagnóstico ejecutivo sin costo de 20–30 minutos, donde revisamos su proceso concreto."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Por qué asumen que se automatiza el 70% del tiempo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Porque un flujo bien diseñado se encarga de la parte repetitiva del proceso, pero las excepciones, aprobaciones y decisiones que requieren criterio quedan en su equipo. Usamos 70% como supuesto conservador y lo declaramos visible en la calculadora; el porcentaje real de su proceso se define en el diagnóstico."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué incluye el alcance sugerido?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada alcance (unidad simple, unidad estándar, célula multi-agente) incluye construcción, pruebas y entrega documentada, con plazos de 1–2, 2–4 y 4–8 semanas respectivamente. Se paga por hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema está descrito en optimatiza.com/metodologia/."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Hay costos mensuales después del proyecto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La operación mensual es opcional y se dimensiona según el nivel de monitoreo y mejora continua que necesite; el esquema está descrito en optimatiza.com/metodologia/. También puede operar el flujo por su cuenta: la entrega es documentada."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Y si el retorno no justifica la automatización?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Si el ahorro estimado no justifica la inversión cotizada, ese proceso probablemente no es el primero que conviene automatizar. En el diagnóstico buscamos el proceso donde el retorno sí tiene sentido, y si no lo hay, también se lo decimos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Con qué sistemas pueden conectar la automatización?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "WhatsApp, Microsoft 365, Google Workspace, Power Automate, n8n, Power BI, hojas de cálculo, su CRM, su ERP y APIs en general. Son tecnologías, no la propuesta: lo que recibe es su proceso funcionando de punta a punta, con su equipo a cargo de las decisiones."
-      }
-    }
-  ]
-}
-</script>
-
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 <script src="/recursos/calculadora-roi/roi.js" defer></script>
 </body>
 </html>
