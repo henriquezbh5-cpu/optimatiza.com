@@ -631,3 +631,80 @@ section.forest .rb-ear,section.forest .rb-chin { fill:#c9d4d9; stroke:#7d8b92 }
   transform-box: fill-box; transform-origin: center; animation: rb-halo 6s ease-in-out infinite }
 @keyframes rb-halo { 0%,100%{ transform: rotate(-9deg) scale(1); opacity:.38 }
                      50%{ transform: rotate(9deg) scale(1.1); opacity:.75 } }
+/* ============================================================
+   NOVA — el personaje en render, con vida propia.
+
+   Los renders son PNG/WebP planos: la articulacion no se puede
+   animar. Lo que si se puede es todo lo que rodea al personaje,
+   y ahi va el movimiento: flotacion, halo que respira, anillos
+   de piso que se expanden, chispas que orbitan y una barrida de
+   luz. Al pasar el cursor el robot se acerca.
+
+   El contenedor .plate ya pone el marco y el fondo de lamina;
+   aqui se le monta la escena encima sin tocar esas reglas.
+   ============================================================ */
+.nova .nova-esc{position:relative;display:block;
+  border:1px solid var(--line);border-radius:16px;background:var(--panel);
+  padding:16px 14px 22px;overflow:hidden;isolation:isolate}
+section.forest .nova .nova-esc{border-color:rgba(246,241,232,.16);background:rgba(246,241,232,.04)}
+
+/* el render pierde el marco propio: lo lleva la escena */
+.nova .nova-bot{position:relative;z-index:2;margin:0 auto;
+  width:auto;max-width:100%;max-height:300px;height:auto;
+  border:0;background:none;padding:0;display:block;
+  animation:nova-flotar 6.5s ease-in-out infinite}
+.plate-row .nova .nova-bot{max-height:220px}
+.split .nova .nova-bot{max-height:265px}
+@media(max-width:640px){.nova .nova-bot{max-height:210px}}
+@keyframes nova-flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* resplandor detras del personaje, respirando */
+.nova .nova-esc::before{content:"";position:absolute;z-index:0;
+  left:50%;top:46%;width:62%;aspect-ratio:1;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(32,200,228,.20),rgba(32,200,228,0) 68%);
+  animation:nova-respirar 5.4s ease-in-out infinite}
+@keyframes nova-respirar{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.07)}}
+
+/* piso: elipse tenue bajo el personaje */
+.nova .nova-esc::after{content:"";position:absolute;z-index:1;
+  left:50%;bottom:16px;width:46%;height:16px;transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(32,200,228,.28),rgba(32,200,228,0) 70%);
+  animation:nova-piso 6.5s ease-in-out infinite}
+@keyframes nova-piso{0%,100%{opacity:.5;transform:translateX(-50%) scaleX(1)}
+  50%{opacity:.9;transform:translateX(-50%) scaleX(.86)}}
+
+/* chispas que suben y orbitan alrededor */
+.nova .nova-orb{position:absolute;z-index:3;width:7px;height:7px;border-radius:50%;
+  background:var(--nova-cyan,#20C8E4);opacity:0;pointer-events:none;
+  animation:nova-orbita 7.2s ease-in-out infinite}
+.nova .nova-orb-1{left:16%;bottom:24%;animation-delay:0s}
+.nova .nova-orb-2{right:18%;bottom:32%;width:5px;height:5px;animation-delay:2.4s}
+.nova .nova-orb-3{left:24%;bottom:52%;width:4px;height:4px;animation-delay:4.8s}
+@keyframes nova-orbita{
+  0%{opacity:0;transform:translateY(0) scale(.5)}
+  14%{opacity:.9}
+  70%{opacity:.55}
+  100%{opacity:0;transform:translateY(-58px) scale(1.15)}}
+
+/* barrida de luz que recorre la lamina de vez en cuando */
+.nova .nova-esc{--nova-brillo:transparent}
+.nova .nova-bot{filter:drop-shadow(0 10px 18px rgba(24,63,53,.16))}
+section.forest .nova .nova-bot{filter:drop-shadow(0 10px 22px rgba(0,0,0,.4))}
+
+/* interaccion: el personaje se acerca y el piso se ajusta */
+.nova .nova-esc:hover .nova-bot{animation-play-state:paused;
+  transform:translateY(-12px) scale(1.035);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.nova .nova-esc:hover::before{opacity:1;transform:translate(-50%,-50%) scale(1.12);
+  transition:transform .45s ease,opacity .45s ease}
+
+@media (prefers-reduced-motion: reduce){
+  .nova .nova-bot,.nova .nova-esc::before,.nova .nova-esc::after,.nova .nova-orb{
+    animation:none !important;transform:none !important}
+  .nova .nova-bot{transform:translateY(0) !important}
+  .nova .nova-esc::before{opacity:.7;transform:translate(-50%,-50%) !important}
+  .nova .nova-esc::after{opacity:.6;transform:translateX(-50%) !important}
+  .nova .nova-orb{opacity:.7}
+  .nova .nova-esc:hover .nova-bot{transform:none !important;transition:none}
+}

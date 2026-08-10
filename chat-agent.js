@@ -31,7 +31,7 @@
   root.id = 'nova';
   root.innerHTML =
     '<button class="nv-fab" id="nvFab" aria-label="' + t('open') + '" aria-expanded="false">' +
-      '<img src="/img/logo-badge-96.png" alt="" width="46" height="46"><span class="nv-dot" aria-hidden="true"></span>' +
+      '<img src="/img/nova/avatar-nova.webp" alt="" width="46" height="46"><span class="nv-dot" aria-hidden="true"></span>' +
     '</button>' +
     '<div class="nv-panel" id="nvPanel" role="dialog" aria-label="Nova" hidden>' +
       '<header class="nv-head mono">' +
@@ -77,7 +77,7 @@
   function msg(side, text, html) {
     var d = document.createElement('div');
     d.className = 'nv-msg nv-' + side;
-    if (side === 'bot') d.innerHTML = '<img class="nv-ava" src="/img/logo-badge-48.png" alt="" width="24" height="24"><p></p>';
+    if (side === 'bot') d.innerHTML = '<img class="nv-ava" src="/img/nova/avatar-nova.webp" alt="" width="24" height="24"><p></p>';
     else d.innerHTML = '<p></p>';
     var p = d.querySelector('p');
     if (html) p.innerHTML = text; else p.textContent = text;
@@ -89,7 +89,7 @@
     if (on && !el) {
       var d = document.createElement('div');
       d.className = 'nv-msg nv-bot'; d.id = 'nvTyping';
-      d.innerHTML = '<img class="nv-ava" src="/img/logo-badge-48.png" alt="" width="24" height="24"><p><span class="nv-dots"><i></i><i></i><i></i></span></p>';
+      d.innerHTML = '<img class="nv-ava" src="/img/nova/avatar-nova.webp" alt="" width="24" height="24"><p><span class="nv-dots"><i></i><i></i><i></i></span></p>';
       log.appendChild(d); log.scrollTop = log.scrollHeight;
     } else if (!on && el) el.remove();
   }
