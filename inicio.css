@@ -944,6 +944,8 @@ h1 {
   .rb-float,.rb-aura,.rb-ballglow,.rb-trace,.rb-eyeglow,.rb-eye,.rb-glowlight,
   .rb-beam,.rb-plug,.rb-pins,.rb-spark { animation: none !important; transform: none !important }
   .rb-plug,.rb-pins { opacity:1 !important } .rb-spark { opacity:0 !important }
+  .rb-ceja,.rb-halo { animation: none !important; transform: none !important }
+  .rb-halo { opacity:.5 !important }
   .rb-aura { opacity:.14 !important } .rb-eyeglow { opacity:.26 !important }
   .rb-glowlight { opacity:.9 !important } .rb-trace { opacity:.55 !important }
 }
@@ -1021,3 +1023,14 @@ h1 {
   .data-card-dots span { opacity:.8 !important; transform: none !important }
   .data-card-bars span { transform: none !important }
 }
+
+/* cejas y halo de antena: acercan la cara a la referencia aprobada */
+/* rb-brow ya nombra la placa oscura de la cabeza: la ceja usa otro nombre */
+.rb-cejaline { fill:none; stroke: var(--rb-cyan); stroke-width:3.4; stroke-linecap:round }
+.rb-ceja { transform-box: fill-box; transform-origin: center;
+  animation: rb-ceja 4.2s ease-in-out infinite }
+@keyframes rb-ceja { 0%,42%,100%{ transform: translateY(0) } 50%{ transform: translateY(2.5px) } }
+.rb-halo { fill:none; stroke: var(--rb-cyan); stroke-width:2.4; opacity:.5;
+  transform-box: fill-box; transform-origin: center; animation: rb-halo 6s ease-in-out infinite }
+@keyframes rb-halo { 0%,100%{ transform: rotate(-9deg) scale(1); opacity:.38 }
+                     50%{ transform: rotate(9deg) scale(1.1); opacity:.75 } }
