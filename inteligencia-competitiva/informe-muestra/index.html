@@ -3,434 +3,492 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Informe de muestra de inteligencia competitiva | Optimatiza</title>
+  <meta name="description" content="Muestra íntegra del informe semanal de inteligencia competitiva: resumen ejecutivo, alertas priorizadas y hallazgos con fuente y nivel de confianza. Datos de demostración.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/inteligencia-competitiva/informe-muestra/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <title>Muestra de Informe de Inteligencia Competitiva | Optimatiza</title>
-  <meta name="description" content="Muestra del informe semanal de inteligencia competitiva: alertas, precios de competidores, noticias filtradas y oportunidades. Con datos de demostración.">
-  <link rel="canonical" href="https://optimatiza.com/inteligencia-competitiva/informe-muestra/">
-  <link rel="icon" href="../../img/logo-badge-96.png">
-  <meta property="og:title" content="Muestra de Informe de Inteligencia Competitiva | Optimatiza">
-  <meta property="og:description" content="Así se ve el entregable semanal del Departamento de Inteligencia Competitiva. Muestra con datos de demostración — el suyo se construye sobre su mercado real.">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Informe de muestra: el entregable semanal | Optimatiza">
+  <meta property="og:description" content="Así se ve el entregable semanal del departamento de inteligencia competitiva: resumen ejecutivo, alertas priorizadas y hallazgos con fuente. Muestra con datos de demostración.">
   <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
   <meta property="og:url" content="https://optimatiza.com/inteligencia-competitiva/informe-muestra/">
-  <style>
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    @font-face{font-family:'Inter';src:url('../../fonts/inter-600.woff2') format('woff2');font-weight:600;font-display:swap}
-    @font-face{font-family:'Space Grotesk';src:url('../../fonts/space-grotesk-700.woff2') format('woff2');font-weight:700;font-display:swap}
-    @font-face{font-family:'IBM Plex Mono';src:url('../../fonts/ibm-plex-mono-400.woff2') format('woff2');font-weight:400;font-display:swap}
-    @font-face{font-family:'IBM Plex Mono';src:url('../../fonts/ibm-plex-mono-500.woff2') format('woff2');font-weight:500;font-display:swap}
-    :root{--bg:#F6F1E8;--alt:#EFE8D9;--ink:#183F35;--body:#3A4A45;--dim:#6E7D74;--line:#E2DAC7;
-      --teal:#1D5C4D;--teal2:#2C7A63;--teal-soft:#DDE7DF;--wa:#25D366;--wa-ink:#053B1D;
-      --blue:#3F6F8A;--blue-soft:#E7EDF1;--violet:#C9913B;
-      --amber-bg:#FFF6E3;--amber-line:#EFC974;--amber-ink:#7A4E00;
-      --red-soft:#FDEDEA;--red-ink:#B3401F;
-      --ff:'Inter',system-ui,sans-serif;--ffd:'Space Grotesk','Inter',sans-serif;--ffm:'IBM Plex Mono',ui-monospace,monospace;
-      --sh:0 1px 2px rgba(24,63,53,.04),0 8px 24px rgba(24,63,53,.06)}
-    *{box-sizing:border-box;margin:0}
-    body{background:var(--bg);color:var(--body);font-family:var(--ff);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-    /* ---- Banner DEMO fijo + header ---- */
-    .stick{position:sticky;top:0;z-index:30}
-    .demoband{background:var(--amber-bg);border-bottom:1px solid var(--amber-line);color:var(--amber-ink);font-size:12.5px;font-weight:600;text-align:center;padding:7px 14px;letter-spacing:.02em}
-    header{background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:14px;height:62px}
-    .brand{display:flex;align-items:center;gap:10px;font-family:var(--ffd);font-weight:700;font-size:18px;color:var(--ink)}
-    .brand img{width:26px;height:26px}
-    .sp{flex:1}
-    .ghost{color:var(--teal);font-weight:600;font-size:14px}
-    .wa-btn{background:var(--wa);color:var(--wa-ink);font-weight:700;padding:9px 16px;border-radius:999px;font-size:14px;box-shadow:var(--sh);white-space:nowrap}
-    @media(max-width:560px){.nav .ghost{display:none}}
-    /* ---- Hero ---- */
-    .hero{padding:52px 0 30px;max-width:820px}
-    .k{display:inline-block;background:var(--teal-soft);color:var(--teal);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
-    h1{font-family:var(--ffd);font-weight:700;color:var(--ink);font-size:clamp(1.8rem,4.2vw,2.8rem);line-height:1.12;margin:14px 0 14px;text-wrap:balance}
-    .sub{font-size:17px;max-width:62ch}
-    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;align-items:center}
-    .btn{display:inline-block;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:13px 24px;border-radius:999px;font-size:15px;box-shadow:var(--sh);border:0;cursor:pointer}
-    .btn-line{display:inline-block;background:#FFFDF8;color:var(--ink);font-weight:600;padding:12px 20px;border-radius:999px;font-size:14px;border:1px solid var(--line);box-shadow:var(--sh);cursor:pointer;font-family:var(--ff)}
-    h2{font-family:var(--ffd);color:var(--ink);font-size:24px;margin:0 0 14px}
-    section{padding:30px 0}
-    .note{font-size:12.5px;color:var(--dim);margin-top:10px}
-    /* ---- Documento informe ---- */
-    .report{position:relative;background:#FFFDF8;border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:34px 34px 28px;overflow:hidden;print-color-adjust:exact;-webkit-print-color-adjust:exact}
-    @media(max-width:640px){.report{padding:22px 16px 20px}}
-    .report::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
-      background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='460'%20height='320'%3E%3Ctext%20x='230'%20y='160'%20fill='%230D9488'%20fill-opacity='.08'%20font-family='Arial,sans-serif'%20font-size='28'%20font-weight='700'%20letter-spacing='2'%20text-anchor='middle'%20transform='rotate(-22%20230%20160)'%3EDATOS%20DE%20DEMOSTRACI%C3%93N%3C/text%3E%3C/svg%3E") repeat}
-    .rp-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:14px}
-    .rp-org{font-family:var(--ffm);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:500}
-    .rp-demo{background:var(--amber-bg);border:1px solid var(--amber-line);color:var(--amber-ink);font-family:var(--ffm);font-size:11px;font-weight:500;letter-spacing:.08em;padding:4px 10px;border-radius:6px;text-transform:uppercase}
-    .rp-title{font-family:var(--ffd);color:var(--ink);font-size:clamp(1.25rem,3vw,1.7rem);margin:16px 0 4px}
-    .rp-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 22px;margin:12px 0 4px;font-size:13.5px}
-    .rp-meta b{color:var(--ink);font-weight:600}
-    .rp-sec{margin-top:28px}
-    .rp-sec h3{font-family:var(--ffm);font-weight:500;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border-bottom:1px solid var(--line);padding-bottom:7px;margin-bottom:14px}
-    .rp-sec h3 span{color:var(--dim)}
-    ul.exec{list-style:none;padding:0;display:grid;gap:10px}
-    ul.exec li{padding-left:24px;position:relative;font-size:14.5px;color:var(--ink)}
-    ul.exec li::before{content:'▸';position:absolute;left:4px;color:var(--teal);font-weight:700}
-    /* alertas */
-    .alert{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:10px;padding:14px 16px;margin-bottom:12px;background:var(--alt)}
-    .alert.hi{border-left-color:#DC6A45;background:var(--red-soft)}
-    .alert.mid{border-left-color:var(--amber-line);background:var(--amber-bg)}
-    .alert-h{display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
-    .alert-h b{color:var(--ink);font-size:14.5px;font-family:var(--ffd)}
-    .chip-sev{font-family:var(--ffm);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:5px;font-weight:500}
-    .hi .chip-sev{background:#FFFDF8;color:var(--red-ink);border:1px solid #EFC0B0}
-    .mid .chip-sev{background:#FFFDF8;color:var(--amber-ink);border:1px solid var(--amber-line)}
-    .alert-src{font-family:var(--ffm);font-size:11.5px;color:var(--dim);margin-top:4px}
-    .alert p{font-size:13.5px;margin-top:6px}
-    .alert p b{color:var(--ink)}
-    /* tabla precios */
-    .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
-    table{border-collapse:collapse;width:100%;min-width:660px;font-size:13px}
-    caption{caption-side:bottom;text-align:left;font-size:12px;color:var(--dim);padding:8px 12px}
-    th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
-    thead th{background:var(--alt);color:var(--ink);font-family:var(--ffd);font-size:12.5px;white-space:nowrap}
-    tbody tr:last-child td{border-bottom:0}
-    td.num{font-family:var(--ffm);white-space:nowrap;color:var(--ink)}
-    td.you{background:var(--teal-soft)}
-    .d-up{color:var(--blue);font-weight:500}
-    .d-dn{color:var(--red-ink);font-weight:500}
-    .d-eq{color:var(--dim)}
-    .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--dim);margin-top:8px}
-    /* noticias */
-    .news{display:grid;gap:10px}
-    .new{border:1px solid var(--line);border-radius:10px;padding:13px 16px}
-    .new b{color:var(--ink);font-size:14px}
-    .new .src{font-family:var(--ffm);font-size:11.5px;color:var(--dim);display:block;margin:2px 0 4px}
-    .new p{font-size:13px}
-    .new p em{font-style:normal;color:var(--teal);font-weight:600}
-    /* oportunidades / recomendaciones */
-    .twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media(max-width:700px){.twocol{grid-template-columns:1fr}}
-    .opp{background:var(--blue-soft);border:1px solid #C9DBFA;border-radius:10px;padding:14px 16px;font-size:13.5px}
-    .opp b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--ffd);font-size:14px}
-    .rec{background:var(--teal-soft);border:1px solid #BDEAE2;border-radius:10px;padding:14px 16px;font-size:13.5px}
-    .rec b{color:var(--ink);display:block;margin-bottom:4px;font-family:var(--ffd);font-size:14px}
-    /* mini-dashboard */
-    .dash{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    @media(max-width:700px){.dash{grid-template-columns:1fr}}
-    .dash-b{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--alt)}
-    .dash-b h4{font-size:13px;color:var(--ink);font-family:var(--ffd);margin-bottom:12px}
-    .bar-row{display:grid;grid-template-columns:118px 1fr 30px;gap:10px;align-items:center;margin-bottom:9px;font-size:12.5px}
-    .bar-row:last-child{margin-bottom:0}
-    .bar-track{background:#FFFDF8;border:1px solid var(--line);border-radius:999px;height:14px;overflow:hidden}
-    .bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--teal2))}
-    .bar-fill.b{background:linear-gradient(90deg,var(--blue),#5B8DF0)}
-    .bar-val{font-family:var(--ffm);color:var(--ink);text-align:right;font-size:12px}
-    .rp-end{margin-top:28px;border-top:2px solid var(--ink);padding-top:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--ffm);font-size:11.5px;color:var(--dim)}
-    /* pie + resto de landing */
-    .claim{background:linear-gradient(135deg,rgba(29,92,77,.07),rgba(63,111,138,.05));border:1.5px solid rgba(29,92,77,.35);border-radius:16px;padding:20px 24px;font-size:15px;color:var(--ink)}
-    .claim a{color:var(--teal);font-weight:600}
-    .pasos{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
-    .paso{display:flex;align-items:center;gap:9px;background:#FFFDF8;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink);box-shadow:var(--sh)}
-    .paso-i{font-size:19px}
-    .arrow{color:var(--teal)}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:var(--alt);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink)}
-    .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .price{background:#FFFDF8;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--sh)}
-    .price b{font-family:var(--ffd);color:var(--ink);font-size:16px}
-    .price .pp{color:var(--teal);font-weight:700;font-size:14px;margin:6px 0 8px}
-    .price p{font-size:13.5px}
-    .ev{background:var(--alt);border:1px solid var(--line);border-radius:14px;padding:20px 22px;font-size:14px}
-    .ev b{color:var(--ink)}
-    .ev ul{margin:10px 0 0;padding-left:20px;display:grid;gap:8px}
-    /* FAQ */
-    details{border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px;background:#FFFDF8}
-    summary{cursor:pointer;font-weight:600;color:var(--ink);font-size:14.5px;font-family:var(--ffd)}
-    details p{margin-top:10px;font-size:14px}
-    .final{text-align:center;background:linear-gradient(135deg,#1D5C4D,#183F35);border-radius:20px;color:#fff;padding:40px 24px;margin:20px 0 40px}
-    .final h2{color:#fff;margin-bottom:8px}
-    .final p{color:#DCE9DF;max-width:56ch;margin:0 auto 20px;font-size:15px}
-    footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--dim);background:var(--alt)}
-    footer .f{display:flex;flex-wrap:wrap;gap:14px}
-    footer a:hover{color:var(--ink)}
-    /* ---- Print ---- */
-    @media print{
-      .stick header,.cta-row,.after-report,.final,footer,.noprint{display:none!important}
-      .stick{position:static}
-      .demoband{border:1.5px solid var(--amber-line);border-radius:8px;margin:0 0 14px}
-      .hero{padding:10px 0 8px}
-      body{background:#FFFDF8}
-      .wrap{max-width:none;padding:0}
-      .report{border:1px solid #bbb;box-shadow:none;border-radius:8px}
-      .alert,.new,.opp,.rec,.dash-b,tr{break-inside:avoid}
-      .tbl-scroll{overflow:visible;border-color:#bbb}
-      a[href]::after{content:''}
-    }
-  </style>
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Informe de muestra: el entregable semanal | Optimatiza">
+  <meta name="twitter:description" content="Así se ve el entregable semanal del departamento de inteligencia competitiva: resumen ejecutivo, alertas priorizadas y hallazgos con fuente. Muestra con datos de demostración.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Inteligencia competitiva", "item": "https://optimatiza.com/inteligencia-competitiva/"},
+      {"@type": "ListItem", "position": 3, "name": "Informe de muestra", "item": "https://optimatiza.com/inteligencia-competitiva/informe-muestra/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Los datos de esta muestra son reales?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Todos los datos —empresa, competidores, precios, fechas, fuentes y noticias— son ficticios y están marcados como demostración. «Distribuidora Ejemplo S. A.» no existe. La muestra solo ilustra el formato del entregable; su informe se construye sobre su mercado real."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué fuentes usa el informe real?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Fuentes públicas de su mercado: sitios web y catálogos de competidores, redes sociales públicas, medios del sector y listas de precios disponibles. Nunca se accede a información privada de terceros ni a sistemas ajenos."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cada cuánto se entrega y por dónde?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Cada semana, por correo o WhatsApp, en un formato pensado para leerse en unos diez minutos. Puede acompañarse de un tablero en Power BI o Google Sheets y de una reunión mensual de hallazgos, según el alcance contratado."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Se puede elegir qué competidores y productos se monitorean?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí. En la evaluación ejecutiva sin costo de 20 a 30 minutos se define en conjunto la canasta de productos, los competidores y las zonas que importan para su operación. El alcance se ajusta cuando su mercado cambia."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se cotiza y cómo se contrata?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Los alcances disponibles son monitoreo esencial como unidad simple de una a dos semanas, departamento estándar como unidad estándar de dos a cuatro semanas y célula completa como célula multiagente de cuatro a ocho semanas, con operación mensual opcional. Los pagos se ligan a hitos y cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<div class="stick">
-  <div class="demoband">MUESTRA CON DATOS DE DEMOSTRACIÓN — no corresponden a ningún cliente ni mercado real</div>
-  <header><div class="wrap nav">
-    <a class="brand" href="../../"><img src="../../img/logo-badge-192.png" alt="">Optimatiza</a>
-    <div class="sp"></div>
-    <a class="ghost" href="../../inteligencia-competitiva/">El servicio completo</a>
-    <a class="wa-btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20la%20muestra%20del%20informe%20de%20inteligencia%20competitiva%20y%20quiero%20uno%20sobre%20mi%20mercado." target="_blank" rel="noopener">WhatsApp</a>
-  </div></header>
-</div>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
 
-<main class="wrap">
-  <div class="hero">
-    <span class="k">Recurso gratuito · para gerentes comerciales y direcciones de empresa</span>
-    <h1>Así se ve un informe semanal de inteligencia competitiva</h1>
-    <p class="sub">Sus competidores mueven precios, lanzan combos y abren rutas todas las semanas — y normalmente se entera tarde. Este es el entregable que produce nuestro Departamento de Inteligencia Competitiva: cada lunes, 10 minutos de lectura con lo que cambió en su mercado, por qué le importa y qué conviene hacer. Abajo tiene una muestra completa, con datos 100% ficticios de una empresa inventada.</p>
-    <div class="cta-row">
-      <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20la%20muestra%20del%20informe%20y%20quiero%20uno%20sobre%20mi%20mercado.%20%C2%BFAgendamos%20el%20diagn%C3%B3stico%20ejecutivo%3F" target="_blank" rel="noopener">Quiero este informe para mi mercado →</a>
-      <button class="btn-line" id="printBtn" type="button">Imprimir o guardar PDF</button>
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
+
+<main id="contenido">
+
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  <a href="/inteligencia-competitiva/">Inteligencia competitiva</a><span aria-hidden="true">/</span>
+  Informe de muestra
+</nav></div>
+
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> El entregable</p>
+  <h1>Así se ve un informe semanal de inteligencia competitiva</h1>
+  <p class="lead"><b>Esta es la muestra íntegra del documento que recibe la dirección cada semana: resumen ejecutivo, alertas priorizadas y hallazgos con fuente y nivel de confianza.</b> Los competidores mueven precios, lanzan combos y abren rutas todas las semanas, y lo habitual es enterarse tarde. El informe convierte ese movimiento en diez minutos de lectura con lo que cambió en el mercado, por qué importa y qué conviene decidir.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-secondary" href="/inteligencia-competitiva/">Ver el programa completo</a>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <p class="sec-k">Antes de leer</p>
+  <h2>Qué está viendo y qué no</h2>
+  <div class="note demo"><b>Muestra con datos de demostración.</b> «Distribuidora Ejemplo S. A.», los competidores A, B y C, los precios, las fechas, las fuentes y las noticias que aparecen más abajo son ficticios y se construyeron únicamente para mostrar el formato del entregable. Ningún dato corresponde a un cliente, a una empresa ni a un mercado real.</div>
+  <p class="sec-sub">El informe que sigue es el entregable semanal del departamento de inteligencia competitiva, reproducido completo. Cada afirmación declara su origen y su fecha, cada alerta declara su prioridad y su nivel de confianza, y cada recomendación termina en una decisión concreta. El informe de una organización se construye sobre su mercado real —sus productos, sus competidores, sus zonas y sus fuentes— a partir del <a href="/inteligencia-competitiva/estudio-base/">estudio base</a>.</p>
+  <ul class="checks">
+    <li><b>Resumen ejecutivo.</b> Las tres lecturas de la semana, escritas antes que cualquier detalle.</li>
+    <li><b>Alertas priorizadas.</b> Prioridad alta o media, con fecha de detección, fuente y nivel de confianza.</li>
+    <li><b>Movimientos de precios.</b> La canasta monitoreada frente a cada competidor, con el cambio de la semana.</li>
+    <li><b>Noticias filtradas del sector.</b> Solo lo que toca decisiones, con la implicación explicada.</li>
+    <li><b>Oportunidades detectadas.</b> Huecos de catálogo y categorías con poca competencia.</li>
+    <li><b>Recomendaciones del analista.</b> Con semáforo: avanzar, vigilar o detener.</li>
+    <li><b>Tablero de la semana.</b> Cuánto se movió cada competidor y qué tipo de alerta domina.</li>
+  </ul>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Muestra íntegra</p>
+  <h2>Informe semanal de mercado — categoría bebidas</h2>
+  <p class="sec-sub">Preparado por el analista responsable y distribuido a la gerencia comercial. Se lee en diez minutos y se discute en la reunión de lunes.</p>
+
+  <div class="note demo"><b>Datos de demostración, no de un cliente.</b> Todo lo que aparece en este informe es ficticio: la empresa, los competidores, los precios, las fechas, las fuentes y las noticias. Se publica para mostrar el formato y el nivel de detalle del entregable.</div>
+
+  <div class="deliverables">
+    <div class="deliverable reveal"><b>Cliente</b><span>Distribuidora Ejemplo S. A. (empresa ficticia)</span></div>
+    <div class="deliverable reveal reveal-2"><b>Periodo</b><span>Semana 28, semana de demostración</span></div>
+    <div class="deliverable reveal reveal-3"><b>Preparado por</b><span>Analista de inteligencia competitiva</span></div>
+    <div class="deliverable reveal reveal-4"><b>Distribución</b><span>Gerencia comercial (demostración)</span></div>
+  </div>
+
+  <div class="module reveal">
+    <div class="module-head"><h3>Resumen ejecutivo</h3><span class="module-num">01</span></div>
+    <p class="module-what">Lo que la gerencia comercial debe llevarse de la semana, antes de cualquier detalle.</p>
+    <ul class="checks">
+      <li><b>Competidor B</b> bajó por segunda semana consecutiva el precio de la gaseosa de 2.5 litros; ya está 0.15 por debajo del precio de lista de Distribuidora Ejemplo.</li>
+      <li><b>Competidor A</b> publicó una vacante de jefe de ruta para la zona oriente: señal temprana de expansión de cobertura en esa zona.</li>
+      <li><b>Dos noticias del sector</b> apuntan a presión de costos en empaque PET para el próximo trimestre; conviene adelantar la negociación con el proveedor actual.</li>
+    </ul>
+  </div>
+
+  <div class="module reveal">
+    <div class="module-head"><h3>Alertas de la semana</h3><span class="module-num">02</span></div>
+    <p class="module-what">Cada alerta declara cuándo se detectó, de dónde salió, qué tan firme es la evidencia y por qué importa. La prioridad la fija el analista contra los umbrales acordados con la dirección.</p>
+
+    <div class="tripwire reveal">
+      <div class="tw-cell"><b>Señal</b><span>Competidor B bajó la gaseosa de 2.5 litros a $1.85, un recorte de 0.10</span></div>
+      <div class="tw-cell umbral"><b>Detección y fuente</b><span>Martes, día 2 de la semana. Catálogo web del competidor</span></div>
+      <div class="tw-cell"><b>Por qué importa</b><span>Es el segundo recorte consecutivo y toca el producto de mayor rotación de la canasta. Si se sostiene una tercera semana, deja de ser promoción puntual y pasa a ser precio de guerra</span></div>
+      <div class="tw-cell"><b>Prioridad</b><span class="light light-stop">Alta</span><span>Confianza: confirmada</span></div>
+    </div>
+
+    <div class="tripwire reveal reveal-2">
+      <div class="tw-cell"><b>Señal</b><span>Competidor C lanzó el combo de agua y néctar para el canal mayorista</span></div>
+      <div class="tw-cell umbral"><b>Detección y fuente</b><span>Jueves, día 4 de la semana. Redes sociales públicas del competidor</span></div>
+      <div class="tw-cell"><b>Por qué importa</b><span>El combo empuja dos categorías donde Distribuidora Ejemplo tiene margen alto; los mayoristas suelen pedir igualación en menos de dos semanas</span></div>
+      <div class="tw-cell"><b>Prioridad</b><span class="light light-watch">Media</span><span>Confianza: probable</span></div>
     </div>
   </div>
 
-  <!-- ==================== EL INFORME (muestra) ==================== -->
-  <section aria-label="Muestra del informe semanal">
-    <article class="report">
-      <div class="rp-top">
-        <span class="rp-org">Optimatiza · Inteligencia Competitiva</span>
-        <span class="rp-demo">Muestra · datos demo</span>
-      </div>
-      <h2 class="rp-title">Informe semanal de mercado — categoría bebidas</h2>
-      <div class="rp-meta">
-        <span><b>Cliente:</b> Distribuidora Ejemplo S.A. <em>(empresa ficticia)</em></span>
-        <span><b>Periodo:</b> Semana 28 — semana de demostración</span>
-        <span><b>Preparado por:</b> Analista de Optimatiza</span>
-        <span><b>Distribución:</b> Gerencia comercial (DEMO)</span>
-      </div>
+  <div class="module reveal">
+    <div class="module-head"><h3>Movimientos de precios: canasta monitoreada</h3><span class="module-num">03</span></div>
+    <p class="module-what">Los cuatro productos que concentran la rotación, comparados contra los tres competidores vigilados.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <caption>Precios ficticios de demostración. El cambio se calcula contra la semana anterior.</caption>
+        <thead>
+          <tr><th scope="col">Producto</th><th scope="col">Su lista</th><th scope="col">Competidor A</th><th scope="col">Competidor B</th><th scope="col">Competidor C</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Gaseosa 2.5 L</b></td><td><b>$2.00</b></td><td>$1.95 <span class="n">sin cambio</span></td><td>$1.85 <b>baja 0.10</b></td><td>$1.98 <span class="n">sin cambio</span></td></tr>
+          <tr><td><b>Agua embotellada 750 ml</b></td><td><b>$0.60</b></td><td>$0.65 <span class="y">sube 0.05</span></td><td>$0.60 <span class="n">sin cambio</span></td><td>$0.58 <b>baja 0.02</b></td></tr>
+          <tr><td><b>Néctar 1 L</b></td><td><b>$1.35</b></td><td>$1.40 <span class="n">sin cambio</span></td><td>$1.32 <b>baja 0.03</b></td><td>$1.45 <span class="y">sube 0.05</span></td></tr>
+          <tr><td><b>Bebida energética 473 ml</b></td><td><b>$1.25</b></td><td>$1.20 <span class="n">sin cambio</span></td><td>$1.25 <span class="y">sube 0.05</span></td><td>$1.15 <b>baja 0.05</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>Cómo se lee.</b> Una baja del competidor presiona su precio de lista; una subida abre espacio para su margen; sin cambio significa que la posición relativa se mantiene. La lectura relevante de la semana está en la primera fila.</div>
+  </div>
 
-      <div class="rp-sec">
-        <h3><span>01 ·</span> Resumen ejecutivo</h3>
-        <ul class="exec">
-          <li><b>Competidor B (DEMO)</b> bajó por segunda semana consecutiva el precio de la gaseosa 2.5 L; ya está $0.15 por debajo del precio de lista de Distribuidora Ejemplo.</li>
-          <li><b>Competidor A (DEMO)</b> publicó una vacante de "jefe de ruta — zona oriente": señal temprana de expansión de cobertura en esa zona.</li>
-          <li>Dos noticias del sector apuntan a presión de costos en empaque PET para el próximo trimestre; conviene adelantar la negociación con el proveedor actual.</li>
+  <div class="module reveal">
+    <div class="module-head"><h3>Noticias filtradas del sector</h3><span class="module-num">04</span></div>
+    <p class="module-what">De todo lo publicado en la semana, solo entra lo que toca una decisión. Cada nota lleva fuente, fecha y la implicación escrita por el analista.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Cadena regional de supermercados anuncia cuatro sucursales nuevas en el oriente del país</h3>
+        <p class="module-what">Medio del sector, esta semana. Confianza: confirmada.</p>
+        <p><b>Por qué le importa:</b> nueva demanda de distribución en la misma zona donde Competidor A busca jefe de ruta. La ventana para llegar primero es corta.</p>
+      </div>
+      <div class="card reveal reveal-2">
+        <h3>El precio internacional de la resina PET acumula tres meses al alza</h3>
+        <p class="module-what">Publicación de industria, esta semana. Confianza: confirmada.</p>
+        <p><b>Por qué le importa:</b> presión directa sobre el costo de botellas de agua y gaseosa; anticipa alzas de proveedores en el próximo trimestre.</p>
+      </div>
+      <div class="card reveal reveal-3">
+        <h3>Marca internacional de energéticas explora la entrada al mercado centroamericano</h3>
+        <p class="module-what">Medio de negocios, esta semana. Confianza: indicio en seguimiento.</p>
+        <p><b>Por qué le importa:</b> la categoría de energéticas es la de mayor margen de la canasta; un entrante nuevo cambiaría la pelea por los espacios en el punto de venta.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="module reveal">
+    <div class="module-head"><h3>Oportunidades detectadas</h3><span class="module-num">05</span></div>
+    <p class="module-what">Lo que la vigilancia encuentra a favor, no solo en contra: huecos de catálogo y categorías con poca disputa.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Hueco en néctar de 500 ml</h3>
+        <p>Competidor A retiró la presentación de 500 mililitros de su catálogo web por segunda semana consecutiva. Hay espacio para empujar la presentación equivalente en el canal detallista antes de que otro lo ocupe.</p>
+      </div>
+      <div class="card reveal reveal-2">
+        <h3>Bebidas sin azúcar, poco cubiertas</h3>
+        <p>La conversación pública local sobre bebidas sin azúcar viene creciendo y los tres competidores monitoreados suman un solo producto sin azúcar entre todos. Es una categoría con poca pelea para entrar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="module reveal">
+    <div class="module-head"><h3>Recomendaciones del analista</h3><span class="module-num">06</span></div>
+    <p class="module-what">Cada recomendación se entrega con semáforo: avanzar cuando la evidencia alcanza, vigilar cuando falta confirmación, detener cuando la evidencia contradice la iniciativa.</p>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>No igualar todavía el recorte de Competidor B</h3>
+        <p><span class="light light-watch">Vigilar</span></p>
+        <p>Responder con un combo de rotación en el canal detallista y revisar la próxima semana si el recorte se sostiene. Igualar precio hoy sacrificaría margen contra un movimiento que aún puede ser promocional.</p>
+      </div>
+      <div class="card reveal reveal-2">
+        <h3>Adelantar la negociación de empaque PET</h3>
+        <p><span class="light light-go">Avanzar</span></p>
+        <p>Con tres meses de alza en la resina, conviene asegurar precio con el proveedor actual antes del próximo trimestre y cotizar un segundo proveedor como respaldo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="module reveal">
+    <div class="module-head"><h3>Tablero de la semana</h3><span class="module-num">07</span></div>
+    <p class="module-what">Dos lecturas de contexto que se acumulan semana a semana: quién se está moviendo más y qué tipo de señal domina el periodo.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <caption>Movimientos de precio detectados por competidor, semana de demostración.</caption>
+        <thead>
+          <tr><th scope="col">Competidor</th><th scope="col">Movimientos detectados</th><th scope="col">Lectura</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Competidor A</b></td><td>1</td><td>Estable en precio; su movimiento de la semana fue de cobertura, no de tarifa.</td></tr>
+          <tr><td><b>Competidor B</b></td><td>3</td><td>El más activo en precio y el origen de la alerta de prioridad alta.</td></tr>
+          <tr><td><b>Competidor C</b></td><td>3</td><td>Movimientos repartidos entre categorías, acompañados de un lanzamiento.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <caption>Alertas emitidas por tipo en las últimas cuatro semanas de demostración.</caption>
+        <thead>
+          <tr><th scope="col">Tipo de alerta</th><th scope="col">Emitidas</th><th scope="col">Lectura</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Precios</b></td><td>6</td><td>Es el frente dominante del periodo y el que más veces llegó a prioridad alta.</td></tr>
+          <tr><td><b>Lanzamientos</b></td><td>3</td><td>Concentrados en canal mayorista.</td></tr>
+          <tr><td><b>Costos del sector</b></td><td>3</td><td>Todas ligadas al empaque PET.</td></tr>
+          <tr><td><b>Expansión</b></td><td>2</td><td>Ambas en la zona oriente del país.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note demo"><b>Fin del informe de muestra.</b> Todos los datos anteriores son ficticios y de demostración. El informe de una organización se construye sobre su mercado real, con sus competidores y sus fuentes, y se entrega con la misma estructura. Vea el programa completo en <a href="/inteligencia-competitiva/">inteligencia competitiva</a>.</div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Producción</p>
+  <h2>Cómo se produce el informe real</h2>
+  <p class="sec-sub">Un sistema automatizado monitorea a diario las fuentes públicas del mercado; un analista valida, jerarquiza y recomienda; la dirección recibe el informe cada semana en el canal acordado. El sistema se encarga del trabajo repetitivo de vigilar y el equipo conserva las decisiones.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <h3>Evaluación ejecutiva</h3>
+      <p>Una conversación de 20 a 30 minutos, sin costo, para definir qué competidores, productos y zonas vale la pena vigilar. De ahí sale el alcance del <a href="/inteligencia-competitiva/estudio-base/">estudio base</a>.</p>
+    </div>
+    <div class="step reveal reveal-2">
+      <h3>Monitoreo diario</h3>
+      <p>El sistema recorre catálogos, listas de precios, redes sociales públicas y medios del sector todos los días, y deja registrada la fecha y el origen de cada captura.</p>
+    </div>
+    <div class="step reveal reveal-3">
+      <h3>Validación del analista</h3>
+      <p>Una persona filtra el ruido, verifica la fuente, asigna prioridad y nivel de confianza, y escribe la implicación y la recomendación. Ningún hallazgo llega al informe sin pasar por esta revisión.</p>
+    </div>
+    <div class="step reveal reveal-4">
+      <h3>Entrega semanal</h3>
+      <p>El informe llega por correo o por WhatsApp, con la misma estructura de la muestra, y puede acompañarse de un tablero y de una reunión mensual de hallazgos.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Alcance</p>
+  <h2>Fuentes, alcances y límites</h2>
+  <p class="sec-sub">Qué se monitorea, qué nunca se toca, cómo se contrata y qué parte de lo que se muestra en este sitio es demostración. Abra lo que le interese.</p>
+
+  <div class="pills plain">
+    <span>Sitios web y catálogos de competidores</span>
+    <span>Redes sociales públicas</span>
+    <span>Medios y publicaciones del sector</span>
+    <span>Listas de precios públicas</span>
+    <span>Correo corporativo</span>
+    <span>WhatsApp</span>
+    <span>Power BI</span>
+    <span>Google Sheets y Excel</span>
+    <span>CRM o ERP propio, opcional</span>
+  </div>
+
+  <div class="explore">
+    <details open>
+      <summary><i>01</i><b>Qué fuentes se monitorean y cuáles no se tocan nunca</b></summary>
+      <div class="ex-body">
+        <p>El monitoreo se limita a información pública del mercado: sitios web y catálogos de competidores, redes sociales públicas, medios y publicaciones del sector, y listas de precios disponibles para cualquiera. Cada captura queda con su fecha y su origen registrados, de modo que cualquier afirmación del informe se puede auditar.</p>
+        <p>Nunca se accede a sistemas privados de terceros, ni a información reservada, ni se recurre a suplantación de identidad. Ese límite queda por escrito en el acuerdo y se detalla en <a href="/seguridad-gobierno/">Seguridad y gobierno</a>.</p>
+      </div>
+    </details>
+    <details>
+      <summary><i>02</i><b>Alcances de contratación disponibles</b></summary>
+      <div class="ex-body">
+        <ul class="checks">
+          <li><b>Monitoreo esencial · unidad simple, de una a dos semanas.</b> Un solo frente, por ejemplo los precios de tres a cinco competidores, con alertas e informe semanal. Operación mensual opcional.</li>
+          <li><b>Departamento estándar · unidad estándar, de dos a cuatro semanas.</b> Varios frentes a la vez: precios, noticias, lanzamientos y oportunidades, como en la muestra de esta página. Operación mensual opcional.</li>
+          <li><b>Célula completa · célula multiagente, de cuatro a ocho semanas.</b> Monitoreo amplio, tablero en Power BI o en Sheets y reunión mensual de hallazgos con la dirección.</li>
+        </ul>
+        <p>Los pagos se ligan a hitos verificables. Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte; los modelos de contratación están descritos en <a href="/metodologia/">Metodología</a>.</p>
+      </div>
+    </details>
+    <details>
+      <summary><i>03</i><b>Cadencia, canal de entrega y acompañamiento</b></summary>
+      <div class="ex-body">
+        <p>La entrega es semanal, por correo o por WhatsApp, en un formato pensado para leerse en unos diez minutos y discutirse en la reunión comercial de la semana. Según el alcance contratado, se suma un tablero en Power BI o en Google Sheets y una reunión mensual de hallazgos.</p>
+        <p>La canasta de productos, los competidores y las zonas se definen en la evaluación ejecutiva y se ajustan cuando el mercado cambia: un frente que deja de importar sale, y uno nuevo entra con su umbral y su responsable.</p>
+      </div>
+    </details>
+    <details>
+      <summary><i>04</i><b>Qué es demostración y qué es verificable</b></summary>
+      <div class="ex-body">
+        <ul class="dots">
+          <li>Todo el contenido del informe de esta página es <b>ficticio</b> y fue creado únicamente para mostrar el formato del entregable.</li>
+          <li>Lo que sí es verificable hoy: las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio sin intervención humana, y el asistente de conversación de este sitio es un agente de IA real en operación.</li>
+          <li>La única métrica medida hasta hoy es que el capturista digital procesa una factura en unos cuatro segundos, medido en video. Las piezas de <a href="/casos/">Casos</a> son animaciones ilustrativas.</li>
+          <li>No se prometen resultados financieros: el valor del informe depende del mercado de cada organización y de las decisiones que se tomen con él.</li>
         </ul>
       </div>
-
-      <div class="rp-sec">
-        <h3><span>02 ·</span> Alertas de la semana</h3>
-        <div class="alert hi">
-          <div class="alert-h"><b>Competidor B (DEMO) bajó la gaseosa 2.5 L a $1.85 (−$0.10)</b><span class="chip-sev">Prioridad alta</span></div>
-          <div class="alert-src">Detectada: martes, día 2 de la semana DEMO · Fuente: catálogo web del competidor (DEMO)</div>
-          <p><b>Por qué importa:</b> es el segundo recorte consecutivo y toca el producto de mayor rotación de la canasta. Si se sostiene una tercera semana, deja de ser promoción puntual y pasa a ser precio de guerra.</p>
-        </div>
-        <div class="alert mid">
-          <div class="alert-h"><b>Competidor C (DEMO) lanzó combo "agua + néctar" para canal mayorista</b><span class="chip-sev">Prioridad media</span></div>
-          <div class="alert-src">Detectada: jueves, día 4 de la semana DEMO · Fuente: redes sociales públicas del competidor (DEMO)</div>
-          <p><b>Por qué importa:</b> el combo empuja dos categorías donde Distribuidora Ejemplo tiene margen alto; los mayoristas suelen pedir igualación en menos de dos semanas.</p>
-        </div>
-      </div>
-
-      <div class="rp-sec">
-        <h3><span>03 ·</span> Movimientos de precios — canasta monitoreada</h3>
-        <div class="tbl-scroll">
-          <table>
-            <caption>Precios ficticios de demostración. Δ = cambio vs semana anterior (DEMO).</caption>
-            <thead>
-              <tr><th scope="col">Producto (DEMO)</th><th scope="col">Su lista</th><th scope="col">Competidor A</th><th scope="col">Competidor B</th><th scope="col">Competidor C</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Gaseosa 2.5 L</td><td class="num you">$2.00</td><td class="num">$1.95 <span class="d-eq">=</span></td><td class="num">$1.85 <span class="d-dn">▼ −0.10</span></td><td class="num">$1.98 <span class="d-eq">=</span></td></tr>
-              <tr><td>Agua embotellada 750 ml</td><td class="num you">$0.60</td><td class="num">$0.65 <span class="d-up">▲ +0.05</span></td><td class="num">$0.60 <span class="d-eq">=</span></td><td class="num">$0.58 <span class="d-dn">▼ −0.02</span></td></tr>
-              <tr><td>Néctar 1 L</td><td class="num you">$1.35</td><td class="num">$1.40 <span class="d-eq">=</span></td><td class="num">$1.32 <span class="d-dn">▼ −0.03</span></td><td class="num">$1.45 <span class="d-up">▲ +0.05</span></td></tr>
-              <tr><td>Bebida energética 473 ml</td><td class="num you">$1.25</td><td class="num">$1.20 <span class="d-eq">=</span></td><td class="num">$1.25 <span class="d-up">▲ +0.05</span></td><td class="num">$1.15 <span class="d-dn">▼ −0.05</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="legend"><span><span class="d-dn">▼ bajó</span> — presión sobre su precio</span><span><span class="d-up">▲ subió</span> — espacio para su margen</span><span><span class="d-eq">=</span> sin cambio</span></div>
-      </div>
-
-      <div class="rp-sec">
-        <h3><span>04 ·</span> Noticias filtradas del sector</h3>
-        <div class="news">
-          <div class="new"><b>Cadena regional de supermercados anuncia 4 sucursales nuevas en el oriente del país</b><span class="src">Medio del sector (DEMO) · esta semana</span><p><em>Por qué le importa:</em> nueva demanda de distribución en la misma zona donde Competidor A busca jefe de ruta. La ventana para llegar primero es corta.</p></div>
-          <div class="new"><b>El precio internacional de la resina PET acumula tres meses al alza</b><span class="src">Publicación de industria (DEMO) · esta semana</span><p><em>Por qué le importa:</em> presión directa sobre el costo de botellas de agua y gaseosa; anticipa alzas de proveedores en el próximo trimestre.</p></div>
-          <div class="new"><b>Marca internacional de energéticas explora entrada al mercado centroamericano</b><span class="src">Medio de negocios (DEMO) · esta semana</span><p><em>Por qué le importa:</em> la categoría energéticas es la de mayor margen de la canasta; un entrante nuevo cambiaría la pelea de espacios en el punto de venta.</p></div>
-        </div>
-      </div>
-
-      <div class="rp-sec">
-        <h3><span>05 ·</span> Oportunidades detectadas</h3>
-        <div class="twocol">
-          <div class="opp"><b>Hueco en néctar 500 ml (DEMO)</b>Competidor A retiró la presentación de 500 ml de su catálogo web por segunda semana consecutiva. Espacio para empujar la presentación equivalente en el canal detallista antes de que otro lo ocupe.</div>
-          <div class="opp"><b>Bebidas sin azúcar, poco cubiertas (DEMO)</b>La conversación pública local sobre "bebidas sin azúcar" viene creciendo y los tres competidores monitoreados suman un solo SKU sin azúcar entre todos. Categoría con poca pelea para entrar.</div>
-        </div>
-      </div>
-
-      <div class="rp-sec">
-        <h3><span>06 ·</span> Recomendaciones del analista</h3>
-        <div class="twocol">
-          <div class="rec"><b>No igualar todavía el recorte de Competidor B</b>Responder con un combo de rotación en el canal detallista y revisar la próxima semana si el recorte se sostiene. Igualar precio hoy sacrificaría margen contra un movimiento que aún puede ser promocional.</div>
-          <div class="rec"><b>Adelantar la negociación de empaque PET</b>Con tres meses de alza en la resina, asegurar precio con el proveedor actual antes del próximo trimestre y cotizar un segundo proveedor como respaldo.</div>
-        </div>
-      </div>
-
-      <div class="rp-sec">
-        <h3><span>07 ·</span> Mini-dashboard de la semana</h3>
-        <div class="dash">
-          <div class="dash-b">
-            <h4>Movimientos de precio detectados por competidor (semana DEMO)</h4>
-            <div class="bar-row"><span>Competidor A</span><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div><span class="bar-val">1</span></div>
-            <div class="bar-row"><span>Competidor B</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">3</span></div>
-            <div class="bar-row"><span>Competidor C</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">3</span></div>
-          </div>
-          <div class="dash-b">
-            <h4>Alertas emitidas por tipo — últimas 4 semanas (DEMO)</h4>
-            <div class="bar-row"><span>Precios</span><div class="bar-track"><div class="bar-fill b" style="width:100%"></div></div><span class="bar-val">6</span></div>
-            <div class="bar-row"><span>Lanzamientos</span><div class="bar-track"><div class="bar-fill b" style="width:50%"></div></div><span class="bar-val">3</span></div>
-            <div class="bar-row"><span>Costos del sector</span><div class="bar-track"><div class="bar-fill b" style="width:50%"></div></div><span class="bar-val">3</span></div>
-            <div class="bar-row"><span>Expansión</span><div class="bar-track"><div class="bar-fill b" style="width:33%"></div></div><span class="bar-val">2</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="rp-end">
-        <span>Fin del informe · todos los datos son ficticios y de demostración</span>
-        <span>optimatiza.com/inteligencia-competitiva</span>
-      </div>
-    </article>
-    <p class="note">"Distribuidora Ejemplo S.A.", los competidores A/B/C, precios, fechas y fuentes son inventados para ilustrar el formato. Ningún dato corresponde a un cliente o mercado real.</p>
-  </section>
-
-  <!-- ==================== después del informe ==================== -->
-  <div class="after-report">
-
-  <section>
-    <div class="claim">Así se ve el entregable del Departamento de Inteligencia Competitiva — <b>el suyo se construye sobre SU mercado real</b>: sus productos, sus competidores, sus zonas y sus fuentes. Conozca el servicio completo en <a href="../../inteligencia-competitiva/">inteligencia competitiva →</a></div>
-  </section>
-
-  <section>
-    <h2>Cómo se produce el informe real</h2>
-    <p class="sub">Un sistema automatizado monitorea fuentes públicas de su mercado todos los días; un analista valida y prioriza; usted recibe el informe cada semana. El sistema se encarga del trabajo repetitivo de vigilar; su equipo conserva las decisiones.</p>
-    <div class="pasos">
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.9 9.9 0 0 1-2.8-.4L3 21l1.9-5a8.1 8.1 0 0 1-.9-3.7A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg></span>Diagnóstico ejecutivo sin costo (20–30 min): definimos competidores y productos</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.8"/></svg></span>El sistema monitorea fuentes públicas a diario</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span>Un analista valida, filtra y recomienda</div>
-      <span class="arrow">→</span>
-      <div class="paso"><span class="paso-i"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg></span>Informe semanal en su correo o WhatsApp</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Fuentes y sistemas con los que trabaja</h2>
-    <div class="chips">
-      <span class="chip">Sitios web y catálogos de competidores</span>
-      <span class="chip">Redes sociales públicas</span>
-      <span class="chip">Medios y publicaciones del sector</span>
-      <span class="chip">Listas de precios públicas</span>
-      <span class="chip">Correo / Outlook / Gmail</span>
-      <span class="chip">WhatsApp</span>
-      <span class="chip">Power BI</span>
-      <span class="chip">Google Sheets / Excel</span>
-      <span class="chip">Su CRM o ERP (opcional)</span>
-    </div>
-    <p class="note">Solo se monitorea información pública. Nunca accedemos a sistemas privados de terceros.</p>
-  </section>
-
-  <section>
-    <h2>Alcances publicados</h2>
-    <div class="prices">
-      <div class="price"><b>Monitoreo esencial</b><div class="pp">Unidad simple · 1–2 semanas</div><p>Un frente (por ejemplo, precios de 3–5 competidores) con alertas e informe semanal. Operación mensual opcional.</p></div>
-      <div class="price"><b>Departamento estándar</b><div class="pp">Unidad estándar · 2–4 semanas</div><p>Varios frentes: precios, noticias, lanzamientos y oportunidades, como en esta muestra. Operación mensual opcional.</p></div>
-      <div class="price"><b>Célula completa</b><div class="pp">Célula multi-agente · 4–8 semanas</div><p>Monitoreo amplio + dashboard en Power BI o Sheets + reunión mensual de hallazgos.</p></div>
-    </div>
-    <p class="note">Pagos por hitos · <b>Cómo se cotiza:</b> cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. <a class="ghost" href="../../metodologia/">Ver modelos de contratación →</a></p>
-  </section>
-
-  <section>
-    <h2>Qué es demo y qué es real</h2>
-    <div class="ev">
-      <b>Somos directos con la evidencia:</b>
-      <ul>
-        <li>Todo el contenido del informe de arriba es <b>ficticio</b>, creado solo para mostrar el formato del entregable.</li>
-        <li>Lo que sí es real y puede verificar: las publicaciones de Facebook e Instagram de Optimatiza las genera y publica un sistema propio sin intervención humana, y el chat Nova de este sitio es un agente de IA real en vivo.</li>
-        <li>Nuestra única métrica medida hasta hoy: el Capturista Digital procesa una factura en ~4 segundos, medido en video. Los demos de <a class="ghost" href="../../casos/">/casos/</a> son animaciones ilustrativas.</li>
-        <li>No prometemos resultados financieros: el valor del informe depende de su mercado y de las decisiones que tome con él.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Preguntas frecuentes</h2>
-    <details>
-      <summary>¿Los datos de esta muestra son reales?</summary>
-      <p>No. Todos los datos — empresa, competidores, precios, fechas, fuentes y noticias — son ficticios y están marcados como DEMO. "Distribuidora Ejemplo S.A." no existe. La muestra solo ilustra el formato del entregable; su informe se construye sobre su mercado real.</p>
     </details>
-    <details>
-      <summary>¿Qué fuentes usa el informe real?</summary>
-      <p>Fuentes públicas de su mercado: sitios web y catálogos de competidores, redes sociales públicas, medios del sector y listas de precios disponibles. Nunca accedemos a información privada de terceros ni a sistemas ajenos.</p>
-    </details>
-    <details>
-      <summary>¿Cada cuánto se entrega y por dónde?</summary>
-      <p>Cada semana, por correo o WhatsApp, en un formato pensado para leerse en unos 10 minutos. Puede acompañarse de un dashboard en Power BI o Google Sheets y de una reunión mensual de hallazgos, según el plan.</p>
-    </details>
-    <details>
-      <summary>¿Puedo elegir qué competidores y productos se monitorean?</summary>
-      <p>Sí. En el diagnóstico ejecutivo sin costo de 20–30 minutos definimos juntos la canasta de productos, los competidores y las zonas que importan para su operación. El alcance se ajusta cuando su mercado cambia.</p>
-    </details>
-    <details>
-      <summary>¿Cómo se cotiza y cómo se contrata?</summary>
-      <p>Los alcances disponibles: monitoreo esencial como unidad simple (1–2 semanas), departamento estándar como unidad estándar (2–4 semanas) y célula completa como célula multi-agente (4–8 semanas), con operación mensual opcional. Pagos por hitos. Cada proyecto se cotiza tras una <a class="ghost" href="../../contacto/">evaluación de alcance</a> según complejidad, integraciones, volumen, seguridad y soporte.</p>
-    </details>
-  </section>
-
-  <div class="final">
-    <h2>¿Quiere este informe, pero de SU mercado?</h2>
-    <p>Diagnóstico ejecutivo sin costo de 20–30 minutos: definimos qué competidores y productos vale la pena vigilar en su caso — y le decimos con honestidad si el servicio le sirve o no.</p>
-    <a class="btn" href="https://wa.me/50371928070?text=Hola%2C%20vi%20la%20muestra%20del%20informe%20y%20quiero%20uno%20sobre%20mi%20mercado.%20%C2%BFAgendamos%20el%20diagn%C3%B3stico%20ejecutivo%3F" target="_blank" rel="noopener">Quiero este informe para mi mercado →</a>
   </div>
 
-  </div><!-- /after-report -->
+  <div class="note"><b>Paso siguiente natural.</b> El informe semanal es la salida visible de un programa que empieza por el <a href="/inteligencia-competitiva/estudio-base/">estudio base</a> y se sostiene con <a href="/inteligencia-competitiva/alertas-tempranas/">alertas tempranas</a> de umbral y responsable asignado. La vista completa está en <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>.</div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Dudas frecuentes</p>
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details class="faq">
+      <summary>¿Los datos de esta muestra son reales?</summary>
+      <p class="fa">No. Todos los datos —empresa, competidores, precios, fechas, fuentes y noticias— son ficticios y están marcados como demostración. «Distribuidora Ejemplo S. A.» no existe. La muestra solo ilustra el formato del entregable; el informe de una organización se construye sobre su mercado real.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Qué fuentes usa el informe real?</summary>
+      <p class="fa">Fuentes públicas del mercado: sitios web y catálogos de competidores, redes sociales públicas, medios del sector y listas de precios disponibles. Nunca se accede a información privada de terceros ni a sistemas ajenos.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Cada cuánto se entrega y por dónde?</summary>
+      <p class="fa">Cada semana, por correo o por WhatsApp, en un formato pensado para leerse en unos diez minutos. Puede acompañarse de un tablero en Power BI o en Google Sheets y de una reunión mensual de hallazgos, según el alcance contratado.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Se puede elegir qué competidores y productos se monitorean?</summary>
+      <p class="fa">Sí. En la evaluación ejecutiva sin costo, de 20 a 30 minutos, se define en conjunto la canasta de productos, los competidores y las zonas que importan para su operación. El alcance se ajusta cuando el mercado cambia.</p>
+    </details>
+    <details class="faq">
+      <summary>¿Cómo se cotiza y cómo se contrata?</summary>
+      <p class="fa">Los alcances disponibles son monitoreo esencial como unidad simple de una a dos semanas, departamento estándar como unidad estándar de dos a cuatro semanas y célula completa como célula multiagente de cuatro a ocho semanas, con operación mensual opcional. Los pagos se ligan a hitos y cada proyecto se cotiza tras una <a href="/contacto/">evaluación de alcance</a> según complejidad, integraciones, volumen, seguridad y soporte.</p>
+    </details>
+  </div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <span class="ck">El mismo informe, sobre su mercado</span>
+  <h2>Vea esta muestra convertida en su entregable semanal</h2>
+  <p>Una evaluación ejecutiva de 20 a 30 minutos basta para definir qué competidores y productos vale la pena vigilar, y para decir con franqueza si el programa aporta o no en su caso.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
 </main>
 
-<footer><div class="wrap f">
-  <span>© Optimatiza — agentes de IA y automatización para empresas.</span>
-  <a href="../../">Inicio</a><a href="../../inteligencia-competitiva/">Inteligencia competitiva</a><a href="../../metodologia/">Metodología</a><a href="../../casos/">Demos</a><a href="../../recursos/">Recursos</a><a href="../../seguridad/">Manejo de datos</a>
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
 </div></footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Los datos de esta muestra son reales?",
-      "acceptedAnswer": {"@type": "Answer", "text": "No. Todos los datos — empresa, competidores, precios, fechas, fuentes y noticias — son ficticios y están marcados como DEMO. \"Distribuidora Ejemplo S.A.\" no existe. La muestra solo ilustra el formato del entregable; su informe se construye sobre su mercado real."}
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué fuentes usa el informe real?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Fuentes públicas de su mercado: sitios web y catálogos de competidores, redes sociales públicas, medios del sector y listas de precios disponibles. Nunca accedemos a información privada de terceros ni a sistemas ajenos."}
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cada cuánto se entrega y por dónde?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Cada semana, por correo o WhatsApp, en un formato pensado para leerse en unos 10 minutos. Puede acompañarse de un dashboard en Power BI o Google Sheets y de una reunión mensual de hallazgos, según el plan."}
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo elegir qué competidores y productos se monitorean?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Sí. En el diagnóstico ejecutivo sin costo de 20–30 minutos definimos juntos la canasta de productos, los competidores y las zonas que importan para su operación. El alcance se ajusta cuando su mercado cambia."}
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo se cotiza y cómo se contrata?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Los alcances disponibles: monitoreo esencial como unidad simple (1–2 semanas), departamento estándar como unidad estándar (2–4 semanas) y célula completa como célula multi-agente (4–8 semanas), con operación mensual opcional. Pagos por hitos. Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."}
-    }
-  ]
-}
-</script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
-<script src="/inteligencia-competitiva/informe-muestra/informe.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

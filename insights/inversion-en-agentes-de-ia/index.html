@@ -1,279 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F6F1E8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>¿Cuánto cuesta un agente de IA en 2026? | Optimatiza</title>
-    <meta name="description" content="Qué determina la inversión en un agente de IA: alcance, integraciones, volumen, excepciones, seguridad y soporte. Cómo llegar a una cifra seria.">
-    <link rel="canonical" href="https://optimatiza.com/insights/inversion-en-agentes-de-ia/">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta property="og:title" content="¿Cuánto cuesta un agente de IA en 2026? | Optimatiza">
-    <meta property="og:description" content="Qué determina la inversión en un agente de IA: alcance, integraciones, volumen, excepciones, seguridad y soporte. Cómo llegar a una cifra seria.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://optimatiza.com/insights/inversion-en-agentes-de-ia/">
-    <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
-    <meta property="og:locale" content="es_LA">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/vendor/phosphor/regular/style.subset.css">
-    <link rel="stylesheet" href="/styles.css?v=89df3582">
-    <style>
-      .bpage { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
-      .bnav { position: fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; gap:12px;
-        padding: 12px 24px; background: var(--paper-0); border-bottom: 1px solid var(--line); }
-      .bnav img { width: 36px; height: 36px; }
-      .bnav .w { font-weight:600; color: var(--ink); letter-spacing:.03em; }
-      .bnav .w b { color: var(--live); font-weight:600; }
-      .bnav .cta { margin-left:auto; font-family: var(--ff-mono); font-size: 11px; letter-spacing:.08em; text-transform:uppercase;
-        color:#12251F; background: var(--grad-ai); border-radius: 8px; padding: 8px 14px; }
-      .bkick { font-family: var(--ff-mono); font-size: var(--t-0); letter-spacing:.16em; color: var(--live); text-transform: uppercase; margin-bottom: 14px; }
-      article h1 { font-family: var(--ff-display); font-weight:400; font-size: var(--t-7); line-height:1.1; color: var(--ink); margin-bottom: 18px; }
-      article h2 { font-family: var(--ff-display); font-weight:400; font-size: var(--t-5); color: var(--ink); margin: 38px 0 12px; }
-      article h3 { font-size: var(--t-3); color: var(--ink); margin: 24px 0 8px; }
-      article p { margin: 12px 0; }
-      article ul, article ol { margin: 12px 0 12px 22px; }
-      article li { margin: 6px 0; }
-      article table { width:100%; border-collapse: collapse; margin: 18px 0; font-size: var(--t-2); }
-      article th { font-family: var(--ff-mono); font-size: var(--t-0); letter-spacing:.1em; text-transform: uppercase;
-        color: var(--ink-dim); text-align:left; padding: 9px 10px; border-bottom: 1px solid var(--line-strong); }
-      article td { padding: 9px 10px; border-bottom: 1px solid var(--line); }
-      article blockquote { border-left: 3px solid var(--live-bright); background: var(--node-bg);
-        border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 14px 0; color: var(--ink-700); }
-      article a { color: var(--steel); text-decoration: underline; }
-      .bmeta { font-family: var(--ff-mono); font-size: var(--t-0); letter-spacing:.1em; color: var(--ink-dim); margin-bottom: 34px; }
-      .bauthor { display:flex; gap:14px; align-items:center; margin: 44px 0 0; padding: 18px; background: var(--paper-1);
-        border: 1px solid var(--node-line); border-radius: 14px; }
-      .bauthor img { width: 52px; height: 52px; border-radius: 50%; }
-      .bauthor .n { color: var(--ink); font-weight:600; }
-      .bauthor .c { font-family: var(--ff-mono); font-size: 10.5px; letter-spacing:.06em; color: var(--ink-dim); }
-      .bcta { margin-top: 26px; padding: 26px; text-align:center; background: var(--paper-1);
-        border: 1px solid rgba(44,122,99,.35); border-radius: 16px; }
-      .bcta h2 { margin-top: 0 !important; }
-      .bcta a.btn-main { display:inline-block; margin-top: 12px; font-family: var(--ff-mono); font-size: 12px; letter-spacing:.06em;
-        text-transform: uppercase; color:#12251F; background: var(--grad-ai); border-radius: 10px; padding: 13px 22px; }
-      .bfoot { text-align:center; font-family: var(--ff-mono); font-size: var(--t-0); color: var(--ink-dim);
-        padding: 30px 20px 40px; border-top: 1px solid var(--line); margin-top: 50px; letter-spacing:.08em; }
-      .bcards { display:grid; gap: 16px; margin-top: 34px; }
-      .bcard { display:block; background: var(--paper-1); border: 1px solid var(--node-line); border-radius: 16px;
-        padding: 24px 26px; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
-      .bcard:hover { border-color: rgba(44,122,99,.5); box-shadow: var(--glow-teal), var(--shadow-card); transform: translateY(-2px); }
-      .bcard h2 { font-family: var(--ff-display); font-weight:400; font-size: var(--t-5); color: var(--ink); margin: 6px 0 8px; }
-      .bcard p { color: var(--ink-body); font-size: var(--t-2); }
-      .bcard .more { font-family: var(--ff-mono); font-size: 11px; letter-spacing:.08em; color: var(--live); text-transform: uppercase; }
-    </style>
-    <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"¿Cuánto cuesta un agente de IA en 2026? Qué determina la inversión","description":"Qué determina la inversión en un agente de IA: alcance, integraciones, volumen, excepciones, seguridad y soporte. Cómo llegar a una cifra seria.","datePublished":"2026-07-05","dateModified":"2026-08-02","inLanguage":"es","author":{"@type":"Person","name":"Humberto Henríquez"},"publisher":{"@id":"https://optimatiza.com/#org"},"mainEntityOfPage":"https://optimatiza.com/insights/inversion-en-agentes-de-ia/","image":"https://optimatiza.com/img/og-image.jpg"}
-</script>
-    <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>¿Cuánto cuesta un agente de IA? Qué determina la inversión | Optimatiza</title>
+  <meta name="description" content="Los seis factores que determinan la inversión en un agente de IA —alcance, integraciones, volumen, excepciones, seguridad y soporte— y cómo una evaluación de alcance produce una cifra justificada.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/insights/inversion-en-agentes-de-ia/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="¿Cuánto cuesta un agente de IA? Qué determina la inversión">
+  <meta property="og:description" content="Por qué las bandas de precios genéricas engañan, los seis factores que mueven el esfuerzo real y cómo una evaluación de alcance convierte el «depende» en una cifra justificada.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/insights/inversion-en-agentes-de-ia/">
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="¿Cuánto cuesta un agente de IA? Qué determina la inversión">
+  <meta name="twitter:description" content="Por qué las bandas de precios genéricas engañan, los seis factores que mueven el esfuerzo real y cómo una evaluación de alcance convierte el «depende» en una cifra justificada.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
   {
-   "@type": "Question",
-   "name": "¿Por qué casi nadie publica precios de agentes de IA?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Porque el esfuerzo real depende del alcance, y una cifra publicada sin conocer el proceso es marketing, no ingeniería. Los rangos genéricos que circulan en internet mezclan proyectos de alcances, integraciones y niveles de exigencia muy distintos, así que sirven de poco para presupuestar. Lo serio es evaluar el alcance primero y cotizar después."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "¿Un chatbot cuesta lo mismo que un agente que ejecuta acciones?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "No. Un chatbot que solo responde preguntas sobre documentos tiene un alcance acotado. Un agente que además ejecuta acciones —agendar, consultar el estado de un pedido, escalar a un humano— suma integraciones, manejo de excepciones y puntos de control, y eso mueve el esfuerzo. La diferencia no está en la etiqueta, sino en el alcance."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "¿Hay costos recurrentes después de la entrega?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Depende del stack y del nivel de operación que el proceso exija. Sobre Microsoft Power Platform, buena parte corre con licencias de Microsoft 365 que muchas empresas ya pagan; algunos componentes tienen consumo propio. Todo costo recurrente se transparenta en la propuesta antes de firmar, junto con el esquema de soporte acordado."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "¿Cómo se llega a una cifra concreta?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El resultado es una propuesta con alcance escrito, criterios de aceptación y supuestos explícitos, de modo que la cifra tenga una justificación verificable."
-   }
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://optimatiza.com/insights/"},
+      {"@type": "ListItem", "position": 3, "name": "¿Cuánto cuesta un agente de IA? Qué determina la inversión", "item": "https://optimatiza.com/insights/inversion-en-agentes-de-ia/"}
+    ]
   }
- ]
-}
-</script>
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"¿Cuánto cuesta un agente de IA? Qué determina la inversión","description":"Qué determina la inversión en un agente de IA: alcance, integraciones, volumen, excepciones, seguridad y soporte. Cómo llegar a una cifra seria.","datePublished":"2026-07-05","dateModified":"2026-08-10","inLanguage":"es","author":{"@type":"Person","name":"Humberto Henríquez"},"publisher":{"@id":"https://optimatiza.com/#org"},"mainEntityOfPage":"https://optimatiza.com/insights/inversion-en-agentes-de-ia/","image":"https://optimatiza.com/img/og-image.jpg"}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Por qué casi nadie publica precios de agentes de IA?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Porque el esfuerzo real depende del alcance, y una cifra publicada sin conocer el proceso es marketing, no ingeniería. Los rangos genéricos que circulan en internet mezclan proyectos de alcances, integraciones y niveles de exigencia muy distintos, así que sirven de poco para presupuestar. Lo serio es evaluar el alcance primero y cotizar después."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Un chatbot cuesta lo mismo que un agente que ejecuta acciones?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No. Un chatbot que solo responde preguntas sobre documentos tiene un alcance acotado. Un agente que además ejecuta acciones —agendar, consultar el estado de un pedido, escalar a un humano— suma integraciones, manejo de excepciones y puntos de control, y eso mueve el esfuerzo. La diferencia no está en la etiqueta, sino en el alcance."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay costos recurrentes después de la entrega?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Depende del stack y del nivel de operación que el proceso exija. Sobre Microsoft Power Platform, buena parte corre con licencias de Microsoft 365 que muchas organizaciones ya pagan; algunos componentes tienen consumo propio. Todo costo recurrente se transparenta en la propuesta antes de firmar, junto con el esquema de soporte acordado."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se llega a una cifra concreta?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El resultado es una propuesta con alcance escrito, criterios de aceptación y supuestos explícitos, de modo que la cifra tenga una justificación verificable."}
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="bg-static">
-    <nav class="bnav">
-      <a href="/" style="display:flex;align-items:center;gap:10px"><img src="/img/logo-badge-96.png" alt=""><span class="w">Opti<b>matiza</b></span></a>
-      <a class="cta" href="/contacto/">Contacto</a>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
     </nav>
-    <main class="bpage">
-    <div class="bkick">BLOG · GUÍAS SIN HUMO</div>
-<article>
-<div class="bmeta">POR HUMBERTO HENRÍQUEZ · ACTUALIZADO 2026-08-02 · OPTIMATIZA</div>
-<h1>¿Cuánto cuesta un agente de IA en 2026? Qué determina la inversión</h1>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
 
-<p>La respuesta honesta es "depende". El problema es que casi todo el mundo usa esa palabra para no responder. Este artículo hace lo contrario: explica exactamente <strong>de qué depende</strong> la inversión en un agente de IA —los seis factores que mueven el esfuerzo real—, por qué las bandas de precios genéricas que circulan en internet engañan más de lo que orientan, y cómo una evaluación de alcance convierte ese "depende" en una cifra seria y justificada.</p>
+<main id="contenido">
 
-<h2>Por qué las bandas genéricas de mercado engañan</h2>
+<div class="wrap"><nav class="crumbs" aria-label="Ruta">
+  <a href="/">Inicio</a><span aria-hidden="true">/</span>
+  <a href="/insights/">Insights</a><span aria-hidden="true">/</span>
+  ¿Cuánto cuesta un agente de IA?
+</nav></div>
 
-<p>Si buscó "cuánto cuesta un agente de IA" antes de llegar aquí, ya vio los dos extremos: páginas que hablan de "transformación digital" sin comprometerse a nada, y listas de rangos que suenan concretas pero no dicen a qué proyecto corresponden. Las segundas parecen más útiles, y ahí está la trampa.</p>
+<div class="phero band"><div class="wrap">
+  <p class="kicker"><i></i> Insights · Inversión y alcance</p>
+  <h1>¿Cuánto cuesta un agente de IA? Qué determina la inversión</h1>
+  <p class="lead"><b>La respuesta honesta es «depende». El problema es que casi todo el mundo usa esa palabra para no responder.</b> Este documento hace lo contrario: explica exactamente de qué depende la inversión en un agente de IA —los seis factores que mueven el esfuerzo real—, por qué las bandas de precios genéricas que circulan en internet engañan más de lo que orientan, y cómo una evaluación de alcance convierte ese «depende» en una cifra seria y justificada.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-secondary" href="/metodologia/">Ver la metodología de entrega</a>
+  </div>
+</div></div>
 
-<p>Una banda de precios sin alcance definido es un número sin unidad de medida. Los rangos publicados mezclan proyectos de complejidad muy distinta: un bot que responde preguntas sobre documentos internos y una célula de agentes que cubre un proceso completo con aprobaciones intermedias pueden aparecer en la misma tabla. Dos proyectos que suenan iguales en una frase pueden diferir varias veces en esfuerzo real según sus integraciones y excepciones.</p>
+<section><div class="wrap">
+  <p class="sec-k">Punto de partida</p>
+  <h2>Por qué las bandas genéricas de mercado engañan</h2>
+  <p class="sec-sub">Quien buscó «cuánto cuesta un agente de IA» antes de llegar aquí ya vio los dos extremos: páginas que hablan de «transformación digital» sin comprometerse a nada, y listas de rangos que suenan concretas pero no dicen a qué proyecto corresponden. Las segundas parecen más útiles, y ahí está la trampa.</p>
+  <p>Una banda de precios sin alcance definido es un número sin unidad de medida. Los rangos publicados mezclan proyectos de complejidad muy distinta: un bot que responde preguntas sobre documentos internos y una célula de agentes que cubre un proceso completo con aprobaciones intermedias pueden aparecer en la misma tabla. Dos proyectos que suenan iguales en una frase pueden diferir varias veces en esfuerzo real según sus integraciones y sus excepciones.</p>
+  <p>El efecto práctico es doble y ambos lados perjudican a quien compra: si el caso es simple y se ancla a la banda alta, se paga de más sin saberlo; si el caso es exigente y se ancla a la banda baja, se descartan propuestas serias por «caras» o se firma una barata que se queda corta a mitad de camino.</p>
+  <p class="quote">Una cifra que llega antes que las preguntas sobre su proceso debería generar sospecha, no confianza.</p>
+  <figure class="plate reveal">
+    <img src="/img/crew-drafting.svg" alt="Dos robots trazan sobre una mesa el plano de un proceso antes de estimar el trabajo.">
+    <figcaption>Primero se levanta el proceso; la cifra viene después. El orden inverso es una apuesta disfrazada de propuesta.</figcaption>
+  </figure>
+</div></section>
 
-<p>El efecto práctico es doble y ambos lados le perjudican: si su caso es simple y se ancla a la banda alta, paga de más sin saberlo; si su caso es exigente y se ancla a la banda baja, descarta propuestas serias por "caras" o firma una barata que se queda corta a mitad de camino. Por eso una cifra que llega antes que las preguntas sobre su proceso debería generar sospecha, no confianza.</p>
+<section class="band"><div class="wrap">
+  <p class="sec-k">Los factores</p>
+  <h2>Los seis factores que determinan la inversión</h2>
+  <p class="sec-sub">Estos son los factores que un proveedor serio evalúa antes de poner un número sobre la mesa. Sirven también al revés: como lista de verificación para leer cualquier propuesta que su organización reciba.</p>
 
-<h2>Los seis factores que determinan la inversión</h2>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <caption style="text-align:left;padding:12px 16px;font-size:13px;color:#5F6E66">Qué evalúa una cotización seria, factor por factor</caption>
+      <thead>
+        <tr><th scope="col">Factor</th><th scope="col">Pregunta clave</th><th scope="col">Qué mueve</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>01 · Alcance del proceso</b></td><td>¿Una tarea acotada o un proceso de punta a punta?</td><td>Pasos, estados y pantallas a construir y probar</td></tr>
+        <tr><td><b>02 · Integraciones</b></td><td>¿Cuántos sistemas debe leer o escribir el agente?</td><td>Conectores, permisos y casos de error por sistema</td></tr>
+        <tr><td><b>03 · Volumen de operaciones</b></td><td>¿Decenas al mes o cientos al día?</td><td>Arquitectura, límites de API, colas y monitoreo</td></tr>
+        <tr><td><b>04 · Manejo de excepciones</b></td><td>¿Qué pasa cuando el dato llega incompleto o fuera de guion?</td><td>Reglas, bandejas de revisión y control humano</td></tr>
+        <tr><td><b>05 · Seguridad y cumplimiento</b></td><td>¿Qué datos toca el agente y quién puede verlos?</td><td>Roles, auditoría, retención y requisitos regulatorios</td></tr>
+        <tr><td><b>06 · Operación y soporte</b></td><td>¿Quién vigila el agente después de la entrega?</td><td>Monitoreo, alertas y esquema de soporte acordado</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<p>Estos son los factores que un proveedor serio evalúa antes de poner un número sobre la mesa. Sirven también al revés: como lista de verificación para leer cualquier propuesta que reciba.</p>
+  <div class="explore">
+    <details open>
+      <summary><i>01</i><b>Alcance del proceso: cada «y luego» agrega pasos, estados y pruebas</b></summary>
+      <div class="ex-body"><p>Es el factor que más pesa. No es lo mismo un agente que hace una cosa bien —recibe facturas por correo, extrae los datos, los registra en una lista— que varios agentes coordinados cubriendo un proceso completo con aprobaciones intermedias. Una regla rápida: si el proceso puede describirse en una frase sin usar «y luego», el alcance es acotado; cada «y luego» agrega pasos, estados y pruebas.</p></div>
+    </details>
+    <details>
+      <summary><i>02</i><b>Integraciones: lo que menos se ve en la demo son los casos de error</b></summary>
+      <div class="ex-body"><p>Conectarse a Microsoft 365, SharePoint o Dataverse es terreno conocido. Conectarse a un ERP antiguo sin API, o a un sistema que solo exporta archivos planos, agrega días de trabajo. Cada sistema adicional que el agente debe leer o escribir suma conectores, permisos y —lo que menos se ve en la demostración— casos de error propios: ¿qué hace el agente cuando ese sistema no responde?</p></div>
+    </details>
+    <details>
+      <summary><i>03</i><b>Volumen: no cambia lo que el agente hace, cambia la ingeniería</b></summary>
+      <div class="ex-body"><p>La velocidad por unidad solo cuenta la mitad de la historia. En el Capturista Digital de Optimatiza, el registro de una factura toma alrededor de cuatro segundos por documento, medido sobre una grabación continua que cualquiera puede cronometrar. Ese dato por unidad se vuelve relevante junto al volumen: si la operación recibe unas cuantas facturas por semana, el diseño puede ser directo; si recibe cientos al día, entran en juego límites de API, colas, reintentos y monitoreo de rendimiento. El volumen no cambia lo que el agente hace: cambia la ingeniería necesaria para que lo haga de forma confiable.</p></div>
+    </details>
+    <details>
+      <summary><i>04</i><b>Excepciones: el camino feliz es la parte barata</b></summary>
+      <div class="ex-body"><p>El camino feliz es la parte barata de cualquier automatización. Lo que define el esfuerzo real es todo lo demás: el dato que llega incompleto, el formato que nadie anticipó, el cliente que responde algo fuera de guion. Cada excepción exige una decisión de diseño —¿el agente la resuelve, la rechaza o la envía a una bandeja de revisión humana?— y cada punto de control humano implica pantallas y estados adicionales. Es trabajo que casi siempre vale la pena: es lo que permite confiar en el sistema desde el primer día.</p></div>
+    </details>
+    <details>
+      <summary><i>05</i><b>Seguridad y cumplimiento: aparece tarde en la venta y temprano en los problemas</b></summary>
+      <div class="ex-body"><p>Un agente que resume documentos públicos y uno que toca datos de clientes, información financiera o expedientes de personal no juegan en la misma liga. Roles y permisos, registro de auditoría de cada acción, políticas de retención de datos y requisitos regulatorios del sector agregan diseño y pruebas específicas. Este factor suele aparecer tarde en las conversaciones de venta y temprano en los problemas de los proyectos mal cotizados.</p></div>
+    </details>
+    <details>
+      <summary><i>06</i><b>Operación y soporte: un agente entregado sin plan de operación es un prototipo con factura</b></summary>
+      <div class="ex-body"><p>La pregunta a resolver antes de firmar: ¿quién detecta que algo falló, cómo se entera y quién lo corrige? El esquema de soporte —monitoreo, alertas, ventanas de respuesta, evolución del agente cuando el proceso cambie— es parte del alcance, y su nivel de exigencia mueve la inversión igual que cualquier factor técnico.</p></div>
+    </details>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Factor</th>
-      <th>Pregunta clave</th>
-      <th>Qué mueve</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Alcance del proceso</td>
-      <td>¿Una tarea acotada o un proceso de punta a punta?</td>
-      <td>Pasos, estados y pantallas a construir y probar</td>
-    </tr>
-    <tr>
-      <td>Integraciones</td>
-      <td>¿Cuántos sistemas debe leer o escribir el agente?</td>
-      <td>Conectores, permisos y casos de error por sistema</td>
-    </tr>
-    <tr>
-      <td>Volumen de operaciones</td>
-      <td>¿Decenas al mes o cientos al día?</td>
-      <td>Arquitectura, límites de API, colas y monitoreo</td>
-    </tr>
-    <tr>
-      <td>Manejo de excepciones</td>
-      <td>¿Qué pasa cuando el dato llega incompleto o fuera de guion?</td>
-      <td>Reglas, bandejas de revisión y control humano</td>
-    </tr>
-    <tr>
-      <td>Seguridad y cumplimiento</td>
-      <td>¿Qué datos toca el agente y quién puede verlos?</td>
-      <td>Roles, auditoría, retención y requisitos regulatorios</td>
-    </tr>
-    <tr>
-      <td>Operación y soporte</td>
-      <td>¿Quién vigila el agente después de la entrega?</td>
-      <td>Monitoreo, alertas y esquema de soporte acordado</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="note"><b>Cómo leer esta tabla.</b> Ningún factor se estima en aislamiento: el volumen redefine la arquitectura, la seguridad redefine las integraciones y el esquema de soporte redefine lo que se construye para poder vigilarlo. Por eso la evaluación se hace sobre el proceso completo y no factor por factor.</div>
+</div></section>
 
-<h3>1. Alcance del proceso</h3>
+<section><div class="wrap">
+  <p class="sec-k">Del «depende» a la cifra</p>
+  <h2>Cómo una evaluación de alcance produce una cifra seria</h2>
+  <p class="sec-sub">Los seis factores anteriores no se estiman desde un formulario genérico: se levantan revisando el proceso real. Eso es una evaluación de alcance, y su mecánica es concreta.</p>
 
-<p>Es el factor que más pesa. No es lo mismo un agente que hace una cosa bien —recibe facturas por correo, extrae los datos, los registra en una lista— que varios agentes coordinados cubriendo un proceso completo con aprobaciones intermedias. Una regla rápida: si puede describir el proceso en una frase sin usar "y luego", el alcance es acotado; cada "y luego" agrega pasos, estados y pruebas.</p>
-
-<h3>2. Número de integraciones</h3>
-
-<p>Conectarse a Microsoft 365, SharePoint o Dataverse es terreno conocido. Conectarse a un ERP viejo sin API, o a un sistema que solo exporta archivos planos, agrega días de trabajo. Cada sistema adicional que el agente debe leer o escribir suma conectores, permisos, y —lo que menos se ve en la demo— casos de error propios: ¿qué hace el agente cuando ese sistema no responde?</p>
-
-<h3>3. Volumen de operaciones</h3>
-
-<p>La velocidad por unidad solo cuenta la mitad de la historia. En el Capturista Digital de Optimatiza, el registro de una factura toma alrededor de 4 segundos por documento, medido en el video de la demo. Ese dato por unidad se vuelve relevante junto al volumen: si su operación recibe unas cuantas facturas por semana, el diseño puede ser directo; si recibe cientos al día, entran en juego límites de API, colas, reintentos y monitoreo de throughput. El volumen no cambia lo que el agente hace: cambia la ingeniería necesaria para que lo haga de forma confiable.</p>
-
-<h3>4. Manejo de excepciones</h3>
-
-<p>El camino feliz es la parte barata de cualquier automatización. Lo que define el esfuerzo real es todo lo demás: el dato que llega incompleto, el formato que nadie anticipó, el cliente que responde algo fuera de guion. Cada excepción exige una decisión de diseño —¿el agente la resuelve, la rechaza o la envía a una bandeja de revisión humana?— y cada punto de control humano implica pantallas y estados adicionales. Es trabajo que casi siempre vale la pena: es lo que permite confiar en el sistema desde el primer día.</p>
-
-<h3>5. Requisitos de seguridad y cumplimiento</h3>
-
-<p>Un agente que resume documentos públicos y uno que toca datos de clientes, información financiera o expedientes de personal no juegan en la misma liga. Roles y permisos, registro de auditoría de cada acción, políticas de retención de datos y requisitos regulatorios del sector agregan diseño y pruebas específicas. Este factor suele aparecer tarde en las conversaciones de venta y temprano en los problemas de los proyectos mal cotizados.</p>
-
-<h3>6. Operación y soporte</h3>
-
-<p>Un agente entregado sin plan de operación es un prototipo con factura. La pregunta a resolver antes de firmar: ¿quién detecta que algo falló, cómo se entera y quién lo corrige? El esquema de soporte —monitoreo, alertas, ventanas de respuesta, evolución del agente cuando el proceso cambie— es parte del alcance, y su nivel de exigencia mueve la inversión igual que cualquier factor técnico.</p>
-
-<h2>Cómo una evaluación de alcance produce una cifra seria</h2>
-
-<p>Los seis factores anteriores no se estiman desde un formulario genérico: se levantan revisando el proceso real. Eso es una evaluación de alcance, y su mecánica es concreta:</p>
-
-<ul>
-  <li><strong>Mapear el proceso</strong> tal como ocurre hoy: pasos, responsables, sistemas involucrados y dónde duele.</li>
-  <li><strong>Inventariar integraciones</strong> y verificar cómo se accede a cada sistema (API, conector, exportación).</li>
-  <li><strong>Estimar el volumen</strong> con datos de la operación, no con supuestos optimistas.</li>
-  <li><strong>Listar excepciones conocidas</strong> y decidir cuáles maneja el agente y cuáles van a revisión humana.</li>
-  <li><strong>Registrar requisitos de seguridad y cumplimiento</strong> aplicables a los datos que el proceso toca.</li>
-  <li><strong>Definir el esquema de operación y soporte</strong> posterior a la entrega.</li>
-</ul>
-
-<p>Con ese levantamiento, la cotización deja de ser una apuesta. Por eso en Optimatiza cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El resultado es una propuesta con alcance escrito, criterios de aceptación y supuestos explícitos: sabe qué hace el agente, con qué datos se probará y qué pasa después de la entrega.</p>
-
-<p>La evaluación también funciona como filtro en sentido inverso: si la tarea que quiere automatizar consume unos minutos a la semana, ningún agente se justifica, y la conclusión correcta de la evaluación es decirlo antes de cotizar. Un proveedor que solo sabe concluir "sí, adelante" no está evaluando: está vendiendo.</p>
-
-<h2>Señales de una cotización seria (y señales de alarma)</h2>
-
-<ul>
-  <li><strong>Seria: la cifra llega después de las preguntas.</strong> Si el proveedor cotizó sin entender su proceso, la cifra protege el margen del proveedor, no su proyecto.</li>
-  <li><strong>Seria: alcance y criterios de aceptación por escrito.</strong> Qué hace el agente, con qué datos se prueba, qué queda fuera del alcance y bajo qué supuestos se estimó.</li>
-  <li><strong>Seria: costos recurrentes transparentados antes de firmar.</strong> Licencias, consumo de servicios de IA y conectores premium se declaran en la propuesta, no aparecen en la primera factura.</li>
-  <li><strong>Alarma: descubrimiento eterno facturable.</strong> Semanas de "fase de diagnóstico" sin un entregable concreto. Para una pyme, entender el problema debería producir un alcance escrito, no otro proyecto.</li>
-  <li><strong>Alarma: plataforma propietaria por defecto.</strong> Si su operación ya vive en Microsoft 365, construir sobre Power Platform aprovecha licencias que ya paga y herramientas que su equipo conoce. Un proveedor que insiste en su propia plataforma con suscripción a perpetuidad puede estar resolviendo su propio modelo de negocio, no el problema de su empresa.</li>
-  <li><strong>Alarma: el megaproyecto de entrada.</strong> "Automaticemos toda la empresa" es la ruta más rápida a un proyecto que nunca termina. La secuencia sensata: un agente que resuelva un dolor concreto, medir el resultado real y, con esa evidencia, decidir si escala. Riesgo acotado en cada paso.</li>
-</ul>
-
-<h2>Preguntas frecuentes sobre la inversión en un agente de IA</h2>
-
-<h3>¿Por qué casi nadie publica precios de agentes de IA?</h3>
-<p>Porque el esfuerzo real depende del alcance, y una cifra publicada sin conocer el proceso es marketing, no ingeniería. Los rangos genéricos que circulan en internet mezclan proyectos de alcances, integraciones y niveles de exigencia muy distintos, así que sirven de poco para presupuestar. Lo serio es evaluar el alcance primero y cotizar después.</p>
-
-<h3>¿Un chatbot cuesta lo mismo que un agente que ejecuta acciones?</h3>
-<p>No. Un chatbot que solo responde preguntas sobre documentos tiene un alcance acotado. Un agente que además ejecuta acciones —agendar, consultar el estado de un pedido, escalar a un humano— suma integraciones, manejo de excepciones y puntos de control, y eso mueve el esfuerzo. La diferencia no está en la etiqueta, sino en el alcance.</p>
-
-<h3>¿Hay costos recurrentes después de la entrega?</h3>
-<p>Depende del stack y del nivel de operación que el proceso exija. Sobre Microsoft Power Platform, buena parte corre con licencias de Microsoft 365 que muchas empresas ya pagan; algunos componentes tienen consumo propio. Todo costo recurrente se transparenta en la propuesta antes de firmar, junto con el esquema de soporte acordado.</p>
-
-<h3>¿Cómo se llega a una cifra concreta?</h3>
-<p>Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El resultado es una propuesta con alcance escrito, criterios de aceptación y supuestos explícitos, de modo que la cifra tenga una justificación verificable.</p>
-
-<h2>El siguiente paso</h2>
-
-<p>Ya tiene los seis factores y la lista de señales para leer cualquier propuesta. Lo que falta es aterrizarlos a su caso: qué proceso, qué sistemas, qué volumen y qué nivel de exigencia.</p>
-
-<p>Eso se resuelve con una <strong>evaluación ejecutiva</strong>, conducida directamente por Humberto Henríquez, fundador de Optimatiza (Ing. en Sistemas, MSc en Data Science, MSc en Business Intelligence). De ahí sale una propuesta con alcance escrito y una cifra justificada para su proceso concreto.</p>
-
-<p>Solicítela en <a href="/contacto/">optimatiza.com/contacto</a> o escríbanos por WhatsApp al <a href="https://wa.me/50371928070">+503 7192 8070</a>.</p>
-</article>
-    <div class="share-row" style="justify-content:flex-start;margin-top:34px" role="group" aria-label="Compartir este artículo">
-      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foptimatiza.com%2Fblog%2Fcuanto-cuesta-un-agente-de-ia-2026%2F" target="_blank" rel="noopener" aria-label="Compartir en Facebook"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Foptimatiza.com%2Fblog%2Fcuanto-cuesta-un-agente-de-ia-2026%2F" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://twitter.com/intent/tweet?text=%C2%BFCu%C3%A1nto%20cuesta%20un%20agente%20de%20IA%20en%202026%3F%20Qu%C3%A9%20determina%20la%20inversi%C3%B3n&amp;url=https%3A%2F%2Foptimatiza.com%2Fblog%2Fcuanto-cuesta-un-agente-de-ia-2026%2F" target="_blank" rel="noopener" aria-label="Compartir en X"><i class="ph ph-twitter-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://api.whatsapp.com/send?text=%C2%BFCu%C3%A1nto%20cuesta%20un%20agente%20de%20IA%20en%202026%3F%20Qu%C3%A9%20determina%20la%20inversi%C3%B3n%20https%3A%2F%2Foptimatiza.com%2Fblog%2Fcuanto-cuesta-un-agente-de-ia-2026%2F" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://t.me/share/url?url=https%3A%2F%2Foptimatiza.com%2Fblog%2Fcuanto-cuesta-un-agente-de-ia-2026%2F&amp;text=%C2%BFCu%C3%A1nto%20cuesta%20un%20agente%20de%20IA%20en%202026%3F%20Qu%C3%A9%20determina%20la%20inversi%C3%B3n" target="_blank" rel="noopener" aria-label="Compartir por Telegram"><i class="ph ph-telegram-logo" aria-hidden="true"></i></a>
+  <div class="steps">
+    <div class="step reveal">
+      <h3>Mapear el proceso</h3>
+      <p>Tal como ocurre hoy: pasos, responsables, sistemas involucrados y dónde duele.</p>
     </div>
-    <div class="bauthor">
-      <img src="/img/logo-badge-96.png" alt="">
-      <div><div class="n">Humberto Henríquez — Fundador, Optimatiza</div>
-      <div class="c">ING. EN SISTEMAS · MSC DATA SCIENCE · MSC BUSINESS INTELLIGENCE</div></div>
+    <div class="step reveal reveal-2">
+      <h3>Inventariar integraciones</h3>
+      <p>Verificar cómo se accede a cada sistema: API, conector o exportación de archivos.</p>
     </div>
-    <div class="bcta"><h2>Siga explorando</h2><p style="margin-top:10px"><a href="/metodologia/">Cómo trabajamos: la metodología de entrega</a><br><a href="/nosotros/">Quién está detrás de Optimatiza</a><br><a href="/contacto/">Solicitar una evaluación ejecutiva</a></p></div>
-<div class="bcta">
-      <h2>¿Quiere una cifra seria para su proceso?</h2>
-      <p>Solicite una evaluación ejecutiva: se revisa el alcance, las integraciones y el volumen de su caso, y recibe una propuesta con una cifra justificada.</p>
-      <a class="btn-main" href="/contacto/">Solicitar evaluación ejecutiva →</a>
-      <p style="margin-top:10px"><a href="https://wa.me/50371928070?text=Hola%2C%20le%C3%AD%20el%20blog%20de%20optimatiza.com%20y%20quiero%20una%20evaluaci%C3%B3n%20ejecutiva." style="color:var(--live)">o escríbanos por WhatsApp →</a></p>
+    <div class="step reveal reveal-3">
+      <h3>Estimar el volumen</h3>
+      <p>Con datos de la operación, no con supuestos optimistas.</p>
     </div>
-    </main>
-    <footer class="bfoot">OPTIMATIZA · AGENTES DE IA & AUTOMATIZACIÓN · SAN SALVADOR · <a href="/" style="color:var(--steel)">optimatiza.com</a></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+    <div class="step reveal reveal-4">
+      <h3>Listar excepciones conocidas</h3>
+      <p>Y decidir cuáles maneja el agente y cuáles van a revisión humana.</p>
+    </div>
+    <div class="step reveal">
+      <h3>Registrar seguridad y cumplimiento</h3>
+      <p>Los requisitos aplicables a los datos que el proceso toca.</p>
+    </div>
+    <div class="step reveal reveal-2">
+      <h3>Definir operación y soporte</h3>
+      <p>El esquema posterior a la entrega, con responsables y ventanas de respuesta.</p>
+    </div>
+  </div>
+
+  <p>Con ese levantamiento, la cotización deja de ser una apuesta. Por eso en Optimatiza cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El resultado es una propuesta con alcance escrito, criterios de aceptación y supuestos explícitos: la organización sabe qué hace el agente, con qué datos se probará y qué pasa después de la entrega.</p>
+  <p>La evaluación también funciona como filtro en sentido inverso: si la tarea que se quiere automatizar consume unos minutos a la semana, ningún agente se justifica, y la conclusión correcta de la evaluación es decirlo antes de cotizar. Un proveedor que solo sabe concluir «sí, adelante» no está evaluando: está vendiendo.</p>
+  <div class="note"><b>Dónde encaja.</b> La evaluación de alcance es la primera fase de la <a href="/metodologia/">metodología de entrega</a>, y lo que produce —alcance escrito y criterios de aceptación— es lo que después permite verificar cada hito.</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Lista de verificación</p>
+  <h2>Señales de una cotización seria y señales de alarma</h2>
+  <p class="sec-sub">Tres indicios de que la propuesta se construyó sobre su proceso, y tres de que se construyó sobre el modelo de negocio del proveedor.</p>
+  <div class="cols2">
+    <div>
+      <h3>Señales de una cotización seria</h3>
+      <ul class="checks">
+        <li><b>La cifra llega después de las preguntas.</b> Si el proveedor cotizó sin entender el proceso, la cifra protege el margen del proveedor, no el proyecto del cliente.</li>
+        <li><b>Alcance y criterios de aceptación por escrito.</b> Qué hace el agente, con qué datos se prueba, qué queda fuera del alcance y bajo qué supuestos se estimó.</li>
+        <li><b>Costos recurrentes transparentados antes de firmar.</b> Licencias, consumo de servicios de IA y conectores premium se declaran en la propuesta, no aparecen en la primera factura.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Señales de alarma</h3>
+      <ul class="dots">
+        <li><b>Descubrimiento eterno facturable.</b> Semanas de «fase de diagnóstico» sin un entregable concreto. Para cualquier organización, entender el problema debería producir un alcance escrito, no otro proyecto.</li>
+        <li><b>Plataforma propietaria por defecto.</b> Si la operación ya vive en Microsoft 365, construir sobre Power Platform aprovecha licencias que ya se pagan y herramientas que el equipo conoce. Un proveedor que insiste en su propia plataforma con suscripción a perpetuidad puede estar resolviendo su propio modelo de negocio.</li>
+        <li><b>El megaproyecto de entrada.</b> «Automaticemos toda la empresa» es la ruta más rápida a un proyecto que nunca termina. La secuencia sensata: un agente que resuelva un dolor concreto, medir el resultado real y, con esa evidencia, decidir si escala. Riesgo acotado en cada paso.</li>
+      </ul>
+    </div>
+  </div>
+  <figure class="plate reveal">
+    <img src="/img/crew-inspecting.svg" alt="Un robot revisa un tablero de control para verificar cada punto antes de aprobar.">
+    <figcaption>La misma lista sirve para escribir una propuesta y para auditarla; por eso se publica.</figcaption>
+  </figure>
+</div></section>
+
+<section><div class="wrap">
+  <p class="sec-k">Preguntas frecuentes</p>
+  <h2>Preguntas frecuentes sobre la inversión en un agente de IA</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Por qué casi nadie publica precios de agentes de IA?</summary>
+      <p class="fa">Porque el esfuerzo real depende del alcance, y una cifra publicada sin conocer el proceso es marketing, no ingeniería. Los rangos genéricos que circulan en internet mezclan proyectos de alcances, integraciones y niveles de exigencia muy distintos, así que sirven de poco para presupuestar. Lo serio es evaluar el alcance primero y cotizar después.</p>
+    </details>
+    <details>
+      <summary>¿Un chatbot cuesta lo mismo que un agente que ejecuta acciones?</summary>
+      <p class="fa">No. Un chatbot que solo responde preguntas sobre documentos tiene un alcance acotado. Un agente que además ejecuta acciones —agendar, consultar el estado de un pedido, escalar a un humano— suma integraciones, manejo de excepciones y puntos de control, y eso mueve el esfuerzo. La diferencia no está en la etiqueta, sino en el alcance.</p>
+    </details>
+    <details>
+      <summary>¿Hay costos recurrentes después de la entrega?</summary>
+      <p class="fa">Depende del stack y del nivel de operación que el proceso exija. Sobre Microsoft Power Platform, buena parte corre con licencias de Microsoft 365 que muchas organizaciones ya pagan; algunos componentes tienen consumo propio. Todo costo recurrente se transparenta en la propuesta antes de firmar, junto con el esquema de soporte acordado.</p>
+    </details>
+    <details>
+      <summary>¿Cómo se llega a una cifra concreta?</summary>
+      <p class="fa">Cada proyecto se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El resultado es una propuesta con alcance escrito, criterios de aceptación y supuestos explícitos, de modo que la cifra tenga una justificación verificable.</p>
+    </details>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="sec-k">Siga explorando</p>
+  <h2>El siguiente paso</h2>
+  <p class="sec-sub">Ya están los seis factores y la lista de señales para leer cualquier propuesta. Lo que falta es aterrizarlos a su caso: qué proceso, qué sistemas, qué volumen y qué nivel de exigencia. Eso se resuelve con una evaluación ejecutiva, conducida directamente por Humberto Henríquez, fundador de Optimatiza (Ing. en Sistemas, MSc en Data Science, MSc en Business Intelligence). De ahí sale una propuesta con alcance escrito y una cifra justificada para el proceso concreto.</p>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Cómo trabajamos</h3>
+      <p>La metodología de entrega por fases, con hitos verificables desde las primeras semanas.</p>
+      <a class="link-more" href="/metodologia/">Ver la metodología →</a>
+    </div>
+    <div class="card reveal reveal-2">
+      <h3>Quién está detrás</h3>
+      <p>La firma, sus credenciales y el criterio con el que se decide qué automatizar y qué no.</p>
+      <a class="link-more" href="/nosotros/">Conocer la firma →</a>
+    </div>
+    <div class="card reveal reveal-3">
+      <h3>Qué se construye</h3>
+      <p>Agentes de IA gobernados, con supervisión humana y límites acordados antes de la tecnología.</p>
+      <a class="link-more" href="/agentes-ia/">Ver agentes de IA →</a>
+    </div>
+  </div>
+  <div class="note">Publicado por Humberto Henríquez, fundador de Optimatiza. Actualizado en agosto de 2026. Este documento no publica tarifas: cada proyecto se cotiza tras una evaluación de alcance.</div>
+</div></section>
+
+<section class="cta-band"><div class="wrap">
+  <h2>¿Quiere una cifra seria para su proceso?</h2>
+  <p class="sec-sub" style="margin:0 auto 6px">Solicite una evaluación ejecutiva: se revisa el alcance, las integraciones y el volumen de su caso, y recibe una propuesta con una cifra justificada.</p>
+  <div class="cta-row" style="justify-content:center">
+    <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
+</div></footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>

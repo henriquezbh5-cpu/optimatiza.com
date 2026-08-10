@@ -1,212 +1,440 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#F6F1E8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>9 procesos que su empresa puede automatizar hoy (2026) | Optimatiza</title>
-    <meta name="description" content="Cotizaciones, inventario, DTE, cobros y conciliación de pagos: 9 procesos que su empresa en El Salvador puede automatizar hoy, con demos en video y casos reales.">
-    <link rel="canonical" href="https://optimatiza.com/insights/nueve-procesos-automatizables/">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta property="og:title" content="9 procesos que su empresa puede automatizar hoy (2026) | Optimatiza">
-    <meta property="og:description" content="Cotizaciones, inventario, DTE, cobros y conciliación de pagos: 9 procesos que su empresa en El Salvador puede automatizar hoy, con demos en video y casos reales.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://optimatiza.com/insights/nueve-procesos-automatizables/">
-    <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
-    <meta property="og:locale" content="es_LA">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/vendor/phosphor/regular/style.subset.css">
-    <link rel="stylesheet" href="/styles.css?v=89df3582">
-    <style>
-      .bpage { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
-      .bnav { position: fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; gap:12px;
-        padding: 12px 24px; background: var(--paper-0); border-bottom: 1px solid var(--line); }
-      .bnav img { width: 36px; height: 36px; }
-      .bnav .w { font-weight:600; color: var(--ink); letter-spacing:.03em; }
-      .bnav .w b { color: var(--live); font-weight:600; }
-      .bnav .cta { margin-left:auto; font-family: var(--ff-mono); font-size: 11px; letter-spacing:.08em; text-transform:uppercase;
-        color:#12251F; background: var(--grad-ai); border-radius: 8px; padding: 8px 14px; }
-      .bkick { font-family: var(--ff-mono); font-size: var(--t-0); letter-spacing:.16em; color: var(--live); text-transform: uppercase; margin-bottom: 14px; }
-      article h1 { font-family: var(--ff-display); font-weight:400; font-size: var(--t-7); line-height:1.1; color: var(--ink); margin-bottom: 18px; }
-      article h2 { font-family: var(--ff-display); font-weight:400; font-size: var(--t-5); color: var(--ink); margin: 38px 0 12px; }
-      article h3 { font-size: var(--t-3); color: var(--ink); margin: 24px 0 8px; }
-      article p { margin: 12px 0; }
-      article ul, article ol { margin: 12px 0 12px 22px; }
-      article li { margin: 6px 0; }
-      article table { width:100%; border-collapse: collapse; margin: 18px 0; font-size: var(--t-2); }
-      article th { font-family: var(--ff-mono); font-size: var(--t-0); letter-spacing:.1em; text-transform: uppercase;
-        color: var(--ink-dim); text-align:left; padding: 9px 10px; border-bottom: 1px solid var(--line-strong); }
-      article td { padding: 9px 10px; border-bottom: 1px solid var(--line); }
-      article blockquote { border-left: 3px solid var(--live-bright); background: var(--node-bg);
-        border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 14px 0; color: var(--ink-700); }
-      article a { color: var(--steel); text-decoration: underline; }
-      .bmeta { font-family: var(--ff-mono); font-size: var(--t-0); letter-spacing:.1em; color: var(--ink-dim); margin-bottom: 34px; }
-      .bauthor { display:flex; gap:14px; align-items:center; margin: 44px 0 0; padding: 18px; background: var(--paper-1);
-        border: 1px solid var(--node-line); border-radius: 14px; }
-      .bauthor img { width: 52px; height: 52px; border-radius: 50%; }
-      .bauthor .n { color: var(--ink); font-weight:600; }
-      .bauthor .c { font-family: var(--ff-mono); font-size: 10.5px; letter-spacing:.06em; color: var(--ink-dim); }
-      .bcta { margin-top: 26px; padding: 26px; text-align:center; background: var(--paper-1);
-        border: 1px solid rgba(44,122,99,.35); border-radius: 16px; }
-      .bcta h2 { margin-top: 0 !important; }
-      .bcta a.btn-main { display:inline-block; margin-top: 12px; font-family: var(--ff-mono); font-size: 12px; letter-spacing:.06em;
-        text-transform: uppercase; color:#12251F; background: var(--grad-ai); border-radius: 10px; padding: 13px 22px; }
-      .bfoot { text-align:center; font-family: var(--ff-mono); font-size: var(--t-0); color: var(--ink-dim);
-        padding: 30px 20px 40px; border-top: 1px solid var(--line); margin-top: 50px; letter-spacing:.08em; }
-      .bcards { display:grid; gap: 16px; margin-top: 34px; }
-      .bcard { display:block; background: var(--paper-1); border: 1px solid var(--node-line); border-radius: 16px;
-        padding: 24px 26px; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
-      .bcard:hover { border-color: rgba(44,122,99,.5); box-shadow: var(--glow-teal), var(--shadow-card); transform: translateY(-2px); }
-      .bcard h2 { font-family: var(--ff-display); font-weight:400; font-size: var(--t-5); color: var(--ink); margin: 6px 0 8px; }
-      .bcard p { color: var(--ink-body); font-size: var(--t-2); }
-      .bcard .more { font-family: var(--ff-mono); font-size: 11px; letter-spacing:.08em; color: var(--live); text-transform: uppercase; }
-    </style>
-    <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"9 procesos que su empresa puede automatizar hoy (2026)","description":"Cotizaciones, inventario, DTE, cobros y conciliación de pagos: 9 procesos que su empresa en El Salvador puede automatizar hoy, con demos en video y casos reales.","datePublished":"2026-07-13","dateModified":"2026-08-02","inLanguage":"es","author":{"@type":"Person","name":"Humberto Henríquez"},"publisher":{"@id":"https://optimatiza.com/#org"},"mainEntityOfPage":"https://optimatiza.com/insights/nueve-procesos-automatizables/","image":"https://optimatiza.com/img/og-image.jpg"}
-</script>
-    <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Nueve procesos que su empresa puede automatizar | Optimatiza</title>
+  <meta name="description" content="Los nueve procesos administrativos y operativos que con mayor frecuencia justifican automatización, evaluados por volumen, costo del error y riesgo.">
+  <meta name="author" content="Optimatiza">
+  <link rel="canonical" href="https://optimatiza.com/insights/nueve-procesos-automatizables/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/corp.css?v=89dccb0d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nueve procesos que su empresa puede automatizar">
+  <meta property="og:description" content="Un mapa de los nueve procesos que con mayor frecuencia son candidatos a automatización, ordenados por volumen, costo del error y riesgo operativo.">
+  <meta property="og:image" content="https://optimatiza.com/img/og-image.jpg">
+  <meta property="og:url" content="https://optimatiza.com/insights/nueve-procesos-automatizables/">
+  <meta property="og:site_name" content="Optimatiza">
+  <meta property="og:locale" content="es_LA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nueve procesos que su empresa puede automatizar">
+  <meta name="twitter:description" content="Un mapa de los nueve procesos que con mayor frecuencia son candidatos a automatización, ordenados por volumen, costo del error y riesgo operativo.">
+  <meta name="twitter:image" content="https://optimatiza.com/img/og-image.jpg">
+  <script type="application/ld+json">
   {
-   "@type": "Question",
-   "name": "¿Cuánto cuesta automatizar un proceso en mi pyme?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "No hay una tarifa única porque no hay dos procesos iguales: cada proyecto se cotiza tras una evaluación de alcance, según complejidad, integraciones, volumen de operaciones, seguridad y soporte. El primer paso es una evaluación ejecutiva en optimatiza.com/contacto; con el alcance definido recibe una cotización concreta y, antes de decidir, puede ver los casos en video funcionando."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "¿Cuánto tiempo toma implementar una automatización?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Depende del proceso y de qué tan ordenada está su información hoy, así que no prometemos plazos genéricos. Primero armamos la demo gratuita con sus datos y con eso le damos una cotización con alcance y fecha concreta. Si un plazo no es realista, se lo decimos antes de empezar, no a medio camino."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "¿Qué pasa con la seguridad de mis datos?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Sus datos siguen siendo suyos y se usan únicamente para construir y operar su automatización; no se comparten ni se usan para otra cosa. El detalle de cómo los manejamos está publicado en optimatiza.com/seguridad-gobierno, para que lo revise antes de compartir cualquier información del negocio."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "¿Qué pasa si la automatización falla?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Todo sistema puede fallar; lo importante es que falle avisando. Las automatizaciones se diseñan con alertas y respaldo humano: si algo no procesa, recibe una alerta y el proceso puede seguir a mano mientras se corrige, sin perder información. La automatización le quita a su equipo el trabajo repetitivo, no el control."
-   }
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://optimatiza.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://optimatiza.com/insights/"},
+      {"@type": "ListItem", "position": 3, "name": "Nueve procesos que su empresa puede automatizar", "item": "https://optimatiza.com/insights/nueve-procesos-automatizables/"}
+    ]
   }
- ]
-}
-</script>
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"9 procesos que su empresa puede automatizar hoy (2026)","description":"Los nueve procesos administrativos y operativos que con mayor frecuencia justifican automatización, evaluados por volumen, costo del error y riesgo.","datePublished":"2026-07-13","dateModified":"2026-08-10","inLanguage":"es","author":{"@type":"Person","name":"Humberto Henríquez"},"publisher":{"@id":"https://optimatiza.com/#org"},"mainEntityOfPage":"https://optimatiza.com/insights/nueve-procesos-automatizables/","image":"https://optimatiza.com/img/og-image.jpg"}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta automatizar un proceso?",
+        "acceptedAnswer": {"@type": "Answer", "text": "No existe una tarifa única porque no hay dos procesos iguales: cada proyecto se cotiza tras una evaluación de alcance, según complejidad, integraciones, volumen de operaciones, seguridad y soporte. El primer paso es una evaluación ejecutiva; con el alcance definido, la dirección recibe una cotización concreta y puede revisar los casos en video antes de decidir."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo toma implementar una automatización?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Depende del proceso y del estado en que se encuentre la información hoy, así que no se prometen plazos genéricos. Primero se arma un piloto acotado con datos reales y sobre esa evidencia se entrega una cotización con alcance y fecha. Si un plazo no es realista, se advierte antes de empezar, no a medio camino."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa con la seguridad de los datos?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Los datos siguen siendo de la organización y se usan únicamente para construir y operar su automatización; no se comparten ni se destinan a otro fin. El detalle del tratamiento está publicado en la página de seguridad y gobierno, para revisarlo antes de compartir cualquier información de la operación."}
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué pasa si la automatización falla?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Todo sistema puede fallar; lo importante es que falle avisando. Las automatizaciones se diseñan con alertas y respaldo humano: si algo no procesa, se emite una alerta y el proceso puede continuar de forma manual mientras se corrige, sin perder información. La automatización le quita al equipo el trabajo repetitivo, no el control."}
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="bg-static">
-    <nav class="bnav">
-      <a href="/" style="display:flex;align-items:center;gap:10px"><img src="/img/logo-badge-96.png" alt=""><span class="w">Opti<b>matiza</b></span></a>
-      <a class="cta" href="/contacto/">Contacto</a>
+<body>
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<header class="chead"><div class="wrap cnav">
+  <a class="brand" href="/"><img src="/img/logo-badge-192.png" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
+  <div class="sp"></div>
+  <nav class="cnav-links" aria-label="Principal">
+    <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
+      <div class="dd-menu">
+        <a href="/automatizacion-empresarial/"><b>Automatización empresarial</b>Procesos completos, de punta a punta</a>
+        <a href="/agentes-ia/"><b>Agentes de IA</b>Gobernados, con supervisión humana</a>
+        <a href="/integracion-sistemas/"><b>Integración de sistemas</b>ERP, CRM, APIs y legacy</a>
+        <a href="/data-business-intelligence/"><b>Data &amp; Business Intelligence</b>Dashboards e indicadores</a>
+        <a href="/aplicaciones-empresariales/"><b>Aplicaciones empresariales</b>Portales y apps de proceso</a>
+        <a href="/operacion-administrada/"><b>Operación administrada</b>Monitoreo, soporte y mejora</a>
+      </div>
+    </div>
+    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <div class="dd-menu">
+        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
+        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
+        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
+        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
+        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
+      </div>
+    </div>
+    <a href="/industrias/">Industrias</a>
+    <a href="/casos/">Casos</a>
+    <a href="/metodologia/">Metodología</a>
+    <a href="/insights/">Insights</a>
+    <div class="dd"><button type="button" aria-haspopup="true">Empresa</button>
+      <div class="dd-menu">
+        <a href="/nosotros/">Nosotros</a>
+        <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+        <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </nav>
+  <details class="mnav">
+    <summary aria-label="Abrir menú">&#9776;</summary>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+      <span class="mh">Soluciones</span>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; Business Intelligence</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <span class="mh">Inteligencia competitiva</span>
+      <a href="/inteligencia-competitiva/">Visión general</a>
+      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
+      <span class="mh">Firma</span>
+      <a href="/industrias/">Industrias</a>
+      <a href="/casos/">Casos</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/insights/">Insights</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/contacto/">Contacto</a>
     </nav>
-    <main class="bpage">
-    <div class="bkick">BLOG · GUÍAS SIN HUMO</div>
-<article>
-<div class="bmeta">POR HUMBERTO HENRÍQUEZ · 2026-07-13 · OPTIMATIZA</div>
-<h1>9 procesos que su empresa puede automatizar hoy (2026)</h1>
+  </details>
+  <a class="cta-nav" href="/contacto/">Solicitar evaluación ejecutiva</a>
+</div></header>
 
-<p>Si dirige una empresa en El Salvador, seguramente conoce la escena: el vendedor armando una cotización en Excel con precios de hace tres meses, el asistente contable tecleando facturas una por una, alguien de RRHH sacando la planilla con la calculadora a la par y medio equipo contestando en WhatsApp las mismas veinte preguntas de siempre. Nada de eso hace crecer el negocio; solo lo mantiene a flote a punta de horas.</p>
-<p>La buena noticia es que automatizar procesos en una pyme ya no es cosa de grandes empresas con sistemas de seis cifras. Los nueve procesos de esta lista salen de dolores que se repiten en negocios como el suyo, y la mayoría tiene una demostración grabada: puede ver los <a href="/casos/">casos en video</a> funcionando antes de creerle a una sola línea de este artículo.</p>
-<p>Una advertencia honesta antes de empezar: no todo se debe automatizar, y ninguna automatización arregla un proceso que no existe. Pero si alguno de estos nueve dolores le suena, ahí hay horas y dinero que puede recuperar.</p>
+<main id="contenido">
+  <div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span>Nueve procesos que su empresa puede automatizar</nav></div>
 
-<h2>1. Cotizador Express: cotizaciones en minutos, no en horas</h2>
-<p>El dolor: cada cotización se arma a mano en Excel y sale con precios ya vencidos. Mientras su vendedor copia y pega, el cliente ya le compró al que contestó primero.</p>
-<p>Automatizado se ve así: el vendedor pide la cotización desde el celular o el sistema, y sale un PDF con el formato de su empresa y precios vigentes, tomados de un listado maestro que se actualiza en un solo lugar. Los precios viejos dejan de salir por descuido, y la cotización llega mientras el cliente todavía está decidiendo.</p>
-<p><strong>Para quién aplica:</strong> ferreterías, distribuidoras e importadoras.</p>
-
-<h2>2. Alerta de Stock: entérese antes que el cliente</h2>
-<p>El dolor: no sabe cuánto inventario tiene en realidad. Vende lo que no hay o se queda sin lo que más se mueve, y se entera cuando el cliente ya está enfrente.</p>
-<p>Automatizado se ve así: el sistema vigila el inventario y le avisa cuando un producto baja del mínimo que usted definió, con un resumen de lo que más rota. Compra a tiempo, deja de prometer lo que no tiene y las ventas dejan de perderse en silencio.</p>
-<p><strong>Para quién aplica:</strong> ferreterías e importadoras.</p>
-
-<h2>3. DTE sin Doble Digitación: del pedido al facturador sin volver a teclear</h2>
-<p>El dolor: el pedido ya existe en un sistema, pero alguien lo vuelve a digitar en el facturador para emitir el DTE. Cada dedo de por medio es un error posible y un rechazo esperando.</p>
-<p>Automatizado se ve así: los datos del pedido viajan solos al facturador electrónico y el DTE sale con la misma información, sin transcripción. Menos rechazos, menos correcciones y una persona que deja de hacer trabajo de fotocopiadora humana.</p>
-<p><strong>Para quién aplica:</strong> cualquier contribuyente que ya emite con facturador electrónico.</p>
-
-<h2>4. Recordatorio Anti-Inasistencia: agenda llena de gente que sí llega</h2>
-<p>El dolor: pacientes y clientes olvidan la cita, y cada hueco en la agenda es un ingreso perdido que nadie recupera.</p>
-<p>Automatizado se ve así: antes de cada cita sale un recordatorio automático por WhatsApp con opción de confirmar o reagendar. Los huecos se detectan con tiempo para llenarlos, y su recepcionista deja de pasar la mañana llamando uno por uno.</p>
-<p><strong>Para quién aplica:</strong> clínicas, veterinarias, talleres y gimnasios.</p>
-
-<h2>5. Facturas sin Digitar: la captura contable sin teclado</h2>
-<p>El dolor: el asistente contable transcribe cada factura a Excel, con errores de NIT, IVA y montos que aparecen justo cuando está cerrando el mes.</p>
-<p>Automatizado se ve así: la factura llega en foto, PDF o archivo electrónico, y el sistema extrae NIT, montos e IVA y los deja listos en su registro. La persona ya no digita: revisa, aprueba y solo se detiene en las excepciones. El cierre de mes deja de ser una cacería de errores. En el caso Capturista Digital, la captura de una factura toma alrededor de cuatro segundos, medido en el <a href="/casos/">video del caso</a>.</p>
-<p><strong>Para quién aplica:</strong> administración y contabilidad de cualquier pyme que recibe facturas de proveedores.</p>
-
-<h2>6. Planilla ISSS/AFP Automática: la quincena sin calculadora</h2>
-<p>El dolor: cada quincena alguien recalcula a mano ISSS, AFP, renta y horas extra en un Excel frágil que solo una persona entiende.</p>
-<p>Automatizado se ve así: el precálculo sale solo, aplicando las mismas reglas cada quincena, y RRHH pasa de teclear a revisar y aprobar. Y como la planilla es de lo más sensible que maneja un negocio, vale decirlo claro: cómo manejamos esa información está publicado en nuestra página de <a href="/seguridad-gobierno/">seguridad de datos</a>, para que la revise antes de compartir nada.</p>
-<p><strong>Para quién aplica:</strong> RRHH y nómina de cualquier empresa con planilla en El Salvador.</p>
-
-<h2>7. Cobrador Digital 24/7: seguimiento de cartera sin perseguir a nadie</h2>
-<p>El dolor: la cartera vencida crece porque nadie tiene tiempo de dar seguimiento factura por factura, y cobrar se vuelve un tema personal e incómodo.</p>
-<p>Automatizado se ve así: cada factura vencida recibe seguimiento por WhatsApp o correo según los días de mora, con mensajes cordiales que suben de tono poco a poco. Su equipo ya no persigue: atiende a quien respondió y a los casos que de verdad necesitan una llamada. Al sistema no se le olvida, no se cansa y no le da pena.</p>
-<p><strong>Para quién aplica:</strong> distribuidoras, servicios recurrentes y clínicas que dan crédito a sus clientes.</p>
-
-<h2>8. Agente de Preguntas Frecuentes: las mismas veinte respuestas, sin su equipo</h2>
-<p>El dolor: horarios, precios, ubicación, requisitos. Su equipo contesta las mismas veinte preguntas todo el día, y las contesta más lento justo cuando más ocupado está.</p>
-<p>Automatizado se ve así: un agente entrenado únicamente con la información de su negocio responde al instante en WhatsApp o en su web, a cualquier hora. Y cuando no tiene la respuesta, está configurado para pasar la conversación a una persona en lugar de inventar una. Su equipo queda libre para las conversaciones que sí venden.</p>
-<p><strong>Para quién aplica:</strong> comercios, servicios, educación y salud.</p>
-
-<h2>9. Conciliación de Pagos: que el banco y las facturas cuadren solos</h2>
-<p>El dolor: los pagos entran por pasarela, transferencia o depósito, y al cierre alguien cruza a mano el estado de cuenta contra las facturas para saber qué ya se pagó. Los pagos sin identificar se acumulan y la cartera nunca refleja la realidad.</p>
-<p>Automatizado se ve así: el sistema cruza los movimientos de la pasarela o del banco contra las facturas emitidas, marca lo que ya cuadró y deja una lista corta de excepciones para que una persona las revise. La conciliación deja de ser un trabajo de detective de fin de mes y la cartera muestra lo que de verdad está pendiente.</p>
-<p><strong>Para quién aplica:</strong> comercios y servicios que cobran por pasarela de pagos, transferencia o depósito bancario.</p>
-
-<h2>¿Por dónde empezar?</h2>
-<p>Por el proceso que más le duele, no por el más vistoso. Elija uno —el que le está costando ventas, tiempo o dolores de cabeza con Hacienda— y automatice eso primero. Una automatización funcionando vale más que diez en PowerPoint.</p>
-<p>Y esto es lo que ofrecemos, sin letra pequeña: la mayoría de estos procesos tiene <a href="/casos/">casos en video</a> para que los vea funcionando, no descritos bonito. Cada proyecto se cotiza tras una evaluación de alcance, según complejidad, integraciones, volumen, seguridad y soporte; el primer paso es agendar una <a href="/contacto/">evaluación ejecutiva</a>. Si prefiere estudiar el tema con calma, descargue la <a href="/recursos/">guía gratis</a>. Y antes de comprometerse, armamos una demo con datos de su negocio, para que decida viendo su propio caso y no una promesa.</p>
-
-<h2>Preguntas frecuentes</h2>
-<h3>¿Cuánto cuesta automatizar un proceso en mi pyme?</h3>
-<p>No hay una tarifa única porque no hay dos procesos iguales: cada proyecto se cotiza tras una evaluación de alcance, según complejidad, integraciones, volumen de operaciones, seguridad y soporte. El primer paso es una <a href="/contacto/">evaluación ejecutiva</a>; con el alcance definido recibe una cotización concreta y, antes de decidir, puede ver los <a href="/casos/">casos en video</a> funcionando.</p>
-<h3>¿Cuánto tiempo toma implementar una automatización?</h3>
-<p>Depende del proceso y de qué tan ordenada está su información hoy, así que no prometemos plazos genéricos. Primero armamos la demo gratuita con sus datos y con eso le damos una cotización con alcance y fecha concreta. Si un plazo no es realista, se lo decimos antes de empezar, no a medio camino.</p>
-<h3>¿Qué pasa con la seguridad de mis datos?</h3>
-<p>Sus datos siguen siendo suyos y se usan únicamente para construir y operar su automatización; no se comparten ni se usan para otra cosa. El detalle de cómo los manejamos está publicado en optimatiza.com/seguridad-gobierno, para que lo revise antes de compartir cualquier información del negocio.</p>
-<h3>¿Qué pasa si la automatización falla?</h3>
-<p>Todo sistema puede fallar; lo importante es que falle avisando. Las automatizaciones se diseñan con alertas y respaldo humano: si algo no procesa, recibe una alerta y el proceso puede seguir a mano mientras se corrige, sin perder información. La automatización le quita a su equipo el trabajo repetitivo, no el control.</p>
-</article>
-    <div class="share-row" style="justify-content:flex-start;margin-top:34px" role="group" aria-label="Compartir este artículo">
-      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foptimatiza.com%2Fblog%2Fautomatizar-procesos-pyme%2F" target="_blank" rel="noopener" aria-label="Compartir en Facebook"><i class="ph ph-facebook-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Foptimatiza.com%2Fblog%2Fautomatizar-procesos-pyme%2F" target="_blank" rel="noopener" aria-label="Compartir en LinkedIn"><i class="ph ph-linkedin-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://twitter.com/intent/tweet?text=9%20procesos%20que%20su%20empresa%20puede%20automatizar%20hoy%20%282026%29&amp;url=https%3A%2F%2Foptimatiza.com%2Fblog%2Fautomatizar-procesos-pyme%2F" target="_blank" rel="noopener" aria-label="Compartir en X"><i class="ph ph-twitter-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://api.whatsapp.com/send?text=9%20procesos%20que%20su%20empresa%20puede%20automatizar%20hoy%20%282026%29%20https%3A%2F%2Foptimatiza.com%2Fblog%2Fautomatizar-procesos-pyme%2F" target="_blank" rel="noopener" aria-label="Compartir por WhatsApp"><i class="ph ph-whatsapp-logo" aria-hidden="true"></i></a>
-      <a class="share-btn" href="https://t.me/share/url?url=https%3A%2F%2Foptimatiza.com%2Fblog%2Fautomatizar-procesos-pyme%2F&amp;text=9%20procesos%20que%20su%20empresa%20puede%20automatizar%20hoy%20%282026%29" target="_blank" rel="noopener" aria-label="Compartir por Telegram"><i class="ph ph-telegram-logo" aria-hidden="true"></i></a>
+  <!-- HERO -->
+  <div class="phero band"><div class="wrap">
+    <p class="kicker"><i></i>Insights · Automatización de procesos</p>
+    <h1>9 procesos que su empresa puede automatizar hoy (2026)</h1>
+    <p class="lead">La cotización que se arma a mano con una lista de precios desactualizada, las facturas de proveedores que alguien transcribe una por una, el precálculo de nómina en una hoja frágil que solo una persona entiende y un equipo que responde las mismas veinte consultas todo el día. Nada de eso hace crecer la operación: solo la sostiene <b>a fuerza de horas</b>.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+      <a class="btn-secondary" href="/casos/">Ver casos en video</a>
     </div>
-    <div class="bauthor">
-      <img src="/img/logo-badge-96.png" alt="">
-      <div><div class="n">Humberto Henríquez — Fundador, Optimatiza</div>
-      <div class="c">ING. EN SISTEMAS · MSC DATA SCIENCE · MSC BUSINESS INTELLIGENCE</div></div>
+  </div></div>
+
+  <!-- TESIS -->
+  <section><div class="wrap">
+    <p class="sec-k">La tesis</p>
+    <h2>Automatizar dejó de ser una decisión de infraestructura y pasó a ser una decisión de criterio</h2>
+    <p class="sec-sub">La pregunta ya no es si la tecnología existe, sino qué procesos justifican intervención y en qué orden se atienden.</p>
+    <div class="split">
+      <div>
+        <p>Los nueve procesos de esta lista se repiten en organizaciones de sectores distintos y de tamaños distintos, porque comparten la misma estructura: alto volumen, reglas estables y un costo del error que se paga aguas abajo, casi siempre en el cierre del mes o frente al cliente. La mayoría tiene una demostración grabada: la dirección puede revisar los <a href="/casos/">casos en video</a> funcionando antes de aceptar una sola línea de este artículo.</p>
+        <p>Una advertencia honesta antes de la lista: <b>no todo se debe automatizar, y ninguna automatización arregla un proceso que no existe</b>. Cuando las reglas cambian en cada ejecución, cuando nadie puede decir quién aprueba qué, o cuando el volumen es marginal, lo que corresponde primero es ordenar el proceso. Automatizar el desorden solo lo vuelve más rápido y más caro de corregir.</p>
+      </div>
+      <div class="reveal"><figure class="plate">
+        <img src="/img/crew-pipeline.svg" alt="Una cinta transportadora con piezas fluyendo entre estaciones de trabajo">
+        <figcaption>Un proceso se automatiza bien cuando ya se puede describir de punta a punta.</figcaption>
+      </figure></div>
     </div>
-    <div class="bcta"><h2>Siga explorando</h2><p style="margin-top:10px"><a href="/soluciones/">El portafolio de soluciones</a><br><a href="/casos/">Véalas funcionando en video</a><br><a href="/metodologia/">Conozca la metodología por fases</a></p></div>
-<div class="bcta">
-      <h2>¿Cuál de estos procesos le está costando más horas?</h2>
-      <p>El siguiente paso es una evaluación ejecutiva con el fundador, Humberto Henríquez (Ing. en Sistemas, MSc Data Science, MSc Business Intelligence). Cada proyecto se cotiza tras una evaluación de alcance, según complejidad, integraciones, volumen, seguridad y soporte.</p>
-      <a class="btn-main" href="/contacto/">Agendar evaluación ejecutiva →</a>
-      <p style="margin-top:10px"><a href="https://wa.me/50371928070?text=Hola%2C%20le%C3%AD%20el%20blog%20de%20optimatiza.com%20y%20quiero%20una%20evaluaci%C3%B3n%20ejecutiva." style="color:var(--live)">o escríbanos por WhatsApp →</a></p>
+  </div></section>
+
+  <!-- CRITERIOS -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Criterios de evaluación</p>
+    <h2>Tres preguntas que ordenan la lista antes de mirar la tecnología</h2>
+    <p class="sec-sub">Cada uno de los nueve procesos que siguen está descrito con estos tres criterios, que es como una dirección compara candidatos entre áreas distintas.</p>
+    <div class="cards">
+      <article class="card reveal">
+        <h3>Volumen</h3>
+        <p>Cuántas veces al mes ocurre el proceso y cuántas personas participan. El volumen convierte un ahorro pequeño por transacción en una cifra que la dirección reconoce, y es la variable más fácil de medir con los sistemas actuales.</p>
+      </article>
+      <article class="card reveal reveal-2">
+        <h3>Costo del error</h3>
+        <p>Qué se paga cuando el paso sale mal: un reproceso, una nota de crédito, un pago incorrecto, un cierre atrasado. Un proceso de bajo volumen puede seguir siendo prioritario si cada error cuesta caro o se descubre tarde.</p>
+      </article>
+      <article class="card reveal reveal-3">
+        <h3>Riesgo</h3>
+        <p>Exposición regulatoria, dependencia de una sola persona, información sensible o compromisos con clientes. El riesgo rara vez aparece en el caso de negocio y suele ser la razón por la que un proceso debe atenderse primero.</p>
+      </article>
     </div>
-    </main>
-    <footer class="bfoot">OPTIMATIZA · AGENTES DE IA & AUTOMATIZACIÓN · SAN SALVADOR · <a href="/" style="color:var(--steel)">optimatiza.com</a></footer>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script><!-- End Cloudflare Web Analytics -->
-<!-- GA4 --><script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script><!-- End GA4 -->
+  </div></section>
+
+  <!-- LOS NUEVE PROCESOS -->
+  <section><div class="wrap">
+    <p class="sec-k">El mapa</p>
+    <h2>Los nueve candidatos, uno por uno</h2>
+    <p class="sec-sub">Cada bloque describe la situación actual, cómo se ve el proceso una vez automatizado y su lectura por volumen, costo del error y riesgo. Ábralos según le interese.</p>
+    <div class="explore">
+      <details open>
+        <summary><i>01</i><b>Cotización comercial con precios vigentes</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> Cada cotización se arma a mano en una hoja de cálculo y sale con precios que ya vencieron. Mientras el vendedor copia y pega, el cliente ya compró a quien respondió primero.</p>
+          <p><b>Automatizado.</b> El vendedor solicita la cotización desde el sistema o desde el teléfono y se genera un documento con el formato de la empresa y precios tomados de un listado maestro que se actualiza en un solo lugar. Los precios vencidos dejan de salir por descuido y la propuesta llega mientras el cliente todavía está decidiendo.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Decenas o cientos de cotizaciones al mes por vendedor.</li>
+            <li><b>Costo del error.</b> Margen cedido por un precio desactualizado, o un compromiso que la operación no puede cumplir.</li>
+            <li><b>Riesgo.</b> Oportunidades perdidas por tiempo de respuesta, sin registro de por qué se perdieron.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Áreas comerciales de distribución, importación y manufactura, con listas de precios que cambian.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>02</i><b>Alerta de inventario y punto de reposición</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> La existencia real no coincide con la del sistema. Se vende lo que no hay o se agota lo que más rota, y la dirección se entera cuando el cliente ya está en el mostrador o el pedido ya está confirmado.</p>
+          <p><b>Automatizado.</b> El sistema vigila las existencias y avisa cuando un artículo baja del mínimo definido, con el detalle de rotación que respalda la decisión de compra. Se compra a tiempo, se deja de prometer lo que no hay y las ventas dejan de perderse en silencio.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Cientos o miles de artículos vigilados a diario, todos los días del año.</li>
+            <li><b>Costo del error.</b> Quiebre de existencias, venta perdida y, en el extremo opuesto, capital de trabajo inmovilizado en lo que no rota.</li>
+            <li><b>Riesgo.</b> Incumplimiento de compromisos de entrega y deterioro de la relación comercial.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Distribución, comercio y manufactura con inventario propio.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>03</i><b>Facturación electrónica sin doble digitación</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> El pedido ya existe en un sistema, pero alguien lo vuelve a digitar en el facturador para emitir el documento tributario electrónico. Cada transcripción intermedia es un error posible y un rechazo esperando.</p>
+          <p><b>Automatizado.</b> Los datos del pedido viajan al facturador electrónico y el documento se emite con la misma información de origen, sin transcripción. Menos rechazos, menos correcciones y una persona que deja de mover datos entre pantallas para dedicarse a las excepciones.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Cada pedido facturado; en operaciones medianas, miles de documentos al mes.</li>
+            <li><b>Costo del error.</b> Rechazos, notas de crédito, reprocesos y clientes que reclaman su documento.</li>
+            <li><b>Riesgo.</b> Cumplimiento tributario y trazabilidad entre el pedido, el despacho y el documento emitido.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Toda organización que ya emite con facturación electrónica. Ver <a href="/integracion-sistemas/">integración de sistemas</a>.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>04</i><b>Confirmación de citas y ocupación de agenda</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> Los clientes olvidan la cita y cada hueco en la agenda es capacidad instalada que se pagó y no se facturó. Nadie recupera esas horas al final del mes.</p>
+          <p><b>Automatizado.</b> Antes de cada cita se envía un recordatorio con opción de confirmar o reagendar, y las cancelaciones se detectan con tiempo suficiente para reasignar el espacio. La recepción deja de dedicar la mañana a llamar uno por uno.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Cientos de citas por semana en operaciones con agenda cargada.</li>
+            <li><b>Costo del error.</b> Cada inasistencia es una hora de capacidad perdida que no se recupera.</li>
+            <li><b>Riesgo.</b> Subutilización sostenida de personal y equipo, difícil de ver sin medición.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Organizaciones que venden capacidad por cita o por turno: servicios profesionales, salud y mantenimiento programado.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>05</i><b>Captura de facturas de proveedores</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> El asistente contable transcribe cada factura a una hoja de cálculo, con diferencias de identificación tributaria, impuesto y montos que aparecen justo cuando se está cerrando el mes.</p>
+          <p><b>Automatizado.</b> La factura llega en fotografía, PDF o archivo electrónico, y el sistema extrae los datos fiscales, los montos y el impuesto, y los deja listos en el registro. La persona ya no digita: revisa, aprueba y se detiene solo en las excepciones. En el caso Capturista Digital, la captura de una factura toma alrededor de cuatro segundos, medido en el <a href="/casos/">video del caso</a>.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Cientos o miles de documentos por cierre contable.</li>
+            <li><b>Costo del error.</b> Diferencias detectadas tarde, cuando corregirlas obliga a rehacer conciliaciones y declaraciones.</li>
+            <li><b>Riesgo.</b> Cierre contable atrasado y hallazgos de auditoría sobre documentación de respaldo.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Administración y contabilidad de cualquier organización que recibe facturas de proveedores.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>06</i><b>Precálculo de nómina y compensación variable</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> Cada período de pago alguien recalcula a mano deducciones, horas extra e incentivos en una hoja frágil que solo una persona entiende y que nadie más puede auditar.</p>
+          <p><b>Automatizado.</b> El precálculo se genera aplicando las mismas reglas en cada período, con el detalle de cómo se llegó a cada cifra, y el área de gente pasa de teclear a revisar y aprobar. Por tratarse de la información más sensible que administra una organización, conviene decirlo con claridad: el tratamiento de esos datos está publicado en <a href="/seguridad-gobierno/">seguridad y gobierno</a>, para revisarlo antes de compartir nada.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Toda la plantilla, en cada período de pago del año.</li>
+            <li><b>Costo del error.</b> Pagos incorrectos, reclamos del personal y ajustes retroactivos que consumen semanas.</li>
+            <li><b>Riesgo.</b> Información altamente sensible y dependencia de una sola persona que conoce la hoja.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Dirección de gente y compensaciones, en cualquier organización con planilla propia.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>07</i><b>Seguimiento de cartera y cobranza</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> La cartera vencida crece porque nadie tiene tiempo de dar seguimiento factura por factura, y el cobro termina dependiendo de la disposición personal de quien llama.</p>
+          <p><b>Automatizado.</b> Cada factura vencida recibe seguimiento por mensajería o correo según los días de mora, con secuencias cordiales que escalan de forma gradual y quedan registradas. El equipo deja de perseguir: atiende a quien respondió y los casos que de verdad requieren una llamada. Al sistema no se le olvida, no se cansa y no evita la conversación incómoda.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Toda la cartera abierta, revisada todos los días.</li>
+            <li><b>Costo del error.</b> Días de rotación de cuentas por cobrar y capital de trabajo detenido en facturas que nadie recordó.</li>
+            <li><b>Riesgo.</b> Deterioro de cartera y, si el tono se maneja mal, deterioro de la relación con el cliente.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Distribución, servicios recurrentes y toda organización que otorga crédito. Ver <a href="/cobranza-automatizada/">cobranza automatizada</a>.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>08</i><b>Atención de consultas repetitivas de primer nivel</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> Horarios, disponibilidad, ubicación, requisitos. El equipo responde las mismas veinte preguntas todo el día, y las responde más lento justo en las horas de mayor demanda.</p>
+          <p><b>Automatizado.</b> Un agente cuyo alcance se limita a la información de la organización responde al instante por mensajería o en el sitio web, a cualquier hora. Cuando no tiene la respuesta, está configurado para transferir la conversación a una persona en lugar de improvisar una. El equipo queda disponible para las conversaciones que sí avanzan una venta.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Consultas continuas durante toda la jornada, concentradas en pocas preguntas.</li>
+            <li><b>Costo del error.</b> Una respuesta incorrecta compromete a la empresa; por eso el alcance se cierra y el escalamiento es obligatorio.</li>
+            <li><b>Riesgo.</b> Reputacional. Se mitiga con fuentes propias, límites explícitos y supervisión humana. Ver <a href="/agentes-ia/">agentes de IA</a>.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Comercio, servicios, educación y salud, en el primer nivel de atención.</p>
+        </div>
+      </details>
+      <details>
+        <summary><i>09</i><b>Conciliación de pagos contra facturas emitidas</b></summary>
+        <div class="ex-body">
+          <p><b>Situación actual.</b> Los pagos entran por pasarela, transferencia o depósito, y al cierre alguien cruza a mano el estado de cuenta contra las facturas para saber qué se pagó. Los pagos sin identificar se acumulan y la cartera nunca refleja la realidad.</p>
+          <p><b>Automatizado.</b> El sistema cruza los movimientos de la pasarela o del banco contra las facturas emitidas, marca lo que ya cuadró y deja una lista corta de excepciones para revisión humana. La conciliación deja de ser una investigación de fin de mes y la cartera muestra lo que de verdad está pendiente.</p>
+          <ul class="dots">
+            <li><b>Volumen.</b> Todos los movimientos bancarios y de pasarela del período.</li>
+            <li><b>Costo del error.</b> Pagos no identificados, clientes cobrados dos veces y cifras de cartera que no se pueden defender.</li>
+            <li><b>Riesgo.</b> Decisiones de crédito y de flujo tomadas sobre información desactualizada.</li>
+          </ul>
+          <p><b>Dónde aplica.</b> Organizaciones que cobran por pasarela de pagos, transferencia o depósito bancario.</p>
+        </div>
+      </details>
+    </div>
+  </div></section>
+
+  <!-- POR DÓNDE EMPEZAR -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Priorización</p>
+    <h2>¿Por dónde empezar?</h2>
+    <div class="split">
+      <div>
+        <p>Por el proceso que más cuesta, no por el más visible. Al ordenar los nueve candidatos con los tres criterios anteriores, casi siempre uno queda arriba por una distancia clara: alto volumen, error caro y riesgo concentrado en pocas personas. Ese es el primero, aunque no sea el que más se luce en una presentación.</p>
+        <ul class="checks">
+          <li>Un proceso a la vez, con alcance acotado y criterios de éxito por escrito.</li>
+          <li>Datos reales en el piloto, no ejemplos de demostración.</li>
+          <li>La operación actual sigue funcionando durante toda la implementación.</li>
+          <li>Si el piloto no cumple lo acordado, no se escala: se documenta y se decide con evidencia.</li>
+        </ul>
+        <p>Una automatización funcionando vale más que diez descritas en una presentación. Esa secuencia está detallada en la <a href="/metodologia/">metodología por fases</a>.</p>
+      </div>
+      <div class="reveal"><figure class="plate">
+        <img src="/img/crew-inspecting.svg" alt="Un robot revisa un tablero de indicadores para priorizar el siguiente proceso">
+        <figcaption>La prioridad se sustenta con cifras de la operación, no con impresiones.</figcaption>
+      </figure></div>
+    </div>
+    <p class="note">Este artículo lo escribe Humberto Henríquez, fundador de Optimatiza: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence, con más de 8 años en operaciones empresariales. <a class="link-more" href="/nosotros/">Conocer la firma</a></p>
+  </div></section>
+
+  <!-- FAQ -->
+  <section><div class="wrap">
+    <p class="sec-k">Preguntas frecuentes</p>
+    <h2>Lo que la dirección pregunta antes de empezar</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Cuánto cuesta automatizar un proceso?</summary>
+        <p class="fa">No existe una tarifa única porque no hay dos procesos iguales: cada proyecto se cotiza tras una evaluación de alcance, según complejidad, integraciones, volumen de operaciones, seguridad y soporte. El primer paso es una <a href="/contacto/">evaluación ejecutiva</a>; con el alcance definido, la dirección recibe una cotización concreta y puede revisar los <a href="/casos/">casos en video</a> antes de decidir.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo toma implementar una automatización?</summary>
+        <p class="fa">Depende del proceso y del estado en que se encuentre la información hoy, así que no se prometen plazos genéricos. Primero se arma un piloto acotado con datos reales y sobre esa evidencia se entrega una cotización con alcance y fecha. Si un plazo no es realista, se advierte antes de empezar, no a medio camino.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa con la seguridad de los datos?</summary>
+        <p class="fa">Los datos siguen siendo de la organización y se usan únicamente para construir y operar su automatización; no se comparten ni se destinan a otro fin. El detalle del tratamiento está publicado en <a href="/seguridad-gobierno/">seguridad y gobierno</a>, para revisarlo antes de compartir cualquier información de la operación.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si la automatización falla?</summary>
+        <p class="fa">Todo sistema puede fallar; lo importante es que falle avisando. Las automatizaciones se diseñan con alertas y respaldo humano: si algo no procesa, se emite una alerta y el proceso puede continuar de forma manual mientras se corrige, sin perder información. La automatización le quita al equipo el trabajo repetitivo, no el control.</p>
+      </details>
+    </div>
+  </div></section>
+
+  <!-- SEGUIR EXPLORANDO -->
+  <section class="band"><div class="wrap">
+    <p class="sec-k">Seguir explorando</p>
+    <h2>Material relacionado</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <h3><a href="/soluciones/">El portafolio de soluciones</a></h3>
+        <p>Qué se construye en cada frente: automatización de procesos, agentes de IA, integración de sistemas, Business Intelligence y operación administrada.</p>
+      </article>
+      <article class="card reveal reveal-2">
+        <h3><a href="/casos/">Casos en video</a></h3>
+        <p>Los procesos de esta lista funcionando con datos reales, grabados de punta a punta, para revisarlos antes de cualquier compromiso.</p>
+      </article>
+      <article class="card reveal reveal-3">
+        <h3><a href="/recursos/">Publicaciones descargables</a></h3>
+        <p>Guías y materiales de referencia para estudiar el tema con calma dentro de la organización, antes de convocar una conversación.</p>
+      </article>
+    </div>
+  </div></section>
+
+  <!-- CTA FINAL -->
+  <section><div class="wrap">
+    <div class="cta-band">
+      <span class="ck">Próximo paso</span>
+      <h2>¿Cuál de estos nueve procesos consume más horas en su operación?</h2>
+      <p>La evaluación ejecutiva revisa los procesos candidatos con sus cifras y devuelve una priorización por volumen, costo del error y riesgo. Sin costo ni compromiso, en horario hábil de El Salvador (GMT-6).</p>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
+    </div>
+  </div></section>
+</main>
+
+<footer class="cfoot"><div class="wrap">
+  <div class="fg">
+    <div>
+      <div class="fbrand"><img src="/img/logo-badge-96.png" alt="">Optimatiza</div>
+      <p style="max-width:36ch">Firma de automatización empresarial e inteligencia competitiva para organizaciones de Latinoamérica y Estados Unidos.</p>
+    </div>
+    <div><b>Soluciones</b>
+      <a href="/automatizacion-empresarial/">Automatización empresarial</a>
+      <a href="/agentes-ia/">Agentes de IA</a>
+      <a href="/integracion-sistemas/">Integración de sistemas</a>
+      <a href="/data-business-intelligence/">Data &amp; BI</a>
+      <a href="/aplicaciones-empresariales/">Aplicaciones empresariales</a>
+      <a href="/operacion-administrada/">Operación administrada</a>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
+      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
+      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
+      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
+      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
+    </div>
+    <div><b>Firma</b>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/metodologia/">Metodología</a>
+      <a href="/seguridad-gobierno/">Seguridad y gobierno</a>
+      <a href="/responsabilidad-ia/">Responsabilidad de IA</a>
+      <a href="/casos/">Casos</a>
+      <a href="/industrias/">Industrias</a>
+      <a href="/insights/">Insights</a>
+    </div>
+    <div><b>Recursos y legal</b>
+      <a href="/recursos/">Publicaciones</a>
+      <a href="/contacto/">Contacto</a>
+      <a href="/privacidad/">Privacidad</a>
+      <a href="/terminos/">Términos</a>
+      <a href="/cookies/">Cookies</a>
+    </div>
+  </div>
+  <div class="copy">© 2026 Optimatiza™ · San Salvador, El Salvador · <a href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a></div>
+</div></footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9Q41BJNY8"></script><script src="/ga-init.js?v=81b1c421" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3d40fc8fd6fb447381b08c397e94ec14"}'></script>
+<script src="/interact.js?v=c47c7829" defer></script>
+<script src="/chat-agent.js?v=60f6bfac" defer></script>
 </body>
 </html>
