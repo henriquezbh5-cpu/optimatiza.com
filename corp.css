@@ -708,3 +708,30 @@ section.forest .nova .nova-bot{filter:drop-shadow(0 10px 22px rgba(0,0,0,.4))}
   .nova .nova-orb{opacity:.7}
   .nova .nova-esc:hover .nova-bot{transform:none !important;transition:none}
 }
+
+/* --- NOVA con los conectores reales encima de los paneles del render --- */
+.nova-tec-esc .nova-esc{position:relative}
+.nova-tec{position:absolute;z-index:4;left:var(--x);top:var(--y);
+  transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:4px;
+  pointer-events:none;opacity:0;
+  animation:nova-tec-on 9s ease-in-out infinite;
+  animation-delay:calc(var(--i) * .7s)}
+.nova-tec svg{width:clamp(16px,2.4vw,26px);height:auto;display:block;
+  filter:drop-shadow(0 2px 5px rgba(24,63,53,.28))}
+.nova-tec b{font-size:clamp(8px,1.05vw,11.5px);font-weight:700;letter-spacing:.01em;
+  color:var(--ink);background:var(--panel);border:1px solid var(--line);
+  border-radius:6px;padding:1px 6px;white-space:nowrap;line-height:1.5}
+section.forest .nova-tec b{color:#F6F1E8;background:rgba(24,63,53,.85);
+  border-color:rgba(246,241,232,.22)}
+@keyframes nova-tec-on{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.82)}
+  8%{opacity:1;transform:translate(-50%,-50%) scale(1.06)}
+  14%,80%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  92%,100%{opacity:0;transform:translate(-50%,-50%) scale(.9)}}
+@media(max-width:560px){.nova-tec b{display:none}}
+@media (prefers-reduced-motion: reduce){
+  .nova-tec{animation:none !important;opacity:1 !important;
+    transform:translate(-50%,-50%) !important}}
+
+.nova-tec-esc .nova-marco{position:relative;display:inline-block;max-width:100%;line-height:0}
+.nova-tec-esc .nova-esc{text-align:center}
