@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url><loc>https://optimatiza.com/</loc><lastmod>2026-08-06</lastmod></url>
   <url><loc>https://optimatiza.com/dossier/</loc><lastmod>2026-08-07</lastmod></url>
   <url><loc>https://optimatiza.com/automatizacion-empresarial/</loc><lastmod>2026-08-01</lastmod></url>
@@ -24,7 +25,20 @@
   <url><loc>https://optimatiza.com/cookies/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://optimatiza.com/privacidad/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://optimatiza.com/terminos/</loc><lastmod>2026-08-01</lastmod></url>
-  <url><loc>https://optimatiza.com/casos/</loc><lastmod>2026-08-01</lastmod></url>
+  <url>
+    <loc>https://optimatiza.com/casos/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://optimatiza.com/casos/videos/capturista-finanzas-60s.jpg</video:thumbnail_loc>
+      <video:title>Capturista Digital de facturas: grabación del sistema real</video:title>
+      <video:description>Grabación sin cortes del Capturista Digital: una factura fotografiada por WhatsApp se extrae con IA de visión, se valida y queda registrada en una hoja de cálculo en aproximadamente 4 segundos.</video:description>
+      <video:content_loc>https://optimatiza.com/casos/videos/capturista-finanzas-60s.mp4</video:content_loc>
+      <video:duration>59</video:duration>
+      <video:publication_date>2026-07-13T09:00:00-06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
   <url><loc>https://optimatiza.com/agente-ia-whatsapp/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://optimatiza.com/cobranza-automatizada/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://optimatiza.com/procesamiento-automatico-facturas/</loc><lastmod>2026-08-01</lastmod></url>
