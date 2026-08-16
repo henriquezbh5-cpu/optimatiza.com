@@ -45,32 +45,32 @@
       {
         "@type": "Question",
         "name": "¿Power Automate está incluido si la organización ya paga Microsoft 365?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Parcialmente. La mayoría de licencias de Microsoft 365 incluyen las capacidades estándar de Power Automate con límites de uso. Los conectores premium, el RPA desatendido y la capacidad de ejecución adicional requieren planes de pago por usuario. Determinar qué incluye exactamente el licenciamiento vigente es una de las verificaciones que se hacen con el área de TI durante la evaluación ejecutiva, antes de fijar el alcance."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Parcialmente. La mayoría de licencias de Microsoft 365 incluyen las capacidades estándar con límites de uso; conectores premium, RPA desatendido y capacidad adicional requieren planes de pago por usuario. El detalle se verifica con el área de TI en la evaluación ejecutiva."}
       },
       {
         "@type": "Question",
         "name": "¿n8n es de uso libre?",
-        "acceptedAnswer": {"@type": "Answer", "text": "n8n se distribuye bajo una licencia fair-code (Sustainable Use License): puede alojarse en servidores propios sin pagar licencia para el uso interno de la organización. No es gratuito en términos de costo total: se paga la infraestructura y se requiere quien la administre, actualice y respalde. Existe además n8n Cloud, una versión administrada por suscripción mensual."}
+        "acceptedAnswer": {"@type": "Answer", "text": "n8n se distribuye bajo una licencia fair-code (Sustainable Use License): puede alojarse en servidores propios sin pagar licencia para uso interno. No es gratuito en costo total: se paga la infraestructura y quien la administre. Existe además n8n Cloud, por suscripción mensual."}
       },
       {
         "@type": "Question",
         "name": "¿Qué conviene a una organización que no usa Microsoft 365?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Por lo general n8n. Sin Microsoft 365 se pierde la principal ventaja de Power Automate, la integración nativa con Outlook, Teams y SharePoint, y el licenciamiento por usuario pesa más en el costo total. n8n se conecta a Google Workspace, canales de mensajería, CRM, ERP y cualquier API, y autoalojado no cobra por ejecución. La respuesta definitiva depende del inventario concreto de sistemas y del volumen."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Por lo general n8n. Sin Microsoft 365 se pierde la integración nativa con Outlook, Teams y SharePoint, y el licenciamiento por usuario pesa más. n8n conecta Google Workspace, mensajería, CRM, ERP y cualquier API, y autoalojado no cobra por ejecución; la respuesta final depende del inventario y del volumen."}
       },
       {
         "@type": "Question",
         "name": "¿Pueden convivir Power Automate y n8n en la misma organización?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Sí, y es un patrón de arquitectura frecuente: Power Automate para lo que vive dentro de Microsoft 365, como aprobaciones, SharePoint, Teams y correo, y n8n para integraciones por API, alto volumen de ejecuciones y flujos de agentes. Ambas se comunican por webhooks o APIs. La condición es que el criterio de asignación quede documentado."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, es un patrón de arquitectura frecuente: Power Automate para lo que vive en Microsoft 365 —aprobaciones, SharePoint, Teams, correo— y n8n para APIs, alto volumen y agentes. Se comunican por webhooks o APIs; el criterio de asignación debe quedar documentado."}
       },
       {
         "@type": "Question",
         "name": "¿n8n sirve para automatizar pantallas de Windows sin API?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No. n8n automatiza a través de APIs y webhooks. Si el proceso exige operar una aplicación Windows que no expone API, la pieza indicada es Power Automate Desktop u otra herramienta de RPA, que puede convivir con n8n dentro del mismo proceso."}
+        "acceptedAnswer": {"@type": "Answer", "text": "No. n8n automatiza por APIs y webhooks. Para una aplicación Windows sin API, la pieza indicada es Power Automate Desktop u otra herramienta de RPA, que puede convivir con n8n en el mismo proceso."}
       },
       {
         "@type": "Question",
         "name": "¿Cómo se dimensiona un proyecto con cualquiera de las dos?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Los alcances no dependen de la plataforma: proceso acotado, proceso con integraciones y proceso de punta a punta por fases, con la operación administrada contratada aparte. La entrega es por hitos verificables y cada programa se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Los alcances no dependen de la plataforma: proceso acotado, con integraciones o de punta a punta por fases, con la operación administrada aparte. Cada programa se cotiza tras una evaluación de alcance y se entrega por hitos verificables."}
       }
     ]
   }
@@ -143,7 +143,7 @@
 <div class="phero band"><div class="wrap">
   <p class="kicker"><i></i> Para dirección de TI y arquitectura</p>
   <h1>Power Automate frente a n8n: criterio de arquitectura, no preferencia de herramienta</h1>
-  <p class="lead"><b>La decisión no se gana en una demostración: se gana en el licenciamiento, en dónde residen los datos, en el volumen de ejecuciones y en quién queda a cargo del servidor.</b> Esta comparativa pone lado a lado los ocho criterios que un comité de tecnología revisa antes de aprobar una plataforma de automatización, e incluye los escenarios donde cada una pierde.</p>
+  <p class="lead"><b>La decisión se gana en el licenciamiento, la residencia de los datos, el volumen y quién administra el servidor.</b> Ocho criterios que un comité de tecnología revisa antes de aprobar, con los escenarios donde cada plataforma pierde.</p>
   <div class="cta-row">
     <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
     <a class="btn-secondary" href="/automatizacion-empresarial/">Ver la práctica de automatización</a>
@@ -153,19 +153,19 @@
 <section><div class="wrap">
   <span class="sec-k">Lectura rápida</span>
   <h2>Las tres salidas posibles de esta comparación</h2>
-  <p class="sec-sub">Ninguna de las dos plataformas domina en todos los criterios. La pregunta útil no es cuál es mejor, sino cuál sostiene mejor cada proceso de su organización con el licenciamiento, la gobernanza y el volumen que ese proceso ya tiene.</p>
+  <p class="sec-sub">Ninguna domina en todos los criterios: la pregunta útil es cuál sostiene mejor cada proceso.</p>
   <div class="cards">
     <div class="card reveal">
       <h3>Power Automate</h3>
-      <p>La operación diaria vive en Microsoft 365 —Outlook, Teams, SharePoint, Excel— y el área de TI exige control formal sobre quién conecta qué. La integración es nativa y una parte del licenciamiento ya está sostenida.</p>
+      <p>La operación vive en Microsoft 365 —Outlook, Teams, SharePoint, Excel— y TI exige control formal. Integración nativa y licenciamiento en parte ya sostenido.</p>
     </div>
     <div class="card reveal reveal-2">
       <h3>n8n</h3>
-      <p>La organización no se apoya en Microsoft 365, integra APIs heterogéneas o ejecuta procesos con volumen alto. Alojado en infraestructura propia no cobra por ejecución y conecta cualquier sistema que exponga API.</p>
+      <p>Sin dependencia de Microsoft 365, con APIs heterogéneas o volumen alto. Autoalojado no cobra por ejecución y conecta cualquier sistema con API.</p>
     </div>
     <div class="card reveal reveal-3">
       <h3>Las dos, por proceso</h3>
-      <p>Es un escenario frecuente en organizaciones con oficina en Microsoft 365 y a la vez sistemas externos, alto volumen o agentes de IA. No es una guerra de plataformas: es asignar a cada proceso la pieza que le cuesta menos y le queda mejor. La firma implementa ambas.</p>
+      <p>Oficina en Microsoft 365 más sistemas externos, alto volumen o agentes de IA: cada proceso recibe la pieza que le cuesta menos. La firma implementa ambas.</p>
     </div>
   </div>
 </div></section>
@@ -173,7 +173,7 @@
 <section class="band" id="comparativa"><div class="wrap">
   <span class="sec-k">Comparativa técnica</span>
   <h2>Criterio por criterio, con los puntos débiles incluidos</h2>
-  <p class="sec-sub">Ocho criterios que determinan el costo total y el riesgo operativo de la plataforma, no su atractivo en pantalla. Cada celda declara también la contrapartida: dónde esa opción cobra el precio de su ventaja.</p>
+  <p class="sec-sub">Ocho criterios que determinan el costo total y el riesgo operativo, con la contrapartida de cada ventaja.</p>
   <div class="tbl-wrap">
     <table class="tbl">
       <thead>
@@ -182,66 +182,66 @@
       <tbody>
         <tr>
           <td><b>Licenciamiento y costo típico</b></td>
-          <td>Las capacidades estándar están incluidas en la mayoría de licencias de Microsoft 365. Los conectores premium, el RPA y la capacidad adicional requieren un <b>plan de pago por usuario</b> según la lista pública de Microsoft. El costo escala con cada usuario que ejecuta flujos premium.</td>
-          <td>Licencia fair-code (Sustainable Use License): <b>alojado en infraestructura propia no tiene costo de licencia</b> para uso interno de la organización; el gasto es el servidor y su administración. Existe además n8n Cloud por suscripción, sin infraestructura a cargo del cliente.</td>
+          <td>Capacidades estándar incluidas en la mayoría de licencias de Microsoft 365. Conectores premium, RPA y capacidad adicional requieren <b>plan de pago por usuario</b>; el costo escala con cada usuario premium.</td>
+          <td>Licencia fair-code (Sustainable Use License): <b>autoalojado sin costo de licencia</b> para uso interno; el gasto es el servidor y su administración. Existe n8n Cloud por suscripción.</td>
         </tr>
         <tr>
           <td><b>Hosting</b></td>
-          <td><b>SaaS en la nube de Microsoft.</b> Nada que instalar ni mantener; disponibilidad y actualizaciones corren por cuenta de Microsoft. Los datos transitan por la nube de Microsoft.</td>
-          <td><b>Autoalojado</b> —servidor propio, nube privada o Docker— o n8n Cloud. Autoalojado da control total sobre dónde residen los datos, pero alguien debe actualizar, respaldar y vigilar ese servidor.</td>
+          <td><b>SaaS en la nube de Microsoft.</b> Nada que instalar ni mantener; los datos transitan por la nube de Microsoft.</td>
+          <td><b>Autoalojado</b> —servidor propio, nube privada o Docker— o n8n Cloud. Control total sobre los datos, pero alguien debe actualizar, respaldar y vigilar el servidor.</td>
         </tr>
         <tr>
           <td><b>Conectores e integraciones</b></td>
-          <td>Más de mil conectores, con <b>integración nativa profunda a Microsoft 365</b>: Outlook, Teams, SharePoint, Excel, Dataverse, Approvals y Forms. Fuera del ecosistema Microsoft, varios conectores clave son premium.</td>
-          <td>Cientos de nodos más <b>nodo HTTP y nodo de código</b> para hablar con cualquier API REST, webhooks nativos y transformación de datos con JavaScript. Si el sistema expone API, n8n se conecta.</td>
+          <td>Más de mil conectores, con <b>integración nativa profunda a Microsoft 365</b>: Outlook, Teams, SharePoint, Excel, Dataverse, Approvals y Forms. Fuera del ecosistema, varios conectores clave son premium.</td>
+          <td>Cientos de nodos más <b>nodo HTTP y nodo de código</b> para cualquier API REST, webhooks nativos y JavaScript. Si el sistema expone API, n8n se conecta.</td>
         </tr>
         <tr>
           <td><b>RPA de escritorio</b></td>
-          <td><b>Sí: Power Automate Desktop</b> automatiza aplicaciones Windows sin API, incluidos sistemas heredados de escritorio. El modo desatendido requiere licenciamiento adicional.</td>
-          <td><b>No dispone de RPA de escritorio.</b> n8n automatiza por APIs y webhooks; para pantallas Windows sin API debe combinarse con otra herramienta de RPA.</td>
+          <td><b>Sí: Power Automate Desktop</b> automatiza aplicaciones Windows sin API, incluidos sistemas heredados. El modo desatendido requiere licenciamiento adicional.</td>
+          <td><b>No dispone de RPA de escritorio.</b> Automatiza por APIs y webhooks; para pantallas Windows sin API debe combinarse con otra herramienta de RPA.</td>
         </tr>
         <tr>
           <td><b>Curva de aprendizaje</b></td>
-          <td>Terreno conocido para un equipo que ya opera en Microsoft 365; el diseñador visual es accesible. La complejidad aparece en las <b>expresiones y en entender el licenciamiento</b>: estándar frente a premium y límites de capacidad.</td>
-          <td>Editor visual de nodos muy claro y techo alto para quien programa en JavaScript. Exige un <b>perfil algo más técnico</b>, y el autoalojamiento requiere a alguien que administre infraestructura.</td>
+          <td>Terreno conocido para equipos en Microsoft 365; diseñador visual accesible. La complejidad está en las <b>expresiones y el licenciamiento</b>: estándar frente a premium y límites de capacidad.</td>
+          <td>Editor visual claro y techo alto con JavaScript. <b>Perfil algo más técnico</b>; el autoalojamiento requiere quien administre infraestructura.</td>
         </tr>
         <tr>
           <td><b>Gobernanza y DLP</b></td>
-          <td><b>Gobernanza corporativa madura:</b> políticas DLP, entornos separados, identidad con Entra ID y auditoría centralizada. Es la opción natural donde TI necesita control formal y trazable.</td>
-          <td>Al autoalojar, <b>los datos no salen del servidor de la organización</b>, con el máximo control de residencia. En contrapartida, la gobernanza —accesos, respaldos, actualizaciones y auditoría— la construye y la opera el cliente.</td>
+          <td><b>Gobernanza corporativa madura:</b> políticas DLP, entornos separados, identidad con Entra ID y auditoría centralizada. La opción natural donde TI exige control formal.</td>
+          <td>Al autoalojar, <b>los datos no salen del servidor de la organización</b>. En contrapartida, la gobernanza —accesos, respaldos, actualizaciones y auditoría— la construye y opera el cliente.</td>
         </tr>
         <tr>
           <td><b>Costo a alto volumen</b></td>
-          <td>Cada licencia tiene <b>límites de solicitudes</b>; los procesos que se ejecutan miles de veces al día pueden requerir capacidad adicional y encarecer el esquema.</td>
-          <td>Autoalojado, <b>sin costo por ejecución</b>: el límite es la capacidad del servidor. Suele ser la opción más económica cuando el volumen de ejecuciones es alto.</td>
+          <td>Cada licencia tiene <b>límites de solicitudes</b>; los procesos que corren miles de veces al día pueden requerir capacidad adicional y encarecer el esquema.</td>
+          <td>Autoalojado, <b>sin costo por ejecución</b>: el límite es la capacidad del servidor. Suele ser la opción más económica a alto volumen.</td>
         </tr>
         <tr>
           <td><b>Agentes y flujos con IA</b></td>
           <td>Integra AI Builder y Copilot dentro del ecosistema Microsoft; el consumo de IA se licencia con créditos adicionales.</td>
-          <td>Nodos nativos para modelos de varios proveedores y flujos de agentes: <b>se elige el modelo y se paga solo su API</b>. Es una vía frecuente para agentes que atienden mensajería y correo.</td>
+          <td>Nodos nativos para modelos de varios proveedores y flujos de agentes: <b>se elige el modelo y se paga solo su API</b>. Vía frecuente para agentes de mensajería y correo.</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="note"><b>Vigencia.</b> Comparativa elaborada por Optimatiza y revisada en julio de 2026. Los planes y las condiciones de licenciamiento de Microsoft y de n8n cambian: conviene verificar la lista vigente de cada proveedor antes de aprobar una decisión.</div>
+  <div class="note"><b>Vigencia.</b> Comparativa de Optimatiza revisada en julio de 2026. Los planes de Microsoft y n8n cambian: verifique la lista vigente antes de aprobar.</div>
 </div></section>
 
 <section><div class="wrap">
   <span class="sec-k">Marco de decisión</span>
   <h2>Tres preguntas que resuelven la mayor parte de los casos</h2>
-  <p class="sec-sub">El orden importa: primero dónde vive la operación, después qué se integra y con qué volumen, y solo al final la conveniencia de combinar. Un cuarto criterio —si existe una pantalla sin API que alguien opera a mano— decide por sí solo a favor del RPA de escritorio.</p>
+  <p class="sec-sub">El orden importa: dónde vive la operación, qué se integra y con qué volumen, y si conviene combinar. Una pantalla sin API operada a mano decide sola a favor del RPA de escritorio.</p>
   <div class="steps">
     <div class="step">
       <h3>La operación vive en Microsoft 365</h3>
-      <p>Correo en Outlook, archivos en SharePoint, comunicación en Teams y TI que pide gobernanza formal desde el primer día. La pieza indicada es <b>Power Automate</b>.</p>
+      <p>Correo en Outlook, archivos en SharePoint, comunicación en Teams y TI que pide gobernanza formal. La pieza indicada es <b>Power Automate</b>.</p>
     </div>
     <div class="step">
       <h3>Las integraciones son APIs y el volumen es alto</h3>
-      <p>Sin licenciamiento de Microsoft 365, con sistemas heterogéneos —mensajería, CRM, ERP, pasarelas— o con procesos que corren miles de veces al día. La pieza indicada es <b>n8n</b>.</p>
+      <p>Sin Microsoft 365, con sistemas heterogéneos —mensajería, CRM, ERP, pasarelas— o procesos que corren miles de veces al día. La pieza indicada es <b>n8n</b>.</p>
     </div>
     <div class="step">
       <h3>Conviven los dos mundos</h3>
-      <p>Aprobaciones y documentos dentro de Microsoft 365, y a la vez sistemas externos, volumen pesado o agentes de IA. La arquitectura correcta es <b>combinarlas</b>, comunicadas por webhooks o APIs.</p>
+      <p>Aprobaciones y documentos en Microsoft 365, más sistemas externos, volumen pesado o agentes de IA. La arquitectura correcta es <b>combinarlas</b> por webhooks o APIs.</p>
     </div>
   </div>
   <div class="note">Cada plataforma con su alcance detallado: <a class="link-more" href="/power-automate/">práctica de Power Automate →</a> · <a class="link-more" href="/n8n/">práctica de n8n →</a></div>
@@ -254,37 +254,37 @@
     <div class="card reveal">
       <h3>Power Automate, si…</h3>
       <ul>
-        <li>La organización ya sostiene licenciamiento de Microsoft 365 y busca capitalizarlo.</li>
-        <li>Los procesos son cadenas de aprobación, documentos en SharePoint, avisos en Teams y correo en Outlook.</li>
-        <li>Se requiere RPA de escritorio sobre un sistema Windows sin API.</li>
-        <li>TI exige DLP, entornos separados y auditoría centralizada desde el día uno.</li>
+        <li>Ya paga Microsoft 365 y busca capitalizarlo.</li>
+        <li>Los procesos son aprobaciones, SharePoint, Teams y Outlook.</li>
+        <li>Requiere RPA de escritorio sobre Windows sin API.</li>
+        <li>TI exige DLP, entornos separados y auditoría desde el día uno.</li>
       </ul>
     </div>
     <div class="card reveal reveal-2">
       <h3>n8n, si…</h3>
       <ul>
-        <li>No se usa Microsoft 365 —o se opera sobre Google Workspace— y no se desea licenciar por usuario.</li>
+        <li>No usa Microsoft 365 —u opera en Google Workspace— y no desea licenciar por usuario.</li>
         <li>Las integraciones son APIs: mensajería, CRM, ERP, bases de datos, pasarelas de pago.</li>
-        <li>El volumen de ejecuciones es alto y el costo por licencia deja de cerrar.</li>
-        <li>La política interna exige que los datos no salgan del servidor de la organización.</li>
+        <li>El volumen es alto y el costo por licencia deja de cerrar.</li>
+        <li>Los datos no deben salir del servidor propio.</li>
       </ul>
     </div>
     <div class="card reveal reveal-3">
       <h3>Las dos, si…</h3>
       <ul>
-        <li>Las aprobaciones y los documentos viven en Microsoft 365, pero el volumen pesado circula por APIs.</li>
-        <li>Se busca agentes de IA en canales de mensajería que registren su resultado en SharePoint o Teams.</li>
-        <li>Conviene asignar a cada proceso la plataforma que le cuesta menos y le queda mejor, con un solo criterio documentado.</li>
+        <li>Las aprobaciones viven en Microsoft 365, pero el volumen pesado circula por APIs.</li>
+        <li>Busca agentes de IA en mensajería que registren en SharePoint o Teams.</li>
+        <li>Cada proceso va a la plataforma que le cuesta menos, con un criterio documentado.</li>
       </ul>
     </div>
   </div>
-  <div class="note">El objetivo no es la plataforma: es que el proceso reciba la información, la procese, escale las aprobaciones, actualice los sistemas de registro y responda, con la pieza correcta en cada tramo. Contexto completo en <a class="link-more" href="/automatizacion-empresarial/">automatización empresarial →</a></div>
+  <div class="note">El objetivo no es la plataforma: es que el proceso funcione con la pieza correcta en cada tramo. Contexto completo en <a class="link-more" href="/automatizacion-empresarial/">automatización empresarial →</a></div>
 </div></section>
 
 <section><div class="wrap">
   <span class="sec-k">Alcance de integración</span>
   <h2>Con qué sistemas se conectan una y otra</h2>
-  <p class="sec-sub">La lista no es un catálogo cerrado. El criterio operativo es simple: si el sistema expone API, permite exportar archivos o se opera en una pantalla de Windows, existe una vía de integración; lo que cambia es cuál de las dos plataformas la sostiene con menor costo.</p>
+  <p class="sec-sub">Si el sistema expone API, exporta archivos o se opera en una pantalla de Windows, hay vía de integración; cambia cuál plataforma la sostiene con menor costo.</p>
   <div class="pills plain">
     <span>Microsoft 365</span>
     <span>Outlook</span>
@@ -303,13 +303,13 @@
     <span>Pasarelas de pago</span>
     <span>Sistemas heredados de escritorio</span>
   </div>
-  <div class="note">Cuando el inventario incluye sistemas heredados o integraciones a medida, el análisis se hace sobre el mapa real de aplicaciones. <a class="link-more" href="/integracion-sistemas/">Ver integración de sistemas →</a></div>
+  <div class="note">Con sistemas heredados o integraciones a medida, el análisis se hace sobre el mapa real de aplicaciones. <a class="link-more" href="/integracion-sistemas/">Ver integración de sistemas →</a></div>
 </div></section>
 
 <section class="band"><div class="wrap">
   <span class="sec-k">Alcances de referencia</span>
   <h2>Cómo se dimensiona la implementación con cualquiera de las dos</h2>
-  <p class="sec-sub">Los alcances no dependen de la plataforma: la herramienta se define en la evaluación según el inventario de sistemas de su organización, no según la comodidad del proveedor. Los horizontes son de referencia y dependen del alcance, de los accesos y de la complejidad de los sistemas.</p>
+  <p class="sec-sub">Los alcances no dependen de la plataforma: la herramienta se define en la evaluación según su inventario de sistemas. Horizontes de referencia.</p>
   <div class="tbl-wrap">
     <table class="tbl">
       <thead>
@@ -318,17 +318,17 @@
       <tbody>
         <tr>
           <td><b>Proceso acotado</b></td>
-          <td>Un disparador y un resultado: una cadena de aprobación, un reporte recurrente, una alerta o una integración puntual, con pruebas sobre casos reales y entrega documentada.</td>
+          <td>Un disparador y un resultado: una aprobación, un reporte, una alerta o una integración puntual, con pruebas reales y entrega documentada.</td>
           <td>Semanas</td>
         </tr>
         <tr>
           <td><b>Proceso con integraciones</b></td>
-          <td>Varios pasos y sistemas conectados, con lógica de excepciones, reintentos y trazabilidad de cada ejecución.</td>
+          <td>Varios pasos y sistemas conectados, con excepciones, reintentos y trazabilidad de cada ejecución.</td>
           <td>Varias semanas</td>
         </tr>
         <tr>
           <td><b>Proceso de punta a punta</b></td>
-          <td>Conjunto de flujos y agentes coordinados sobre un área completa, incluso combinando Power Automate y n8n, con supervisión y escalamiento a responsables.</td>
+          <td>Flujos y agentes coordinados sobre un área completa, incluso combinando ambas plataformas, con supervisión y escalamiento a responsables.</td>
           <td>Por fases, con hitos verificables</td>
         </tr>
         <tr>
@@ -339,7 +339,7 @@
       </tbody>
     </table>
   </div>
-  <div class="note"><b>Cómo se dimensiona.</b> Cada programa se cotiza tras una evaluación de alcance —complejidad, integraciones, volumen, seguridad y soporte— y se entrega por hitos verificables. <a class="link-more" href="/metodologia/">Ver la metodología →</a> · <a class="link-more" href="/operacion-administrada/">Ver operación administrada →</a></div>
+  <div class="note"><b>Cómo se dimensiona.</b> Cada programa se cotiza tras una evaluación de alcance —complejidad, integraciones, volumen, seguridad y soporte— y se entrega por hitos. <a class="link-more" href="/metodologia/">Ver la metodología →</a> · <a class="link-more" href="/operacion-administrada/">Ver operación administrada →</a></div>
 </div></section>
 
 <section><div class="wrap">
@@ -347,8 +347,8 @@
   <h2>La misma decisión reaparece al montar el radar del entorno</h2>
   <div class="split">
     <div>
-      <p>La elección de plataforma no se agota en los procesos internos. Un departamento de <a href="/inteligencia-competitiva/">inteligencia competitiva</a> necesita recolección continua de fuentes, normalización de lo recogido y notificación al responsable cuando un indicador cruza su umbral; esa cañería se construye con las mismas piezas y se decide con el mismo criterio de este documento.</p>
-      <p>La regla práctica se sostiene: la recolección contra fuentes externas y APIs heterogéneas suele resolverse mejor con n8n, mientras que el aviso al comité, el expediente documental y la trazabilidad de quién leyó qué encajan de forma natural donde ya vive la operación. Lo que no cambia es que un umbral sin responsable y sin acción previamente acordada no es un sistema de alerta, sino una suscripción a noticias.</p>
+      <p>Un departamento de <a href="/inteligencia-competitiva/">inteligencia competitiva</a> necesita recolección continua, normalización y aviso al responsable cuando un indicador cruza su umbral; esa cañería se decide con el mismo criterio de este documento.</p>
+      <p>La regla: recolección contra fuentes externas y APIs, mejor n8n; aviso al comité y trazabilidad, donde ya vive la operación. Un umbral sin responsable ni acción acordada no es una alerta: es una suscripción a noticias.</p>
       <p class="note">Cómo se define un umbral, su acción pre-acordada y su responsable: <a class="link-more" href="/inteligencia-competitiva/">ver el sistema de alertas tempranas →</a></p>
     </div>
     <figure class="plate reveal nova">
@@ -369,34 +369,34 @@
   <div class="faq">
     <details>
       <summary>¿Power Automate está incluido si la organización ya paga Microsoft 365?</summary>
-      <p class="fa">Parcialmente. La mayoría de licencias de Microsoft 365 incluyen las capacidades estándar de Power Automate con límites de uso. Los conectores premium, el RPA desatendido y la capacidad de ejecución adicional requieren planes de pago por usuario. Determinar qué incluye exactamente el licenciamiento vigente es una de las verificaciones que se hacen con su área de TI durante la evaluación ejecutiva, antes de fijar el alcance.</p>
+      <p class="fa">Parcialmente. La mayoría de licencias de Microsoft 365 incluyen las capacidades estándar con límites de uso; conectores premium, RPA desatendido y capacidad adicional requieren planes de pago por usuario. El detalle se verifica con el área de TI en la evaluación ejecutiva.</p>
     </details>
     <details>
       <summary>¿n8n es de uso libre?</summary>
-      <p class="fa">n8n se distribuye bajo una licencia fair-code (Sustainable Use License): puede alojarse en servidores propios sin pagar licencia para el uso interno de la organización. No es gratuito en términos de costo total: se paga la infraestructura y se requiere quien la administre, actualice y respalde. Existe además n8n Cloud, una versión administrada por suscripción mensual.</p>
+      <p class="fa">n8n se distribuye bajo una licencia fair-code (Sustainable Use License): puede alojarse en servidores propios sin pagar licencia para uso interno. No es gratuito en costo total: se paga la infraestructura y quien la administre. Existe además n8n Cloud, por suscripción mensual.</p>
     </details>
     <details>
       <summary>¿Qué conviene a una organización que no usa Microsoft 365?</summary>
-      <p class="fa">Por lo general n8n. Sin Microsoft 365 se pierde la principal ventaja de Power Automate —la integración nativa con Outlook, Teams y SharePoint— y el licenciamiento por usuario pesa más en el costo total. n8n se conecta a Google Workspace, canales de mensajería, CRM, ERP y cualquier API, y autoalojado no cobra por ejecución. La respuesta definitiva depende del inventario concreto de sistemas y del volumen, y se resuelve en la evaluación ejecutiva.</p>
+      <p class="fa">Por lo general n8n. Sin Microsoft 365 se pierde la integración nativa con Outlook, Teams y SharePoint, y el licenciamiento por usuario pesa más. n8n conecta Google Workspace, mensajería, CRM, ERP y cualquier API, y autoalojado no cobra por ejecución; la respuesta final depende del inventario y del volumen.</p>
     </details>
     <details>
       <summary>¿Pueden convivir Power Automate y n8n en la misma organización?</summary>
-      <p class="fa">Sí, y es un patrón de arquitectura frecuente: Power Automate para lo que vive dentro de Microsoft 365 —aprobaciones, SharePoint, Teams, correo— y n8n para integraciones por API, alto volumen de ejecuciones y flujos de agentes. Cada proceso se asigna a la plataforma que le cuesta menos y le queda mejor, y ambas se comunican entre sí por webhooks o APIs. La condición es que el criterio de asignación quede documentado, para que la convivencia no derive en dos inventarios sin dueño.</p>
+      <p class="fa">Sí, es un patrón de arquitectura frecuente: Power Automate para lo que vive en Microsoft 365 —aprobaciones, SharePoint, Teams, correo— y n8n para APIs, alto volumen y agentes. Se comunican por webhooks o APIs; el criterio de asignación debe quedar documentado.</p>
     </details>
     <details>
       <summary>¿n8n sirve para automatizar pantallas de Windows sin API?</summary>
-      <p class="fa">No. n8n automatiza a través de APIs y webhooks. Si el proceso exige operar una aplicación Windows que no expone API —un sistema heredado donde hay que navegar pantallas y digitar—, la pieza indicada es Power Automate Desktop u otra herramienta de RPA, que puede convivir con n8n dentro del mismo proceso.</p>
+      <p class="fa">No. n8n automatiza por APIs y webhooks. Para una aplicación Windows sin API, la pieza indicada es Power Automate Desktop u otra herramienta de RPA, que puede convivir con n8n en el mismo proceso.</p>
     </details>
     <details>
       <summary>¿Cómo se dimensiona un proyecto con cualquiera de las dos?</summary>
-      <p class="fa">Los alcances no dependen de la plataforma: proceso acotado, proceso con integraciones y proceso de punta a punta por fases, con la operación administrada contratada aparte. La entrega es por hitos verificables y cada programa se cotiza tras una evaluación de alcance según complejidad, integraciones, volumen, seguridad y soporte. El esquema completo está descrito en la <a href="/metodologia/">metodología</a>.</p>
+      <p class="fa">Los alcances no dependen de la plataforma: proceso acotado, con integraciones o de punta a punta por fases, con la operación administrada aparte. Cada programa se cotiza tras una evaluación de alcance y se entrega por hitos verificables. El esquema está en la <a href="/metodologia/">metodología</a>.</p>
     </details>
   </div>
 </div></section>
 
 <section class="cta-band"><div class="wrap">
   <h2>Resuelva la decisión con su inventario real de sistemas</h2>
-  <p class="sec-sub" style="margin:0 auto 6px">Una evaluación ejecutiva revisa qué sistemas opera, qué licenciamiento ya sostiene y qué proceso concentra el costo, y devuelve la recomendación por escrito.</p>
+  <p class="sec-sub" style="margin:0 auto 6px">Una evaluación ejecutiva revisa qué sistemas opera, qué licenciamiento sostiene y qué proceso concentra el costo, y devuelve la recomendación por escrito.</p>
   <div class="cta-row" style="justify-content:center">
     <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
     <a class="btn-wa" href="https://wa.me/50371928070">WhatsApp +503 7192 8070</a>
