@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F6F1E8">
+  <meta name="theme-color" content="#FFFFFF">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Integración de Sistemas Empresariales | Optimatiza</title>
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png?v=085ce51a">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=656b4d65">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=4f9ba009">
+  <link rel="stylesheet" href="/corp.css?v=b32d0a96">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Integración de Sistemas Empresariales | Optimatiza">
   <meta property="og:description" content="Conectamos ERP, CRM, SharePoint y sistemas legacy para eliminar la doble digitación y operar con información consistente. APIs, RPA y automatización.">
@@ -141,19 +141,13 @@
   <section><div class="wrap">
     <p class="sec-k">Beneficios</p>
     <h2>Lo que su empresa gana con los sistemas conectados</h2>
-    <p class="sec-sub">Cinco beneficios de operar con una sola versión del dato.</p>
-    <div class="cols2">
-      <ul class="dots">
-        <li><b>Captura única:</b> cada factura se digita una sola vez y viaja a todos los sistemas.</li>
-        <li><b>Datos de acuerdo:</b> todos los sistemas comparten la misma versión del cliente.</li>
-        <li><b>Reportes que cuadran:</b> ventas y finanzas presentan la misma cifra del mismo mes.</li>
-        <li><b>Conocimiento compartido:</b> las reglas quedan documentadas, al alcance de todo el equipo.</li>
-        <li><b>Trazabilidad completa:</b> siempre se sabe quién capturó qué y cuándo.</li>
-      </ul>
-      <div>
-        <div class="note reveal"><b>Antes de integrar, mapeamos.</b> El primer entregable es el mapa de sus sistemas: dónde nace cada dato y por dónde conviene conectarlo. <a class="link-more" href="/metodologia/">Cómo trabajamos</a></div>
-      </div>
-    </div>
+    <ul class="dots">
+      <li><b>Captura única:</b> cada factura se digita una sola vez y viaja a todos los sistemas.</li>
+      <li><b>Datos de acuerdo:</b> todos los sistemas comparten la misma versión del cliente.</li>
+      <li><b>Reportes que cuadran:</b> ventas y finanzas presentan la misma cifra del mismo mes.</li>
+      <li><b>Conocimiento compartido:</b> las reglas quedan documentadas, al alcance de todo el equipo.</li>
+      <li><b>Trazabilidad completa:</b> siempre se sabe quién capturó qué y cuándo.</li>
+    </ul>
   </div></section>
 
   <!-- UNA SOLA CAPTURA -->
@@ -203,83 +197,6 @@
   <figcaption>Cada sistema entra por su propio conector y el dato queda registrado una sola vez. Todos se conservan: se enlazan.</figcaption>
 </figure></div>
     </div>
-    <div class="flow3">
-      <div class="fcol"><div class="fh">Fuentes</div><div class="chips"><span>ERP</span><span>CRM</span><span>SQL</span><span>SharePoint</span><span>Excel</span><span>Correo</span></div></div>
-      <div class="farrow" aria-hidden="true">&rarr;</div>
-      <div class="fcol hub"><div class="fh">Capa de integración</div><div class="chips"><span>Validación</span><span>Reglas</span><span>Deduplicación</span><span>Bitácora</span></div></div>
-      <div class="farrow" aria-hidden="true">&rarr;</div>
-      <div class="fcol"><div class="fh">Destinos</div><div class="chips"><span>Dashboards</span><span>Alertas</span><span>Registros maestros</span><span>Aprobaciones</span></div></div>
-    </div>
-  </div></section>
-
-  <!-- PATRONES -->
-  <section><div class="wrap">
-    <p class="sec-k">Patrones de integración</p>
-    <h2>Cinco formas probadas de conectar sistemas</h2>
-    <p class="sec-sub">El patrón se elige por la criticidad del proceso y por lo que cada sistema permite.</p>
-    <div class="cards">
-      <div class="card reveal"><div class="cnum">01</div><h3>Sincronización programada</h3><p>Clientes, precios e inventario se copian en horarios fijos, sin duplicar.</p></div>
-      <div class="card reveal reveal-2"><div class="cnum">02</div><h3>Orquestación por eventos</h3><p>Una orden aprobada dispara en segundos lo que toca en cada sistema.</p></div>
-      <div class="card reveal reveal-3"><div class="cnum">03</div><h3>API directa o RPA</h3><p>Si el sistema ofrece API, la usamos; si no, un robot opera su pantalla.</p></div>
-      <div class="card reveal"><div class="cnum">04</div><h3>Capa de datos común</h3><p>Un repositorio central sirve a reportes y apps desde una sola fuente.</p></div>
-      <div class="card reveal reveal-2"><div class="cnum">05</div><h3>Documentos leídos con IA</h3><p>Las facturas del correo se leen, se validan y se registran solas.</p></div>
-    </div>
-    <div class="split">
-      <div class="reveal"><figure class="plate nova">
-  <div class="nova-esc">
-    <img class="nova-bot" width="680" height="1100" src="/img/nova/f-maquina-de-proceso-vertical.webp?v=ba3dae88" alt="NOVA opera una columna de proceso: por arriba entran documentos sueltos y por abajo salen registros ordenados." loading="lazy" decoding="async">
-    <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-    <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-    <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-  </div>
-        <figcaption>Del documento al registro, sin que nadie transcriba.</figcaption>
-      </figure></div>
-      <div class="note demo reveal"><b>Caso medido:</b> el Capturista Digital registra una factura en unos 4 segundos, grabado en video. <a class="link-more" href="/procesamiento-automatico-facturas/">Ver el caso</a></div>
-    </div>
-  </div></section>
-
-  <!-- CONSTRUCCION Y CONTROLES -->
-  <section class="band"><div class="wrap">
-    <p class="sec-k">Construcción y controles</p>
-    <h2>Una integración lista para su día más exigente</h2>
-    <p class="sec-sub">Cada escenario tiene respuesta prevista y verificada.</p>
-    <div class="split">
-      <div>
-        <p>Construimos sobre lo que usted ya tiene: cada sistema se conserva y todo llega a producción probado.</p>
-        <ul class="checks">
-          <li>Cada cambio se prueba en un ambiente aparte.</li>
-          <li>Los controles se entregan con la integración.</li>
-        </ul>
-      </div>
-      <div class="reveal"><figure class="plate nova">
-  <div class="nova-esc">
-    <img class="nova-bot" width="1191" height="1100" src="/img/nova/e-dos-robots-colaborando.webp?v=8c428850" alt="Dos robots NOVA montan juntos una pieza sobre una mesa de trabajo." loading="lazy" decoding="async">
-    <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-    <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-    <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-  </div>
-        <figcaption>Se arma por piezas verificables, no de un solo golpe.</figcaption>
-      </figure></div>
-    </div>
-    <div class="explore">
-      <details open>
-        <summary><i>01</i><b>Los errores pasajeros se resuelven solos</b></summary>
-        <div class="ex-body"><p>Un servicio caído se reintenta con espera creciente. Solo lo que persiste llega a una persona.</p></div>
-      </details>
-      <details>
-        <summary><i>02</i><b>Toda transacción llega a su destino</b></summary>
-        <div class="ex-body"><p>Las transacciones esperan en cola y entran en cuanto el sistema está disponible.</p></div>
-      </details>
-      <details>
-        <summary><i>03</i><b>Cada transacción deja rastro</b></summary>
-        <div class="ex-body"><p>Origen, transformación, destino y resultado quedan en bitácora, y lo que requiere criterio se aparta para revisión humana.</p></div>
-      </details>
-      <details>
-        <summary><i>04</i><b>Cada alerta llega con contexto a su responsable</b></summary>
-        <div class="ex-body"><p>El aviso llega de inmediato y, si la operamos nosotros, se vigila a diario dentro de la <a class="link-more" href="/operacion-administrada/">operación administrada</a>, bajo <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p></div>
-      </details>
-    </div>
-    <div class="note reveal"><b>Quién responde:</b> la práctica la dirige Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — sobre <a class="link-more" href="/power-automate/">Power Automate</a>, <a class="link-more" href="/n8n/">n8n</a>, <a class="link-more" href="/power-bi/">Power BI</a>, APIs, RPA y SQL. <a class="link-more" href="/nosotros/">Conocer la firma</a></div>
   </div></section>
 
   <!-- FAQ -->
@@ -296,11 +213,7 @@
         <div class="fa">Usted decide. Entregamos la documentación para que su equipo la administre, o la operamos nosotros: monitoreo, incidentes y mejoras.</div>
       </details>
     </div>
-  </div></section>
-
-  <!-- CTA FINAL -->
-  <section class="band"><div class="wrap">
-    <p class="note">Cuando los sistemas ya se hablan entre sí, el siguiente paso es enterarse a tiempo de lo que hace el mercado: ahí entra el <a href="/inteligencia-competitiva/">departamento de inteligencia competitiva</a>.</p>
+    <div class="note reveal"><b>Quién responde:</b> la práctica la dirige Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence — sobre <a class="link-more" href="/power-automate/">Power Automate</a>, <a class="link-more" href="/n8n/">n8n</a>, <a class="link-more" href="/power-bi/">Power BI</a>, APIs, RPA y SQL. <a class="link-more" href="/nosotros/">Conocer la firma</a></div>
   </div></section>
 
   <section><div class="wrap">

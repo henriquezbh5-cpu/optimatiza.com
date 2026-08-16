@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F6F1E8">
+  <meta name="theme-color" content="#FFFFFF">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Procesamiento automático de facturas | Optimatiza</title>
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png?v=085ce51a">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=656b4d65">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=4f9ba009">
+  <link rel="stylesheet" href="/corp.css?v=b32d0a96">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Procesamiento automático de facturas">
   <meta property="og:description" content="Recepción, extracción, cotejo contra la orden de compra y registro en el ERP, con excepciones enrutadas y traza de auditoría. Incluye DTE.">
@@ -49,21 +49,6 @@
       },
       {
         "@type": "Question",
-        "name": "¿Qué volumen justifica automatizar cuentas por pagar?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de documentos al mes, o menos volumen con varios sistemas por sincronizar. La evaluación se lo indica con claridad."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué ocurre cuando una factura llega ilegible o incompleta?",
-        "acceptedAnswer": {"@type": "Answer", "text": "El documento se marca como excepción y llega a la persona responsable con la imagen original; al registro entra únicamente lo que pasa la validación."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo se asegura que cada documento se pague una sola vez?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Antes de registrar se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Cada documento se registra una sola vez y el responsable queda notificado."}
-      },
-      {
-        "@type": "Question",
         "name": "¿Se integra con nuestro ERP o sistema contable?",
         "acceptedAnswer": {"@type": "Answer", "text": "Por API, por base de datos o por conectores de Power Automate y n8n. La vía de cada sistema se define en la evaluación; entretanto, el registro puede llegar a la hoja de cálculo que hoy se usa, ordenado y con respaldo."}
       },
@@ -71,11 +56,6 @@
         "@type": "Question",
         "name": "¿Cuánto tarda la implantación?",
         "acceptedAnswer": {"@type": "Answer", "text": "La captura y el registro tienen un horizonte típico de una a dos semanas; con cotejo contra orden de compra, aprobaciones e integración con el ERP, de dos a cuatro. Se contrata por hitos verificables."}
-      },
-      {
-        "@type": "Question",
-        "name": "¿Esto sustituye al equipo de contabilidad?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No. Absorbe el trabajo repetitivo de capturar y validar; el equipo conserva las decisiones, la relación con proveedores y lo que exige criterio."}
       }
     ]
   }
@@ -158,11 +138,10 @@
 <section><div class="wrap">
   <p class="sec-k">La ganancia a escala</p>
   <h2>Lo que su empresa gana con la captura automática</h2>
-  <p class="sec-sub">A volumen sostenido, la captura automática devuelve capacidad, fortalece el control interno y acelera el cierre.</p>
   <div class="cards">
     <article class="card reveal">
       <h3>Capacidad para lo que aporta</h3>
-      <p>Cada documento que llega por correo, PDF, DTE o imagen se registra solo, y su equipo dedica la jornada al trabajo que exige criterio.</p>
+      <p>Cada documento que llega por correo, PDF, DTE o imagen se registra solo.</p>
     </article>
     <article class="card reveal reveal-2">
       <h3>Datos correctos desde el origen</h3>
@@ -170,11 +149,11 @@
     </article>
     <article class="card reveal reveal-3">
       <h3>Cada pago, una sola vez</h3>
-      <p>El documento que entra por correo, se reenvía desde otra sede o vuelve en físico se reconoce y se registra una sola vez.</p>
+      <p>Cada documento se reconoce y se registra una sola vez, llegue por el canal que llegue.</p>
     </article>
     <article class="card reveal reveal-4">
       <h3>Cierre contable a tiempo</h3>
-      <p>El registro se mantiene al día y la información financiera llega puntual a la mesa donde se decide.</p>
+      <p>El registro se mantiene al día y la información financiera llega puntual.</p>
     </article>
   </div>
 </div></section>
@@ -201,141 +180,6 @@
       <figcaption>Una sola línea de trabajo donde hoy hay bandejas de correo, carpetas compartidas y papel.</figcaption>
     </figure>
   </div>
-
-  <div class="flow3">
-    <div class="fcol">
-      <div class="fh">Recepción</div>
-      <div class="chips"><span>Correo</span><span>DTE en JSON</span><span>Imagen</span><span>Carpeta corporativa</span></div>
-    </div>
-    <div class="farrow" aria-hidden="true">→</div>
-    <div class="fcol hub">
-      <div class="fh">Validación</div>
-      <div class="chips"><span>Orden de compra</span><span>Tolerancias</span><span>IVA y totales</span><span>Duplicados</span><span>Excepciones</span></div>
-    </div>
-    <div class="farrow" aria-hidden="true">→</div>
-    <div class="fcol">
-      <div class="fh">Registro</div>
-      <div class="chips"><span>ERP o contable</span><span>Respaldo archivado</span><span>Traza de auditoría</span><span>Reporte al cierre</span></div>
-    </div>
-  </div>
-
-  <div class="note"><b>La excepción es parte del diseño.</b> El documento ilegible, el monto fuera de tolerancia y el proveedor no registrado se enrutan a un responsable con su respaldo: al ERP llega únicamente lo validado.</div>
-</div></section>
-
-<section><div class="wrap">
-  <p class="sec-k">Evidencia</p>
-  <h2>La única cifra que publicamos es la que está grabada</h2>
-  <div class="cols2">
-    <div>
-      <h3>Caso medido</h3>
-      <div class="figures">
-        <div class="figure reveal">
-          <span class="fig-k">Capturista Digital · Finanzas</span>
-          <b class="count" data-to="4" data-prefix="~" data-suffix=" seg">~4 seg</b>
-          <p>por factura, desde la imagen recibida hasta el registro validado. Tiempo medido sobre una grabación continua que usted puede cronometrar.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h3>Lo que sí va a encontrar</h3>
-      <ul class="dots">
-        <li>Cifras medidas, con la grabación disponible.</li>
-        <li>Una galería que distingue el caso medido de la demostración ilustrativa.</li>
-        <li>Cifras de su operación calculadas sobre sus propios documentos, a partir de la evaluación.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="note demo"><b>Caso medido y grabado.</b> La grabación sin cortes está en la galería, con la ficha del proceso y los controles aplicados. <a class="link-more" href="/casos/">Ver el caso →</a></div>
-</div></section>
-
-<section class="band"><div class="wrap">
-  <p class="sec-k">Ejecución</p>
-  <h2>Cómo se implanta mientras su operación sigue corriendo</h2>
-  <div class="steps">
-    <div class="step">
-      <h3>Evaluación ejecutiva</h3>
-      <p>Se revisa una muestra de sus documentos y sus volúmenes; de ahí sale qué conviene automatizar y con qué precisión esperable.</p>
-    </div>
-    <div class="step">
-      <h3>Construcción con documentos reales</h3>
-      <p>El flujo se arma sobre sus formatos, sus reglas de validación y su catálogo de proveedores.</p>
-    </div>
-    <div class="step">
-      <h3>Marcha en paralelo</h3>
-      <p>Corre junto al proceso actual el período acordado y se compara registro contra registro hasta confirmar el relevo.</p>
-    </div>
-    <div class="step">
-      <h3>Entrega y operación</h3>
-      <p>Documentación funcional y técnica, equipo capacitado y activos alojados en las cuentas de su organización.</p>
-    </div>
-  </div>
-  <p class="note">Los criterios de aceptación se fijan por escrito antes de construir y el escalamiento llega cuando el piloto los cumple. Fase por fase, en la <a class="link-more" href="/metodologia/">metodología</a>.</p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="sec-k">Sobre lo que ya opera</p>
-  <h2>Sus sistemas se conservan y se conectan</h2>
-  <div class="pills">
-    <span>Outlook y Microsoft 365</span>
-    <span>Gmail</span>
-    <span>WhatsApp</span>
-    <span>DTE de El Salvador</span>
-    <span>Excel y Google Sheets</span>
-    <span>ERP: SAP, Odoo, Dynamics</span>
-    <span>Sistemas contables</span>
-    <span>SQL Server y PostgreSQL</span>
-    <span>SharePoint y Google Drive</span>
-    <span>Power Automate</span>
-    <span>n8n</span>
-    <span>APIs REST</span>
-  </div>
-  <p class="note">El DTE se lee como JSON del Ministerio de Hacienda, de forma directa, y se validan NIT, IVA y totales contra el documento oficial. La vía de conexión de cada sistema se define en la evaluación: <a class="link-more" href="/integracion-sistemas/">integración de sistemas →</a></p>
-</div></section>
-
-<section class="band"><div class="wrap">
-  <p class="sec-k">Alcance</p>
-  <h2>Cómo se dimensiona el proyecto</h2>
-  <p class="sec-sub">Tres alcances de referencia; el definitivo se fija tras la evaluación.</p>
-  <div class="tbl-wrap">
-    <table class="tbl">
-      <thead>
-        <tr><th scope="col">Alcance</th><th scope="col">Qué comprende</th><th scope="col">Horizonte típico</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><b>Captura y registro</b></td><td>Recepción por correo, DTE o imagen, extracción, validación de NIT, IVA y duplicados, y registro en el destino que su contabilidad ya utiliza.</td><td>1 a 2 semanas</td></tr>
-        <tr><td><b>Con orden de compra y aprobaciones</b></td><td>Lo anterior más cotejo con tolerancias, aprobación por monto y centro de costo, e integración por API con el ERP.</td><td>2 a 4 semanas</td></tr>
-        <tr><td><b>Operación administrada</b></td><td>Monitoreo del flujo, ajuste cuando cambian los formatos de sus proveedores, incidencias y evolución de las reglas.</td><td>Servicio continuo</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="note">La contratación es por hitos verificables y el proyecto se cotiza tras la evaluación de alcance. <a class="link-more" href="/operacion-administrada/">Operación administrada →</a></p>
-</div></section>
-
-<section><div class="wrap">
-  <p class="sec-k">Criterio de firma</p>
-  <h2>Qué distingue esto de un extractor de documentos</h2>
-  <p class="sec-sub">Un proceso de cuentas por pagar completo domina el documento real: el formato que cambia, el monto en el margen, el aprobador ausente.</p>
-  <div class="explore">
-    <details open>
-      <summary><i>01</i><b>Las tolerancias las fija su contraloría y quedan por escrito</b></summary>
-      <div class="ex-body"><p>El cotejo contra la orden de compra opera con márgenes definidos por tipo de gasto y por proveedor; fuera del margen, la excepción llega con responsable asignado.</p></div>
-    </details>
-    <details>
-      <summary><i>02</i><b>El cambio de formato del proveedor está previsto en el diseño</b></summary>
-      <div class="ex-body"><p>Cuando la extracción queda incompleta, el documento pasa a excepción con su respaldo y la regla se ajusta como parte de la operación.</p></div>
-    </details>
-    <details>
-      <summary><i>03</i><b>Cada ejecución deja expediente auditable</b></summary>
-      <div class="ex-body"><p>Qué documento entró, qué se validó, quién aprobó y cuándo: el expediente para auditoría se arma solo, y los activos quedan en las cuentas de su organización.</p></div>
-    </details>
-  </div>
-  <p class="note">Accesos, datos y retención, en <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>; los límites de lo que decide un modelo, en <a class="link-more" href="/responsabilidad-ia/">responsabilidad de IA</a>.</p>
-</div></section>
-
-<section class="band"><div class="wrap">
-  <p class="sec-k">Dentro y fuera</p>
-  <h2>El mismo mecanismo, aplicado al entorno</h2>
-  <p class="sec-sub">Automatizar cuentas por pagar ordena lo que ocurre <b>dentro</b> de su operación; lo que ocurre <b>fuera</b> se vigila desde la <a href="/inteligencia-competitiva/">práctica de inteligencia competitiva</a> de la firma, con umbral definido, acción acordada y responsable con nombre, como en el <a href="/inteligencia-competitiva/">sistema de alerta temprana</a>.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -347,18 +191,6 @@
       <p class="fa">El DTE viaja como JSON del Ministerio de Hacienda: se lee de forma directa, sin OCR, y se validan NIT, IVA y totales contra el documento oficial. Para papel, PDF escaneado o imagen se usa extracción con IA de visión.</p>
     </details>
     <details>
-      <summary>¿Qué volumen justifica automatizar cuentas por pagar?</summary>
-      <p class="fa">Cuando el volumen es sostenido y el proceso ya consume capacidad dedicada: del orden de cientos de documentos al mes, o menos volumen con varios sistemas por sincronizar. La evaluación se lo indica con claridad.</p>
-    </details>
-    <details>
-      <summary>¿Qué ocurre cuando una factura llega ilegible o incompleta?</summary>
-      <p class="fa">El documento se marca como excepción y llega a la persona responsable con la imagen original; al registro entra únicamente lo que pasa la validación.</p>
-    </details>
-    <details>
-      <summary>¿Cómo se asegura que cada documento se pague una sola vez?</summary>
-      <p class="fa">Antes de registrar se cruzan número de documento, NIT del proveedor y monto contra lo ya registrado; en DTE, también el código de generación. Cada documento se registra una sola vez y el responsable queda notificado.</p>
-    </details>
-    <details>
       <summary>¿Se integra con nuestro ERP o sistema contable?</summary>
       <p class="fa">Por API, por base de datos o por conectores de Power Automate y n8n. La vía de cada sistema se define en la evaluación; entretanto, el registro puede llegar a la hoja de cálculo que hoy se usa, ordenado y con respaldo.</p>
     </details>
@@ -366,13 +198,8 @@
       <summary>¿Cuánto tarda la implantación?</summary>
       <p class="fa">La captura y el registro tienen un horizonte típico de una a dos semanas; con cotejo contra orden de compra, aprobaciones e integración con el ERP, de dos a cuatro. Se contrata por hitos verificables.</p>
     </details>
-    <details>
-      <summary>¿Esto sustituye al equipo de contabilidad?</summary>
-      <p class="fa">No. Absorbe el trabajo repetitivo de capturar y validar; el equipo conserva las decisiones, la relación con proveedores y lo que exige criterio.</p>
-    </details>
   </div>
   <p class="note"><b>Quién responde:</b> dirige la práctica Humberto Henríquez — Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence. <a class="link-more" href="/nosotros/">Conozca la firma →</a></p>
-  <p class="note"><b>Procesos relacionados:</b> <a class="link-more" href="/cobranza-automatizada/">cobranza automatizada</a>, <a class="link-more" href="/automatizacion-empresarial/">automatización empresarial</a> e <a class="link-more" href="/integracion-sistemas/">integración de sistemas</a>.</p>
 </div></section>
 
 <section class="cta-band"><div class="wrap">

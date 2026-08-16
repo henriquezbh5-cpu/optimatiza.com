@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F6F1E8">
+  <meta name="theme-color" content="#FFFFFF">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Seguridad y gobierno de la automatización | Optimatiza</title>
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png?v=085ce51a">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=656b4d65">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=4f9ba009">
+  <link rel="stylesheet" href="/corp.css?v=b32d0a96">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Seguridad y gobierno: controles que usted puede verificar">
   <meta property="og:description" content="Controles verificables para la automatización empresarial: acceso mínimo, datos en las cuentas del cliente, gobierno de agentes de IA y entrega documentada.">
@@ -44,17 +44,17 @@
       {
         "@type": "Question",
         "name": "¿Dónde quedan alojados nuestros datos durante y después del proyecto?",
-        "acceptedAnswer": {"@type": "Answer", "text": "En sus propias cuentas y sistemas, con acceso delegado y revocable. Cualquier copia de trabajo se pacta por escrito, incluida su retención."}
+        "acceptedAnswer": {"@type": "Answer", "text": "En sus propias cuentas y sistemas, con acceso delegado y revocable."}
       },
       {
         "@type": "Question",
         "name": "¿Firman acuerdos de confidencialidad (NDA)?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Sí, cuando el cliente lo solicita; con datos sensibles lo proponemos nosotros al arrancar. Declaramos además qué terceros participan y qué datos procesan."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí, cuando el cliente lo solicita; con datos sensibles la proponemos nosotros al arrancar."}
       },
       {
         "@type": "Question",
         "name": "¿Qué sucede con los accesos cuando termina el proyecto?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Se revocan de forma verificable: viven en sus sistemas, con menor privilegio e identidades nominales. Al cierre entregamos la lista de accesos usados para que su equipo confirme el retiro."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Se revocan de forma verificable; al cierre entregamos la lista de accesos usados para que su equipo confirme el retiro."}
       }
     ]
   }
@@ -125,7 +125,7 @@
     <h1>Seguridad y gobierno</h1>
     <p class="lead">Automatice con confianza: cada control es <b>verificable</b> y se comprueba directamente en sus propios sistemas.</p>
     <div class="cta-row">
-      <a class="btn-primary" href="/contacto/">Solicitar revisión de seguridad</a>
+      <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
       <a class="btn-secondary" href="/responsabilidad-ia/">Ver responsabilidad de IA</a>
     </div>
   </div></section>
@@ -136,7 +136,6 @@
     <h2>Controles que usted mismo puede verificar</h2>
     <div class="split">
       <div>
-        <p class="sec-sub">Cuatro garantías que su equipo comprueba en sus propias plataformas.</p>
         <ul class="dots">
           <li><b>Quién accede se puede listar.</b> En la administración de sus propias plataformas.</li>
           <li><b>Qué cambió se puede rastrear.</b> Versión, aprobación y fecha de cada cambio.</li>
@@ -154,142 +153,46 @@
         <figcaption>Se revisa directamente en su consola de administración.</figcaption>
       </figure>
     </div>
-    <div class="note reveal"><b>Sobre certificaciones.</b> Con total transparencia, diseñamos según los requisitos de seguridad y cumplimiento de su empresa.</div>
   </div></section>
 
-  <!-- CONTROLES POR FAMILIA -->
+  <!-- CÓMO LO HACEMOS -->
   <section class="band"><div class="wrap">
-    <p class="sec-k">Los controles</p>
-    <h2>Cuatro familias de control, abiertas a su auditoría</h2>
-    <p class="sec-sub">Abra la que su comité necesite revisar.</p>
-    <div class="explore">
-      <details open>
-        <summary><i>01</i><b>Identidad y acceso: menor privilegio y revocación verificable</b></summary>
-        <div class="ex-body">
-          <ul class="checks">
-            <li><b>Menor privilegio.</b> Solo los permisos que la solución necesita, ajustados con su equipo.</li>
-            <li><b>Identidades nominales y cuentas de servicio.</b> Cada componente opera con credenciales propias y gestionadas de forma segura.</li>
-            <li><b>Roles separados.</b> Quién desarrolla, quién aprueba y quién opera son roles distintos.</li>
-            <li><b>Revocación bajo su control.</b> Los accesos viven en sus sistemas; al cierre entregamos la lista.</li>
-          </ul>
-        </div>
-      </details>
-      <details>
-        <summary><i>02</i><b>Datos: permanecen en sus cuentas y sistemas</b></summary>
-        <div class="ex-body">
-          <ul class="checks">
-            <li><b>Residencia en sus sistemas.</b> Su Microsoft 365, su ERP, sus bases: todo permanece siempre en su casa.</li>
-            <li><b>Cifrado y secretos.</b> Tráfico cifrado (TLS) y credenciales protegidas como secretos.</li>
-            <li><b>Retención acordada.</b> Qué copias existen, cuánto duran y cuándo se eliminan, por escrito.</li>
-            <li><b>Sus datos, fuera del entrenamiento de modelos.</b> Servicios de IA en modalidades empresariales cuyos términos lo garantizan.</li>
-          </ul>
-        </div>
-      </details>
-      <details>
-        <summary><i>03</i><b>Operación: lo que sostiene la seguridad en el tiempo</b></summary>
-        <div class="ex-body">
-          <ul class="checks">
-            <li><b>Ambientes separados.</b> Desarrollo y pruebas ocurren fuera de producción.</li>
-            <li><b>Cambios versionados.</b> Cada cambio se versiona, se prueba y se documenta antes de desplegarse.</li>
-            <li><b>Errores y reintentos.</b> Rutas de excepción definidas: cada caso se atiende y se resuelve.</li>
-            <li><b>Respaldo y recuperación.</b> Componentes respaldados y procedimiento de recuperación documentado.</li>
-            <li><b>Monitoreo y alertas.</b> La desviación avisa antes de llegar a su operación (<a href="/operacion-administrada/">operación administrada</a>).</li>
-            <li><b>Logs y auditoría.</b> Ejecuciones, errores y acciones quedan registrados con retención acordada.</li>
-          </ul>
-        </div>
-      </details>
-      <details>
-        <summary><i>04</i><b>Entrega: usted queda en control desde el primer día</b></summary>
-        <div class="ex-body">
-          <ul class="checks">
-            <li><b>Activos a nombre del cliente.</b> Ambientes, licencias, repositorios y flujos bajo su titularidad desde el inicio.</li>
-            <li><b>Documentación completa.</b> Arquitectura, flujos, credenciales, puntos críticos y procedimientos de operación.</li>
-            <li><b>Capacitación al equipo.</b> Transferencia para que su equipo monitoree y opere la solución con autonomía.</li>
-            <li><b>Confidencialidad (NDA).</b> La firmamos a solicitud; con datos sensibles, la proponemos nosotros.</li>
-            <li><b>Proveedores declarados.</b> Cada servicio de terceros, con su rol y los datos que procesa.</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-    <div class="plate-row">
-      <figure class="plate reveal nova">
-        <div class="nova-esc">
-          <img class="nova-bot" width="1415" height="1100" src="/img/nova/11-orquestacion-datos.webp?v=880407c8" alt="NOVA señala un flujo que recorre base de datos, proceso, reporte, aviso y nube." loading="lazy" decoding="async">
-          <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-        </div>
-        <figcaption>Cada integración declara qué dato viaja y con qué credencial.</figcaption>
-      </figure>
-      <figure class="plate reveal reveal-2 nova">
-        <div class="nova-esc">
-          <img class="nova-bot" width="575" height="1100" src="/img/nova/d-entrega-en-mano.webp?v=6d90b880" alt="NOVA sostiene con las dos manos un módulo terminado junto a su expediente." loading="lazy" decoding="async">
-          <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-        </div>
-        <figcaption>Al cierre, los activos quedan a nombre de su empresa.</figcaption>
-      </figure>
-    </div>
-  </div></section>
-
-  <!-- GOBIERNO DE AGENTES -->
-  <section><div class="wrap">
-    <p class="sec-k">Gobierno de agentes</p>
-    <h2>Los agentes de IA operan con límites explícitos</h2>
-    <div class="split">
-      <div>
-        <p class="sec-sub">Cada <a href="/agentes-ia/">agente</a> opera con límites claros que dan confianza a su equipo.</p>
-        <ul class="dots">
-          <li><b>Límites de autonomía.</b> Qué hace por sí solo y qué requiere autorización queda configurado.</li>
-          <li><b>Aprobación humana en lo irreversible.</b> Pagos, compromisos y comunicaciones masivas los autoriza una persona designada.</li>
-          <li><b>Persona en los puntos críticos.</b> El agente prepara el trabajo; la decisión sigue siendo suya.</li>
-          <li><b>Escalamiento con contexto.</b> Si no debe resolver, el caso pasa con el historial completo.</li>
-          <li><b>Evaluación de riesgos previa.</b> Cada escenario, revisado y mitigado con usted antes de producción.</li>
-        </ul>
-        <p><a class="link-more" href="/responsabilidad-ia/">Cómo usamos la IA de forma responsable</a></p>
-      </div>
-      <figure class="plate reveal nova">
-        <div class="nova-esc">
-          <img class="nova-bot" width="1441" height="1100" src="/img/nova/10-aprobacion-automatizacion.webp?v=9159e4ab" alt="NOVA celebra junto a un sello de verificación." loading="lazy" decoding="async">
-          <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-        </div>
-        <figcaption>Cada acción del agente llega a su operación con control previo.</figcaption>
-      </figure>
-    </div>
+    <p class="sec-k">Cómo lo hacemos</p>
+    <h2>Cinco controles que aplicamos en cada proyecto</h2>
+    <ul class="checks">
+      <li><b>Menor privilegio.</b> Solo los permisos necesarios, con roles separados para desarrollar, aprobar y operar.</li>
+      <li><b>Datos en su casa.</b> Todo permanece en sus cuentas y sistemas, cifrado y fuera del entrenamiento de modelos.</li>
+      <li><b>Cambios controlados.</b> Ambientes separados y cada cambio versionado, probado y documentado.</li>
+      <li><b>Agentes de IA con límites.</b> Aprobación humana en lo irreversible y escalamiento con contexto (<a href="/responsabilidad-ia/">responsabilidad de IA</a>).</li>
+      <li><b>Entrega en control.</b> Activos a nombre de su empresa, documentación completa y accesos revocables al cierre.</li>
+    </ul>
   </div></section>
 
   <!-- FAQ -->
-  <section class="band"><div class="wrap">
+  <section><div class="wrap">
     <p class="sec-k">Preguntas frecuentes</p>
     <h2>Lo que suele preguntar un comité de compras</h2>
     <div class="faq reveal">
       <details>
         <summary>¿Dónde quedan alojados nuestros datos durante y después del proyecto?</summary>
-        <p class="fa">En sus propias cuentas y sistemas, con acceso delegado y revocable. Cualquier copia de trabajo se pacta por escrito, incluida su retención.</p>
+        <p class="fa">En sus propias cuentas y sistemas, con acceso delegado y revocable.</p>
       </details>
       <details>
         <summary>¿Firman acuerdos de confidencialidad (NDA)?</summary>
-        <p class="fa">Sí, cuando el cliente lo solicita; con datos sensibles lo proponemos nosotros al arrancar. Declaramos además qué terceros participan y qué datos procesan.</p>
+        <p class="fa">Sí, cuando el cliente lo solicita; con datos sensibles la proponemos nosotros al arrancar.</p>
       </details>
       <details>
         <summary>¿Qué sucede con los accesos cuando termina el proyecto?</summary>
-        <p class="fa">Se revocan de forma verificable: viven en sus sistemas, con menor privilegio e identidades nominales. Al cierre entregamos la lista de accesos usados para que su equipo confirme el retiro.</p>
+        <p class="fa">Se revocan de forma verificable; al cierre entregamos la lista de accesos usados para que su equipo confirme el retiro.</p>
       </details>
     </div>
   </div></section>
 
   <!-- CTA FINAL -->
-  <section class="band"><div class="wrap">
-    <p class="note">Estos mismos controles aplican al trabajo de inteligencia: fuente trazable, criterio escrito y firma humana en cada recomendación. Ver <a href="/inteligencia-competitiva/">cómo se verifica lo que produce un modelo</a>.</p>
-  </div></section>
-
   <section><div class="wrap">
     <div class="cta-band">
       <span class="ck">Próximo paso</span>
-      <h2>Solicitar revisión de seguridad</h2>
+      <h2>Conversemos sobre la seguridad de su operación</h2>
       <p>La conversación inicial no tiene costo ni compromiso. Respondemos en horario hábil (GMT-6).</p>
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
     </div>

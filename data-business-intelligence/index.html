@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F6F1E8">
+  <meta name="theme-color" content="#FFFFFF">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Data &amp; Business Intelligence | Optimatiza</title>
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16.png?v=085ce51a">
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png?v=656b4d65">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/corp.css?v=4f9ba009">
+  <link rel="stylesheet" href="/corp.css?v=b32d0a96">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Data &amp; Business Intelligence">
   <meta property="og:description" content="Dashboards Power BI conectados a fuentes confiables: modelo de datos, indicadores con una sola definición y actualización automática.">
@@ -53,11 +53,6 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Trabajan únicamente con Power BI?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Es nuestra principal herramienta de visualización, pero la capa de datos es independiente: sobrevive a un cambio de visualizador."}
-      },
       {
         "@type": "Question",
         "name": "¿Y si nuestros datos están repartidos entre Excel y varios sistemas?",
@@ -154,7 +149,6 @@
     <h2>De la fuente al indicador</h2>
     <div class="split">
       <div>
-        <h3>Entregamos la cadena entera</h3>
         <p>Fuentes conectadas, métricas con una sola definición y reportes que se actualizan solos: de la fuente a la pantalla.</p>
       </div>
       <figure class="plate nova">
@@ -167,28 +161,13 @@
         <figcaption>El flujo de datos completo: cada paso programado, versionado y documentado.</figcaption>
       </figure>
     </div>
-    <div class="explore">
-      <details open>
-        <summary><i>01</i><b>Integración de fuentes y ETL</b></summary>
-        <div class="ex-body"><p>Power Query y SQL contra sus sistemas. Cada extracción, programada y documentada. <a href="/integracion-sistemas/">Ver integración de sistemas →</a></p></div>
-      </details>
-      <details>
-        <summary><i>02</i><b>Modelo de datos en esquema estrella</b></summary>
-        <div class="ex-body"><p>Hechos y dimensiones conformadas: sostienen el rendimiento y evitan que cada área calcule su propia métrica.</p></div>
-      </details>
-      <details>
-        <summary><i>03</i><b>Dashboards que se leen en segundos</b></summary>
-        <div class="ex-body"><p>Jerarquía visual, filtros por rol y navegación por área, al servicio de la decisión. <a href="/power-bi/">Ver la práctica de Power BI →</a></p></div>
-      </details>
-      <details>
-        <summary><i>04</i><b>Indicadores, alertas y reportes automáticos</b></summary>
-        <div class="ex-body"><p>Medidas DAX con una sola definición, avisos al cruzar un umbral y reportes que se distribuyen solos con <a href="/power-automate/">Power Automate</a> o <a href="/n8n/">n8n</a>.</p></div>
-      </details>
-      <details>
-        <summary><i>05</i><b>Calidad de datos y gobierno</b></summary>
-        <div class="ex-body"><p>La calidad se verifica en cada carga, con diccionario de indicadores y responsable por dato. <a href="/seguridad-gobierno/">Ver seguridad y gobierno →</a></p></div>
-      </details>
-    </div>
+    <ul class="checks">
+      <li><b>Integración de fuentes y ETL:</b> Power Query y SQL contra sus sistemas, con cada extracción programada.</li>
+      <li><b>Modelo de datos en esquema estrella:</b> hechos y dimensiones que sostienen el rendimiento.</li>
+      <li><b>Dashboards que se leen en segundos:</b> jerarquía visual, filtros por rol y navegación por área.</li>
+      <li><b>Indicadores y alertas:</b> medidas DAX con una sola definición y avisos al cruzar un umbral.</li>
+      <li><b>Calidad y gobierno:</b> verificación en cada carga, diccionario de indicadores y responsable por dato.</li>
+    </ul>
   </div></section>
 
   <!-- TABLEROS POR ÁREA -->
@@ -213,98 +192,11 @@
         <h3>Ventas</h3>
         <p>Embudo, metas por vendedor y territorio, tendencia por producto.</p>
       </div>
-      <div class="card reveal">
-        <h3>Inventario y compras</h3>
-        <p>Rotación, quiebres de stock y cumplimiento de proveedores críticos.</p>
-      </div>
-      <div class="card reveal reveal-2">
-        <h3>Servicio y SLA</h3>
-        <p>Tickets por estado y tiempos de resolución frente a lo pactado.</p>
-      </div>
       <div class="card reveal reveal-3">
         <h3>Inteligencia competitiva</h3>
         <p>Movimientos de competidores, desde fuentes públicas y autorizadas.</p>
         <a class="link-more" href="/inteligencia-competitiva/">Ver inteligencia competitiva →</a>
       </div>
-    </div>
-    <div class="note reveal"><b>Sobre la evidencia.</b> Los casos documentados, con sus cifras medidas, están en <a href="/casos/">Casos</a>.</div>
-  </div></section>
-
-  <!-- METODOLOGÍA -->
-  <section class="forest"><div class="wrap">
-    <p class="sec-k">Metodología</p>
-    <h2>Cinco etapas, un entregable verificable en cada una</h2>
-    <div class="steps">
-      <div class="step reveal">
-        <h3>Fuentes y definiciones</h3>
-        <p>Inventario de sistemas y definición escrita de cada indicador, con responsable.</p>
-      </div>
-      <div class="step reveal reveal-2">
-        <h3>Modelo de datos</h3>
-        <p>Hechos, dimensiones y reglas de carga. Aquí se decide el rendimiento.</p>
-      </div>
-      <div class="step reveal reveal-3">
-        <h3>Medidas e indicadores</h3>
-        <p>Medidas DAX contrastadas contra cifras que el negocio ya conoce.</p>
-      </div>
-      <div class="step reveal reveal-4">
-        <h3>Validación con el negocio</h3>
-        <p>A producción pasan únicamente cifras validadas con su equipo.</p>
-      </div>
-      <div class="step reveal">
-        <h3>Operación y actualización</h3>
-        <p>Cargas monitoreadas y traspaso documentado, con su equipo o con <a href="/operacion-administrada/">nuestra operación administrada</a>.</p>
-      </div>
-    </div>
-    <div class="plate-row">
-      <figure class="plate reveal nova">
-        <div class="nova-esc">
-          <img class="nova-bot" width="817" height="1100" src="/img/nova/05-trabajando-panel.webp?v=81d96a82" alt="NOVA trabaja sobre un panel de trabajo luminoso." loading="lazy" decoding="async">
-          <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-        </div>
-        <figcaption>Etapa 1: se acuerda por escrito qué significa cada indicador.</figcaption>
-      </figure>
-      <figure class="plate reveal reveal-2 nova">
-        <div class="nova-esc">
-          <img class="nova-bot" width="575" height="1100" src="/img/nova/d-entrega-en-mano.webp?v=6d90b880" alt="NOVA sostiene con las dos manos un módulo terminado junto a su expediente." loading="lazy" decoding="async">
-          <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-        </div>
-        <figcaption>Etapa 5: entrega documentada, con la actualización ya corriendo.</figcaption>
-      </figure>
-    </div>
-  </div></section>
-
-  <!-- INDICADORES -->
-  <section><div class="wrap">
-    <p class="sec-k">Indicadores</p>
-    <h2>Cómo saber si su tablero es confiable</h2>
-    <div class="split">
-      <div>
-        <p class="sec-sub">Cuatro señales distinguen una capa de decisión de una colección de gráficos.</p>
-        <ul class="checks">
-          <li><b>Una sola definición por indicador.</b> «Venta neta» significa lo mismo en toda la empresa.</li>
-          <li><b>Responsable por dato.</b> Cada fuente tiene un dueño con nombre.</li>
-          <li><b>Documentación viva.</b> Modelo, medidas y reglas se actualizan con cada cambio.</li>
-          <li><b>Control de acceso.</b> Cada rol ve lo suyo, con permisos auditables.</li>
-        </ul>
-      </div>
-      <figure class="plate reveal nova">
-        <div class="nova-esc">
-          <img class="nova-bot" width="1061" height="1100" src="/img/nova/c-revision-con-lupa.webp?v=57a4283e" alt="NOVA revisa con una lupa una lista de verificación en la que una línea aparece marcada en ámbar y el resto en verde." loading="lazy" decoding="async">
-          <i class="nova-orb nova-orb-1" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-2" aria-hidden="true"></i>
-          <i class="nova-orb nova-orb-3" aria-hidden="true"></i>
-        </div>
-        <figcaption>Los indicadores se revisan contra su fuente, no contra la reunión anterior.</figcaption>
-      </figure>
-    </div>
-    <div class="cols2">
-      <div class="note demo reveal"><b>Empieza en la captura.</b> En el caso Capturista Digital, una factura enviada por WhatsApp se vuelve registro estructurado en unos 4 segundos, medido y grabado.<br><a class="link-more" href="/procesamiento-automatico-facturas/">Conocer la solución →</a></div>
-      <div class="note reveal reveal-2"><b>Quién dirige.</b> Humberto Henríquez, fundador: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence, más de 8 años automatizando operaciones. <a href="/nosotros/">Conocer la firma →</a></div>
     </div>
   </div></section>
 
@@ -313,10 +205,6 @@
     <p class="sec-k">Preguntas frecuentes</p>
     <h2>Lo que suelen preguntarnos</h2>
     <div class="faq">
-      <details>
-        <summary>¿Trabajan únicamente con Power BI?</summary>
-        <p class="fa">Es nuestra principal herramienta de <a href="/power-bi/">visualización</a>, pero la capa de datos es independiente: sobrevive a un cambio de visualizador.</p>
-      </details>
       <details>
         <summary>¿Y si nuestros datos están repartidos entre Excel y varios sistemas?</summary>
         <p class="fa">Es el punto de partida más común. La <a href="/integracion-sistemas/">integración</a> conecta esas fuentes y deja cada carga programada.</p>
@@ -330,6 +218,7 @@
         <p class="fa">Depende del número de fuentes y del estado de los datos. La primera etapa cierra con plan de alcance y calendario.</p>
       </details>
     </div>
+    <div class="note reveal"><b>Quién dirige.</b> Humberto Henríquez, fundador: Ingeniero en Sistemas, MSc en Data Science y MSc en Business Intelligence, más de 8 años automatizando operaciones. <a href="/nosotros/">Conocer la firma →</a></div>
   </div></section>
 
   <!-- CTA FINAL -->
