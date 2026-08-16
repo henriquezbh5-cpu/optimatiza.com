@@ -1138,3 +1138,99 @@ section.forest .nova-tec b{color:#F6F1E8;background:rgba(24,63,53,.85);
 
 .nova-tec-esc .nova-marco{position:relative;display:inline-block;max-width:100%;line-height:0}
 .nova-tec-esc .nova-esc{text-align:center}
+
+/* ============================================================
+   ICX — secciones profundas de inteligencia competitiva.
+   Reglas portadas de corp.css con ámbito .icx: los tokens y
+   selectores de elemento (section, h2...) no pueden tocar la
+   portada editorial que ocupa la mitad superior de la página.
+   ============================================================ */
+.icx {
+  --panel: #FFFDF8;
+  --alt: #EFE8D9;
+  --line: #E2DAC7;
+  --ink: #183F35;
+  --body: #3A4A45;
+  --dim: #5F6E66;
+  --teal: #1D5C4D;
+  --teal2: #2C7A63;
+  --petrol: #2F5D78;
+  --ffd: 'Geist', system-ui, sans-serif;
+  --sh: 0 1px 2px rgba(24,63,53,.05), 0 8px 24px rgba(24,63,53,.07);
+  --sh2: 0 2px 6px rgba(24,63,53,.07), 0 16px 40px rgba(24,63,53,.11);
+  color: var(--body);
+  font-size: 16px;
+  line-height: 1.65;
+  background: var(--panel);
+}
+.icx .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px }
+.icx section { padding: 56px 0 }
+.icx section.band { background: var(--alt); border-block: 1px solid var(--line) }
+.icx section.forest { background: var(--forest) }
+.icx section.forest h2, .icx section.forest h3 { color: #F6F1E8 }
+.icx section.forest p, .icx section.forest li { color: #C9D8D3 }
+.icx section.forest .sec-k { color: #A9C6B8 }
+.icx .sec-k { color: var(--petrol); font-weight: 700; font-size: 13px; letter-spacing: .05em; text-transform: uppercase }
+.icx h2 { font-family: var(--ffd); font-weight: 700; color: var(--ink); font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.16; margin: 10px 0 12px; text-wrap: balance }
+.icx h3 { font-family: var(--ffd); font-weight: 700; color: var(--ink); font-size: 18px; line-height: 1.3 }
+.icx .sec-sub { font-size: 16px; max-width: 66ch; margin-bottom: 28px }
+
+/* ciclo de inteligencia */
+.icx .cycle { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 24px; counter-reset: cy; margin-bottom: 26px }
+.icx .cycle-step { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; position: relative }
+.icx .cycle-step::before { counter-increment: cy; content: counter(cy); position: absolute; top: -11px; left: 16px; width: 24px; height: 24px; border-radius: 50%; background: var(--forest); color: #F6F1E8; font-family: var(--ffd); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center }
+.icx .cycle-step h3 { font-size: 15px; margin: 6px 0 5px }
+.icx .cycle-step p { font-size: 13.2px; color: var(--body); line-height: 1.55 }
+.icx section.forest .cycle-step { background: rgba(246,241,232,.06); border-color: rgba(246,241,232,.16) }
+.icx section.forest .cycle-step::before { background: var(--ochre); color: #12251F }
+.icx section.forest .cycle-step p { color: #C9D8D3 }
+
+/* entregables */
+.icx .deliverables { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 18px }
+.icx .deliverable { background: var(--alt); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px }
+.icx .deliverable b { display: block; font-size: 13.5px; color: var(--ink); font-family: var(--ffd); margin-bottom: 3px }
+.icx .deliverable span { font-size: 12.5px; color: var(--dim); line-height: 1.5 }
+
+/* semáforo de decisión */
+.icx .light { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; border-radius: 999px; padding: 5px 13px; white-space: nowrap }
+.icx .light::before { content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none }
+.icx .light-go { background: #E3EDE2; color: #14603F }      .icx .light-go::before { background: #159A4E }
+.icx .light-watch { background: #F7EEDC; color: #8A5D14 }   .icx .light-watch::before { background: #C9913B }
+.icx .light-stop { background: #F6E3E3; color: #8E2B2B }    .icx .light-stop::before { background: #B4232C }
+
+/* listas y callouts */
+.icx .checks { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-direction: column; gap: 10px }
+.icx .checks li { display: block; position: relative; padding-left: 24px; font-size: 14.8px; overflow-wrap: anywhere }
+.icx .checks li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--teal); font-weight: 700 }
+.icx .checks b { color: var(--ink) }
+.icx .note { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--ochre); border-radius: 12px; padding: 16px 18px; font-size: 14px; margin-top: 18px }
+.icx .note b { color: var(--ink) }
+.icx .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start }
+@media (max-width: 860px) { .icx .cols2 { grid-template-columns: 1fr; gap: 22px } }
+
+/* FAQ */
+.icx .faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); margin-bottom: 10px; box-shadow: var(--sh) }
+.icx .faq summary { padding: 16px 20px; cursor: pointer; font-weight: 600; color: var(--ink); font-size: 15px; list-style: none; display: flex; justify-content: space-between; gap: 12px }
+.icx .faq summary::-webkit-details-marker { display: none }
+.icx .faq summary::after { content: "+"; color: var(--teal); font-family: var(--ffd); font-size: 20px; line-height: 1 }
+.icx .faq details[open] summary::after { content: "\2013" }
+.icx .faq .fa { padding: 0 20px 16px; font-size: 14.3px; max-width: 75ch }
+.icx .fa a, .icx .note a { text-decoration: underline; text-underline-offset: 2px }
+.icx .fa a:hover, .icx .note a:hover { color: var(--teal) }
+
+/* ilustración con pie + pareja texto/ilustración */
+.icx .plate { margin: 26px 0 0 }
+.icx .plate figcaption { margin-top: 12px; font-size: 13.6px; color: var(--dim); max-width: 66ch; line-height: 1.6 }
+.icx section.forest .plate figcaption { color: #A9C6B8 }
+.icx .split { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; margin-top: 24px }
+@media (max-width: 820px) { .icx .split { grid-template-columns: 1fr; gap: 22px } }
+.icx .split .plate { margin-top: 0 }
+
+/* aparición al entrar en pantalla (requiere /interact.js) */
+@media (scripting: enabled) {
+  .icx .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease-out, transform .6s ease-out }
+  .icx .reveal.is-in { opacity: 1; transform: none }
+}
+.icx .reveal-2 { transition-delay: .09s }
+.icx .reveal-3 { transition-delay: .18s }
+@media (prefers-reduced-motion: reduce) { .icx .reveal { opacity: 1; transform: none; transition: none } }

@@ -1,20 +1,21 @@
-// Home ligera de Optimatiza — cotizador de rangos publicados + tabs + año del footer.
+// Home de Optimatiza — año del footer, flujos en vivo y acceso al chat.
 (function () {
   var yy = document.getElementById('yy');
   if (yy) yy.textContent = new Date().getFullYear();
 
-  // flujo en vivo del hero: corre de inicio a fin y vuelve a empezar
-  (function () {
-    var nodes = Array.prototype.slice.call(document.querySelectorAll('.fnode'));
+  // Flujos en vivo: cada ventana .fwin corre su propia secuencia en bucle,
+  // independiente de las demás (el home muestra dos a la vez; el dossier, una).
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  Array.prototype.forEach.call(document.querySelectorAll('.fwin'), function (win) {
+    var nodes = Array.prototype.slice.call(win.querySelectorAll('.fnode'));
     if (!nodes.length) return;
-    var lines = Array.prototype.slice.call(document.querySelectorAll('.fline'));
-    var res = document.getElementById('fres');
-    var apr = document.getElementById('faprOk');
-    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var lines = Array.prototype.slice.call(win.querySelectorAll('.fline'));
+    var res = win.querySelector('.fres');
+    var apr = win.querySelector('.fbtn.ok');
 
     function setSt(n, txt) { var s = n.querySelector('.fst'); if (s) s.textContent = txt; }
 
-    if (reduce) { // sin animacion: mostrar el flujo completado
+    if (reduce) { // sin animación: mostrar el flujo completado
       nodes.forEach(function (n) { n.classList.add('done'); setSt(n, n.dataset.done || '✓ completado'); });
       if (apr) apr.classList.add('hit');
       if (res) res.classList.add('on');
@@ -46,78 +47,13 @@
       }, t);
     }
     setTimeout(function () { step(0); }, 900);
-  })();
+  });
 
-  // "Hablar con Nova" abre el chat del sitio
+  // "Hablar con NOVA" abre el chat del sitio
   var tryNova = document.getElementById('tryNova');
   if (tryNova) tryNova.addEventListener('click', function (e) {
     e.preventDefault();
     var fab = document.getElementById('nvFab');
     if (fab) { fab.click(); } else { location.href = 'https://wa.me/50371928070'; }
   });
-
-  // formulario de contacto: envia por fetch y confirma en la misma pagina
-  var cform = document.getElementById('cform');
-  if (cform) cform.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var btn = document.getElementById('cfBtn'), note = document.getElementById('cfNote');
-    btn.disabled = true; btn.textContent = 'Enviando…';
-    fetch(cform.action, {
-      method: 'POST',
-      body: new FormData(cform),
-      headers: { 'Accept': 'application/json' }
-    }).then(function (r) {
-      if (!r.ok) throw new Error(r.status);
-      cform.reset();
-      btn.textContent = '✓ Enviado';
-      note.textContent = 'Recibido. Le respondemos en horario hábil por el medio que indicó.';
-      note.classList.add('ok');
-    }).catch(function () {
-      btn.disabled = false; btn.textContent = 'Enviar solicitud';
-      note.textContent = 'No se pudo enviar. Escríbanos directo por WhatsApp: +503 7192 8070.';
-    });
-  });
-
-  // tabs "Por que elegir Optimatiza"
-  var tabs = document.querySelectorAll('#wtabs .wtab');
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (x) { x.classList.remove('on'); });
-      document.querySelectorAll('.wpanel').forEach(function (p) { p.classList.remove('on'); });
-      tab.classList.add('on');
-      var panel = document.getElementById(tab.dataset.w);
-      if (panel) panel.classList.add('on');
-    });
-  });
-
-  var boxes = document.querySelectorAll('#pick input');
-  var rng = document.getElementById('rng');
-  var wa = document.getElementById('cotWa');
-  if (!boxes.length || !rng || !wa) return;
-
-  function fmt(n) { return '$' + n.toLocaleString('en-US'); }
-
-  function upd() {
-    var lo = 0, hi = 0, names = [];
-    boxes.forEach(function (b) {
-      b.closest('label').classList.toggle('on', b.checked);
-      if (b.checked) { lo += +b.dataset.lo; hi += +b.dataset.hi; names.push(b.dataset.n); }
-    });
-    if (!names.length) {
-      rng.textContent = 'Selecciona un agente';
-      wa.href = 'https://wa.me/50371928070?text=' +
-        encodeURIComponent('Hola, quiero cotizar un agente para mi negocio.');
-      return;
-    }
-    rng.textContent = fmt(lo) + ' – ' + fmt(hi);
-    var msg = 'Hola, arme mi equipo en el cotizador: ' + names.join(' + ') +
-      ' (rango publicado ' + fmt(lo) + '–' + fmt(hi) +
-      '). Quiero el diagnóstico ejecutivo para la cotización exacta.';
-    wa.href = 'https://wa.me/50371928070?text=' + encodeURIComponent(msg);
-  }
-  boxes.forEach(function (b) { b.addEventListener('change', upd); });
-
-  // ---- simulador con texto libre (worker quote-ai; fallback local) ----
-  // El simulador de precios con IA se retiró: el sitio corporativo no publica precios
-  // y su endpoint (quote-ai) era superficie de red sin uso. Vive en el sitio personal.
 })();
