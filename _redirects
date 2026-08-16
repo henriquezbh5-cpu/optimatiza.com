@@ -3,7 +3,7 @@
 /detalles/* /dossier/ 301
 /legal/privacidad.html /privacidad/ 301
 /legal/terminos.html /terminos/ 301
-/recursos/informe-muestra/* /inteligencia-competitiva/informe-muestra/ 301
+/recursos/informe-muestra/* /inteligencia-competitiva/ 301
 /blog/automatizar-procesos-pyme/* /insights/nueve-procesos-automatizables/ 301
 /blog/cuanto-cuesta-un-agente-de-ia-2026/* /insights/inversion-en-agentes-de-ia/ 301
 /calculadora/* /cobranza-automatizada/ 301
@@ -39,3 +39,8 @@
 /terms /terminos/ 301
 /terms/ /terminos/ 301
 /terms/* /terminos/ 301
+/inteligencia-competitiva/estudio-base/* /inteligencia-competitiva/ 301
+/inteligencia-competitiva/alertas-tempranas/* /inteligencia-competitiva/ 301
+/inteligencia-competitiva/ia-analista/* /inteligencia-competitiva/ 301
+/inteligencia-competitiva/implantacion/* /inteligencia-competitiva/ 301
+/inteligencia-competitiva/informe-muestra/* /inteligencia-competitiva/ 301

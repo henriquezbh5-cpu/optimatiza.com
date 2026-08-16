@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://www.google-analytics.com https://cloudflareinsights.com https://chat-ai.henriquezbh5.workers.dev; form-action 'none'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Orquestación autoalojada: soberanía del dato | Optimatiza</title>
-  <meta name="description" content="Orquestación de procesos dentro de la infraestructura de su empresa: el dato no sale de su perímetro y no hay licencia por usuario. Implementada sobre n8n.">
+  <meta name="description" content="Orquestación de procesos dentro de la infraestructura de su empresa: el dato permanece en su perímetro, sin licencia por usuario. Implementada sobre n8n.">
   <meta name="author" content="Optimatiza">
   <link rel="canonical" href="https://optimatiza.com/n8n/">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png?v=1147517b">
@@ -56,17 +56,17 @@
       {
         "@type": "Question",
         "name": "¿Qué costo de licencia tiene la plataforma?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Autoalojada para uso interno de la empresa, n8n se distribuye bajo la licencia Sustainable Use y no cobra por usuario. El gasto recurrente es la infraestructura donde corre, dimensionada por volumen de ejecuciones. El diseño, la construcción y la operación de los flujos se cotizan tras una evaluación de alcance."}
+        "acceptedAnswer": {"@type": "Answer", "text": "Autoalojada para uso interno, n8n se distribuye bajo la licencia Sustainable Use, sin cobro por usuario. El gasto recurrente es la infraestructura donde corre, dimensionada por volumen. Los flujos se cotizan tras una evaluación de alcance."}
       },
       {
         "@type": "Question",
-        "name": "¿Qué ocurre si un flujo falla fuera de horario?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Los flujos se entregan con reintentos, alerta al responsable y registro de cada ejecución. Con operación administrada, el monitoreo y la corrección quedan de nuestro lado; si la operación queda en su equipo, se entrega documentación y un runbook de fallos comunes."}
+        "name": "¿Cómo se garantiza la continuidad fuera de horario?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Cada flujo se entrega con reintentos, alerta al responsable y registro de cada ejecución. Con operación administrada, el monitoreo queda de nuestro lado; si la operación queda en su equipo, recibe documentación y un runbook de operación."}
       },
       {
         "@type": "Question",
-        "name": "¿La organización queda atada a Optimatiza?",
-        "acceptedAnswer": {"@type": "Answer", "text": "No. Los flujos son archivos JSON estándar y, si residen en la infraestructura o la cuenta de su empresa, son suyos desde el primer día. La entrega documentada permite que los mantenga cualquier técnico, propio o externo."}
+        "name": "¿La organización conserva el control total?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Sí. Los flujos son archivos JSON estándar y, alojados en la infraestructura o la cuenta de su empresa, son suyos desde el primer día. La entrega documentada permite que los mantenga cualquier técnico, propio o externo."}
       }
     ]
   }
@@ -78,16 +78,7 @@
 <header class="chead"><div class="wrap cnav">
   <a class="brand" href="/"><img width="192" height="192" src="/img/logo-badge-192.png?v=37f384c0" alt="Optimatiza"><span>Opti<span class="oz">matiza</span></span></a>
   <div class="sp"></div>
-  <nav class="cnav-links" aria-label="Principal">    <div class="dd"><a class="dd-trigger" href="/inteligencia-competitiva/">Inteligencia competitiva</a>
-      <div class="dd-menu">
-        <a href="/inteligencia-competitiva/"><b>Visión general</b>El ciclo, los niveles y qué recibe la dirección</a>
-        <a href="/inteligencia-competitiva/estudio-base/"><b>Estudio base</b>Ocho secciones, battlecards y fichas de prospecto</a>
-        <a href="/inteligencia-competitiva/alertas-tempranas/"><b>Alertas tempranas</b>Umbral, acción pre-acordada y responsable</a>
-        <a href="/inteligencia-competitiva/ia-analista/"><b>IA como colaboradora</b>Biblioteca de prompts y verificación humana</a>
-        <a href="/inteligencia-competitiva/implantacion/"><b>Implantación</b>Cómo montamos su departamento</a>
-        <a href="/inteligencia-competitiva/informe-muestra/"><b>Informe de muestra</b>Un entregable real, completo</a>
-      </div>
-    </div>
+  <nav class="cnav-links" aria-label="Principal">    <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
 
     <div class="dd"><a class="dd-trigger" href="/soluciones/">Soluciones</a>
       <div class="dd-menu">
@@ -116,14 +107,8 @@
   <details class="mnav">
     <summary aria-label="Abrir menú">&#9776;</summary>
     <nav class="mnav-panel" aria-label="Menú móvil">
-      <span class="mh">Inteligencia competitiva</span>
-      <a href="/inteligencia-competitiva/">Visión general</a>
-      <a href="/inteligencia-competitiva/estudio-base/">Estudio base</a>
-      <a href="/inteligencia-competitiva/alertas-tempranas/">Alertas tempranas</a>
-      <a href="/inteligencia-competitiva/ia-analista/">IA como colaboradora</a>
-      <a href="/inteligencia-competitiva/implantacion/">Implantación</a>
-      <a href="/inteligencia-competitiva/informe-muestra/">Informe de muestra</a>
       <span class="mh">Soluciones</span>
+      <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
       <a href="/automatizacion-empresarial/">Automatización empresarial</a>
       <a href="/agentes-ia/">Agentes de IA</a>
       <a href="/integracion-sistemas/">Integración de sistemas</a>
@@ -151,7 +136,7 @@
   <div class="phero band"><div class="wrap">
     <p class="kicker"><i></i> Capacidad · Orquestación autoalojada</p>
     <h1>Orquestación de procesos autoalojada, con el dato dentro de su perímetro</h1>
-    <p class="lead">Cuando cientos de documentos, pedidos y solicitudes al mes se sostienen con trabajo manual entre sistemas, la pregunta del comité no es qué herramienta comprar, sino <b>dónde corre el motor y quién custodia el dato</b>. Esta capacidad se implementa sobre n8n, plataforma de orquestación de código abierto que su organización puede alojar en su propia nube o centro de datos.</p>
+    <p class="lead">Sus documentos, pedidos y solicitudes fluyen solos entre sistemas, con <b>el motor y el dato bajo su custodia</b>. Se implementa sobre n8n, plataforma de código abierto alojada en su propia nube o centro de datos.</p>
     <div class="cta-row">
       <a class="btn-primary" href="/contacto/">Solicitar evaluación ejecutiva</a>
       <a class="btn-secondary" href="/metodologia/">Conocer la metodología</a>
@@ -160,17 +145,17 @@
 
   <section><div class="wrap">
     <p class="sec-k">El punto de partida</p>
-    <h2>Cuatro restricciones que definen la arquitectura antes que la herramienta</h2>
-    <p class="sec-sub">Con volumen sostenido y política de datos propia, la decisión se toma por estas razones y no por el catálogo de conectores.</p>
+    <h2>Cuatro ventajas que su empresa gana con esta arquitectura</h2>
+    <p class="sec-sub">La arquitectura responde a su política de datos y a su volumen.</p>
     <div class="cols2">
       <ul class="dots">
-        <li><b>Residencia del dato:</b> la información de clientes y proveedores debe permanecer bajo sus políticas de seguridad, retención y auditoría.</li>
-        <li><b>Costo que no escala con la plantilla:</b> los esquemas de licencia por usuario atan el presupuesto al número de personas que tocan el proceso.</li>
-        <li><b>Independencia de proveedor:</b> un proceso crítico no debería quedar amarrado a un solo ecosistema comercial.</li>
-        <li><b>Trazabilidad exigible:</b> auditoría necesita reconstruir cada ejecución: qué entró, qué decidió el flujo, quién aprobó y cuándo.</li>
+        <li><b>Residencia del dato:</b> la información de clientes y proveedores permanece bajo sus políticas de seguridad, retención y auditoría.</li>
+        <li><b>Costo bajo control:</b> el presupuesto se dimensiona por volumen de ejecuciones, no por personas.</li>
+        <li><b>Independencia de proveedor:</b> sus procesos críticos operan sobre estándares abiertos y portables.</li>
+        <li><b>Trazabilidad exigible:</b> cada ejecución se reconstruye completa: qué entró, qué decidió el flujo, quién aprobó y cuándo.</li>
       </ul>
       <div>
-        <div class="note reveal"><b>La herramienta se elige al final.</b> Si su operación ya vive sobre Microsoft 365, puede convenir más Power Automate, incluido en varias licencias. Se trabajan ambas plataformas y la comparación está publicada: <a class="link-more" href="/recursos/power-automate-vs-n8n/">Power Automate frente a n8n</a></div>
+        <div class="note reveal"><b>La herramienta se elige a su medida.</b> Si su operación vive sobre Microsoft 365, puede convenir Power Automate, incluido en varias licencias. Trabajamos ambas plataformas: <a class="link-more" href="/recursos/power-automate-vs-n8n/">Power Automate frente a n8n</a></div>
       </div>
     </div>
   </div></section>
@@ -223,20 +208,20 @@
     <h2>Lo que el comité de TI revisa antes de aprobar</h2>
     <div class="explore">
       <details open>
-        <summary><i>01</i><b>El dato no cruza el perímetro de la organización</b></summary>
-        <div class="ex-body"><p>Instalado en su nube o su centro de datos, el contenido de correos, documentos y registros no viaja a una plataforma de terceros. Las excepciones —un modelo de IA externo, por ejemplo— se declaran una a una y se acuerdan con su área de seguridad, bajo el marco de <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p></div>
+        <summary><i>01</i><b>El dato permanece dentro de su perímetro</b></summary>
+        <div class="ex-body"><p>Instalado en su nube o su centro de datos, el contenido de correos, documentos y registros permanece en su organización. Las excepciones se declaran una a una con su área de seguridad, bajo el marco de <a class="link-more" href="/seguridad-gobierno/">seguridad y gobierno</a>.</p></div>
       </details>
       <details>
-        <summary><i>02</i><b>La IA es un paso del flujo, no la dueña del proceso</b></summary>
+        <summary><i>02</i><b>La IA trabaja como un paso gobernado del flujo</b></summary>
         <div class="ex-body"><p>Se agregan pasos que clasifican correo, extraen datos de documentos o redactan respuestas. La aprobación humana queda donde el monto o la excepción lo exigen, bajo las reglas de <a class="link-more" href="/responsabilidad-ia/">responsabilidad de IA</a>.</p></div>
       </details>
       <details>
         <summary><i>03</i><b>Cada ejecución deja rastro</b></summary>
-        <div class="ex-body"><p>Reintentos con espera creciente para el error pasajero, alerta al responsable cuando el fallo persiste y registro por ejecución. Lo que falla en firme se aparta para revisión humana.</p></div>
+        <div class="ex-body"><p>Reintentos automáticos, alerta al responsable y registro por ejecución; los casos especiales pasan a revisión humana.</p></div>
       </details>
       <details>
-        <summary><i>04</i><b>Ninguna dependencia con quien construye</b></summary>
-        <div class="ex-body"><p>Los flujos son archivos JSON estándar y la entrega incluye documentación y runbook de fallos comunes.</p></div>
+        <summary><i>04</i><b>Independencia total desde la entrega</b></summary>
+        <div class="ex-body"><p>Los flujos son archivos JSON estándar y la entrega incluye documentación y runbook de operación.</p></div>
       </details>
     </div>
   </div></section>
@@ -290,21 +275,21 @@
     <div class="faq">
       <details>
         <summary>¿Qué costo de licencia tiene la plataforma?</summary>
-        <div class="fa">Autoalojada para uso interno de la empresa, n8n se distribuye bajo la licencia Sustainable Use y no cobra por usuario. El gasto recurrente es la infraestructura donde corre, dimensionada por volumen de ejecuciones. El diseño, la construcción y la operación de los flujos se cotizan tras una evaluación de alcance.</div>
+        <div class="fa">Autoalojada para uso interno, n8n se distribuye bajo la licencia Sustainable Use, sin cobro por usuario. El gasto recurrente es la infraestructura donde corre, dimensionada por volumen. Los flujos se cotizan tras una evaluación de alcance.</div>
       </details>
       <details>
-        <summary>¿Qué ocurre si un flujo falla fuera de horario?</summary>
-        <div class="fa">Los flujos se entregan con reintentos, alerta al responsable y registro de cada ejecución. Con operación administrada, el monitoreo y la corrección quedan de nuestro lado; si la operación queda en su equipo, se entrega documentación y un runbook de fallos comunes.</div>
+        <summary>¿Cómo se garantiza la continuidad fuera de horario?</summary>
+        <div class="fa">Cada flujo se entrega con reintentos, alerta al responsable y registro de cada ejecución. Con operación administrada, el monitoreo queda de nuestro lado; si la operación queda en su equipo, recibe documentación y un runbook de operación.</div>
       </details>
       <details>
-        <summary>¿La organización queda atada a Optimatiza?</summary>
-        <div class="fa">No. Los flujos son archivos JSON estándar y, si residen en la infraestructura o la cuenta de su empresa, son suyos desde el primer día. La entrega documentada permite que los mantenga cualquier técnico, propio o externo.</div>
+        <summary>¿La organización conserva el control total?</summary>
+        <div class="fa">Sí. Los flujos son archivos JSON estándar y, alojados en la infraestructura o la cuenta de su empresa, son suyos desde el primer día. La entrega documentada permite que los mantenga cualquier técnico, propio o externo.</div>
       </details>
     </div>
   </div></section>
 
   <section class="band"><div class="wrap">
-    <p class="note">La misma capacidad que mantiene el dato interno dentro del perímetro sirve para vigilar lo que ocurre fuera: fuentes públicas recogidas, depuradas y contrastadas por un ciclo con responsable y periodicidad. Ese es el trabajo del <a href="/inteligencia-competitiva/">departamento de inteligencia competitiva</a> y su <a href="/inteligencia-competitiva/implantacion/">implantación</a>.</p>
+    <p class="note">La misma capacidad que gobierna el dato interno sirve para vigilar el entorno: ese es el trabajo del <a href="/inteligencia-competitiva/">departamento de inteligencia competitiva</a> y su <a href="/inteligencia-competitiva/">implantación</a>.</p>
   </div></section>
 
   <section class="cta-band"><div class="wrap">
@@ -325,11 +310,6 @@
     </div>
     <div><b>Soluciones</b>
       <a href="/inteligencia-competitiva/">Inteligencia competitiva</a>
-      <a href="/inteligencia-competitiva/estudio-base/">&nbsp;&nbsp;Estudio base</a>
-      <a href="/inteligencia-competitiva/alertas-tempranas/">&nbsp;&nbsp;Alertas tempranas</a>
-      <a href="/inteligencia-competitiva/ia-analista/">&nbsp;&nbsp;IA como colaboradora</a>
-      <a href="/inteligencia-competitiva/implantacion/">&nbsp;&nbsp;Implantación</a>
-      <a href="/inteligencia-competitiva/informe-muestra/">&nbsp;&nbsp;Informe de muestra</a>
       <a href="/automatizacion-empresarial/">Automatización empresarial</a>
       <a href="/agentes-ia/">Agentes de IA</a>
       <a href="/integracion-sistemas/">Integración de sistemas</a>
